@@ -45,3 +45,16 @@ I want this Color class to implement Equatable, so I'll conform to that protocol
     [type ", Equatable" after "_ExpressibleByColorLiteral" on line 8]
     
 When I do, I get a fix it that offers to implement the missing methods! This one is going to save so much typing.
+
+The last thing I want to show you is one of the most exciting new things. Xcode has always known a lot about the structure of your code -- the different constructs, like methods, expressions and if statements. But none of that information has ever really been surfaced in a way you can use it. Until now.
+
+If I hold down the Command and Control keys, and mouse around, you'll see that Xcode is showing me the structure of my code. And when I click, I get a set of options that are specfic for this construct.
+
+    [Command-Control click on the if statement around line 29, select "Add else"]
+    
+If do the same thing again, on the same if, you'll see that now I'm only offer "Add else/if" as an option, since Xcode knows that I already have an "else".
+
+I can Command-Control click on other things, like this class, and I get different options -- add method or property in this case.
+
+
+ 
