@@ -25,7 +25,6 @@ public class Color: _ExpressibleByColorLiteral {
     public static let blue: Color = #colorLiteral(red: 0, green: 0.1771291047, blue: 0.97898072, alpha: 1)
     
     public init(white: CGFloat, alpha: CGFloat = 1.0) {
-        // DEMO POINT: add "else if"
         if 0 <= white && white <= 1.0 {
             // valid white, no adjustment necessary.
         }
