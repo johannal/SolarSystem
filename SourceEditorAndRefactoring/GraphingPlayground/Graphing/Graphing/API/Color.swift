@@ -52,11 +52,9 @@ public class Color: _ExpressibleByColorLiteral {
     }
     
     public func withAlpha(alpha: Double) -> Color {
-        // DEMO POINT: extract expression.
         return Color(uiColor.withAlphaComponent(CGFloat(alpha)))
     }
     
-    // DEMO POINT: rename darker -> darker.
     public func darker(percent: Double = 0.2) -> Color {
         return colorByAdjustingBrightness(percent: 1 - percent)
     }
