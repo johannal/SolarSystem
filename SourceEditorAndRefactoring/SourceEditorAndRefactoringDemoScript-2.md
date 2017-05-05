@@ -56,5 +56,11 @@ If do the same thing again, on the same if, you'll see that now I'm only offer "
 
 I can Command-Control click on other things, like this class, and I get different options -- add method or property in this case.
 
+Those are all local transformations, but it's a bit more interesting when I want to make a something like rename, which spans files. I want to rename this method named "darker". I'll hold down Command-Control and click on it, then choose rename.
 
+    [Command-Control click on "darker" on line XX and choose "Rename"]
+    
+When I do that, Xcode collapses things down and shows me all the slices of code that will be affected by this name change across my project. When I start typing a new name, I'll see it reflected in all of those call sites, including this one down here in Objective-C. I can change the paraemter name too, but I think what I've got is working.
+
+I'll click "Rename" and thats it.
  
