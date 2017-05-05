@@ -29,7 +29,7 @@
 		0778601A1CCBEE9300DC41C1 /* GraphingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077860191CCBEE9300DC41C1 /* GraphingTests.swift */; };
 		077860251CCBEE9300DC41C1 /* GraphingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077860241CCBEE9300DC41C1 /* GraphingUITests.swift */; };
 		0799B4461EB3AFFD0079248B /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0799B4451EB3AFFD0079248B /* BackgroundView.m */; };
-		07CD26EB1EB3A50C00306EFF /* GraphSampleData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07CD26EA1EB3A50C00306EFF /* GraphSampleData.txt */; };
+		07CD26EB1EB3A50C00306EFF /* GraphSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 07CD26EA1EB3A50C00306EFF /* GraphSampleData.json */; };
 		A8977BE71D4C0FF4008F70D8 /* ChartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8977BE51D4C0FF4008F70D8 /* ChartContentView.swift */; };
 		A8977BE81D4C0FF4008F70D8 /* ChartValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8977BE61D4C0FF4008F70D8 /* ChartValueView.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +83,7 @@
 		077860261CCBEE9300DC41C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0799B4441EB3AFFD0079248B /* BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
 		0799B4451EB3AFFD0079248B /* BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
-		07CD26EA1EB3A50C00306EFF /* GraphSampleData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GraphSampleData.txt; sourceTree = "<group>"; };
+		07CD26EA1EB3A50C00306EFF /* GraphSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GraphSampleData.json; sourceTree = "<group>"; };
 		A8977BE51D4C0FF4008F70D8 /* ChartContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartContentView.swift; sourceTree = "<group>"; };
 		A8977BE61D4C0FF4008F70D8 /* ChartValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,7 +205,7 @@
 			children = (
 				0758202F1D4BAE10009CC04E /* SwiftBird.png */,
 				07721C831D22E887004E6A7D /* QuestionMark.png */,
-				07CD26EA1EB3A50C00306EFF /* GraphSampleData.txt */,
+				07CD26EA1EB3A50C00306EFF /* GraphSampleData.json */,
 				070775401EB4158F00AB9087 /* Basics.md */,
 			);
 			name = Resources;
@@ -328,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0778600F1CCBEE9300DC41C1 /* LaunchScreen.storyboard in Resources */,
-				07CD26EB1EB3A50C00306EFF /* GraphSampleData.txt in Resources */,
+				07CD26EB1EB3A50C00306EFF /* GraphSampleData.json in Resources */,
 				075820301D4BAE10009CC04E /* SwiftBird.png in Resources */,
 				0778600C1CCBEE9300DC41C1 /* Assets.xcassets in Resources */,
 				07721C841D22E887004E6A7D /* QuestionMark.png in Resources */,
