@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // add the Chart's backgroundView underneath the pageControl.
         let backingView = Chart.shared.backingView
         backingView.translatesAutoresizingMaskIntoConstraints = false
