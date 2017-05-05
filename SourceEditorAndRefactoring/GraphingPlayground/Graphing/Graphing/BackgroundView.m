@@ -18,9 +18,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     
-//    if (@available(ios 11.0, *)) {
-        NSDirectionalEdgeInsets margins = self.directionalLayoutMargins;
-//    }
+    
     
     // calculate our starting and ending points.
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));

@@ -6,7 +6,7 @@
 
 import UIKit
 import Foundation
-
+    
 class ViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -29,9 +29,6 @@ class ViewController: UIViewController {
         backingView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backingView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        // DEMO POINT: "Too new API" warning.
-//        backingView.backgroundColor = UIColor.init(named: "backgroundColor")
-        
         // add a closure that calls earch test setup method to the master array.
         tests.append({self.test1()})
         tests.append({self.test2()})
@@ -53,13 +50,7 @@ class ViewController: UIViewController {
         pageControl.currentPage = 0
         tests[pageControl.currentPage]()
         
-//        let plot = firstPlot()
-//        let _ = plot.darkenPlot()
         
-        // DEMO POINT: "switch missing case statements" warning.
-//        switch chartBorderStyle {
-//            
-//        }
     }
     
     private func test1() {
@@ -173,10 +164,6 @@ class ViewController: UIViewController {
         
         let index = pageControl.currentPage
         tests[index]()
-    }
-    
-    private func firstPlot() -> AbstractPointPlot? {
-        return nil
     }
 }
 

@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class Color: _ExpressibleByColorLiteral, Equatable {
+public class Color: _ExpressibleByColorLiteral {
     
     internal let uiColor: UIColor
     
@@ -15,14 +15,14 @@ public class Color: _ExpressibleByColorLiteral, Equatable {
     
     public static let clear: Color = #colorLiteral(red: 1, green: 0.9999743700027466, blue: 0.9999912977218628, alpha: 0)
     
-    public static let white: Color  = #colorLiteral(red: 1, green: 0.9999743700027466, blue: 0.9999912977218628, alpha: 1)
+    public static let white: Color = #colorLiteral(red: 1, green: 0.9999743700027466, blue: 0.9999912977218628, alpha: 1)
     public static let gray: Color = #colorLiteral(red: 0.3367644548, green: 0.3980174661, blue: 0.4406478703, alpha: 1)
     public static let black: Color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
     public static let purple: Color = #colorLiteral(red: 0.2666243911, green: 0.1584459841, blue: 0.7177972794, alpha: 1)
-    public static let pink: Color   = #colorLiteral(red: 0.7086744905, green: 0.05744680017, blue: 0.5434997678, alpha: 1)
-    public static let green: Color  = #colorLiteral(red: 0.07005243003, green: 0.5545874834, blue: 0.1694306433, alpha: 1)
-    public static let blue: Color   = #colorLiteral(red: 0, green: 0.1771291047, blue: 0.97898072, alpha: 1)
+    public static let pink: Color = #colorLiteral(red: 0.7086744905, green: 0.05744680017, blue: 0.5434997678, alpha: 1)
+    public static let green: Color = #colorLiteral(red: 0.07005243003, green: 0.5545874834, blue: 0.1694306433, alpha: 1)
+    public static let blue: Color = #colorLiteral(red: 0, green: 0.1771291047, blue: 0.97898072, alpha: 1)
     
     public init(white: CGFloat, alpha: CGFloat = 1.0) {
         // DEMO POINT: add "else if"
@@ -104,6 +104,7 @@ public class Color: _ExpressibleByColorLiteral, Equatable {
     }
 }
 
-public func ==(left: Color, right: Color) -> Bool {
-    return left.uiColor == right.uiColor
-}
+//public func ==(left: Color, right: Color) -> Bool {
+//    return left.uiColor == right.uiColor
+//}
+
