@@ -46,4 +46,8 @@
     CGGradientRelease(gradient);
 }
 
+- (void)_updateBackground {
+    
+}
+
 @end
