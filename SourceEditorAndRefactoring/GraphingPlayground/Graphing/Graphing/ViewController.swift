@@ -49,10 +49,8 @@ class ViewController: UIViewController {
         pageControl.pageIndicatorTintColor =  UIColor(white: 0.85, alpha: 0.5)
         
         // set the current page.
-        pageControl.currentPage = 0
-        tests[pageControl.currentPage]()
-        
-        
+        self.pageControl.currentPage = 0
+        self.tests[self.pageControl.currentPage]()
     }
     
     private func test1() {

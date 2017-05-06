@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0726F0051EB3C18A007922F6 /* ViewControllerGraphTouchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0726F0041EB3C18A007922F6 /* ViewControllerGraphTouchDelegate.swift */; };
 		0751C6E61D353FD100750742 /* XYData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751C6E51D353FD100750742 /* XYData.swift */; };
 		0752826C1D21C8EE00274809 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752826B1D21C8EE00274809 /* Chart.swift */; };
 		075820301D4BAE10009CC04E /* SwiftBird.png in Resources */ = {isa = PBXBuildFile; fileRef = 0758202F1D4BAE10009CC04E /* SwiftBird.png */; };
@@ -29,7 +28,6 @@
 		0778601A1CCBEE9300DC41C1 /* GraphingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077860191CCBEE9300DC41C1 /* GraphingTests.swift */; };
 		077860251CCBEE9300DC41C1 /* GraphingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077860241CCBEE9300DC41C1 /* GraphingUITests.swift */; };
 		0799B4461EB3AFFD0079248B /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0799B4451EB3AFFD0079248B /* BackgroundView.m */; };
-		07CD26EB1EB3A50C00306EFF /* GraphSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 07CD26EA1EB3A50C00306EFF /* GraphSampleData.json */; };
 		A8977BE71D4C0FF4008F70D8 /* ChartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8977BE51D4C0FF4008F70D8 /* ChartContentView.swift */; };
 		A8977BE81D4C0FF4008F70D8 /* ChartValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8977BE61D4C0FF4008F70D8 /* ChartValueView.swift */; };
 /* End PBXBuildFile section */
@@ -52,8 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		070775401EB4158F00AB9087 /* SomeBasics.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = SomeBasics.md; path = ../Resources/SomeBasics.md; sourceTree = "<group>"; };
-		0726F0041EB3C18A007922F6 /* ViewControllerGraphTouchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerGraphTouchDelegate.swift; sourceTree = "<group>"; };
+		070775401EB4158F00AB9087 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../Resources/README.md; sourceTree = "<group>"; };
 		0751C6E51D353FD100750742 /* XYData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYData.swift; sourceTree = "<group>"; };
 		0752826B1D21C8EE00274809 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		0758202F1D4BAE10009CC04E /* SwiftBird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwiftBird.png; sourceTree = "<group>"; };
@@ -83,7 +80,6 @@
 		077860261CCBEE9300DC41C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0799B4441EB3AFFD0079248B /* BackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BackgroundView.h; path = ../BackgroundView.h; sourceTree = "<group>"; };
 		0799B4451EB3AFFD0079248B /* BackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BackgroundView.m; path = ../BackgroundView.m; sourceTree = "<group>"; };
-		07CD26EA1EB3A50C00306EFF /* GraphSampleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GraphSampleData.json; sourceTree = "<group>"; };
 		A8977BE51D4C0FF4008F70D8 /* ChartContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartContentView.swift; sourceTree = "<group>"; };
 		A8977BE61D4C0FF4008F70D8 /* ChartValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				077860061CCBEE9300DC41C1 /* ViewController.swift */,
-				070775401EB4158F00AB9087 /* SomeBasics.md */,
+				070775401EB4158F00AB9087 /* README.md */,
 				0799B4441EB3AFFD0079248B /* BackgroundView.h */,
 				0799B4451EB3AFFD0079248B /* BackgroundView.m */,
 				076487201D20996600405F54 /* Color.swift */,
@@ -174,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				077860041CCBEE9300DC41C1 /* AppDelegate.swift */,
-				0726F0041EB3C18A007922F6 /* ViewControllerGraphTouchDelegate.swift */,
 				077860081CCBEE9300DC41C1 /* Main.storyboard */,
 				0778600B1CCBEE9300DC41C1 /* Assets.xcassets */,
 				0778600D1CCBEE9300DC41C1 /* LaunchScreen.storyboard */,
@@ -206,7 +201,6 @@
 			children = (
 				0758202F1D4BAE10009CC04E /* SwiftBird.png */,
 				07721C831D22E887004E6A7D /* QuestionMark.png */,
-				07CD26EA1EB3A50C00306EFF /* GraphSampleData.json */,
 			);
 			name = Resources;
 			path = Graphing/Resources;
@@ -328,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0778600F1CCBEE9300DC41C1 /* LaunchScreen.storyboard in Resources */,
-				07CD26EB1EB3A50C00306EFF /* GraphSampleData.json in Resources */,
 				075820301D4BAE10009CC04E /* SwiftBird.png in Resources */,
 				0778600C1CCBEE9300DC41C1 /* Assets.xcassets in Resources */,
 				07721C841D22E887004E6A7D /* QuestionMark.png in Resources */,
@@ -366,7 +359,6 @@
 				0799B4461EB3AFFD0079248B /* BackgroundView.m in Sources */,
 				A8977BE81D4C0FF4008F70D8 /* ChartValueView.swift in Sources */,
 				0752826C1D21C8EE00274809 /* Chart.swift in Sources */,
-				0726F0051EB3C18A007922F6 /* ViewControllerGraphTouchDelegate.swift in Sources */,
 				077860071CCBEE9300DC41C1 /* ViewController.swift in Sources */,
 				0764874F1D20996600405F54 /* LinePlotDrawable.swift in Sources */,
 				076487391D20996600405F54 /* Color.swift in Sources */,
