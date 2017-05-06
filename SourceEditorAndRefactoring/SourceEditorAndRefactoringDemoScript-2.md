@@ -10,11 +10,7 @@ The UI has a fresh new look, deferring a little more to your code.  It's also ea
 
     [show Command-plus, then go back to "default", then show choose different theme]
 
-This theme here is a little more fun. It uses fonts of different sizes and weights, which works really, really well with the new text layout engine.
-
-Let's be boring again and switch back to the default theme.
-
-    [switch back to Default theme]
+This theme  uses fonts of different weights, and I could use fonts of different sizes too. That works really well with the new text layout engine.
  
 Built on top of the great support for varying fonts, is full markdown editing. Not only will you see complete syntax highlighting, but Xcode a also understands the structure of markdown.
 
