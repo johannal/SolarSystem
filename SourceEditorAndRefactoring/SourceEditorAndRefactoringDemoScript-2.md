@@ -26,15 +26,21 @@ Of course, you'll probably be spending most of your time in source code, so lets
 
     [navigate to BackgroundView.m]
 
-First off, there are a some new issues and fix-it's in Xcode 9. We've brought the too-new-API issue to Objective-C. In Swift, you've been able to see if you're using API that isn't available on all the deployment targets you support. Now you'll get the same issue in Objective-C code.
-
-Here I'm going to use some API that's new in iOS 11, but my app deploys back to iOS 10. This would crash, so it's important that I use it conditionally.
+Issues have a brand new look, along with some improvements to the way you interact with them.
 
     [type "demo1"]
     
-Theres also a new fix-it for missing case statements, which works in both Swift and Objective-C. I'll add a switch statement here, and then I immediately get a fix it offering to add the missing case statements. Save me a little typing.
+I've got an issue here, I forgot to add the semi-colon. The issue icon shows up on the right, and when I click it, I get a popover with more details, and in this case a fix-in. If you've got multiple fix-its, they'll all show up right here, which makes applying multiple fixes really easy.
+
+There's some new issues and fix-it's in Xcode 9. We've brought the too-new-API issue back to Objective-C. If you're using API that isn't available on all the deployment targets you support, Xcode will warn you.
+
+Here I'm going to use some API that's new in iOS 11, but my app deploys back to iOS 10. This would crash, so it's important that I use it conditionally.
 
     [type "demo2"]
+    
+Theres also a new fix-it for missing case statements, which works in both Swift and Objective-C. I'll add a switch statement here, and then I immediately get a fix it offering to add the missing case statements. Save me a little typing.
+
+    [type "demo3"]
     
 My favorite new fix it, though, is for missing protocol methods.
 
@@ -46,15 +52,15 @@ I want this Color class to implement Equatable, so I'll conform to that protocol
     
 When I do, I get a fix it that offers to implement the missing methods! This one is going to save so much typing.
 
-    [type "demo3" in the method implementation]
+    [type "demo4" in the method implementation]
 
-The last thing I want to show you is one of the most exciting new things. Xcode has always known a lot about the structure of your code -- the different constructs, like methods, expressions and if statements. But none of that information has ever really been surfaced in a way you can use it. Until now.
+The last thing I want to show you is one of the most exciting new things, something we brought back from Swift Playgrounds. Xcode has always known a lot about the structure of your code -- the different constructs, like methods, expressions and if statements. But none of that information has ever really been surfaced in a way you can use it. Until now.
 
 If I hold down the Command and Control keys, and mouse around, you'll see that Xcode is showing me the structure of my code. And when I click, I get a set of options that are specfic for this construct.
 
     [Command-Control click on the if statement around line 29, select "Add else"]
     
-If do the same thing again, on the same if, you'll see that now I'm only offer "Add else/if" as an option, since Xcode knows that I already have an "else".
+And the menu updates based on the structure of my code, so now when I bring up the menu on the if block I'm only offered "Add else/if", since Xcode knows that I already have an "else".
 
 I can Command-Control click on other things, like this class, and I get different options -- add method or property in this case.
 
