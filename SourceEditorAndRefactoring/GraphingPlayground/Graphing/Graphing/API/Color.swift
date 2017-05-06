@@ -100,8 +100,3 @@ public class Color: _ExpressibleByColorLiteral {
         currentColorIndex = 0
     }
 }
-
-//public func ==(left: Color, right: Color) -> Bool {
-//    return left.uiColor == right.uiColor
-//}
-
