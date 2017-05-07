@@ -1,10 +1,13 @@
-### demo1 - Demo 1
-NSDirectionalEdgeInsets margins = self.directionalLayoutMargins;
+### demo2 - Demo 2
+[self _updateBackground]
 
 ### demo2 - Demo 2
+NSDirectionalEdgeInsets margins = self.directionalLayoutMargins;
+
+### demo3 - Demo 3
         switch chartBorderStyle {
             
         }
 
-### demo3 - Demo 3
+### demo4 - Demo 4
 return lhs.uiColor == rhs.uiColor
