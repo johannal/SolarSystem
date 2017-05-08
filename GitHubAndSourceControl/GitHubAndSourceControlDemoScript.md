@@ -1,8 +1,8 @@
-#SOTU GitHub/SCM Demo
+# SOTU GitHub/SCM Demo
 _WWDC 2017_
 
 ### Random Radars
-- <rdar://problem/31757497> Should have a context menu and + button command for adding a remote 
+- <rdar://problem/31757497> Should have a context menu and + button command for adding a remote
 - <rdar://problem/29911644> Branch actions in menu for the new history view and navigator
 - <rdar://problem/29911645> Tag actions for the new history view and navigator
 - <rdar://problem/29911639> Commit actions for the new history view and navigator
@@ -18,63 +18,167 @@ _WWDC 2017_
 - <rdar://problem/31937721> The GitHub account detail needs an HI pass
 - <rdar://problem/31761450> Account details for GitHub accounts should show list of organizations I belong to
 - <rdar://problem/30960652> Package dependency editor adoption of new repository UI
-- <rdar://problem/30960546> New repository UI - global repository search by name
 - <rdar://problem/30960488> API to access repository README
 - <rdar://problem/30960578> New repository UI - favoriting repos
 - <rdar://problem/31938196> Initial navigaotr state... should some repos be disclosed?
-- <rdar://problem/31938086> Remote package repos have weird hash as part of their name, showing up in SCM nav
 - <rdar://problem/31019822> GitHub on-ramping during project creation
+- <rdar://problem/32017088> I am getting 'Always allow' dialog when adding a github account when Xcode already has my SSH passphrase in its keychain (from an earlier account addition)
+- <rdar://problem/32017884> Typing a new search string in Clone window while a search is still active seems not to search again
+- <rdar://problem/32039182> Should we have an indication of current branch without having to twist open Branches?
+- <rdar://problem/32039204> Focus should be in search field when clone window comes up
+- <rdar://problem/32039210> When the window first comes up, the first repo in the list should be selected
+- <rdar://problem/32039214> Up and down arrow should move selection in the repo list up and down when focus is in the search field
+- <rdar://problem/32039240> Sorting by repo name should use 'sort like Finder' style sorting
+- <rdar://problem/32039243> Links in the repo window detail view should get the finger cursor
+- <rdar://problem/32039272> Context menu for log viewer should have an 'email author' item
+- <rdar://problem/30834362> GitHub avatar API and caching
+- <rdar://problem/30960716> SCM history adoption of avatar API
+- <rdar://problem/32039300> Commit summary at the bottom of the commit viewer doesn't show the same merge icon in the hash as the log viewer
+- <rdar://problem/32049321> Commit sheet/commit viewer should show renamed files as renamed instead of deleted/added
+- <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
+- <rdar://problem/31939924> Commit viewer should scroll to first diff in the top file
+- <rdar://problem/32051106> The welcome window needs to say Clone… not Check Out…
+- <rdar://problem/32051198> Need a user default to turn off huge tooltips for commit messages in history view
+- <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
+- <rdar://problem/32057225> After adding account through prefs, the clone window did not notice
 
 
 ### Setup
-* Make sure no github account configured
+- Make sure no github account configured.
+- Have my passphrase already in Xcode's keychain
+- Will use a demo github account (MikeFerrisDemo)
+    - Have some repos starred
+    - !!! Find a project with some good history that I can push up as a personal repo for the Clone part below
+- Make sure disclosure state and log viewer filter is good in explore project (XCTest)
+- Make a new copy of Jogr
+- Open a Finder window shwoing it in outline
 
 ### Github Accounts
-* I'm excited to show you how Xcode can work with github and some of the new ways to explore and work with you git repositories
-* Let's start by getting Xcode hooked up to my github account
-* I can do this in Xcode account prefs
-* Xcode has support for both github and github enterprise. I'll add a regular github account
-* if my account has 2 factor auth enabled, Xcode will automatically request a code and let you enter it. My account just uses simple name and password.
-* Now I have my account set up. By default Xcode will make new clones using https, but you can also choose to use ssh and choose what key to use.
+- I'm excited to show you some of the great new ways to work with source control in Xcode, including how Xcode can work with Github.
+- Let's start by setting up my Github account in Xcode's Accounts prefs
+- **Choose Preferences, Accounts**
+- **Click plus button**
+- Xcode has support for both github.com and github enterprise. I'll add my github.com account.
+- **Choose Github**
+- For my account I just need my name and password
+- Xcode also fully supports Github's 2 factor authentication
+- **Enter MikeFerrisDemo, wwdc2017**
+- I can choose the default method for cloning new repositories
+- And I can set an ssh key to use when needed
+- My account is all set up
 
 ### Clone...
-* now that I have my account set up, let's get a repository.
-* Xcode has a brand new clone window. When I bring it up I immediately see all my github repositories. This includes my personal repos, repos from organizations I belong to and any repos I have starred.
-* As I select these I can see more info in the detail view below. And I can pull up the repository's readme to see more detail.
-* Using the search field I can search for other repos on github and  github enterprise.
-* If I find something I like I can clone it of course, and I can star it right from here to make it easy to find again.
-* Finally, if I want to clone from another source, I can enter any URL in the search field and clone it.
+- Let's clone a repository
+- **Source Control -> Clone...**
+- Xcode has an all new clone window that makes cloning from Github easy
+- When I bring it up I see all my repositories. My personal repositories, the ones from my organizations and any that I have starred
+- At the bottom of the window I see some details about the selected repository
+- _SKIP_
+    - And for even more information I can view the repository's README
+    - **Click README**
+    - **Scroll a bit, then close it**
+- Using the search field I can search for other repos on github
+- **Type Swift Networking in search**
+- If I find something I like I can clone it, of course
+- _SKIP_
+    - and I can star it right from here to make it easy to find again
+    - **Star AlamoFire**
+- If I need to clone from another source, I can enter the URL for any repository in the search field
+- _SKIP_: I already have the project I want cloned, so I am just going to open it
+    - But for now, I want to clone one of my own GitHub repositories
+    - **Cancel search**
+    - **Select demo project**
+    - **Clone...**
+    - **Choose save location**
 
 ### Explore
-* once the clone completes, Xcode opens the workspace.
-* You may notice that there is a new navigator, this is the source control navigator. In it we see the repositories involved in our workspace.
-* In this case there's one repo, but in more complicated workspaces there might be any number of repositories.
-* Under each repo we can see branches, tags and remotes.
-* We can use the inspector to see more detail. One really useful thing in the inspector for each repository is a place to set your name and email address for commits.
-* We can see that currently the master branch is checked out. If I select any branch, tag or remote branch, a log viewer shows the complete history of it.
-* Selecting a commit shows more detail in the inspector.
-* Filtering in the log viewer is really useful for finding things. I can filter based on text in the commit messages or based on the author.
-* When I find a particular commit I am looking for, I can double click on a commit to open a full commit viewer to see all the actual changes from that commit.
+- _SKIP_
+    - Once the clone completes, Xcode opens the workspace
+- **Go to SCM nav**
+- Xcode 9 has a new navigator that is devoted to source control
+- It shows any repositories that are part of my workspace
+- Inside the repo I can see all the branches, tags and remotes
+- **Select current branch**
+- The master branch is the currently checked out branch
+- Selecting it shows its complete history in the editor area
+- There's a lot to see here
+- _SKIP_
+    - We pull avatars from Github for the authors of commits
+- There are annotations to show if a commit is tagged or the head of a branch
+- **Point out branch and tag annotations**
+- _SKIP_ (remove unless I can figure out how to motivate this)
+    - Merge commits are called out with a special icon on the commit hash
+    - **Point out a merge commit**
+- Projects can have a lot of history, so filtering can be important
+- I can filter commits based on author or commit message content
+- **Type ferris, select author filter**
+- Let's see just commits that I made
+- **Type Swift3 and hit enter**
+- And I want to find one that I know had to do with Swift3 API updates
+- _SKIP_ (remove unless I can figure out how to motivate this)
+- The inspector shows even more detail about a commit
+    - **Open inspector**
+    - Including the full commit message and the list of files involved in the commit
+    - **Show these, then close inspector**
+- Double-clicking a commit takes me to the new commit viewer, showing me all the source changes
+- **Double-click the first commit**
+- **Show a file or two**
+- Xcode 9 makes it easy to dig through history and really get down to the detailed changes
+
+### Creating branches
+- But now let's make some changes
+- I have another project here that needs a bit of cleanup
+- **Close the explore project**
+- **Open second demo project**
+- _SKIP_
+    - Before I start making changes, let's make a branch to work on
+    - **Go to SCM nav**
+    - I'll make a new branch from our current branch, master
+    - **Select master**
+    - **Use gear menu to make a branch**
+    - Now we are checked out to our new branch and we can start making changes
 
 ### Structure editing
-* all this exploring is fascinating. But sooner or later we're going to want to make some changes.
-* Now in many projects people like to keep group structure and fiel structure the same. Xcode now makes that easy. When you're working in a project where these structures are the same Xcode will automatically preserve that for you.
-* when I make a new group, Xcode will also make a new folder. And when I rename it, the folder follows suit.
-* When I move files between groups, they'll also be moved in the file system.
-* And, best of all, as Xcode is doing all this it is also making sure that these changes are being registered with your repository.
-* When I commit, I can see that Xcode has noticed all the changes I've been making in the file system.
+- **Go to Project nav**
+- In my projects I like to keep group structure and file structure the same
+- This used to take some work, but Xcode 9 makes it easy
+- When you're working in a project where these structures are the same Xcode will automatically keep them the same.
+- **Select a couple files**
+- Making a new group makes a new folder
+- **Context Menu->New Group from Selection**
+- And, the files that I grouped are moved into that folder
+- **Rename group**
+- When I name the group, it updates the folder name as well
+- And, when I move files between groups, it will move them between folders as well
+- **Move some files from one group to another**
+- And, best of all, as Xcode is doing all this it is also making sure that these changes are being registered with source control.
+- **Source Control->Commit...**
+- When I commit, I can see that Xcode has noticed all the changes I've been making in the file system.
+- **Type a comment and commit**
 
 ### Working with Branches and Tags
-* earlier we saw some of the cool information that can be found in the new source control navigator. But it also lets us perform common source control operations.
-* I'll make a new branch before I commit my changes.
-* Now I can put my changes on this new branch.
-* I can check the master branch out again.
-* And I can merge my new branch back into master.
-* And finally I can create a new tag
+- _SKIP_
+    - Now I am ready to land my branch
+    - **Go to SCM nav**
+    - I'll check the master branch out again
+    - **Select master**
+    - **Use gear menu to check out**
+    - And I will merge my new branch back into master
+    - **Use gear menu to select Merge into master**
+    - And finally I will create a new tag
+    - **Use gear menu to choose New Tag...**
 
-### Push to github
-* /how do we do this... need to make a new project at some point above?/
+### Create on github
+- _SKIP_
+    - I think I am ready to share this work. But this project isn't on Github yet
+    - Let's put it there
+    - **Select repo**
+    - **Use gear menu to create a new github project and push**
+    - My project is now hosted on Github and I can start sharing it
+
 
 ### Fixed bugs
 - <rdar://problem/31936990> SCM navigator should have Branches and Tags groups even if there aren't any
 - <rdar://problem/31757488> We should show the Remotes folder under a git repo even if there are no remotes
+- <rdar://problem/30960546> New repository UI - global repository search by name
+
