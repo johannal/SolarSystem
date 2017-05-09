@@ -41,6 +41,12 @@ _WWDC 2017_
 - <rdar://problem/32051198> Need a user default to turn off huge tooltips for commit messages in history view
 - <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
 - <rdar://problem/32057225> After adding account through prefs, the clone window did not notice
+- <rdar://problem/32050968> Clone window/Navigator: Update Repository icon to look flatter and more stylized like an illustration
+- <rdar://problem/32050962> Clone Window: Remove the “V" button in the footer that toggles the detail view
+- <rdar://problem/32050964> Clone window: Add a “Done" button to the footer of the window next to "Clone" button
+- <rdar://problem/32050969> Clone window: The list of repos and the info panel should have the same margin
+- <rdar://problem/32050966> Clone window: Name (font size) of repository in detail view is too large
+- <rdar://problem/31940203> When working copy is sleected, don't get Commit slices in inspector when selected on a commit in the log viewer
 
 
 ### Setup
@@ -65,25 +71,25 @@ _WWDC 2017_
 - **Enter MikeFerrisDemo, wwdc2017**
 - I can choose the default method for cloning new repositories
 - And I can set an ssh key to use when needed
-- My account is all set up
+- Now, my account is all set up
 
 ### Clone...
-- Let's clone a repository
-- **Source Control -> Clone...**
+- So, let's clone a repository
+- **Welcome window: Clone...**
 - Xcode has an all new clone window that makes cloning from Github easy
 - When I bring it up I see all my repositories. My personal repositories, the ones from my organizations and any that I have starred
-- At the bottom of the window I see some details about the selected repository
+- At the bottom of the window I see some details about the selected repository... the project's description, its language, the number of forks and stars and a link to the README if you want even more info
 - _SKIP_
     - And for even more information I can view the repository's README
     - **Click README**
     - **Scroll a bit, then close it**
 - Using the search field I can search for other repos on github
 - **Type Swift Networking in search**
-- If I find something I like I can clone it, of course
+- If I find something I like I can clone it
 - _SKIP_
     - and I can star it right from here to make it easy to find again
     - **Star AlamoFire**
-- If I need to clone from another source, I can enter the URL for any repository in the search field
+- For things not on GitHub, I can enter the URL for a repository on any server in the search field
 - _SKIP_: I already have the project I want cloned, so I am just going to open it
     - But for now, I want to clone one of my own GitHub repositories
     - **Cancel search**
@@ -114,13 +120,13 @@ _WWDC 2017_
 - **Type ferris, select author filter**
 - Let's see just commits that I made
 - **Type Swift3 and hit enter**
-- And I want to find one that I know had to do with Swift3 API updates
-- _SKIP_ (remove unless I can figure out how to motivate this)
-- The inspector shows even more detail about a commit
-    - **Open inspector**
-    - Including the full commit message and the list of files involved in the commit
-    - **Show these, then close inspector**
-- Double-clicking a commit takes me to the new commit viewer, showing me all the source changes
+- I want to find one that I know had to do with Swift3 API updates
+- Once I find a commit, The inspector shows even more detail about a commit
+- **Open inspector**
+- I can see all the branches that this commit is on
+- And all the files that were changed by this commit
+- **Show these, then close inspector**
+- Finally, double-clicking a commit takes me to the new commit viewer, showing me all the source changes
 - **Double-click the first commit**
 - **Show a file or two**
 - Xcode 9 makes it easy to dig through history and really get down to the detailed changes
@@ -129,7 +135,8 @@ _WWDC 2017_
 - But now let's make some changes
 - I have another project here that needs a bit of cleanup
 - **Close the explore project**
-- **Open second demo project**
+- I'll open it now
+- **Welcome window: Open second demo project**
 - _SKIP_
     - Before I start making changes, let's make a branch to work on
     - **Go to SCM nav**
@@ -142,18 +149,18 @@ _WWDC 2017_
 - **Go to Project nav**
 - In my projects I like to keep group structure and file structure the same
 - This used to take some work, but Xcode 9 makes it easy
-- When you're working in a project where these structures are the same Xcode will automatically keep them the same.
+- When you're working in a project where these structures are the same Xcode will automatically keep them the same
 - **Select a couple files**
 - Making a new group makes a new folder
 - **Context Menu->New Group from Selection**
 - And, the files that I grouped are moved into that folder
 - **Rename group**
-- When I name the group, it updates the folder name as well
+- When I rename the group, it updates the folder name as well
 - And, when I move files between groups, it will move them between folders as well
 - **Move some files from one group to another**
 - And, best of all, as Xcode is doing all this it is also making sure that these changes are being registered with source control.
 - **Source Control->Commit...**
-- When I commit, I can see that Xcode has noticed all the changes I've been making in the file system.
+- When I commit, I can see that Xcode knows about all the changes I've been making in the file system as well as in the project
 - **Type a comment and commit**
 
 ### Working with Branches and Tags
