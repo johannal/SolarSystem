@@ -2,31 +2,18 @@
 _WWDC 2017_
 
 ### Random Radars
-- <rdar://problem/31757497> Should have a context menu and + button command for adding a remote
-- <rdar://problem/29911644> Branch actions in menu for the new history view and navigator
-- <rdar://problem/29911645> Tag actions for the new history view and navigator
-- <rdar://problem/29911639> Commit actions for the new history view and navigator
 - <rdar://problem/31757622> In the Clone window, default sort should take ownership into account
 - <rdar://problem/31757658> Define some conventions/best practices to recommend to people putting packages on github to aid in searching through the Clone workflow.
-- <rdar://problem/31761469> Account detail for GitHub accounts should have a "Clone..." button to go right to the clone workflow
 - <rdar://problem/31936812> When a blue folder resorts (reloads) we lose selection within it
 - <rdar://problem/31311947> After creating a new file in a Blue Folder, the the view refreshes and the name editing is cancelled
-- <rdar://problem/31937004> Creating a new branch does not cuase the new branch to show up immediately in the navigator
 - <rdar://problem/31937038> Should have alternate New Group commands for specifically creating a green/non-green group
 - <rdar://problem/32015457> Clone window is non-modal but the menu item to show it is disabled if it is visible but not ordered front
 - <rdar://problem/32015433> New Clone... window shows up in a werid screen position. It should come up centered
-- <rdar://problem/31937721> The GitHub account detail needs an HI pass
 - <rdar://problem/31761450> Account details for GitHub accounts should show list of organizations I belong to
 - <rdar://problem/30960652> Package dependency editor adoption of new repository UI
-- <rdar://problem/30960488> API to access repository README
-- <rdar://problem/30960578> New repository UI - favoriting repos
-- <rdar://problem/31938196> Initial navigaotr state... should some repos be disclosed?
 - <rdar://problem/31019822> GitHub on-ramping during project creation
 - <rdar://problem/32017088> I am getting 'Always allow' dialog when adding a github account when Xcode already has my SSH passphrase in its keychain (from an earlier account addition)
-- <rdar://problem/32017884> Typing a new search string in Clone window while a search is still active seems not to search again
 - <rdar://problem/32039182> Should we have an indication of current branch without having to twist open Branches?
-- <rdar://problem/32039204> Focus should be in search field when clone window comes up
-- <rdar://problem/32039210> When the window first comes up, the first repo in the list should be selected
 - <rdar://problem/32039214> Up and down arrow should move selection in the repo list up and down when focus is in the search field
 - <rdar://problem/32039240> Sorting by repo name should use 'sort like Finder' style sorting
 - <rdar://problem/32039243> Links in the repo window detail view should get the finger cursor
@@ -37,19 +24,18 @@ _WWDC 2017_
 - <rdar://problem/32049321> Commit sheet/commit viewer should show renamed files as renamed instead of deleted/added
 - <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
 - <rdar://problem/31939924> Commit viewer should scroll to first diff in the top file
-- <rdar://problem/32051106> The welcome window needs to say Clone… not Check Out…
-- <rdar://problem/32051198> Need a user default to turn off huge tooltips for commit messages in history view
 - <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
 - <rdar://problem/32057225> After adding account through prefs, the clone window did not notice
-- <rdar://problem/32050968> Clone window/Navigator: Update Repository icon to look flatter and more stylized like an illustration
+- <rdar://problem/28873684> SCM: Remote icon
 - <rdar://problem/32050962> Clone Window: Remove the “V" button in the footer that toggles the detail view
 - <rdar://problem/32050964> Clone window: Add a “Done" button to the footer of the window next to "Clone" button
-- <rdar://problem/32050969> Clone window: The list of repos and the info panel should have the same margin
-- <rdar://problem/32050966> Clone window: Name (font size) of repository in detail view is too large
-- <rdar://problem/31940203> When working copy is sleected, don't get Commit slices in inspector when selected on a commit in the log viewer
+- <rdar://problem/30310230> Opening history editor from a working copy node doesn't display commit details in the inspector
+- <rdar://problem/32111289> Presentation mode dwrite for bigger fonts in the history viewer
 
 
 ### Setup
+- Defaults
+	- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
 - Make sure no github account configured.
 - Have my passphrase already in Xcode's keychain
 - Will use a demo github account (MikeFerrisDemo)
@@ -188,4 +174,21 @@ _WWDC 2017_
 - <rdar://problem/31936990> SCM navigator should have Branches and Tags groups even if there aren't any
 - <rdar://problem/31757488> We should show the Remotes folder under a git repo even if there are no remotes
 - <rdar://problem/30960546> New repository UI - global repository search by name
+- <rdar://problem/29911644> Branch actions in menu for the new history view and navigator
+- <rdar://problem/29911645> Tag actions for the new history view and navigator
+- <rdar://problem/29911639> Commit actions for the new history view and navigator
+- <rdar://problem/30960488> API to access repository README
+- <rdar://problem/30960578> New repository UI - favoriting repos
+- <rdar://problem/31757497> Should have a context menu and + button command for adding a remote
+- <rdar://problem/31761469> Account detail for GitHub accounts should have a "Clone..." button to go right to the clone workflow
+- <rdar://problem/31937004> Creating a new branch does not cuase the new branch to show up immediately in the navigator
+- <rdar://problem/31937721> The GitHub account detail needs an HI pass
+- <rdar://problem/31938196> Initial navigaotr state... should some repos be disclosed?
+- <rdar://problem/32017884> Typing a new search string in Clone window while a search is still active seems not to search again
+- <rdar://problem/32039204> Focus should be in search field when clone window comes up
+- <rdar://problem/32039210> When the window first comes up, the first repo in the list should be selected
+- <rdar://problem/32050969> Clone window: The list of repos and the info panel should have the same margin
+- <rdar://problem/32050966> Clone window: Name (font size) of repository in detail view is too large
+- <rdar://problem/32051106> The welcome window needs to say Clone… not Check Out…
+- <rdar://problem/32051198> Need a user default to turn off huge tooltips for commit messages in history view
 
