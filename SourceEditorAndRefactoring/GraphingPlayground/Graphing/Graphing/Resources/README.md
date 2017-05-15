@@ -11,8 +11,8 @@ For detailed descriptions about the background behind the type of graphs you can
 
 **Note:** This library is released under the [Apache 2.0 license][license].
 
-  [line]: https://en.wikipedia.org/wiki/Line_chart  "Line Plot"
-  [scatter]: https://en.wikipedia.org/wiki/Scatter_plot  "Scatter Plot"
+  [line]: https://en.wikipedia.org/wiki/Line_chart "Line Plot"
+  [scatter]: https://en.wikipedia.org/wiki/Scatter_plot "Scatter Plot"
   [definitions]: https://en.wikipedia.org/wiki/Graph "Definitions"
   [license]: https://github.com/apple/swift/blob/master/LICENSE.txt "License"
   
