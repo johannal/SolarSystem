@@ -79,9 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				0731FA201EC9FC2200F46170 /* Mercury.swift */,
-				0731FA221EC9FC3A00F46170 /* Mars.swift */,
 				0731FA241EC9FC4A00F46170 /* Venus.swift */,
 				0731FA261EC9FC5800F46170 /* Earth.swift */,
+				0731FA221EC9FC3A00F46170 /* Mars.swift */,
 				0731FA281EC9FC6E00F46170 /* Jupiter.swift */,
 				0731FA2A1EC9FC7600F46170 /* Saturn.swift */,
 				0731FA2C1EC9FC7E00F46170 /* Uranus.swift */,
