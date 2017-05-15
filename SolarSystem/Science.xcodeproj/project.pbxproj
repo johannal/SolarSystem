@@ -17,6 +17,7 @@
 		0731FA2F1EC9FC8500F46170 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA2E1EC9FC8400F46170 /* Neptune.swift */; };
 		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
 		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
+		0731FA381ECA06C800F46170 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA371ECA06C800F46170 /* README.md */; };
 		9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */; };
 		9E0E6E571EC60EA40041C9EE /* GravitySimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */; };
 		9E5D36F71EC0E65C0025A405 /* OrbsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */; };
@@ -43,6 +44,7 @@
 		0731FA2E1EC9FC8400F46170 /* Neptune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune.swift; sourceTree = "<group>"; };
 		0731FA331EC9FD4400F46170 /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		0731FA351EC9FDF700F46170 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		0731FA371ECA06C800F46170 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbInfoViewController.swift; sourceTree = "<group>"; };
 		9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorViewController.swift; sourceTree = "<group>"; };
 		9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbsTableViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		9EC407FA1EBFEAEB00F7F8A1 /* Science */ = {
 			isa = PBXGroup;
 			children = (
+				0731FA371ECA06C800F46170 /* README.md */,
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
 				9EC407FD1EBFEAEB00F7F8A1 /* FirstViewController.swift */,
 				9EC407FF1EBFEAEB00F7F8A1 /* SecondViewController.swift */,
@@ -208,6 +211,7 @@
 				0731FA2B1EC9FC7600F46170 /* Saturn.swift in Sources */,
 				9EC408001EBFEAEB00F7F8A1 /* SecondViewController.swift in Sources */,
 				9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */,
+				0731FA381ECA06C800F46170 /* README.md in Sources */,
 				0731FA2D1EC9FC7E00F46170 /* Uranus.swift in Sources */,
 				0731FA2F1EC9FC8500F46170 /* Neptune.swift in Sources */,
 				0731FA271EC9FC5800F46170 /* Earth.swift in Sources */,
