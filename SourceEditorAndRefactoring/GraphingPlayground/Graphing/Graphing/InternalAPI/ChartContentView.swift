@@ -273,13 +273,7 @@ internal class ChartBackgroundView: UIView {
         let axisLabelPadding = CGFloat(style.axisLabelPadding)
         
         // determine the minY for the X axis labels
-        let xAxisLabelMinY: CGFloat
-        if let safeAreaLayoutGuide = chartView.safeAreaLayoutGuide {
-            xAxisLabelMinY = safeAreaLayoutGuide.layoutFrame.origin.y
-        }
-        else {
-            xAxisLabelMinY = bounds.minY
-        }
+        let xAxisLabelMinY = bounds.minY
         
         // clamp the X label Y position to the calculated layout min Y
         xLabelYPos = max(xLabelYPos, xAxisLabelMinY)

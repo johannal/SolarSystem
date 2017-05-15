@@ -13,12 +13,6 @@ private let BottomOfXAxisToXAxisTitleOffset = 22.0
 
 internal class ChartView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     
-    var safeAreaLayoutGuide: UILayoutGuide? {
-        didSet {
-            contentView.setNeedsDisplay()
-        }
-    }
-    
     /// The visible bounds of this graph.
     var axisBounds: Bounds = Bounds(minX: 0.0, maxX: 10.0, minY: 0.0, maxY: 10.0) {
         willSet(newValue) {
