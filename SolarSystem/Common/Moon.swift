@@ -8,6 +8,7 @@
 
 import UIKit
 
+// DEMO: implement "PhysicsBody" here -- get issue with fix-it
 public class Moon {
     
     public let name: String
