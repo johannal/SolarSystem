@@ -2,8 +2,7 @@
 //  Planet.swift
 //  Science
 //
-//  Created by Ken Orr on 5/15/17.
-//  Copyright © 2017 Debugger UI. All rights reserved.
+//  Copyright © 2017. All rights reserved.
 //
 
 import UIKit
