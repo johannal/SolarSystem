@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0731FA211EC9FC2200F46170 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA201EC9FC2200F46170 /* Mercury.swift */; };
+		0731FA231EC9FC3A00F46170 /* Mars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA221EC9FC3A00F46170 /* Mars.swift */; };
+		0731FA251EC9FC4A00F46170 /* Venus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA241EC9FC4A00F46170 /* Venus.swift */; };
+		0731FA271EC9FC5800F46170 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA261EC9FC5800F46170 /* Earth.swift */; };
+		0731FA291EC9FC6E00F46170 /* Jupiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA281EC9FC6E00F46170 /* Jupiter.swift */; };
+		0731FA2B1EC9FC7600F46170 /* Saturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA2A1EC9FC7600F46170 /* Saturn.swift */; };
+		0731FA2D1EC9FC7E00F46170 /* Uranus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA2C1EC9FC7E00F46170 /* Uranus.swift */; };
+		0731FA2F1EC9FC8500F46170 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA2E1EC9FC8400F46170 /* Neptune.swift */; };
+		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
+		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
 		9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */; };
 		9E0E6E571EC60EA40041C9EE /* GravitySimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */; };
 		9E5D36F71EC0E65C0025A405 /* OrbsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */; };
@@ -23,6 +33,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0731FA201EC9FC2200F46170 /* Mercury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury.swift; sourceTree = "<group>"; };
+		0731FA221EC9FC3A00F46170 /* Mars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars.swift; sourceTree = "<group>"; };
+		0731FA241EC9FC4A00F46170 /* Venus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venus.swift; sourceTree = "<group>"; };
+		0731FA261EC9FC5800F46170 /* Earth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
+		0731FA281EC9FC6E00F46170 /* Jupiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jupiter.swift; sourceTree = "<group>"; };
+		0731FA2A1EC9FC7600F46170 /* Saturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saturn.swift; sourceTree = "<group>"; };
+		0731FA2C1EC9FC7E00F46170 /* Uranus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uranus.swift; sourceTree = "<group>"; };
+		0731FA2E1EC9FC8400F46170 /* Neptune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neptune.swift; sourceTree = "<group>"; };
+		0731FA331EC9FD4400F46170 /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
+		0731FA351EC9FDF700F46170 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbInfoViewController.swift; sourceTree = "<group>"; };
 		9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorViewController.swift; sourceTree = "<group>"; };
 		9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbsTableViewController.swift; sourceTree = "<group>"; };
@@ -51,9 +71,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0731FA1D1EC9FB6200F46170 /* Planets */ = {
+			isa = PBXGroup;
+			children = (
+				0731FA201EC9FC2200F46170 /* Mercury.swift */,
+				0731FA221EC9FC3A00F46170 /* Mars.swift */,
+				0731FA241EC9FC4A00F46170 /* Venus.swift */,
+				0731FA261EC9FC5800F46170 /* Earth.swift */,
+				0731FA281EC9FC6E00F46170 /* Jupiter.swift */,
+				0731FA2A1EC9FC7600F46170 /* Saturn.swift */,
+				0731FA2C1EC9FC7E00F46170 /* Uranus.swift */,
+				0731FA2E1EC9FC8400F46170 /* Neptune.swift */,
+			);
+			path = Planets;
+			sourceTree = "<group>";
+		};
+		0731FA301EC9FCBF00F46170 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0731FA351EC9FDF700F46170 /* Planet.swift */,
+				0731FA331EC9FD4400F46170 /* Moon.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		9EC407EF1EBFEAEB00F7F8A1 = {
 			isa = PBXGroup;
 			children = (
+				0731FA301EC9FCBF00F46170 /* Common */,
+				0731FA1D1EC9FB6200F46170 /* Planets */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
 			);
@@ -159,16 +205,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0731FA2B1EC9FC7600F46170 /* Saturn.swift in Sources */,
 				9EC408001EBFEAEB00F7F8A1 /* SecondViewController.swift in Sources */,
 				9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */,
+				0731FA2D1EC9FC7E00F46170 /* Uranus.swift in Sources */,
+				0731FA2F1EC9FC8500F46170 /* Neptune.swift in Sources */,
+				0731FA271EC9FC5800F46170 /* Earth.swift in Sources */,
 				9E5D36F71EC0E65C0025A405 /* OrbsTableViewController.swift in Sources */,
+				0731FA251EC9FC4A00F46170 /* Venus.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
+				0731FA231EC9FC3A00F46170 /* Mars.swift in Sources */,
+				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
 				9E0E6E571EC60EA40041C9EE /* GravitySimulatorViewController.swift in Sources */,
 				9E5D36F91EC0E7B60025A405 /* OrbTableViewCell.swift in Sources */,
+				0731FA211EC9FC2200F46170 /* Mercury.swift in Sources */,
+				0731FA291EC9FC6E00F46170 /* Jupiter.swift in Sources */,
 				9E67E1221EC1071C00A9D338 /* ScienceTopicsTableViewController.swift in Sources */,
 				9EC407FE1EBFEAEB00F7F8A1 /* FirstViewController.swift in Sources */,
 				9E67E1241EC107E000A9D338 /* ScienceTopicTableViewCell.swift in Sources */,
 				9E5D36FB1EC0EE740025A405 /* OrbDetailsViewController.swift in Sources */,
+				0731FA361EC9FDF700F46170 /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
