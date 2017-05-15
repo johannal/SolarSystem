@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SpriteKit
 
 class GravitySimulatorViewController: UIViewController {
+    
+    @IBOutlet weak var skView: SKView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
