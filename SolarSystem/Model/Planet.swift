@@ -13,15 +13,15 @@ public class Planet {
     
     let color: UIColor
     
-    let moons: [Moon]
+    private(set) var moons: [Moon] = []
     
-    public init(name: String, color: UIColor, moons: [Moon] = []) {
+    public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
-        self.moons = moons
-        
-        for moon in moons {
-            moon.parentPlanet = self
-        }
+    }
+    
+    public func addMoon(_ moon: Moon) {
+        moon.parentPlanet = self
+        moons.append(moon)
     }
 }

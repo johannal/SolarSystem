@@ -17,10 +17,11 @@ public class Moon: Equatable {
     public let color: UIColor
     
     /// The planet that this moon orbits.
-    public internal(set) var parentPlanet: Planet!
+    public internal(set) weak var parentPlanet: Planet?
     
     /// An array of sibling moons, if any.
     public var siblings: [Moon] {
+        guard let parentPlanet = parentPlanet else { return [] }
         return parentPlanet.moons.filter({ (moon) -> Bool in
             return moon != self
         })
