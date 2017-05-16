@@ -28,8 +28,8 @@ public class SolarSystem {
         let earthsMoon = Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
         earth.addMoon(earthsMoon)
         
-        // DEMO TODO: maybe add an item to the array via the structure edit menu?
-        planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune]
+        // DEMO TODO: maybe add neptune to the array via the structure edit menu?
+        planets = [mercury, venus, earth, mars, jupiter, saturn, uranus]
     }
     
 }
