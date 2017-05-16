@@ -17,7 +17,7 @@ public class Moon: Equatable {
     public let color: UIColor
     
     /// The planet that this moon orbits.
-    public let parentPlanet: Planet
+    public internal(set) var parentPlanet: Planet!
     
     /// An array of sibling moons, if any.
     public var siblings: [Moon] {
@@ -26,10 +26,9 @@ public class Moon: Equatable {
         })
     }
     
-    public init(name: String, color: UIColor, parentPlanet: Planet) {
+    public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
-        self.parentPlanet = parentPlanet
     }
     
     // DEMO TODO: add an extract-expression here.
