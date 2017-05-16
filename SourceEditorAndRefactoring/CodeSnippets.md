@@ -1,8 +1,8 @@
-### demo2 - Demo 2
+### demo1 - Demo 1
 [self _updateBackground]
 
 ### demo2 - Demo 2
-NSDirectionalEdgeInsets margins = self.directionalLayoutMargins;
+[self _adjustToLayoutMargins:self.directionalLayoutMargins];
 
 ### demo3 - Demo 3
         switch chartBorderStyle {
