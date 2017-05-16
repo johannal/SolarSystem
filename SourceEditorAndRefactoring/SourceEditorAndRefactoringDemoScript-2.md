@@ -22,19 +22,13 @@ I can see the all of the headings and get an outline of my document. I can also 
 
 Of course, you'll probably be spending most of your time in source code, so lets jump over to a source file.
 
-    [navigate to BackgroundView.m]
+    [navigate to BackgroundSkyBoxView.m]
 
-Issues have a brand new look, along with some improvements to the way you interact with them.
+In addition to a new look for Issues, Xcode 9 also adds some new issues and fix-its.
 
     [type "demo1"]
     
-I've got an issue here, I forgot to add the semi-colon. The issue icon shows up on the right, and when I click it, I get a popover with more details, and in this case a fix-in. If you've got multiple fix-its, they'll all show up right here, which makes applying multiple fixes really easy.
-
-There's some new issues and fix-it's in Xcode 9. We've brought the too-new-API issue back to Objective-C. If you're using API that isn't available on all the deployment targets you support, Xcode will warn you.
-
-Here I'm going to use some API that's new in iOS 11, but my app deploys back to iOS 10. This would crash, so it's important that I use it conditionally.
-
-    [type "demo2"]
+We've brought the too-new-API issue back to Objective-C. Here, I'm using new iOS 11 API, but my project deploys back to iOS 10. If I ran this on an iOS 10 device, it would crash. Catching this kind of problem in Objective-C at compile time is a huge win.
     
 Theres also a new fix-it for missing case statements, which works in both Swift and Objective-C. I'll add a switch statement here, and then I immediately get a fix it offering to add the missing case statements. Save me a little typing.
 
