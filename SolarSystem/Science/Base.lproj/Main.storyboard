@@ -20,7 +20,7 @@
         <!--View Controller-->
         <scene sceneID="aAd-3L-M0O">
             <objects>
-                <viewController id="L9X-cr-sfW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VRViewController" id="L9X-cr-sfW" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JEz-9R-Zlg"/>
                         <viewControllerLayoutGuide type="bottom" id="R8u-8d-5dB"/>
