@@ -13,7 +13,7 @@
 
 - (void)drawRect:(CGRect)rect {
     
-    [self _adjustToLayoutMargins:self.directionalLayoutMargins];
+    
     
     // grab the current context and save off the current state.
     CGContextRef context = UIGraphicsGetCurrentContext();
