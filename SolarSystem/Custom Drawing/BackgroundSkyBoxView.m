@@ -19,12 +19,11 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     
-    if (self.style == BackgroundViewStyle_None) {
-        [self _setupContextForNone:context];
+    // update the graphics context based on our style.
+    if (self.style == BackgroundViewStyle_Gradient) {
+        [self _setupContextForGradient:context];
     } else if (self.style == BackgroundViewStyle_Solid) {
         [self _setupContextForSolid:context];
-    } else if (self.style == BackgroundViewStyle_Gradient) {
-        [self _setupContextForGradient:context];
     }
     
     // calculate our starting and ending points.
