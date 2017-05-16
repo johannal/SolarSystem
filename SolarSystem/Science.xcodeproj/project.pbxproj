@@ -18,6 +18,7 @@
 		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
 		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
 		07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */; };
+		078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078143281ECB3D32009C18DF /* SolarSystem.swift */; };
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		9E07E0BC1ECA6B620027483F /* GravitySimulator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E07E0BB1ECA6B620027483F /* GravitySimulator.sks */; };
 		9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */; };
@@ -50,6 +51,7 @@
 		07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSkyBoxView.h; sourceTree = "<group>"; };
 		07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundSkyBoxView.m; sourceTree = "<group>"; };
 		07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Science-Bridging-Header.h"; sourceTree = "<group>"; };
+		078143281ECB3D32009C18DF /* SolarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		9E07E0BB1ECA6B620027483F /* GravitySimulator.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GravitySimulator.sks; sourceTree = "<group>"; };
 		9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbInfoViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				0731FA351EC9FDF700F46170 /* Planet.swift */,
 				0731FA331EC9FD4400F46170 /* Moon.swift */,
 				0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */,
+				078143281ECB3D32009C18DF /* SolarSystem.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				9EC407FE1EBFEAEB00F7F8A1 /* FirstViewController.swift in Sources */,
 				9E67E1241EC107E000A9D338 /* ScienceTopicTableViewCell.swift in Sources */,
 				9E5D36FB1EC0EE740025A405 /* OrbDetailsViewController.swift in Sources */,
+				078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */,
 				0731FA361EC9FDF700F46170 /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
