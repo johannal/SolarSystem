@@ -36,6 +36,11 @@ public class Moon: Equatable {
     
     // DEMO TODO: add an extract-method here.
     
+    func orbit(around center: CGPoint, scale: Double) -> UIBezierPath {
+        //todo: fill this in, should have some nice expression extractions and/or method extractions
+        fatalError()
+    }
+    
     // MARK: - Equatable
     
     public static func ==(lhs: Moon, rhs: Moon) -> Bool {
