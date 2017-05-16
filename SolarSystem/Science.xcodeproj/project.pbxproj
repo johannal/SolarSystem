@@ -18,6 +18,7 @@
 		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
 		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
 		0731FA381ECA06C800F46170 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA371ECA06C800F46170 /* README.md */; };
+		07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */; };
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */; };
 		9E0E6E571EC60EA40041C9EE /* GravitySimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */; };
@@ -46,6 +47,9 @@
 		0731FA331EC9FD4400F46170 /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		0731FA351EC9FDF700F46170 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0731FA371ECA06C800F46170 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSkyBoxView.h; sourceTree = "<group>"; };
+		07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundSkyBoxView.m; sourceTree = "<group>"; };
+		07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Science-Bridging-Header.h"; sourceTree = "<group>"; };
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbInfoViewController.swift; sourceTree = "<group>"; };
 		9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorViewController.swift; sourceTree = "<group>"; };
@@ -100,11 +104,21 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		07506D651ECA7A6300EB7C11 /* Custom Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */,
+				07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */,
+			);
+			path = "Custom Drawing";
+			sourceTree = "<group>";
+		};
 		9EC407EF1EBFEAEB00F7F8A1 = {
 			isa = PBXGroup;
 			children = (
 				0731FA301EC9FCBF00F46170 /* Common */,
 				0731FA1D1EC9FB6200F46170 /* Planets */,
+				07506D651ECA7A6300EB7C11 /* Custom Drawing */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
 			);
@@ -132,6 +146,7 @@
 				9E5D36FA1EC0EE740025A405 /* OrbDetailsViewController.swift */,
 				9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */,
 				9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */,
+				07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
 				9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */,
@@ -172,6 +187,7 @@
 				TargetAttributes = {
 					9EC407F71EBFEAEB00F7F8A1 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -228,6 +244,7 @@
 				9E5D36F91EC0E7B60025A405 /* OrbTableViewCell.swift in Sources */,
 				0731FA211EC9FC2200F46170 /* Mercury.swift in Sources */,
 				0731FA291EC9FC6E00F46170 /* Jupiter.swift in Sources */,
+				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
 				9E67E1221EC1071C00A9D338 /* ScienceTopicsTableViewController.swift in Sources */,
 				9EC407FE1EBFEAEB00F7F8A1 /* FirstViewController.swift in Sources */,
 				9E67E1241EC107E000A9D338 /* ScienceTopicTableViewCell.swift in Sources */,
@@ -359,11 +376,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
 				INFOPLIST_FILE = Science/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.toolsQA.Science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Science/Science-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,11 +393,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
 				INFOPLIST_FILE = Science/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.toolsQA.Science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Science/Science-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
