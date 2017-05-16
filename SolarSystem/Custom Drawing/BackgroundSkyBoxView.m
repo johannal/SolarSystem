@@ -19,7 +19,13 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     
-    
+    if (self.style == BackgroundViewStyle_None) {
+        [self _setupContextForNone:context];
+    } else if (self.style == BackgroundViewStyle_Solid) {
+        [self _setupContextForSolid:context];
+    } else if (self.style == BackgroundViewStyle_Gradient) {
+        [self _setupContextForGradient:context];
+    }
     
     // calculate our starting and ending points.
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
@@ -46,6 +52,18 @@
 }
 
 - (void)_updateBackground {
+    
+}
+
+- (void)_setupContextForNone:(CGContextRef)context {
+    
+}
+
+- (void)_setupContextForSolid:(CGContextRef)context {
+    
+}
+
+- (void)_setupContextForGradient:(CGContextRef)context {
     
 }
 
