@@ -9,11 +9,15 @@ import Foundation
 
 public class SolarSystem {
     
+    let sun = Sun()
+    
     let planets: [Planet]
     
     public init() {
         
-        planets = []
+        // DEMO TODO: maybe add an item to the array via the structure edit menu?
+        
+        planets = [Mercury(), Venus(), Earth(), Mars(), Jupiter(), Saturn(), Uranus(), Neptune()]
         
     }
     
