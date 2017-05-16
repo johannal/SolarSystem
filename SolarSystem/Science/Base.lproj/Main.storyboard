@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13112"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Solar System Controller-->
         <scene sceneID="S9v-f1-e0p">
             <objects>
-                <viewController id="EGG-lG-5Ct" customClass="SolarSystemController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cEc-3t-BBr"/>
                         <viewControllerLayoutGuide type="bottom" id="2ia-0A-E25"/>
@@ -26,6 +27,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6E-Mf-URo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="1223"/>
+        </scene>
+        <!--Planet Details View Controller-->
+        <scene sceneID="ZLn-kE-Cwx">
+            <objects>
+                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y2j-16-jjZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bEf-me-mQj"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="xxU-xn-gVg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKV-NZ-amv">
+                                <rect key="frame" x="0.0" y="327" width="375" height="281"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EARTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDK-tq-PXW">
+                                        <rect key="frame" x="120.5" y="0.0" width="134" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-3h-1cr" userLabel="Top Separater View">
+                                        <rect key="frame" x="19" y="63" width="337.5" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="XY5-Jz-5tU"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7w-yI-C1K">
+                                        <rect key="frame" x="36" y="84" width="304" height="100.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Earth otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial planets.</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-st-i57" userLabel="Bottom Separator View">
+                                        <rect key="frame" x="19" y="204.5" width="337.5" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Rir-zO-6EM"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
+                                        <rect key="frame" x="36" y="220.5" width="303.5" height="60.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Radius: 3,959 mi
+Age: 4.543 billion years
+Population: 7.347 billion</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" metaFont="system" size="14"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="cDV-qF-GPV" firstAttribute="top" secondItem="fgu-st-i57" secondAttribute="bottom" constant="15" id="3js-8r-5IQ"/>
+                                    <constraint firstItem="wDK-tq-PXW" firstAttribute="centerX" secondItem="BKV-NZ-amv" secondAttribute="centerX" id="5gU-4S-Gqs"/>
+                                    <constraint firstItem="fgu-st-i57" firstAttribute="centerX" secondItem="btQ-3h-1cr" secondAttribute="centerX" id="8Aw-iz-Kne"/>
+                                    <constraint firstItem="fgu-st-i57" firstAttribute="top" secondItem="H7w-yI-C1K" secondAttribute="bottom" constant="20" id="Bos-Fp-ukY"/>
+                                    <constraint firstItem="wDK-tq-PXW" firstAttribute="top" secondItem="BKV-NZ-amv" secondAttribute="top" id="Jbd-8h-01T"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDV-qF-GPV" secondAttribute="bottom" id="JyV-FI-wbG"/>
+                                    <constraint firstItem="fgu-st-i57" firstAttribute="width" secondItem="btQ-3h-1cr" secondAttribute="width" id="Kww-ka-zDX"/>
+                                    <constraint firstItem="btQ-3h-1cr" firstAttribute="top" secondItem="wDK-tq-PXW" secondAttribute="bottom" constant="8" id="NVe-Rz-Bni"/>
+                                    <constraint firstItem="btQ-3h-1cr" firstAttribute="centerX" secondItem="BKV-NZ-amv" secondAttribute="centerX" id="YgA-Md-TP8"/>
+                                    <constraint firstItem="H7w-yI-C1K" firstAttribute="top" secondItem="btQ-3h-1cr" secondAttribute="bottom" constant="20" id="b71-9J-1aK"/>
+                                    <constraint firstItem="btQ-3h-1cr" firstAttribute="width" secondItem="BKV-NZ-amv" secondAttribute="width" multiplier="0.9" id="bQd-Ai-Fuw"/>
+                                    <constraint firstItem="H7w-yI-C1K" firstAttribute="centerX" secondItem="btQ-3h-1cr" secondAttribute="centerX" id="bQi-9A-T6Q"/>
+                                    <constraint firstItem="H7w-yI-C1K" firstAttribute="width" secondItem="btQ-3h-1cr" secondAttribute="width" multiplier="0.9" id="seS-FA-u4n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="2bm-fi-XAO"/>
+                            <constraint firstAttribute="trailing" secondItem="BKV-NZ-amv" secondAttribute="trailing" id="jim-dn-W2l"/>
+                            <constraint firstItem="BKV-NZ-amv" firstAttribute="centerY" secondItem="xxU-xn-gVg" secondAttribute="centerY" multiplier="1.4" id="oQi-l3-95P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="additionalDetailsLabel" destination="cDV-qF-GPV" id="Wjx-xq-ZQ0"/>
+                        <outlet property="descriptionLabel" destination="H7w-yI-C1K" id="caT-M8-f0O"/>
+                        <outlet property="titleLabel" destination="wDK-tq-PXW" id="mBq-45-HI2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRk-HG-cfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="1879.610194902549"/>
         </scene>
     </scenes>
 </document>

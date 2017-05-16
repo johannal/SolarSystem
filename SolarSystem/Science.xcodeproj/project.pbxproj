@@ -14,6 +14,7 @@
 		0781432B1ECB3FAB009C18DF /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781432A1ECB3FAB009C18DF /* Star.swift */; };
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		9E2017351ECB7E95002373D7 /* SolarSystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017341ECB7E95002373D7 /* SolarSystemController.swift */; };
+		9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */; };
 		9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */; };
 		9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
 		9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		0781432A1ECB3FAB009C18DF /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		9E2017341ECB7E95002373D7 /* SolarSystemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemController.swift; sourceTree = "<group>"; };
+		9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		9EC407F81EBFEAEB00F7F8A1 /* Science.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EC408021EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				0731FA371ECA06C800F46170 /* README.md */,
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
 				9E2017341ECB7E95002373D7 /* SolarSystemController.swift */,
+				9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */,
 				07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
@@ -180,6 +183,7 @@
 				0781432B1ECB3FAB009C18DF /* Star.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
 				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
+				9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */,
 				0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
 				078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */,
