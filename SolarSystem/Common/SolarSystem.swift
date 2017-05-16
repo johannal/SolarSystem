@@ -9,7 +9,7 @@ import Foundation
 
 public class SolarSystem {
     
-    let sun = Sun()
+    let sun = Star()
     
     let planets: [Planet]
     
