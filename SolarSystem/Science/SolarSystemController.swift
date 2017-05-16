@@ -1,31 +1,18 @@
 //
-//  OrbInfoViewController.swift
+//  SolarSystemController.swift
 //  Science
 //
-//  Created by Sebastian Fischer on 12.05.17.
-//  Copyright © 2017 Debugger UI. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 import UIKit
 
-class OrbInfoViewController: UIViewController {
+class SolarSystemController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
     }
 
     override func didReceiveMemoryWarning() {

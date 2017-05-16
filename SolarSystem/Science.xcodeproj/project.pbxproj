@@ -13,17 +13,8 @@
 		078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078143281ECB3D32009C18DF /* SolarSystem.swift */; };
 		0781432B1ECB3FAB009C18DF /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781432A1ECB3FAB009C18DF /* Star.swift */; };
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
-		9E07E0BC1ECA6B620027483F /* GravitySimulator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E07E0BB1ECA6B620027483F /* GravitySimulator.sks */; };
-		9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */; };
-		9E0E6E571EC60EA40041C9EE /* GravitySimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */; };
-		9E5D36F71EC0E65C0025A405 /* OrbsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */; };
-		9E5D36F91EC0E7B60025A405 /* OrbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D36F81EC0E7B60025A405 /* OrbTableViewCell.swift */; };
-		9E5D36FB1EC0EE740025A405 /* OrbDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5D36FA1EC0EE740025A405 /* OrbDetailsViewController.swift */; };
-		9E67E1221EC1071C00A9D338 /* ScienceTopicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E67E1211EC1071C00A9D338 /* ScienceTopicsTableViewController.swift */; };
-		9E67E1241EC107E000A9D338 /* ScienceTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E67E1231EC107E000A9D338 /* ScienceTopicTableViewCell.swift */; };
+		9E2017351ECB7E95002373D7 /* SolarSystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017341ECB7E95002373D7 /* SolarSystemController.swift */; };
 		9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */; };
-		9EC407FE1EBFEAEB00F7F8A1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FD1EBFEAEB00F7F8A1 /* FirstViewController.swift */; };
-		9EC408001EBFEAEB00F7F8A1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FF1EBFEAEB00F7F8A1 /* SecondViewController.swift */; };
 		9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
 		9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
@@ -39,18 +30,9 @@
 		078143281ECB3D32009C18DF /* SolarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
 		0781432A1ECB3FAB009C18DF /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
-		9E07E0BB1ECA6B620027483F /* GravitySimulator.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GravitySimulator.sks; sourceTree = "<group>"; };
-		9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbInfoViewController.swift; sourceTree = "<group>"; };
-		9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorViewController.swift; sourceTree = "<group>"; };
-		9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbsTableViewController.swift; sourceTree = "<group>"; };
-		9E5D36F81EC0E7B60025A405 /* OrbTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbTableViewCell.swift; sourceTree = "<group>"; };
-		9E5D36FA1EC0EE740025A405 /* OrbDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbDetailsViewController.swift; sourceTree = "<group>"; };
-		9E67E1211EC1071C00A9D338 /* ScienceTopicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceTopicsTableViewController.swift; sourceTree = "<group>"; };
-		9E67E1231EC107E000A9D338 /* ScienceTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceTopicTableViewCell.swift; sourceTree = "<group>"; };
+		9E2017341ECB7E95002373D7 /* SolarSystemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemController.swift; sourceTree = "<group>"; };
 		9EC407F81EBFEAEB00F7F8A1 /* Science.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EC407FD1EBFEAEB00F7F8A1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9EC407FF1EBFEAEB00F7F8A1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9EC408021EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC408071EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,16 +94,7 @@
 			children = (
 				0731FA371ECA06C800F46170 /* README.md */,
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
-				9EC407FD1EBFEAEB00F7F8A1 /* FirstViewController.swift */,
-				9EC407FF1EBFEAEB00F7F8A1 /* SecondViewController.swift */,
-				9E67E1211EC1071C00A9D338 /* ScienceTopicsTableViewController.swift */,
-				9E67E1231EC107E000A9D338 /* ScienceTopicTableViewCell.swift */,
-				9E5D36F61EC0E65C0025A405 /* OrbsTableViewController.swift */,
-				9E5D36F81EC0E7B60025A405 /* OrbTableViewCell.swift */,
-				9E5D36FA1EC0EE740025A405 /* OrbDetailsViewController.swift */,
-				9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */,
-				9E0E6E561EC60EA40041C9EE /* GravitySimulatorViewController.swift */,
-				9E07E0BB1ECA6B620027483F /* GravitySimulator.sks */,
+				9E2017341ECB7E95002373D7 /* SolarSystemController.swift */,
 				07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
@@ -191,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */,
-				9E07E0BC1ECA6B620027483F /* GravitySimulator.sks in Resources */,
 				9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */,
 				9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */,
 			);
@@ -204,20 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EC408001EBFEAEB00F7F8A1 /* SecondViewController.swift in Sources */,
+				9E2017351ECB7E95002373D7 /* SolarSystemController.swift in Sources */,
 				0781432B1ECB3FAB009C18DF /* Star.swift in Sources */,
-				9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */,
-				9E5D36F71EC0E65C0025A405 /* OrbsTableViewController.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
 				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
-				9E0E6E571EC60EA40041C9EE /* GravitySimulatorViewController.swift in Sources */,
 				0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */,
-				9E5D36F91EC0E7B60025A405 /* OrbTableViewCell.swift in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
-				9E67E1221EC1071C00A9D338 /* ScienceTopicsTableViewController.swift in Sources */,
-				9EC407FE1EBFEAEB00F7F8A1 /* FirstViewController.swift in Sources */,
-				9E67E1241EC107E000A9D338 /* ScienceTopicTableViewCell.swift in Sources */,
-				9E5D36FB1EC0EE740025A405 /* OrbDetailsViewController.swift in Sources */,
 				078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */,
 				0731FA361EC9FDF700F46170 /* Planet.swift in Sources */,
 			);

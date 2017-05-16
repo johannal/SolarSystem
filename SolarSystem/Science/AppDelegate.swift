@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  Science
 //
-//  Created by Sebastian on 07.05.17.
-//  Copyright © 2017 Debugger UI. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 import UIKit
