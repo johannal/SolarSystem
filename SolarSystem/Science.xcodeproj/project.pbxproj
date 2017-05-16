@@ -19,6 +19,8 @@
 		9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
 		9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
+		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
+		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC408071EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EC408091EBFEAEB00F7F8A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
+		D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDays.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,12 @@
 		0731FA301EC9FCBF00F46170 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D2B2E8E61ECB9BCC00ED0982 /* Protocols */,
 				0731FA351EC9FDF700F46170 /* Planet.swift */,
 				0731FA331EC9FD4400F46170 /* Moon.swift */,
-				0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */,
 				078143281ECB3D32009C18DF /* SolarSystem.swift */,
 				0781432A1ECB3FAB009C18DF /* Star.swift */,
+				D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +112,15 @@
 			path = Science;
 			sourceTree = "<group>";
 		};
+		D2B2E8E61ECB9BCC00ED0982 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */,
+				D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,7 +149,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "Debugger UI";
+				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					9EC407F71EBFEAEB00F7F8A1 = {
 						CreatedOnToolsVersion = 9.0;
@@ -180,9 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E2017351ECB7E95002373D7 /* SolarSystemController.swift in Sources */,
+				D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */,
 				0781432B1ECB3FAB009C18DF /* Star.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
 				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
+				D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */,
 				9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */,
 				0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
