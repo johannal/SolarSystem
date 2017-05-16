@@ -17,7 +17,6 @@
 		0731FA2F1EC9FC8500F46170 /* Neptune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA2E1EC9FC8400F46170 /* Neptune.swift */; };
 		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
 		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
-		0731FA381ECA06C800F46170 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA371ECA06C800F46170 /* README.md */; };
 		07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */; };
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0E6E541EC60E900041C9EE /* OrbInfoViewController.swift */; };
@@ -230,7 +229,6 @@
 				0731FA2B1EC9FC7600F46170 /* Saturn.swift in Sources */,
 				9EC408001EBFEAEB00F7F8A1 /* SecondViewController.swift in Sources */,
 				9E0E6E551EC60E900041C9EE /* OrbInfoViewController.swift in Sources */,
-				0731FA381ECA06C800F46170 /* README.md in Sources */,
 				0731FA2D1EC9FC7E00F46170 /* Uranus.swift in Sources */,
 				0731FA2F1EC9FC8500F46170 /* Neptune.swift in Sources */,
 				0731FA271EC9FC5800F46170 /* Earth.swift in Sources */,
