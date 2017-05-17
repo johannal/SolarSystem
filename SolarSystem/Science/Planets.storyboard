@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13132" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p3T-mV-s7Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13132" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vR6-KZ-eQr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,40 +22,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Dfc-aL-bT8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVt-Bb-kHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="vv9-AY-cDU" userLabel="RenderedPartner" customClass="TransNeptunianObject" customModule="Science" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="-154" y="-38"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="E7t-8a-VjI">
-            <objects>
-                <tableViewController id="Ns2-c8-hd7" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="STh-q9-AxF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fc5-jT-m6R">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fc5-jT-m6R" id="C1l-fF-S3u">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ns2-c8-hd7" id="MxF-GG-5Ji"/>
-                            <outlet property="delegate" destination="Ns2-c8-hd7" id="s1L-ni-8z5"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="EQC-lG-ROo"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UY2-QF-b3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="-775"/>
+            <point key="canvasLocation" x="367" y="-776"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7fE-Ip-KFQ">
@@ -66,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Ns2-c8-hd7" kind="relationship" relationship="rootViewController" id="JIR-ui-W0t"/>
+                        <segue destination="p3T-mV-s7Z" kind="relationship" relationship="rootViewController" id="x35-gj-flj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uE7-VZ-n9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
