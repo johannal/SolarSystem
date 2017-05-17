@@ -7,7 +7,7 @@
 
 import Foundation
 
-/*!
+/**
  The time between successive meridian transits of the sun at a particular place.
  */
 struct SolarDays {
