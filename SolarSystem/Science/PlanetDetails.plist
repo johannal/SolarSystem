@@ -9,7 +9,9 @@
 		<key>diffuseTexture</key>
 		<string>2k_neptune</string>
 		<key>orbitalRadius</key>
-		<integer>4498000000</integer>
+		<real>4498000000</real>
+		<key>orbitalPeriod</key>
+		<integer>60149</integer>
 		<key>name</key>
 		<string>Neptune</string>
 	</dict>
@@ -24,7 +26,9 @@
 		<key>specularTexture</key>
 		<string>2k_earth_specular_map</string>
 		<key>orbitalRadius</key>
-		<integer>149598023</integer>
+		<real>149598023</real>
+		<key>orbitalPeriod</key>
+		<integer>365</integer>
 		<key>name</key>
 		<string>Earth</string>
 	</dict>
@@ -36,6 +40,8 @@
 		<string>2k_mercury</string>
 		<key>orbitalRadius</key>
 		<integer>57909050</integer>
+		<key>orbitalPeriod</key>
+		<integer>88</integer>
 		<key>name</key>
 		<string>Mercury</string>
 	</dict>
@@ -47,6 +53,8 @@
 		<string>2k_venus_surface</string>
 		<key>orbitalRadius</key>
 		<integer>108208000</integer>
+		<key>orbitalPeriod</key>
+		<integer>224</integer>
 		<key>name</key>
 		<string>Venus</string>
 	</dict>
@@ -58,8 +66,49 @@
 		<string>2k_mars</string>
 		<key>orbitalRadius</key>
 		<integer>228000000</integer>
+		<key>orbitalPeriod</key>
+		<integer>687</integer>
 		<key>name</key>
 		<string>Mars</string>
+	</dict>
+	<key>jupiter</key>
+	<dict>
+		<key>diameter</key>
+		<integer>142984</integer>
+		<key>diffuseTexture</key>
+		<string>2k_jupiter</string>
+		<key>orbitalRadius</key>
+		<real>778000000</real>
+		<key>orbitalPeriod</key>
+		<integer>4330</integer>
+		<key>name</key>
+		<string>Jupiter</string>
+	</dict>
+	<key>saturn</key>
+	<dict>
+		<key>diameter</key>
+		<integer>120536</integer>
+		<key>diffuseTexture</key>
+		<string>2k_saturn</string>
+		<key>orbitalRadius</key>
+		<real>1433000000</real>
+		<key>orbitalPeriod</key>
+		<integer>10752</integer>
+		<key>name</key>
+		<string>Saturn</string>
+	</dict>
+	<key>uranus</key>
+	<dict>
+		<key>diameter</key>
+		<integer>51118</integer>
+		<key>diffuseTexture</key>
+		<string>2k_uranus</string>
+		<key>orbitalRadius</key>
+		<real>2872000000</real>
+		<key>orbitalPeriod</key>
+		<integer>30665</integer>
+		<key>name</key>
+		<string>Uranus</string>
 	</dict>
 </dict>
 </plist>
