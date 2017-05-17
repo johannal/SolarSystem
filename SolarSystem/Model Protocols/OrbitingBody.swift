@@ -1,5 +1,5 @@
 //
-//  PlanetaryBody.swift
+//  OrbitingBody.swift
 //  Science
 //
 //  Copyright © 2017 Apple. All rights reserved.
