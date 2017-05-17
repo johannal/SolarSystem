@@ -7,6 +7,7 @@
 
 import Foundation
 
+@objc
 public protocol PhysicsBody {
     
     // TODO come up with things that are functions here rather than properties -- it looks better in the demo.
@@ -15,6 +16,6 @@ public protocol PhysicsBody {
     
     var density: Double { get }
     
-    var angularVelocity: Measurement<UnitSpeed> { get }
+    var angularVelocity: Double { get }
     
 }

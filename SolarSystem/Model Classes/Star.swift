@@ -7,16 +7,25 @@
 
 import UIKit
 
-public class Star {
+public class Star: PhysicsBody {
     
-    let name: String
+    public let mass: Measurement<UnitMass>
     
-    let color: UIColor
+    public let density: Double
     
-    private(set) var planets: [Planet] = []
+    public let angularVelocity: Double
+    
+    public let name: String
+    
+    public let color: UIColor
+    
+    public private(set) var planets: [Planet] = []
     
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
+        self.mass = Measurement(value: 1.99e27, unit: .metricTons)
+        self.density = 1.408
+        self.angularVelocity = 1.1e42
     }
 }

@@ -24,6 +24,8 @@
 		9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
+		EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */; };
+		EECE23D11ECCC60100D0CC7A /* Planets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* Planets.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		9EC408091EBFEAEB00F7F8A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
 		D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDays.swift; sourceTree = "<group>"; };
+		EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransNeptunianObject.swift; sourceTree = "<group>"; };
+		EECE23D01ECCC60100D0CC7A /* Planets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Planets.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 				078143281ECB3D32009C18DF /* SolarSystem.swift */,
 				0781432A1ECB3FAB009C18DF /* Star.swift */,
 				D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */,
+				EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */,
 			);
 			path = "Model Classes";
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */,
 				07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
+				EECE23D01ECCC60100D0CC7A /* Planets.storyboard */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
 				9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */,
 				9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */,
@@ -201,6 +207,7 @@
 				9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */,
+				EECE23D11ECCC60100D0CC7A /* Planets.storyboard in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +228,7 @@
 				9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */,
 				0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
+				EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */,
 				9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */,
 				078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */,
 				0731FA361EC9FDF700F46170 /* Planet.swift in Sources */,

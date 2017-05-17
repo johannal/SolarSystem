@@ -8,9 +8,11 @@
 import UIKit
 
 // DEMO: implement "PhysicsBody" here -- get issue with fix-it
-public class Moon: Equatable {
+@objc
+public class Moon: NSObject {
     
     /// The name of this moon.
+    @objc
     public let name: String
     
     /// The primary color of this moon.
