@@ -32,10 +32,6 @@ public class Moon: Equatable {
         self.color = color
     }
     
-    // DEMO TODO: add an extract-expression here.
-    
-    // DEMO TODO: add an extract-method here.
-    
     func orbit(around center: CGPoint, scale: Double) -> UIBezierPath {
         //todo: fill this in, should have some nice expression extractions and/or method extractions
         fatalError()

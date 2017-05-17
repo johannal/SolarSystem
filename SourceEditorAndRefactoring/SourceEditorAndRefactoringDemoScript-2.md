@@ -8,47 +8,45 @@ It's fully layer backed and opts in to responsive scrolling -- super smooth.
 
 Along with the fresh new UI and it's now easier to control the way your code looks. One of my favorite features: a couple of Command-pluses to increase the font size, which is really handny for a code review, or a demo!
 
-    [show Command-plus, then go back to "default", then show choose different theme]
+    [press Command-plus a few times]
     
 Xcode 9 also adds first class support for markdown. We know a lot of developers use markdown for their READMEs or other artifcats in their projects.
 
 This is my project's README here, and you can see that Xcode uses fonts of different sizes and weights. The new text layout engine handles varying fonts really, really well.
  
-Now not only will you see complete syntax highlighting, but Xcode a also understands the structure of markdown.
+Now not only do I get complete syntax highlighting, but Xcode a also understands the structure of markdown.
 
-    [click on Basics.md and pop the jump bar]
+    [click on README.md and pop the jump bar]
     
 I can see the all of the headings and get an outline of my document. I can also use the structure to navigate. When I hold down the Command key and mouse over this link in the text, Xcode highlights it, and I can click it to jump to it's definition, just like it does in regular source code. I can even click on this link, and do an edit-all-in-scope to change it's name throughout my document.
+
+----------------------------------------
 
 Of course, you'll probably be spending most of your time in source code, so lets jump over to a source file.
 
     [navigate to BackgroundSkyBoxView.m]
 
-In addition to a new look for Issues, Xcode 9 also adds some new issues and fix-its.
+Xcode 9 introduces some new issues and fix-its that'll catch bugs quicker and help you type less. I'll type some code that is using new iOS 11 API.
 
     [type "demo1"]
     
-We've brought the too-new-API issue back to Objective-C. Here, I'm using new iOS 11 API, but my project deploys back to iOS 10. If I ran this on an iOS 10 device, it would crash. Catching this kind of problem in Objective-C at compile time is a huge win.
-    
-Theres also a new fix-it for missing case statements, which works in both Swift and Objective-C. I'll add a switch statement here, and then I immediately get a fix it offering to add the missing case statements. Save me a little typing.
-
-    [type "demo3"]
+We've brought the too-new-API issue back to Objective-C. Xcode's warning me that I deploy back to iOS 10, where this will crash. I'll accept the fix-it, which will wrap the call in an @available check. Catching this kind of problem in at compile time is a huge win.
     
 My favorite new fix it, though, is for missing protocol methods.
 
-    [navigate to Color.swift]
+    [navigate to Moon.swift]
     
-I want this Color class to implement Equatable, so I'll conform to that protocol.
+I'm going to conform to PhysicsBody here, whihc has a few properties I need to implement.
     
-    [type ", Equatable" after "_ExpressibleByColorLiteral" on line 8]
+    [type ", PhysicsBody" after "Equatable" on line 11]
     
-When I do, I get a fix it that offers to implement the missing methods! This one is going to save so much typing.
+New in Xcode 9, I get a single fix-it that will implement **all** of the methods in one go. This one is going to save so much typing.
 
-    [type "demo4" in the method implementation]
+----------------------------------------
 
 The last thing I want to show you is one of the most exciting new things, something we brought back from Swift Playgrounds. Xcode has always known a lot about the structure of your code -- the different constructs, like methods, expressions and if statements. But none of that information has ever really been surfaced in a way you can use it. Until now.
 
-If I hold down the Command and Control keys, and mouse around, you'll see that Xcode is showing me the structure of my code. And when I click, I get a set of options that are specfic for this construct.
+If I hold down the Command key, and mouse around, I see Xcode is showing me the structure of my code. And when I click, I get a set of options that are specfic for that thing.
 
     [Command-Control click on the if statement around line 29, select "Add else"]
     

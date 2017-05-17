@@ -10,7 +10,7 @@ import Foundation
 /// The solar system we call home.
 public class SolarSystem {
     
-    let sun = Star()
+    let sun = Star(name: "Sun", color: #colorLiteral(red: 0.9764705896, green: 0.8812259367, blue: 0.2034560186, alpha: 1))
     
     let mercury: Planet = Planet(name: "Mercury", color: #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1))
     let venus: Planet = Planet(name: "Venus", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1))
@@ -19,7 +19,7 @@ public class SolarSystem {
     let jupiter: Planet = Planet(name: "Jupiter", color: #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1))
     let saturn: Planet = Planet(name: "Saturn", color: #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1))
     let uranus: Planet = Planet(name: "Uranus", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
-    let neptune: Planet = Planet(name: "Uranus", color: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
+    let neptune: Planet = Planet(name: "Neptune", color: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
     
     let planets: [Planet]
     

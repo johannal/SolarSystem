@@ -15,6 +15,6 @@ public protocol PhysicsBody {
     
     var density: Double { get }
     
-    var angularVelocity: Double { get }
+    var angularVelocity: Measurement<UnitSpeed> { get }
     
 }
