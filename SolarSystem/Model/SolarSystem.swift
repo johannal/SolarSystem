@@ -24,10 +24,27 @@ public class SolarSystem {
     
     public init() {
         
+        earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+        
+        mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+        mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+        
         // ** DEMO BLOCKER: rdar://problem/32225277 **
         // DEMO TODO: extract adding of moons to their own method.
-        let earthsMoon = Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
-        earth.addMoon(earthsMoon)
+        if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
+            do {
+                // grab all the names of Jupiter's moons, which are separated by newlines.
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let moonNames = data.components(separatedBy: .newlines)
+                
+                // loop over all of Jupiter's moon names.
+                for moonName in moonNames {
+                    mars.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+                }
+            } catch {
+                print(error)
+            }
+        }
         
         // DEMO TODO: maybe add neptune to the array via the structure edit menu?
         planets = [mercury, venus, earth, mars, jupiter, saturn, uranus]

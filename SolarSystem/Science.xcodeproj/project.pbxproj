@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
 		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
+		0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */; };
 		07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */; };
 		078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078143281ECB3D32009C18DF /* SolarSystem.swift */; };
 		0781432B1ECB3FAB009C18DF /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781432A1ECB3FAB009C18DF /* Star.swift */; };
@@ -27,6 +28,7 @@
 		0731FA331EC9FD4400F46170 /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		0731FA351EC9FDF700F46170 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0731FA371ECA06C800F46170 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MoonsOfJupiter.txt; sourceTree = "<group>"; };
 		07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSkyBoxView.h; sourceTree = "<group>"; };
 		07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundSkyBoxView.m; sourceTree = "<group>"; };
 		07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Science-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0734F5191ECBCB7500D778C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		07506D651ECA7A6300EB7C11 /* Custom Drawing */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 				0731FA301EC9FCBF00F46170 /* Model */,
 				07506D651ECA7A6300EB7C11 /* Custom Drawing */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
+				0734F5191ECBCB7500D778C5 /* Resources */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 			files = (
 				9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */,
 				9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */,
+				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
