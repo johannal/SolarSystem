@@ -30,8 +30,8 @@ public class SolarSystem {
         earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
         // add Mars' moons.
-        mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
-        mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+        mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
+        mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
         
         // ** DEMO BLOCKER: rdar://problem/32225277 **
         // DEMO TODO: extract adding of jupiters moons to its own method.
