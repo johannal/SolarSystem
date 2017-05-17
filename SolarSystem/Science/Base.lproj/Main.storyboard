@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zO-oN-32M">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </sceneKitView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2zO-oN-32M" firstAttribute="top" secondItem="cEc-3t-BBr" secondAttribute="bottom" id="57s-2N-clX"/>
+                            <constraint firstItem="2zO-oN-32M" firstAttribute="top" secondItem="XVx-eM-eju" secondAttribute="top" id="57s-2N-clX"/>
                             <constraint firstItem="2ia-0A-E25" firstAttribute="top" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
                             <constraint firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="XVx-eM-eju" secondAttribute="leading" id="vXt-kg-Sts"/>
@@ -42,6 +42,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6E-Mf-URo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="1223"/>
+        </scene>
+        <!--SceneHUD View Controller-->
+        <scene sceneID="nl8-sg-zBp">
+            <objects>
+                <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DeV-Mg-vkD"/>
+                        <viewControllerLayoutGuide type="bottom" id="NHj-ar-4qu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h8T-sx-DUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Dp-6sy">
+                                <rect key="frame" x="20" y="36.5" width="36" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="ComparisonViewIcon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-W2-Jnx">
+                                <rect key="frame" x="316" y="28" width="39" height="39"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="OrbitalViewIcon"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NHj-ar-4qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AfF-Dp-6sy" secondAttribute="bottom" id="QK8-rm-NHT"/>
+                            <constraint firstItem="cCC-W2-Jnx" firstAttribute="top" secondItem="DeV-Mg-vkD" secondAttribute="bottom" constant="8" id="ROV-X8-dPo"/>
+                            <constraint firstItem="AfF-Dp-6sy" firstAttribute="leading" secondItem="h8T-sx-DUJ" secondAttribute="leading" constant="20" id="bre-am-dmD"/>
+                            <constraint firstItem="NHj-ar-4qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cCC-W2-Jnx" secondAttribute="bottom" id="pCD-a4-nI0"/>
+                            <constraint firstItem="AfF-Dp-6sy" firstAttribute="centerY" secondItem="cCC-W2-Jnx" secondAttribute="centerY" id="pvh-MN-FFG"/>
+                            <constraint firstAttribute="trailing" secondItem="cCC-W2-Jnx" secondAttribute="trailing" constant="20" id="rUZ-TK-zw0"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXm-qn-51D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="1223"/>
         </scene>
         <!--Planet Details View Controller-->
         <scene sceneID="ZLn-kE-Cwx">
@@ -130,16 +172,16 @@ Population: 7.347 billion</string>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jz0-Vq-8CH">
                                 <rect key="frame" x="0.0" y="20" width="375" height="307"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-h3u">
-                                        <rect key="frame" x="8" y="138" width="30" height="30"/>
-                                        <state key="normal" title="&lt;&lt;"/>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-h3u">
+                                        <rect key="frame" x="12" y="128.5" width="23" height="49"/>
+                                        <state key="normal" image="LeftArrow"/>
                                         <connections>
                                             <action selector="showPreviousPlanetButtonPressed:" destination="7fs-xD-dyR" eventType="touchUpInside" id="nHa-2X-4Hi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsr-Pt-6ba">
-                                        <rect key="frame" x="337" y="138" width="30" height="30"/>
-                                        <state key="normal" title="&gt;&gt;"/>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsr-Pt-6ba">
+                                        <rect key="frame" x="340" y="128.5" width="23" height="49"/>
+                                        <state key="normal" image="RightArrow"/>
                                         <connections>
                                             <action selector="showNextPlanetButtonPressed:" destination="7fs-xD-dyR" eventType="touchUpInside" id="no3-ux-5f5"/>
                                         </connections>
@@ -147,10 +189,10 @@ Population: 7.347 billion</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="s9g-3T-h3u" firstAttribute="leading" secondItem="jz0-Vq-8CH" secondAttribute="leading" constant="8" id="8Yq-1z-9Ri"/>
+                                    <constraint firstItem="s9g-3T-h3u" firstAttribute="leading" secondItem="jz0-Vq-8CH" secondAttribute="leading" constant="12" id="8Yq-1z-9Ri"/>
                                     <constraint firstItem="s9g-3T-h3u" firstAttribute="centerY" secondItem="jz0-Vq-8CH" secondAttribute="centerY" id="CwJ-fB-8lN"/>
                                     <constraint firstItem="Dsr-Pt-6ba" firstAttribute="centerY" secondItem="jz0-Vq-8CH" secondAttribute="centerY" id="DHx-S9-tOY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dsr-Pt-6ba" secondAttribute="trailing" constant="8" id="fku-Hq-8DH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dsr-Pt-6ba" secondAttribute="trailing" constant="12" id="fku-Hq-8DH"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -176,4 +218,10 @@ Population: 7.347 billion</string>
             <point key="canvasLocation" x="964" y="1879.610194902549"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ComparisonViewIcon" width="36" height="14"/>
+        <image name="LeftArrow" width="23" height="49"/>
+        <image name="OrbitalViewIcon" width="39" height="39"/>
+        <image name="RightArrow" width="23" height="49"/>
+    </resources>
 </document>

@@ -24,7 +24,26 @@ class SolarSystemController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupScene()
+        
+        // Setup HUD
+        let sceneHUDController = storyboard!.instantiateViewController(withIdentifier: "sceneHUD")
+        addChildViewController(sceneHUDController)
+        view.addSubview(sceneHUDController.view)
+        
+        // Constraints
+        sceneHUDController.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        let heightConstraint = sceneHUDController.view.heightAnchor.constraint(equalToConstant: 44)
+        heightConstraint.priority = UILayoutPriority(749)
+        heightConstraint.isActive = true
+        
+        sceneHUDController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        sceneHUDController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        sceneHUDController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        
+        // Setup tap handling
     }
     
     private func setupScene() {
