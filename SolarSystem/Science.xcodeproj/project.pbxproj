@@ -58,17 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0731FA301EC9FCBF00F46170 /* Model */ = {
+		0731FA301EC9FCBF00F46170 /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D2B2E8E61ECB9BCC00ED0982 /* Protocols */,
 				0731FA351EC9FDF700F46170 /* Planet.swift */,
 				0731FA331EC9FD4400F46170 /* Moon.swift */,
 				078143281ECB3D32009C18DF /* SolarSystem.swift */,
 				0781432A1ECB3FAB009C18DF /* Star.swift */,
 				D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */,
 			);
-			path = Model;
+			path = "Model Classes";
 			sourceTree = "<group>";
 		};
 		0734F5191ECBCB7500D778C5 /* Resources */ = {
@@ -91,7 +90,8 @@
 		9EC407EF1EBFEAEB00F7F8A1 = {
 			isa = PBXGroup;
 			children = (
-				0731FA301EC9FCBF00F46170 /* Model */,
+				D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */,
+				0731FA301EC9FCBF00F46170 /* Model Classes */,
 				07506D651ECA7A6300EB7C11 /* Custom Drawing */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				0734F5191ECBCB7500D778C5 /* Resources */,
@@ -123,13 +123,13 @@
 			path = Science;
 			sourceTree = "<group>";
 		};
-		D2B2E8E61ECB9BCC00ED0982 /* Protocols */ = {
+		D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */,
 				D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */,
 			);
-			path = Protocols;
+			path = "Model Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
