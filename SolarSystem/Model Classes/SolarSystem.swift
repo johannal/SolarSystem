@@ -29,8 +29,7 @@ public class SolarSystem {
         // ** DEMO BLOCKER: rdar://problem/32039874 **
         
         // add Earth's moon.
-        let extractedExpr: Moon = Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
-        earth.addMoon(extractedExpr)
+        earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
         // add Mars' moons.
         mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
