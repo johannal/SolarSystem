@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The solar system we call home.
 public class SolarSystem {
     
     let sun = Star()
