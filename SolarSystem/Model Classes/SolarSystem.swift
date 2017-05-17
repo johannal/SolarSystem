@@ -34,7 +34,7 @@ public class SolarSystem {
         mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
         // ** DEMO BLOCKER: rdar://problem/32225277 **
-        // DEMO TODO: extract adding of moons to their own method.
+        // DEMO TODO: extract adding of jupiters moons to its own method.
         
         // add Jupiter's 67 (😮!) moons.
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
