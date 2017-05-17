@@ -31,3 +31,26 @@ protocol OrbitingBody: PhysicsBody {
     /// - Returns: A bezier path representing the orbit
     func orbit(around center: CGPoint, scale: Double) -> UIBezierPath
 }
+
+extension OrbitingBody {
+    
+    func orbit(around center: CGPoint, scale: Double) -> UIBezierPath {
+        // Compact form
+        /*
+        let length = CGFloat(orbitalRadius.converted(to: .meters).value * 2.0)
+        let rect = CGRect(
+            origin: CGPoint(x: center.x - (length / 2), y: center.y - (length / 2)),
+            size: CGSize(width: length, height: length))
+        */
+        
+        // Expressions Extracted
+        let length = CGFloat(orbitalRadius.converted(to: .meters).value * 2.0)
+        let size: CGSize = CGSize(width: length, height: length)
+        let origin: CGPoint = CGPoint(x: center.x - (length / 2), y: center.y - (length / 2))
+        let rect = CGRect(
+            origin: origin,
+            size: size)
+        
+        return UIBezierPath(ovalIn: rect)
+    }
+}

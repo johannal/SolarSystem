@@ -31,11 +31,7 @@ public class Moon: Equatable {
         self.name = name
         self.color = color
     }
-    
-    func orbit(around center: CGPoint, scale: Double) -> UIBezierPath {
-        //todo: fill this in, should have some nice expression extractions and/or method extractions
-        fatalError()
-    }
+
     
     // MARK: - Equatable
     
