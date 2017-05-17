@@ -6,11 +6,11 @@ Xcode 9 includes a new source editor written from the ground up to be super fast
 
 It's fully layer backed and opts in to responsive scrolling -- super smooth.
 
-Along with the fresh new UI and it's now easier to control the way your code looks. One of my favorite features: a couple of Command-pluses to increase the font size, which is really handny for a code review, or a demo!
+Along with the fresh new UI and it's now easier to control the way your code looks. One of my favorite features: a couple of Command-pluses to increase the font size, which is really handy for a code review, or a demo!
 
     [press Command-plus a few times]
     
-Xcode 9 also adds first class support for markdown. We know a lot of developers use markdown for their READMEs or other artifcats in their projects.
+Xcode 9 also adds first class support for markdown. We know a lot of developers use markdown for their READMEs or other artifacts in their projects.
 
 This is my project's README here, and you can see that Xcode uses fonts of different sizes and weights. The new text layout engine handles varying fonts really, really well.
  
@@ -36,7 +36,7 @@ My favorite new fix it, though, is for missing protocol methods.
 
     [navigate to Moon.swift]
     
-I'm going to conform to PhysicsBody here, whihc has a few properties I need to implement.
+I'm going to conform to PhysicsBody here, which has a few properties I need to implement.
     
     [type ", PhysicsBody" after "Equatable" on line 11]
     
@@ -46,25 +46,37 @@ New in Xcode 9, I get a single fix-it that will implement **all** of the methods
 
 The last thing I want to show you is one of the most exciting new things, something we brought back from Swift Playgrounds. Xcode has always known a lot about the structure of your code -- the different constructs, like methods, expressions and if statements. But none of that information has ever really been surfaced in a way you can use it. Until now.
 
-If I hold down the Command key, and mouse around, I see Xcode is showing me the structure of my code. And when I click, I get a set of options that are specfic for that thing.
+If I hold down the Command key, and mouse around, I Xcode highlights the structure of my code. And when I click, I get a set of options that are specific for that thing.
 
-    [Command-Control click on the if statement around line 29, select "Add else"]
+    [Command click on the if statement around line 41]
     
-And the menu updates based on the structure of my code, so now when I bring up the menu on the if block I'm only offered "Add else/if", since Xcode knows that I already have an "else".
+Command-clicking on this class, gives me different options, like adding a method or property.
 
-I can Command-Control click on other things, like this class, and I get different options -- add method or property in this case.
-
-Those are all local transformations, but it's a bit more interesting when I want to make a something like rename, which spans files. I want to rename this method named "darker". I'll hold down Command-Control and click on it, then choose rename.
-
-    [Command-Control click on "darker" on line XX and choose "Rename…"]
+    [Command click on the class around line 11]
     
-When I do that, Xcode collapses things down and shows me all the slices of code that will be affected by this name change across my project. When I start typing a new name, I'll see it reflected in all of those call sites, including this one down here in Objective-C. I can change the paraemter name too, but I think what I've got is working.
+I can do more than just add code, though, I can transform code too. So here where I'm adding Earth's moon, I'll Command-click on the Moon class, and choose "Extract Expression…" and create a local variable to use.
+
+    [Command click on "Moon" around line 31 and select "Extract Expression…"]
+    
+I can add items to an array.
+
+    [Command click on the trailing "]" around line 59 and select "Add Item…"]
+    
+Looks like I was missing "venus" here.
+
+I can even extract out a chunk of code into it's own method.
+
+    [Command click on the trailing "}" around line 56 and select "Extract Method…"]
+
+Those are all local transformations -- it's even more interesting when I want to do something that spans files, like a rename. Let's rename << some method >>. I'll hold down Command and click on it, then choose rename.
+
+    [Command-Control click on << ?? >> on line <<??>> and choose "Rename…"]
+    
+When I do that, Xcode collapses things down and shows me all the slices of code that will be affected by this name change across my entire project. When I start typing a new name, I'll see it reflected in all of those call sites, including this one down here in Objective-C. I can change the parameter name too.
 
 I'll click "Rename" and thats it.
 
-Lets rename one more thing here -- I want to change the class name. I'll Command-Control "Color" and select "Rename…". In this case, the class name matches the file name, so Xcode's offering to change that for us too. If we scroll down, I can see all the places in my code that will be affected, including this call from Objective-C here -- renaming works great across languages.
-
-I'll type in a new name, lets call it "GraphColor", and click "Rename". That's it! Really fluid, really simple.
+Let me rename one more thing here, just to show you how deep the support goes. I'll rename << ?? >>, which has a file name that corresponds to it, it's used in an IB document, and it also shows up in my Info.plist. Xcode identifies all of those scenarios and offers to make the right changes. Really powerful.
 
 And thats the new source editor and refactoring in Xcode 9.
  

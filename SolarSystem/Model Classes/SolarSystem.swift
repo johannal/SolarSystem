@@ -25,10 +25,12 @@ public class SolarSystem {
     
     public init() {
         
+        // ** DEMO POLISH: rdar://problem/32247713, rdar://problem/32247744
         // ** DEMO BLOCKER: rdar://problem/32039874 **
         
         // add Earth's moon.
-        earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+        let extractedExpr: Moon = Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
+        earth.addMoon(extractedExpr)
         
         // add Mars' moons.
         mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
@@ -56,5 +58,10 @@ public class SolarSystem {
         // DEMO TODO: maybe add neptune to the array via the structure edit menu?
         planets = [mercury, venus, earth, mars, jupiter, saturn, uranus]
     }
+    
+    
+    
+    
+    
     
 }
