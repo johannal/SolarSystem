@@ -24,13 +24,17 @@ public class SolarSystem {
     
     public init() {
         
+        // add Earth's moon.
         earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
+        // add Mars' moons.
         mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
         // ** DEMO BLOCKER: rdar://problem/32225277 **
         // DEMO TODO: extract adding of moons to their own method.
+        
+        // add Jupiter's 67 (😮!) moons.
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
             do {
                 // grab all the names of Jupiter's moons, which are separated by newlines.
