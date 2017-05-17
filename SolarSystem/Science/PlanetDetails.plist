@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>naptune</key>
+	<dict>
+		<key>diameter</key>
+		<integer>49528</integer>
+		<key>diffuseTexture</key>
+		<string>2k_neptune</string>
+		<key>orbitalRadius</key>
+		<integer>4498000000</integer>
+		<key>name</key>
+		<string>Neptune</string>
+	</dict>
+	<key>earth</key>
+	<dict>
+		<key>diameter</key>
+		<integer>12756</integer>
+		<key>diffuseTexture</key>
+		<string>2k_earth_daymap</string>
+		<key>normalTexture</key>
+		<string>2k_earth_normal_map</string>
+		<key>specularTexture</key>
+		<string>2k_earth_specular_map</string>
+		<key>orbitalRadius</key>
+		<integer>149598023</integer>
+		<key>name</key>
+		<string>Earth</string>
+	</dict>
+	<key>mercury</key>
+	<dict>
+		<key>diameter</key>
+		<integer>4879</integer>
+		<key>diffuseTexture</key>
+		<string>2k_mercury</string>
+		<key>orbitalRadius</key>
+		<integer>57909050</integer>
+		<key>name</key>
+		<string>Mercury</string>
+	</dict>
+	<key>venus</key>
+	<dict>
+		<key>diameter</key>
+		<integer>12103</integer>
+		<key>diffuseTexture</key>
+		<string>2k_venus_surface</string>
+		<key>orbitalRadius</key>
+		<integer>108208000</integer>
+		<key>name</key>
+		<string>Venus</string>
+	</dict>
+	<key>mars</key>
+	<dict>
+		<key>diameter</key>
+		<integer>6792</integer>
+		<key>diffuseTexture</key>
+		<string>2k_mars</string>
+		<key>orbitalRadius</key>
+		<integer>228000000</integer>
+		<key>name</key>
+		<string>Mars</string>
+	</dict>
+</dict>
+</plist>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13130" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EGG-lG-5Ct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13124" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EGG-lG-5Ct">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13112"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13106"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,8 +21,23 @@
                     <view key="view" contentMode="scaleToFill" id="XVx-eM-eju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zO-oN-32M">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2zO-oN-32M" firstAttribute="top" secondItem="cEc-3t-BBr" secondAttribute="bottom" id="57s-2N-clX"/>
+                            <constraint firstItem="2ia-0A-E25" firstAttribute="top" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
+                            <constraint firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
+                            <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="XVx-eM-eju" secondAttribute="leading" id="vXt-kg-Sts"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="solarSystemSceneView" destination="2zO-oN-32M" id="DNN-H0-0aM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6E-Mf-URo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,8 +92,8 @@
                                             <constraint firstAttribute="height" constant="1" id="Rir-zO-6EM"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
-                                        <rect key="frame" x="36" y="220.5" width="303.5" height="60.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
+                                        <rect key="frame" x="111.5" y="220.5" width="153" height="60.5"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Radius: 3,959 mi
@@ -98,6 +113,7 @@ Population: 7.347 billion</string>
                                 <constraints>
                                     <constraint firstItem="cDV-qF-GPV" firstAttribute="top" secondItem="fgu-st-i57" secondAttribute="bottom" constant="15" id="3js-8r-5IQ"/>
                                     <constraint firstItem="wDK-tq-PXW" firstAttribute="centerX" secondItem="BKV-NZ-amv" secondAttribute="centerX" id="5gU-4S-Gqs"/>
+                                    <constraint firstItem="cDV-qF-GPV" firstAttribute="centerX" secondItem="BKV-NZ-amv" secondAttribute="centerX" id="7Mt-cA-5Pm"/>
                                     <constraint firstItem="fgu-st-i57" firstAttribute="centerX" secondItem="btQ-3h-1cr" secondAttribute="centerX" id="8Aw-iz-Kne"/>
                                     <constraint firstItem="fgu-st-i57" firstAttribute="top" secondItem="H7w-yI-C1K" secondAttribute="bottom" constant="20" id="Bos-Fp-ukY"/>
                                     <constraint firstItem="wDK-tq-PXW" firstAttribute="top" secondItem="BKV-NZ-amv" secondAttribute="top" id="Jbd-8h-01T"/>
@@ -111,11 +127,41 @@ Population: 7.347 billion</string>
                                     <constraint firstItem="H7w-yI-C1K" firstAttribute="width" secondItem="btQ-3h-1cr" secondAttribute="width" multiplier="0.9" id="seS-FA-u4n"/>
                                 </constraints>
                             </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jz0-Vq-8CH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="307"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-h3u">
+                                        <rect key="frame" x="8" y="138" width="30" height="30"/>
+                                        <state key="normal" title="&lt;&lt;"/>
+                                        <connections>
+                                            <action selector="showPreviousPlanetButtonPressed:" destination="7fs-xD-dyR" eventType="touchUpInside" id="nHa-2X-4Hi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsr-Pt-6ba">
+                                        <rect key="frame" x="337" y="138" width="30" height="30"/>
+                                        <state key="normal" title="&gt;&gt;"/>
+                                        <connections>
+                                            <action selector="showNextPlanetButtonPressed:" destination="7fs-xD-dyR" eventType="touchUpInside" id="no3-ux-5f5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="s9g-3T-h3u" firstAttribute="leading" secondItem="jz0-Vq-8CH" secondAttribute="leading" constant="8" id="8Yq-1z-9Ri"/>
+                                    <constraint firstItem="s9g-3T-h3u" firstAttribute="centerY" secondItem="jz0-Vq-8CH" secondAttribute="centerY" id="CwJ-fB-8lN"/>
+                                    <constraint firstItem="Dsr-Pt-6ba" firstAttribute="centerY" secondItem="jz0-Vq-8CH" secondAttribute="centerY" id="DHx-S9-tOY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dsr-Pt-6ba" secondAttribute="trailing" constant="8" id="fku-Hq-8DH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="2bm-fi-XAO"/>
+                            <constraint firstItem="BKV-NZ-amv" firstAttribute="top" secondItem="jz0-Vq-8CH" secondAttribute="bottom" id="B41-Mz-Ob2"/>
+                            <constraint firstItem="jz0-Vq-8CH" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="C0c-JL-6kl"/>
+                            <constraint firstAttribute="trailing" secondItem="jz0-Vq-8CH" secondAttribute="trailing" id="R9v-3C-jb3"/>
                             <constraint firstAttribute="trailing" secondItem="BKV-NZ-amv" secondAttribute="trailing" id="jim-dn-W2l"/>
+                            <constraint firstItem="jz0-Vq-8CH" firstAttribute="top" secondItem="Y2j-16-jjZ" secondAttribute="bottom" id="kfa-dD-leF"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="centerY" secondItem="xxU-xn-gVg" secondAttribute="centerY" multiplier="1.4" id="oQi-l3-95P"/>
                         </constraints>
                     </view>

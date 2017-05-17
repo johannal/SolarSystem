@@ -18,5 +18,13 @@ class PlanetDetailsViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.clear
     }
+    
+    @IBAction func showPreviousPlanetButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func showNextPlanetButtonPressed(_ sender: UIButton) {
+        
+    }
 
 }
