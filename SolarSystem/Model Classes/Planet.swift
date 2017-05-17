@@ -15,7 +15,7 @@ public class Planet {
     
     private(set) var moons: [Moon] = []
     
-    private(set) var nearestObjects: [TransNeptunianObject] = []
+    private(set) var nearbyObjects: [TransNeptunianObject] = []
     
     public init(name: String, color: UIColor) {
         self.name = name

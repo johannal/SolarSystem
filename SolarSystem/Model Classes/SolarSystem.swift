@@ -23,6 +23,8 @@ public class SolarSystem {
     
     let planets: [Planet]
     
+    let asteroids: [Asteroid]
+    
     public init() {
         
         // ** DEMO POLISH: rdar://problem/32247713, rdar://problem/32247744
@@ -56,6 +58,8 @@ public class SolarSystem {
         
         // DEMO TODO: maybe add neptune to the array via the structure edit menu?
         planets = [mercury, venus, earth, mars, jupiter, saturn, uranus]
+        
+        asteroids = []
     }
     
     

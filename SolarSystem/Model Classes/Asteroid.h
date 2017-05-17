@@ -19,6 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, nullable, weak) TransNeptunianObject *partner;
 
+/**
+The distant objects related to this Asteroid
+ */
+@property (nonatomic, strong) NSArray<TransNeptunianObject *> *distantObjects;
+
+- (void)addDistantObject:(TransNeptunianObject *)object;
+
 @end
 
 NS_ASSUME_NONNULL_END

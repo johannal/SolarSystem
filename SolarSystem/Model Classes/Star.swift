@@ -21,6 +21,8 @@ public class Star: PhysicsBody {
     
     public private(set) var planets: [Planet] = []
     
+    public private(set) var distantObjects: [TransNeptunianObject] = []
+    
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
