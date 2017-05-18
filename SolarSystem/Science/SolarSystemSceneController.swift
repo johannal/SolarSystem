@@ -52,7 +52,7 @@ class SolarSystemController: UIViewController {
         
         for (_, value) in planetDictionary {
             if let planetInfo = value as? Dictionary<String, Any> {
-                let name = planetInfo["name"] as? String
+                let name = planetInfo["name"] as! String
                 let diameter = planetInfo["diameter"] as! Double
                 let diffuseTexture = planetInfo["diffuseTexture"] as! String
                 let orbitalRadius = planetInfo["orbitalRadius"] as! Double
@@ -87,17 +87,20 @@ class SolarSystemController: UIViewController {
                 
                 // Rotation node of the planet
                 let planetRotationNode = SCNNode()
+                planetRotationNode.name = name + " Rotation Node"
                 planetNode.rotationNode = planetRotationNode
                 centerNode?.addChildNode(planetRotationNode)
                 
                 // Planet host node
                 let planetHostNode = SCNNode()
+                planetHostNode.name = name + " Host Node"
                 planetHostNode.position = SCNVector3.init(scaledOrbitalRadius, 0, 0)
                 planetRotationNode.addChildNode(planetHostNode)
                 planetHostNode.addChildNode(planetNode)
                 
                 // Add orbit
                 let planetOrbit = SCNNode()
+                planetOrbit.name = name + " Orbit Node"
                 planetOrbit.opacity = 0.4
                 let orbitSize = CGFloat(scaledOrbitalRadius * 2.0 + scaledDiameter / 2.0)
                 planetOrbit.geometry = SCNPlane.init(width: orbitSize, height: orbitSize)
