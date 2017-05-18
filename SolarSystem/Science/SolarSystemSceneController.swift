@@ -13,6 +13,7 @@ import SceneKit
 class SolarSystemController: UIViewController {
     
     @IBOutlet weak var solarSystemSceneView: SCNView!
+    private(set) var planetNodes: [OrbitingBodyNode] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +56,13 @@ class SolarSystemController: UIViewController {
                 let diameter = planetInfo["diameter"] as! Double
                 let diffuseTexture = planetInfo["diffuseTexture"] as! String
                 let orbitalRadius = planetInfo["orbitalRadius"] as! Double
-                let orbitalPeriod = planetInfo["orbitalPeriod"] as! Double
+                
                 
                 let scaledDiameter = pow(diameter * scaleFactor * 40000.0, (1.0 / 2.6)) // increase planet size
                 let scaledOrbitalRadius = pow(orbitalRadius * scaleFactor, (1.0 / 2.5)) * 6.4 // condense the space
                 
-                let planetNode = PhysicsBodyNode()
+                let planetNode = OrbitingBodyNode()
+                planetNode.bodyInfo = planetInfo
                 planetNode.name = name
                 let planetGeometry = SCNSphere.init(radius: CGFloat(scaledDiameter / 2))
                 
@@ -82,12 +84,17 @@ class SolarSystemController: UIViewController {
                 }
                 
                 planetNode.geometry = planetGeometry
-                planetNode.position = SCNVector3.init(scaledOrbitalRadius, 0, 0)
                 
                 // Rotation node of the planet
                 let planetRotationNode = SCNNode()
-                planetRotationNode.addChildNode(planetNode)
+                planetNode.rotationNode = planetRotationNode
                 centerNode?.addChildNode(planetRotationNode)
+                
+                // Planet host node
+                let planetHostNode = SCNNode()
+                planetHostNode.position = SCNVector3.init(scaledOrbitalRadius, 0, 0)
+                planetRotationNode.addChildNode(planetHostNode)
+                planetHostNode.addChildNode(planetNode)
                 
                 // Add orbit
                 let planetOrbit = SCNNode()
@@ -100,14 +107,12 @@ class SolarSystemController: UIViewController {
                 planetOrbit.rotation = SCNVector4.init(1, 0, 0, -Double.pi/2)
                 planetOrbit.geometry?.firstMaterial?.lightingModel = .constant // no lighting
                 centerNode?.addChildNode(planetOrbit)
+                planetNode.orbitVisualizationNode = planetOrbit
                 
-                // Add orbiting animation
-                let orbitingAnimation = CABasicAnimation(keyPath: "rotation")
-                orbitingAnimation.duration = orbitalPeriod / 150.0
-                orbitingAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, 1, 0, Double.pi * 2.0))
-                orbitingAnimation.repeatCount = .greatestFiniteMagnitude
-                planetRotationNode.addAnimation(orbitingAnimation, forKey: "Planet Rotation Animation")
-                //planetRotationNode.pauseAnimation(forKey: "Planet Rotation Animation")
+                // Start orbiting
+                planetNode.startOrbitingAnimation()
+                
+                planetNodes.append(planetNode)
             }
         }
     }
