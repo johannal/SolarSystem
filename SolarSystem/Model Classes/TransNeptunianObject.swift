@@ -8,7 +8,6 @@
 import Foundation
 
 // DEMO: Rename across multipe files and types
-// DEMO: Blocked by rdar://problem/32252716 (Rename doesn't find Objective-C references)
 public class TransNeptunianObject: NSObject {
     
     public let name: String

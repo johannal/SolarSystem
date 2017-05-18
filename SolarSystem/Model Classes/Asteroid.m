@@ -7,6 +7,7 @@
 //
 
 #import "Asteroid.h"
+#import "Science-Swift.h"
 
 @implementation Asteroid
 

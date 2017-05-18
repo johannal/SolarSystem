@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Science-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@class TransNeptunianObject;
 
 @interface Asteroid : NSObject
 
