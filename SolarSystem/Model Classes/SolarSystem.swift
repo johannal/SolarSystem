@@ -22,8 +22,8 @@ public class SolarSystem {
     let neptune: Planet = Planet(name: "Neptune", color: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
     
     let planets: [Planet]
-    
     let asteroids: [Asteroid]
+    let distantObjects: [TransNeptunianObject]
     
     public init() {
         
@@ -56,10 +56,12 @@ public class SolarSystem {
             }
         }
         
+        asteroids = []
+        distantObjects = []
+        
         // DEMO TODO: maybe add neptune to the array via the structure edit menu?
         planets = [mercury, venus, earth, mars, jupiter, saturn, uranus]
         
-        asteroids = []
     }
     
     

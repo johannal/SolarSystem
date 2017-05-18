@@ -26,4 +26,8 @@ public class Planet {
         moon.parentPlanet = self
         moons.append(moon)
     }
+    
+    func add(nearbyObject: TransNeptunianObject) {
+        nearbyObjects.append(nearbyObject)
+    }
 }

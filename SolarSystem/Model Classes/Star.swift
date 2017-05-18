@@ -30,4 +30,8 @@ public class Star: PhysicsBody {
         self.density = 1.408
         self.angularVelocity = 1.1e42
     }
+    
+    func add(distantObject: TransNeptunianObject) {
+        distantObjects.append(distantObject)
+    }
 }
