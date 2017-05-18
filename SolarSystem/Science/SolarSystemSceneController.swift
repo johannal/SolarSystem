@@ -14,8 +14,6 @@ class SolarSystemController: UIViewController {
     
     @IBOutlet weak var solarSystemSceneView: SCNView!
     
-    var sceneView = SCNView.init()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +37,8 @@ class SolarSystemController: UIViewController {
         sceneHUDController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
         // Setup tap handling
+        let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapSceneView))
+        solarSystemSceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func setupScene() {
@@ -51,16 +51,17 @@ class SolarSystemController: UIViewController {
         
         for (_, value) in planetDictionary {
             if let planetInfo = value as? Dictionary<String, Any> {
-                // let name = planetInfo["name"]
+                let name = planetInfo["name"] as? String
                 let diameter = planetInfo["diameter"] as! Double
                 let diffuseTexture = planetInfo["diffuseTexture"] as! String
                 let orbitalRadius = planetInfo["orbitalRadius"] as! Double
                 let orbitalPeriod = planetInfo["orbitalPeriod"] as! Double
                 
-                let scaledDiameter = pow(diameter * scaleFactor * 4000.0, (1.0 / 2.0)) // some value to bring up planet size
-                let scaledOrbitalRadius = pow(orbitalRadius * scaleFactor, (1.0 / 2.5)) * 6.4 // / 10.0 // some value to condense the space
+                let scaledDiameter = pow(diameter * scaleFactor * 40000.0, (1.0 / 2.6)) // increase planet size
+                let scaledOrbitalRadius = pow(orbitalRadius * scaleFactor, (1.0 / 2.5)) * 6.4 // condense the space
                 
-                let planetNode = SCNNode()
+                let planetNode = PhysicsBodyNode()
+                planetNode.name = name
                 let planetGeometry = SCNSphere.init(radius: CGFloat(scaledDiameter / 2))
                 
                 let diffuseImage = UIImage(named: diffuseTexture)
@@ -91,7 +92,7 @@ class SolarSystemController: UIViewController {
                 // Add orbit
                 let planetOrbit = SCNNode()
                 planetOrbit.opacity = 0.4
-                let orbitSize = CGFloat(scaledOrbitalRadius * 2.0 + scaledDiameter)
+                let orbitSize = CGFloat(scaledOrbitalRadius * 2.0 + scaledDiameter / 2.0)
                 planetOrbit.geometry = SCNPlane.init(width: orbitSize, height: orbitSize)
                 planetOrbit.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "orbit")
                 planetOrbit.geometry?.firstMaterial?.isDoubleSided =  true
@@ -106,8 +107,21 @@ class SolarSystemController: UIViewController {
                 orbitingAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, 1, 0, Double.pi * 2.0))
                 orbitingAnimation.repeatCount = .greatestFiniteMagnitude
                 planetRotationNode.addAnimation(orbitingAnimation, forKey: "Planet Rotation Animation")
+                //planetRotationNode.pauseAnimation(forKey: "Planet Rotation Animation")
             }
         }
+    }
+    
+    @objc func didTapSceneView(_ sender: UITapGestureRecognizer) {
+        let results = solarSystemSceneView.hitTest(sender.location(in: solarSystemSceneView), options: nil)
+        
+        if let hitNode = results.first?.node as? PhysicsBodyNode {
+            didTapPhysicsBody(hitNode)
+        }
+    }
+    
+    func didTapPhysicsBody(_ physicsBody: PhysicsBodyNode) {
+        print("Tapped Planet: " + physicsBody.name!)
     }
     
 }
