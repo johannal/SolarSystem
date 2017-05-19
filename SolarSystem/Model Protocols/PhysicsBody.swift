@@ -7,15 +7,17 @@
 
 import Foundation
 
+/// A body that can provide a number of values that affect it's interaction with the physical world.
 @objc
 public protocol PhysicsBody {
     
-    // TODO come up with things that are functions here rather than properties -- it looks better in the demo.
+    /// Calculates this body's resistance to acceleration (a change in its state of motion) when a net force is applied.
+    func calculateMass() -> Measurement<UnitMass>
     
-    var mass: Measurement<UnitMass> { get }
+    /// Calculates this body's mass per unit volume.
+    func cacluateDensity() -> Double
     
-    var density: Double { get }
-    
-    var angularVelocity: Double { get }
+    /// Calculates this body's rate of change of angular displacement, and is a vector quantity that specifies the angular speed (rotational speed) of this object and the axis about which this object is rotating.
+    func angularVelocity() -> Measurement<UnitSpeed>
     
 }
