@@ -16,22 +16,22 @@ class GravitySimulatorViewController: UIViewController {
         super.viewDidLoad()
 
         gravityView.scene?.scaleMode = .aspectFill
+        gravityView.isPaused = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-    }
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        
+        // TODO: Initiate zero gravity animation here
     }
     
     @IBAction func gravityButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        gravityView.isPaused = false
     }
 
 }
