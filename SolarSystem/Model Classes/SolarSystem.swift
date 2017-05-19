@@ -25,7 +25,7 @@ public class SolarSystem {
     
     // ** DEMO BLOCKER: rdar://problem/31501493 **
     
-    // Arrays for the objects in our SolarSystem.
+    // Create arrays for the objects in our SolarSystem.
     let planets: [Planet]
     let planetsToOrbits: [Planet: Orbit]
     let distantObjects: [TransNeptunianObject]
