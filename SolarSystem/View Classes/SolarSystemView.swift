@@ -195,6 +195,11 @@ public class Color: _ExpressibleByColorLiteral {
     public static let green: Color = #colorLiteral(red: 0.07005243003, green: 0.5545874834, blue: 0.1694306433, alpha: 1)
     public static let blue: Color = #colorLiteral(red: 0, green: 0.1771291047, blue: 0.97898072, alpha: 1)
     
+    /// Creates a new color with the given white and alpha.
+    ///
+    /// - Parameters:
+    ///   - white: the white value from 0 to 1.
+    ///   - alpha: the alpha value from 0 to 1.
     public init(white: CGFloat, alpha: CGFloat = 1.0) {
         if 0 <= white && white <= 1.0 {
             // valid white, no adjustment necessary.
@@ -202,34 +207,74 @@ public class Color: _ExpressibleByColorLiteral {
         uiColor = UIColor(white: white, alpha: alpha)
     }
     
+    /// Creates a new color with the given HSBA values.
+    ///
+    /// - Parameters:
+    ///   - hue: the hue value from 0 to 1.
+    ///   - saturation: the saturation value from 0 to 1.
+    ///   - brightness: the brightness value from 0 to 1.
+    ///   - alpha: the alpha value from 0 to 1.
     public init(hue: Double, saturation: Double, brightness: Double, alpha: Double = 1.0) {
         uiColor = UIColor(hue: CGFloat(hue), saturation: CGFloat(saturation), brightness: CGFloat(brightness), alpha: CGFloat(alpha))
     }
     
+    /// Creates a new color with the given RGBA values.
+    ///
+    /// - Parameters:
+    ///   - red: the red value from 0 to 1.
+    ///   - green: the green value from 0 to 1.
+    ///   - blue: the blue value from 0 to 1.
+    ///   - alpha: the alpha value from 0 to 1.
     public init(red: Double, green: Double, blue: Double, alpha: Double = 1.0) {
         uiColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
     }
     
+    /// Creates a new color based on the given #UIColor
+    ///
+    /// - Parameter uiColor: the UIColor to base this Color on.
     internal init(_ uiColor: UIColor) {
         self.uiColor = uiColor
     }
     
+    /// Creates a new color with the given RGBA values.
+    ///
+    /// - Parameters:
+    ///   - red: the red value from 0 to 1.
+    ///   - green: the green value from 0 to 1.
+    ///   - blue: the blue value from 0 to 1.
+    ///   - alpha: the alpha value from 0 to 1.
     public convenience required init(colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float) {
         self.init(red: Double(red), green: Double(green), blue: Double(blue), alpha: Double(alpha))
     }
     
+    /// Returns a new color based on this color adjusted by the given lightness.
+    ///
+    /// - Parameter percent: amount to adjust the lightness.
+    /// - Returns: new color with the adjusted lightness.
     public func lighter(percent: Double = 0.2) -> Color {
         return colorByAdjustingBrightness(percent: 1 + percent)
     }
     
+    /// Returns a new color based on this color adjusted by the given alpha.
+    ///
+    /// - Parameter alpha: new alpha value.
+    /// - Returns: new color with given alpha.
     public func withAlpha(alpha: Double) -> Color {
         return Color(uiColor.withAlphaComponent(CGFloat(alpha)))
     }
     
+    /// Returns a new color based on this color adjusted by the given darkness.
+    ///
+    /// - Parameter percent: amount to adjust the darkness.
+    /// - Returns: new color with the adjusted darkness.
     public func darker(percent: Double = 0.2) -> Color {
         return colorByAdjustingBrightness(percent: 1 - percent)
     }
     
+    /// Returns a new color based on this color adjusted by the given brightness.
+    ///
+    /// - Parameter percent: amount to adjust the brightness.
+    /// - Returns: new color with adjusted brightness
     private func colorByAdjustingBrightness(percent: Double) -> Color {
         var cappedPercent = min(percent, 1.0)
         cappedPercent = max(0.0, percent)
@@ -243,6 +288,10 @@ public class Color: _ExpressibleByColorLiteral {
         return Color(hue: Double(hue), saturation: Double(saturation), brightness: Double(brightness) * cappedPercent, alpha: Double(alpha))
     }
     
+    
+    /// Returns a random RGB color.
+    ///
+    /// - Returns: random color (i.e. color with random RGB values).
     public static func random() -> Color {
         let uint32MaxAsFloat = Float(UInt32.max)
         let red = Float(arc4random()) / uint32MaxAsFloat
@@ -256,6 +305,9 @@ public class Color: _ExpressibleByColorLiteral {
     
     private static var currentColorIndex = 0
     
+    /// Returns the next of the standard colors.
+    ///
+    /// - Returns: the next of the standard colors.
     internal static func next() -> Color {
         let colorToReturn = standard[currentColorIndex]
         if (currentColorIndex == standard.count - 1) {
@@ -267,6 +319,7 @@ public class Color: _ExpressibleByColorLiteral {
         return colorToReturn
     }
     
+    /// Resets the standard color index, which drives the #next method.
     internal static func resetCurrentColor() {
         currentColorIndex = 0
     }
