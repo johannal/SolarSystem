@@ -9,12 +9,6 @@ import UIKit
 
 public class Star: PhysicsBody {
     
-    public let mass: Measurement<UnitMass>
-    
-    public let density: Double
-    
-    public let angularVelocity: Double
-    
     public let name: String
     
     public let color: UIColor
@@ -26,12 +20,23 @@ public class Star: PhysicsBody {
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
-        self.mass = Measurement(value: 1.99e27, unit: .metricTons)
-        self.density = 1.408
-        self.angularVelocity = 1.1e42
     }
     
     func add(distantObject: TransNeptunianObject) {
         distantObjects.append(distantObject)
+    }
+    
+    // MARK: - PhysicsBody
+    
+    public func calculateMass() -> Measurement<UnitMass> {
+        return Measurement(value: 1.99e27, unit: .metricTons)
+    }
+    
+    public func cacluateDensity() -> Double {
+        return 1.408
+    }
+    
+    public func calculateAngularVelocity() -> Measurement<UnitSpeed> {
+        return Measurement(value: 1.1e42, unit: .metersPerSecond)
     }
 }

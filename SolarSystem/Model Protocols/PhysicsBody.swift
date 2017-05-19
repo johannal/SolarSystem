@@ -18,6 +18,6 @@ public protocol PhysicsBody {
     func cacluateDensity() -> Double
     
     /// Calculates this body's rate of change of angular displacement, and is a vector quantity that specifies the angular speed (rotational speed) of this object and the axis about which this object is rotating.
-    func angularVelocity() -> Measurement<UnitSpeed>
+    func calculateAngularVelocity() -> Measurement<UnitSpeed>
     
 }
