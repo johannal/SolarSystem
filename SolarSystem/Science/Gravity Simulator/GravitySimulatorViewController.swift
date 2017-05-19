@@ -26,7 +26,12 @@ class GravitySimulatorViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
+        /// DEMO: Add Log Message Breakpoint: "Gravity Simulator Is Landscape: @deviceOrientationIsLandscape@"
         // TODO: Initiate zero gravity animation here
+        let deviceOrientationIsLandscape = size.width > size.height
+        if deviceOrientationIsLandscape {
+            // ...
+        }
     }
     
     @IBAction func gravityButtonPressed(_ sender: UIButton) {
