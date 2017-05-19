@@ -73,6 +73,10 @@ public class SolarSystem {
         
     }
     
+    func xyz() {
+        //TODO: small function to fill out this file
+    }
+    
     // Orbits
     let mercuryOrbit = Orbit()
     let venusOrbit = Orbit()
