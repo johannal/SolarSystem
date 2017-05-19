@@ -286,12 +286,22 @@ Population: 7.347 billion</string>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </skView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-fr-W7T">
+                                <rect key="frame" x="290" y="582" width="73" height="73"/>
+                                <state key="normal" image="GravityButtonOFF"/>
+                                <state key="selected" image="GravityButtonON"/>
+                                <connections>
+                                    <action selector="gravityButtonPressed:" destination="SIm-XS-6Jw" eventType="touchUpInside" id="2CD-mW-Xan"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cke-26-cJ7" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
                             <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="rQH-Aa-o5D" secondAttribute="bottom" id="Pr6-6f-kfT"/>
+                            <constraint firstItem="cke-26-cJ7" firstAttribute="top" secondItem="6bh-fr-W7T" secondAttribute="bottom" constant="12" id="TeH-LI-oW2"/>
                             <constraint firstAttribute="trailing" secondItem="zNm-mF-IXM" secondAttribute="trailing" id="ZDF-1x-xhR"/>
+                            <constraint firstAttribute="trailing" secondItem="6bh-fr-W7T" secondAttribute="trailing" constant="12" id="bYW-T2-yWT"/>
                             <constraint firstItem="zNm-mF-IXM" firstAttribute="leading" secondItem="vP0-To-fAb" secondAttribute="leading" id="iHw-Qy-ceg"/>
                         </constraints>
                     </view>
@@ -306,6 +316,8 @@ Population: 7.347 billion</string>
     </scenes>
     <resources>
         <image name="ComparisonViewIcon" width="36" height="14"/>
+        <image name="GravityButtonOFF" width="73" height="73"/>
+        <image name="GravityButtonON" width="73" height="73"/>
         <image name="LeftArrow" width="23" height="49"/>
         <image name="OrbitalViewIcon" width="39" height="39"/>
         <image name="PlanetDetailsIcon" width="43" height="29"/>

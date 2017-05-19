@@ -29,5 +29,9 @@ class GravitySimulatorViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
     }
+    
+    @IBAction func gravityButtonPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
 
 }
