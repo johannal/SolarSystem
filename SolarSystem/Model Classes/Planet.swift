@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class Planet {
+public class Planet: Hashable {
     
     let name: String
     
@@ -30,4 +30,17 @@ public class Planet {
     func add(nearbyObject: TransNeptunianObject) {
         nearbyObjects.append(nearbyObject)
     }
+    
+    // MARK: - Hashable
+    
+    public var hashValue: Int {
+        get {
+            return name.hashValue
+        }
+    }
+    
+    public static func ==(lhs: Planet, rhs: Planet) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
 }
