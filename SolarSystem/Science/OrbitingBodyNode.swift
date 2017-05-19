@@ -8,6 +8,7 @@
 import SceneKit
 
 let OrbitingAnimationName = "Planet Orbiting Animation"
+let SpinningAnimationName = "Planet Spinning Animation"
 
 class OrbitingBodyNode: PhysicsBodyNode {
     
@@ -38,5 +39,29 @@ class OrbitingBodyNode: PhysicsBodyNode {
     func stopOrbitingAnimation() {
         rotationNode.removeAnimation(forKey: OrbitingAnimationName)
     }
-
+    
+    func startSpinningAnimation() {
+        // Add orbiting animation if necessary
+        if rotationNode.animation(forKey: SpinningAnimationName) == nil {
+            let spinningAnimation = CABasicAnimation(keyPath: "rotation")
+            
+            let rotationalPeriod = bodyInfo?["rotationalPeriod"] as! Double
+            spinningAnimation.duration = rotationalPeriod
+            
+            var directionMultiplier: Double = 1.0
+            if let rotationDirectionIsForward = bodyInfo?["rotationDirectionIsForward"] as? Bool {
+                if !rotationDirectionIsForward {
+                    directionMultiplier = -1.0
+                }
+            }
+            
+            spinningAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, directionMultiplier, 0, Double.pi * 2.0))
+            spinningAnimation.repeatCount = .greatestFiniteMagnitude
+            addAnimation(spinningAnimation, forKey: OrbitingAnimationName)
+        }
+    }
+    
+    func stopSpinningAnimation() {
+        rotationNode.removeAnimation(forKey: SpinningAnimationName)
+    }
 }

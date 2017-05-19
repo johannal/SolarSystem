@@ -12,6 +12,8 @@
 		<real>4498000000</real>
 		<key>orbitalPeriod</key>
 		<integer>60149</integer>
+		<key>rotationalPeriod</key>
+		<integer>8</integer>
 		<key>name</key>
 		<string>Neptune</string>
 	</dict>
@@ -29,6 +31,8 @@
 		<real>149598023</real>
 		<key>orbitalPeriod</key>
 		<integer>365</integer>
+		<key>rotationalPeriod</key>
+		<integer>6</integer>
 		<key>name</key>
 		<string>Earth</string>
 	</dict>
@@ -42,6 +46,8 @@
 		<integer>57909050</integer>
 		<key>orbitalPeriod</key>
 		<integer>88</integer>
+		<key>rotationalPeriod</key>
+		<integer>5</integer>
 		<key>name</key>
 		<string>Mercury</string>
 	</dict>
@@ -55,6 +61,10 @@
 		<integer>108208000</integer>
 		<key>orbitalPeriod</key>
 		<integer>224</integer>
+		<key>rotationalPeriod</key>
+		<integer>7</integer>
+		<key>rotationDirectionIsForward</key>
+		<false/>
 		<key>name</key>
 		<string>Venus</string>
 	</dict>
@@ -68,6 +78,8 @@
 		<integer>228000000</integer>
 		<key>orbitalPeriod</key>
 		<integer>687</integer>
+		<key>rotationalPeriod</key>
+		<integer>12</integer>
 		<key>name</key>
 		<string>Mars</string>
 	</dict>
@@ -81,6 +93,8 @@
 		<real>778000000</real>
 		<key>orbitalPeriod</key>
 		<integer>4330</integer>
+		<key>rotationalPeriod</key>
+		<integer>10</integer>
 		<key>name</key>
 		<string>Jupiter</string>
 	</dict>
@@ -94,6 +108,8 @@
 		<real>1433000000</real>
 		<key>orbitalPeriod</key>
 		<integer>10752</integer>
+		<key>rotationalPeriod</key>
+		<integer>11</integer>
 		<key>name</key>
 		<string>Saturn</string>
 	</dict>
@@ -107,6 +123,8 @@
 		<real>2872000000</real>
 		<key>orbitalPeriod</key>
 		<integer>30665</integer>
+		<key>rotationalPeriod</key>
+		<integer>16</integer>
 		<key>name</key>
 		<string>Uranus</string>
 	</dict>

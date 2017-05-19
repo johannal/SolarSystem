@@ -118,6 +118,7 @@ class SolarSystemController: UIViewController {
                 
                 // Start orbiting
                 planetNode.startOrbitingAnimation()
+                planetNode.startSpinningAnimation()
                 
                 planetNodes.append(planetNode)
             }
