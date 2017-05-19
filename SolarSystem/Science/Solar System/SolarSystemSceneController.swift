@@ -140,9 +140,9 @@ class SolarSystemController: UIViewController {
     }
     
     @objc func didTapSceneView(_ sender: UITapGestureRecognizer) {
-        let results = solarSystemSceneView.hitTest(sender.location(in: solarSystemSceneView), options: nil)
+        let hitTestResults = solarSystemSceneView.hitTest(sender.location(in: solarSystemSceneView), options: nil)
         
-        if let hitNode = results.first?.node as? PhysicsBodyNode {
+        if let hitNode = hitTestResults.first?.node as? PhysicsBodyNode {
             didTapPhysicsBody(hitNode)
         }
     }
