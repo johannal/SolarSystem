@@ -10,6 +10,8 @@ import UIKit
 class MainViewController: UIViewController, SceneHUDDelegate {
     
     @IBOutlet weak var contentContainerView: UIView!
+    
+    weak var planetDetailsVC: UIViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,20 +66,23 @@ class MainViewController: UIViewController, SceneHUDDelegate {
     
     func showPlanetDetails() {
         // Initiate solar system controller
-        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC")
-        solarSystemVC.view.translatesAutoresizingMaskIntoConstraints = false
-        addChildViewController(solarSystemVC)
-        contentContainerView.addSubview(solarSystemVC.view)
+        let planetDetailsVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC")
+        planetDetailsVC.view.translatesAutoresizingMaskIntoConstraints = false
+        addChildViewController(planetDetailsVC)
+        contentContainerView.addSubview(planetDetailsVC.view)
         
         // Constraints
-        solarSystemVC.view.leadingAnchor.constraint(equalTo: contentContainerView.leadingAnchor).isActive = true
-        solarSystemVC.view.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor).isActive = true
-        solarSystemVC.view.topAnchor.constraint(equalTo: contentContainerView.topAnchor).isActive = true
-        solarSystemVC.view.bottomAnchor.constraint(equalTo: contentContainerView.bottomAnchor).isActive = true
+        planetDetailsVC.view.leadingAnchor.constraint(equalTo: contentContainerView.leadingAnchor).isActive = true
+        planetDetailsVC.view.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor).isActive = true
+        planetDetailsVC.view.topAnchor.constraint(equalTo: contentContainerView.topAnchor).isActive = true
+        planetDetailsVC.view.bottomAnchor.constraint(equalTo: contentContainerView.bottomAnchor).isActive = true
+        
+        self.planetDetailsVC = planetDetailsVC
     }
     
     func showSolarSystem() {
-        
+        planetDetailsVC?.view.removeFromSuperview()
+        planetDetailsVC?.removeFromParentViewController()
     }
 
 }

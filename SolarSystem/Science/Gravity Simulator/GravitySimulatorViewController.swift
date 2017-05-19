@@ -15,7 +15,7 @@ class GravitySimulatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        gravityView.scene?.scaleMode = .aspectFit
+        gravityView.scene?.scaleMode = .aspectFill
     }
     
     override func viewDidAppear(_ animated: Bool) {
