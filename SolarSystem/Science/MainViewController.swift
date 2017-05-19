@@ -63,7 +63,17 @@ class MainViewController: UIViewController, SceneHUDDelegate {
     }
     
     func showPlanetDetails() {
+        // Initiate solar system controller
+        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC")
+        solarSystemVC.view.translatesAutoresizingMaskIntoConstraints = false
+        addChildViewController(solarSystemVC)
+        contentContainerView.addSubview(solarSystemVC.view)
         
+        // Constraints
+        solarSystemVC.view.leadingAnchor.constraint(equalTo: contentContainerView.leadingAnchor).isActive = true
+        solarSystemVC.view.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor).isActive = true
+        solarSystemVC.view.topAnchor.constraint(equalTo: contentContainerView.topAnchor).isActive = true
+        solarSystemVC.view.bottomAnchor.constraint(equalTo: contentContainerView.bottomAnchor).isActive = true
     }
     
     func showSolarSystem() {

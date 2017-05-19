@@ -151,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKV-NZ-amv">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKV-NZ-amv">
                                 <rect key="frame" x="0.0" y="327" width="375" height="281"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EARTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDK-tq-PXW">
@@ -205,7 +205,7 @@ Population: 7.347 billion</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cDV-qF-GPV" firstAttribute="top" secondItem="fgu-st-i57" secondAttribute="bottom" constant="15" id="3js-8r-5IQ"/>
                                     <constraint firstItem="wDK-tq-PXW" firstAttribute="centerX" secondItem="BKV-NZ-amv" secondAttribute="centerX" id="5gU-4S-Gqs"/>
@@ -250,7 +250,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="2bm-fi-XAO"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="top" secondItem="jz0-Vq-8CH" secondAttribute="bottom" id="B41-Mz-Ob2"/>
@@ -270,6 +270,24 @@ Population: 7.347 billion</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRk-HG-cfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="1879.610194902549"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8J2-bW-exR">
+            <objects>
+                <viewController id="SIm-XS-6Jw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rQH-Aa-o5D"/>
+                        <viewControllerLayoutGuide type="bottom" id="cke-26-cJ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vP0-To-fAb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORT-wI-hvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="1880"/>
         </scene>
     </scenes>
     <resources>
