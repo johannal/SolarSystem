@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController, SceneHUDDelegate {
     
     @IBOutlet weak var contentContainerView: UIView!
+    weak var sceneHUDController: SceneHUDViewController?
     
     weak var planetDetailsVC: UIViewController?
 
@@ -35,6 +36,7 @@ class MainViewController: UIViewController, SceneHUDDelegate {
         sceneHUDController.view.backgroundColor = UIColor.clear
         addChildViewController(sceneHUDController)
         view.addSubview(sceneHUDController.view)
+        self.sceneHUDController = sceneHUDController
         
         // Constraints
         sceneHUDController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,9 +48,17 @@ class MainViewController: UIViewController, SceneHUDDelegate {
         sceneHUDController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         sceneHUDController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         sceneHUDController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if planetDetailsVC != nil {
+            sceneHUDController?.solarSystemButton?.isHidden = (size.width > size.height)
+        }
+    }
+    
+    // Delegate callback
     func invokedSceneHUDAction(_ action: SceneHUDAction) {
         switch action {
         case .showPlanetComparison:
