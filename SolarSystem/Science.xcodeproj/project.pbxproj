@@ -98,13 +98,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		07506D651ECA7A6300EB7C11 /* Custom Drawing */ = {
+		07506D651ECA7A6300EB7C11 /* View Classes */ = {
 			isa = PBXGroup;
 			children = (
 				07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */,
 				07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */,
 			);
-			path = "Custom Drawing";
+			path = "View Classes";
 			sourceTree = "<group>";
 		};
 		9EC407EF1EBFEAEB00F7F8A1 = {
@@ -112,7 +112,7 @@
 			children = (
 				D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */,
 				0731FA301EC9FCBF00F46170 /* Model Classes */,
-				07506D651ECA7A6300EB7C11 /* Custom Drawing */,
+				07506D651ECA7A6300EB7C11 /* View Classes */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				0734F5191ECBCB7500D778C5 /* Resources */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
