@@ -97,6 +97,7 @@ class SolarSystemController: UIViewController {
                 planetHostNode.position = SCNVector3.init(scaledOrbitalRadius, 0, 0)
                 planetRotationNode.addChildNode(planetHostNode)
                 planetHostNode.addChildNode(planetNode)
+                planetNode.solarSystemHostNode = planetHostNode
                 
                 // Add orbit
                 let planetOrbit = SCNNode()
@@ -112,11 +113,45 @@ class SolarSystemController: UIViewController {
                 centerNode?.addChildNode(planetOrbit)
                 planetNode.orbitVisualizationNode = planetOrbit
                 
+                // Finalize planet
+                finalizePlanet(planetNode)
+                
                 // Start orbiting
                 planetNode.startOrbitingAnimation()
                 
                 planetNodes.append(planetNode)
             }
+        }
+    }
+    
+    // Do any planet specific things
+    func finalizePlanet(_ node: OrbitingBodyNode) {
+        if node.name == "Saturn" {
+            // Add ring to saturn
+            let planetGeometry = node.geometry as! SCNSphere
+            
+            let ringGeometry = SCNTorus(ringRadius: planetGeometry.radius * 1.6, pipeRadius: planetGeometry.radius / 2.2)
+            
+            let ringMaterial = SCNMaterial()
+            ringMaterial.diffuse.contents = #imageLiteral(resourceName: "2k_saturn_ring+alpha")
+            ringMaterial.diffuse.wrapS = .repeat
+            ringMaterial.diffuse.wrapT = .repeat
+            ringMaterial.isDoubleSided =  true
+            ringMaterial.diffuse.mipFilter = .none
+            ringMaterial.diffuse.intensity = 0.8
+            ringMaterial.diffuse.contentsTransform = SCNMatrix4MakeRotation(Float.pi/180 * -90.0, 0.0, 0.0, 1.0)
+            ringMaterial.emission.contents = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            ringMaterial.emission.intensity = 0.2
+            ringMaterial.shininess = 0.25
+            ringGeometry.firstMaterial = ringMaterial
+            
+            let ringNode = SCNNode()
+            ringNode.transform = SCNMatrix4MakeScale(1.0, 0.05, 1.0)
+            ringNode.geometry = ringGeometry
+            node.addChildNode(ringNode)
+            
+            // Give Saturn an angle
+            node.solarSystemHostNode.rotation = SCNVector4.init(0.0, 0.0, 1.0, Float.pi/180*10)
         }
     }
     
