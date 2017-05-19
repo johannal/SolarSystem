@@ -10,23 +10,23 @@ import Foundation
 /// The solar system we call home.
 public class SolarSystem {
     
-    let sun = Star(name: "Sun", color: #colorLiteral(red: 0.9764705896, green: 0.8812259367, blue: 0.2034560186, alpha: 1))
+    let sun = Star(name: "Sun", color: #colorLiteral(red: 1, green: 0.5549516082, blue: 0.005077361129, alpha: 1))
     
-    let mercury: Planet = Planet(name: "Mercury", color: #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1))
-    let venus: Planet = Planet(name: "Venus", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1))
-    let earth: Planet = Planet(name: "Earth", color: #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1))
-    let mars: Planet = Planet(name: "Mars", color: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1))
-    let jupiter: Planet = Planet(name: "Jupiter", color: #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1))
-    let saturn: Planet = Planet(name: "Saturn", color: #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1))
-    let uranus: Planet = Planet(name: "Uranus", color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
-    let neptune: Planet = Planet(name: "Neptune", color: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
+    let mercury: Planet = Planet(name: "Mercury", color: #colorLiteral(red: 0.6472379565, green: 0.6025107503, blue: 0.5466887951, alpha: 1))
+    let venus: Planet = Planet(name: "Venus", color: #colorLiteral(red: 0.3882164955, green: 0.3436552286, blue: 0.2652897239, alpha: 1))
+    let earth: Planet = Planet(name: "Earth", color: #colorLiteral(red: 0.3583836854, green: 0.4615976214, blue: 0.5621570349, alpha: 1))
+    let mars: Planet = Planet(name: "Mars", color: #colorLiteral(red: 0.8524389267, green: 0.6224156618, blue: 0.4205289483, alpha: 1))
+    let jupiter: Planet = Planet(name: "Jupiter", color: #colorLiteral(red: 0.398963064, green: 0.4041557312, blue: 0.36931777, alpha: 1))
+    let saturn: Planet = Planet(name: "Saturn", color: #colorLiteral(red: 0.8856078386, green: 0.7523123622, blue: 0.5600671172, alpha: 1))
+    let uranus: Planet = Planet(name: "Uranus", color: #colorLiteral(red: 0.5745319724, green: 0.7137514353, blue: 0.7544075847, alpha: 1))
+    let neptune: Planet = Planet(name: "Neptune", color: #colorLiteral(red: 0.3400839567, green: 0.5141240954, blue: 0.6517244577, alpha: 1))
     
     let planets: [Planet]
     let distantObjects: [TransNeptunianObject]
     
     public init() {
         
-        // ** DEMO POLISH: rdar://problem/32247713, rdar://problem/32247744
+        // ** DEMO POLISH: rdar://problem/32247713
         // ** DEMO BLOCKER: rdar://problem/32039874 **
         
         // add Earth's moon.
@@ -36,10 +36,13 @@ public class SolarSystem {
         mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
         mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
         
+        // DEMO TODO: maybe add neptune to the array via the structure edit menu?
+        planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, venus]
+        
         // ** DEMO BLOCKER: rdar://problem/32225277 **
         // DEMO TODO: extract adding of jupiters moons to its own method.
         
-        // add Jupiter's 67 (😮!) moons.
+        // add Jupiter's 67 moons 😮!
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
             do {
                 // grab all the names of Jupiter's moons, which are separated by newlines.
@@ -51,14 +54,11 @@ public class SolarSystem {
                     mars.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
                 }
             } catch {
-                print(error)
+                // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
             }
         }
         
         distantObjects = []
-        
-        // DEMO TODO: maybe add neptune to the array via the structure edit menu?
-        planets = [mercury, venus, earth, mars, jupiter, saturn, uranus]
         
     }
     
