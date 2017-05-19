@@ -271,10 +271,10 @@ Population: 7.347 billion</string>
             </objects>
             <point key="canvasLocation" x="964" y="1879.610194902549"/>
         </scene>
-        <!--View Controller-->
+        <!--Gravity Simulator View Controller-->
         <scene sceneID="8J2-bW-exR">
             <objects>
-                <viewController id="SIm-XS-6Jw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rQH-Aa-o5D"/>
                         <viewControllerLayoutGuide type="bottom" id="cke-26-cJ7"/>
@@ -282,8 +282,22 @@ Population: 7.347 billion</string>
                     <view key="view" contentMode="scaleToFill" id="vP0-To-fAb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </skView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cke-26-cJ7" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
+                            <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="rQH-Aa-o5D" secondAttribute="bottom" id="Pr6-6f-kfT"/>
+                            <constraint firstAttribute="trailing" secondItem="zNm-mF-IXM" secondAttribute="trailing" id="ZDF-1x-xhR"/>
+                            <constraint firstItem="zNm-mF-IXM" firstAttribute="leading" secondItem="vP0-To-fAb" secondAttribute="leading" id="iHw-Qy-ceg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gravityView" destination="zNm-mF-IXM" id="hce-cW-ffp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORT-wI-hvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
