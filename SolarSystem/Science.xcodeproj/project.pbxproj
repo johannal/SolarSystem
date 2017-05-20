@@ -16,6 +16,7 @@
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		07B32AB51ECF4C870098E49F /* SolarSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB41ECF4C870098E49F /* SolarSystemView.swift */; };
 		07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB61ECF59A60098E49F /* Orbit.swift */; };
+		9E1ACC951ECFBE9C0066532D /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */; };
 		9E2017351ECB7E95002373D7 /* SolarSystemSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */; };
 		9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */; };
 		9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */; };
@@ -51,6 +52,7 @@
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		07B32AB41ECF4C870098E49F /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		07B32AB61ECF59A60098E49F /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
+		9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemSceneController.swift; sourceTree = "<group>"; };
 		9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHUDViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				9E53D15C1ECF715E002A0001 /* GravitySimulatorViewController.swift */,
 				9E87ADC71ECF93DF0044AF90 /* GravityMeterViewController.swift */,
+				9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */,
 				9E53D15B1ECF715E002A0001 /* GravitySimulator.sks */,
 			);
 			path = "Gravity Simulator";
@@ -289,6 +292,7 @@
 				D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */,
 				9E53D15A1ECF651E002A0001 /* MainViewController.swift in Sources */,
 				9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */,
+				9E1ACC951ECFBE9C0066532D /* DismissSegue.swift in Sources */,
 				9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */,
 				0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */,
 				EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */,

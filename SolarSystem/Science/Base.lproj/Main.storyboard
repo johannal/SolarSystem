@@ -9,6 +9,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="XBI-2k-WF2">
@@ -59,13 +64,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </sceneKitView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-hA-QQz">
+                                <rect key="frame" x="12" y="628" width="37" height="27"/>
+                                <state key="normal" image="GravityGauge"/>
+                                <connections>
+                                    <segue destination="vGa-F7-cak" kind="presentation" id="MoB-gr-65g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lUF-hA-QQz" firstAttribute="leading" secondItem="XVx-eM-eju" secondAttribute="leading" constant="12" id="3et-Qm-Dr2"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="top" secondItem="XVx-eM-eju" secondAttribute="top" id="57s-2N-clX"/>
                             <constraint firstItem="2ia-0A-E25" firstAttribute="top" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
                             <constraint firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="XVx-eM-eju" secondAttribute="leading" id="vXt-kg-Sts"/>
+                            <constraint firstItem="2ia-0A-E25" firstAttribute="top" secondItem="lUF-hA-QQz" secondAttribute="bottom" constant="12" id="wQW-Uc-scP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -74,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6E-Mf-URo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="1223"/>
+            <point key="canvasLocation" x="1670" y="1223"/>
         </scene>
         <!--SceneHUD View Controller-->
         <scene sceneID="nl8-sg-zBp">
@@ -137,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXm-qn-51D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="1223"/>
+            <point key="canvasLocation" x="2423" y="1223"/>
         </scene>
         <!--Planet Details View Controller-->
         <scene sceneID="ZLn-kE-Cwx">
@@ -269,7 +283,7 @@ Population: 7.347 billion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRk-HG-cfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="1879.610194902549"/>
+            <point key="canvasLocation" x="246" y="1950"/>
         </scene>
         <!--Gravity Simulator View Controller-->
         <scene sceneID="8J2-bW-exR">
@@ -311,12 +325,12 @@ Population: 7.347 billion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORT-wI-hvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="1880"/>
+            <point key="canvasLocation" x="964" y="1950"/>
         </scene>
-        <!--View Controller-->
+        <!--Gravity Meter View Controller-->
         <scene sceneID="VtU-Jy-Qbw">
             <objects>
-                <viewController id="vGa-F7-cak" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="GravityMeterViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cch-Ov-4AS"/>
                         <viewControllerLayoutGuide type="bottom" id="5d2-8X-gJD"/>
@@ -325,31 +339,52 @@ Population: 7.347 billion</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.81 m/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.81 m/s²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="r3q-QT-j1i" appends="YES" id="dC8-J1-oJC"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe down to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-fQ-3hK">
+                                <rect key="frame" x="109.5" y="641" width="156" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="U0L-fQ-3hK" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="5HK-TQ-XLT"/>
                             <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="FBQ-yv-Ja8" secondAttribute="bottom" id="Dag-xD-Rgj"/>
+                            <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="U0L-fQ-3hK" secondAttribute="bottom" constant="8" id="R1v-HZ-Rap"/>
                             <constraint firstAttribute="trailing" secondItem="FBQ-yv-Ja8" secondAttribute="trailing" id="UlN-4c-NRO"/>
                             <constraint firstItem="FBQ-yv-Ja8" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" id="jw3-F5-UDT"/>
                             <constraint firstItem="FBQ-yv-Ja8" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" id="pQg-dU-kg6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gravityLabel" destination="FBQ-yv-Ja8" id="Bjk-iK-5lc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUs-sa-xUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="r3q-QT-j1i">
+                    <connections>
+                        <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Science" customModuleProvider="target" id="MtY-t1-WgT"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2369" y="1880"/>
+            <point key="canvasLocation" x="1670" y="1950"/>
         </scene>
     </scenes>
     <resources>
         <image name="ComparisonViewIcon" width="36" height="14"/>
         <image name="GravityButtonOFF" width="73" height="73"/>
         <image name="GravityButtonON" width="73" height="73"/>
+        <image name="GravityGauge" width="37" height="27"/>
         <image name="LeftArrow" width="23" height="49"/>
         <image name="OrbitalViewIcon" width="39" height="39"/>
         <image name="PlanetDetailsIcon" width="43" height="29"/>
