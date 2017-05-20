@@ -112,7 +112,7 @@ public class SolarSystemView: UIView {
     func updatePlanetPositions() {
         let date = Date()
         for planet in solarSystem.planets {
-            let position = solarSystem.postion(planet: planet, date: date)
+            let position = solarSystem.position(planet: planet, date: date)
             updatePlanetNodePosition(position: position)
         }
     }
@@ -194,6 +194,8 @@ public class SolarSystemPoint: NSObject {
         self.y = y
         self.z = z
     }
+    
+    static let zero = SolarSystemPoint(x: 0, y: 0, z: 0)
 }
 
 enum SolarSystemViewError: Error {

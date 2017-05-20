@@ -14,6 +14,9 @@ protocol OrbitingBody: PhysicsBody {
     /// Distance of this object from the orbital center point.
     var orbitalRadius: Measurement<UnitLength> { get }
     
+    /// The offset from the plane of the orbital system
+    var planarOffset: Measurement<UnitAngle> { get }
+    
     /// Time taken for a this object to make one complete orbit around the center point.
     var orbitalPeriod: SolarDays { get }
     
@@ -33,6 +36,10 @@ protocol OrbitingBody: PhysicsBody {
 }
 
 extension OrbitingBody {
+    
+    var planarOffset: Measurement<UnitAngle> {
+        return Measurement(value: 0, unit: .degrees)
+    }
     
     func orbit(around center: CGPoint, scale: Double) -> UIBezierPath {
         // Compact form

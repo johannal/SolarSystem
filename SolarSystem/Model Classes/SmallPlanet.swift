@@ -15,15 +15,21 @@ public class SmallPlanet: NSObject {
     
     public let shape: Shape
     
+    public let parentStar: Star
+    
     public enum Shape {
         case spherical
         case oblong
         case irregular
     }
     
-    public init(name: String, shape: Shape) {
+    public init(name: String, shape: Shape, parentStar: Star) {
         self.name = name
         self.shape = shape
+        self.parentStar = parentStar
     }
     
+    func positionRelativeToStar(date: Date = Date()) -> SolarSystemPoint {
+        return parentStar.parentSolarSystem.position(smallPlanet: self, date: date)
+    }
 }

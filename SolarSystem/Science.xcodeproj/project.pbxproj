@@ -37,6 +37,7 @@
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
 		EE22DC031ECCF966008CBDDE /* SmallPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* SmallPlanet.swift */; };
 		EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = EE58186F1ECCFD9900733C90 /* Asteroid.m */; };
+		EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */; };
 		EECE23D11ECCC60100D0CC7A /* Planets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* Planets.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		EE22DC021ECCF966008CBDDE /* SmallPlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPlanet.swift; sourceTree = "<group>"; };
 		EE58186E1ECCFD9900733C90 /* Asteroid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
 		EE58186F1ECCFD9900733C90 /* Asteroid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
+		EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelescopicSurvey.swift; sourceTree = "<group>"; };
 		EECE23D01ECCC60100D0CC7A /* Planets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Planets.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				0781432A1ECB3FAB009C18DF /* Star.swift */,
 				D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */,
 				EE22DC021ECCF966008CBDDE /* SmallPlanet.swift */,
+				EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */,
 			);
 			path = "Model Classes";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				0781432B1ECB3FAB009C18DF /* Star.swift in Sources */,
 				9E53D15E1ECF715E002A0001 /* GravitySimulatorViewController.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
+				EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */,
 				9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */,
 				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
 				D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */,

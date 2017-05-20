@@ -70,7 +70,7 @@ public class SolarSystem {
         }
         
         // create all of the distant objects, which are loaded from a data file.
-        distantObjects = SolarSystem.loadAndCreateDistantObjects()
+        distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
     }
     
     /// Calculates the position of a given #Planet, at a particular date (which includes time), relative to the Sun.
@@ -79,7 +79,7 @@ public class SolarSystem {
     ///   - planet: the Planet to calculate the position of.
     ///   - date: the date (and time) at which to calcualte the position for.
     /// - Returns: the coordinate, relative to the Sun, of the given planet.
-    public func postion(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
+    public func position(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
         
         // TODO [RUSS] -> add some realistic logic here.
         // TODO [RUSS] -> add a few more uses of this method.
@@ -91,10 +91,14 @@ public class SolarSystem {
         return SolarSystemPoint(x: xDeltaFromSun, y: yDeltaFromSun, z: zDeltaFromSun)
     }
     
+    public func position(smallPlanet: SmallPlanet, date: Date = Date()) -> SolarSystemPoint {
+        return .zero
+    }
+    
     public func distanceBetween(planetA: Planet, planetB: Planet, date: Date = Date()) -> Measurement<UnitLength> {
         
-        let planetAPosition = postion(planet: planetA, date: date)
-        let planetBPosition = postion(planet: planetB, date: date)
+        let planetAPosition = position(planet: planetA, date: date)
+        let planetBPosition = position(planet: planetB, date: date)
         
         // TODO [RUSS] -> add some realistic logic here.
         
@@ -113,7 +117,7 @@ public class SolarSystem {
     let uranusOrbit = Orbit()
     let neptuneOrbit = Orbit()
     
-    private static func loadAndCreateDistantObjects() -> [SmallPlanet] {
+    private static func loadAndCreateDistantObjects(parentStar: Star) -> [SmallPlanet] {
         var distantObjects: [SmallPlanet] = []
         if let path = Bundle.main.path(forResource: "DistantObjects", ofType: "txt") {
             do {
@@ -124,7 +128,7 @@ public class SolarSystem {
                 
                 // loop over all of distant object names.
                 for distantObjectName in distantObjectNames {
-                    distantObjects.append(SmallPlanet(name: distantObjectName, shape: defaultShape))
+                    distantObjects.append(SmallPlanet(name: distantObjectName, shape: defaultShape, parentStar: parentStar))
                 }
             } catch {
                 // we shouldn't end up here, since we're shipping DistantObjects.txt with our app.

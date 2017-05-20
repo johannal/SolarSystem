@@ -24,18 +24,26 @@ public class Star: PhysicsBody {
         self.color = color
     }
     
+    /// Add a #SmallPlanet as a distant object
+    /// related to this #Star
+    ///
+    /// - Parameter distantObject: The distant object to add
     func add(distantObject: SmallPlanet) {
         distantObjects.append(distantObject)
     }
     
     func position(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
-        return parentSolarSystem.postion(planet: planet, date: date)
+        return parentSolarSystem.position(planet: planet, date: date)
+    }
+    
+    func position(smallPlanet: SmallPlanet, date: Date = Date()) -> SolarSystemPoint {
+        return parentSolarSystem.position(smallPlanet: smallPlanet, date: date)
     }
     
     func positionsOfPlanets(date: Date = Date()) -> [SolarSystemPoint] {
         var positions: [SolarSystemPoint] = []
         for planet in planets {
-            positions.append(parentSolarSystem.postion(planet: planet, date: date))
+            positions.append(parentSolarSystem.position(planet: planet, date: date))
         }
         return positions
     }
