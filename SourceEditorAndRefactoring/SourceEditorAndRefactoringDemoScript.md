@@ -1,36 +1,22 @@
 Thanks Matthew.
 
-Xcode 9 includes a new source editor written from the ground up to be super fast. In fact, the editor's speed is the first thing I think you'll notice about Xcode 9.
+Xcode 9 includes a brand new source editor written from the ground up to be super fast. In fact, the editor's speed is the first thing I think you'll notice.
 
-    [scroll down and then up in README.md]
+    [scroll down and then up in SolarSystemView.swift]
 
-It's fully layer backed and opts in to responsive scrolling -- super smooth.
+It's fully layer backed and opts in to responsive scrolling. Momentum scrolling -- super smooth. I can grab the scroll thumb and drag that up and down in this 8000+ line file, and it tracks my mouse like it's stuck to it. I can jump instantly to any line, including the very bottom of the file.
 
-Along with the fresh new UI and it's now easier to control the way your code looks. One of my favorite features: a couple of Command-pluses to increase the font size, which is really handy for a code review, or a demo!
+And typing responsiveness, well thats better too.
+
+One of my favorite features: a couple of Command-pluses to increase the font size, which is really handy for a code review, or a demo!
 
     [press Command-plus a few times]
     
-Xcode 9 also adds first class support for markdown. We know a lot of developers use markdown for their READMEs or other artifacts in their projects.
-
-This is my project's README here, and you can see that Xcode uses fonts of different sizes and weights. The new text layout engine handles varying fonts really, really well.
- 
-Now not only do I get complete syntax highlighting, but Xcode a also understands the structure of markdown.
-
-    [click on README.md and pop the jump bar]
-    
-I can see the all of the headings and get an outline of my document. I can also use the structure to navigate. When I hold down the Command key and mouse over this link in the text, Xcode highlights it, and I can click it to jump to it's definition, just like it does in regular source code. I can even click on this link, and do an edit-all-in-scope to change it's name throughout my document.
-
-----------------------------------------
-
-Of course, you'll probably be spending most of your time in source code, so lets jump over to a source file.
-
-    [navigate to BackgroundSkyBoxView.m]
-
-Xcode 9 introduces some new issues and fix-its that'll catch bugs quicker and help you type less. I'll type some code that is using new iOS 11 API.
+In addition to the speed boost, Xcode 9 adds some new issues and fix-its. I'll type some code that is using new iOS 11 API.
 
     [type "demo1"]
     
-We've brought the too-new-API issue back to Objective-C. Xcode's warning me that I deploy back to iOS 10, where this will crash. I'll accept the fix-it, which will wrap the call in an @available check. Catching this kind of problem in at compile time is a huge win.
+We've brought the too-new-API issue to Objective-C. Xcode's warning me that I deploy back to iOS 10, where this will crash. I'll accept the fix-it, which will wrap the call using the new Objective-C @available keyword. Catching this kind of problem in at compile time is a huge win.
     
 My favorite new fix it, though, is for missing protocol methods.
 

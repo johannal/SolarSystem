@@ -52,7 +52,7 @@
     CGGradientRelease(gradient);
 }
 
-- (void)_adjustToLayoutMargins:(NSDirectionalEdgeInsets)layoutMargins {
+- (void)_adjustToMargins:(NSDirectionalEdgeInsets)layoutMargins {
     
 }
 

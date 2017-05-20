@@ -1,2 +1,2 @@
 ### demo1 - Demo 1
-[self _adjustToLayoutMargins:self.directionalLayoutMargins];
+[self _adjustToMargins:self.directionalLayoutMargins];
