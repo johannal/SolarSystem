@@ -38,7 +38,7 @@
 		EE22DC031ECCF966008CBDDE /* SmallPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* SmallPlanet.swift */; };
 		EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = EE58186F1ECCFD9900733C90 /* Asteroid.m */; };
 		EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */; };
-		EECE23D11ECCC60100D0CC7A /* Planets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* Planets.storyboard */; };
+		EECE23D11ECCC60100D0CC7A /* ThePlanets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +79,7 @@
 		EE58186E1ECCFD9900733C90 /* Asteroid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
 		EE58186F1ECCFD9900733C90 /* Asteroid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
 		EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelescopicSurvey.swift; sourceTree = "<group>"; };
-		EECE23D01ECCC60100D0CC7A /* Planets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Planets.storyboard; sourceTree = "<group>"; };
+		EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThePlanets.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +184,7 @@
 			children = (
 				0731FA371ECA06C800F46170 /* README.md */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
-				EECE23D01ECCC60100D0CC7A /* Planets.storyboard */,
+				EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */,
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
 				9E53D1591ECF651E002A0001 /* MainViewController.swift */,
 				9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */,
@@ -274,7 +274,7 @@
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
-				EECE23D11ECCC60100D0CC7A /* Planets.storyboard in Resources */,
+				EECE23D11ECCC60100D0CC7A /* ThePlanets.storyboard in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,
 			);
