@@ -17,6 +17,8 @@ public class Star: PhysicsBody {
     
     public private(set) var distantObjects: [SmallPlanet] = []
     
+    public private(set) var parentSolarSystem: SolarSystem!
+    
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
@@ -24,6 +26,18 @@ public class Star: PhysicsBody {
     
     func add(distantObject: SmallPlanet) {
         distantObjects.append(distantObject)
+    }
+    
+    func position(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
+        return parentSolarSystem.postion(planet: planet, date: date)
+    }
+    
+    func positionsOfPlanets(date: Date = Date()) -> [SolarSystemPoint] {
+        var positions: [SolarSystemPoint] = []
+        for planet in planets {
+            positions.append(parentSolarSystem.postion(planet: planet, date: date))
+        }
+        return positions
     }
     
     // MARK: - PhysicsBody

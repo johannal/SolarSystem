@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// The solar system we call home.
+/// A model of a solar system, including a central #Star with orbiting #Planets.
 public class SolarSystem {
     
     // Create the sun.
@@ -69,8 +69,8 @@ public class SolarSystem {
             }
         }
         
-        distantObjects = []
-        
+        // create all of the distant objects, which are loaded from a data file.
+        distantObjects = SolarSystem.loadAndCreateDistantObjects()
     }
     
     /// Calculates the position of a given #Planet, at a particular date (which includes time), relative to the Sun.
@@ -79,7 +79,7 @@ public class SolarSystem {
     ///   - planet: the Planet to calculate the position of.
     ///   - date: the date (and time) at which to calcualte the position for.
     /// - Returns: the coordinate, relative to the Sun, of the given planet.
-    public func postion(planet: Planet, date: Date) -> SolarSystemPoint {
+    public func postion(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
         
         // TODO: do some fancy calculations here with lots of math.
         
@@ -88,6 +88,18 @@ public class SolarSystem {
         let zDeltaFromSun = 0.0
         
         return SolarSystemPoint(x: xDeltaFromSun, y: yDeltaFromSun, z: zDeltaFromSun)
+    }
+    
+    public func distanceBetween(planetA: Planet, planetB: Planet, date: Date = Date()) -> Measurement<UnitLength> {
+        
+        let planetAPosition = postion(planet: planetA, date: date)
+        let planetBPosition = postion(planet: planetB, date: date)
+        
+        // TODO: do some fancy calculations here with lots of math.
+        
+        let _ = planetAPosition.x + planetBPosition.x
+        
+        return Measurement<UnitLength>(value: 0, unit: .lightyears)
     }
     
     // Orbits
@@ -100,4 +112,24 @@ public class SolarSystem {
     let uranusOrbit = Orbit()
     let neptuneOrbit = Orbit()
     
+    private static func loadAndCreateDistantObjects() -> [SmallPlanet] {
+        var distantObjects: [SmallPlanet] = []
+        if let path = Bundle.main.path(forResource: "DistantObjects", ofType: "txt") {
+            do {
+                // grab all the distant objects
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let distantObjectNames = data.components(separatedBy: .newlines)
+                let defaultShape = SmallPlanet.Shape.spherical
+                
+                // loop over all of distant object names.
+                for distantObjectName in distantObjectNames {
+                    distantObjects.append(SmallPlanet(name: distantObjectName, shape: defaultShape))
+                }
+            } catch {
+                // we shouldn't end up here, since we're shipping DistantObjects.txt with our app.
+            }
+        }
+        return distantObjects
+    }
+        
 }

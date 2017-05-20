@@ -17,6 +17,8 @@ public class Planet: Hashable {
     
     private(set) var nearbyObjects: [SmallPlanet] = []
     
+    private(set) var parentStar: Star!
+    
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
@@ -29,6 +31,10 @@ public class Planet: Hashable {
     
     func add(nearbyObject: SmallPlanet) {
         nearbyObjects.append(nearbyObject)
+    }
+    
+    func positionRelativeToStar(date: Date = Date()) -> SolarSystemPoint {
+        return parentStar.parentSolarSystem.postion(planet: self, date: date)
     }
     
     // MARK: - Hashable

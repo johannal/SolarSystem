@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07172BB71ED0E7FE0028FC65 /* DistantObjects.txt */; };
 		0731FA341EC9FD4400F46170 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA331EC9FD4400F46170 /* Moon.swift */; };
 		0731FA361EC9FDF700F46170 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731FA351EC9FDF700F46170 /* Planet.swift */; };
 		0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07172BB71ED0E7FE0028FC65 /* DistantObjects.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DistantObjects.txt; sourceTree = "<group>"; };
 		0731FA331EC9FD4400F46170 /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		0731FA351EC9FDF700F46170 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0731FA371ECA06C800F46170 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */,
+				07172BB71ED0E7FE0028FC65 /* DistantObjects.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */,
+				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
 				EECE23D11ECCC60100D0CC7A /* Planets.storyboard in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,

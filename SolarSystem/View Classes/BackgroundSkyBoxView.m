@@ -8,6 +8,7 @@
 #import "BackgroundSkyBoxView.h"
 
 #import <UIKit/UIKit.h>
+#import "Science-Swift.h"
 
 @implementation BackgroundSkyBoxView
 
