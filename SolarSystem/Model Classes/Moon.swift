@@ -27,11 +27,15 @@ public class Moon: Equatable {
         })
     }
     
+    /// Creates a new Planet.
+    ///
+    /// - Parameters:
+    ///   - name: name of the planet.
+    ///   - color: base color for the planet.
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
     }
-
     
     // MARK: - Equatable
     
