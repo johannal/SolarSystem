@@ -12,7 +12,7 @@ import SceneKit
 public class SolarSystemView: UIView {
     
     // Solar colors, coldest to hottest.
-    let solarBlack = #colorLiteral(red: 0.1501053572, green: 0.003685685573, blue: 0, alpha: 1)
+    let solarBlack      = #colorLiteral(red: 0.1501053572, green: 0.003685685573, blue: 0, alpha: 1)
     let solarOrangeCold = #colorLiteral(red: 0.6025915742, green: 0.06830655783, blue: 0.008578506298, alpha: 1)
     let solarOrangeCool = #colorLiteral(red: 0.8073487878, green: 0.1142350063, blue: 0.002793580992, alpha: 1)
     let solarOrangeWarm = #colorLiteral(red: 0.9957380891, green: 0.55527246, blue: 0.00718178181, alpha: 1)
