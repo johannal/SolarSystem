@@ -73,8 +73,21 @@ public class SolarSystem {
         
     }
     
-    func xyz() {
-        //TODO: small function to fill out this file
+    /// Calculates the position of a given #Planet, at a particular date (which includes time), relative to the Sun.
+    ///
+    /// - Parameters:
+    ///   - planet: the Planet to calculate the position of.
+    ///   - date: the date (and time) at which to calcualte the position for.
+    /// - Returns: the coordinate, relative to the Sun, of the given planet.
+    public func postion(planet: Planet, date: Date) -> SolarSystemPoint {
+        
+        // TODO: do some fancy calculations here with lots of math.
+        
+        let xDeltaFromSun = 0.0
+        let yDeltaFromSun = 0.0
+        let zDeltaFromSun = 0.0
+        
+        return SolarSystemPoint(x: xDeltaFromSun, y: yDeltaFromSun, z: zDeltaFromSun)
     }
     
     // Orbits

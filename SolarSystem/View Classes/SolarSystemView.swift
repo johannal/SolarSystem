@@ -27,6 +27,9 @@ public class SolarSystemView: UIView {
     var solarSystemSceneView: SCNView!
     private(set) var planetNodes: [OrbitingBodyNode] = []
     
+    // Backing SolarSystem model.
+    let solarSystem = SolarSystem()
+    
     private func setupScene() throws {
         let centerNode =
             solarSystemSceneView
@@ -106,7 +109,18 @@ public class SolarSystemView: UIView {
         }
     }
     
-    //DEMO: rename to create(node:kind:)
+    func updatePlanetPositions() {
+        let date = Date()
+        for planet in solarSystem.planets {
+            let position = solarSystem.postion(planet: planet, date: date)
+            updatePlanetNodePosition (position)
+        }
+    }
+    
+    func updatePlanetNodePosition(position: SolarSystemPoint) {
+        
+    }
+    
     func makeNode(name: String, kind: NodeKind) -> SCNNode {
         let node = SCNNode()
         node.name = "\(name) \(kind)"
@@ -167,6 +181,12 @@ public class SolarSystemView: UIView {
             }
         }
     }
+}
+
+public struct SolarSystemPoint {
+    let x: Double
+    let y: Double
+    let z: Double
 }
 
 enum SolarSystemViewError: Error {
