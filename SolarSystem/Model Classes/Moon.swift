@@ -8,11 +8,9 @@
 import UIKit
 
 /// Body that orbits a #Planet.
-@objc
-public class Moon: NSObject {
+public class Moon: Equatable {
     
     /// The name of this moon.
-    @objc
     public let name: String
     
     /// The primary color of this moon.
@@ -40,5 +38,4 @@ public class Moon: NSObject {
     public static func ==(lhs: Moon, rhs: Moon) -> Bool {
         return lhs.name == rhs.name
     }
-    
 }
