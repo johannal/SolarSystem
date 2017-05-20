@@ -81,7 +81,8 @@ public class SolarSystem {
     /// - Returns: the coordinate, relative to the Sun, of the given planet.
     public func postion(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
         
-        // TODO: do some fancy calculations here with lots of math.
+        // TODO [RUSS] -> add some realistic logic here.
+        // TODO [RUSS] -> add a few more uses of this method.
         
         let xDeltaFromSun = 0.0
         let yDeltaFromSun = 0.0
@@ -95,7 +96,7 @@ public class SolarSystem {
         let planetAPosition = postion(planet: planetA, date: date)
         let planetBPosition = postion(planet: planetB, date: date)
         
-        // TODO: do some fancy calculations here with lots of math.
+        // TODO [RUSS] -> add some realistic logic here.
         
         let _ = planetAPosition.x + planetBPosition.x
         
