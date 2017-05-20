@@ -1,139 +1,82 @@
-## Intro
+Thanks Matthew.
 
-As developers, we spend almost all of our day writing code, which means the source editor needs to be awesome.
+Xcode 9 includes a new source editor written from the ground up to be super fast. In fact, the editor's speed is the first thing I think you'll notice about Xcode 9.
 
-In Xcode 9, we've re-written the editor from the ground up, and we did that with performance and stability as one of our main focuses.
+    [scroll down and then up in README.md]
 
-## Editor Presentation
+It's fully layer backed and opts in to responsive scrolling -- super smooth.
 
-### Scrolling and Editing Performance
+Along with the fresh new UI and it's now easier to control the way your code looks. One of my favorite features: a couple of Command-pluses to increase the font size, which is really handy for a code review, or a demo!
 
-And you'll see that right away -- scrolling, is super smooth.
+    [press Command-plus a few times]
+    
+Xcode 9 also adds first class support for markdown. We know a lot of developers use markdown for their READMEs or other artifacts in their projects.
 
-    [scroll down in ChartView.swift]
+This is my project's README here, and you can see that Xcode uses fonts of different sizes and weights. The new text layout engine handles varying fonts really, really well.
+ 
+Now not only do I get complete syntax highlighting, but Xcode a also understands the structure of markdown.
 
-The new source editor is fully layer backed, and is opted in to responsive scrolling.
+    [click on README.md and pop the jump bar]
+    
+I can see the all of the headings and get an outline of my document. I can also use the structure to navigate. When I hold down the Command key and mouse over this link in the text, Xcode highlights it, and I can click it to jump to it's definition, just like it does in regular source code. I can even click on this link, and do an edit-all-in-scope to change it's name throughout my document.
 
-### Theme Adjustment
+----------------------------------------
 
-In addition to a cleaner and fresher look, it's easier to control how you want the editor look, too. You can increase or decrease the font size with Command-plus and Command-minus.
+Of course, you'll probably be spending most of your time in source code, so lets jump over to a source file.
 
-    [press Command-plus a couple of times]
+    [navigate to BackgroundSkyBoxView.m]
 
-I find this super useful when I sit down with someone to do a code review. I can also change the entire theme really easily now, too.
+Xcode 9 introduces some new issues and fix-its that'll catch bugs quicker and help you type less. I'll type some code that is using new iOS 11 API.
 
-    [go to Editor > Theme menu and choose "Default (tweaked)"]
+    [type "demo1"]
+    
+We've brought the too-new-API issue back to Objective-C. Xcode's warning me that I deploy back to iOS 10, where this will crash. I'll accept the fix-it, which will wrap the call in an @available check. Catching this kind of problem in at compile time is a huge win.
+    
+My favorite new fix it, though, is for missing protocol methods.
 
-In this variant of the default theme that I tweaked, I've made the keywords semi-bold and  the comments kinda tiny, which I think looks really nice. To those of you who may have tried using fonts of varying size and weight, I want point out just how well this works now.
+    [navigate to Moon.swift]
+    
+I'm going to conform to PhysicsBody here, which has a few properties I need to implement.
+    
+    [type ", PhysicsBody" after "Equatable" on line 11]
+    
+New in Xcode 9, I get a single fix-it that will implement **all** of the methods in one go. This one is going to save so much typing.
 
-## Editor Performance
+----------------------------------------
 
-So I mentioned that performance is better -- let me show you a little bit of a worst case scenario to demonstrate that. I've got a data file here -- just a text file with some sample data -- and it's about 20MB, which is a lot of text.
+The last thing I want to show you is one of the most exciting new things, something we brought back from Swift Playgrounds. Xcode has always known a lot about the structure of your code -- the different constructs, like methods, expressions and if statements. But none of that information has ever really been surfaced in a way you can use it. Until now.
 
-    [navigate to GraphSampleData.txt]
+If I hold down the Command key, and mouse around, I Xcode highlights the structure of my code. And when I click, I get a set of options that are specific for that thing.
 
-Let me make that a little smaller so it doesn't wrap:
+    [Command click on the if statement around line 41]
+    
+Command-clicking on this class, gives me different options, like adding a method or property.
 
-    [press Command-minus twice]
+    [Command click on the class around line 11]
+    
+I can do more than just add code, though, I can transform code too. So here where I'm adding Earth's moon, I'll Command-click on the Moon class, and choose "Extract Expression…" and create a local variable to use.
 
-You'll see that I can scroll through it no problem:
+    [Command click on "Moon" around line 31 and select "Extract Expression…"]
+    
+I can add items to an array.
 
-    [momentum scroll, then grab the scroll thumb and drag]
+    [Command click on the trailing "]" around line 59 and select "Add Item…"]
+    
+Looks like I was missing "venus" here.
 
-I can grab the scroll thumb and drag it around -- super responsive. I can also instantly jump to the bottom, and then right back to the top.
+I can even extract out a chunk of code into it's own method.
 
-    [press Command-Down and then Command-Up]
+    [Command click on the trailing "}" around line 56 and select "Extract Method…"]
 
-The performance is pretty great.
+Those are all local transformations -- it's even more interesting when I want to do something that spans files, like a rename. Let's rename << some method >>. I'll hold down Command and click on it, then choose rename.
 
-## Issues
+    [Command-Control click on << ?? >> on line <<??>> and choose "Rename…"]
+    
+When I do that, Xcode collapses things down and shows me all the slices of code that will be affected by this name change across my entire project. When I start typing a new name, I'll see it reflected in all of those call sites, including this one down here in Objective-C. I can change the parameter name too.
 
-Lets go back over to ViewController.swift -- I want to show you some new issues and fix-its added in Xcode 9.
+I'll click "Rename" and thats it.
 
-    [navigate to ViewController.swift, toggle-on issues]
+Let me rename one more thing here, just to show you how deep the support goes. I'll rename << ?? >>, which has a file name that corresponds to it, it's used in an IB document, and it also shows up in my Info.plist. Xcode identifies all of those scenarios and offers to make the right changes. Really powerful.
 
-### Too New API Issue
-
-Xcode will now tell you when you're using API that doesn't exist on some of your deployment targets. Here, I'm using the new iOS 11 named UIColors, but my app deploys back to iOS 10. This would have ended up crashing before, now Xcode will tell you abou the issue right away. And of course, there's a nice fix-it to go along with the issue:
-
-    [tap the issue icon and choose the fix-it that wraps the code in #available]
-
-I'll wrap this code in #available so that it only runs when we're on iOS 11.
-
-### Missing Case Statements Issue
-
-Here's a new fix-it for missing case stements in a switch:
-
-    [tap the issue icon and choose Fix]
-
-That'll save you some typing.
-
-### Unimplemented Protocol Methods
-
-And here's my favorite new fix-it…
-
-    [navigate to ViewControllerGraphTouchDelegate.swift]
-
-In this file I've conformed to a protcol, but I haven't actually implemented the methods:
-
-    [tap the issue icon and choose Fix]
-
-This new fix-it will add the method stubs for me -- super useful.
-
-## Markdown Editor
-
-So I mentioned that the new source editor can deal with multiple font sizes and weights really well. We wanted to build on that, so we've added first class support for markdown files.
-
-    [navigate to Basics.md]
-
-Xcode 9 has full support for not only rendering markdown files, but navigating around in them.
-
-    [pop the jump bar]
-
-I can see all the headers in my file, and navigate to them just like I would in a source file. If I hold down the Command key, I can see symbols whose definition I can jump to.
-
-    [press the Command key and mouse over "s" on line 8]
-
-Heres a link thats defined below, I'll jump to that. You can see that Xcode really understands the structure of markdown. In fact, I can even do an edit-all-in-scope to change the name of this link!
-
-    [press Command-Shift-E key with the cursor in front of "s" on line 21, and type "yntax" to spell "syntax"]
-
-## Structured Editing
-
-I want to show you something we brought back from Swift Playgrounds. Xcode has always known a lot about the structure of your code -- the different constructs, like methods and if statements. But none of that information has really been surfaced in a way you can use it. Until now.
-
-    [navigate to Color.swift]
-
-If I hold down the Command and Control keys, and mouse around, you'll see that Xcode is showing me my codes structure. And when I click, you see that I get a set of options that are specifically relavent for this construct.
-
-    [click on the "if" on line 28]
-
-I'll add an "else" block. On my class, I could add a method or property.
-
-    [bring the action popover up on the "Color" class on line 8]
-
-Rather than just interating with raw text, you can now operate at a higher level.
-
-I can also use this new structure menu to initiate refactorings. Down here, I've got a value that's being converted to a CGFloat.
-
-    [Command-Control click on "CGFloat" on line 55]
-
-If I want to pull that out into a local variable to do some other calculation with it, I can do that by selecting "Extract Expression", and I can rename it to something more interesting.
-
-    [double click "Extract Expression…" and change the name]
-
-That brings us to another really important feature in Xcode 9 -- renaming. You've always been able to edit all the variables inside a particular local scope. Like here, I can change this private variables name.
-
-    [put cursor after "ui" on line 10 and initiate a rename; type "Kit"]
-
-But what you haven't been able to do, until now, is rename a symbol across your entire project. So if I wanted to change the method "darker" down here, I can bring up the structure menu, and select "Rename…".
-
-    [scroll down to line 59 and Command-Control click "darker" and select "Rename…"]
-
-I can see all the files across my project that use the method. I'll change this to "makeDarker" and press enter to accept the rename.
-
-    [type "makeD" and delete the lower case "d"; press enter]
-
-I can rename the class, and Xcode will offer to change the file name, comments and even references in XIB files.
-
-
+And thats the new source editor and refactoring in Xcode 9.
+ 
