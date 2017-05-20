@@ -12,11 +12,11 @@ One of my favorite features: a couple of Command-pluses to increase the font siz
 
     [press Command-plus a few times]
     
-In addition to the speed boost, Xcode 9 adds some new issues and fix-its. I'll type some code that is using new iOS 11 API.
+In addition to the speed boost, there's a couple of new issues and fix-its. I'll type some code that is using new iOS 11 API.
 
     [type "demo1"]
     
-We've brought the too-new-API issue to Objective-C. Xcode's warning me that I deploy back to iOS 10, where this will crash. I'll accept the fix-it, which will wrap the call using the new Objective-C @available keyword. Catching this kind of problem in at compile time is a huge win.
+We've brought the too-new-API issue to Objective-C. Xcode's warning me that my app deploys back to iOS 10, where this is going to crash. By the way, you'll notice that the fix-it's now, they show up on the right, below the issue. I'll accept the fix-it here, which will wrap the call in the new Objective-C **@available** keyword. Catching this kind of problem at compile time is a huge win for your apps quality.
     
 My favorite new fix it, though, is for missing protocol methods.
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-// DEMO: implement "PhysicsBody" here -- get issue with fix-it
+/// Body that orbits a #Planet.
 @objc
 public class Moon: NSObject {
     
