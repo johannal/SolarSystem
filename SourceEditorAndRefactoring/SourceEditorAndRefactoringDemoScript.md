@@ -34,31 +34,31 @@ The last thing I want to show you is one of the most exciting new things, someth
 
 If I hold down the Command key, and mouse around, I Xcode highlights the structure of my code. And when I click, I get a set of options that are specific for that thing.
 
-    [Command click on the if statement around line 41]
-    
-Command-clicking on this class, gives me different options, like adding a method or property.
-
     [Command click on the class around line 11]
     
-I can do more than just add code, though, I can transform code too. So here where I'm adding Earth's moon, I'll Command-click on the Moon class, and choose "Extract Expression…" and create a local variable to use.
+For this class here, I can add a method or property. For an if, I can add an else or an else-if.
 
-    [Command click on "Moon" around line 31 and select "Extract Expression…"]
+    [Command click on the if statement around line 58]
     
-I can add items to an array.
-
-    [Command click on the trailing "]" around line 59 and select "Add Item…"]
+But I can do more than just add code, I can transform what I've already got. I can simple things, like add an item to an array or dictionary.
     
-Looks like I was missing "venus" here.
+    [Command click on the trailing "]" around line 48 and select "Add Item…"]
+    
+Or extract a sub-expression out into it's own variable, so I can provide a more descriptive name about what it is.
 
-I can even extract out a chunk of code into it's own method.
+    [Command click on "Moon" around line 51 and select "Extract Expression…"]
+    
+Down here I've got a big chunk of code that adds all 67 of Jupiter's moons, which would probably be better in it's own method, so I can extract that out.
 
     [Command click on the trailing "}" around line 56 and select "Extract Method…"]
-
-Those are all local transformations -- it's even more interesting when I want to do something that spans files, like a rename. Let's rename << some method >>. I'll hold down Command and click on it, then choose rename.
+    
+It's really quick and easy to change the shape of your code.
+    
+Now those are all local transformations -- but what happens when we want to rename something that spans files. Let's rename << some method >>. I'll hold down Command and click on it and choose rename.
 
     [Command-Control click on << ?? >> on line <<??>> and choose "Rename…"]
     
-When I do that, Xcode collapses things down and shows me all the slices of code that will be affected by this name change across my entire project. When I start typing a new name, I'll see it reflected in all of those call sites, including this one down here in Objective-C. I can change the parameter name too.
+When I do that, Xcode collapses the file I'm in and shows me just the  slices of code that will be affected by this change, specifically in this file and across my entire project. When I start typing a new name, I'll see it reflected in all of those call sites, including this one down here in Objective-C. I can change the parameter name too.
 
 I'll click "Rename" and thats it.
 
