@@ -27,7 +27,7 @@ public class SolarSystem {
     
     // Create arrays for the objects in our SolarSystem.
     let planets: [Planet]
-    let distantObjects: [TransNeptunianObject]
+    let distantObjects: [SmallPlanet]
     
     // Create a dictionary to map planets to their orbits.
     let planetsToOrbits: [Planet: Orbit]

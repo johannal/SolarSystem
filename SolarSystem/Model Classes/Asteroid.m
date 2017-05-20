@@ -2,7 +2,6 @@
 //  Asteroid.m
 //  Science
 //
-//  Created by Russ Bishop on 5/17/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
@@ -11,11 +10,11 @@
 
 @implementation Asteroid
 
-- (void)addDistantObject:(TransNeptunianObject *)object
+- (void)addDistantObject:(SmallPlanet *)object
 {
-    NSMutableArray<TransNeptunianObject *> *mutableObjects = self.distantObjects.mutableCopy;
+    NSMutableArray<SmallPlanet *> *mutableObjects = self.distantObjects.mutableCopy;
     [mutableObjects addObject:object];
-    NSArray<TransNeptunianObject *> *newDistantObjects = [NSArray arrayWithArray:mutableObjects];
+    NSArray<SmallPlanet *> *newDistantObjects = [NSArray arrayWithArray:mutableObjects];
     self.distantObjects = newDistantObjects;
 }
 

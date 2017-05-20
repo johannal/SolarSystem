@@ -9,7 +9,7 @@ import Foundation
 
 // DEMO: Rename across multipe files and types
 // TODO: add more references to this file
-public class TransNeptunianObject: NSObject {
+public class SmallPlanet: NSObject {
     
     public let name: String
     

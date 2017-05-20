@@ -14,16 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Asteroid : NSObject
 
 /**
- The partner TransNeptunianObject this Asteroid is associated with
+ The partner SmallPlanet this Asteroid is associated with
  */
-@property (nonatomic, nullable, weak) TransNeptunianObject *partner;
+@property (nonatomic, nullable, weak) SmallPlanet *partner;
 
 /**
 The distant objects related to this Asteroid
  */
-@property (nonatomic, strong) NSArray<TransNeptunianObject *> *distantObjects;
+@property (nonatomic, strong) NSArray<SmallPlanet *> *distantObjects;
 
-- (void)addDistantObject:(TransNeptunianObject *)object;
+- (void)addDistantObject:(SmallPlanet *)object;
 
 @end
 

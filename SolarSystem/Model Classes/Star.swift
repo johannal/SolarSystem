@@ -15,14 +15,14 @@ public class Star: PhysicsBody {
     
     public private(set) var planets: [Planet] = []
     
-    public private(set) var distantObjects: [TransNeptunianObject] = []
+    public private(set) var distantObjects: [SmallPlanet] = []
     
     public init(name: String, color: UIColor) {
         self.name = name
         self.color = color
     }
     
-    func add(distantObject: TransNeptunianObject) {
+    func add(distantObject: SmallPlanet) {
         distantObjects.append(distantObject)
     }
     

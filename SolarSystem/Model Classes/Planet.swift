@@ -15,7 +15,7 @@ public class Planet: Hashable {
     
     private(set) var moons: [Moon] = []
     
-    private(set) var nearbyObjects: [TransNeptunianObject] = []
+    private(set) var nearbyObjects: [SmallPlanet] = []
     
     public init(name: String, color: UIColor) {
         self.name = name
@@ -27,7 +27,7 @@ public class Planet: Hashable {
         moons.append(moon)
     }
     
-    func add(nearbyObject: TransNeptunianObject) {
+    func add(nearbyObject: SmallPlanet) {
         nearbyObjects.append(nearbyObject)
     }
     
