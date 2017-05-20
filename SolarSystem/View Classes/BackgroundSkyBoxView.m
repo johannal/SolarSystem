@@ -19,15 +19,6 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     
-    // ** DEMO BLOCKER: rdar://problem/32209181 **
-    // ** DEMO BLOCKER: rdar://problem/32211972 **
-    // update the graphics context based on our style.
-    if (self.style == BackgroundViewStyle_Gradient) {
-        [self _setupContextForGradient:context];
-    } else if (self.style == BackgroundViewStyle_Solid) {
-        [self _setupContextForSolid:context];
-    }
-    
     // calculate our starting and ending points.
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
