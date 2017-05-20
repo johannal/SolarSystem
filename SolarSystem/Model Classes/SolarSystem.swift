@@ -100,11 +100,12 @@ public class SolarSystem {
         let planetAPosition = position(planet: planetA, date: date)
         let planetBPosition = position(planet: planetB, date: date)
         
-        // TODO [RUSS] -> add some realistic logic here.
+        let dx = planetAPosition.x - planetBPosition.x
+        let dy = planetBPosition.y - planetBPosition.y
+        let dz = planetAPosition.z - planetBPosition.z
+        let distance = sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2))
         
-        let _ = planetAPosition.x + planetBPosition.x
-        
-        return Measurement<UnitLength>(value: 0, unit: .lightyears)
+        return Measurement<UnitLength>(value: distance, unit: .kilometers)
     }
     
     // Orbits
