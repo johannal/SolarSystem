@@ -34,12 +34,14 @@ public class SolarSystemView: UIView {
             .rootNode
             .childNode(
                 withName: "SolarSystemCenterNode",
-                recursively: true)!
+                recursively: true)
         
-        let planetInfoPath = Bundle.main.path(forResource: "PlanetDetails", ofType: "plist")!
-        let planetDictionary = NSDictionary.init(contentsOfFile: planetInfoPath)!
-        
-        let scaleFactor = 1.0 / 10000000.0
+        guard
+            let planetInfoPath = Bundle.main.path(forResource: "PlanetDetails", ofType: "plist"),
+            let planetDictionary = NSDictionary(contentsOfFile: planetInfoPath)
+        else {
+            throw SolarSystemViewError.missingPlist
+        }
         
         for case let (_, planetInfo as Dictionary<String, Any>) in planetDictionary {
             guard
@@ -51,13 +53,14 @@ public class SolarSystemView: UIView {
                 throw SolarSystemViewError.invalidData
             }
             
+            let scaleFactor = 1.0 / 10000000.0
             let scaledDiameter = pow(diameter * scaleFactor * 40000.0, (1.0 / 2.6)) // increase planet size
             let scaledOrbitalRadius = pow(orbitalRadius * scaleFactor, (1.0 / 2.5)) * 6.4 // condense the space
             
             let planetNode = OrbitingBodyNode()
             planetNode.bodyInfo = planetInfo
             planetNode.name = name
-            let planetGeometry = SCNSphere.init(radius: CGFloat(scaledDiameter / 2))
+            let planetGeometry = SCNSphere(radius: CGFloat(scaledDiameter / 2))
             
             let diffuseImage = UIImage(named: diffuseTexture)
             planetGeometry.firstMaterial?.diffuse.contents = diffuseImage
@@ -79,30 +82,19 @@ public class SolarSystemView: UIView {
             planetNode.geometry = planetGeometry
             
             // Rotation node of the planet
-            let planetRotationNode = SCNNode()
-            planetRotationNode.name = name + " Rotation Node"
+            let planetRotationNode = makeNode(name: name, kind: .rotation)
             planetNode.rotationNode = planetRotationNode
             centerNode?.addChildNode(planetRotationNode)
             
             // Planet host node
-            let planetHostNode = SCNNode()
-            planetHostNode.name = name + " Host Node"
-            planetHostNode.position = SCNVector3.init(scaledOrbitalRadius, 0, 0)
+            let planetHostNode = makeNode(name: name, kind: .host)
+            planetHostNode.position = SCNVector3(scaledOrbitalRadius, 0, 0)
             planetRotationNode.addChildNode(planetHostNode)
             planetHostNode.addChildNode(planetNode)
             planetNode.solarSystemHostNode = planetHostNode
             
             // Add orbit
-            let planetOrbit = SCNNode()
-            planetOrbit.name = name + " Orbit Node"
-            planetOrbit.opacity = 0.4
-            let orbitSize = CGFloat(scaledOrbitalRadius * 2.0 + scaledDiameter / 2.0)
-            planetOrbit.geometry = SCNPlane.init(width: orbitSize, height: orbitSize)
-            planetOrbit.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "orbit")
-            planetOrbit.geometry?.firstMaterial?.isDoubleSided =  true
-            planetOrbit.geometry?.firstMaterial?.diffuse.mipFilter = .linear
-            planetOrbit.rotation = SCNVector4.init(1, 0, 0, -Double.pi/2)
-            planetOrbit.geometry?.firstMaterial?.lightingModel = .constant // no lighting
+            let planetOrbit = createOrbitNode(name: name, radius: scaledOrbitalRadius, diameter: scaledDiameter)
             centerNode?.addChildNode(planetOrbit)
             planetNode.orbitVisualizationNode = planetOrbit
             
@@ -113,10 +105,73 @@ public class SolarSystemView: UIView {
             planetNodes.append(planetNode)
         }
     }
+    
+    //DEMO: rename to create(node:kind:)
+    func makeNode(name: String, kind: NodeKind) -> SCNNode {
+        let node = SCNNode()
+        node.name = "\(name) \(kind)"
+        return node
+    }
+    
+    func createOrbitNode(name: String, radius: Double, diameter: Double) -> SCNNode {
+        let planetOrbit = makeNode(name: name, kind: .orbit)
+        planetOrbit.opacity = 0.4
+        let orbitSize = CGFloat(radius * 2.0 + diameter / 2.0)
+        planetOrbit.geometry = SCNPlane(width: orbitSize, height: orbitSize)
+        planetOrbit.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "orbit")
+        planetOrbit.geometry?.firstMaterial?.isDoubleSided = true
+        planetOrbit.geometry?.firstMaterial?.diffuse.mipFilter = .linear
+        planetOrbit.rotation = SCNVector4(1, 0, 0, -Double.pi / 2)
+        planetOrbit.geometry?.firstMaterial?.lightingModel = .constant // no lighting
+        return planetOrbit
+    }
+    
+    func createMoonNode(name: String, info: Dictionary<String, Any>) -> OrbitingBodyNode {
+        let node = OrbitingBodyNode()
+        let moonNode = makeNode(name: name, kind: .moon)
+        moonNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "orbit")
+        moonNode.geometry?.firstMaterial?.isDoubleSided = true
+        moonNode.geometry?.firstMaterial?.diffuse.mipFilter = .linear
+        moonNode.geometry?.firstMaterial?.lightingModel = .constant
+        node.addChildNode(moonNode)
+        
+        let orbitNode = makeNode(name: name, kind: .orbit)
+        orbitNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "orbit")
+        orbitNode.geometry?.firstMaterial?.isDoubleSided = true
+        orbitNode.geometry?.firstMaterial?.diffuse.mipFilter = .linear
+        orbitNode.geometry?.firstMaterial?.lightingModel = .constant
+        node.addChildNode(orbitNode)
+        
+        let rotationNode = makeNode(name: name, kind: .rotation)
+        rotationNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "orbit")
+        rotationNode.geometry?.firstMaterial?.isDoubleSided = true
+        rotationNode.geometry?.firstMaterial?.diffuse.mipFilter = .linear
+        rotationNode.geometry?.firstMaterial?.lightingModel = .constant
+        node.addChildNode(rotationNode)
+        
+        return node
+    }
+    
+    enum NodeKind: CustomStringConvertible {
+        case host
+        case moon
+        case orbit
+        case rotation
+        
+        var description: String {
+            switch self {
+            case .host: return "Host Node"
+            case .orbit: return "Orbit Node"
+            case .moon: return "Moon Node"
+            case .rotation: return "Rotation Node"
+            }
+        }
+    }
 }
 
 enum SolarSystemViewError: Error {
     case invalidData
+    case missingPlist
 }
 
 public struct Bounds {
