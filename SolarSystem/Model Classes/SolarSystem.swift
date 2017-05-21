@@ -43,15 +43,15 @@ public class SolarSystem {
         // create a mapping of planets to orbits.
         planetsToOrbits = [mercury: mercuryOrbit, venus: venusOrbit, earth: earthOrbit, mars: marsOrbit, jupiter: jupiterOrbit, saturn: saturnOrbit, uranus: uranusOrbit]
         
+        // create all of the distant objects, which are loaded from a data file.
+        distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
+        
         // add Earth's moon.
         earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
         // add Mars' moons.
         mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
         mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
-        
-        // ** DEMO BLOCKER: rdar://problem/32225277 **
-        // DEMO TODO: extract adding of jupiters moons to its own method.
         
         // add Jupiter's 67 moons 😮!
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
@@ -68,9 +68,6 @@ public class SolarSystem {
                 // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
             }
         }
-        
-        // create all of the distant objects, which are loaded from a data file.
-        distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
     }
     
     /// Calculates the position of a given #Planet, at a particular date (which includes time), relative to the Sun.
