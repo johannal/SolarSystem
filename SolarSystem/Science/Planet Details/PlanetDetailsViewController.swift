@@ -89,11 +89,11 @@ class PlanetDetailsViewController: UIViewController {
         }
     }
     
-    @IBAction func showPreviousPlanetButtonPressed(_ sender: UIButton) {
+    @IBAction func showPreviousPlanetButtonPressed(_ sender: Any) {
         delegate?.planetDetailsNavigationButtonPressed(false)
     }
     
-    @IBAction func showNextPlanetButtonPressed(_ sender: UIButton) {
+    @IBAction func showNextPlanetButtonPressed(_ sender: Any) {
         delegate?.planetDetailsNavigationButtonPressed(true)
     }
     

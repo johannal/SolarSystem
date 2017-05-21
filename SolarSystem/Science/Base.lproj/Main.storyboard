@@ -285,6 +285,7 @@ Population: 7.347 billion</string>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="2bm-fi-XAO"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="top" secondItem="jz0-Vq-8CH" secondAttribute="bottom" id="B41-Mz-Ob2"/>
@@ -294,6 +295,10 @@ Population: 7.347 billion</string>
                             <constraint firstItem="jz0-Vq-8CH" firstAttribute="top" secondItem="Y2j-16-jjZ" secondAttribute="bottom" id="kfa-dD-leF"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="centerY" secondItem="xxU-xn-gVg" secondAttribute="centerY" multiplier="1.4" id="oQi-l3-95P"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p7J-YT-Lne" appends="YES" id="xQo-I0-WUh"/>
+                            <outletCollection property="gestureRecognizers" destination="qA1-6k-GhE" appends="YES" id="rNy-UJ-2Tn"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="additionalDetailsLabel" destination="cDV-qF-GPV" id="Wjx-xq-ZQ0"/>
@@ -306,6 +311,16 @@ Population: 7.347 billion</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRk-HG-cfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="qA1-6k-GhE">
+                    <connections>
+                        <action selector="showPreviousPlanetButtonPressed:" destination="7fs-xD-dyR" id="zxA-kU-YAk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="p7J-YT-Lne">
+                    <connections>
+                        <action selector="showNextPlanetButtonPressed:" destination="7fs-xD-dyR" id="LAC-UQ-NT7"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="246" y="1950"/>
         </scene>
