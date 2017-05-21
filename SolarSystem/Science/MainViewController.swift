@@ -101,6 +101,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
         planetDetailsVC.view.bottomAnchor.constraint(equalTo: contentContainerView.bottomAnchor).isActive = true
         
         self.planetDetailsVC = planetDetailsVC
+        solarSystemVC?.planetDetailsVC = planetDetailsVC
     }
     
     func showSolarSystem() {

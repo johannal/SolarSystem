@@ -17,6 +17,9 @@ class SolarSystemController: UIViewController {
     
     private(set) var planetNodes: [OrbitingBodyNode] = []
     
+    // Details view controller if presented
+    weak var planetDetailsVC: PlanetDetailsViewController?
+    
     // Currently presented planet in details view
     var presentedPlanet: OrbitingBodyNode?
     
@@ -121,6 +124,8 @@ class SolarSystemController: UIViewController {
                 planetNodes.append(planetNode)
             }
         }
+        
+        solarSystemSceneView.scene!.background.contents = #imageLiteral(resourceName: "stars2")
     }
     
     // Do any planet specific things
@@ -198,6 +203,11 @@ class SolarSystemController: UIViewController {
     func presentPlanet(_ planet: OrbitingBodyNode, directionRightToLeft: Bool) {
         let previouslyPresentedPlanet = presentedPlanet
         presentedPlanet = planet
+        
+        // Details view controller
+        planetDetailsVC?.updateWithPlanetDetails(planet.bodyInfo!)
+        
+        // Update Scene
         cameraNode().addChildNode(planet)
         
         let rightOutsideTransform = SCNMatrix4MakeTranslation(80, 20, -80)
