@@ -13,7 +13,14 @@ import SceneKit
 class SolarSystemController: UIViewController {
     
     @IBOutlet weak var solarSystemSceneView: SCNView!
+    @IBOutlet weak var gravityButton: UIButton?
+    
     private(set) var planetNodes: [OrbitingBodyNode] = []
+    
+    // To support in and out animation of planets
+    let planetDetailsPresentationNode = SCNNode()
+    let planetDetailsLeftStagingNode = SCNNode()
+    let planetDetailsRightStagingNode = SCNNode()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +34,16 @@ class SolarSystemController: UIViewController {
         solarSystemSceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    func solarSystemCenterNode() -> SCNNode {
+        return solarSystemSceneView.scene!.rootNode.childNode(withName: "SolarSystemCenterNode", recursively: true)!
+    }
+    
+    func cameraNode() -> SCNNode {
+        return solarSystemSceneView.scene!.rootNode.childNode(withName: "camera", recursively: true)!
+    }
+    
     private func setupScene() {
-        let centerNode = solarSystemSceneView.scene?.rootNode.childNode(withName: "SolarSystemCenterNode", recursively: true)!
+        let centerNode = solarSystemCenterNode()
         
         let planetInfoPath = Bundle.main.path(forResource: "PlanetDetails", ofType: "plist")!
         let planetDictionary = NSDictionary.init(contentsOfFile: planetInfoPath)!
@@ -74,7 +89,7 @@ class SolarSystemController: UIViewController {
                 let planetRotationNode = SCNNode()
                 planetRotationNode.name = name + " Rotation Node"
                 planetNode.rotationNode = planetRotationNode
-                centerNode?.addChildNode(planetRotationNode)
+                centerNode.addChildNode(planetRotationNode)
                 
                 // Planet host node
                 let planetHostNode = SCNNode()
@@ -95,7 +110,7 @@ class SolarSystemController: UIViewController {
                 planetOrbit.geometry?.firstMaterial?.diffuse.mipFilter = .linear
                 planetOrbit.rotation = SCNVector4.init(1, 0, 0, -Double.pi/2)
                 planetOrbit.geometry?.firstMaterial?.lightingModel = .constant // no lighting
-                centerNode?.addChildNode(planetOrbit)
+                centerNode.addChildNode(planetOrbit)
                 planetNode.orbitVisualizationNode = planetOrbit
                 
                 // Finalize planet
@@ -108,6 +123,15 @@ class SolarSystemController: UIViewController {
                 planetNodes.append(planetNode)
             }
         }
+        
+        planetDetailsPresentationNode.position = SCNVector3.init(0, 0, -40)
+        cameraNode().addChildNode(planetDetailsPresentationNode)
+        
+        planetDetailsLeftStagingNode.position = SCNVector3.init(-50, 0, 80)
+        cameraNode().addChildNode(planetDetailsLeftStagingNode)
+        
+        planetDetailsRightStagingNode.position = SCNVector3.init(50, 0, -80)
+        cameraNode().addChildNode(planetDetailsRightStagingNode)
     }
     
     // Do any planet specific things
@@ -140,6 +164,103 @@ class SolarSystemController: UIViewController {
             node.solarSystemHostNode.rotation = SCNVector4.init(0.0, 0.0, 1.0, Float.pi/180*10)
         }
     }
+    
+    
+    // Update according to conent types
+    
+    func updateWithContentType(_ contentType: ContentType) {
+        switch contentType {
+        case .solarSystem:
+            // Put all planets back into the solar system
+            for oribitingNode in planetNodes {
+                oribitingNode.solarSystemHostNode.addChildNode(oribitingNode)
+            }
+            
+            // Show the solar system
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 1.0
+            solarSystemCenterNode().opacity = 1.0
+            SCNTransaction.commit()
+            
+            gravityButton?.isHidden = false
+            
+        case .planetDetails:
+            // Hide the solar system
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 1.0
+            solarSystemCenterNode().opacity = 0.0
+            SCNTransaction.commit()
+            
+            // Present the first planet (or sun?)
+            presentPlanet(planetNodes.first!, directionRightToLeft: true)
+            
+            gravityButton?.isHidden = true
+            
+        case .planetComparison:
+            // TODO
+            gravityButton?.isHidden = true
+        }
+    }
+    
+    func presentPlanet(_ planet: OrbitingBodyNode, directionRightToLeft: Bool) {
+        var initialParentForNewPresentedPlanet: SCNNode?
+        var currentPresentedPlanetNewParent: SCNNode?
+        
+        if directionRightToLeft {
+            // Add planet to right staging node, without animation
+            initialParentForNewPresentedPlanet = planetDetailsRightStagingNode
+            currentPresentedPlanetNewParent = planetDetailsLeftStagingNode
+        }
+        else {
+            // Add planet to right staging node, without animation
+            initialParentForNewPresentedPlanet = planetDetailsLeftStagingNode
+            currentPresentedPlanetNewParent = planetDetailsRightStagingNode
+        }
+        
+        // Setup new presented planet to be animated in
+        SCNTransaction.begin()
+        SCNTransaction.disableActions = true
+        initialParentForNewPresentedPlanet?.addChildNode(planet)
+        SCNTransaction.commit()
+        
+        // Animate new planet in and old planet out
+        SCNTransaction.begin()
+        SCNTransaction.disableActions = false
+        SCNTransaction.animationDuration = 1.0
+        
+        if let currentPresentedPlanet = planetDetailsPresentationNode.childNodes.first {
+            currentPresentedPlanetNewParent?.addChildNode(currentPresentedPlanet)
+        }
+        
+        planetDetailsPresentationNode.addChildNode(planet)
+        
+        // TODO: Apply scale transform so all have the same size
+        
+        SCNTransaction.commit()
+    }
+    
+    func presentNextPlanet() {
+        if let currentPresentPlanet = planetDetailsPresentationNode.childNodes.first as? OrbitingBodyNode {
+            if let currentIndex = planetNodes.index(of: currentPresentPlanet) {
+                if currentIndex < (planetNodes.count-1) {
+                    presentPlanet(planetNodes[currentIndex+1], directionRightToLeft: true)
+                }
+            }
+        }
+    }
+    
+    func presentPreviousPlanet() {
+        if let currentPresentPlanet = planetDetailsPresentationNode.childNodes.first as? OrbitingBodyNode {
+            if let currentIndex = planetNodes.index(of: currentPresentPlanet) {
+                if currentIndex > 1 {
+                    presentPlanet(planetNodes[currentIndex-1], directionRightToLeft: false)
+                }
+            }
+        }
+    }
+    
+    
+    // Tap handling
     
     @objc func didTapSceneView(_ sender: UITapGestureRecognizer) {
         let hitTestResults = solarSystemSceneView.hitTest(sender.location(in: solarSystemSceneView), options: nil)

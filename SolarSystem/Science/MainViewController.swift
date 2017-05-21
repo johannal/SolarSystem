@@ -7,20 +7,27 @@
 
 import UIKit
 
-class MainViewController: UIViewController, SceneHUDDelegate {
+enum ContentType {
+    case solarSystem
+    case planetDetails
+    case planetComparison
+}
+
+class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDelegate {
     
     @IBOutlet weak var contentContainerView: UIView!
     weak var sceneHUDController: SceneHUDViewController?
     
-    weak var planetDetailsVC: UIViewController?
-
+    weak var solarSystemVC: SolarSystemController?
+    weak var planetDetailsVC: PlanetDetailsViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "The Solar System"
 
         // Initiate solar system controller
-        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC")
+        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC") as! SolarSystemController
         solarSystemVC.view.translatesAutoresizingMaskIntoConstraints = false
         addChildViewController(solarSystemVC)
         contentContainerView.addSubview(solarSystemVC.view)
@@ -30,7 +37,7 @@ class MainViewController: UIViewController, SceneHUDDelegate {
         solarSystemVC.view.trailingAnchor.constraint(equalTo: contentContainerView.trailingAnchor).isActive = true
         solarSystemVC.view.topAnchor.constraint(equalTo: contentContainerView.topAnchor).isActive = true
         solarSystemVC.view.bottomAnchor.constraint(equalTo: contentContainerView.bottomAnchor).isActive = true
-        
+        self.solarSystemVC = solarSystemVC
         
         // Initiate HUD controller
         let sceneHUDController = storyboard!.instantiateViewController(withIdentifier: "sceneHUD") as! SceneHUDViewController
@@ -61,15 +68,18 @@ class MainViewController: UIViewController, SceneHUDDelegate {
     }
     
     // Delegate callback
-    func invokedSceneHUDAction(_ action: SceneHUDAction) {
-        switch action {
-        case .showPlanetComparison:
-            showPlanetComparison()
-        case .showPlanetDetails:
-            showPlanetDetails()
-        case .showSolarSystem:
+    func sceneHUDDidSelectContentType(_ contentType: ContentType) {
+        switch contentType {
+        case .solarSystem:
             showSolarSystem()
+        case .planetDetails:
+            showPlanetDetails()
+        case .planetComparison:
+            showPlanetComparison()
         }
+        
+        solarSystemVC?.updateWithContentType(contentType)
+        sceneHUDController?.updateWithContentType(contentType)
     }
     
     func showPlanetComparison() {
@@ -78,7 +88,8 @@ class MainViewController: UIViewController, SceneHUDDelegate {
     
     func showPlanetDetails() {
         // Initiate solar system controller
-        let planetDetailsVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC")
+        let planetDetailsVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC") as! PlanetDetailsViewController
+        planetDetailsVC.delegate = self
         planetDetailsVC.view.translatesAutoresizingMaskIntoConstraints = false
         addChildViewController(planetDetailsVC)
         contentContainerView.addSubview(planetDetailsVC.view)
@@ -95,6 +106,16 @@ class MainViewController: UIViewController, SceneHUDDelegate {
     func showSolarSystem() {
         planetDetailsVC?.view.removeFromSuperview()
         planetDetailsVC?.removeFromParentViewController()
+    }
+    
+    // Delegate callback
+    func planetDetailsNavigationButtonPressed(_ directionForward: Bool) {
+        if directionForward {
+            solarSystemVC?.presentNextPlanet()
+        }
+        else {
+            solarSystemVC?.presentPreviousPlanet()
+        }
     }
 
 }

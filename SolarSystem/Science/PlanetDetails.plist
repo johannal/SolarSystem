@@ -16,6 +16,10 @@
 		<integer>5</integer>
 		<key>name</key>
 		<string>Mercury</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>venus</key>
 	<dict>
@@ -33,6 +37,10 @@
 		<false/>
 		<key>name</key>
 		<string>Venus</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>earth</key>
 	<dict>
@@ -52,6 +60,10 @@
 		<integer>6</integer>
 		<key>name</key>
 		<string>Earth</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>mars</key>
 	<dict>
@@ -67,6 +79,10 @@
 		<integer>12</integer>
 		<key>name</key>
 		<string>Mars</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>jupiter</key>
 	<dict>
@@ -82,6 +98,10 @@
 		<integer>10</integer>
 		<key>name</key>
 		<string>Jupiter</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>saturn</key>
 	<dict>
@@ -97,6 +117,10 @@
 		<integer>11</integer>
 		<key>name</key>
 		<string>Saturn</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>uranus</key>
 	<dict>
@@ -112,6 +136,10 @@
 		<integer>16</integer>
 		<key>name</key>
 		<string>Uranus</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 	<key>naptune</key>
 	<dict>
@@ -127,6 +155,10 @@
 		<integer>8</integer>
 		<key>name</key>
 		<string>Neptune</string>
+		<key>description</key>
+		<string></string>
+		<key>additionalInfo</key>
+		<string></string>
 	</dict>
 </dict>
 </plist>

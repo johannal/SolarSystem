@@ -7,14 +7,8 @@
 
 import UIKit
 
-enum SceneHUDAction {
-    case showSolarSystem
-    case showPlanetComparison
-    case showPlanetDetails
-}
-
 protocol SceneHUDDelegate: class {
-    func invokedSceneHUDAction(_ action: SceneHUDAction)
+    func sceneHUDDidSelectContentType(_ contentType: ContentType)
 }
 
 class SceneHUDViewController: UIViewController {
@@ -28,31 +22,38 @@ class SceneHUDViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        solarSystemButton?.isHidden = true
+        // Setup for solar system content
+        updateWithContentType(.solarSystem)
     }
     
     @IBAction func showPlanetComparisonButtonPressed(_ sender: UIButton) {
-        delegate?.invokedSceneHUDAction(.showPlanetComparison)
-        
-        solarSystemButton?.isHidden = false
-        planetComparisonButton?.isHidden = true
-        planetDetailsButton?.isHidden = true
+        delegate?.sceneHUDDidSelectContentType(.planetComparison)
     }
     
     @IBAction func showSolarSystemButtonPressed(_ sender: UIButton) {
-        delegate?.invokedSceneHUDAction(.showSolarSystem)
-        
-        solarSystemButton?.isHidden = true
-        planetComparisonButton?.isHidden = false
-        planetDetailsButton?.isHidden = false
+        delegate?.sceneHUDDidSelectContentType(.solarSystem)
     }
     
     @IBAction func showPlanetDetailsButtonPressed(_ sender: UIButton) {
-        delegate?.invokedSceneHUDAction(.showPlanetDetails)
-        
-        solarSystemButton?.isHidden = false
-        planetComparisonButton?.isHidden = true
-        planetDetailsButton?.isHidden = true
+        delegate?.sceneHUDDidSelectContentType(.planetDetails)
     }
-
+    
+    func updateWithContentType(_ contentType: ContentType) {
+        switch contentType {
+        case .solarSystem:
+            solarSystemButton?.isHidden = true
+            planetComparisonButton?.isHidden = false
+            planetDetailsButton?.isHidden = false
+        case .planetDetails:
+            solarSystemButton?.isHidden = false
+            planetComparisonButton?.isHidden = true
+            planetDetailsButton?.isHidden = true
+        case .planetComparison:
+            solarSystemButton?.isHidden = false
+            planetComparisonButton?.isHidden = true
+            planetDetailsButton?.isHidden = true
+            
+        }
+    }
+    
 }

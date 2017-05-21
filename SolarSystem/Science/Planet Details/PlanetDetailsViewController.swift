@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol PlanetDetailsVCDelegate: class {
+    func planetDetailsNavigationButtonPressed(_ directionForward: Bool)
+}
+
 class PlanetDetailsViewController: UIViewController {
+    
+    weak var delegate: PlanetDetailsVCDelegate?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -29,11 +35,11 @@ class PlanetDetailsViewController: UIViewController {
     }
     
     @IBAction func showPreviousPlanetButtonPressed(_ sender: UIButton) {
-        
+        delegate?.planetDetailsNavigationButtonPressed(false)
     }
     
     @IBAction func showNextPlanetButtonPressed(_ sender: UIButton) {
-        
+        delegate?.planetDetailsNavigationButtonPressed(true)
     }
     
     func updateGravitySimulator(_ orientationIsLandscape: Bool) {
