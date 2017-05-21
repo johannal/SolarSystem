@@ -23,8 +23,6 @@ public class SolarSystem {
     let uranus: Planet = Planet(name: "Uranus", color: #colorLiteral(red: 0.5745319724, green: 0.7137514353, blue: 0.7544075847, alpha: 1))
     let neptune: Planet = Planet(name: "Neptune", color: #colorLiteral(red: 0.3400839567, green: 0.5141240954, blue: 0.6517244577, alpha: 1))
     
-    // ** DEMO BLOCKER: rdar://problem/31501493 **
-    
     // Create arrays for the objects in our SolarSystem.
     let planets: [Planet]
     let distantObjects: [SmallPlanet]
