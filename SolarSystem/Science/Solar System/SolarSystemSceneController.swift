@@ -18,6 +18,8 @@ class SolarSystemController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "The Solar System in 3D"
+        
         setupScene()
         
         // Setup tap handling

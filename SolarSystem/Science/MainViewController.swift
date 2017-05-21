@@ -16,6 +16,8 @@ class MainViewController: UIViewController, SceneHUDDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "The Solar System"
 
         // Initiate solar system controller
         let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC")
