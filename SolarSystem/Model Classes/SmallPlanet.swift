@@ -8,7 +8,6 @@
 import Foundation
 
 // DEMO: Rename across multipe files and types
-// TODO: add more references to this file
 public class SmallPlanet: NSObject {
     
     public let name: String
@@ -30,6 +29,20 @@ public class SmallPlanet: NSObject {
     }
     
     func positionRelativeToStar(date: Date = Date()) -> SolarSystemPoint {
-        return parentStar.parentSolarSystem.position(smallPlanet: self, date: date)
+        return parentStar.parentSolarSystem.position(of: self, date: date)
+    }
+}
+
+extension SmallPlanet: OrbitingBody {
+    public func calculateMass() -> Measurement<UnitMass> {
+        return Measurement(value: 0, unit: .kilograms)
+    }
+    
+    public func cacluateDensity() -> Double {
+        return 0
+    }
+    
+    public func calculateAngularVelocity() -> Measurement<UnitSpeed> {
+        return Measurement(value: 0, unit: .metersPerSecond)
     }
 }

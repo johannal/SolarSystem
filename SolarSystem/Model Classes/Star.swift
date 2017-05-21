@@ -32,18 +32,14 @@ public class Star: PhysicsBody {
         distantObjects.append(distantObject)
     }
     
-    func position(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
-        return parentSolarSystem.position(planet: planet, date: date)
-    }
-    
-    func position(smallPlanet: SmallPlanet, date: Date = Date()) -> SolarSystemPoint {
-        return parentSolarSystem.position(smallPlanet: smallPlanet, date: date)
+    func position<Body: OrbitingBody>(of body: Body, date: Date = Date()) -> SolarSystemPoint {
+        return parentSolarSystem.position(of: body, date: date)
     }
     
     func positionsOfPlanets(date: Date = Date()) -> [SolarSystemPoint] {
         var positions: [SolarSystemPoint] = []
         for planet in planets {
-            positions.append(parentSolarSystem.position(planet: planet, date: date))
+            positions.append(parentSolarSystem.position(of: planet, date: date))
         }
         return positions
     }

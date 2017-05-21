@@ -79,26 +79,25 @@ public class SolarSystem {
     ///   - planet: the Planet to calculate the position of.
     ///   - date: the date (and time) at which to calcualte the position for.
     /// - Returns: the coordinate, relative to the Sun, of the given planet.
-    public func position(planet: Planet, date: Date = Date()) -> SolarSystemPoint {
+    public func position<Body: OrbitingBody>(of body: Body, date: Date = Date()) -> SolarSystemPoint {
+        // Approximation of the position; for more accuracy see Kepler's equations
+        let period = body.orbitalPeriod
+        let radius = body.orbitalRadius.converted(to: .kilometers).value
+        let incline = body.orbitalIncline.converted(to: .degrees).value
+        let t = date.timeIntervalSince(body.orbitalEpoch) / 86400
         
-        // TODO [RUSS] -> add some realistic logic here.
-        // TODO [RUSS] -> add a few more uses of this method.
-        
-        let xDeltaFromSun = 0.0
-        let yDeltaFromSun = 0.0
-        let zDeltaFromSun = 0.0
-        
-        return SolarSystemPoint(x: xDeltaFromSun, y: yDeltaFromSun, z: zDeltaFromSun)
-    }
-    
-    public func position(smallPlanet: SmallPlanet, date: Date = Date()) -> SolarSystemPoint {
-        return .zero
+        let p = (2 * .pi * t) / period.value
+        let dx = radius * cos(p)
+        let y = radius * sin(p)
+        let z = cos(incline) - (dx * sin(incline))
+        let x = (z * sin(incline)) + (dx * cos(incline))
+        return SolarSystemPoint(x: x, y: y, z: z)
     }
     
     public func distanceBetween(planetA: Planet, planetB: Planet, date: Date = Date()) -> Measurement<UnitLength> {
         
-        let planetAPosition = position(planet: planetA, date: date)
-        let planetBPosition = position(planet: planetB, date: date)
+        let planetAPosition = position(of: planetA, date: date)
+        let planetBPosition = position(of: planetB, date: date)
         
         let dx = planetAPosition.x - planetBPosition.x
         let dy = planetBPosition.y - planetBPosition.y

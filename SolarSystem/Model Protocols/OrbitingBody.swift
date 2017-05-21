@@ -9,16 +9,19 @@ import Foundation
 import UIKit
 
 /// A body that orbits a primary body. An #OrbitingBody can also be referred to as the secondary body.
-protocol OrbitingBody: PhysicsBody {
+public protocol OrbitingBody: PhysicsBody {
     
     /// Distance of this object from the orbital center point.
     var orbitalRadius: Measurement<UnitLength> { get }
     
     /// The offset from the plane of the orbital system
-    var planarOffset: Measurement<UnitAngle> { get }
+    var orbitalIncline: Measurement<UnitAngle> { get }
     
     /// Time taken for a this object to make one complete orbit around the center point.
     var orbitalPeriod: SolarDays { get }
+    
+    /// The time zero epoch for the orbit
+    var orbitalEpoch: Date { get }
     
     /// Time it takes to complete one revolution around the axis of rotation.
     var rotationPeriod: SolarDays { get }
@@ -35,9 +38,29 @@ protocol OrbitingBody: PhysicsBody {
     func orbit(around center: CGPoint, scale: Double) -> UIBezierPath
 }
 
-extension OrbitingBody {
+public extension OrbitingBody {
     
-    var planarOffset: Measurement<UnitAngle> {
+    var orbitalRadius: Measurement<UnitLength> {
+        return Measurement(value: 0, unit: .kilometers)
+    }
+    
+    var orbitalPeriod: SolarDays {
+        return 0.0
+    }
+    
+    var orbitalEpoch: Date {
+        return Date()
+    }
+    
+    var rotationPeriod: SolarDays {
+        return 0.0
+    }
+    
+    var diameter: Measurement<UnitLength> {
+        return Measurement(value: 0, unit: .kilometers)
+    }
+    
+    var orbitalIncline: Measurement<UnitAngle> {
         return Measurement(value: 0, unit: .degrees)
     }
     

@@ -53,7 +53,7 @@ public class Planet: Hashable {
     func findNearestObject(on date: Date = Date()) -> SmallPlanet? {
         let planetPosition = positionRelativeToStar(date: date)
         let objects = nearbyObjects.map { (object: SmallPlanet) -> (Double, SmallPlanet) in
-            let objectPosition = object.parentStar.position(smallPlanet: object, date: date)
+            let objectPosition = object.parentStar.parentSolarSystem.position(of: object, date: date)
             let dx = objectPosition.x - planetPosition.x
             let dy = objectPosition.y - planetPosition.y
             let dz = objectPosition.z - planetPosition.z
@@ -65,7 +65,7 @@ public class Planet: Hashable {
     }
     
     func positionRelativeToStar(date: Date = Date()) -> SolarSystemPoint {
-        return parentStar.parentSolarSystem.position(planet: self, date: date)
+        return parentStar.parentSolarSystem.position(of: self, date: date)
     }
     
     // MARK: - Hashable
@@ -80,4 +80,18 @@ public class Planet: Hashable {
         return lhs.name == rhs.name
     }
     
+}
+
+extension Planet: OrbitingBody {
+    public func calculateMass() -> Measurement<UnitMass> {
+        return Measurement(value: 0, unit: .kilograms)
+    }
+    
+    public func cacluateDensity() -> Double {
+        return 0
+    }
+    
+    public func calculateAngularVelocity() -> Measurement<UnitSpeed> {
+        return Measurement(value: 0, unit: .metersPerSecond)
+    }
 }

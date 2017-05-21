@@ -40,11 +40,11 @@ class TelescopicSurvey {
     /// - Returns: The object, or `nil` if there are no distant objects in this survey
     func findNearestDistantObject(to point: SolarSystemPoint) -> SmallPlanet? {
         let objects = distantObjects.map { (object: SmallPlanet) -> (Double, SmallPlanet) in
-            let objectPosition = object.parentStar.position(smallPlanet: object, date: self.date)
-            let dx = objectPosition.x - point.x
-            let dy = objectPosition.y - point.y
-            let dz = objectPosition.z - point.z
-            return (sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2)), object)
+            let solarSystem: SolarSystem = object.parentStar.parentSolarSystem
+            let objectPosition = solarSystem.position(of: object, date: self.date)
+            let delta = objectPosition - point
+            
+            return (sqrt(pow(delta.x, 2) + pow(delta.y, 2) + pow(delta.z, 2)), object)
         }.sorted { (a: (distance: Double, SmallPlanet), b: (distance: Double, SmallPlanet)) -> Bool in
             return a.distance < b.distance
         }
@@ -57,14 +57,15 @@ class TelescopicSurvey {
     /// - Returns: The object, or `nil` if there are no distant objects in this survey
     func findFarthestDistantObject(to point: SolarSystemPoint) -> SmallPlanet? {
         let objects = distantObjects.map { (object: SmallPlanet) -> (Double, SmallPlanet) in
-            let objectPosition = object.parentStar.position(smallPlanet: object, date: date)
-            let dx = objectPosition.x - point.x
-            let dy = objectPosition.y - point.y
-            let dz = objectPosition.z - point.z
-            return (sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2)), object)
+            let solarSystem: SolarSystem = object.parentStar.parentSolarSystem
+            let objectPosition = solarSystem.position(of: object, date: date)
+            let delta = objectPosition - point
+            
+            return (sqrt(pow(delta.x, 2) + pow(delta.y, 2) + pow(delta.z, 2)), object)
         }.sorted { (a: (distance: Double, SmallPlanet), b: (distance: Double, SmallPlanet)) -> Bool in
             return a.distance < b.distance
         }
         return objects.first?.1
     }
 }
+
