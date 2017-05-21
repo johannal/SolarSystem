@@ -32,8 +32,8 @@ public class SolarSystem {
     
     public init() {
         
-        // ** DEMO POLISH: rdar://problem/32247713
-        // ** DEMO BLOCKER: rdar://problem/32039874 **
+        // DEMO POLISH: <rdar://problem/32247713> Errant selection after extracting to an expression
+        // DEMO BLOCKER: <rdar://problem/32039874> Add support for showing both name-range and context-range refactoring operations simultaneously
         
         // create the planets array with an ordered list of our planets.
         planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, venus]
@@ -67,6 +67,8 @@ public class SolarSystem {
             }
         }
     }
+    
+    // DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
     
     /// Calculates the position of a given #Planet, at a particular date (which includes time), relative to the Sun.
     ///
