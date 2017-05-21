@@ -107,16 +107,10 @@ public class SolarSystem {
         return Measurement<UnitLength>(value: distance, unit: .kilometers)
     }
     
-    // Orbits
-    let mercuryOrbit = Orbit()
-    let venusOrbit = Orbit()
-    let earthOrbit = Orbit()
-    let marsOrbit = Orbit()
-    let jupiterOrbit = Orbit()
-    let saturnOrbit = Orbit()
-    let uranusOrbit = Orbit()
-    let neptuneOrbit = Orbit()
-    
+    /// Loads and creates the distant objects from the data file.
+    ///
+    /// - Parameter parentStar: the parent star.
+    /// - Returns: an array of distant objects.
     private static func loadAndCreateDistantObjects(parentStar: Star) -> [SmallPlanet] {
         var distantObjects: [SmallPlanet] = []
         if let path = Bundle.main.path(forResource: "DistantObjects", ofType: "txt") {
@@ -136,5 +130,14 @@ public class SolarSystem {
         }
         return distantObjects
     }
-        
+    
+    // Orbits
+    let mercuryOrbit = Orbit()
+    let venusOrbit = Orbit()
+    let earthOrbit = Orbit()
+    let marsOrbit = Orbit()
+    let jupiterOrbit = Orbit()
+    let saturnOrbit = Orbit()
+    let uranusOrbit = Orbit()
+    let neptuneOrbit = Orbit()
 }

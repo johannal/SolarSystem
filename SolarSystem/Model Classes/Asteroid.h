@@ -2,7 +2,6 @@
 //  Asteroid.h
 //  Science
 //
-//  Created by Russ Bishop on 5/17/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
@@ -14,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Asteroid : NSObject
 
 /**
- The partner SmallPlanet this Asteroid is associated with
+ The partner planet this object is associated with.
  */
 @property (nonatomic, nullable, weak) SmallPlanet *partner;
 
@@ -23,6 +22,11 @@ The distant objects related to this Asteroid
  */
 @property (nonatomic, strong) NSArray<SmallPlanet *> *distantObjects;
 
+/**
+ Adds the given distant object.
+ 
+ @param object the distant object to associate with this asteroid.
+ */
 - (void)addDistantObject:(SmallPlanet *)object;
 
 @end

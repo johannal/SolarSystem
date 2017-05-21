@@ -17,16 +17,16 @@ class TelescopicSurvey {
     
     var distantObjects: [SmallPlanet] = []
     
-    /// Add a distant #SmallPlanet
+    /// Add a distant object.
     ///
-    /// - Parameter distantObject: The #SmallPlanet to add
+    /// - Parameter distantObject: The planet to add
     func add(distantObject: SmallPlanet) {
         distantObjects.append(distantObject)
     }
     
-    /// Remove a distant #SmallPlanet
+    /// Remove a distant object.
     ///
-    /// - Parameter distantObject: The #SmallPlanet to remove
+    /// - Parameter distantObject: The planet to remove
     func remove(distantObject: SmallPlanet) {
         guard let index = distantObjects.index(of: distantObject) else {
             return

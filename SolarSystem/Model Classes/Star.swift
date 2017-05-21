@@ -24,8 +24,7 @@ public class Star: PhysicsBody {
         self.color = color
     }
     
-    /// Add a #SmallPlanet as a distant object
-    /// related to this #Star
+    /// Add a distant object related to this Star.
     ///
     /// - Parameter distantObject: The distant object to add
     func add(distantObject: SmallPlanet) {

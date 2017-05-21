@@ -1,5 +1,5 @@
 //
-//  TransNeptunianObject.swift
+//  SmallPlanet.swift
 //  Science
 //
 //  Copyright © 2017 Apple. All rights reserved.
