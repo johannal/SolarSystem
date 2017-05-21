@@ -210,7 +210,7 @@ class SolarSystemController: UIViewController {
         // Update Scene
         cameraNode().addChildNode(planet)
         
-        let rightOutsideTransform = SCNMatrix4MakeTranslation(80, 20, -80)
+        let rightOutsideTransform = SCNMatrix4MakeTranslation(40, 20, -60)
         
         var planetInitialTransform = SCNMatrix4Identity
         var previouslyPresentedPlanetFinalTransform = SCNMatrix4Identity
