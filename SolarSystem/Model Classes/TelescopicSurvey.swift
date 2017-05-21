@@ -34,7 +34,7 @@ class TelescopicSurvey {
         distantObjects.remove(at: index)
     }
     
-    /// Finds the nearest #SmallPlanet among the distant objects
+    /// Finds the nearest object among the distant objects
     ///
     /// - Parameter point: The point from which relative distance is measured
     /// - Returns: The object, or `nil` if there are no distant objects in this survey
@@ -51,7 +51,7 @@ class TelescopicSurvey {
         return objects.last?.1
     }
     
-    /// Finds the farthest #SmallPlanet among the distant objects
+    /// Finds the farthest object among the distant objects
     ///
     /// - Parameter point: The point from which relative distance is measured
     /// - Returns: The object, or `nil` if there are no distant objects in this survey

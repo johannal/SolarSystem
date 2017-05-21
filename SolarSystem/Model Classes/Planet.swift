@@ -29,14 +29,14 @@ public class Planet: Hashable {
         moons.append(moon)
     }
     
-    /// Add a nearby #SmallPlanet object
+    /// Add a nearby object
     ///
     /// - Parameter nearbyObject: The object to add
     func add(nearbyObject: SmallPlanet) {
         nearbyObjects.append(nearbyObject)
     }
     
-    /// Remove a #SmallPlanet object
+    /// Remove a nearby object
     ///
     /// - Parameter nearbyObject: The object to remove
     func remove(nearbyObject: SmallPlanet) {
@@ -46,7 +46,7 @@ public class Planet: Hashable {
         nearbyObjects.remove(at: index)
     }
     
-    /// Finds the nearest #SmallPlanet among the nearby objects
+    /// Finds the nearest object among the nearby objects
     ///
     /// - Parameter date: The date on which to calculate the position
     /// - Returns: The object, or `nil` if there are no nearby objects
