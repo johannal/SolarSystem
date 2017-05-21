@@ -226,7 +226,13 @@ class SolarSystemController: UIViewController {
         SCNTransaction.animationDuration = 2.0
         
         planet.transform = SCNMatrix4MakeTranslation(0, 5, -40)
-        // TODO: Apply scale transform so all have the same size
+        
+        // Apply scale transform so all planets have the same size
+        let planetSphereGeometry = planet.geometry as! SCNSphere
+        let desinationSize: Float = 4.2 // FIXME: Calculate a dynamic for the current camera situation
+        let equalSizeScaleFactor: Float = desinationSize / Float(planetSphereGeometry.radius)
+        planet.transform = SCNMatrix4Scale(planet.transform, equalSizeScaleFactor, equalSizeScaleFactor, equalSizeScaleFactor)
+        
         planet.opacity = 1.0
         
         // Animate to final position
