@@ -162,6 +162,7 @@ class SolarSystemController: UIViewController {
         case .solarSystem:
             // Put all planets back into the solar system
             for oribitingNode in planetNodes {
+                oribitingNode.opacity = 1.0
                 oribitingNode.transform = SCNMatrix4Identity
                 oribitingNode.solarSystemHostNode.addChildNode(oribitingNode)
             }
@@ -172,6 +173,7 @@ class SolarSystemController: UIViewController {
             solarSystemCenterNode().opacity = 1.0
             SCNTransaction.commit()
             
+            presentedPlanet = nil
             gravityButton?.isHidden = false
             
         case .planetDetails:
@@ -188,6 +190,7 @@ class SolarSystemController: UIViewController {
             
         case .planetComparison:
             // TODO
+            presentedPlanet = nil
             gravityButton?.isHidden = true
         }
     }
