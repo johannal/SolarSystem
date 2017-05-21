@@ -2,40 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>naptune</key>
-	<dict>
-		<key>diameter</key>
-		<integer>49528</integer>
-		<key>diffuseTexture</key>
-		<string>2k_neptune</string>
-		<key>orbitalRadius</key>
-		<real>4498000000</real>
-		<key>orbitalPeriod</key>
-		<integer>60149</integer>
-		<key>rotationalPeriod</key>
-		<integer>8</integer>
-		<key>name</key>
-		<string>Neptune</string>
-	</dict>
-	<key>earth</key>
-	<dict>
-		<key>diameter</key>
-		<integer>12756</integer>
-		<key>diffuseTexture</key>
-		<string>2k_earth_daymap</string>
-		<key>normalTexture</key>
-		<string>2k_earth_normal_map</string>
-		<key>specularTexture</key>
-		<string>2k_earth_specular_map</string>
-		<key>orbitalRadius</key>
-		<real>149598023</real>
-		<key>orbitalPeriod</key>
-		<integer>365</integer>
-		<key>rotationalPeriod</key>
-		<integer>6</integer>
-		<key>name</key>
-		<string>Earth</string>
-	</dict>
 	<key>mercury</key>
 	<dict>
 		<key>diameter</key>
@@ -67,6 +33,25 @@
 		<false/>
 		<key>name</key>
 		<string>Venus</string>
+	</dict>
+	<key>earth</key>
+	<dict>
+		<key>diameter</key>
+		<integer>12756</integer>
+		<key>diffuseTexture</key>
+		<string>2k_earth_daymap</string>
+		<key>normalTexture</key>
+		<string>2k_earth_normal_map</string>
+		<key>specularTexture</key>
+		<string>2k_earth_specular_map</string>
+		<key>orbitalRadius</key>
+		<real>149598023</real>
+		<key>orbitalPeriod</key>
+		<integer>365</integer>
+		<key>rotationalPeriod</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>Earth</string>
 	</dict>
 	<key>mars</key>
 	<dict>
@@ -127,6 +112,21 @@
 		<integer>16</integer>
 		<key>name</key>
 		<string>Uranus</string>
+	</dict>
+	<key>naptune</key>
+	<dict>
+		<key>diameter</key>
+		<integer>49528</integer>
+		<key>diffuseTexture</key>
+		<string>2k_neptune</string>
+		<key>orbitalRadius</key>
+		<real>4498000000</real>
+		<key>orbitalPeriod</key>
+		<integer>60149</integer>
+		<key>rotationalPeriod</key>
+		<integer>8</integer>
+		<key>name</key>
+		<string>Neptune</string>
 	</dict>
 </dict>
 </plist>
