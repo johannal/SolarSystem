@@ -17,10 +17,8 @@ class SolarSystemController: UIViewController {
     
     private(set) var planetNodes: [OrbitingBodyNode] = []
     
-    // To support in and out animation of planets
-    let planetDetailsPresentationNode = SCNNode()
-    let planetDetailsLeftStagingNode = SCNNode()
-    let planetDetailsRightStagingNode = SCNNode()
+    // Currently presented planet in details view
+    var presentedPlanet: OrbitingBodyNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,15 +121,6 @@ class SolarSystemController: UIViewController {
                 planetNodes.append(planetNode)
             }
         }
-        
-        planetDetailsPresentationNode.position = SCNVector3.init(0, 0, -40)
-        cameraNode().addChildNode(planetDetailsPresentationNode)
-        
-        planetDetailsLeftStagingNode.position = SCNVector3.init(-50, 0, 80)
-        cameraNode().addChildNode(planetDetailsLeftStagingNode)
-        
-        planetDetailsRightStagingNode.position = SCNVector3.init(50, 0, -80)
-        cameraNode().addChildNode(planetDetailsRightStagingNode)
     }
     
     // Do any planet specific things
@@ -173,6 +162,7 @@ class SolarSystemController: UIViewController {
         case .solarSystem:
             // Put all planets back into the solar system
             for oribitingNode in planetNodes {
+                oribitingNode.transform = SCNMatrix4Identity
                 oribitingNode.solarSystemHostNode.addChildNode(oribitingNode)
             }
             
@@ -203,57 +193,66 @@ class SolarSystemController: UIViewController {
     }
     
     func presentPlanet(_ planet: OrbitingBodyNode, directionRightToLeft: Bool) {
-        var initialParentForNewPresentedPlanet: SCNNode?
-        var currentPresentedPlanetNewParent: SCNNode?
+        let previouslyPresentedPlanet = presentedPlanet
+        presentedPlanet = planet
+        cameraNode().addChildNode(planet)
+        
+        let rightOutsideTransform = SCNMatrix4MakeTranslation(80, 20, -80)
+        
+        var planetInitialTransform = SCNMatrix4Identity
+        var previouslyPresentedPlanetFinalTransform = SCNMatrix4Identity
         
         if directionRightToLeft {
-            // Add planet to right staging node, without animation
-            initialParentForNewPresentedPlanet = planetDetailsRightStagingNode
-            currentPresentedPlanetNewParent = planetDetailsLeftStagingNode
+            planetInitialTransform = rightOutsideTransform
+            previouslyPresentedPlanetFinalTransform = SCNMatrix4Invert(rightOutsideTransform)
         }
         else {
-            // Add planet to right staging node, without animation
-            initialParentForNewPresentedPlanet = planetDetailsLeftStagingNode
-            currentPresentedPlanetNewParent = planetDetailsRightStagingNode
+            planetInitialTransform = SCNMatrix4Invert(rightOutsideTransform)
+            previouslyPresentedPlanetFinalTransform = rightOutsideTransform
         }
         
-        // Setup new presented planet to be animated in
+        // Set initial position
         SCNTransaction.begin()
         SCNTransaction.disableActions = true
-        initialParentForNewPresentedPlanet?.addChildNode(planet)
+        planet.transform = planetInitialTransform//SCNMatrix4MakeTranslation(80, 20, -80)
+        planet.opacity = 0.0
         SCNTransaction.commit()
         
-        // Animate new planet in and old planet out
         SCNTransaction.begin()
         SCNTransaction.disableActions = false
-        SCNTransaction.animationDuration = 1.0
+        SCNTransaction.animationDuration = 2.0
         
-        if let currentPresentedPlanet = planetDetailsPresentationNode.childNodes.first {
-            currentPresentedPlanetNewParent?.addChildNode(currentPresentedPlanet)
-        }
-        
-        planetDetailsPresentationNode.addChildNode(planet)
-        
+        planet.transform = SCNMatrix4MakeTranslation(0, 5, -40)
         // TODO: Apply scale transform so all have the same size
+        planet.opacity = 1.0
+        
+        // Animate to final position
+        previouslyPresentedPlanet?.transform = previouslyPresentedPlanetFinalTransform//SCNMatrix4MakeTranslation(-80, -20, 80)
         
         SCNTransaction.commit()
     }
     
     func presentNextPlanet() {
-        if let currentPresentPlanet = planetDetailsPresentationNode.childNodes.first as? OrbitingBodyNode {
+        if let currentPresentPlanet = presentedPlanet {
             if let currentIndex = planetNodes.index(of: currentPresentPlanet) {
                 if currentIndex < (planetNodes.count-1) {
                     presentPlanet(planetNodes[currentIndex+1], directionRightToLeft: true)
+                }
+                else {
+                    presentPlanet(planetNodes.first!, directionRightToLeft: true)
                 }
             }
         }
     }
     
     func presentPreviousPlanet() {
-        if let currentPresentPlanet = planetDetailsPresentationNode.childNodes.first as? OrbitingBodyNode {
+        if let currentPresentPlanet = presentedPlanet {
             if let currentIndex = planetNodes.index(of: currentPresentPlanet) {
                 if currentIndex > 1 {
                     presentPlanet(planetNodes[currentIndex-1], directionRightToLeft: false)
+                }
+                else {
+                    presentPlanet(planetNodes.last!, directionRightToLeft: false)
                 }
             }
         }
