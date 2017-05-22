@@ -32,27 +32,7 @@ public class SolarSystem {
     // Create a dictionary to map planets to their orbits.
     let planetsToOrbits: [Planet: Orbit]
     
-    public init() {
-        
-        // DEMO POLISH: <rdar://problem/32247713> Errant selection after extracting to an expression
-        // DEMO BLOCKER: <rdar://problem/32039874> Add support for showing both name-range and context-range refactoring operations simultaneously
-        
-        // create the planets array with an ordered list of our planets.
-        planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, venus]
-        
-        // create a mapping of planets to orbits.
-        planetsToOrbits = [mercury: mercuryOrbit, venus: venusOrbit, earth: earthOrbit, mars: marsOrbit, jupiter: jupiterOrbit, saturn: saturnOrbit, uranus: uranusOrbit]
-        
-        // create all of the distant objects, which are loaded from a data file.
-        distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
-        
-        // add Earth's moon.
-        earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
-        
-        // add Mars' moons.
-        mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
-        mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
-        
+    fileprivate func extractedFunc() {
         // add Jupiter's 67 moons 😮!
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
             do {
@@ -68,6 +48,30 @@ public class SolarSystem {
                 // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
             }
         }
+    }
+    public init() {
+        
+        // DEMO POLISH: <rdar://problem/32247713> Errant selection after extracting to an expression
+        // DEMO BLOCKER: <rdar://problem/32039874> Add support for showing both name-range and context-range refactoring operations simultaneously
+        
+        // create the planets array with an ordered list of our planets.
+        planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, venus]
+        
+        // create a mapping of planets to orbits.
+        planetsToOrbits = [mercury: mercuryOrbit, venus: venusOrbit, earth: earthOrbit, mars: marsOrbit, jupiter: jupiterOrbit, saturn: saturnOrbit, uranus: uranusOrbit]
+        
+        // create all of the distant objects, which are loaded from a data file.
+        distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
+        
+        // add Earth's moon.
+        let extractedExpr: Moon = Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
+        earth.addMoon(extractedExpr)
+        
+        // add Mars' moons.
+        mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
+        mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
+        
+        extractedFunc()
     }
     
     // DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
