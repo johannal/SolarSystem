@@ -104,7 +104,8 @@ class PlanetDetailsViewController: UIViewController {
         let gravitySim = storyboard!.instantiateViewController(withIdentifier: "gravitySimulatorVC") as! GravitySimulatorViewController
         gravitySim.view.translatesAutoresizingMaskIntoConstraints = false
         gravitySim.view.alpha = 0.0
-        addChildViewController(gravitySim) // DEMO FIX – addChildViewController
+        addChildViewController(gravitySim) /// DEMO FIX – addChildViewController
+        addChildViewController(gravitySim)
         view.addSubview(gravitySim.view)
         
         // Constraints
