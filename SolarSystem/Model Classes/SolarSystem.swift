@@ -62,7 +62,7 @@ public class SolarSystem {
                 
                 // loop over all of Jupiter's moon names.
                 for moonName in moonNames {
-                    mars.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+                    jupiter.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
                 }
             } catch {
                 // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
