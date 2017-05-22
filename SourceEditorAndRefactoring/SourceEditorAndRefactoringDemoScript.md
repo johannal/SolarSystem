@@ -1,18 +1,18 @@
 Thanks Matthew.
 
-Xcode 9 includes a brand new source editor written from the ground up to be super fast. In fact, the editor's speed is the first thing I think you'll notice.
+Xcode 9 includes a brand new source editor written from the ground up to be super fast. In fact, I think the editor's speed is the first thing you'll notice.
 
     [scroll down and then up in SolarSystemView.swift]
 
-It's fully layer backed and opts in to responsive scrolling. Momentum scrolling -- super smooth. I can grab the scroll thumb and drag that up and down in this 8000+ line file, and it tracks my mouse like it's stuck to it. I can jump instantly to any line, including the very bottom of the file.
+It's fully layer backed and opts in to responsive scrolling. It lays out only as much text as it needs, so I can grab the scroll thumb in this 8000+ line file and drag it around like there were only 100 lines. And because of that optimized text layout strategy, I can jump instantly to bottom of this file and right back to the top.
 
-And typing responsiveness, well thats better too.
-
-One of my favorite features: a couple of Command-pluses to increase the font size, which is really handy for a code review, or a demo!
+In case you can’t read that code, let me just bump up the font size using Command plus — thats one of my favorite new features. Surprisingly handy for a code review, or a even a demo. It’s the little things, right?
 
     [press Command-plus a few times]
     
-In addition to the speed boost, there's a couple of new issues and fix-its. I'll type some code that is using new iOS 11 API.
+Interacting with your code is nicer, but there are also some new issues and fix-its to help you make your code better and write it more quickly. 
+
+Let me show you. I’ll type some code that is using new iOS 11 API.
 
     [type "demo1"]
     
