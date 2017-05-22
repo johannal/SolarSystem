@@ -359,6 +359,302 @@ extension Bounds {
 
 private let _quarterTurn = Measurement<UnitAngle>(value: 90, unit: .degrees)
 
+public extension Measurement where UnitType == UnitAngle {
+    /// True if the cumulative rotation leaves the rotation at 90° or 270° equivalents
+    /// (0° is assumed to be portrait)
+    public var isLandscape: Bool {
+        let absoluteDegrees = abs(self.degrees)
+        return absoluteDegrees.isAlmost(90) || absoluteDegrees.isAlmost(270)
+    }
+    
+    public enum Orientation {
+        case portrait
+        case landscapeLeft
+        case landscapeRight
+        case portraitUpsidedown
+    }
+    
+    public var orientationEquivalent: Orientation {
+        let degrees = self.degrees
+        if degrees.isAlmost(90) || degrees.isAlmost(-270) {
+            return .landscapeLeft
+        } else if degrees.isAlmost(-90) || degrees.isAlmost(270) {
+            return .landscapeRight
+        } else if degrees.isAlmost(-180) || degrees.isAlmost(180) {
+            return .portraitUpsidedown
+        } else {
+            return .portrait
+        }
+    }
+    
+    public var degrees: CGFloat {
+        return CGFloat(self.converted(to: UnitAngle.degrees).value.truncatingRemainder(dividingBy: 360))
+    }
+    
+    public var radians: CGFloat {
+        return CGFloat(self.converted(to: UnitAngle.radians).value)
+    }
+    
+    /// Returns the result of rotating self a quarter turn anti-clockwise
+    public func rotatedLeft() -> Measurement {
+        return self + _quarterTurn
+    }
+    
+    /// Rotates self a quarter turn anti-clockwise
+    public mutating func rotateLeft() {
+        self = self.rotatedLeft()
+    }
+    
+    /// Returns the result of rotating self a quarter turn clockwise
+    public func rotatedRight() -> Measurement {
+        return self - _quarterTurn
+    }
+    
+    /// Rotates self a quarter turn clockwise
+    public mutating func rotateRight() {
+        self = self.rotatedRight()
+    }
+    
+    public static prefix func - (value: Measurement) -> Measurement {
+        return Measurement(value: -value.value, unit: value.unit)
+    }
+    
+    public static func + (lhs: Measurement, rhs: Measurement) -> Measurement {
+        let lhsDegrees = lhs.unit == .degrees ? lhs : lhs.converted(to: .degrees)
+        let rhsDegrees = rhs.unit == .degrees ? rhs : rhs.converted(to: .degrees)
+        return Measurement(value: lhsDegrees.value + rhsDegrees.value, unit: .degrees)
+    }
+    
+    public static func - (lhs: Measurement, rhs: Measurement) -> Measurement {
+        return lhs + (-rhs)
+    }
+}
+
+public extension CGFloat {
+    func isAlmost(_ value: CGFloat, precision: CGFloat = 0.001) -> Bool {
+        let (myInt, myFrac) = modf(self)
+        let (otherInt, otherFrac) = modf(value)
+        if myInt != otherInt {
+            return false
+        }
+        let diff = Swift.max(myFrac, otherFrac) - Swift.min(myFrac, otherFrac)
+        
+        return diff < precision
+    }
+}
+
+protocol OptionalType: ExpressibleByNilLiteral { }
+
+// Optional already has an ExpressibleByNilLiteral conformance
+// so we just adopt the protocol
+extension Optional: OptionalType { }
+
+extension Optional where Wrapped: OptionalType {
+    func flatten() -> Wrapped {
+        switch self {
+        case let .some(value):
+            return value
+        case .none:
+            return nil
+        }
+    }
+    
+    var descriptionOrEmpty: String {
+        return self.flatMap(String.init(describing:)) ?? ""
+    }
+    
+    var descriptionOrNil: String {
+        return self.flatMap(String.init(describing:)) ?? "(nil)"
+    }
+}
+
+protocol _CollectionOrStringish {
+    var isEmpty: Bool { get }
+}
+
+extension String: _CollectionOrStringish { }
+extension Array: _CollectionOrStringish { }
+extension Dictionary: _CollectionOrStringish { }
+extension Set: _CollectionOrStringish { }
+
+extension Optional where Wrapped: _CollectionOrStringish {
+    var isNilOrEmpty: Bool {
+        switch self {
+        case let .some(value): return value.isEmpty
+        default: return true
+        }
+    }
+}
+
+public extension DispatchQueue {
+    /// Convenience function to execute a synchronous barrier block
+    ///
+    /// - Parameter block: the block
+    public func syncBarrier(_ block: @escaping @convention(block) () -> Void) {
+        self.sync(execute: DispatchWorkItem(flags: .barrier, block: block))
+    }
+    
+    /// Convenience function to execute an asynchronous barrier block
+    ///
+    /// - Parameter block: the block
+    public func asyncBarrier(_ block: @escaping @convention(block) () -> Void) {
+        self.async(execute: DispatchWorkItem(flags: .barrier, block: block))
+    }
+    
+    /// Assert that execution is on the given queue
+    ///
+    /// - Parameter queue: The queue
+    public static func assert(on queue: DispatchQueue) {
+        if #available(OSX 10.12, *) {
+            dispatchPrecondition(condition: DispatchPredicate.onQueue(queue))
+        }
+    }
+}
+
+/// A struct representing a SunOperationCalculator
+/// for handling value processing
+struct SunOperationCalculator {
+    var isEnabled: Bool
+    var sortOrder: Bool
+    
+}
+
+/// A struct representing a SunOperationManager
+/// for handling value processing
+struct SunOperationManager {
+    var isEnabled: Int
+    var sortOrder: UInt
+    var label: UInt
+    var eccentricity: Bool
+    
+}
+
+/// A struct representing a SunOperationProcessor
+/// for handling value processing
+struct SunOperationProcessor {
+    var isEnabled: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunOperationIterator
+/// for handling value processing
+struct SunOperationIterator {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunOperationMangler
+/// for handling value processing
+struct SunOperationMangler {
+    var isEnabled: Bool
+    var sortOrder: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunOperationAccessor
+/// for handling value processing
+struct SunOperationAccessor {
+    var isEnabled: Int
+    var sortOrder: UInt
+    var label: Bool
+    var eccentricity: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunOperationParser
+/// for handling value processing
+struct SunOperationParser {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunOperationStreamer
+/// for handling value processing
+struct SunOperationStreamer {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: UInt
+    var eccentricity: Int
+    var value: UInt
+    
+}
+
+/// A struct representing a SunOperationLocator
+/// for handling value processing
+struct SunOperationLocator {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunOperationRenderer
+/// for handling value processing
+struct SunOperationRenderer {
+    var isEnabled: Bool
+    var sortOrder: Bool
+    var label: Int
+    var eccentricity: Bool
+    var value: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
 /// A struct representing a SunFileAccessor
 /// for handling value processing
 struct SunFileAccessor {
@@ -924,6 +1220,93 @@ struct SunViewSerializer {
     }
 }
 
+/// A struct representing a SunViewAnalyzer
+/// for handling value processing
+struct SunViewAnalyzer {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunSocketCalculator
+/// for handling value processing
+struct SunSocketCalculator {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunSocketManager
+/// for handling value processing
+struct SunSocketManager {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: UInt
+    
+}
+
+/// A struct representing a SunSocketProcessor
+/// for handling value processing
+struct SunSocketProcessor {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
 /// A struct representing a SunSocketIterator
 /// for handling value processing
 struct SunSocketIterator {
@@ -949,6 +1332,1276 @@ struct SunSocketMangler {
     var label: Int
     var eccentricity: UInt
     var value: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunSocketAccessor
+/// for handling value processing
+struct SunSocketAccessor {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: UInt
+    var value: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunSocketParser
+/// for handling value processing
+struct SunSocketParser {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: UInt
+    var eccentricity: Int
+    
+}
+
+/// A struct representing a SunSocketStreamer
+/// for handling value processing
+struct SunSocketStreamer {
+    var isEnabled: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunSocketLocator
+/// for handling value processing
+struct SunSocketLocator {
+    var isEnabled: Bool
+    var sortOrder: Int
+    var label: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SunSocketRenderer
+/// for handling value processing
+struct SunSocketRenderer {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: Bool
+    
+}
+
+/// A struct representing a SunSocketSerializer
+/// for handling value processing
+struct SunSocketSerializer {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: Int
+    
+}
+
+/// A struct representing a SunSocketAnalyzer
+/// for handling value processing
+struct SunSocketAnalyzer {
+    var isEnabled: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationCalculator
+/// for handling value processing
+struct MercuryOperationCalculator {
+    var isEnabled: Bool
+    var sortOrder: UInt
+    var label: Int
+    var eccentricity: Int
+    var value: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationManager
+/// for handling value processing
+struct MercuryOperationManager {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationProcessor
+/// for handling value processing
+struct MercuryOperationProcessor {
+    var isEnabled: Bool
+    var sortOrder: UInt
+    var label: Int
+    var eccentricity: Int
+    var value: UInt
+    
+}
+
+/// A struct representing a MercuryOperationIterator
+/// for handling value processing
+struct MercuryOperationIterator {
+    var isEnabled: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationMangler
+/// for handling value processing
+struct MercuryOperationMangler {
+    var isEnabled: Int
+    var sortOrder: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationAccessor
+/// for handling value processing
+struct MercuryOperationAccessor {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationParser
+/// for handling value processing
+struct MercuryOperationParser {
+    var isEnabled: Bool
+    var sortOrder: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationStreamer
+/// for handling value processing
+struct MercuryOperationStreamer {
+    var isEnabled: UInt
+    var sortOrder: UInt
+    var label: Bool
+    var eccentricity: Int
+    var value: Int
+    
+}
+
+/// A struct representing a MercuryOperationLocator
+/// for handling value processing
+struct MercuryOperationLocator {
+    var isEnabled: Bool
+    var sortOrder: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationRenderer
+/// for handling value processing
+struct MercuryOperationRenderer {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    
+}
+
+/// A struct representing a MercuryOperationSerializer
+/// for handling value processing
+struct MercuryOperationSerializer {
+    var isEnabled: Bool
+    var sortOrder: UInt
+    var label: Int
+    var eccentricity: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryOperationAnalyzer
+/// for handling value processing
+struct MercuryOperationAnalyzer {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileCalculator
+/// for handling value processing
+struct MercuryFileCalculator {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: UInt
+    var eccentricity: UInt
+    var value: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileManager
+/// for handling value processing
+struct MercuryFileManager {
+    var isEnabled: UInt
+    var sortOrder: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileProcessor
+/// for handling value processing
+struct MercuryFileProcessor {
+    var isEnabled: UInt
+    var sortOrder: Int
+    
+}
+
+/// A struct representing a MercuryFileIterator
+/// for handling value processing
+struct MercuryFileIterator {
+    var isEnabled: Bool
+    var sortOrder: Bool
+    
+}
+
+/// A struct representing a MercuryFileMangler
+/// for handling value processing
+struct MercuryFileMangler {
+    var isEnabled: Bool
+    var sortOrder: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileAccessor
+/// for handling value processing
+struct MercuryFileAccessor {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileParser
+/// for handling value processing
+struct MercuryFileParser {
+    var isEnabled: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileStreamer
+/// for handling value processing
+struct MercuryFileStreamer {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: UInt
+    var eccentricity: UInt
+    
+}
+
+/// A struct representing a MercuryFileLocator
+/// for handling value processing
+struct MercuryFileLocator {
+    var isEnabled: Bool
+    var sortOrder: Int
+    var label: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileRenderer
+/// for handling value processing
+struct MercuryFileRenderer {
+    var isEnabled: Int
+    var sortOrder: UInt
+    var label: UInt
+    
+}
+
+/// A struct representing a MercuryFileSerializer
+/// for handling value processing
+struct MercuryFileSerializer {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryFileAnalyzer
+/// for handling value processing
+struct MercuryFileAnalyzer {
+    var isEnabled: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueCalculator
+/// for handling value processing
+struct MercuryQueueCalculator {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: Bool
+    var value: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueManager
+/// for handling value processing
+struct MercuryQueueManager {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueProcessor
+/// for handling value processing
+struct MercuryQueueProcessor {
+    var isEnabled: Bool
+    var sortOrder: Bool
+    var label: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueIterator
+/// for handling value processing
+struct MercuryQueueIterator {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Int
+    var value: UInt
+    
+}
+
+/// A struct representing a MercuryQueueMangler
+/// for handling value processing
+struct MercuryQueueMangler {
+    var isEnabled: Bool
+    var sortOrder: Int
+    var label: Int
+    
+}
+
+/// A struct representing a MercuryQueueAccessor
+/// for handling value processing
+struct MercuryQueueAccessor {
+    var isEnabled: UInt
+    var sortOrder: UInt
+    var label: UInt
+    var eccentricity: UInt
+    var value: UInt
+    
+}
+
+/// A struct representing a MercuryQueueParser
+/// for handling value processing
+struct MercuryQueueParser {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueStreamer
+/// for handling value processing
+struct MercuryQueueStreamer {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    
+}
+
+/// A struct representing a MercuryQueueLocator
+/// for handling value processing
+struct MercuryQueueLocator {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Bool
+    var value: Bool
+    
+}
+
+/// A struct representing a MercuryQueueRenderer
+/// for handling value processing
+struct MercuryQueueRenderer {
+    var isEnabled: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueSerializer
+/// for handling value processing
+struct MercuryQueueSerializer {
+    var isEnabled: Bool
+    var sortOrder: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryQueueAnalyzer
+/// for handling value processing
+struct MercuryQueueAnalyzer {
+    var isEnabled: UInt
+    var sortOrder: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewCalculator
+/// for handling value processing
+struct MercuryViewCalculator {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewManager
+/// for handling value processing
+struct MercuryViewManager {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: Int
+    var value: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewProcessor
+/// for handling value processing
+struct MercuryViewProcessor {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: UInt
+    var eccentricity: Int
+    var value: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewIterator
+/// for handling value processing
+struct MercuryViewIterator {
+    var isEnabled: Int
+    var sortOrder: UInt
+    
+}
+
+/// A struct representing a MercuryViewMangler
+/// for handling value processing
+struct MercuryViewMangler {
+    var isEnabled: Bool
+    var sortOrder: Int
+    
+}
+
+/// A struct representing a MercuryViewAccessor
+/// for handling value processing
+struct MercuryViewAccessor {
+    var isEnabled: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewParser
+/// for handling value processing
+struct MercuryViewParser {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: UInt
+    var eccentricity: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewStreamer
+/// for handling value processing
+struct MercuryViewStreamer {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewLocator
+/// for handling value processing
+struct MercuryViewLocator {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewRenderer
+/// for handling value processing
+struct MercuryViewRenderer {
+    var isEnabled: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercuryViewSerializer
+/// for handling value processing
+struct MercuryViewSerializer {
+    var isEnabled: Bool
+    
+}
+
+/// A struct representing a MercuryViewAnalyzer
+/// for handling value processing
+struct MercuryViewAnalyzer {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketCalculator
+/// for handling value processing
+struct MercurySocketCalculator {
+    var isEnabled: Int
+    var sortOrder: Bool
+    var label: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketManager
+/// for handling value processing
+struct MercurySocketManager {
+    var isEnabled: Bool
+    var sortOrder: UInt
+    var label: UInt
+    var eccentricity: Int
+    var value: UInt
+    
+}
+
+/// A struct representing a MercurySocketProcessor
+/// for handling value processing
+struct MercurySocketProcessor {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketIterator
+/// for handling value processing
+struct MercurySocketIterator {
+    var isEnabled: Bool
+    
+}
+
+/// A struct representing a MercurySocketMangler
+/// for handling value processing
+struct MercurySocketMangler {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: UInt
+    var eccentricity: UInt
+    
+}
+
+/// A struct representing a MercurySocketAccessor
+/// for handling value processing
+struct MercurySocketAccessor {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: UInt
+    var value: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketParser
+/// for handling value processing
+struct MercurySocketParser {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: Bool
+    var eccentricity: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketStreamer
+/// for handling value processing
+struct MercurySocketStreamer {
+    var isEnabled: UInt
+    var sortOrder: UInt
+    var label: UInt
+    var eccentricity: Int
+    var value: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketLocator
+/// for handling value processing
+struct MercurySocketLocator {
+    var isEnabled: Int
+    var sortOrder: Bool
+    var label: Bool
+    var eccentricity: UInt
+    
+}
+
+/// A struct representing a MercurySocketRenderer
+/// for handling value processing
+struct MercurySocketRenderer {
+    var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketSerializer
+/// for handling value processing
+struct MercurySocketSerializer {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: UInt
+    var eccentricity: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a MercurySocketAnalyzer
+/// for handling value processing
+struct MercurySocketAnalyzer {
+    var isEnabled: UInt
+    
+}
+
+/// A struct representing a VenusOperationCalculator
+/// for handling value processing
+struct VenusOperationCalculator {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: Bool
+    
+}
+
+/// A struct representing a VenusOperationManager
+/// for handling value processing
+struct VenusOperationManager {
+    var isEnabled: Bool
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: UInt
+    
+}
+
+/// A struct representing a VenusOperationProcessor
+/// for handling value processing
+struct VenusOperationProcessor {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Int
+    var value: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a VenusOperationIterator
+/// for handling value processing
+struct VenusOperationIterator {
+    var isEnabled: UInt
+    var sortOrder: UInt
+    
+}
+
+/// A struct representing a VenusOperationMangler
+/// for handling value processing
+struct VenusOperationMangler {
+    var isEnabled: Bool
+    var sortOrder: UInt
+    var label: UInt
+    var eccentricity: Bool
+    var value: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a VenusOperationAccessor
+/// for handling value processing
+struct VenusOperationAccessor {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Bool
+    var value: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a VenusOperationParser
+/// for handling value processing
+struct VenusOperationParser {
+    var isEnabled: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a VenusOperationStreamer
+/// for handling value processing
+struct VenusOperationStreamer {
+    var isEnabled: Bool
+    
+}
+
+/// A struct representing a VenusOperationLocator
+/// for handling value processing
+struct VenusOperationLocator {
+    var isEnabled: UInt
+    var sortOrder: Bool
+    var label: Bool
+    var eccentricity: Int
+    var value: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a VenusOperationRenderer
+/// for handling value processing
+struct VenusOperationRenderer {
+    var isEnabled: Int
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Bool
+    var value: UInt
     
     /// Processes the checkValue value synchronously
     /// and prints the result to stdout. To capture
