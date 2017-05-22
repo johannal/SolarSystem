@@ -5,6 +5,11 @@
 //  Copyright © 2017. All rights reserved.
 //
 
+// DEMO BLOCKER: <rdar://problem/31968242> File has been changed by another application message when saving document after rename
+// DEMO POLISH: <rdar://problem/32247713> Errant selection after extracting to an expression
+// DEMO BLOCKER: <rdar://problem/32039874> Add support for showing both name-range and context-range refactoring operations simultaneously
+// DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
+
 import Foundation
 
 /// A model of a solar system, including a central #Star with orbiting #Planets.
@@ -23,35 +28,18 @@ public class SolarSystem {
     let uranus: Planet = Planet(name: "Uranus", color: #colorLiteral(red: 0.5745319724, green: 0.7137514353, blue: 0.7544075847, alpha: 1))
     let neptune: Planet = Planet(name: "Neptune", color: #colorLiteral(red: 0.3400839567, green: 0.5141240954, blue: 0.6517244577, alpha: 1))
     
-    // DEMO BLOCKER: <rdar://problem/31968242> File has been changed by another application message when saving document after rename
-    
     // Create arrays for the objects in our SolarSystem.
     let planets: [Planet]
     let distantObjects: [TransNeptunianObject]
     
-    // Create a dictionary to map planets to their orbits.
-    let planetsToOrbits: [Planet: Orbit]
-    
     public init() {
         
-        // DEMO POLISH: <rdar://problem/32247713> Errant selection after extracting to an expression
-        // DEMO BLOCKER: <rdar://problem/32039874> Add support for showing both name-range and context-range refactoring operations simultaneously
-        
-        // create the planets array with an ordered list of our planets.
+        // create the planets and distant objects.
         planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, venus]
-        
-        // create a mapping of planets to orbits.
-        planetsToOrbits = [mercury: mercuryOrbit, venus: venusOrbit, earth: earthOrbit, mars: marsOrbit, jupiter: jupiterOrbit, saturn: saturnOrbit, uranus: uranusOrbit]
-        
-        // create all of the distant objects, which are loaded from a data file.
         distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
         
         // add Earth's moon.
         earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
-        
-        // add Mars' moons.
-        mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
-        mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
         
         // add Jupiter's 67 moons 😮!
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
@@ -64,13 +52,9 @@ public class SolarSystem {
                 for moonName in moonNames {
                     jupiter.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
                 }
-            } catch {
-                // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
-            }
+            } catch { /* shouldn't end up here. */ }
         }
     }
-    
-    // DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
     
     /// Calculates the coordinate of a given #Planet, at a particular date (which includes time), relative to the Sun.
     ///
