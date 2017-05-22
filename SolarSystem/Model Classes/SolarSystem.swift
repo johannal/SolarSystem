@@ -32,23 +32,6 @@ public class SolarSystem {
     // Create a dictionary to map planets to their orbits.
     let planetsToOrbits: [Planet: Orbit]
     
-    fileprivate func extractedFunc() {
-        // add Jupiter's 67 moons 😮!
-        if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
-            do {
-                // grab all the names of Jupiter's moons, which are separated by newlines.
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let moonNames = data.components(separatedBy: .newlines)
-                
-                // loop over all of Jupiter's moon names.
-                for moonName in moonNames {
-                    mars.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
-                }
-            } catch {
-                // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
-            }
-        }
-    }
     public init() {
         
         // DEMO POLISH: <rdar://problem/32247713> Errant selection after extracting to an expression
@@ -64,14 +47,27 @@ public class SolarSystem {
         distantObjects = SolarSystem.loadAndCreateDistantObjects(parentStar: sun)
         
         // add Earth's moon.
-        let extractedExpr: Moon = Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))
-        earth.addMoon(extractedExpr)
+        earth.addMoon(Moon(name: "Moon", color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
         
         // add Mars' moons.
         mars.addMoon(Moon(name: "Deimos", color: #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)))
         mars.addMoon(Moon(name: "Phobos", color: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)))
         
-        extractedFunc()
+        // add Jupiter's 67 moons 😮!
+        if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
+            do {
+                // grab all the names of Jupiter's moons, which are separated by newlines.
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let moonNames = data.components(separatedBy: .newlines)
+                
+                // loop over all of Jupiter's moon names.
+                for moonName in moonNames {
+                    mars.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+                }
+            } catch {
+                // we shouldn't end up here, since we're shipping MoonsOfJupiter.txt with our app.
+            }
+        }
     }
     
     // DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
