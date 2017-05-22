@@ -24,7 +24,7 @@ extension SKSpriteNode {
 
 class GravitySimulatorScene: SKScene {
     
-    override func didChangeSize(_ oldSize: CGSize) {        
+    override func didChangeSize(_ oldSize: CGSize) {
         // Update positioning of walls
         if let leftWall = childNode(withName: "leftWall") as? SKSpriteNode {
             leftWall.size = CGSize.init(width: wallThickness, height: size.height)

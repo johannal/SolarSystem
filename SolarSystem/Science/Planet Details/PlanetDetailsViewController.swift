@@ -23,7 +23,7 @@ class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
     
-    weak var gravitySimulatorVC: GravitySimulatorViewController?
+    var gravitySimulatorVC: GravitySimulatorViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,8 @@ class PlanetDetailsViewController: UIViewController {
             self.nextButton.alpha = 0.3
             self.previousButton.alpha = 0.3
         }, completion: nil)
+        
+        setupGravitySimulator()
     }
     
     func updateWithPlanetDetails(_ planetInfo: Dictionary<String, Any>) {
@@ -97,35 +99,37 @@ class PlanetDetailsViewController: UIViewController {
         delegate?.planetDetailsNavigationButtonPressed(true)
     }
     
-    @objc override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        let deviceOrientationIsLandscape = size.width > size.height
+    func setupGravitySimulator() {
+        // Add gravity view controller
+        let gravitySim = storyboard!.instantiateViewController(withIdentifier: "gravitySimulatorVC") as! GravitySimulatorViewController
+        gravitySim.view.translatesAutoresizingMaskIntoConstraints = false
+        gravitySim.view.alpha = 0.0
+        addChildViewController(gravitySim) // DEMO FIX – addChildViewController
+        view.addSubview(gravitySim.view)
         
-        // Update gravity simulator (present or dismiss)
-        updateGravitySimulator(deviceOrientationIsLandscape)
+        // Constraints
+        gravitySim.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        gravitySim.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        gravitySim.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        gravitySim.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        gravitySimulatorVC = gravitySim
     }
     
-    func updateGravitySimulator(_ orientationIsLandscape: Bool) {
-        if orientationIsLandscape {
-            if gravitySimulatorVC == nil {
-                // Add gravity view controller
-                let gravitySim = storyboard!.instantiateViewController(withIdentifier: "gravitySimulatorVC") as! GravitySimulatorViewController
-                gravitySim.view.translatesAutoresizingMaskIntoConstraints = false
-                addChildViewController(gravitySim)
-                view.addSubview(gravitySim.view)
-                
-                // Constraints
-                gravitySim.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-                gravitySim.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-                gravitySim.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-                gravitySim.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-                
-                gravitySimulatorVC = gravitySim
-            }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // Show of hide gravity simulator
+        let deviceOrientationIsLandscape = size.width > size.height
+        if deviceOrientationIsLandscape {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.gravitySimulatorVC?.view.alpha = 1.0
+            })
         }
         else {
-            // Remove gravity view controller
-            gravitySimulatorVC?.view.removeFromSuperview()
-            gravitySimulatorVC?.removeFromParentViewController()
+            UIView.animate(withDuration: 0.3, animations: {
+                self.gravitySimulatorVC?.view.alpha = 0.0
+            })
         }
     }
     

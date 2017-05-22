@@ -26,10 +26,6 @@ class GravitySimulatorViewController: UIViewController {
         gravityView.scene?.scaleMode = .aspectFill // DEMO FIX – Use this instead: .resizeFill
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
