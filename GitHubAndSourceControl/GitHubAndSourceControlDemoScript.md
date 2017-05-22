@@ -1,72 +1,6 @@
 ## SOTU GitHub/SCM Demo
 _WWDC 2017_
 
-### Random Radars
-
-##### Unscreened
-- <rdar://problem/31936812> When a blue folder resorts (reloads) we lose selection within it
-- <rdar://problem/32057225> After adding account through prefs, the clone window did not notice
-- <rdar://problem/32156339> CrashTracer: [USER] Xcode at com.apple.dt.DVTFoundation: ___DVTAsyncPerformBlockOnMainRunLoop_block_invoke + 1232 :: NSInvalidArgumentException at com.apple.dt.DVTFoundation: __DVTFailureHintExceptionPreprocessor_block_invoke + 199
-- <rdar://problem/32157429> The new Clone... button is sandwiched in the middle of the detail view
-
-##### Tioga, no event
-- <rdar://problem/32111289> Presentation mode dwrite for bigger fonts in the history viewer
-
-##### Beta 1
-- <rdar://problem/31757622> In the Clone window, default sort should take ownership into account
-- <rdar://problem/31311947> After creating a new file in a Blue Folder, the the view refreshes and the name editing is cancelled
-- <rdar://problem/31937038> Should have alternate New Group commands for specifically creating a green/non-green group
-- <rdar://problem/32015457> Clone window is non-modal but the menu item to show it is disabled if it is visible but not ordered front
-- <rdar://problem/32015433> New Clone... window shows up in a werid screen position. It should come up centered
-- <rdar://problem/31019822> GitHub on-ramping during project creation
-- <rdar://problem/32017088> I am getting 'Always allow' dialog when adding a github account when Xcode already has my SSH passphrase in its keychain (from an earlier account addition)
-- <rdar://problem/32039214> Up and down arrow should move selection in the repo list up and down when focus is in the search field
-- <rdar://problem/32039240> Sorting by repo name should use 'sort like Finder' style sorting
-- <rdar://problem/32039243> Links in the repo window detail view should get the finger cursor
-- <rdar://problem/32039272> Context menu for log viewer should have an 'email author' item
-- <rdar://problem/30834362> GitHub avatar API and caching
-- <rdar://problem/30960716> SCM history adoption of avatar API
-- <rdar://problem/32039300> Commit summary at the bottom of the commit viewer doesn't show the same merge icon in the hash as the log viewer
-- <rdar://problem/32049321> Commit sheet/commit viewer should show renamed files as renamed instead of deleted/added
-- <rdar://problem/32157658> When showing a renamed file in commit viewer, there should be some indication in the detail area of what the old and new locations are
-- <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
-- <rdar://problem/31939924> Commit viewer should scroll to first diff in the top file
-- <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
-- <rdar://problem/28873684> SCM: Remote icon
-- <rdar://problem/32050962> Clone Window: Remove the “V" button in the footer that toggles the detail view
-- <rdar://problem/32050964> Clone window: Add a “Done" button to the footer of the window next to "Clone" button
-- <rdar://problem/32157476> Should have a default (or a modifier I can hold) to make the Accounts window Clone... button dismiss the accounts window
-- <rdar://problem/32157549> Unstarring a repo does not remove it from my list
-- <rdar://problem/32157583> Detail view still shows detail for last selected item when a search starts
-- <rdar://problem/32157722> Commit sheet flashes No files in navigator briefly after commit finishes but before sheet rolls up
-- <rdar://problem/32157760> No files placeholder should be No Files (capital F) in the commit sheet navigator
-- <rdar://problem/32157788> Merge from, into menu items are confusing
-- <rdar://problem/32121361> SCM: Polish the presentation of the table group rows in the repositories window
-- <rdar://problem/32156368> Date formatter for repositories window last modified column should be "Today, Time" and "Yesterday, Time"
-- <rdar://problem/32156411> In the GitHub 2FA token field, paste should work
-- <rdar://problem/32156451> HI polish for the GitHub README sheet
-- <rdar://problem/32156674> Tweak repositories window selection / keyboard behavior
-- <rdar://problem/32156969> The repositories window needs to honor my GitHub clone preference
-- <rdar://problem/32157077> Revise the sorting rules for the unsearched window state
-- <rdar://problem/32157114> The default repositories view shows me duplicates
-- <rdar://problem/32157156> Repositories window should update live when GitHub accounts change
-- <rdar://problem/32157201> Search field has the wrong placeholder string
-- <rdar://problem/32121294> Tweak the table headers in the GitHub repository view
-- <rdar://problem/32158071> When a repository is not starred, we should show it as an empty star and add the (+) on rollover
-- <rdar://problem/30291887> New commit view could be more discoverable: add a button to go from the history view to the commit details view
-
-##### Post WWDC
-- <rdar://problem/31761450> Account details for GitHub accounts should show list of organizations I belong to
-
-##### XPM
-- <rdar://problem/30960652> Package dependency editor adoption of new repository UI
-- <rdar://problem/31757658> Define some conventions/best practices to recommend to people putting packages on github to aid in searching through the Clone workflow.
-
-##### Post Tioga
-- <rdar://problem/30310230> Opening history editor from a working copy node doesn't display commit details in the inspector
-- <rdar://problem/32039182> Should we have an indication of current branch without having to twist open Branches?
-
-
 ### Setup
 - Defaults
 	- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
@@ -204,6 +138,44 @@ _WWDC 2017_
     - My project is now hosted on Github and I can start sharing it
 
 
+### Random Radars
+
+##### Unscreened
+- <rdar://problem/31936812> When a blue folder resorts (reloads) we lose selection within it
+
+##### Demo Blocker
+- <rdar://problem/32111289> Presentation mode dwrite for bigger fonts in the history viewer
+- <rdar://problem/30620743> After renaming a file, UI reverts, then corrects (and when creating a new group, the new group's name is not selected for editing)
+
+##### Beta 1
+- <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
+- <rdar://problem/32156368> Date formatter for repositories window last modified column should be "Today, Time" and "Yesterday, Time"
+- <rdar://problem/32157077> Revise the sorting rules for the unsearched window state
+- <rdar://problem/32157114> The default repositories view shows me duplicates
+- <rdar://problem/30291887> New commit view could be more discoverable: add a button to go from the history view to the commit details view
+
+##### Punted, may need to bring back?
+- <rdar://problem/32017088> I am getting 'Always allow' dialog when adding a github account when Xcode already has my SSH passphrase in its keychain (from an earlier account addition)
+
+##### Post WWDC
+- <rdar://problem/31761450> Account details for GitHub accounts should show list of organizations I belong to
+- <rdar://problem/32157549> Unstarring a repo does not remove it from my list
+- <rdar://problem/31939924> Commit viewer should scroll to first diff in the top file
+- <rdar://problem/32039243> Links in the repo window detail view should get the finger cursor
+- <rdar://problem/32039300> Commit summary at the bottom of the commit viewer doesn't show the same merge icon in the hash as the log viewer
+- <rdar://problem/32156411> In the GitHub 2FA token field, paste should work
+- <rdar://problem/32157658> When showing a renamed file in commit viewer, there should be some indication in the detail area of what the old and new locations are
+- <rdar://problem/32157760> No files placeholder should be No Files (capital F) in the commit sheet navigator
+- <rdar://problem/32157788> Merge from, into menu items are confusing
+
+##### XPM
+- <rdar://problem/30960652> Package dependency editor adoption of new repository UI
+- <rdar://problem/31757658> Define some conventions/best practices to recommend to people putting packages on github to aid in searching through the Clone workflow.
+
+##### Post Tioga
+- <rdar://problem/30310230> Opening history editor from a working copy node doesn't display commit details in the inspector
+- <rdar://problem/32039182> Should we have an indication of current branch without having to twist open Branches?
+
 ### Fixed bugs
 - <rdar://problem/31936990> SCM navigator should have Branches and Tags groups even if there aren't any
 - <rdar://problem/31757488> We should show the Remotes folder under a git repo even if there are no remotes
@@ -225,4 +197,29 @@ _WWDC 2017_
 - <rdar://problem/32050966> Clone window: Name (font size) of repository in detail view is too large
 - <rdar://problem/32051106> The welcome window needs to say Clone… not Check Out…
 - <rdar://problem/32051198> Need a user default to turn off huge tooltips for commit messages in history view
-
+- <rdar://problem/28873684> SCM: Remote icon
+- <rdar://problem/30834362> GitHub avatar API and caching
+- <rdar://problem/30960716> SCM history adoption of avatar API
+- <rdar://problem/31019822> GitHub on-ramping during project creation
+- <rdar://problem/30698325> Creating groups is automatically creating folders on the disk
+- <rdar://problem/31937038> Should have alternate New Group commands for specifically creating a green/non-green group
+- <rdar://problem/32015433> New Clone... window shows up in a werid screen position. It should come up centered
+- <rdar://problem/32015457> Clone window is non-modal but the menu item to show it is disabled if it is visible but not ordered front
+- <rdar://problem/32039272> Context menu for log viewer should have an 'email author' item
+- <rdar://problem/32049321> Commit sheet/commit viewer should show renamed files as renamed instead of deleted/added
+- <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
+- <rdar://problem/32121294> Tweak the table headers in the GitHub repository view
+- <rdar://problem/32121361> SCM: Polish the presentation of the table group rows in the repositories window
+- <rdar://problem/32156339> CrashTracer: [USER] Xcode at com.apple.dt.DVTFoundation: ___DVTAsyncPerformBlockOnMainRunLoop_block_invoke + 1232 :: NSInvalidArgumentException at com.apple.dt.DVTFoundation: __DVTFailureHintExceptionPreprocessor_block_invoke + 199
+- <rdar://problem/32156451> HI polish for the GitHub README sheet
+- <rdar://problem/32156674> Tweak repositories window selection / keyboard behavior
+- <rdar://problem/32156969> The repositories window needs to honor my GitHub clone preference
+- <rdar://problem/32157156> Repositories window should update live when GitHub accounts change
+- <rdar://problem/32157201> Search field has the wrong placeholder string
+- <rdar://problem/32157583> Detail view still shows detail for last selected item when a search starts
+- <rdar://problem/32157722> Commit sheet flashes No files in navigator briefly after commit finishes but before sheet rolls up
+- <rdar://problem/32158071> When a repository is not starred, we should show it as an empty star and add the (+) on rollover
+- <rdar://problem/32039214> Up and down arrow should move selection in the repo list up and down when focus is in the search field
+- <rdar://problem/32050962> Clone Window: Remove the “V" button in the footer that toggles the detail view
+- <rdar://problem/32050964> Clone window: Add a “Done" button to the footer of the window next to "Clone" button
+- <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
