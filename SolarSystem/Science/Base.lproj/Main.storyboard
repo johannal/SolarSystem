@@ -283,14 +283,27 @@ Population: 7.347 billion</string>
                                     <constraint firstAttribute="trailing" secondItem="Dsr-Pt-6ba" secondAttribute="trailing" constant="12" id="fku-Hq-8DH"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate to experience gravity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5V-Jx-hCm">
+                                <rect key="frame" x="89.5" y="637" width="197.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RotateIcon" translatesAutoresizingMaskIntoConstraints="NO" id="TQ5-yg-17T">
+                                <rect key="frame" x="69.5" y="639.5" width="12" height="14"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="2bm-fi-XAO"/>
+                            <constraint firstItem="bEf-me-mQj" firstAttribute="top" secondItem="E5V-Jx-hCm" secondAttribute="bottom" constant="12" id="7gl-FB-XNy"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="top" secondItem="jz0-Vq-8CH" secondAttribute="bottom" id="B41-Mz-Ob2"/>
                             <constraint firstItem="jz0-Vq-8CH" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="C0c-JL-6kl"/>
+                            <constraint firstItem="E5V-Jx-hCm" firstAttribute="leading" secondItem="TQ5-yg-17T" secondAttribute="trailing" constant="8" id="Kb8-h2-muC"/>
                             <constraint firstAttribute="trailing" secondItem="jz0-Vq-8CH" secondAttribute="trailing" id="R9v-3C-jb3"/>
+                            <constraint firstItem="E5V-Jx-hCm" firstAttribute="centerX" secondItem="xxU-xn-gVg" secondAttribute="centerX" id="XOL-V4-34P"/>
+                            <constraint firstItem="TQ5-yg-17T" firstAttribute="centerY" secondItem="E5V-Jx-hCm" secondAttribute="centerY" id="dcb-za-wSH"/>
                             <constraint firstAttribute="trailing" secondItem="BKV-NZ-amv" secondAttribute="trailing" id="jim-dn-W2l"/>
                             <constraint firstItem="jz0-Vq-8CH" firstAttribute="top" secondItem="Y2j-16-jjZ" secondAttribute="bottom" id="kfa-dD-leF"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="centerY" secondItem="xxU-xn-gVg" secondAttribute="centerY" multiplier="1.4" id="oQi-l3-95P"/>
@@ -338,6 +351,7 @@ Population: 7.347 billion</string>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </skView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-fr-W7T">
                                 <rect key="frame" x="290" y="582" width="73" height="73"/>
@@ -348,7 +362,7 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cke-26-cJ7" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
                             <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="rQH-Aa-o5D" secondAttribute="bottom" id="Pr6-6f-kfT"/>
@@ -428,6 +442,7 @@ Population: 7.347 billion</string>
         <image name="OrbitalViewIcon" width="39" height="39"/>
         <image name="PlanetDetailsIcon" width="43" height="29"/>
         <image name="RightArrow" width="23" height="49"/>
+        <image name="RotateIcon" width="12" height="14"/>
         <image name="stars2" width="750" height="1000"/>
     </resources>
 </document>

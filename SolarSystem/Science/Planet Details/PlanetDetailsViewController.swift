@@ -69,18 +69,18 @@ class PlanetDetailsViewController: UIViewController {
                 self.titleLabel.alpha = 1.0
             }, completion: { (completed) in
                 
-                UIView.animate(withDuration: 0.8, delay: 0.5, options:.curveEaseInOut, animations: {
+                UIView.animate(withDuration: 0.7, delay: 0.3, options:.curveEaseInOut, animations: {
                     self.topSpacerView.alpha = 0.3
                     self.bottomSpacerView.alpha = 0.3
                     self.topSpacerView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
                     self.bottomSpacerView.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
                 }, completion: { (completed) in
                     
-                    UIView.animate(withDuration: 0.8, delay: 0.5, options:.curveEaseInOut, animations: {
+                    UIView.animate(withDuration: 0.7, delay: 0.3, options:.curveEaseInOut, animations: {
                         self.descriptionLabel.alpha = 0.8
                     }, completion: { (completed) in
                         
-                        UIView.animate(withDuration: 0.8) {
+                        UIView.animate(withDuration: 0.7) {
                             self.additionalDetailsLabel.alpha = 0.8
                         }
                     })

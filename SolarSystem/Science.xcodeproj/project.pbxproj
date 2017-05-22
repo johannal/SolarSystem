@@ -26,6 +26,7 @@
 		9E53D15E1ECF715E002A0001 /* GravitySimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E53D15C1ECF715E002A0001 /* GravitySimulatorViewController.swift */; };
 		9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */; };
 		9E87ADC81ECF93DF0044AF90 /* GravityMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87ADC71ECF93DF0044AF90 /* GravityMeterViewController.swift */; };
+		9EAE88631ED2504200EB5C1E /* GravitySimulatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE88621ED2504200EB5C1E /* GravitySimulatorScene.swift */; };
 		9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */; };
 		9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */; };
 		9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		9E53D15C1ECF715E002A0001 /* GravitySimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySimulatorViewController.swift; sourceTree = "<group>"; };
 		9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = SolarSystemScene.scn; path = ../SolarSystemScene.scn; sourceTree = "<group>"; };
 		9E87ADC71ECF93DF0044AF90 /* GravityMeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityMeterViewController.swift; sourceTree = "<group>"; };
+		9EAE88621ED2504200EB5C1E /* GravitySimulatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorScene.swift; sourceTree = "<group>"; };
 		9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PlanetDetails.plist; sourceTree = "<group>"; };
 		9EC407F81EBFEAEB00F7F8A1 /* Science.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,9 +135,10 @@
 			isa = PBXGroup;
 			children = (
 				9E53D15C1ECF715E002A0001 /* GravitySimulatorViewController.swift */,
+				9EAE88621ED2504200EB5C1E /* GravitySimulatorScene.swift */,
+				9E53D15B1ECF715E002A0001 /* GravitySimulator.sks */,
 				9E87ADC71ECF93DF0044AF90 /* GravityMeterViewController.swift */,
 				9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */,
-				9E53D15B1ECF715E002A0001 /* GravitySimulator.sks */,
 			);
 			path = "Gravity Simulator";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */,
 				EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
+				9EAE88631ED2504200EB5C1E /* GravitySimulatorScene.swift in Sources */,
 				EE22DC031ECCF966008CBDDE /* SmallPlanet.swift in Sources */,
 				07B32AB51ECF4C870098E49F /* SolarSystemView.swift in Sources */,
 				9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */,

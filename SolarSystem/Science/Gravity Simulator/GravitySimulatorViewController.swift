@@ -11,12 +11,20 @@ import SpriteKit
 class GravitySimulatorViewController: UIViewController {
     
     @IBOutlet weak var gravityView: SKView!
+    
+    var simulatedGravity = -1.0
+    
+    var gravitySimulatorScene: GravitySimulatorScene? {
+        get {
+            return gravityView.scene as? GravitySimulatorScene
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        gravityView.scene?.scaleMode = .aspectFill
-        gravityView.isPaused = true
+        gravityView.scene?.scaleMode = .aspectFill // DEMO FIX – Use this instead: .resizeFill
+        gravitySimulatorScene?.simulateZeroGravity()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,13 +38,14 @@ class GravitySimulatorViewController: UIViewController {
         // TODO: Initiate zero gravity animation here
         let deviceOrientationIsLandscape = size.width > size.height
         if deviceOrientationIsLandscape {
-            // ...
+            gravitySimulatorScene?.simulateZeroGravity()
         }
     }
     
     @IBAction func gravityButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        gravityView.isPaused = false
+        gravitySimulatorScene?.activateGravity(simulatedGravity)
     }
 
 }
+
