@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.14" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vR6-KZ-eQr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12108" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vR6-KZ-eQr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="Dfc-aL-bT8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVt-Bb-kHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="vv9-AY-cDU" userLabel="RenderedPartner" customClass="SmallPlanet" customModule="Science" customModuleProvider="target"/>
+                <customObject id="vv9-AY-cDU" userLabel="RenderedPartner" customClass="TransNeptunianObject" customModule="Science" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="367" y="-776"/>
         </scene>
@@ -38,7 +38,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uE7-VZ-n9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="w1f-mc-fYd" userLabel="Pluto" customClass="SmallPlanet" customModule="Science" customModuleProvider="target"/>
+                <customObject id="w1f-mc-fYd" userLabel="Pluto" customClass="TransNeptunianObject" customModule="Science" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-484" y="-775"/>
         </scene>

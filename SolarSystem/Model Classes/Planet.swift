@@ -15,7 +15,7 @@ public class Planet: Hashable {
     
     private(set) var moons: [Moon] = []
     
-    private(set) var nearbyObjects: [SmallPlanet] = []
+    private(set) var nearbyObjects: [TransNeptunianObject] = []
     
     private(set) var parentStar: Star!
     
@@ -32,14 +32,14 @@ public class Planet: Hashable {
     /// Add a nearby object
     ///
     /// - Parameter nearbyObject: The object to add
-    func add(nearbyObject: SmallPlanet) {
+    func add(nearbyObject: TransNeptunianObject) {
         nearbyObjects.append(nearbyObject)
     }
     
     /// Remove a nearby object
     ///
     /// - Parameter nearbyObject: The object to remove
-    func remove(nearbyObject: SmallPlanet) {
+    func remove(nearbyObject: TransNeptunianObject) {
         guard let index = nearbyObjects.index(of: nearbyObject) else {
             return
         }
@@ -50,15 +50,15 @@ public class Planet: Hashable {
     ///
     /// - Parameter date: The date on which to calculate the location
     /// - Returns: The object, or `nil` if there are no nearby objects
-    func findNearestObject(on date: Date = Date()) -> SmallPlanet? {
+    func findNearestObject(on date: Date = Date()) -> TransNeptunianObject? {
         let planetPosition = positionRelativeToStar(date: date)
-        let objects = nearbyObjects.map { (object: SmallPlanet) -> (Double, SmallPlanet) in
+        let objects = nearbyObjects.map { (object: TransNeptunianObject) -> (Double, TransNeptunianObject) in
             let objectPosition = object.parentStar.parentSolarSystem.position(of: object, date: date)
             let dx = objectPosition.x - planetPosition.x
             let dy = objectPosition.y - planetPosition.y
             let dz = objectPosition.z - planetPosition.z
             return (sqrt(pow(dx, 2) + pow(dy, 2) + pow(dz, 2)), object)
-        }.sorted { (a: (distance: Double, SmallPlanet), b: (distance: Double, SmallPlanet)) -> Bool in
+        }.sorted { (a: (distance: Double, TransNeptunianObject), b: (distance: Double, TransNeptunianObject)) -> Bool in
             return a.distance < b.distance
         }
         return objects.first?.1

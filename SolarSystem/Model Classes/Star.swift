@@ -15,7 +15,7 @@ public class Star: PhysicsBody {
     
     public private(set) var planets: [Planet] = []
     
-    public private(set) var distantObjects: [SmallPlanet] = []
+    public private(set) var distantObjects: [TransNeptunianObject] = []
     
     public private(set) var parentSolarSystem: SolarSystem!
     
@@ -27,7 +27,7 @@ public class Star: PhysicsBody {
     /// Add a distant object related to this Star.
     ///
     /// - Parameter distantObject: The distant object to add
-    func add(distantObject: SmallPlanet) {
+    func add(distantObject: TransNeptunianObject) {
         distantObjects.append(distantObject)
     }
     

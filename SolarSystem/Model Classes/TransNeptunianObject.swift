@@ -1,5 +1,5 @@
 //
-//  SmallPlanet.swift
+//  TransNeptunianObject.swift
 //  Science
 //
 //  Copyright © 2017 Apple. All rights reserved.
@@ -8,7 +8,7 @@
 import Foundation
 
 // DEMO: Rename across multipe files and types
-public class SmallPlanet: NSObject {
+public class TransNeptunianObject: NSObject {
     
     public let name: String
     
@@ -33,7 +33,7 @@ public class SmallPlanet: NSObject {
     }
 }
 
-extension SmallPlanet: OrbitingBody {
+extension TransNeptunianObject: OrbitingBody {
     public func calculateMass() -> Measurement<UnitMass> {
         return Measurement(value: 0, unit: .kilograms)
     }

@@ -27,7 +27,7 @@ public class SolarSystem {
     
     // Create arrays for the objects in our SolarSystem.
     let planets: [Planet]
-    let distantObjects: [SmallPlanet]
+    let distantObjects: [TransNeptunianObject]
     
     // Create a dictionary to map planets to their orbits.
     let planetsToOrbits: [Planet: Orbit]
@@ -110,18 +110,18 @@ public class SolarSystem {
     ///
     /// - Parameter parentStar: the parent star.
     /// - Returns: an array of distant objects.
-    private static func loadAndCreateDistantObjects(parentStar: Star) -> [SmallPlanet] {
-        var distantObjects: [SmallPlanet] = []
+    private static func loadAndCreateDistantObjects(parentStar: Star) -> [TransNeptunianObject] {
+        var distantObjects: [TransNeptunianObject] = []
         if let path = Bundle.main.path(forResource: "DistantObjects", ofType: "txt") {
             do {
                 // grab all the distant objects
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 let distantObjectNames = data.components(separatedBy: .newlines)
-                let defaultShape = SmallPlanet.Shape.spherical
+                let defaultShape = TransNeptunianObject.Shape.spherical
                 
                 // loop over all of distant object names.
                 for distantObjectName in distantObjectNames {
-                    distantObjects.append(SmallPlanet(name: distantObjectName, shape: defaultShape, parentStar: parentStar))
+                    distantObjects.append(TransNeptunianObject(name: distantObjectName, shape: defaultShape, parentStar: parentStar))
                 }
             } catch {
                 // we shouldn't end up here, since we're shipping DistantObjects.txt with our app.

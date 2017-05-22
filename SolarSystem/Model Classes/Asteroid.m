@@ -10,11 +10,11 @@
 
 @implementation Asteroid
 
-- (void)addDistantObject:(SmallPlanet *)object
+- (void)addDistantObject:(TransNeptunianObject *)object
 {
-    NSMutableArray<SmallPlanet *> *mutableObjects = self.distantObjects.mutableCopy;
+    NSMutableArray<TransNeptunianObject *> *mutableObjects = self.distantObjects.mutableCopy;
     [mutableObjects addObject:object];
-    NSArray<SmallPlanet *> *newDistantObjects = [NSArray arrayWithArray:mutableObjects];
+    NSArray<TransNeptunianObject *> *newDistantObjects = [NSArray arrayWithArray:mutableObjects];
     self.distantObjects = newDistantObjects;
 }
 
