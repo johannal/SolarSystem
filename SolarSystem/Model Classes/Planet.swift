@@ -48,7 +48,7 @@ public class Planet: Hashable {
     
     /// Finds the nearest object among the nearby objects
     ///
-    /// - Parameter date: The date on which to calculate the position
+    /// - Parameter date: The date on which to calculate the location
     /// - Returns: The object, or `nil` if there are no nearby objects
     func findNearestObject(on date: Date = Date()) -> SmallPlanet? {
         let planetPosition = positionRelativeToStar(date: date)

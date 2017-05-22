@@ -5964,6 +5964,33 @@ struct JupiterFileSerializer {
     }
 }
 
+/// A struct representing a JupiterFileSerializer
+/// for handling value processing
+struct JupiterDirectorySerializer {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: Int
+    var eccentricity: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
 /// A struct representing a JupiterFileAnalyzer
 /// for handling value processing
 struct JupiterFileAnalyzer {
@@ -6252,6 +6279,14 @@ struct JupiterViewIterator {
     
 }
 
+/// A struct representing a JupiterViewIterator
+/// for handling value processing
+struct JupiterSocketViewIterator {
+    var isEnabled: Int
+    var sortOrder: Bool
+    
+}
+
 /// A struct representing a JupiterViewMangler
 /// for handling value processing
 struct JupiterViewMangler {
@@ -6365,6 +6400,31 @@ struct JupiterViewRenderer {
     var isEnabled: Int
     var sortOrder: Bool
     var label: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a JupiterViewSerializer
+/// for handling value processing
+struct JupiterOperationViewSerializer {
+    var isEnabled: Bool
+    var sortOrder: Int
     
     /// Processes the checkValue value synchronously
     /// and prints the result to stdout. To capture
@@ -6804,6 +6864,42 @@ struct SaturnOperationAnalyzer {
     var sortOrder: Int
     var label: Bool
     var eccentricity: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SaturnOperationAnalyzer
+/// for handling value processing
+struct SaturnDirectoryAnalyzer {
+    var isEnabled: UInt
+    var sortOrder: Int
+    var label: Bool
+    var eccentricity: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a SaturnFileCalculator
+/// for handling value processing
+struct SaturnDirectoryCalculator {
+    var isEnabled: UInt
+    var sortOrder: UInt
+    var label: Int
+    var eccentricity: Int
     
     /// Processes the checkValue value synchronously
     /// and prints the result to stdout. To capture
@@ -7733,6 +7829,34 @@ struct UranusOperationAccessor {
     var isEnabled: Int
     var sortOrder: Int
     
+}
+
+/// A struct representing a UranusOperationParser
+/// for handling value processing
+struct UranusDirectoryOperationParser {
+    var isEnabled: Int
+    var sortOrder: Bool
+    var label: Int
+    var eccentricity: UInt
+    var value: UInt
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
 }
 
 /// A struct representing a UranusOperationParser
@@ -9284,6 +9408,78 @@ struct NeptuneQueueAnalyzer {
 /// for handling value processing
 struct NeptuneViewCalculator {
     var isEnabled: Int
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a NeptuneViewManager
+/// for handling value processing
+struct NeptuneFileViewManager {
+    var isEnabled: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a NeptuneViewManager
+/// for handling value processing
+struct NeptuneDirectoryViewManager {
+    var isEnabled: Bool
+    
+    /// Processes the checkValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func checkValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+    
+    /// Processes the printValue value synchronously
+    /// and prints the result to stdout. To capture
+    /// the output redirect stdout.
+    func printValue() {
+        let x = 5
+        let y = 20
+        print("value is \(x / y)")
+    }
+}
+
+/// A struct representing a NeptuneViewManager
+/// for handling value processing
+struct NeptuneSocketViewManager {
+    var isEnabled: Bool
     
     /// Processes the checkValue value synchronously
     /// and prints the result to stdout. To capture

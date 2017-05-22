@@ -72,11 +72,11 @@ public class SolarSystem {
     
     // DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
     
-    /// Calculates the position of a given #Planet, at a particular date (which includes time), relative to the Sun.
+    /// Calculates the coordinate of a given #Planet, at a particular date (which includes time), relative to the Sun.
     ///
     /// - Parameters:
-    ///   - planet: the Planet to calculate the position of.
-    ///   - date: the date (and time) at which to calcualte the position for.
+    ///   - planet: the Planet to calculate the coordinate of.
+    ///   - date: the date (and time) at which to calcualte the coordinate for.
     /// - Returns: the coordinate, relative to the Sun, of the given planet.
     public func position<Body: OrbitingBody>(of body: Body, date: Date = Date()) -> SolarSystemPoint {
         // Approximation of the position; for more accuracy see Kepler's equations

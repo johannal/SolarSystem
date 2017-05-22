@@ -224,7 +224,7 @@ class SolarSystemController: UIViewController {
             previouslyPresentedPlanetFinalTransform = rightOutsideTransform
         }
         
-        // Set initial position
+        // Set initial pos
         SCNTransaction.begin()
         SCNTransaction.disableActions = true
         planet.transform = planetInitialTransform//SCNMatrix4MakeTranslation(80, 20, -80)
@@ -245,7 +245,7 @@ class SolarSystemController: UIViewController {
         
         planet.opacity = 1.0
         
-        // Animate to final position
+        // Animate to final pos
         previouslyPresentedPlanet?.transform = previouslyPresentedPlanetFinalTransform//SCNMatrix4MakeTranslation(-80, -20, 80)
         
         SCNTransaction.commit()
