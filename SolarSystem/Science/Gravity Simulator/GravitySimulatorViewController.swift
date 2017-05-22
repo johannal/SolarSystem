@@ -24,7 +24,6 @@ class GravitySimulatorViewController: UIViewController {
         super.viewDidLoad()
 
         gravityView.scene?.scaleMode = .aspectFill // DEMO FIX – Use this instead: .resizeFill
-        gravitySimulatorScene?.simulateZeroGravity()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +34,6 @@ class GravitySimulatorViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         /// DEMO: Add Log Message Breakpoint: "Gravity Simulator Is Landscape: @deviceOrientationIsLandscape@"
-        // TODO: Initiate zero gravity animation here
         let deviceOrientationIsLandscape = size.width > size.height
         if deviceOrientationIsLandscape {
             gravitySimulatorScene?.simulateZeroGravity()

@@ -62,6 +62,17 @@ class GravitySimulatorScene: SKScene {
             for elementNode in elementHostNode.children {
                 if let node = elementNode as? SKSpriteNode {
                     node.physicsBody?.affectedByGravity = true
+                    node.physicsBody?.isDynamic = true
+                    node.physicsBody?.allowsRotation = true
+                    node.physicsBody?.pinned = false
+                }
+            }
+        }
+        
+        if let noiseFieldHostNode = childNode(withName: "noiseFieldHostNode") {
+            for noiseFieldNode in noiseFieldHostNode.children {
+                if let node = noiseFieldNode as? SKFieldNode {
+                    node.isEnabled = true
                 }
             }
         }
