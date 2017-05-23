@@ -31,13 +31,7 @@ public class SolarSystemView: UIView {
     let solarSystem = SolarSystem()
     
     private func setupScene() throws {
-        let centerNode =
-            solarSystemSceneView
-            .scene?
-            .rootNode
-            .childNode(
-                withName: "SolarSystemCenterNode",
-                recursively: true)
+        let centerNode = solarSystemSceneView.scene?.rootNode.childNode(withName: "SolarSystemCenterNode",recursively: true)
         
         guard
             let planetInfoPath = Bundle.main.path(forResource: "PlanetDetails", ofType: "plist"),
