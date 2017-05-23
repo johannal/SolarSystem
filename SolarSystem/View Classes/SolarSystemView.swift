@@ -177,6 +177,7 @@ public class SolarSystemView: UIView {
     }
 }
 
+
 @objc
 public class SolarSystemPoint: NSObject {
     let x: Double
@@ -466,10 +467,15 @@ protocol _CollectionOrStringish {
     var isEmpty: Bool { get }
 }
 
+
+
 extension String: _CollectionOrStringish { }
 extension Array: _CollectionOrStringish { }
 extension Dictionary: _CollectionOrStringish { }
 extension Set: _CollectionOrStringish { }
+
+
+
 
 extension Optional where Wrapped: _CollectionOrStringish {
     var isNilOrEmpty: Bool {
