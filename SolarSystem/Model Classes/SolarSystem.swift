@@ -66,7 +66,7 @@ public class SolarSystem {
     ///   - date: the date (and time) at which to calcualte the coordinate for.
     /// - Returns: the coordinate, relative to the Sun, of the given planet.
     public func position<Body: OrbitingBody>(of body: Body, date: Date = Date()) -> SolarSystemPoint {
-        // Approximation of the position; for more accuracy see Kepler's equations
+        // Approximation -- for more accuracy see Kepler's equations.
         let period = body.orbitalPeriod
         let radius = body.orbitalRadius.converted(to: .kilometers).value
         let incline = body.orbitalIncline.converted(to: .degrees).value
