@@ -6,63 +6,69 @@ Xcode 9 includes a brand new source editor written from the ground up to be supe
 
 It's fully layer backed and opts in to responsive scrolling. I can grab the scroll thumb in this 10,000+ line file and drag it around like it was nothing. I can jump instantly to bottom and right back to the top -- really responsive and fluid.
 
-In case you can’t read that code, let me just bump up the font size using Command plus — thats one of my favorite new features. Surprisingly handy for a code review, or a even a demo. It’s the little things, right?
+In case you can’t read that code, let me just bump up the font size using Command plus — thats one of my favorite new features. Really handy for a code review, or a even a demo.
 
     [press Command-plus a few times]
     
-Interacting with your code is nicer, but there are also some new issues and fix-its to help you make your code better and write it more quickly. 
+It’s the little things, right?
 
-Let me show you. I’ll type some code that is using new iOS 11 API.
+OK, now that you can read my code, I’m going to introduce a little problem.
 
     [type "demo1"]
+
+I just added some code that is using new iOS 11 API. The problem is, my project deploys back to iOS 10, so this will crash when I run on an iOS 10 device. Xcode can now warn me when I’m using too-new-API in Objective-C.
+
+There’s a fix-it which I'll accept. Thats going to wrap my code in the new Objective-C **@available** keyword, so now, this code will only run on iOS 11. This is exactly the kind of thing you want to be told at compile time, and I think it’s a huge win for quality.
     
-We've brought the too-new-API issue to Objective-C. Xcode's warning me here that my app deploys back to iOS 10, where this is going to crash. There’s a fix-it I'll accept, which will wrap the call in the new Objective-C **@available** keyword. Catching this kind of problem at compile time is a huge win for quality.
-    
-My favorite new fix it, though, is for missing protocol methods.
+Let me show you one more new fix-it, this is my favorite new one. I don’t really like to type or click more than I have to…
 
     [navigate to Moon.swift]
     
-I'm going to conform to PhysicsBody here, which has a few properties I need to implement.
+Over here in Moon.swift, I’m going to conform to PhysicsBody, which has a three methods I need to implement.
     
     [type ", PhysicsBody" after "Equatable" on line 11]
     
-New in Xcode 9, I get a single fix-it that will implement **all** of the methods in one go, which is a real time saver.
+Xcode notices that I need to implement some methods, and now it offers me a single fix-it that will implement **all** of the methods in one go. I like that one.
 
 ----------------------------------------
 
-The last thing I want to show you is something I’m really excited about, something we brought back from Swift Playgrounds. Xcode has always known a lot about the structure of your code -- the classes, methods and expressions. But it’s never been surfaced in a way that you can use for editing.
+Issues and fix-it’s are great at helping you fix code thats not quite right. Avoiding getting into those bad states in the first place, is even better. We brought back a concept from Swift Playgrounds, that will let you edit your code without actually typing.
 
-Now, when I hold down the Command key, and mouse around, I Xcode highlights the structure of my code. And when I click, I get a set of options that are specific for that thing.
+When I hold down the Command key and mouse around, I and can see the structure of my code. When I click, I get a set of options and transformations that are specific for that thing.
 
     [Command click on the class around line 11]
     
-For this class here, I can add a method or property. And I can do more than just additive operations, I can also transform what I've already got.
+Here I clicked on a class. First off, if I wanted to jump this symbols definition and short circuit the popover, I could do that by holding down Command and Control and then clicking the symbol. If want to modify the class, though, I can choose one of the other options, like add method or add property. 
+
+I can also transform code.
     
 I like my code to be self describing with small expressions and well named variables. So I can extract this sub-expression that pulls the moon into it’s own variable.
 
     [Command click on "Moon" around line 51 and select "Extract Expression…"]
     
-Down here I've got a big chunk of code that adds all 67 of Jupiter's moons. This would probably be better in it's own method, so I can extract that out.
+And I like my methods to be small and to the point, so I’m going to pull out this big chunk of code thats adding a bunch of moons to Jupiter.
 
     [Command click on the trailing "}" around line 56 and select "Extract Method…"]
     
-It's really quick and easy to change the shape of your code.
+It’s really quick and easy to change the shape of my code.
     
-Now those are all local transformations -- what does it look like to do rename something that spans across files. 
+Now those were local transformations. Often, I want to change the name of something thats used across my project.
 
-Down here I’ve got this method named position — it could probably be a bit more descriptive. Let change the name. I'll hold down Command and click on it and choose rename.
+Here I’ve got this method named “position” — it could probably be a little more descriptive, so let me change it’s name. I'll hold down Command and click on it and choose rename.
 
-    [Command-Control click on << ?? >> on line <<??>> and choose "Rename…"]
+    [Command-Control click on “position” around line 68 and choose "Rename…"]
     
-When I do that, Xcode collapses down the file I'm in and shows me just the  slices of code that will be affected by this change, in this file and across my entire project. When I start typing a new name, I see it reflected in all of those call sites. I can change parameter names too. The first parameter name is good, but the second one could be a bit more descriptive.
+When I do that, Xcode collapses down that file and pulls in all the other files across my project that will be affected by changing this name. To help keep things focused, I see just the slices of code that will be affected in each of those files. I’m going to pick a new name thats a little more descriptive, how about “orbitalPosition”. When I start typing, I see my changes reflected across all of the call sites. I can change parameter names too. The first parameter name looks good, but lets change the second one to “momentInTime”.
 
-When I’m done, I click "Rename”, and thats it.
+When I’m done, I click "Rename”, and thats it. Really easy.
 
-That was a pretty simple example. Let me change the name of this class up here which reaches out into more of my code. The name “SmallPlanet” isn’t technically accurate, it should really be “MinorPlanet”, so lets change the name. I’ll Command click on the symbol and select rename. A couple things to notice here. Since this is a class name, it has a back file that needs it’s name changed too. We can see that the file name will be adjusted for us. 
+That was a simple example. Let me change the name of this class which is going to have more impact across my project. The name “TransNeptunianObject” is a mouthful to say the least — lets go with something a little simpler. I’ll Command click on the symbol and select rename, and type in “MinorPlanet”. 
 
-The name “SmallPlanet” is used in a comment here too. Now comments are tricky, so Xcode err’s on the side of caution and will point these out, but won’t rename them unless you specifically say you want that change. I do want this comment to change, so I’ll click the token to toggle it on.
+A couple things to notice here. Since this is a class name, it has a backing file that needs to change too. This slice shows us that the file name is being updated.
 
-As I scroll down through the changes, you can see that there are some uses of this class in IB — those will be changed for me.
+Theres also a comment here that has the name. Comments are bit tricky, so Xcode err’s on the side of caution and will offer the change, but it won’t rename them unless you specifically say thats what you want. I do want this comment to change, so I’ll click the token to toggle it on.
+
+Theres a couple of uses of the class in this Storyboard — those will be updated for me.
 
 And all the way down at the bottom we can see some uses of this class in Objective-C — those will be updated too.
 
