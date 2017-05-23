@@ -10,6 +10,8 @@
 // DEMO BLOCKER: <rdar://problem/32039874> Add support for showing both name-range and context-range refactoring operations simultaneously
 // DEMO BLOCKER: <rdar://problem/32318667> Toggling a change on then off leaves it with the new text rather than swapping the old text back in
 // DEMO BLOCKER: <rdar://problem/32331128> Extracting a function should include an extra newline between the extracted function and the thing it was extracted from
+// DEMO BLOCKER: <rdar://problem/32337534> Font size for IB/plist slices in the code roll should match the code font
+// DEMO BLOCKER: <rdar://problem/32337738> Fade in additional files in the code roll
 
 import Foundation
 

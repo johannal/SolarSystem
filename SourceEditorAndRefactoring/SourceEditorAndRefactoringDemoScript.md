@@ -4,7 +4,7 @@ Xcode 9 includes a brand new source editor written from the ground up to be supe
 
     [scroll down and then up in SolarSystemView.swift]
 
-It's fully layer backed and opts in to responsive scrolling. It lays out only as much text as it needs, so I can grab the scroll thumb in this 8000+ line file and drag it around like there were only 100 lines. And because of that optimized text layout strategy, I can jump instantly to bottom of this file and right back to the top.
+It's fully layer backed and opts in to responsive scrolling. I can grab the scroll thumb in this 10,000+ line file and drag it around like it was nothing. I can jump instantly to bottom and right back to the top -- really responsive and fluid.
 
 In case you can’t read that code, let me just bump up the font size using Command plus — thats one of my favorite new features. Surprisingly handy for a code review, or a even a demo. It’s the little things, right?
 
