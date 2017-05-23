@@ -1,141 +1,159 @@
 ## SOTU GitHub/SCM Demo
 _WWDC 2017_
 
-### Setup
-- Defaults
-	- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
-- Make sure no github account configured.
+###TODO
+- Investigate no ssh key in demo account
+- Get demo project checked out
+- Find a repo to use for explore demo
+	- Identify filter terms to use
+	- Identify commit to show detail on
+- Figure out what change I want to make
+- Figure out plan for no internet
+	- Try this and make sure error message when it first occurs is not embrarrassing
+	- Slides for GitHub accounts, Clone..., and Create on GitHub
+	- Have the Explore project cloned locally somewhere already
+- Should we try to cache the ReadMe?
+
+### Account Setup
+- GitHub account:
+	- wwdc2017, mfdemo2017
+	- Org: Stultus Enterprises
+		- MuchRemainsToBeDone
+		- RushIn
+		- ShameOnMe
+	- Starred:
+		- swift
+		- swift-package-manager
+		- swift-corelibs-foundation
+- User account:
+	- Defaults
+		- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
+		- defaults write com.apple.dt.Xcode IDESourceControlUIPresentationMode YES
+	- Get a clone of the demo project, remove its remote
+
+### Pre-Demo Setup
+- Make sure no github account configured
 - Have my passphrase already in Xcode's keychain
-- Will use a demo github account (MikeFerrisDemo)
-    - Have some repos starred
-    - !!! Find a project with some good history that I can push up as a personal repo for the Clone part below
 - Make sure disclosure state and log viewer filter is good in explore project (XCTest)
-- Make a new copy of Jogr
-- Open a Finder window shwoing it in outline
+- Make a new copy of demo project
 
 ### Github Accounts
-- I'm excited to show you some of the great new ways to work with source control in Xcode, including how Xcode can work with Github.
-- Let's start by setting up my Github account in Xcode's Accounts prefs
+- I'm excited to show you some of the great new ways to work with source control in Xcode, and especially how Xcode can work with Github.
+- I'll start by setting up my Github account in the Account prefs
 - **Choose Preferences, Accounts**
 - **Click plus button**
-- Xcode has support for both github.com and github enterprise. I'll add my github.com account.
+- Xcode has support for both github.com and github enterprise.
 - **Choose Github**
-- For my account I just need my name and password
+- I'll enter my name and password
+- **Enter wwdc2017, mfdemo2017**
 - Xcode also fully supports Github's 2 factor authentication
-- **Enter MikeFerrisDemo, wwdc2017**
-- I can choose the default method for cloning new repositories
-- And I can set an ssh key to use when needed
-- Now, my account is all set up
+- ANd now, my account is all set up
 
 ### Clone...
-- So, let's clone a repository
+- So, let's go get a repository
+- **Close Prefs**
+- **Cmd-Shift-1**
 - **Welcome window: Clone...**
-- Xcode has an all new clone window that makes cloning from Github easy
-- When I bring it up I see all my repositories. My personal repositories, the ones from my organizations and any that I have starred
-- At the bottom of the window I see some details about the selected repository... the project's description, its language, the number of forks and stars and a link to the README if you want even more info
-- _SKIP_
-    - And for even more information I can view the repository's README
-    - **Click README**
-    - **Scroll a bit, then close it**
+- Xcode has an all new clone workflow that makes getting content from Github easy
+- When I bring it up I see all my repositories. My personal repositories, the ones from my organizations and any that I have marked with a star
+- At the bottom of the window I see some details about the selected repository... the project's description, its language, and the number of stars and forks
+- For even more information I can view the repository's README
+- **Click README**
+- **Close it**
 - Using the search field I can search for other repos on github
-- **Type Swift Networking in search**
-- If I find something I like I can clone it
-- _SKIP_
-    - and I can star it right from here to make it easy to find again
-    - **Star AlamoFire**
-- For things not on GitHub, I can enter the URL for a repository on any server in the search field
-- _SKIP_: I already have the project I want cloned, so I am just going to open it
-    - But for now, I want to clone one of my own GitHub repositories
-    - **Cancel search**
-    - **Select demo project**
-    - **Clone...**
-    - **Choose save location**
+- **Type "swift unit test" in search**
+- If I find something I like I can clone it directly or I can star it
+- **Star swift-corelibs-xctest**
+- **Cancel search**
+- Now that it's starred I see it in my main list
+- **Select swift-corelibs-xctest**
+- **Clone...**
+- **Choose save location**
 
 ### Explore
-- _SKIP_
-    - Once the clone completes, Xcode opens the workspace
-- **Go to SCM nav**
+- Once the clone completes, Xcode opens the project
+- **Go to Source Control navigator**
 - Xcode 9 has a new navigator that is devoted to source control
 - It shows any repositories that are part of my workspace
-- Inside the repo I can see all the branches, tags and remotes
-- **Select current branch**
+- Inside each repository I can see all its branches, tags and remotes
 - The master branch is the currently checked out branch
-- Selecting it shows its complete history in the editor area
+- **Select current branch**
+- Selecting it shows its complete history
 - There's a lot to see here
-- _SKIP_
-    - We pull avatars from Github for the authors of commits
+- We pull avatars from Github for the authors of commits
 - There are annotations to show if a commit is tagged or the head of a branch
 - **Point out branch and tag annotations**
-- _SKIP_ (remove unless I can figure out how to motivate this)
-    - Merge commits are called out with a special icon on the commit hash
-    - **Point out a merge commit**
 - Projects can have a lot of history, so filtering can be important
 - I can filter commits based on author or commit message content
-- **Type ferris, select author filter**
-- Let's see just commits that I made
-- **Type Swift3 and hit enter**
-- I want to find one that I know had to do with Swift3 API updates
-- Once I find a commit, The inspector shows even more detail about a commit
+- **Type ???, select author filter**
+- Let's see just commits that ??? made
+- **Type ??? and hit enter**
+- I want one related to ???
+- Once I find a commit, the inspector shows even more detail
 - **Open inspector**
 - I can see all the branches that this commit is on
 - And all the files that were changed by this commit
-- **Show these, then close inspector**
+- **Close inspector**
 - Finally, double-clicking a commit takes me to the new commit viewer, showing me all the source changes
 - **Double-click the first commit**
 - **Show a file or two**
 - Xcode 9 makes it easy to dig through history and really get down to the detailed changes
 
 ### Creating branches
-- But now let's make some changes
-- I have another project here that needs a bit of cleanup
+- Xcode 9 can also help you manage source control while you're making changes
+- I have a project that I want to make some changes to before I share it with the world
 - **Close the explore project**
 - I'll open it now
+- **Cmd-Shift-1**
 - **Welcome window: Open second demo project**
-- _SKIP_
-    - Before I start making changes, let's make a branch to work on
-    - **Go to SCM nav**
-    - I'll make a new branch from our current branch, master
-    - **Select master**
-    - **Use gear menu to make a branch**
-    - Now we are checked out to our new branch and we can start making changes
+- I want to make my changes on a branch
+- **Go to Source Control navigator**
+- I'll make a new branch from our current branch, master
+- **Select master**
+- **Use context menu to make a branch**
+- Now we are checked out to our new branch and we can start making changes
 
 ### Structure editing
-- **Go to Project nav**
+- **Go to Project navigator**
 - In my projects I like to keep group structure and file structure the same
-- This used to take some work, but Xcode 9 makes it easy
-- When you're working in a project where these structures are the same Xcode will automatically keep them the same
+- Xcode 9 makes this easy
+- When I'm working in a project where these structures are the same Xcode will automatically keep them the same
 - **Select a couple files**
 - Making a new group makes a new folder
 - **Context Menu->New Group from Selection**
-- And, the files that I grouped are moved into that folder
+- ...and, the files that I grouped are moved into that folder
 - **Rename group**
-- When I rename the group, it updates the folder name as well
-- And, when I move files between groups, it will move them between folders as well
+- When I rename the group, it renames the folder as well
+- And, when I move files between groups, they are moved to the new group's folder
 - **Move some files from one group to another**
-- And, best of all, as Xcode is doing all this it is also making sure that these changes are being registered with source control.
+- Best of all, as I am doing all of this these changes are being registered with source control.
 - **Source Control->Commit...**
 - When I commit, I can see that Xcode knows about all the changes I've been making in the file system as well as in the project
 - **Type a comment and commit**
 
 ### Working with Branches and Tags
-- _SKIP_
-    - Now I am ready to land my branch
-    - **Go to SCM nav**
-    - I'll check the master branch out again
-    - **Select master**
-    - **Use gear menu to check out**
-    - And I will merge my new branch back into master
-    - **Use gear menu to select Merge into master**
-    - And finally I will create a new tag
-    - **Use gear menu to choose New Tag...**
+- Now I am ready to land my branch
+- **Go to Source Control navigator**
+- I just need to merge my working branch back to master
+- **Select master branch**
+- **Use context menu Merge from working branch into master**
+- And finally I will create a new tag
+- **Use context menu to choose New Tag...**
 
 ### Create on github
-- _SKIP_
-    - I think I am ready to share this work. But this project isn't on Github yet
-    - Let's put it there
-    - **Select repo**
-    - **Use gear menu to create a new github project and push**
-    - My project is now hosted on Github and I can start sharing it
+- Now I am ready to share this work. But this project isn't on Github yet
+- Let's put it there
+- **Select repo**
+- **Use gear menu to create a new github project and push**
+- My project is now hosted on Github and I can start sharing it
+- **Open remotes group**
+- **Right click origin and choose Show in GitHub**
+- Here's my project on github.com, ready for the world
+
+### Conclusion
+- Xcode 9 has some great new source control features to help you understand your project's history, implement new features, and to use GitHub to collaborate with all the other developers out there.
+- I hope you'll give it a try and let us know what you think!
+- Thank you.
 
 
 ### Random Radars
@@ -149,9 +167,6 @@ _WWDC 2017_
 
 ##### Beta 1
 - <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
-- <rdar://problem/32156368> Date formatter for repositories window last modified column should be "Today, Time" and "Yesterday, Time"
-- <rdar://problem/32157077> Revise the sorting rules for the unsearched window state
-- <rdar://problem/32157114> The default repositories view shows me duplicates
 - <rdar://problem/30291887> New commit view could be more discoverable: add a button to go from the history view to the commit details view
 
 ##### Punted, may need to bring back?
@@ -223,3 +238,6 @@ _WWDC 2017_
 - <rdar://problem/32050962> Clone Window: Remove the “V" button in the footer that toggles the detail view
 - <rdar://problem/32050964> Clone window: Add a “Done" button to the footer of the window next to "Clone" button
 - <rdar://problem/32051476> Look at presentation of the auto-complete popup tokens in the SCM editor
+- <rdar://problem/32156368> Date formatter for repositories window last modified column should be "Today, Time" and "Yesterday, Time"
+- <rdar://problem/32157077> Revise the sorting rules for the unsearched window state
+- <rdar://problem/32157114> The default repositories view shows me duplicates
