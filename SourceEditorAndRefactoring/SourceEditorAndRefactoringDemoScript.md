@@ -70,3 +70,7 @@ That all looks good to me, so I’ll click rename, and I’m done. Really simple
 
 And thats the new source editor and refactoring in Xcode 9.
  
+----------------------------------------
+
+defaults write com.apple.dt.Xcode CodeRollMatchThemeTextSize -bool YES
+defaults write com.apple.dt.Xcode SourceEditorTransientStructureColor "0.3 0.5 1 0.75"
