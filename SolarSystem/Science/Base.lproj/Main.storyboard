@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.13" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -380,10 +381,10 @@ Population: 7.347 billion</string>
             </objects>
             <point key="canvasLocation" x="964" y="1950"/>
         </scene>
-        <!--Gravity Meter View Controller-->
+        <!--Moon Jumper View Controller-->
         <scene sceneID="VtU-Jy-Qbw">
             <objects>
-                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="GravityMeterViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cch-Ov-4AS"/>
                         <viewControllerLayoutGuide type="bottom" id="5d2-8X-gJD"/>
@@ -392,45 +393,94 @@ Population: 7.347 billion</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.81 m/s²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhI-W0-6p1">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5Or-DH-TsD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="1 ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
+                                <rect key="frame" x="115" y="59" width="144.5" height="70"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="60"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="atO-so-9py">
+                                <rect key="frame" x="156" y="508" width="62" height="79"/>
+                                <color key="backgroundColor" red="0.26132449676036584" green="1" blue="0.3696110629670244" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="L5A-D9-WVm"/>
+                                    <constraint firstAttribute="height" constant="79" id="fy8-oh-6mW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roi-6F-c2X">
+                                <rect key="frame" x="16" y="8" width="46" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="r3q-QT-j1i" appends="YES" id="dC8-J1-oJC"/>
+                                    <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Science" customModuleProvider="target" id="HMz-Ej-aCi"/>
                                 </connections>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe down to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-fQ-3hK">
-                                <rect key="frame" x="109.5" y="641" width="156" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-bu-SHx">
+                                <rect key="frame" x="24" y="298" width="327" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Science" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="15" width="327" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="oM3-9D-Z6o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dRI-cg-PUl" firstAttribute="centerX" secondItem="f5X-bu-SHx" secondAttribute="centerX" id="9Ot-E3-Y6P"/>
+                                    <constraint firstItem="dRI-cg-PUl" firstAttribute="centerY" secondItem="f5X-bu-SHx" secondAttribute="centerY" id="Bvr-WZ-ZGh"/>
+                                    <constraint firstItem="dRI-cg-PUl" firstAttribute="leading" secondItem="f5X-bu-SHx" secondAttribute="leading" id="KdL-mH-erv"/>
+                                    <constraint firstAttribute="height" constant="50" id="nws-VE-hYk"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cLm-uu-BjI" appends="YES" id="G7d-rw-zUG"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="U0L-fQ-3hK" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="5HK-TQ-XLT"/>
-                            <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="FBQ-yv-Ja8" secondAttribute="bottom" id="Dag-xD-Rgj"/>
-                            <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="U0L-fQ-3hK" secondAttribute="bottom" constant="8" id="R1v-HZ-Rap"/>
-                            <constraint firstAttribute="trailing" secondItem="FBQ-yv-Ja8" secondAttribute="trailing" id="UlN-4c-NRO"/>
-                            <constraint firstItem="FBQ-yv-Ja8" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" id="jw3-F5-UDT"/>
-                            <constraint firstItem="FBQ-yv-Ja8" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" id="pQg-dU-kg6"/>
+                            <constraint firstItem="roi-6F-c2X" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="16" id="0OK-RB-gnL"/>
+                            <constraint firstItem="f5X-bu-SHx" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="24" id="5MT-lS-WlF"/>
+                            <constraint firstItem="bhI-W0-6p1" firstAttribute="top" secondItem="f5X-bu-SHx" secondAttribute="centerY" priority="750" constant="264" id="6Ze-dO-G55"/>
+                            <constraint firstItem="atO-so-9py" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="BPB-52-XT8"/>
+                            <constraint firstItem="roi-6F-c2X" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" constant="-12" id="IU7-E3-r4l"/>
+                            <constraint firstItem="FBQ-yv-Ja8" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="L1S-LO-3HN"/>
+                            <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="bhI-W0-6p1" secondAttribute="bottom" id="NIB-JB-56A"/>
+                            <constraint firstItem="f5X-bu-SHx" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="PFF-Ki-IOp"/>
+                            <constraint firstItem="bhI-W0-6p1" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" id="c5N-dy-JhE"/>
+                            <constraint firstItem="dRI-cg-PUl" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="FBQ-yv-Ja8" secondAttribute="bottom" id="eQJ-W0-3JH"/>
+                            <constraint firstAttribute="trailing" secondItem="bhI-W0-6p1" secondAttribute="trailing" id="jnN-1m-Gpw"/>
+                            <constraint firstItem="atO-so-9py" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dRI-cg-PUl" secondAttribute="centerY" id="tiH-0a-fuB"/>
+                            <constraint firstItem="bhI-W0-6p1" firstAttribute="top" secondItem="atO-so-9py" secondAttribute="bottom" id="u7z-Oi-X6I"/>
+                            <constraint firstItem="FBQ-yv-Ja8" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" constant="39" id="yfK-Km-fOb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gravityLabel" destination="FBQ-yv-Ja8" id="Bjk-iK-5lc"/>
+                        <outlet property="astronautView" destination="atO-so-9py" id="DRS-PD-WAU"/>
+                        <outlet property="groundView" destination="bhI-W0-6p1" id="UN0-Df-6HE"/>
+                        <outlet property="heightIndicatorView" destination="dRI-cg-PUl" id="aLy-te-WfB"/>
+                        <outlet property="heightIndicatorYConstraint" destination="6Ze-dO-G55" id="6f5-zx-JBe"/>
+                        <outlet property="heightLabel" destination="FBQ-yv-Ja8" id="ARa-5C-BaG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUs-sa-xUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="r3q-QT-j1i">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cLm-uu-BjI">
                     <connections>
-                        <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Science" customModuleProvider="target" id="MtY-t1-WgT"/>
+                        <action selector="didPan:" destination="vGa-F7-cak" id="gy4-gk-Qkl"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1670" y="1950"/>
+            <point key="canvasLocation" x="1669.5999999999999" y="1949.7751124437782"/>
         </scene>
     </scenes>
     <resources>
@@ -443,6 +493,6 @@ Population: 7.347 billion</string>
         <image name="PlanetDetailsIcon" width="43" height="29"/>
         <image name="RightArrow" width="23" height="49"/>
         <image name="RotateIcon" width="12" height="14"/>
-        <image name="stars2" width="750" height="1000"/>
+        <image name="stars2" width="375" height="500"/>
     </resources>
 </document>
