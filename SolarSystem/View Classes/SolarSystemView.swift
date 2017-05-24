@@ -96,8 +96,8 @@ public class SolarSystemView: UIView {
             planetNode.orbitVisualizationNode = planetOrbit
             
             // Start orbiting
-            planetNode.startOrbitingAnimation()
-            planetNode.startSpinningAnimation()
+            planetNode.isOrbitingAnimationEnabled = true
+            planetNode.isSpinningAnimationEnabled = true
             
             planetNodes.append(planetNode)
         }

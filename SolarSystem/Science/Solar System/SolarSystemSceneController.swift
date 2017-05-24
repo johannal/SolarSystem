@@ -15,6 +15,9 @@ class SolarSystemController: UIViewController {
     @IBOutlet weak var solarSystemSceneView: SCNView!
     @IBOutlet weak var gravityButton: UIButton?
     
+    var timer: CADisplayLink!
+    var lastTimestamp: TimeInterval = 0
+    
     private(set) var planetNodes: [OrbitingBodyNode] = []
     
     // Details view controller if presented
@@ -29,6 +32,10 @@ class SolarSystemController: UIViewController {
         title = "The Solar System in 3D"
         
         setupScene()
+        
+        // Setup display link
+        timer = CADisplayLink(target: self, selector: #selector(tick))
+        timer?.add(to: .main, forMode: .defaultRunLoopMode)
         
         // Setup tap handling
         let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapSceneView))
@@ -118,8 +125,8 @@ class SolarSystemController: UIViewController {
                 finalizePlanet(planetNode)
                 
                 // Start orbiting
-                planetNode.startOrbitingAnimation()
-                planetNode.startSpinningAnimation()
+                planetNode.isOrbitingAnimationEnabled = true
+                planetNode.isSpinningAnimationEnabled = true
                 
                 planetNodes.append(planetNode)
             }
@@ -277,9 +284,26 @@ class SolarSystemController: UIViewController {
         }
     }
     
+    // Display Link callback
+    @objc func tick() {
+        if (lastTimestamp == 0) {
+            lastTimestamp = timer.timestamp
+            return
+        }
+        
+        let elapsedTime = timer.timestamp - lastTimestamp
+        lastTimestamp = timer.timestamp
+        updateAnimatedObjectsWithElapsedTime(elapsedTime)
+    }
+    
+    func updateAnimatedObjectsWithElapsedTime(_ elapsedTime: TimeInterval) {
+        // Let all planetNodes update according to the elapsed time
+        for node in planetNodes {
+            node.updateAnimationsWithElapsedTime(elapsedTime)
+        }
+    }
     
     // Tap handling
-    
     @objc func didTapSceneView(_ sender: UITapGestureRecognizer) {
         let hitTestResults = solarSystemSceneView.hitTest(sender.location(in: solarSystemSceneView), options: nil)
         
