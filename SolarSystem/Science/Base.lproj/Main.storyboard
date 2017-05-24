@@ -415,8 +415,8 @@ Population: 7.347 billion</string>
                                     <constraint firstAttribute="height" constant="79" id="fy8-oh-6mW"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roi-6F-c2X">
-                                <rect key="frame" x="16" y="8" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roi-6F-c2X">
+                                <rect key="frame" x="12" y="32" width="34" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -449,11 +449,11 @@ Population: 7.347 billion</string>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="roi-6F-c2X" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="16" id="0OK-RB-gnL"/>
+                            <constraint firstItem="roi-6F-c2X" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="12" id="0OK-RB-gnL"/>
                             <constraint firstItem="f5X-bu-SHx" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="24" id="5MT-lS-WlF"/>
                             <constraint firstItem="bhI-W0-6p1" firstAttribute="top" secondItem="f5X-bu-SHx" secondAttribute="centerY" priority="750" constant="264" id="6Ze-dO-G55"/>
                             <constraint firstItem="atO-so-9py" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="BPB-52-XT8"/>
-                            <constraint firstItem="roi-6F-c2X" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" constant="-12" id="IU7-E3-r4l"/>
+                            <constraint firstItem="roi-6F-c2X" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" constant="12" id="IU7-E3-r4l"/>
                             <constraint firstItem="FBQ-yv-Ja8" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="L1S-LO-3HN"/>
                             <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="bhI-W0-6p1" secondAttribute="bottom" id="NIB-JB-56A"/>
                             <constraint firstItem="f5X-bu-SHx" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="PFF-Ki-IOp"/>
