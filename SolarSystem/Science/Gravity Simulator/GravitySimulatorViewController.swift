@@ -43,7 +43,7 @@ class GravitySimulatorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        gravityView.scene?.size = CGSize.init(width: 400, height: 1000)
+        gravityView.scene?.size = CGSize.init(width: 400, height: 1200)
     }
     
 }
