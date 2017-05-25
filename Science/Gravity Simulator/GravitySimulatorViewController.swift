@@ -25,11 +25,11 @@ class GravitySimulatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gravityView.scene?.scaleMode = .resizeFill
-        gravitySimulatorScene?.simulateZeroGravity()
-        
         // Update the selected planet's name
         planetLabel.text = planetName
+        
+        gravityView.scene?.scaleMode = .resizeFill
+        gravitySimulatorScene?.simulateZeroGravity()
     }
     
     @IBAction func gravityButtonPressed(_ sender: UIButton) {
