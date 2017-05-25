@@ -89,5 +89,10 @@ class GravitySimulatorScene: SKScene {
         }
         
         self.physicsWorld.gravity = CGVector.init(dx: 0.0, dy: gravity)
+        
+        // Pause the scene after a few seconds to avoid micro movements
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
+            self.isPaused = true
+        }
     }
 }
