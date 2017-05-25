@@ -131,12 +131,12 @@ class SolarSystemController: UIViewController {
                 centerNode.addChildNode(planetOrbit)
                 planetNode.orbitVisualizationNode = planetOrbit
                 
-                // Finalize planet
-                finalizePlanet(planetNode)
-                
                 // Start orbiting
                 planetNode.isOrbitingAnimationEnabled = true
                 planetNode.isSpinningAnimationEnabled = true
+                
+                // Finalize planet
+                finalizePlanet(planetNode)
                 
                 planetNodes.append(planetNode)
             }
@@ -173,6 +173,7 @@ class SolarSystemController: UIViewController {
             
             // No orbit for Saturn to make bug less obvious
             //node.orbitVisualizationNode.isHidden = true
+            //node.isOrbitingAnimationEnabled = false
             
             // Give Saturn an angle
             node.solarSystemHostNode.rotation = SCNVector4.init(0.0, 0.0, 1.0, Float.pi/180*10)
