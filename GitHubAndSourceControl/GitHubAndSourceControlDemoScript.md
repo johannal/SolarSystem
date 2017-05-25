@@ -132,9 +132,9 @@ _WWDC 2017_
 - Xcode 9 makes this easy.
 - In projects where these structures _are_ the same Xcode will automatically _keep_ them the same.
 - When I move files between groups, they move in Finder too.
-- **Move some files from one group to another**
+- **Move some camera model classes from Fly-By group to ObjectOfNote group**
 - When I rename the group, it the folder is renamed as well.
-- **Rename group**
+- **Rename ObjectOfNote group to CameraModel**
 - Best of all, as I am doing all of this these changes are being registered with source control.
 - **Source Control->Commit...**
 - When I commit, I can see that Xcode knows about all the changes I've been making in the file system as well as in the project
