@@ -215,7 +215,9 @@ class SolarSystemController: UIViewController {
         planetDetailsVC?.updateWithPlanetDetails(planet.bodyInfo!)
         
         // Update Scene
-        cameraNode().addChildNode(planet)
+        let planetAnimationNode = SCNNode()
+        planetAnimationNode.addChildNode(planet)
+        cameraNode().addChildNode(planetAnimationNode)
         
         let rightOutsideTransform = SCNMatrix4MakeTranslation(40, 20, -60)
         
@@ -234,26 +236,26 @@ class SolarSystemController: UIViewController {
         // Set initial pos
         SCNTransaction.begin()
         SCNTransaction.disableActions = true
-        planet.transform = planetInitialTransform//SCNMatrix4MakeTranslation(80, 20, -80)
-        planet.opacity = 0.0
+        planetAnimationNode.transform = planetInitialTransform
+        planetAnimationNode.opacity = 0.0
         SCNTransaction.commit()
         
         SCNTransaction.begin()
         SCNTransaction.disableActions = false
         SCNTransaction.animationDuration = 2.0
         
-        planet.transform = SCNMatrix4MakeTranslation(0, 5, -40)
+        planetAnimationNode.transform = SCNMatrix4MakeTranslation(0, 5, -40)
         
         // Apply scale transform so all planets have the same size
         let planetSphereGeometry = planet.geometry as! SCNSphere
         let desinationSize: Float = 4.2 // FIXME: Calculate a dynamic for the current camera situation
         let equalSizeScaleFactor: Float = desinationSize / Float(planetSphereGeometry.radius)
-        planet.transform = SCNMatrix4Scale(planet.transform, equalSizeScaleFactor, equalSizeScaleFactor, equalSizeScaleFactor)
+        planetAnimationNode.transform = SCNMatrix4Scale(planetAnimationNode.transform, equalSizeScaleFactor, equalSizeScaleFactor, equalSizeScaleFactor)
         
-        planet.opacity = 1.0
+        planetAnimationNode.opacity = 1.0
         
         // Animate to final pos
-        previouslyPresentedPlanet?.transform = previouslyPresentedPlanetFinalTransform//SCNMatrix4MakeTranslation(-80, -20, 80)
+        previouslyPresentedPlanet?.parent?.transform = previouslyPresentedPlanetFinalTransform
         
         SCNTransaction.commit()
     }
