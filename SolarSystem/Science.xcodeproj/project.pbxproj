@@ -79,6 +79,12 @@
 		9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
+		B1ECAEDC1ED7370A0009A958 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		B1ECAEDD1ED737500009A958 /* Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
+		B1ECAEDE1ED737C50009A958 /* ObjectOfNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNote.swift; sourceTree = "<group>"; };
+		B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNoteCameraModel.swift; sourceTree = "<group>"; };
+		B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramicCameraModel.swift; sourceTree = "<group>"; };
+		B1ECAEE51ED738470009A958 /* CameraModelTrainsition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTrainsition.swift; sourceTree = "<group>"; };
 		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
 		D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDays.swift; sourceTree = "<group>"; };
 		EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransNeptunianObject.swift; sourceTree = "<group>"; };
@@ -178,9 +184,12 @@
 		9EC407EF1EBFEAEB00F7F8A1 = {
 			isa = PBXGroup;
 			children = (
+				0731FA371ECA06C800F46170 /* README.md */,
 				D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */,
 				0731FA301EC9FCBF00F46170 /* Model Classes */,
 				07506D651ECA7A6300EB7C11 /* View Classes */,
+				B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */,
+				B1ECAEE41ED738200009A958 /* ObjectOfNote */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				0734F5191ECBCB7500D778C5 /* Resources */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
@@ -198,7 +207,6 @@
 		9EC407FA1EBFEAEB00F7F8A1 /* Science */ = {
 			isa = PBXGroup;
 			children = (
-				0731FA371ECA06C800F46170 /* README.md */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
 				EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */,
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
@@ -215,6 +223,26 @@
 				9EC408091EBFEAEB00F7F8A1 /* Info.plist */,
 			);
 			path = Science;
+			sourceTree = "<group>";
+		};
+		B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B1ECAEDC1ED7370A0009A958 /* Route.swift */,
+				B1ECAEDD1ED737500009A958 /* Leg.swift */,
+				B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */,
+				B1ECAEE51ED738470009A958 /* CameraModelTrainsition.swift */,
+			);
+			path = "Fly-By Classes";
+			sourceTree = "<group>";
+		};
+		B1ECAEE41ED738200009A958 /* ObjectOfNote */ = {
+			isa = PBXGroup;
+			children = (
+				B1ECAEDE1ED737C50009A958 /* ObjectOfNote.swift */,
+				B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */,
+			);
+			path = ObjectOfNote;
 			sourceTree = "<group>";
 		};
 		D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */ = {
