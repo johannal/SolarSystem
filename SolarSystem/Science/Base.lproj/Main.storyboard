@@ -348,8 +348,12 @@ Population: 7.347 billion</string>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AtZ-yi-i5e" appends="YES" id="bzc-ll-bQZ"/>
+                                </connections>
                             </skView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-fr-W7T">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-fr-W7T">
                                 <rect key="frame" x="290" y="582" width="73" height="73"/>
                                 <state key="normal" image="GravityButtonOFF"/>
                                 <state key="selected" image="GravityButtonON"/>
@@ -411,6 +415,11 @@ Population: 7.347 billion</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORT-wI-hvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="AtZ-yi-i5e">
+                    <connections>
+                        <action selector="swipeDownWith_sender:" destination="SIm-XS-6Jw" id="CqR-MD-a95"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="964" y="1949.7751124437782"/>
         </scene>

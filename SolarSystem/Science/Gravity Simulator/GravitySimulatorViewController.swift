@@ -37,6 +37,10 @@ class GravitySimulatorViewController: UIViewController {
         gravitySimulatorScene?.activateGravity(simulatedGravity)
     }
     
+    @IBAction func swipeDown(_sender: UISwipeGestureRecognizer) {
+        gravitySimulatorScene?.activateGravity(simulatedGravity)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         gravityView.scene?.size = CGSize.init(width: 400, height: 1000)
