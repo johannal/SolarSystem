@@ -40,11 +40,11 @@ Since this is a class, I can do things like add a method or property.
 
 I can also use this new popover to transform code.
     
-Personally, I like descriptive variable names and small expressions. I’d rather have this Moon object captured in a variable. So I'll Command click Moon and select "Extract Expression", and then rename this to “luna”. Easy.
+I like descriptive variable names and small expressions. I’d rather have this Moon object captured in a variable. So I'll Command click Moon and select "Extract Expression", and then rename this to “luna”. Easy.
 
     [Command click on "Moon" around line 51 and select "Extract Expression…"]
     
-I also like my methods to be small and concise. This is a big chunk of code in this if block, so I’m going to pull out this out, into it's own method. And since this is adding all of Jupiter’s moons, I’ll call it "addJupitersMoons".
+I also like my methods to be small and concise. I’m going to pull out this big if block, into it's own method. You can see that Xcode pulled the method out and put it up above, here and left me with a call to the method where the code was originally sitting. Let’s give that a good name — how about "addJupitersMoons" since thats what it’s doing.
 
     [Command click on the trailing "}" around line 56 and select "Extract Method…"]
     
@@ -60,13 +60,13 @@ When I do that, Xcode collapses down that file we were looking at and pulls in a
 
 When I’m done, I click "Rename” - thats it. Really easy.
 
-Now that was a pretty straight forward example. So let me change something that will have a bigger impact across my project. How about this class name here, “TransNeptunianObject”, its a mouthful to say the least — lets go with something a little simpler. I’ll Command click on the class and select rename. Instead of this name, lets go with “MinorPlanet” instead.
+Renaming can works across Storyboards, and Objective-C too. Let me make another change that will have a bigger impact across my project. This class name here, “TransNeptunianObject”, sure is a mouthful to say — lets go with something a little simpler. I’ll Command click on the class and select rename. Instead of this name, lets go with “MinorPlanet” instead.
 
-Since this is a class name, it has a matching file who’s name needs to change too. This slice here shows us that the file name is being updated.
+This class has a file of the same name — that’ll be updated.
 
-Down here, I’m referring to the class in a comment. Comments are bit tricky, so Xcode err’s on the side of caution and will offer the change, but it's only going to rename it if I specifically say thats what I want. I do want change this, so I’ll click on the token to toggle it on.
+Here theres a matching comment. Comments are opted out by default, but I can opt it back in to click the token.
 
-I’m referring to the class in this Storyboard — those will be updated for me.
+Here are a couple in this Storyboard — those will be updated for me.
 
 And all the way down at the bottom we can see I’m using the class in Objective-C — those will be updated too. Renaming works great across languages.
 
@@ -76,5 +76,7 @@ And thats the new source editor and refactoring in Xcode 9.
  
 ----------------------------------------
 
+Turn off line highlighting
+Turn off code completion
 defaults write com.apple.dt.Xcode CodeRollMatchThemeTextSize -bool YES
 defaults write com.apple.dt.Xcode SourceEditorTransientStructureColor "0.3 0.5 1 0.75"
