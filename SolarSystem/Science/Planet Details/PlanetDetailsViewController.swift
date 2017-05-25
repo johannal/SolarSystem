@@ -22,6 +22,7 @@ class PlanetDetailsViewController: UIViewController {
     @IBOutlet weak var bottomSpacerView: UIView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var previousButton: UIButton!
+    @IBOutlet weak var experienceGravityButton: UIButton!
     
     var gravitySimulatorVC: GravitySimulatorViewController?
     
@@ -39,10 +40,12 @@ class PlanetDetailsViewController: UIViewController {
         bottomSpacerView.alpha = 0.0
         nextButton.alpha = 0.0
         previousButton.alpha = 0.0
+        experienceGravityButton.alpha = 0.0
         
         UIView.animate(withDuration: 1.0, delay: 1.0, options:.curveEaseInOut, animations: {
             self.nextButton.alpha = 0.3
             self.previousButton.alpha = 0.3
+            self.experienceGravityButton.alpha = 1.0
         }, completion: nil)
     }
     

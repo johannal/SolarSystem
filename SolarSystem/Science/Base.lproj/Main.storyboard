@@ -312,6 +312,7 @@ Population: 7.347 billion</string>
                         <outlet property="additionalDetailsLabel" destination="cDV-qF-GPV" id="Wjx-xq-ZQ0"/>
                         <outlet property="bottomSpacerView" destination="fgu-st-i57" id="bN6-WS-4uU"/>
                         <outlet property="descriptionLabel" destination="H7w-yI-C1K" id="caT-M8-f0O"/>
+                        <outlet property="experienceGravityButton" destination="meF-jH-UOk" id="Aph-b2-Ja7"/>
                         <outlet property="nextButton" destination="Dsr-Pt-6ba" id="Nsu-FR-hw0"/>
                         <outlet property="previousButton" destination="s9g-3T-h3u" id="XwV-cd-W5V"/>
                         <outlet property="titleLabel" destination="wDK-tq-PXW" id="mBq-45-HI2"/>
