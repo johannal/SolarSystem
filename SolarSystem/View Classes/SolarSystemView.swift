@@ -103,14 +103,6 @@ public class SolarSystemView: UIView {
         }
     }
     
-    func updatePlanetPositions() {
-        let date = Date()
-        for planet in solarSystem.planets {
-            let position = solarSystem.position(of: planet, date: date)
-            updatePlanetNodePosition(position: position)
-        }
-    }
-    
     func updatePlanetNodePosition(position: SolarSystemPoint) {
         
     }
