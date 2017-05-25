@@ -25,9 +25,6 @@ public class Route {
         self.color = color
     }
     
-    /// Add a distant object related to this Star.
-    ///
-    /// - Parameter distantObject: The distant object to add
     func add(distantObject: TransNeptunianObject) {
         distantObjects.append(distantObject)
     }
