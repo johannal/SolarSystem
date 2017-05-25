@@ -186,10 +186,10 @@ _WWDC 2017_
 ### Random Radars
 
 ##### Beta 1
-- <rdar://problem/30291887> New commit view could be more discoverable: add a button to go from the history view to the commit details view
-- <rdar://problem/32332306> Add a "View on GitHub…" contextual menu for a GitHub-hosted remote
 - <rdar://problem/32390457> [SOTU] When the SCM history view loads for the first time after launching Xcode and you have a cache, we don't read the cache
-- <rdar://problem/32390829> [SOTU] After you commit changes on a branch and merge to another branch, the history view doesn’t refresh
+
+##### Fixed
+- <rdar://problem/32332306> Add a "View on GitHub…" contextual menu for a GitHub-hosted remote
 - <rdar://problem/32390411> [SOTU] When you star from a search result we should reflect the star back in the reachable list
 - <rdar://problem/32039210> Repositories Window: When the window first comes up, the first repo in the list should be selected
 - <rdar://problem/32390407> [SOTU] We need to finder sort in the buckets for the reachable repositories
