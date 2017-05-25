@@ -14,8 +14,8 @@ _WWDC 2017_
 - GitHub account:
 	- WWDC2017, mfdemo2017
 	- Personal repos
-		- NotessAndIdeas
-		- AwesomeNewGame
+		- TodosNotesAndIdeas
+		- TheAmazingNewGame
 	- Org: Stultus Enterprises
 		- MuchRemainsToBeDone
 		- RushIn
@@ -23,38 +23,43 @@ _WWDC 2017_
 	- Starred:
 		- swift
 		- swift-package-manager
-		- swift-corelibs-foundation
 - No AppleID, enable Siri
-- Make WWDC2017 folder in ~/Documents
-- Make Demo folder in ~/Documents
 - Configure AppleConnect (or have another way to get the SolorSystem repo and be able to sync it)
 - Defaults
 	- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
 	- defaults write com.apple.dt.Xcode IDESourceControlUIPresentationMode YES
 	- defaults write com.apple.dt.Xcode IDESourceControlClonePrefersToOpenProjects YES
+	- defaults write com.apple.dt.Xcode IDESourceControlUIEnableFastForwardMerge YES
+- System prefs
+	- Turn on Use F1 keys as standard function keys
 - Safari
 	- Pin github.com
 	- log in (WWDC2017, mfdemo2017) and save login info
 	- Pin stash.sd.apple.com
 	- log in and save login info
 - Xcode
+	- Set Font bigger (three Cmd-+ 's?)
 	- Add AppleID account (mferris)
-	- Confiugure a key equivalent for refresh scm status
+	- Configure a key equivalent for refresh scm status (F5 unless it's a touchbar)
+	- Make sure the saved state for the commit sheet is Flat
+- Make WWDC2017 folder in ~/Documents
+- Make Demo folder in ~/Documents
 - Clone into the WWDC2017 folder
-	- https://mferris@stash.sd.apple.com/scm/~kenneth_orr/dt-wwdc-2017-sotu-demos.git (to SolarSystem)
-	- swift-corelibs-foundation (as a backup)
+	- git clone https://mferris@stash.sd.apple.com/scm/~kenneth_orr/dt-wwdc-2017-sotu-demos.git SolarSystem
+	- git clone https://github.com/apple/swift-corelibs-foundation.git
 
 ### Pre-Demo Setup
-- Make sure no github account configured
-- Make sure disclosure state and log viewer filter is good in explore project (XCTest)
-- Make a new copy of demo project
+- In GitHub, unstar swift-corelibs-foundation
 - Remove avatar cache
 	- ~/Library/Caches/xcavatar.cache and ~/Library/Caches/XCAvatarImages (???)
 - Make sure avatar cache is heated up
+	- Open swift-corelibs-foundation and get avatars loaded
+	- Open SolarSystem and get avatars loaded
 - Copy pristine SolarSystem repo from WWDC2017 to Demo and remove its remote
-- Unstar Foundation
+- Make sure Xcode pref winow is on Accounts
+- Make sure no github account configured
+- Clear recent documents
 - Open SolarSystem and minimize window
-- Xcode prefs on Accounts
 
 ### Github Accounts
 - Thanks, Matthew!  Good afternoon, everyone! Today I want to show you some of the great new ways to work with source control in Xcode, and especially how Xcode can work with Github.
@@ -74,7 +79,7 @@ _WWDC 2017_
 - **Welcome window: Clone...**
 - Xcode has an all new clone workflow that makes getting content from Github easy.
 - All my GitHub repositories are front and center. My personal repositories, any I have marked with a star, and repositories from my organizations.
-- There are details for the selected repository... its description, primary language, and the number of stars and forks.
+- There are details for the selected repository... its description, primary language, and the number of forks and stars.
 - For more information I can view the repository's README.
 - **Click README**
 - **Close it**
@@ -86,16 +91,22 @@ _WWDC 2017_
 - Now that it's starred I see it in my main list.
 - **Select swift-corelibs-foundation**
 - **Clone...**
-- **Choose save location**
+- I'll select a location for my clone
+- **Choose save location Documents/Demo**
 
 ### Explore
 - Once the clone completes, Xcode opens the project.
 - **Go to Source Control navigator**
 - Xcode 9 has a new navigator that is devoted to source control.
-- I see the repositories in workspace.
-- Inside a repository I see its branches, tags and remotes.
-- **Select current branch**
+- I see the repositories in my workspace.
+- Inside a repository I see its branches
+- **Select Branches group**
+- ... tags 
+- **Select Tags group**
+- ... and remotes.
+- **Select Remotes group**
 - Selecting a branch shows its complete history.
+- **Select current branch**
 - We pull avatars from Github for the authors of commits.
 - And there are annotations showing tags
 - **Select a commit that has a tag**
@@ -106,13 +117,16 @@ _WWDC 2017_
 - **Type "hausler", select author filter**
 - ... and I'll narrow it down a little more.
 - **Type "value" and hit enter**
-- Once I find a commit, the inspector shows even more detail.
-- **Open inspector**
-- including all the files that were changed by this commit. This looks like the one I was looking for.
+- **Select the "value type" commit**
+- Once I find a commit, the inspector shows even more detail,
+- ... including all the files that were changed by this commit. 
+- This looks like the one I was looking for.
 - **Close inspector**
-- Double-clicking a commit takes me to the new commit viewer, where I can see all the source changes.
+- Double-clicking a commit takes me to the new commit viewer,
 - **Double-click the "value types" commit**
-- **!!!Show a file or two**
+- **Starts on build.py**
+- ... where I can see all the source changes.
+- **Select NSDecimalNumber.swift**
 - Xcode 9 makes it easy to browse history and really get down to detailed changes.
 
 ### Creating branches
@@ -120,10 +134,9 @@ _WWDC 2017_
 - I have a project that that needs some changes before I share it with the world
 - **Close the explore project**
 - **Window -> SolarSystem**
-- When I start working, it's easy to create a new branch.
+- When I start working, the source contriol navigator makes it easy to create a new branch.
 - **Go to Source Control navigator**
-- **Select master**
-- **Use context menu to make a branch**
+- **Use context menu to make a branch (DO NOT SELECT IT)**
 - OK, I am checked out on my new branch and ready to make changes.
 
 ### Structure editing
@@ -141,11 +154,11 @@ _WWDC 2017_
 - **Type a comment and commit**
 
 ### Working with Branches and Tags
-- When I am ready to land my branch, the source control navigator makes it easy.
+- When I am ready to land my branch, I go back to the source control navigator,
 - **Go to Source Control navigator**
-- I select the destination branch, 
+- ... select the destination branch, 
 - **Select master branch**
-- ... and do the merge
+- ... and merge
 - **Use context menu Merge from working branch into master**
 - I can also easily create new tags from any commit.
 - **Select new commit in log view**
@@ -156,7 +169,9 @@ _WWDC 2017_
 - This project isn't on Github yet, but I can easily put it there.
 - **Select repo**
 - **Use gear menu to create a new github project and push**
-- My project is now hosted on Github.
+- All the defaults look good.
+- Xcode creates the project, pushes up all the content, and...
+- my project is now hosted on Github!
 - I can jump right to Github to see it from the new origin remote.
 - **Open remotes group**
 - **Right click origin and choose Show in GitHub**
