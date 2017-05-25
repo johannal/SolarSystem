@@ -42,6 +42,16 @@ class SolarSystemController: UIViewController {
         solarSystemSceneView.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer.isPaused = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer.isPaused = true
+    }
+    
     func solarSystemCenterNode() -> SCNNode {
         return solarSystemSceneView.scene!.rootNode.childNode(withName: "SolarSystemCenterNode", recursively: true)!
     }
