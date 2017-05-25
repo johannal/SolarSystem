@@ -20,6 +20,8 @@
 		<string>Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 88 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger to the gods.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 1,516 mi Distance from Sun: 35.98 million mi Gravity: 3.7 m/s²</string>
+		<key>gravity</key>
+		<real>3.7</real>
 	</dict>
 	<key>venus</key>
 	<dict>
@@ -41,6 +43,8 @@
 		<string>Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period (243 days) of any planet in the Solar System and rotates in the opposite direction to most other planets. It has no natural satellite.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 3,760 mi Distance from Sun: 67.24 million mi Gravity: 10.44 m/s²</string>
+		<key>gravity</key>
+		<real>8.869999999999999</real>
 	</dict>
 	<key>earth</key>
 	<dict>
@@ -64,6 +68,8 @@
 		<string>Earth otherwise known as the World[n 6] or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial planets.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 3,959 mi Age: 4.543 billion years Population: 7.347 billion</string>
+		<key>gravity</key>
+		<real>9.81</real>
 	</dict>
 	<key>mars</key>
 	<dict>
@@ -83,6 +89,8 @@
 		<string>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the &quot;Red Planet&quot; because the iron oxide prevalent on its surface gives it a reddish appearance.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 2,106 mi Distance from Sun: 92.96 million mi Gravity: 9.807 m/s²</string>
+		<key>gravity</key>
+		<real>3.69</real>
 	</dict>
 	<key>jupiter</key>
 	<dict>
@@ -102,6 +110,8 @@
 		<string>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two and a half times that of all the other planets in the Solar System combined.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 43,441 mi Distance from Sun: 483.8 million mi Gravity: 24.79 m/s²</string>
+		<key>gravity</key>
+		<real>24.79</real>
 	</dict>
 	<key>saturn</key>
 	<dict>
@@ -121,6 +131,8 @@
 		<string>Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 36,184 mi Distance from Sun: 890 million mi Gravity: 10.44 m/s²</string>
+		<key>gravity</key>
+		<real>10.44</real>
 	</dict>
 	<key>uranus</key>
 	<dict>
@@ -140,6 +152,8 @@
 		<string>Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 15,881.6 mi Distance from Sun: 1,784.83 million mi Gravity: 8.87 m/s²</string>
+		<key>gravity</key>
+		<real>8.869999999999999</real>
 	</dict>
 	<key>naptune</key>
 	<dict>
@@ -159,6 +173,8 @@
 		<string>Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.</string>
 		<key>additionalDetails</key>
 		<string>Radius: 15,881.6 mi Distance from Sun: 15,387.6 million mi Gravity: 11.15 m/s²</string>
+		<key>gravity</key>
+		<real>11.15</real>
 	</dict>
 </dict>
 </plist>

@@ -10,24 +10,26 @@ import CoreMotion
 
 let maxJumpHeight: Int = 300 // ft
 let requiredAccellerationScaleFactor = 70.0 // Higher means you need less force to trigger a height
+let minAccellerationForJumpAnimation = 10.5
 
 class MoonJumperViewController: UIViewController {
     
     @IBOutlet weak var groundView: UIView!
     @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var heightCircleView: CircleView!
     @IBOutlet weak var heightIndicatorView: UIView!
     @IBOutlet weak var heightIndicatorYConstraint: NSLayoutConstraint!
     @IBOutlet weak var astronautView: UIView!
     
     let manager = CMMotionManager()
-    var maxGravity = 0.0
-    var selectedHeight = 5
+    var selectedHeight = 180 // ft
+    var didReachSelectedHeight = false
+    
+    var animator: UIDynamicAnimator?
+    let gravity = UIGravityBehavior()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup initial state
-        // TODO
         
         // Monitor motion
         manager.deviceMotionUpdateInterval = 0.05
@@ -41,11 +43,24 @@ class MoonJumperViewController: UIViewController {
                 let requiredAcceleration = 10 + selectedHeight / requiredAccellerationScaleFactor
                 
                 if gravity > requiredAcceleration {
+                    self?.didReachSelectedHeight = true
                     self?.heightLabel.textColor = UIColor.green
+                    self?.heightCircleView.strokeColor = UIColor.green
                     
                     DispatchQueue.main.async {
                         self?.reachedSelectedHeight()
                     }
+                }
+                else if self?.didReachSelectedHeight == false && gravity > minAccellerationForJumpAnimation {
+                    UIView.animate(withDuration: 0.4, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
+                        self?.astronautView.transform = CGAffineTransform.init(translationX: 0.0, y: -50.0)
+                    }, completion: { (completed) in
+                        if self?.didReachSelectedHeight == false {
+                            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .beginFromCurrentState, animations: {
+                                self?.astronautView.transform = CGAffineTransform.init(translationX: 0.0, y: 0.0)
+                            }, completion: nil)
+                        }
+                    })
                 }
             })
         }
@@ -69,7 +84,7 @@ class MoonJumperViewController: UIViewController {
         heightIndicatorYConstraint.constant = yLocation
         view.layoutIfNeeded()
         
-        let availableHeight = astronautView.frame.minY - heightLabel.frame.maxY
+        let availableHeight = astronautView.frame.minY - heightCircleView.frame.maxY
         let progress = (yLocation - astronautView.frame.height) / availableHeight
         let height = max(min(maxJumpHeight, Int(CGFloat(maxJumpHeight) * progress)), 0)
         selectedHeight = Int(5.0 * floor(Double(height)/5.0) + 0.5)
@@ -77,7 +92,9 @@ class MoonJumperViewController: UIViewController {
         
         
         // Reset state when ever selected height changes
+        didReachSelectedHeight = false
         heightLabel.textColor = UIColor.white
+        heightCircleView.strokeColor = UIColor.init(white: 0.4, alpha: 1.0)
         
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .beginFromCurrentState, animations: {
             self.astronautView.transform = CGAffineTransform.init(translationX: 0.0, y: 0.0)

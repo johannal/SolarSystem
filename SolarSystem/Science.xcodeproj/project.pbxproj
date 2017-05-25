@@ -33,6 +33,7 @@
 		9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
 		9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
+		9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
@@ -75,6 +76,7 @@
 		9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC408071EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EC408091EBFEAEB00F7F8A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
 		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				9E272B5B1ED50A3B00C2A5B2 /* MoonJumperViewController.swift */,
 				9E272B5D1ED50DB600C2A5B2 /* HeightIndicatorView.swift */,
+				9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */,
 			);
 			name = "Moon Jumper";
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
 				EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */,
 				9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */,
+				9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */,
 				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
 				9E272B5C1ED50A3B00C2A5B2 /* MoonJumperViewController.swift in Sources */,
 				D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */,

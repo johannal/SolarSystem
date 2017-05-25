@@ -144,7 +144,7 @@ class SolarSystemController: UIViewController {
             let ringGeometry = SCNTorus(ringRadius: planetGeometry.radius * 1.6, pipeRadius: planetGeometry.radius / 2.2)
             
             let ringMaterial = SCNMaterial()
-            ringMaterial.diffuse.contents = #imageLiteral(resourceName: "2k_saturn_ring+alpha")
+            ringMaterial.diffuse.contents = #imageLiteral(resourceName: "2k_saturn_ring_alpha")
             ringMaterial.diffuse.wrapS = .repeat
             ringMaterial.diffuse.wrapT = .repeat
             ringMaterial.isDoubleSided =  true

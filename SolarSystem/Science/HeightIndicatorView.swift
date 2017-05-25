@@ -12,38 +12,32 @@ class HeightIndicatorView: UIView {
     
     override func draw(_ rect: CGRect) {
         //// Color Declarations
-        let fillColor = UIColor.yellow
-        let strokeColor2 = UIColor.white
+        let color = UIColor.init(white: 0.4, alpha: 1.0)
         
         //// Rectangle Drawing
-        let rectanglePath = UIBezierPath(rect: CGRect(x: rect.minX + 5, y: rect.minY + 7, width: rect.width - 11, height: 2))
-        strokeColor2.setFill()
+        let lineWidth: CGFloat = 2.0
+        let rectanglePath = UIBezierPath(rect: CGRect(x: 0, y: rect.midY - lineWidth/2.0, width: rect.width, height: lineWidth))
+        color.setFill()
         rectanglePath.fill()
+        
+        let arrowWidth: CGFloat = 6.0
         
         //// LeftArrowGray Drawing
         let leftArrowGrayPath = UIBezierPath()
-        leftArrowGrayPath.move(to: CGPoint(x: rect.minX, y: rect.minY + 2.99))
-        leftArrowGrayPath.addCurve(to: CGPoint(x: rect.minX + 3.58, y: rect.minY + 0.79), controlPoint1: CGPoint(x: rect.minX, y: rect.minY + 0.79), controlPoint2: CGPoint(x: rect.minX + 1.6, y: rect.minY - 0.2))
-        leftArrowGrayPath.addLine(to: CGPoint(x: rect.minX + 14.42, y: rect.minY + 6.21))
-        leftArrowGrayPath.addCurve(to: CGPoint(x: rect.minX + 14.42, y: rect.minY + 9.79), controlPoint1: CGPoint(x: rect.minX + 16.4, y: rect.minY + 7.2), controlPoint2: CGPoint(x: rect.minX + 16.4, y: rect.minY + 8.8))
-        leftArrowGrayPath.addLine(to: CGPoint(x: rect.minX + 3.58, y: rect.minY + 15.21))
-        leftArrowGrayPath.addCurve(to: CGPoint(x: rect.minX, y: rect.minY + 13.01), controlPoint1: CGPoint(x: rect.minX + 1.6, y: rect.minY + 16.2), controlPoint2: CGPoint(x: rect.minX, y: rect.minY + 15.21))
-        leftArrowGrayPath.addLine(to: CGPoint(x: rect.minX, y: rect.minY + 2.99))
+        leftArrowGrayPath.move(to: CGPoint(x: 0, y: 0))
+        leftArrowGrayPath.addLine(to: CGPoint(x: arrowWidth, y: rect.height / 2.0))
+        leftArrowGrayPath.addLine(to: CGPoint(x: 0, y: rect.height))
         leftArrowGrayPath.close()
-        fillColor.setFill()
+        color.setFill()
         leftArrowGrayPath.fill()
         
         //// RightArrowGray Drawing
         let rightArrowGrayPath = UIBezierPath()
-        rightArrowGrayPath.move(to: CGPoint(x: rect.maxX, y: rect.minY + 2.99))
-        rightArrowGrayPath.addCurve(to: CGPoint(x: rect.maxX - 3.58, y: rect.minY + 0.79), controlPoint1: CGPoint(x: rect.maxX, y: rect.minY + 0.79), controlPoint2: CGPoint(x: rect.maxX - 1.6, y: rect.minY - 0.2))
-        rightArrowGrayPath.addLine(to: CGPoint(x: rect.maxX - 14.42, y: rect.minY + 6.21))
-        rightArrowGrayPath.addCurve(to: CGPoint(x: rect.maxX - 14.42, y: rect.minY + 9.79), controlPoint1: CGPoint(x: rect.maxX - 16.4, y: rect.minY + 7.2), controlPoint2: CGPoint(x: rect.maxX - 16.4, y: rect.minY + 8.8))
-        rightArrowGrayPath.addLine(to: CGPoint(x: rect.maxX - 3.58, y: rect.minY + 15.21))
-        rightArrowGrayPath.addCurve(to: CGPoint(x: rect.maxX, y: rect.minY + 13.01), controlPoint1: CGPoint(x: rect.maxX - 1.6, y: rect.minY + 16.2), controlPoint2: CGPoint(x: rect.maxX, y: rect.minY + 15.21))
-        rightArrowGrayPath.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + 2.99))
+        rightArrowGrayPath.move(to: CGPoint(x: rect.width, y: 0))
+        rightArrowGrayPath.addLine(to: CGPoint(x: rect.width-arrowWidth, y: rect.height / 2.0))
+        rightArrowGrayPath.addLine(to: CGPoint(x: rect.width, y: rect.height))
         rightArrowGrayPath.close()
-        fillColor.setFill()
+        color.setFill()
         rightArrowGrayPath.fill()
     }
     

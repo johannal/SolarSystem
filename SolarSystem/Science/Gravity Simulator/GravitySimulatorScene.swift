@@ -2,8 +2,7 @@
 //  GravitySimulatorScene.swift
 //  Science
 //
-//  Created by Sebastian Fischer on 21.05.17.
-//  Copyright © 2017 Apple. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 let wallThickness: CGFloat = 10.0
@@ -52,7 +51,7 @@ class GravitySimulatorScene: SKScene {
         }
         
         if let backgroundNode = self.childNode(withName: "backgroundNode") as? SKSpriteNode {
-            backgroundNode.size = CGSize.init(width: size.width, height: size.width/4*3)
+            backgroundNode.size = CGSize.init(width: size.height/3*4, height: size.height)
             backgroundNode.position = .zero
         }
     }
