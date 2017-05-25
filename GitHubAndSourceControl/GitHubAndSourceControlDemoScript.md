@@ -2,8 +2,6 @@
 _WWDC 2017_
 
 ###TODO
-- Investigate no ssh key in demo account
-- Get demo project checked out
 - Find a repo to use for explore demo
 	- Identify filter terms to use
 	- Identify commit to show detail on
@@ -17,6 +15,9 @@ _WWDC 2017_
 ### Account Setup
 - GitHub account:
 	- wwdc2017, mfdemo2017
+	- Personal repos
+		- NotessAndIdeas
+		- AwesomeNewGame
 	- Org: Stultus Enterprises
 		- MuchRemainsToBeDone
 		- RushIn
@@ -25,17 +26,33 @@ _WWDC 2017_
 		- swift
 		- swift-package-manager
 		- swift-corelibs-foundation
-- User account:
-	- Defaults
-		- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
-		- defaults write com.apple.dt.Xcode IDESourceControlUIPresentationMode YES
-	- Get a clone of the demo project, remove its remote
+- No AppleID, enable Siri
+- Make WWDC2017 folder in ~/Documents
+- Make Demo folder in ~/Documents
+- Configure AppleConnect (or have another way to get the SolorSystem repo and be able to sync it)
+- Defaults
+	- defaults write com.apple.dt.Xcode IDESourceControlDisableHistoryTooltips YES
+	- defaults write com.apple.dt.Xcode IDESourceControlUIPresentationMode YES
+	- defaults write com.apple.dt.Xcode IDESourceControlClonePrefersToOpenProjects YES
+- Safari
+	- Pin github.com
+	- log in (wwdc2017, mfdemo2017) and save login info
+	- Pin stash.sd.apple.com
+	- log in and save login info
+- Xcode
+	- Add AppleID account (mferris)
+- Clone into the WWDC2017 folder
+	- https://mferris@stash.sd.apple.com/scm/~kenneth_orr/dt-wwdc-2017-sotu-demos.git (to SolarSystem)
+	- swift-corelibs-foundation (as a backup)
 
 ### Pre-Demo Setup
 - Make sure no github account configured
-- Have my passphrase already in Xcode's keychain
 - Make sure disclosure state and log viewer filter is good in explore project (XCTest)
 - Make a new copy of demo project
+- Remove avatar cache
+	- ~/Library/Caches/xcavatar.cache and ~/Library/Caches/XCAvatarImages (???)
+- Make sure avatar cache is heated up
+- Copy pristine SolarSystem repo from WWDC2017 to Demo and remove its remote
 
 ### Github Accounts
 - I'm excited to show you some of the great new ways to work with source control in Xcode, and especially how Xcode can work with Github.
@@ -85,9 +102,9 @@ _WWDC 2017_
 - **Point out branch and tag annotations**
 - Projects can have a lot of history, so filtering can be important
 - I can filter commits based on author or commit message content
-- **Type ???, select author filter**
+- **Type "hausler", select author filter**
 - Let's see just commits that ??? made
-- **Type ??? and hit enter**
+- **Type "value" and hit enter**
 - I want one related to ???
 - Once I find a commit, the inspector shows even more detail
 - **Open inspector**
@@ -161,18 +178,13 @@ _WWDC 2017_
 ##### Unscreened
 - <rdar://problem/31936812> When a blue folder resorts (reloads) we lose selection within it
 
-##### Demo Blocker
-- <rdar://problem/32111289> Presentation mode dwrite for bigger fonts in the history viewer
-- <rdar://problem/30620743> After renaming a file, UI reverts, then corrects (and when creating a new group, the new group's name is not selected for editing)
-
 ##### Beta 1
-- <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
 - <rdar://problem/30291887> New commit view could be more discoverable: add a button to go from the history view to the commit details view
-
-##### Punted, may need to bring back?
-- <rdar://problem/32017088> I am getting 'Always allow' dialog when adding a github account when Xcode already has my SSH passphrase in its keychain (from an earlier account addition)
+- <rdar://problem/32111289> Presentation mode dwrite for bigger fonts in the history viewer
 
 ##### Post WWDC
+- <rdar://problem/30620743> After renaming a file, UI reverts, then corrects (and when creating a new group, the new group's name is not selected for editing)
+- <rdar://problem/32017088> I am getting 'Always allow' dialog when adding a github account when Xcode already has my SSH passphrase in its keychain (from an earlier account addition)
 - <rdar://problem/31761450> Account details for GitHub accounts should show list of organizations I belong to
 - <rdar://problem/32157549> Unstarring a repo does not remove it from my list
 - <rdar://problem/31939924> Commit viewer should scroll to first diff in the top file
@@ -241,3 +253,4 @@ _WWDC 2017_
 - <rdar://problem/32156368> Date formatter for repositories window last modified column should be "Today, Time" and "Yesterday, Time"
 - <rdar://problem/32157077> Revise the sorting rules for the unsearched window state
 - <rdar://problem/32157114> The default repositories view shows me duplicates
+- <rdar://problem/32034809> CrashTracer: [USER] Xcode at com.apple.dt.IDE.IDESourceControlUI: _T018IDESourceControlUI20CommitEditorDocumentC11displayNameSQySSGfgTo + 207
