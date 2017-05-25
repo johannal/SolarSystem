@@ -30,19 +30,17 @@ I haven't implemented those methods, so I get an issue. New in Xcode 9, I get a 
 
 ----------------------------------------
 
-Issues and fix-it’s are great at helping fix code that isn't quite right — ideally we’d avoid that state to begin with. We brought back a concept from Swift Playgrounds that lets you do just that.
-
-Let me show you.
+Issues and fix-it’s are great at helping fix code that isn't quite right — ideally we’d avoid that state to begin with.
 
 When I hold down the Command key and mouse around, I see the structure of my code highlighted in light blue. When I click, I get options and transformations for that bit of structure.
 
     [Command click on the class around line 11]
     
-Since this is a class, I can do things like add a method or property. Or if I wanted to jump straight to the definition and short circuit the popover, I could do that by holding down Command and Control and then clicking the symbol.
+Since this is a class, I can do things like add a method or property.
 
 I can also use this new popover to transform code.
     
-Personally, I like code to be use descriptive variable names and small expressions. For example, here I’d rather have this Moon object captured in a variable. So I'll Command click Moon and select "Extract Expression", and then rename this to "earthsMoon". Easy.
+Personally, I like descriptive variable names and small expressions. I’d rather have this Moon object captured in a variable. So I'll Command click Moon and select "Extract Expression", and then rename this to “luna”. Easy.
 
     [Command click on "Moon" around line 51 and select "Extract Expression…"]
     
