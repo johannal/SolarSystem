@@ -51,7 +51,7 @@ class GravitySimulatorScene: SKScene {
         }
         
         if let backgroundNode = self.childNode(withName: "Background") as? SKSpriteNode {
-            backgroundNode.size = CGSize.init(width: size.height/3*4, height: size.height)
+            backgroundNode.size = CGSize.init(width: size.height/4*3, height: size.height)
             backgroundNode.position = .zero
         }
     }
