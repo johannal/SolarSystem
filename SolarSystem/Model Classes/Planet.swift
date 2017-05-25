@@ -88,7 +88,7 @@ extension Planet: OrbitingBody {
         return Measurement(value: 0, unit: .kilograms)
     }
     
-    public func cacluateDensity() -> Double {
+    public func calculateDensity() -> Double {
         return 0
     }
     

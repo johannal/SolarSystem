@@ -49,7 +49,7 @@ public class Star: PhysicsBody {
         return Measurement(value: 1.99e27, unit: .metricTons)
     }
     
-    public func cacluateDensity() -> Double {
+    public func calculateDensity() -> Double {
         return 1.408
     }
     
