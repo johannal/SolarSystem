@@ -116,7 +116,7 @@
 		<key>orbitalRadius</key>
 		<real>1433000000</real>
 		<key>orbitalPeriod</key>
-		<integer>10752</integer>
+		<real>10752</real>
 		<key>rotationalPeriod</key>
 		<integer>11</integer>
 		<key>name</key>

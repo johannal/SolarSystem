@@ -25,7 +25,7 @@ class GravitySimulatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gravityView.scene?.scaleMode = .resizeFill /// DEMO FIX – Use .resizeFill instead of .aspectFill
+        gravityView.scene?.scaleMode = .resizeFill
         gravitySimulatorScene?.simulateZeroGravity()
         
         // Update the selected planet's name
