@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>mercury</key>
+<array>
 	<dict>
 		<key>diameter</key>
 		<integer>4879</integer>
@@ -23,7 +22,6 @@
 		<key>gravity</key>
 		<real>3.7</real>
 	</dict>
-	<key>venus</key>
 	<dict>
 		<key>diameter</key>
 		<integer>12103</integer>
@@ -46,7 +44,6 @@
 		<key>gravity</key>
 		<real>8.869999999999999</real>
 	</dict>
-	<key>earth</key>
 	<dict>
 		<key>diameter</key>
 		<real>12756</real>
@@ -71,7 +68,6 @@
 		<key>gravity</key>
 		<real>9.81</real>
 	</dict>
-	<key>mars</key>
 	<dict>
 		<key>diameter</key>
 		<real>6792</real>
@@ -92,7 +88,6 @@
 		<key>gravity</key>
 		<real>3.69</real>
 	</dict>
-	<key>jupiter</key>
 	<dict>
 		<key>diameter</key>
 		<real>142984</real>
@@ -113,7 +108,6 @@
 		<key>gravity</key>
 		<real>24.79</real>
 	</dict>
-	<key>saturn</key>
 	<dict>
 		<key>diameter</key>
 		<real>120536</real>
@@ -134,7 +128,6 @@
 		<key>gravity</key>
 		<real>10.44</real>
 	</dict>
-	<key>uranus</key>
 	<dict>
 		<key>diameter</key>
 		<real>51118</real>
@@ -155,7 +148,6 @@
 		<key>gravity</key>
 		<real>8.869999999999999</real>
 	</dict>
-	<key>naptune</key>
 	<dict>
 		<key>diameter</key>
 		<real>49528</real>
@@ -176,5 +168,5 @@
 		<key>gravity</key>
 		<real>11.15</real>
 	</dict>
-</dict>
+</array>
 </plist>

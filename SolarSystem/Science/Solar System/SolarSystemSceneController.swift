@@ -54,11 +54,11 @@ class SolarSystemController: UIViewController {
         let centerNode = solarSystemCenterNode()
         
         let planetInfoPath = Bundle.main.path(forResource: "PlanetDetails", ofType: "plist")!
-        let planetDictionary = NSDictionary.init(contentsOfFile: planetInfoPath)!
+        let planetArray = NSArray.init(contentsOfFile: planetInfoPath)!
         
         let scaleFactor = 1.0/10000000.0
         
-        for (_, value) in planetDictionary {
+        for value in planetArray {
             if let planetInfo = value as? Dictionary<String, Any> {
                 let name = planetInfo["name"] as! String
                 let diameter = planetInfo["diameter"] as! Double
