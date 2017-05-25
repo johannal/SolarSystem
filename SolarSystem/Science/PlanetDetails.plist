@@ -10,7 +10,7 @@
 		<key>orbitalRadius</key>
 		<integer>57909050</integer>
 		<key>orbitalPeriod</key>
-		<integer>88</integer>
+		<integer>600</integer>
 		<key>rotationalPeriod</key>
 		<integer>5</integer>
 		<key>name</key>
@@ -30,7 +30,7 @@
 		<key>orbitalRadius</key>
 		<integer>108208000</integer>
 		<key>orbitalPeriod</key>
-		<integer>224</integer>
+		<integer>900</integer>
 		<key>rotationalPeriod</key>
 		<integer>7</integer>
 		<key>rotationDirectionIsForward</key>
@@ -56,7 +56,7 @@
 		<key>orbitalRadius</key>
 		<real>149598023</real>
 		<key>orbitalPeriod</key>
-		<integer>365</integer>
+		<integer>1200</integer>
 		<key>rotationalPeriod</key>
 		<integer>6</integer>
 		<key>name</key>
@@ -76,7 +76,7 @@
 		<key>orbitalRadius</key>
 		<integer>228000000</integer>
 		<key>orbitalPeriod</key>
-		<integer>687</integer>
+		<integer>1500</integer>
 		<key>rotationalPeriod</key>
 		<integer>12</integer>
 		<key>name</key>
@@ -96,7 +96,7 @@
 		<key>orbitalRadius</key>
 		<real>778000000</real>
 		<key>orbitalPeriod</key>
-		<integer>4330</integer>
+		<integer>5500</integer>
 		<key>rotationalPeriod</key>
 		<integer>10</integer>
 		<key>name</key>
@@ -136,7 +136,7 @@
 		<key>orbitalRadius</key>
 		<real>2872000000</real>
 		<key>orbitalPeriod</key>
-		<integer>30665</integer>
+		<integer>15000</integer>
 		<key>rotationalPeriod</key>
 		<integer>16</integer>
 		<key>name</key>
@@ -156,7 +156,7 @@
 		<key>orbitalRadius</key>
 		<real>4498000000</real>
 		<key>orbitalPeriod</key>
-		<integer>60149</integer>
+		<integer>20000</integer>
 		<key>rotationalPeriod</key>
 		<integer>8</integer>
 		<key>name</key>
