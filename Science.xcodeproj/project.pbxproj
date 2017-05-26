@@ -79,12 +79,13 @@
 		9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
+		B1B0C6E61ED8BC35007937D2 /* FlyByScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyByScenario.swift; sourceTree = "<group>"; };
 		B1ECAEDC1ED7370A0009A958 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B1ECAEDD1ED737500009A958 /* Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		B1ECAEDE1ED737C50009A958 /* ObjectOfNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNote.swift; sourceTree = "<group>"; };
 		B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNoteCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramicCameraModel.swift; sourceTree = "<group>"; };
-		B1ECAEE51ED738470009A958 /* CameraModelTrainsition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTrainsition.swift; sourceTree = "<group>"; };
+		B1ECAEE51ED738470009A958 /* CameraModelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTransition.swift; sourceTree = "<group>"; };
 		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
 		D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDays.swift; sourceTree = "<group>"; };
 		EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransNeptunianObject.swift; sourceTree = "<group>"; };
@@ -228,10 +229,11 @@
 		B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1B0C6E61ED8BC35007937D2 /* FlyByScenario.swift */,
 				B1ECAEDC1ED7370A0009A958 /* Route.swift */,
 				B1ECAEDD1ED737500009A958 /* Leg.swift */,
 				B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */,
-				B1ECAEE51ED738470009A958 /* CameraModelTrainsition.swift */,
+				B1ECAEE51ED738470009A958 /* CameraModelTransition.swift */,
 			);
 			path = "Fly-By Classes";
 			sourceTree = "<group>";

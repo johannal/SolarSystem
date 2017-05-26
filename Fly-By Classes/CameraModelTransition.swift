@@ -1,5 +1,5 @@
 //
-//  CameraModelTrainsition.swift
+//  CameraModelTransition.swift
 //  Science
 //
 //  Created by Mike Ferris on 5/25/17.
