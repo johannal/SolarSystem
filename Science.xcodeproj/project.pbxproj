@@ -17,6 +17,7 @@
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		07B32AB51ECF4C870098E49F /* SolarSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB41ECF4C870098E49F /* SolarSystemView.swift */; };
 		07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB61ECF59A60098E49F /* Orbit.swift */; };
+		9E04041A1ED8D5B30014B5F9 /* ScienceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0404191ED8D5B30014B5F9 /* ScienceUITests.swift */; };
 		9E1ACC951ECFBE9C0066532D /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */; };
 		9E2017351ECB7E95002373D7 /* SolarSystemSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */; };
 		9E2017371ECB7F2E002373D7 /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */; };
@@ -44,6 +45,16 @@
 		EECE23D11ECCC60100D0CC7A /* ThePlanets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9E04041C1ED8D5B30014B5F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EC407F01EBFEAEB00F7F8A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EC407F71EBFEAEB00F7F8A1;
+			remoteInfo = Science;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		07172BB71ED0E7FE0028FC65 /* DistantObjects.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DistantObjects.txt; sourceTree = "<group>"; };
 		0731FA331EC9FD4400F46170 /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
@@ -58,6 +69,9 @@
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		07B32AB41ECF4C870098E49F /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		07B32AB61ECF59A60098E49F /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
+		9E0404171ED8D5B30014B5F9 /* ScienceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScienceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E0404191ED8D5B30014B5F9 /* ScienceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceUITests.swift; sourceTree = "<group>"; };
+		9E04041B1ED8D5B30014B5F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemSceneController.swift; sourceTree = "<group>"; };
 		9E2017361ECB7F2E002373D7 /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +110,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9E0404141ED8D5B30014B5F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EC407F51EBFEAEB00F7F8A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +161,15 @@
 				07B32AB41ECF4C870098E49F /* SolarSystemView.swift */,
 			);
 			path = "View Classes";
+			sourceTree = "<group>";
+		};
+		9E0404181ED8D5B30014B5F9 /* ScienceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9E0404191ED8D5B30014B5F9 /* ScienceUITests.swift */,
+				9E04041B1ED8D5B30014B5F9 /* Info.plist */,
+			);
+			path = ScienceUITests;
 			sourceTree = "<group>";
 		};
 		9E272B5A1ED50A2000C2A5B2 /* Moon Jumper */ = {
@@ -193,6 +223,7 @@
 				B1ECAEE41ED738200009A958 /* CameraModel Classes */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				0734F5191ECBCB7500D778C5 /* Resources */,
+				9E0404181ED8D5B30014B5F9 /* ScienceUITests */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -201,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				9EC407F81EBFEAEB00F7F8A1 /* Science.app */,
+				9E0404171ED8D5B30014B5F9 /* ScienceUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +291,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9E0404161ED8D5B30014B5F9 /* ScienceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E0404201ED8D5B30014B5F9 /* Build configuration list for PBXNativeTarget "ScienceUITests" */;
+			buildPhases = (
+				9E0404131ED8D5B30014B5F9 /* Sources */,
+				9E0404141ED8D5B30014B5F9 /* Frameworks */,
+				9E0404151ED8D5B30014B5F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E04041D1ED8D5B30014B5F9 /* PBXTargetDependency */,
+			);
+			name = ScienceUITests;
+			productName = ScienceUITests;
+			productReference = 9E0404171ED8D5B30014B5F9 /* ScienceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9EC407F71EBFEAEB00F7F8A1 /* Science */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EC4080C1EBFEAEB00F7F8A1 /* Build configuration list for PBXNativeTarget "Science" */;
@@ -286,6 +336,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
+					9E0404161ED8D5B30014B5F9 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 9EC407F71EBFEAEB00F7F8A1;
+					};
 					9EC407F71EBFEAEB00F7F8A1 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
@@ -306,11 +360,19 @@
 			projectRoot = "";
 			targets = (
 				9EC407F71EBFEAEB00F7F8A1 /* Science */,
+				9E0404161ED8D5B30014B5F9 /* ScienceUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9E0404151ED8D5B30014B5F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EC407F61EBFEAEB00F7F8A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +392,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9E0404131ED8D5B30014B5F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E04041A1ED8D5B30014B5F9 /* ScienceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9EC407F41EBFEAEB00F7F8A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +435,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9E04041D1ED8D5B30014B5F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EC407F71EBFEAEB00F7F8A1 /* Science */;
+			targetProxy = 9E04041C1ED8D5B30014B5F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -385,6 +463,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9E04041E1ED8D5B30014B5F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 59GAB85EFG;
+				INFOPLIST_FILE = ScienceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.ScienceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Science;
+			};
+			name = Debug;
+		};
+		9E04041F1ED8D5B30014B5F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 59GAB85EFG;
+				INFOPLIST_FILE = ScienceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.ScienceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Science;
+			};
+			name = Release;
+		};
 		9EC4080A1EBFEAEB00F7F8A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -491,7 +605,7 @@
 				INFOPLIST_FILE = Science/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.toolsQA.Science;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.Science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Science/Science-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -509,7 +623,7 @@
 				INFOPLIST_FILE = Science/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.toolsQA.Science;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.Science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Science/Science-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -520,6 +634,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9E0404201ED8D5B30014B5F9 /* Build configuration list for PBXNativeTarget "ScienceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E04041E1ED8D5B30014B5F9 /* Debug */,
+				9E04041F1ED8D5B30014B5F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9EC407F31EBFEAEB00F7F8A1 /* Build configuration list for PBXProject "Science" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
