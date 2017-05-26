@@ -190,7 +190,7 @@
 				0731FA301EC9FCBF00F46170 /* Model Classes */,
 				07506D651ECA7A6300EB7C11 /* View Classes */,
 				B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */,
-				B1ECAEE41ED738200009A958 /* ObjectOfNote Classes */,
+				B1ECAEE41ED738200009A958 /* CameraModel Classes */,
 				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
 				0734F5191ECBCB7500D778C5 /* Resources */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
@@ -238,13 +238,13 @@
 			path = "Fly-By Classes";
 			sourceTree = "<group>";
 		};
-		B1ECAEE41ED738200009A958 /* ObjectOfNote Classes */ = {
+		B1ECAEE41ED738200009A958 /* CameraModel Classes */ = {
 			isa = PBXGroup;
 			children = (
 				B1ECAEDE1ED737C50009A958 /* ObjectOfNote.swift */,
 				B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */,
 			);
-			path = "ObjectOfNote Classes";
+			path = "CameraModel Classes";
 			sourceTree = "<group>";
 		};
 		D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */ = {
