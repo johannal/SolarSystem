@@ -258,7 +258,7 @@ class SolarSystemController: UIViewController {
         SCNTransaction.disableActions = false
         SCNTransaction.animationDuration = 2.0
         
-        planetAnimationNode.transform = SCNMatrix4MakeTranslation(0, 5, -40)
+        planetAnimationNode.transform = SCNMatrix4MakeTranslation(0, 6.5, -40)
         
         // Apply scale transform so all planets have the same size
         let planetSphereGeometry = planet.geometry as! SCNSphere
