@@ -114,7 +114,7 @@
 		<key>diffuseTexture</key>
 		<string>2k_saturn</string>
 		<key>orbitalRadius</key>
-		<real>143300000000</real>
+		<real>1433000000</real>
 		<key>orbitalPeriod</key>
 		<real>10752</real>
 		<key>rotationalPeriod</key>
