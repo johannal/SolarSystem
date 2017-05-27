@@ -15,7 +15,8 @@ public class Planet: Hashable {
     
     private(set) var moons: [Moon] = []
     
-    // TransNeptunianObject array of bodies near this planet.
+    // Array of TransNeptunianObject bodies near this planet.
+    // NOTE: DwarfPlanet == MinorPlanet == TransNeptunianObject
     private(set) var nearbyObjects: [TransNeptunianObject] = []
     
     private(set) var parentStar: Star!
