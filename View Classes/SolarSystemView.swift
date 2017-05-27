@@ -418,6 +418,13 @@ public extension Measurement where UnitType == UnitAngle {
 }
 
 public extension CGFloat {
+    
+    /// Does the is almost thing.
+    ///
+    /// - Parameters:
+    ///   - value: some really great value.
+    ///   - precision: really good.
+    /// - Returns: an important value.
     func isAlmost(_ value: CGFloat, precision: CGFloat = 0.001) -> Bool {
         let (myInt, myFrac) = modf(self)
         let (otherInt, otherFrac) = modf(value)
