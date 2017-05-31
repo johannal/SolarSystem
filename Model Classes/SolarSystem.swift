@@ -38,16 +38,15 @@ public class SolarSystem {
         
         // add Jupiter's 67 moons 😮!
         if let path = Bundle.main.path(forResource: "MoonsOfJupiter", ofType: "txt") {
-            do {
-                // grab all the names of Jupiter's moons, which are separated by newlines.
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let moonNames = data.components(separatedBy: .newlines)
-                
-                // loop over all of Jupiter's moon names.
-                for moonName in moonNames {
-                    jupiter.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
-                }
-            } catch { /* shouldn't end up here. */ }
+            
+            // grab all the names of Jupiter's moons, which are separated by newlines.
+            let data = try! String(contentsOfFile: path, encoding: .utf8)
+            let moonNames = data.components(separatedBy: .newlines)
+            
+            // loop over all of Jupiter's moon names.
+            for moonName in moonNames {
+                jupiter.addMoon(Moon(name: moonName, color: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)))
+            } 
         }
     }
     
