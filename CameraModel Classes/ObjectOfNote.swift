@@ -1,6 +1,6 @@
 //
 //  ObjectOfNote.swift
-//  Science
+//  Solar System
 //
 //  Created by Mike Ferris on 5/25/17.
 //  Copyright © 2017 Apple. All rights reserved.

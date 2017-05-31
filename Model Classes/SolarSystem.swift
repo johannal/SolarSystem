@@ -1,6 +1,6 @@
 //
 //  SolarSystem.swift
-//  Science
+//  Solar System
 //
 //  Copyright © 2017. All rights reserved.
 //

@@ -1,12 +1,12 @@
 //
 //  Asteroid.m
-//  Science
+//  Solar System
 //
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
 #import "Asteroid.h"
-#import "Science-Swift.h"
+#import "Solar_System-Swift.h"
 
 @implementation Asteroid
 

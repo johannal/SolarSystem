@@ -1,6 +1,6 @@
 //
 //  BackgroundSkyBoxView.m
-//  Science
+//  Solar System
 //
 //  Copyright © 2017. All rights reserved.
 //
@@ -8,7 +8,7 @@
 #import "BackgroundSkyBoxView.h"
 
 #import <UIKit/UIKit.h>
-#import "Science-Swift.h"
+#import "Solar_System-Swift.h"
 
 @implementation BackgroundSkyBoxView
 

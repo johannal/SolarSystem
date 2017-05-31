@@ -1,6 +1,6 @@
 //
 //  FlyByScenario.swift
-//  Science
+//  Solar System
 //
 //  Created by Mike Ferris on 5/26/17.
 //  Copyright © 2017 Apple. All rights reserved.

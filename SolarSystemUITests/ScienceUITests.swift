@@ -1,6 +1,6 @@
 //
-//  ScienceUITests.swift
-//  ScienceUITests
+//  Solar SystemUITests.swift
+//  Solar SystemUITests
 //
 //  Copyright © 2017 Apple. All rights reserved.
 //

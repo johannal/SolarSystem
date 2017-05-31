@@ -63,13 +63,13 @@
 		0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MoonsOfJupiter.txt; sourceTree = "<group>"; };
 		07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSkyBoxView.h; sourceTree = "<group>"; };
 		07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundSkyBoxView.m; sourceTree = "<group>"; };
-		07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Science-Bridging-Header.h"; sourceTree = "<group>"; };
+		07506D6A1ECA7AE800EB7C11 /* SolarSystem-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SolarSystem-Bridging-Header.h"; sourceTree = "<group>"; };
 		078143281ECB3D32009C18DF /* SolarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
 		0781432A1ECB3FAB009C18DF /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		07B32AB41ECF4C870098E49F /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		07B32AB61ECF59A60098E49F /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
-		9E0404171ED8D5B30014B5F9 /* ScienceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScienceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E0404171ED8D5B30014B5F9 /* SolarSystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolarSystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E0404191ED8D5B30014B5F9 /* ScienceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScienceUITests.swift; sourceTree = "<group>"; };
 		9E04041B1ED8D5B30014B5F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = SolarSystemScene.scn; path = ../SolarSystemScene.scn; sourceTree = "<group>"; };
 		9EAE88621ED2504200EB5C1E /* GravitySimulatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorScene.swift; sourceTree = "<group>"; };
 		9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PlanetDetails.plist; sourceTree = "<group>"; };
-		9EC407F81EBFEAEB00F7F8A1 /* Science.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EC407F81EBFEAEB00F7F8A1 /* Solar System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solar System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EC408021EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,13 +163,13 @@
 			path = "View Classes";
 			sourceTree = "<group>";
 		};
-		9E0404181ED8D5B30014B5F9 /* ScienceUITests */ = {
+		9E0404181ED8D5B30014B5F9 /* SolarSystemUITests */ = {
 			isa = PBXGroup;
 			children = (
 				9E0404191ED8D5B30014B5F9 /* ScienceUITests.swift */,
 				9E04041B1ED8D5B30014B5F9 /* Info.plist */,
 			);
-			path = ScienceUITests;
+			path = SolarSystemUITests;
 			sourceTree = "<group>";
 		};
 		9E272B5A1ED50A2000C2A5B2 /* Moon Jumper */ = {
@@ -201,7 +201,7 @@
 			path = "Planet Details";
 			sourceTree = "<group>";
 		};
-		9E53D1611ECF717E002A0001 /* Solar System */ = {
+		9E53D1611ECF717E002A0001 /* 3D Solar System */ = {
 			isa = PBXGroup;
 			children = (
 				9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */,
@@ -209,7 +209,7 @@
 				9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */,
 				9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */,
 			);
-			path = "Solar System";
+			path = "3D Solar System";
 			sourceTree = "<group>";
 		};
 		9EC407EF1EBFEAEB00F7F8A1 = {
@@ -221,9 +221,9 @@
 				07506D651ECA7A6300EB7C11 /* View Classes */,
 				B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */,
 				B1ECAEE41ED738200009A958 /* CameraModel Classes */,
-				9EC407FA1EBFEAEB00F7F8A1 /* Science */,
+				9EC407FA1EBFEAEB00F7F8A1 /* Solar System */,
 				0734F5191ECBCB7500D778C5 /* Resources */,
-				9E0404181ED8D5B30014B5F9 /* ScienceUITests */,
+				9E0404181ED8D5B30014B5F9 /* SolarSystemUITests */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -231,13 +231,13 @@
 		9EC407F91EBFEAEB00F7F8A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EC407F81EBFEAEB00F7F8A1 /* Science.app */,
-				9E0404171ED8D5B30014B5F9 /* ScienceUITests.xctest */,
+				9EC407F81EBFEAEB00F7F8A1 /* Solar System.app */,
+				9E0404171ED8D5B30014B5F9 /* SolarSystemUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9EC407FA1EBFEAEB00F7F8A1 /* Science */ = {
+		9EC407FA1EBFEAEB00F7F8A1 /* Solar System */ = {
 			isa = PBXGroup;
 			children = (
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
@@ -245,17 +245,17 @@
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
 				9E53D1591ECF651E002A0001 /* MainViewController.swift */,
 				9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */,
-				9E53D1611ECF717E002A0001 /* Solar System */,
+				9E53D1611ECF717E002A0001 /* 3D Solar System */,
 				9E53D1601ECF7172002A0001 /* Planet Details */,
 				9E53D15F1ECF7166002A0001 /* Gravity Simulator */,
 				9E272B5A1ED50A2000C2A5B2 /* Moon Jumper */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
 				9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */,
-				07506D6A1ECA7AE800EB7C11 /* Science-Bridging-Header.h */,
+				07506D6A1ECA7AE800EB7C11 /* SolarSystem-Bridging-Header.h */,
 				9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */,
 				9EC408091EBFEAEB00F7F8A1 /* Info.plist */,
 			);
-			path = Science;
+			path = "Solar System";
 			sourceTree = "<group>";
 		};
 		B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */ = {
@@ -291,9 +291,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9E0404161ED8D5B30014B5F9 /* ScienceUITests */ = {
+		9E0404161ED8D5B30014B5F9 /* SolarSystemUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E0404201ED8D5B30014B5F9 /* Build configuration list for PBXNativeTarget "ScienceUITests" */;
+			buildConfigurationList = 9E0404201ED8D5B30014B5F9 /* Build configuration list for PBXNativeTarget "SolarSystemUITests" */;
 			buildPhases = (
 				9E0404131ED8D5B30014B5F9 /* Sources */,
 				9E0404141ED8D5B30014B5F9 /* Frameworks */,
@@ -304,14 +304,14 @@
 			dependencies = (
 				9E04041D1ED8D5B30014B5F9 /* PBXTargetDependency */,
 			);
-			name = ScienceUITests;
+			name = SolarSystemUITests;
 			productName = ScienceUITests;
-			productReference = 9E0404171ED8D5B30014B5F9 /* ScienceUITests.xctest */;
+			productReference = 9E0404171ED8D5B30014B5F9 /* SolarSystemUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		9EC407F71EBFEAEB00F7F8A1 /* Science */ = {
+		9EC407F71EBFEAEB00F7F8A1 /* Solar System */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EC4080C1EBFEAEB00F7F8A1 /* Build configuration list for PBXNativeTarget "Science" */;
+			buildConfigurationList = 9EC4080C1EBFEAEB00F7F8A1 /* Build configuration list for PBXNativeTarget "Solar System" */;
 			buildPhases = (
 				9EC407F41EBFEAEB00F7F8A1 /* Sources */,
 				9EC407F51EBFEAEB00F7F8A1 /* Frameworks */,
@@ -321,9 +321,9 @@
 			);
 			dependencies = (
 			);
-			name = Science;
+			name = "Solar System";
 			productName = Science;
-			productReference = 9EC407F81EBFEAEB00F7F8A1 /* Science.app */;
+			productReference = 9EC407F81EBFEAEB00F7F8A1 /* Solar System.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +346,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9EC407F31EBFEAEB00F7F8A1 /* Build configuration list for PBXProject "Science" */;
+			buildConfigurationList = 9EC407F31EBFEAEB00F7F8A1 /* Build configuration list for PBXProject "Solar System" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -359,8 +359,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9EC407F71EBFEAEB00F7F8A1 /* Science */,
-				9E0404161ED8D5B30014B5F9 /* ScienceUITests */,
+				9EC407F71EBFEAEB00F7F8A1 /* Solar System */,
+				9E0404161ED8D5B30014B5F9 /* SolarSystemUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -438,7 +438,7 @@
 /* Begin PBXTargetDependency section */
 		9E04041D1ED8D5B30014B5F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9EC407F71EBFEAEB00F7F8A1 /* Science */;
+			target = 9EC407F71EBFEAEB00F7F8A1 /* Solar System */;
 			targetProxy = 9E04041C1ED8D5B30014B5F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,13 +471,13 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
-				INFOPLIST_FILE = ScienceUITests/Info.plist;
+				INFOPLIST_FILE = SolarSystemUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.ScienceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Science;
+				TEST_TARGET_NAME = "Solar System";
 			};
 			name = Debug;
 		};
@@ -489,13 +489,13 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
-				INFOPLIST_FILE = ScienceUITests/Info.plist;
+				INFOPLIST_FILE = SolarSystemUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.ScienceUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Science;
+				TEST_TARGET_NAME = "Solar System";
 			};
 			name = Release;
 		};
@@ -602,12 +602,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
-				INFOPLIST_FILE = Science/Info.plist;
+				INFOPLIST_FILE = "Solar System/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.Science;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Science/Science-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Solar System/SolarSystem-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -620,12 +620,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
-				INFOPLIST_FILE = Science/Info.plist;
+				INFOPLIST_FILE = "Solar System/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.Science;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Science/Science-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Solar System/SolarSystem-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,15 +634,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9E0404201ED8D5B30014B5F9 /* Build configuration list for PBXNativeTarget "ScienceUITests" */ = {
+		9E0404201ED8D5B30014B5F9 /* Build configuration list for PBXNativeTarget "SolarSystemUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E04041E1ED8D5B30014B5F9 /* Debug */,
 				9E04041F1ED8D5B30014B5F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		9EC407F31EBFEAEB00F7F8A1 /* Build configuration list for PBXProject "Science" */ = {
+		9EC407F31EBFEAEB00F7F8A1 /* Build configuration list for PBXProject "Solar System" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EC4080A1EBFEAEB00F7F8A1 /* Debug */,
@@ -651,7 +652,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EC4080C1EBFEAEB00F7F8A1 /* Build configuration list for PBXNativeTarget "Science" */ = {
+		9EC4080C1EBFEAEB00F7F8A1 /* Build configuration list for PBXNativeTarget "Solar System" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EC4080D1EBFEAEB00F7F8A1 /* Debug */,
