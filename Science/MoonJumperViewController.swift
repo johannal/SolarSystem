@@ -101,4 +101,8 @@ class MoonJumperViewController: UIViewController {
         }, completion: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        manager.stopDeviceMotionUpdates()
+    }
+    
 }
