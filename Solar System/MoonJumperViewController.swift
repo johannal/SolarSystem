@@ -9,7 +9,7 @@ import UIKit
 import CoreMotion
 
 let maxJumpHeight: Int = 300 // ft
-let requiredAccellerationScaleFactor = 70.0 // Higher means you need less force to trigger a height
+let requiredAccellerationScaleFactor = 70.0 // Higher means you need less force to reach a height
 let minAccellerationForJumpAnimation = 10.5
 
 class MoonJumperViewController: UIViewController {
@@ -74,9 +74,6 @@ class MoonJumperViewController: UIViewController {
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: .beginFromCurrentState, animations: {
             self.astronautView.transform = CGAffineTransform.init(translationX: 0.0, y: -astronautBottomY)
         }, completion: nil)
-        
-        // TODO: Add code here to step through
-        print("😱")
     }
     
     @IBAction func didPan(_ sender: UIPanGestureRecognizer) {
