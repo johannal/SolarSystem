@@ -15,7 +15,7 @@
         <!--Main View Controller-->
         <scene sceneID="XBI-2k-WF2">
             <objects>
-                <viewController id="HW0-Hw-yYc" customClass="MainViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HW0-Hw-yYc" customClass="MainViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e7M-tV-OTn"/>
                         <viewControllerLayoutGuide type="bottom" id="EsL-Zo-nuS"/>
@@ -59,7 +59,7 @@
         <!--Solar System Controller-->
         <scene sceneID="S9v-f1-e0p">
             <objects>
-                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cEc-3t-BBr"/>
                         <viewControllerLayoutGuide type="bottom" id="2ia-0A-E25"/>
@@ -106,7 +106,7 @@
         <!--SceneHUD View Controller-->
         <scene sceneID="nl8-sg-zBp">
             <objects>
-                <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DeV-Mg-vkD"/>
                         <viewControllerLayoutGuide type="bottom" id="NHj-ar-4qu"/>
@@ -177,7 +177,7 @@
         <!--Planet Details View Controller-->
         <scene sceneID="ZLn-kE-Cwx">
             <objects>
-                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2j-16-jjZ"/>
                         <viewControllerLayoutGuide type="bottom" id="bEf-me-mQj"/>
@@ -335,7 +335,7 @@ Population: 7.347 billion</string>
         <!--Gravity Simulator View Controller-->
         <scene sceneID="8J2-bW-exR">
             <objects>
-                <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rQH-Aa-o5D"/>
                         <viewControllerLayoutGuide type="bottom" id="cke-26-cJ7"/>
@@ -369,7 +369,7 @@ Population: 7.347 billion</string>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="BackButtonArrow"/>
                                 <connections>
-                                    <segue destination="7fs-xD-dyR" kind="custom" customClass="DismissSegue" customModule="Science" customModuleProvider="target" id="C2J-8w-OrF"/>
+                                    <segue destination="7fs-xD-dyR" kind="custom" customClass="DismissSegue" customModule="Solar_System" customModuleProvider="target" id="C2J-8w-OrF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUPITER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-JB-nhg">
@@ -428,7 +428,7 @@ Population: 7.347 billion</string>
         <!--Moon Jumper View Controller-->
         <scene sceneID="VtU-Jy-Qbw">
             <objects>
-                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Science" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cch-Ov-4AS"/>
                         <viewControllerLayoutGuide type="bottom" id="5d2-8X-gJD"/>
@@ -470,13 +470,13 @@ Population: 7.347 billion</string>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="BackButtonArrow"/>
                                 <connections>
-                                    <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Science" customModuleProvider="target" id="Hdn-4G-gJK"/>
+                                    <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Solar_System" customModuleProvider="target" id="Hdn-4G-gJK"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-bu-SHx">
                                 <rect key="frame" x="24" y="262" width="327" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Science" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Solar_System" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="19" width="327" height="12"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -495,7 +495,7 @@ Population: 7.347 billion</string>
                                     <outletCollection property="gestureRecognizers" destination="cLm-uu-BjI" appends="YES" id="G7d-rw-zUG"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-X4-rPO" customClass="CircleView" customModule="Science" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-X4-rPO" customClass="CircleView" customModule="Solar_System" customModuleProvider="target">
                                 <rect key="frame" x="128" y="44" width="120" height="120"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="180ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
