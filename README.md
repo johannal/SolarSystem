@@ -5,7 +5,7 @@ About the app
 --------------------------------------
 **SolarSystem** provides a way for users to explore our solar system in a fun and interactive way. All the technical information is derived from various NASA sites, including [Planets][a_planets] and [Moons][b_moons].
 
-> The SoloarSystem app is provided under the [Apache License 2.0][license].
+> The SolarSystem app is provided under the [Apache License 2.0][license].
 
 [a_planets]: https://solarsystem.nasa.gov/planets/ "Planets"
 [b_moons]: https://solarsystem.nasa.gov/planets/solarsystem/moons "Moons"
