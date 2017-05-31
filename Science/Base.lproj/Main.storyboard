@@ -72,8 +72,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </sceneKitView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-hA-QQz">
-                                <rect key="frame" x="12" y="618" width="28" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-hA-QQz">
+                                <rect key="frame" x="12" y="611" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Wu6-dh-F0N"/>
+                                    <constraint firstAttribute="height" constant="44" id="joU-bY-BHP"/>
+                                </constraints>
                                 <state key="normal" image="GravityGauge"/>
                                 <connections>
                                     <segue destination="vGa-F7-cak" kind="presentation" id="MoB-gr-65g"/>
@@ -112,23 +116,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Dp-6sy" userLabel="Planet Comparison Button">
-                                <rect key="frame" x="20" y="31.5" width="36" height="22"/>
+                                <rect key="frame" x="20" y="28" width="36" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="ComparisonViewIcon"/>
                                 <connections>
                                     <action selector="showPlanetComparisonButtonPressed:" destination="Qlf-ef-AUO" eventType="touchUpInside" id="FNn-TD-zvw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO1-kQ-FAY" userLabel="Solar System Button">
-                                <rect key="frame" x="316" y="28" width="39" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO1-kQ-FAY" userLabel="Solar System Button">
+                                <rect key="frame" x="311" y="28" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="hQK-EW-erL"/>
+                                    <constraint firstAttribute="height" constant="44" id="sWv-Yf-MvA"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="OrbitalViewIcon"/>
                                 <connections>
                                     <action selector="showSolarSystemButtonPressed:" destination="Qlf-ef-AUO" eventType="touchUpInside" id="4eC-Ih-mfv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-W2-Jnx" userLabel="Planet Details Button">
-                                <rect key="frame" x="312" y="28" width="43" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-W2-Jnx" userLabel="Planet Details Button">
+                                <rect key="frame" x="311" y="28" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0iC-pG-Woq"/>
+                                    <constraint firstAttribute="width" constant="44" id="IeG-oQ-Rrg"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="PlanetDetailsIcon"/>
                                 <connections>
@@ -138,12 +150,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AfF-Dp-6sy" firstAttribute="top" secondItem="cCC-W2-Jnx" secondAttribute="top" id="CfM-sd-WSO"/>
                             <constraint firstItem="NHj-ar-4qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AfF-Dp-6sy" secondAttribute="bottom" id="QK8-rm-NHT"/>
                             <constraint firstItem="cCC-W2-Jnx" firstAttribute="top" secondItem="DeV-Mg-vkD" secondAttribute="bottom" constant="8" id="ROV-X8-dPo"/>
                             <constraint firstItem="AfF-Dp-6sy" firstAttribute="leading" secondItem="h8T-sx-DUJ" secondAttribute="leading" constant="20" id="bre-am-dmD"/>
                             <constraint firstItem="xO1-kQ-FAY" firstAttribute="top" secondItem="cCC-W2-Jnx" secondAttribute="top" id="khS-gr-4fG"/>
                             <constraint firstItem="NHj-ar-4qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cCC-W2-Jnx" secondAttribute="bottom" id="pCD-a4-nI0"/>
-                            <constraint firstItem="AfF-Dp-6sy" firstAttribute="centerY" secondItem="cCC-W2-Jnx" secondAttribute="centerY" id="pvh-MN-FFG"/>
                             <constraint firstAttribute="trailing" secondItem="cCC-W2-Jnx" secondAttribute="trailing" constant="20" id="rUZ-TK-zw0"/>
                             <constraint firstItem="xO1-kQ-FAY" firstAttribute="trailing" secondItem="cCC-W2-Jnx" secondAttribute="trailing" id="wTe-r3-bAW"/>
                         </constraints>
@@ -348,8 +360,11 @@ Population: 7.347 billion</string>
                                     <action selector="gravityButtonPressed:" destination="SIm-XS-6Jw" eventType="touchUpInside" id="2CD-mW-Xan"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-ym-AbD">
-                                <rect key="frame" x="12" y="32" width="60" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-ym-AbD">
+                                <rect key="frame" x="12" y="32" width="60" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yNM-lt-Yhc"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="BackButtonArrow"/>
@@ -446,8 +461,11 @@ Population: 7.347 billion</string>
                                     <constraint firstAttribute="height" constant="96" id="fy8-oh-6mW"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-WP-Yxq">
-                                <rect key="frame" x="12" y="32" width="60" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-WP-Yxq">
+                                <rect key="frame" x="12" y="32" width="60" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="o8j-bG-146"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="BackButtonArrow"/>
