@@ -40,6 +40,8 @@ class SolarSystemController: UIViewController {
         // Setup tap handling
         let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapSceneView))
         solarSystemSceneView.addGestureRecognizer(tapGestureRecognizer)
+        
+        solarSystemSceneView.autoenablesDefaultLighting = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,7 +89,6 @@ class SolarSystemController: UIViewController {
                 let diffuseImage = UIImage(named: diffuseTexture)
                 planetGeometry.firstMaterial?.diffuse.contents = diffuseImage
                 planetGeometry.firstMaterial?.diffuse.mipFilter = .linear
-                planetGeometry.firstMaterial?.lightingModel = .constant // no lighting
                 
                 // Assign normal texture if provided
                 if let normalTexture = planetInfo["normalTexture"] as? String {
@@ -154,19 +155,17 @@ class SolarSystemController: UIViewController {
             let ringGeometry = SCNTorus(ringRadius: planetGeometry.radius * 1.6, pipeRadius: planetGeometry.radius / 2.2)
             
             let ringMaterial = SCNMaterial()
-            ringMaterial.diffuse.contents = #imageLiteral(resourceName: "2k_saturn_ring_alpha")
+            ringMaterial.diffuse.contents = #imageLiteral(resourceName: "SaturnRing")
             ringMaterial.diffuse.wrapS = .repeat
             ringMaterial.diffuse.wrapT = .repeat
             ringMaterial.isDoubleSided =  true
             ringMaterial.diffuse.mipFilter = .none
             ringMaterial.diffuse.intensity = 0.8
             ringMaterial.diffuse.contentsTransform = SCNMatrix4MakeRotation(Float.pi/180 * -90.0, 0.0, 0.0, 1.0)
-            ringMaterial.emission.contents = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-            ringMaterial.emission.intensity = 0.2
-            ringMaterial.shininess = 0.25
             ringGeometry.firstMaterial = ringMaterial
             
             let ringNode = SCNNode()
+            ringNode.name = "Saturn Ring"
             ringNode.transform = SCNMatrix4MakeScale(1.0, 0.05, 1.0)
             ringNode.geometry = ringGeometry
             node.addChildNode(ringNode)

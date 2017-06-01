@@ -6,7 +6,7 @@
 		<key>diameter</key>
 		<integer>4879</integer>
 		<key>diffuseTexture</key>
-		<string>2k_mercury</string>
+		<string>Mercury</string>
 		<key>orbitalRadius</key>
 		<integer>57909050</integer>
 		<key>orbitalPeriod</key>
@@ -26,7 +26,7 @@
 		<key>diameter</key>
 		<integer>12103</integer>
 		<key>diffuseTexture</key>
-		<string>2k_venus_surface</string>
+		<string>Venus</string>
 		<key>orbitalRadius</key>
 		<integer>108208000</integer>
 		<key>orbitalPeriod</key>
@@ -48,11 +48,7 @@
 		<key>diameter</key>
 		<real>12756</real>
 		<key>diffuseTexture</key>
-		<string>2k_earth_daymap</string>
-		<key>normalTexture</key>
-		<string>2k_earth_normal_map</string>
-		<key>specularTexture</key>
-		<string>2k_earth_specular_map</string>
+		<string>Earth</string>
 		<key>orbitalRadius</key>
 		<real>149598023</real>
 		<key>orbitalPeriod</key>
@@ -72,7 +68,7 @@
 		<key>diameter</key>
 		<real>6792</real>
 		<key>diffuseTexture</key>
-		<string>2k_mars</string>
+		<string>Mars</string>
 		<key>orbitalRadius</key>
 		<integer>228000000</integer>
 		<key>orbitalPeriod</key>
@@ -92,7 +88,7 @@
 		<key>diameter</key>
 		<real>142984</real>
 		<key>diffuseTexture</key>
-		<string>2k_jupiter</string>
+		<string>Jupiter</string>
 		<key>orbitalRadius</key>
 		<real>778000000</real>
 		<key>orbitalPeriod</key>
@@ -112,7 +108,7 @@
 		<key>diameter</key>
 		<real>120536</real>
 		<key>diffuseTexture</key>
-		<string>2k_saturn</string>
+		<string>Saturn</string>
 		<key>orbitalRadius</key>
 		<real>1433000000</real>
 		<key>orbitalPeriod</key>
@@ -132,7 +128,7 @@
 		<key>diameter</key>
 		<real>51118</real>
 		<key>diffuseTexture</key>
-		<string>2k_uranus</string>
+		<string>Uranus</string>
 		<key>orbitalRadius</key>
 		<real>2872000000</real>
 		<key>orbitalPeriod</key>
@@ -152,7 +148,7 @@
 		<key>diameter</key>
 		<real>49528</real>
 		<key>diffuseTexture</key>
-		<string>2k_neptune</string>
+		<string>Neptune</string>
 		<key>orbitalRadius</key>
 		<real>4498000000</real>
 		<key>orbitalPeriod</key>
