@@ -12,7 +12,7 @@
 		<key>orbitalPeriod</key>
 		<integer>600</integer>
 		<key>rotationalPeriod</key>
-		<integer>5</integer>
+		<integer>10</integer>
 		<key>name</key>
 		<string>Mercury</string>
 		<key>description</key>
@@ -32,7 +32,7 @@
 		<key>orbitalPeriod</key>
 		<integer>900</integer>
 		<key>rotationalPeriod</key>
-		<integer>7</integer>
+		<integer>12</integer>
 		<key>rotationDirectionIsForward</key>
 		<false/>
 		<key>name</key>

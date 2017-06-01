@@ -59,7 +59,7 @@ class SolarSystemController: UIViewController {
     }
     
     func cameraNode() -> SCNNode {
-        return solarSystemSceneView.scene!.rootNode.childNode(withName: "camera", recursively: true)!
+        return solarSystemSceneView.scene!.rootNode.childNode(withName: "Camera", recursively: true)!
     }
     
     private func setupScene() {
@@ -196,6 +196,13 @@ class SolarSystemController: UIViewController {
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 1.0
             solarSystemCenterNode().opacity = 1.0
+            
+            let planetDetailsLightNode = solarSystemSceneView.scene?.rootNode.childNode(withName: "Planet Details Light Node", recursively: true)
+            planetDetailsLightNode?.light?.intensity = 0.0
+            
+            let ambientLightNode = solarSystemSceneView.scene?.rootNode.childNode(withName: "Ambient Light Node", recursively: true)
+            ambientLightNode?.light?.intensity = 4000.0
+            
             SCNTransaction.commit()
             
             presentedPlanet = nil
@@ -206,6 +213,13 @@ class SolarSystemController: UIViewController {
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 1.0
             solarSystemCenterNode().opacity = 0.0
+            
+            let planetDetailsLightNode = solarSystemSceneView.scene?.rootNode.childNode(withName: "Planet Details Light Node", recursively: true)
+            planetDetailsLightNode?.light?.intensity = 1000.0
+            
+            let ambientLightNode = solarSystemSceneView.scene?.rootNode.childNode(withName: "Ambient Light Node", recursively: true)
+            ambientLightNode?.light?.intensity = 800.0
+            
             SCNTransaction.commit()
             
             // Present the first planet (or sun?)
