@@ -63,6 +63,7 @@ public class SolarSystem {
         let y = radius * sin(p)
         let z = cos(incline) - (dx * sin(incline))
         let x = (z * sin(incline)) + (dx * cos(incline))
+        
         return SolarSystemPoint(x: x, y: y, z: z)
     }
     
