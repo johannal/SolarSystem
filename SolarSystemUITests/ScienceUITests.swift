@@ -2,7 +2,7 @@
 //  Solar SystemUITests.swift
 //  Solar SystemUITests
 //
-//  Copyright © 2017 Apple. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 import XCTest

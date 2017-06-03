@@ -2,8 +2,7 @@
 //  ObjectOfNoteCameraModel.swift
 //  Solar System
 //
-//  Created by Mike Ferris on 5/25/17.
-//  Copyright © 2017 Apple. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 import Foundation

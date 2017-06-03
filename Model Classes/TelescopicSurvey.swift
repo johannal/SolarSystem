@@ -2,8 +2,7 @@
 //  TelescopicSurvey.swift
 //  Solar System
 //
-//  Created by Russ Bishop on 5/20/17.
-//  Copyright © 2017 Apple. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 import Foundation

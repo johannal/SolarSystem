@@ -2,7 +2,7 @@
 //  PhysicsBody.swift
 //  Solar System
 //
-//  Copyright © 2017. All rights reserved.
+//  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
 import Foundation
