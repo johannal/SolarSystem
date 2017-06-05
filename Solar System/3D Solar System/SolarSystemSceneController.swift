@@ -10,13 +10,13 @@ import SceneKit
 import ARKit
 import SceneKit
 
-// Disable this to switch to plain ambient lighting
-let enableSceneLighting = true
-
 class SolarSystemController: UIViewController {
     
     @IBOutlet weak var solarSystemSceneView: SCNView!
     @IBOutlet weak var gravityButton: UIButton?
+    
+    // Lighting is on by default
+    var enableSceneLighting = true
     
     var timer: CADisplayLink!
     var lastTimestamp: TimeInterval = 0
@@ -33,6 +33,11 @@ class SolarSystemController: UIViewController {
         super.viewDidLoad()
         
         title = "The Solar System in 3D"
+        
+        // Use ambient lighting for simulator
+        if TARGET_OS_SIMULATOR != 0 {
+            enableSceneLighting = false
+        }
         
         setupScene()
         
