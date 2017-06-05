@@ -10,6 +10,9 @@ import SceneKit
 import ARKit
 import SceneKit
 
+// Disable this to switch to plain ambient lighting
+let enableSceneLighting = true
+
 class SolarSystemController: UIViewController {
     
     @IBOutlet weak var solarSystemSceneView: SCNView!
@@ -41,7 +44,13 @@ class SolarSystemController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapSceneView))
         solarSystemSceneView.addGestureRecognizer(tapGestureRecognizer)
         
-        solarSystemSceneView.autoenablesDefaultLighting = false
+        // Disable light sources
+        if !enableSceneLighting {
+            let rootNode = solarSystemSceneView.scene?.rootNode
+            rootNode?.childNode(withName: "Omni Light Node", recursively: true)?.isHidden = true
+            rootNode?.childNode(withName: "Ambient Light Node", recursively: true)?.isHidden = true
+        }
+        solarSystemSceneView.autoenablesDefaultLighting = !enableSceneLighting
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +109,11 @@ class SolarSystemController: UIViewController {
                 if let specularTexture = planetInfo["specularTexture"] as? String {
                     planetNode.geometry?.firstMaterial?.normal.contents = UIImage(named: specularTexture)
                     planetNode.geometry?.firstMaterial?.normal.mipFilter = .linear
+                }
+                
+                // Disable lighting if necessary
+                if !enableSceneLighting {
+                    planetGeometry.firstMaterial?.lightingModel = .constant // no lighting
                 }
                 
                 planetNode.geometry = planetGeometry
@@ -168,6 +182,11 @@ class SolarSystemController: UIViewController {
             ringNode.name = "Saturn Ring"
             ringNode.transform = SCNMatrix4MakeScale(1.0, 0.05, 1.0)
             ringNode.geometry = ringGeometry
+            
+            if !enableSceneLighting {
+                ringNode.geometry?.firstMaterial?.lightingModel = .constant // no lighting
+            }
+            
             node.addChildNode(ringNode)
             
             // No orbit for Saturn to make bug less obvious
