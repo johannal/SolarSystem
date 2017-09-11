@@ -9918,7 +9918,7 @@ public class Color: _ExpressibleByColorLiteral {
     ///   - green: the green value from 0 to 1.
     ///   - blue: the blue value from 0 to 1.
     ///   - alpha: the alpha value from 0 to 1.
-    public convenience required init(colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float) {
+    public convenience required init(_colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float) {
         self.init(red: Double(red), green: Double(green), blue: Double(blue), alpha: Double(alpha))
     }
     

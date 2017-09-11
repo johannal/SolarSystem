@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13145" systemVersion="16G9" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13517" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+    <device id="d_22" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13125"/>
+        <deployment version="4368" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13516"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,19 +17,15 @@
         <scene sceneID="XBI-2k-WF2">
             <objects>
                 <viewController id="HW0-Hw-yYc" customClass="MainViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="e7M-tV-OTn"/>
-                        <viewControllerLayoutGuide type="bottom" id="EsL-Zo-nuS"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7u2-h8-uWa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3X-oI-EFc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars2" translatesAutoresizingMaskIntoConstraints="NO" id="eD0-5Y-jIt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,11 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i3X-oI-EFc" firstAttribute="top" secondItem="e7M-tV-OTn" secondAttribute="bottom" id="aGG-kz-Zyr"/>
+                            <constraint firstItem="i3X-oI-EFc" firstAttribute="top" secondItem="7u2-h8-uWa" secondAttribute="top" id="aGG-kz-Zyr"/>
                             <constraint firstAttribute="trailing" secondItem="i3X-oI-EFc" secondAttribute="trailing" id="cFP-Y5-PUS"/>
                             <constraint firstItem="i3X-oI-EFc" firstAttribute="leading" secondItem="7u2-h8-uWa" secondAttribute="leading" id="gfh-fQ-22B"/>
-                            <constraint firstItem="EsL-Zo-nuS" firstAttribute="top" secondItem="i3X-oI-EFc" secondAttribute="bottom" id="m2Y-R0-jRG"/>
+                            <constraint firstAttribute="bottom" secondItem="i3X-oI-EFc" secondAttribute="bottom" id="m2Y-R0-jRG"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="PfD-cm-L9u"/>
                     </view>
                     <connections>
                         <outlet property="contentContainerView" destination="i3X-oI-EFc" id="dDa-pd-3Pv"/>
@@ -60,20 +58,16 @@
         <scene sceneID="S9v-f1-e0p">
             <objects>
                 <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cEc-3t-BBr"/>
-                        <viewControllerLayoutGuide type="bottom" id="2ia-0A-E25"/>
-                    </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="XVx-eM-eju">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zO-oN-32M">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-hA-QQz">
-                                <rect key="frame" x="12" y="611" width="44" height="44"/>
+                                <rect key="frame" x="12" y="722" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Wu6-dh-F0N"/>
                                     <constraint firstAttribute="height" constant="44" id="joU-bY-BHP"/>
@@ -86,13 +80,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lUF-hA-QQz" firstAttribute="leading" secondItem="XVx-eM-eju" secondAttribute="leading" constant="12" id="3et-Qm-Dr2"/>
+                            <constraint firstItem="lUF-hA-QQz" firstAttribute="leading" secondItem="Rut-9I-CuO" secondAttribute="leading" constant="12" id="3et-Qm-Dr2"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="top" secondItem="XVx-eM-eju" secondAttribute="top" id="57s-2N-clX"/>
-                            <constraint firstItem="2ia-0A-E25" firstAttribute="top" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
-                            <constraint firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
-                            <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="XVx-eM-eju" secondAttribute="leading" id="vXt-kg-Sts"/>
-                            <constraint firstItem="2ia-0A-E25" firstAttribute="top" secondItem="lUF-hA-QQz" secondAttribute="bottom" constant="12" id="wQW-Uc-scP"/>
+                            <constraint firstItem="Rut-9I-CuO" firstAttribute="bottom" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
+                            <constraint firstItem="Rut-9I-CuO" firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
+                            <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="Rut-9I-CuO" secondAttribute="leading" id="vXt-kg-Sts"/>
+                            <constraint firstItem="Rut-9I-CuO" firstAttribute="bottom" secondItem="lUF-hA-QQz" secondAttribute="bottom" constant="12" id="wQW-Uc-scP"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rut-9I-CuO"/>
                     </view>
                     <connections>
                         <outlet property="gravityButton" destination="lUF-hA-QQz" id="3zV-8H-wxd"/>
@@ -107,16 +102,12 @@
         <scene sceneID="nl8-sg-zBp">
             <objects>
                 <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DeV-Mg-vkD"/>
-                        <viewControllerLayoutGuide type="bottom" id="NHj-ar-4qu"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h8T-sx-DUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Dp-6sy" userLabel="Planet Comparison Button">
-                                <rect key="frame" x="20" y="28" width="36" height="22"/>
+                                <rect key="frame" x="20" y="52" width="36" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="ComparisonViewIcon"/>
                                 <connections>
@@ -124,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO1-kQ-FAY" userLabel="Solar System Button">
-                                <rect key="frame" x="311" y="28" width="44" height="44"/>
+                                <rect key="frame" x="311" y="52" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="hQK-EW-erL"/>
                                     <constraint firstAttribute="height" constant="44" id="sWv-Yf-MvA"/>
@@ -136,7 +127,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-W2-Jnx" userLabel="Planet Details Button">
-                                <rect key="frame" x="311" y="28" width="44" height="44"/>
+                                <rect key="frame" x="311" y="52" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0iC-pG-Woq"/>
                                     <constraint firstAttribute="width" constant="44" id="IeG-oQ-Rrg"/>
@@ -151,14 +142,15 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AfF-Dp-6sy" firstAttribute="top" secondItem="cCC-W2-Jnx" secondAttribute="top" id="CfM-sd-WSO"/>
-                            <constraint firstItem="NHj-ar-4qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AfF-Dp-6sy" secondAttribute="bottom" id="QK8-rm-NHT"/>
-                            <constraint firstItem="cCC-W2-Jnx" firstAttribute="top" secondItem="DeV-Mg-vkD" secondAttribute="bottom" constant="8" id="ROV-X8-dPo"/>
-                            <constraint firstItem="AfF-Dp-6sy" firstAttribute="leading" secondItem="h8T-sx-DUJ" secondAttribute="leading" constant="20" id="bre-am-dmD"/>
+                            <constraint firstItem="2ts-7b-wVJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="AfF-Dp-6sy" secondAttribute="bottom" id="QK8-rm-NHT"/>
+                            <constraint firstItem="cCC-W2-Jnx" firstAttribute="top" secondItem="2ts-7b-wVJ" secondAttribute="top" constant="8" id="ROV-X8-dPo"/>
+                            <constraint firstItem="AfF-Dp-6sy" firstAttribute="leading" secondItem="2ts-7b-wVJ" secondAttribute="leading" constant="20" id="bre-am-dmD"/>
                             <constraint firstItem="xO1-kQ-FAY" firstAttribute="top" secondItem="cCC-W2-Jnx" secondAttribute="top" id="khS-gr-4fG"/>
-                            <constraint firstItem="NHj-ar-4qu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cCC-W2-Jnx" secondAttribute="bottom" id="pCD-a4-nI0"/>
-                            <constraint firstAttribute="trailing" secondItem="cCC-W2-Jnx" secondAttribute="trailing" constant="20" id="rUZ-TK-zw0"/>
+                            <constraint firstItem="2ts-7b-wVJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cCC-W2-Jnx" secondAttribute="bottom" id="pCD-a4-nI0"/>
+                            <constraint firstItem="2ts-7b-wVJ" firstAttribute="trailing" secondItem="cCC-W2-Jnx" secondAttribute="trailing" constant="20" id="rUZ-TK-zw0"/>
                             <constraint firstItem="xO1-kQ-FAY" firstAttribute="trailing" secondItem="cCC-W2-Jnx" secondAttribute="trailing" id="wTe-r3-bAW"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="2ts-7b-wVJ"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -178,46 +170,42 @@
         <scene sceneID="ZLn-kE-Cwx">
             <objects>
                 <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y2j-16-jjZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="bEf-me-mQj"/>
-                    </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="xxU-xn-gVg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKV-NZ-amv">
-                                <rect key="frame" x="0.0" y="302.5" width="375" height="302.5"/>
+                                <rect key="frame" x="0.0" y="401" width="375" height="302.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" text="EARTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDK-tq-PXW">
-                                        <rect key="frame" x="120.5" y="0.5" width="134" height="55"/>
+                                        <rect key="frame" x="120.66666666666669" y="0.33333333333331439" width="134" height="55"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-3h-1cr" userLabel="Top Separater View">
-                                        <rect key="frame" x="19" y="63.5" width="337.5" height="1"/>
+                                        <rect key="frame" x="19" y="63.333333333333314" width="337.66666666666669" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="XY5-Jz-5tU"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7w-yI-C1K">
-                                        <rect key="frame" x="36" y="84.5" width="304" height="130.5"/>
+                                        <rect key="frame" x="36" y="84.333333333333329" width="304" height="130.33333333333337"/>
                                         <string key="text">Earth otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial planets.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-st-i57" userLabel="Bottom Separator View">
-                                        <rect key="frame" x="19" y="235" width="337.5" height="1"/>
+                                        <rect key="frame" x="19" y="234.66666666666663" width="337.66666666666669" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Rir-zO-6EM"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
-                                        <rect key="frame" x="116" y="251" width="144" height="52"/>
+                                        <rect key="frame" x="116" y="250.66666666666663" width="144" height="52"/>
                                         <string key="text">Radius: 3,959 mi
 Age: 4.543 billion years
 Population: 7.347 billion</string>
@@ -245,10 +233,10 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jz0-Vq-8CH">
-                                <rect key="frame" x="0.0" y="20" width="375" height="282.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="357"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-h3u">
-                                        <rect key="frame" x="12" y="101" width="50" height="80"/>
+                                        <rect key="frame" x="12" y="138.33333333333334" width="50" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="DdF-P3-Bp9"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="GJo-dz-zCn"/>
@@ -259,7 +247,7 @@ Population: 7.347 billion</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsr-Pt-6ba">
-                                        <rect key="frame" x="313" y="101" width="50" height="80"/>
+                                        <rect key="frame" x="313" y="138.33333333333334" width="50" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="3Xy-dG-1Ec"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="4Kv-ZI-geb"/>
@@ -279,7 +267,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meF-jH-UOk">
-                                <rect key="frame" x="115" y="626" width="146" height="33"/>
+                                <rect key="frame" x="115" y="737" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Experience gravity"/>
@@ -291,17 +279,18 @@ Population: 7.347 billion</string>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="2bm-fi-XAO"/>
+                            <constraint firstItem="BKV-NZ-amv" firstAttribute="leading" secondItem="f4Y-eQ-TjR" secondAttribute="leading" id="2bm-fi-XAO"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="top" secondItem="jz0-Vq-8CH" secondAttribute="bottom" id="B41-Mz-Ob2"/>
-                            <constraint firstItem="jz0-Vq-8CH" firstAttribute="leading" secondItem="xxU-xn-gVg" secondAttribute="leading" id="C0c-JL-6kl"/>
-                            <constraint firstItem="meF-jH-UOk" firstAttribute="centerX" secondItem="xxU-xn-gVg" secondAttribute="centerX" id="DuO-4E-sdt"/>
+                            <constraint firstItem="jz0-Vq-8CH" firstAttribute="leading" secondItem="f4Y-eQ-TjR" secondAttribute="leading" id="C0c-JL-6kl"/>
+                            <constraint firstItem="meF-jH-UOk" firstAttribute="centerX" secondItem="f4Y-eQ-TjR" secondAttribute="centerX" id="DuO-4E-sdt"/>
                             <constraint firstItem="meF-jH-UOk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BKV-NZ-amv" secondAttribute="bottom" constant="12" id="G2M-cO-QhB"/>
-                            <constraint firstAttribute="trailing" secondItem="jz0-Vq-8CH" secondAttribute="trailing" id="R9v-3C-jb3"/>
-                            <constraint firstItem="bEf-me-mQj" firstAttribute="top" secondItem="meF-jH-UOk" secondAttribute="bottom" constant="8" id="iyt-b0-tOa"/>
-                            <constraint firstAttribute="trailing" secondItem="BKV-NZ-amv" secondAttribute="trailing" id="jim-dn-W2l"/>
-                            <constraint firstItem="jz0-Vq-8CH" firstAttribute="top" secondItem="Y2j-16-jjZ" secondAttribute="bottom" id="kfa-dD-leF"/>
+                            <constraint firstItem="f4Y-eQ-TjR" firstAttribute="trailing" secondItem="jz0-Vq-8CH" secondAttribute="trailing" id="R9v-3C-jb3"/>
+                            <constraint firstItem="f4Y-eQ-TjR" firstAttribute="bottom" secondItem="meF-jH-UOk" secondAttribute="bottom" constant="8" id="iyt-b0-tOa"/>
+                            <constraint firstItem="f4Y-eQ-TjR" firstAttribute="trailing" secondItem="BKV-NZ-amv" secondAttribute="trailing" id="jim-dn-W2l"/>
+                            <constraint firstItem="jz0-Vq-8CH" firstAttribute="top" secondItem="f4Y-eQ-TjR" secondAttribute="top" id="kfa-dD-leF"/>
                             <constraint firstItem="BKV-NZ-amv" firstAttribute="centerY" secondItem="xxU-xn-gVg" secondAttribute="centerY" multiplier="1.36" priority="751" id="oQi-l3-95P"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="f4Y-eQ-TjR"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="p7J-YT-Lne" appends="YES" id="xQo-I0-WUh"/>
                             <outletCollection property="gestureRecognizers" destination="qA1-6k-GhE" appends="YES" id="rNy-UJ-2Tn"/>
@@ -336,16 +325,12 @@ Population: 7.347 billion</string>
         <scene sceneID="8J2-bW-exR">
             <objects>
                 <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rQH-Aa-o5D"/>
-                        <viewControllerLayoutGuide type="bottom" id="cke-26-cJ7"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vP0-To-fAb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -353,7 +338,7 @@ Population: 7.347 billion</string>
                                 </connections>
                             </skView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-fr-W7T">
-                                <rect key="frame" x="290" y="582" width="73" height="73"/>
+                                <rect key="frame" x="290" y="693" width="73" height="73"/>
                                 <state key="normal" image="GravityButtonOFF"/>
                                 <state key="selected" image="GravityButtonON"/>
                                 <connections>
@@ -361,7 +346,7 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-ym-AbD">
-                                <rect key="frame" x="12" y="32" width="60" height="44"/>
+                                <rect key="frame" x="12" y="56" width="60" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="yNM-lt-Yhc"/>
                                 </constraints>
@@ -373,19 +358,19 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUPITER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-JB-nhg">
-                                <rect key="frame" x="104" y="84" width="168.5" height="57.5"/>
+                                <rect key="frame" x="103.99999999999999" y="108.00000000000001" width="168.66666666666663" height="57.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAVITY TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-bQ-hUW">
-                                <rect key="frame" x="108.5" y="154.5" width="160" height="31.5"/>
+                                <rect key="frame" x="108.66666666666669" y="178.66666666666666" width="160" height="31.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-KE-ebe">
-                                <rect key="frame" x="68" y="145.5" width="240" height="1"/>
+                                <rect key="frame" x="68" y="169.66666666666666" width="240" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="b7d-pA-bv2"/>
@@ -395,21 +380,22 @@ Population: 7.347 billion</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nbi-ym-AbD" firstAttribute="leading" secondItem="vP0-To-fAb" secondAttribute="leading" constant="12" id="27w-kN-T59"/>
-                            <constraint firstItem="cke-26-cJ7" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
+                            <constraint firstItem="nbi-ym-AbD" firstAttribute="leading" secondItem="bgB-Ws-VgN" secondAttribute="leading" constant="12" id="27w-kN-T59"/>
+                            <constraint firstItem="bgB-Ws-VgN" firstAttribute="bottom" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
                             <constraint firstItem="hEe-bQ-hUW" firstAttribute="top" secondItem="tz4-KE-ebe" secondAttribute="bottom" constant="8" id="Eip-fE-Z1t"/>
                             <constraint firstItem="hEe-bQ-hUW" firstAttribute="centerX" secondItem="PGI-JB-nhg" secondAttribute="centerX" id="LLh-vH-Ahf"/>
-                            <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="rQH-Aa-o5D" secondAttribute="bottom" id="Pr6-6f-kfT"/>
+                            <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="bgB-Ws-VgN" secondAttribute="top" id="Pr6-6f-kfT"/>
                             <constraint firstItem="PGI-JB-nhg" firstAttribute="centerX" secondItem="zNm-mF-IXM" secondAttribute="centerX" id="RPk-xW-RID"/>
-                            <constraint firstItem="cke-26-cJ7" firstAttribute="top" secondItem="6bh-fr-W7T" secondAttribute="bottom" constant="12" id="TeH-LI-oW2"/>
+                            <constraint firstItem="bgB-Ws-VgN" firstAttribute="bottom" secondItem="6bh-fr-W7T" secondAttribute="bottom" constant="12" id="TeH-LI-oW2"/>
                             <constraint firstItem="tz4-KE-ebe" firstAttribute="centerX" secondItem="PGI-JB-nhg" secondAttribute="centerX" id="VYD-oe-BtT"/>
                             <constraint firstItem="tz4-KE-ebe" firstAttribute="top" secondItem="PGI-JB-nhg" secondAttribute="bottom" constant="4" id="XFC-ff-jx4"/>
-                            <constraint firstAttribute="trailing" secondItem="zNm-mF-IXM" secondAttribute="trailing" id="ZDF-1x-xhR"/>
-                            <constraint firstAttribute="trailing" secondItem="6bh-fr-W7T" secondAttribute="trailing" constant="12" id="bYW-T2-yWT"/>
-                            <constraint firstItem="nbi-ym-AbD" firstAttribute="top" secondItem="rQH-Aa-o5D" secondAttribute="bottom" constant="12" id="fBH-I0-IUu"/>
-                            <constraint firstItem="zNm-mF-IXM" firstAttribute="leading" secondItem="vP0-To-fAb" secondAttribute="leading" id="iHw-Qy-ceg"/>
+                            <constraint firstItem="bgB-Ws-VgN" firstAttribute="trailing" secondItem="zNm-mF-IXM" secondAttribute="trailing" id="ZDF-1x-xhR"/>
+                            <constraint firstItem="bgB-Ws-VgN" firstAttribute="trailing" secondItem="6bh-fr-W7T" secondAttribute="trailing" constant="12" id="bYW-T2-yWT"/>
+                            <constraint firstItem="nbi-ym-AbD" firstAttribute="top" secondItem="bgB-Ws-VgN" secondAttribute="top" constant="12" id="fBH-I0-IUu"/>
+                            <constraint firstItem="zNm-mF-IXM" firstAttribute="leading" secondItem="bgB-Ws-VgN" secondAttribute="leading" id="iHw-Qy-ceg"/>
                             <constraint firstItem="PGI-JB-nhg" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="top" constant="64" id="vuD-bv-Fma"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="bgB-Ws-VgN"/>
                     </view>
                     <connections>
                         <outlet property="gravityView" destination="zNm-mF-IXM" id="hce-cW-ffp"/>
@@ -429,16 +415,12 @@ Population: 7.347 billion</string>
         <scene sceneID="VtU-Jy-Qbw">
             <objects>
                 <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Cch-Ov-4AS"/>
-                        <viewControllerLayoutGuide type="bottom" id="5d2-8X-gJD"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dfg-E9-Bow">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhI-W0-6p1">
-                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JumpPlanetBottom" translatesAutoresizingMaskIntoConstraints="NO" id="MpD-4n-gR8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -454,7 +436,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="atO-so-9py">
-                                <rect key="frame" x="156" y="491" width="62" height="96"/>
+                                <rect key="frame" x="156" y="636" width="62" height="96"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="L5A-D9-WVm"/>
@@ -462,7 +444,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-WP-Yxq">
-                                <rect key="frame" x="12" y="32" width="60" height="44"/>
+                                <rect key="frame" x="12" y="56" width="60" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="o8j-bG-146"/>
                                 </constraints>
@@ -474,7 +456,7 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-bu-SHx">
-                                <rect key="frame" x="24" y="262" width="327" height="50"/>
+                                <rect key="frame" x="24" y="407" width="327" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Solar_System" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="19" width="327" height="12"/>
@@ -496,10 +478,10 @@ Population: 7.347 billion</string>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-X4-rPO" customClass="CircleView" customModule="Solar_System" customModuleProvider="target">
-                                <rect key="frame" x="128" y="44" width="120" height="120"/>
+                                <rect key="frame" x="128" y="68" width="120" height="120"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="180ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
-                                        <rect key="frame" x="21.5" y="21.5" width="77" height="77"/>
+                                        <rect key="frame" x="21.666666666666657" y="21.666666666666671" width="77" height="77"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FBQ-yv-Ja8" secondAttribute="height" multiplier="1:1" id="Wi0-kZ-Ts9"/>
@@ -529,22 +511,23 @@ Population: 7.347 billion</string>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="f5X-bu-SHx" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="24" id="5MT-lS-WlF"/>
+                            <constraint firstItem="f5X-bu-SHx" firstAttribute="leading" secondItem="ak7-Hh-U1l" secondAttribute="leading" constant="24" id="5MT-lS-WlF"/>
                             <constraint firstItem="bhI-W0-6p1" firstAttribute="top" secondItem="f5X-bu-SHx" secondAttribute="centerY" priority="750" constant="300" id="6Ze-dO-G55"/>
-                            <constraint firstItem="atO-so-9py" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="BPB-52-XT8"/>
-                            <constraint firstItem="Rkx-X4-rPO" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" constant="24" id="H02-tb-2c9"/>
-                            <constraint firstItem="5n0-WP-Yxq" firstAttribute="top" secondItem="Cch-Ov-4AS" secondAttribute="bottom" constant="12" id="NBq-72-ST6"/>
+                            <constraint firstItem="atO-so-9py" firstAttribute="centerX" secondItem="ak7-Hh-U1l" secondAttribute="centerX" id="BPB-52-XT8"/>
+                            <constraint firstItem="Rkx-X4-rPO" firstAttribute="top" secondItem="ak7-Hh-U1l" secondAttribute="top" constant="24" id="H02-tb-2c9"/>
+                            <constraint firstItem="5n0-WP-Yxq" firstAttribute="top" secondItem="ak7-Hh-U1l" secondAttribute="top" constant="12" id="NBq-72-ST6"/>
                             <constraint firstItem="dRI-cg-PUl" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="Rkx-X4-rPO" secondAttribute="bottom" id="NDX-ri-lGY"/>
-                            <constraint firstItem="5d2-8X-gJD" firstAttribute="top" secondItem="bhI-W0-6p1" secondAttribute="bottom" id="NIB-JB-56A"/>
+                            <constraint firstAttribute="bottom" secondItem="bhI-W0-6p1" secondAttribute="bottom" id="NIB-JB-56A"/>
                             <constraint firstItem="dRI-cg-PUl" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="Rkx-X4-rPO" secondAttribute="bottom" id="ObA-fs-FrL"/>
-                            <constraint firstItem="f5X-bu-SHx" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="PFF-Ki-IOp"/>
-                            <constraint firstItem="bhI-W0-6p1" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" id="c5N-dy-JhE"/>
-                            <constraint firstItem="Rkx-X4-rPO" firstAttribute="centerX" secondItem="dfg-E9-Bow" secondAttribute="centerX" id="cUt-gi-Wpd"/>
-                            <constraint firstAttribute="trailing" secondItem="bhI-W0-6p1" secondAttribute="trailing" id="jnN-1m-Gpw"/>
+                            <constraint firstItem="f5X-bu-SHx" firstAttribute="centerX" secondItem="ak7-Hh-U1l" secondAttribute="centerX" id="PFF-Ki-IOp"/>
+                            <constraint firstItem="bhI-W0-6p1" firstAttribute="leading" secondItem="ak7-Hh-U1l" secondAttribute="leading" id="c5N-dy-JhE"/>
+                            <constraint firstItem="Rkx-X4-rPO" firstAttribute="centerX" secondItem="ak7-Hh-U1l" secondAttribute="centerX" id="cUt-gi-Wpd"/>
+                            <constraint firstItem="ak7-Hh-U1l" firstAttribute="trailing" secondItem="bhI-W0-6p1" secondAttribute="trailing" id="jnN-1m-Gpw"/>
                             <constraint firstItem="atO-so-9py" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dRI-cg-PUl" secondAttribute="centerY" id="tiH-0a-fuB"/>
                             <constraint firstItem="bhI-W0-6p1" firstAttribute="top" secondItem="atO-so-9py" secondAttribute="bottom" id="u7z-Oi-X6I"/>
-                            <constraint firstItem="5n0-WP-Yxq" firstAttribute="leading" secondItem="dfg-E9-Bow" secondAttribute="leading" constant="12" id="zA7-yD-zId"/>
+                            <constraint firstItem="5n0-WP-Yxq" firstAttribute="leading" secondItem="ak7-Hh-U1l" secondAttribute="leading" constant="12" id="zA7-yD-zId"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ak7-Hh-U1l"/>
                     </view>
                     <connections>
                         <outlet property="astronautView" destination="atO-so-9py" id="DRS-PD-WAU"/>
@@ -579,4 +562,8 @@ Population: 7.347 billion</string>
         <image name="RightArrow" width="23" height="49"/>
         <image name="stars2" width="375" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8lG-IW-EI4"/>
+        <segue reference="Hdn-4G-gJK"/>
+    </inferredMetricsTieBreakers>
 </document>
