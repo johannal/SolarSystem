@@ -393,6 +393,7 @@ Population: 7.347 billion</string>
                             <constraint firstItem="bgB-Ws-VgN" firstAttribute="trailing" secondItem="6bh-fr-W7T" secondAttribute="trailing" constant="12" id="bYW-T2-yWT"/>
                             <constraint firstItem="nbi-ym-AbD" firstAttribute="top" secondItem="bgB-Ws-VgN" secondAttribute="top" constant="12" id="fBH-I0-IUu"/>
                             <constraint firstItem="zNm-mF-IXM" firstAttribute="leading" secondItem="bgB-Ws-VgN" secondAttribute="leading" id="iHw-Qy-ceg"/>
+                            <constraint firstItem="bgB-Ws-VgN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nbi-ym-AbD" secondAttribute="trailing" id="kLZ-fE-Xcy"/>
                             <constraint firstItem="PGI-JB-nhg" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="top" constant="64" id="vuD-bv-Fma"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgB-Ws-VgN"/>
@@ -522,6 +523,7 @@ Population: 7.347 billion</string>
                             <constraint firstItem="f5X-bu-SHx" firstAttribute="centerX" secondItem="ak7-Hh-U1l" secondAttribute="centerX" id="PFF-Ki-IOp"/>
                             <constraint firstItem="bhI-W0-6p1" firstAttribute="leading" secondItem="ak7-Hh-U1l" secondAttribute="leading" id="c5N-dy-JhE"/>
                             <constraint firstItem="Rkx-X4-rPO" firstAttribute="centerX" secondItem="ak7-Hh-U1l" secondAttribute="centerX" id="cUt-gi-Wpd"/>
+                            <constraint firstItem="ak7-Hh-U1l" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5n0-WP-Yxq" secondAttribute="trailing" id="hjU-Mg-bEW"/>
                             <constraint firstItem="ak7-Hh-U1l" firstAttribute="trailing" secondItem="bhI-W0-6p1" secondAttribute="trailing" id="jnN-1m-Gpw"/>
                             <constraint firstItem="atO-so-9py" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dRI-cg-PUl" secondAttribute="centerY" id="tiH-0a-fuB"/>
                             <constraint firstItem="bhI-W0-6p1" firstAttribute="top" secondItem="atO-so-9py" secondAttribute="bottom" id="u7z-Oi-X6I"/>
@@ -563,7 +565,7 @@ Population: 7.347 billion</string>
         <image name="stars2" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8lG-IW-EI4"/>
         <segue reference="Hdn-4G-gJK"/>
+        <segue reference="C2J-8w-OrF"/>
     </inferredMetricsTieBreakers>
 </document>
