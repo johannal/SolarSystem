@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13517" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
-    <device id="d_22" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13524" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4368" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13516"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13521"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zO-oN-32M">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-hA-QQz">
@@ -82,7 +82,7 @@
                         <constraints>
                             <constraint firstItem="lUF-hA-QQz" firstAttribute="leading" secondItem="Rut-9I-CuO" secondAttribute="leading" constant="12" id="3et-Qm-Dr2"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="top" secondItem="XVx-eM-eju" secondAttribute="top" id="57s-2N-clX"/>
-                            <constraint firstItem="Rut-9I-CuO" firstAttribute="bottom" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
+                            <constraint firstAttribute="bottom" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
                             <constraint firstItem="Rut-9I-CuO" firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="Rut-9I-CuO" secondAttribute="leading" id="vXt-kg-Sts"/>
                             <constraint firstItem="Rut-9I-CuO" firstAttribute="bottom" secondItem="lUF-hA-QQz" secondAttribute="bottom" constant="12" id="wQW-Uc-scP"/>
@@ -178,34 +178,34 @@
                                 <rect key="frame" x="0.0" y="401" width="375" height="302.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" text="EARTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDK-tq-PXW">
-                                        <rect key="frame" x="120.66666666666669" y="0.33333333333331439" width="134" height="55"/>
+                                        <rect key="frame" x="120.66666666666669" y="0.0" width="134" height="55"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-3h-1cr" userLabel="Top Separater View">
-                                        <rect key="frame" x="19" y="63.333333333333314" width="337.66666666666669" height="1"/>
+                                        <rect key="frame" x="19" y="63" width="337.66666666666669" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="XY5-Jz-5tU"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7w-yI-C1K">
-                                        <rect key="frame" x="36" y="84.333333333333329" width="304" height="130.33333333333337"/>
+                                        <rect key="frame" x="36" y="84.000000000000014" width="304" height="130.33333333333337"/>
                                         <string key="text">Earth otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial planets.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-st-i57" userLabel="Bottom Separator View">
-                                        <rect key="frame" x="19" y="234.66666666666663" width="337.66666666666669" height="1"/>
+                                        <rect key="frame" x="19" y="234.33333333333337" width="337.66666666666669" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Rir-zO-6EM"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
-                                        <rect key="frame" x="116" y="250.66666666666663" width="144" height="52"/>
+                                        <rect key="frame" x="116" y="250.33333333333337" width="144" height="52"/>
                                         <string key="text">Radius: 3,959 mi
 Age: 4.543 billion years
 Population: 7.347 billion</string>
@@ -330,7 +330,7 @@ Population: 7.347 billion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -380,11 +380,12 @@ Population: 7.347 billion</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PGI-JB-nhg" firstAttribute="top" secondItem="bgB-Ws-VgN" secondAttribute="top" constant="64.000000000000014" id="1lL-C4-QpA"/>
                             <constraint firstItem="nbi-ym-AbD" firstAttribute="leading" secondItem="bgB-Ws-VgN" secondAttribute="leading" constant="12" id="27w-kN-T59"/>
-                            <constraint firstItem="bgB-Ws-VgN" firstAttribute="bottom" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
+                            <constraint firstAttribute="bottom" secondItem="zNm-mF-IXM" secondAttribute="bottom" id="BsY-Ft-NhL"/>
                             <constraint firstItem="hEe-bQ-hUW" firstAttribute="top" secondItem="tz4-KE-ebe" secondAttribute="bottom" constant="8" id="Eip-fE-Z1t"/>
                             <constraint firstItem="hEe-bQ-hUW" firstAttribute="centerX" secondItem="PGI-JB-nhg" secondAttribute="centerX" id="LLh-vH-Ahf"/>
-                            <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="bgB-Ws-VgN" secondAttribute="top" id="Pr6-6f-kfT"/>
+                            <constraint firstItem="zNm-mF-IXM" firstAttribute="top" secondItem="vP0-To-fAb" secondAttribute="top" id="Pr6-6f-kfT"/>
                             <constraint firstItem="PGI-JB-nhg" firstAttribute="centerX" secondItem="zNm-mF-IXM" secondAttribute="centerX" id="RPk-xW-RID"/>
                             <constraint firstItem="bgB-Ws-VgN" firstAttribute="bottom" secondItem="6bh-fr-W7T" secondAttribute="bottom" constant="12" id="TeH-LI-oW2"/>
                             <constraint firstItem="tz4-KE-ebe" firstAttribute="centerX" secondItem="PGI-JB-nhg" secondAttribute="centerX" id="VYD-oe-BtT"/>
@@ -394,7 +395,6 @@ Population: 7.347 billion</string>
                             <constraint firstItem="nbi-ym-AbD" firstAttribute="top" secondItem="bgB-Ws-VgN" secondAttribute="top" constant="12" id="fBH-I0-IUu"/>
                             <constraint firstItem="zNm-mF-IXM" firstAttribute="leading" secondItem="bgB-Ws-VgN" secondAttribute="leading" id="iHw-Qy-ceg"/>
                             <constraint firstItem="bgB-Ws-VgN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nbi-ym-AbD" secondAttribute="trailing" id="kLZ-fE-Xcy"/>
-                            <constraint firstItem="PGI-JB-nhg" firstAttribute="top" secondItem="zNm-mF-IXM" secondAttribute="top" constant="64" id="vuD-bv-Fma"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgB-Ws-VgN"/>
                     </view>
@@ -565,7 +565,7 @@ Population: 7.347 billion</string>
         <image name="stars2" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hdn-4G-gJK"/>
         <segue reference="C2J-8w-OrF"/>
+        <segue reference="MoB-gr-65g"/>
     </inferredMetricsTieBreakers>
 </document>
