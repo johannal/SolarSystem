@@ -24,6 +24,10 @@
 		9E272B5C1ED50A3B00C2A5B2 /* MoonJumperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E272B5B1ED50A3B00C2A5B2 /* MoonJumperViewController.swift */; };
 		9E272B5E1ED50DB600C2A5B2 /* HeightIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E272B5D1ED50DB600C2A5B2 /* HeightIndicatorView.swift */; };
 		9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */; };
+		9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
+		9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
+		9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
+		9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */; };
 		9E53D15A1ECF651E002A0001 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E53D1591ECF651E002A0001 /* MainViewController.swift */; };
 		9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E53D15B1ECF715E002A0001 /* GravitySimulator.sks */; };
 		9E53D15E1ECF715E002A0001 /* GravitySimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E53D15C1ECF715E002A0001 /* GravitySimulatorViewController.swift */; };
@@ -31,9 +35,6 @@
 		9EAE88631ED2504200EB5C1E /* GravitySimulatorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE88621ED2504200EB5C1E /* GravitySimulatorScene.swift */; };
 		9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */; };
 		9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */; };
-		9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
-		9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
-		9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
 		9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
@@ -42,7 +43,6 @@
 		EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */; };
 		EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = EE58186F1ECCFD9900733C90 /* Asteroid.m */; };
 		EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */; };
-		EECE23D11ECCC60100D0CC7A /* ThePlanets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,7 +333,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					9E0404161ED8D5B30014B5F9 = {
@@ -377,13 +377,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EC408081EBFEAEB00F7F8A1 /* LaunchScreen.storyboard in Resources */,
 				9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */,
-				9EC408051EBFEAEB00F7F8A1 /* Assets.xcassets in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
-				9EC408031EBFEAEB00F7F8A1 /* Main.storyboard in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
-				EECE23D11ECCC60100D0CC7A /* ThePlanets.storyboard in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,
 			);
@@ -404,6 +400,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */,
+				9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */,
+				9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */,
+				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
 				9E2017351ECB7E95002373D7 /* SolarSystemSceneController.swift in Sources */,
 				D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */,
 				07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */,
@@ -513,6 +513,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -520,6 +521,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -570,6 +572,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -577,6 +580,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -613,7 +617,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
 				INFOPLIST_FILE = "Solar System/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -631,7 +635,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 59GAB85EFG;
 				INFOPLIST_FILE = "Solar System/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
