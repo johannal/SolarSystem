@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13524" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14227" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4368" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13521"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14221"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="246" y="1223"/>
         </scene>
-        <!--Solar System Controller-->
+        <!--Solar System Scene View Controller-->
         <scene sceneID="S9v-f1-e0p">
             <objects>
-                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemSceneViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="XVx-eM-eju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKV-NZ-amv">
-                                <rect key="frame" x="0.0" y="401" width="375" height="302.33333333333326"/>
+                                <rect key="frame" x="0.0" y="401.33333333333326" width="375" height="302"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" text="EARTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDK-tq-PXW">
                                         <rect key="frame" x="120.66666666666669" y="0.0" width="134" height="55"/>
@@ -198,14 +198,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-st-i57" userLabel="Bottom Separator View">
-                                        <rect key="frame" x="19" y="234.33333333333337" width="337.66666666666669" height="1"/>
+                                        <rect key="frame" x="19" y="234.33333333333331" width="337.66666666666669" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Rir-zO-6EM"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
-                                        <rect key="frame" x="116" y="250.33333333333337" width="144" height="52"/>
+                                        <rect key="frame" x="116.33333333333333" y="250.33333333333329" width="143.66666666666669" height="51.666666666666657"/>
                                         <string key="text">Radius: 3,959 mi
 Age: 4.543 billion years
 Population: 7.347 billion</string>
@@ -233,7 +233,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jz0-Vq-8CH">
-                                <rect key="frame" x="0.0" y="44" width="375" height="357"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="357.33333333333331"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-h3u">
                                         <rect key="frame" x="12" y="138.33333333333334" width="50" height="80"/>

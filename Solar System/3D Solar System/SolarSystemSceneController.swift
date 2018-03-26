@@ -5,50 +5,57 @@
 //  Copyright © 2017 Apple Inc. All rights reserved.
 //
 
-import UIKit
-import SceneKit
-import ARKit
 import SceneKit
 
-class SolarSystemController: UIViewController {
+#if os(OSX)
+typealias SCNNumberType = CGFloat
+typealias Image = NSImage
+typealias ImageName = NSImage.Name
+#else
+typealias SCNNumberType = Float
+typealias Image = UIImage
+typealias ImageName = String
+#endif
+
+enum ContentType {
+    case solarSystem
+    case planetDetails
+    case planetComparison
+}
+
+protocol SolarSystemSceneControllerDelegate : class {
+    func hideGravityButton(_ hidden: Bool)
+}
+
+// Float
+
+class SolarSystemSceneController: NSObject {
     
-    @IBOutlet weak var solarSystemSceneView: SCNView!
-    @IBOutlet weak var gravityButton: UIButton?
+    weak var solarSystemSceneView: SCNView!
+    weak var delegate: SolarSystemSceneControllerDelegate?
     
     // Lighting is on by default
     var enableSceneLighting = true
     
-    var timer: CADisplayLink!
     var lastTimestamp: TimeInterval = 0
     
     private(set) var planetNodes: [OrbitingBodyNode] = []
     
-    // Details view controller if presented
-    weak var planetDetailsVC: PlanetDetailsViewController?
-    
     // Currently presented planet in details view
     var presentedPlanet: OrbitingBodyNode?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "The Solar System in 3D"
-        
+    init(solarSystemSceneView: SCNView) {
+        self.solarSystemSceneView = solarSystemSceneView
+    }
+    
+    func prepareScene() {        
         // Use ambient lighting for simulator
-        if TARGET_OS_SIMULATOR != 0 {
-            enableSceneLighting = false
-        }
+//        if TARGET_OS_SIMULATOR != 0 {
+//            enableSceneLighting = false
+//        }
         
         setupScene()
-        
-        // Setup display link
-        timer = CADisplayLink(target: self, selector: #selector(tick))
-        timer?.add(to: .main, forMode: .defaultRunLoopMode)
-        
-        // Setup tap handling
-        let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapSceneView))
-        solarSystemSceneView.addGestureRecognizer(tapGestureRecognizer)
-        
+                
         // Disable light sources
         if !enableSceneLighting {
             let rootNode = solarSystemSceneView.scene?.rootNode
@@ -56,16 +63,6 @@ class SolarSystemController: UIViewController {
             rootNode?.childNode(withName: "Ambient Light Node", recursively: true)?.isHidden = true
         }
         solarSystemSceneView.autoenablesDefaultLighting = !enableSceneLighting
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        timer.isPaused = false
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        timer.isPaused = true
     }
     
     func solarSystemCenterNode() -> SCNNode {
@@ -88,7 +85,7 @@ class SolarSystemController: UIViewController {
             if let planetInfo = value as? Dictionary<String, Any> {
                 let name = planetInfo["name"] as! String
                 let diameter = planetInfo["diameter"] as! Double
-                let diffuseTexture = planetInfo["diffuseTexture"] as! String
+                let diffuseTexture = planetInfo["diffuseTexture"] as! ImageName
                 let orbitalRadius = planetInfo["orbitalRadius"] as! Double
                 
                 
@@ -100,19 +97,19 @@ class SolarSystemController: UIViewController {
                 planetNode.name = name
                 let planetGeometry = SCNSphere.init(radius: CGFloat(scaledDiameter / 2))
                 
-                let diffuseImage = UIImage(named: diffuseTexture)
+                let diffuseImage = Image(named: diffuseTexture)
                 planetGeometry.firstMaterial?.diffuse.contents = diffuseImage
                 planetGeometry.firstMaterial?.diffuse.mipFilter = .linear
                 
                 // Assign normal texture if provided
-                if let normalTexture = planetInfo["normalTexture"] as? String {
-                    planetNode.geometry?.firstMaterial?.normal.contents = UIImage(named: normalTexture)
+                if let normalTexture = planetInfo["normalTexture"] as? ImageName {
+                    planetNode.geometry?.firstMaterial?.normal.contents = Image(named: normalTexture)
                     planetNode.geometry?.firstMaterial?.normal.mipFilter = .linear
                 }
                 
                 // Assign specular texture if provided
-                if let specularTexture = planetInfo["specularTexture"] as? String {
-                    planetNode.geometry?.firstMaterial?.normal.contents = UIImage(named: specularTexture)
+                if let specularTexture = planetInfo["specularTexture"] as? ImageName {
+                    planetNode.geometry?.firstMaterial?.normal.contents = Image(named: specularTexture)
                     planetNode.geometry?.firstMaterial?.normal.mipFilter = .linear
                 }
                 
@@ -152,8 +149,8 @@ class SolarSystemController: UIViewController {
                 planetNode.orbitVisualizationNode = planetOrbit
                 
                 // Start orbiting
-                planetNode.isOrbitingAnimationEnabled = true
-                planetNode.isSpinningAnimationEnabled = true
+                planetNode.startOrbitingAnimation()
+                planetNode.startSpinningAnimation()
                 
                 // Finalize planet
                 finalizePlanet(planetNode)
@@ -180,7 +177,7 @@ class SolarSystemController: UIViewController {
             ringMaterial.isDoubleSided =  true
             ringMaterial.diffuse.mipFilter = .none
             ringMaterial.diffuse.intensity = 0.8
-            ringMaterial.diffuse.contentsTransform = SCNMatrix4MakeRotation(Float.pi/180 * -90.0, 0.0, 0.0, 1.0)
+            ringMaterial.diffuse.contentsTransform = SCNMatrix4MakeRotation(SCNNumberType.pi/180 * -90.0, 0.0, 0.0, 1.0)
             ringGeometry.firstMaterial = ringMaterial
             
             let ringNode = SCNNode()
@@ -230,7 +227,7 @@ class SolarSystemController: UIViewController {
             SCNTransaction.commit()
             
             presentedPlanet = nil
-            gravityButton?.isHidden = false
+            delegate?.hideGravityButton(false)
             
         case .planetDetails:
             // Hide the solar system
@@ -249,12 +246,12 @@ class SolarSystemController: UIViewController {
             // Present the first planet (or sun?)
             presentPlanet(planetNodes.first!, directionRightToLeft: true)
             
-            gravityButton?.isHidden = true
+            delegate?.hideGravityButton(true)
             
         case .planetComparison:
             // TODO
             presentedPlanet = nil
-            gravityButton?.isHidden = true
+            delegate?.hideGravityButton(true)
         }
     }
     
@@ -263,7 +260,7 @@ class SolarSystemController: UIViewController {
         presentedPlanet = planet
         
         // Details view controller
-        planetDetailsVC?.updateWithPlanetDetails(planet.bodyInfo!)
+        ///planetDetailsVC?.updateWithPlanetDetails(planet.bodyInfo!) // FIXME!!
         
         // Update Scene
         let planetAnimationNode = SCNNode()
@@ -299,8 +296,8 @@ class SolarSystemController: UIViewController {
         
         // Apply scale transform so all planets have the same size
         let planetSphereGeometry = planet.geometry as! SCNSphere
-        let desinationSize: Float = 4.2 // FIXME: Calculate a dynamic for the current camera situation
-        let equalSizeScaleFactor: Float = desinationSize / Float(planetSphereGeometry.radius)
+        let desinationSize: SCNNumberType = 4.2 // FIXME: Calculate a dynamic for the current camera situation
+        let equalSizeScaleFactor: SCNNumberType = desinationSize / SCNNumberType(planetSphereGeometry.radius)
         planetAnimationNode.transform = SCNMatrix4Scale(planetAnimationNode.transform, equalSizeScaleFactor, equalSizeScaleFactor, equalSizeScaleFactor)
         
         planetAnimationNode.opacity = 1.0
@@ -338,14 +335,14 @@ class SolarSystemController: UIViewController {
     }
     
     // Display Link callback
-    @objc func tick() {
+    func tick(timestamp: TimeInterval) {
         if (lastTimestamp == 0) {
-            lastTimestamp = timer.timestamp
+            lastTimestamp = timestamp
             return
         }
         
-        let elapsedTime = timer.timestamp - lastTimestamp
-        lastTimestamp = timer.timestamp
+        let elapsedTime = timestamp - lastTimestamp
+        lastTimestamp = timestamp
         updateAnimatedObjectsWithElapsedTime(elapsedTime)
     }
     
@@ -357,16 +354,19 @@ class SolarSystemController: UIViewController {
     }
     
     // Tap handling
-    @objc func didTapSceneView(_ sender: UITapGestureRecognizer) {
-        let hitTestResults = solarSystemSceneView.hitTest(sender.location(in: solarSystemSceneView), options: nil)
+    @objc func didHitSceneView(atLocation location: CGPoint) {
+        let hitTestResults = solarSystemSceneView.hitTest(location, options: nil)
         
         if let hitNode = hitTestResults.first?.node as? PhysicsBodyNode {
-            didTapPhysicsBody(hitNode)
+            didHitPhysicsBody(hitNode)
         }
     }
     
-    func didTapPhysicsBody(_ physicsBody: PhysicsBodyNode) {
-        print("Tapped Planet: " + physicsBody.name!)
+    func didHitPhysicsBody(_ physicsBody: PhysicsBodyNode) {
+        if let physicsBodyName = physicsBody.name {
+            print("Tapped Planet: " + physicsBodyName)
+            // TODO: Present detailed information about selected planet, moon or star
+        }
     }
     
 }

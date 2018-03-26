@@ -30,7 +30,7 @@ class OrbitingBodyNode: PhysicsBodyNode {
         
         // Update rotation
         if isSpinningAnimationEnabled {
-            var directionMultiplier: Float = 1.0
+            var directionMultiplier: SCNNumberType = 1.0
             if let rotationDirectionIsForward = bodyInfo?["rotationDirectionIsForward"] as? Bool {
                 if !rotationDirectionIsForward {
                     directionMultiplier = -1.0
@@ -41,7 +41,7 @@ class OrbitingBodyNode: PhysicsBodyNode {
             let fullRotation = Double.pi * 2.0
             let elapsedProgress = elapsedTime / rotationalPeriod
             
-            let rotationTransform = SCNMatrix4MakeRotation(Float(elapsedProgress * fullRotation), 0, directionMultiplier, 0)
+            let rotationTransform = SCNMatrix4MakeRotation(SCNNumberType(elapsedProgress * fullRotation), 0, directionMultiplier, 0)
             
             transform = SCNMatrix4Mult(rotationTransform, transform)
         }
@@ -52,9 +52,52 @@ class OrbitingBodyNode: PhysicsBodyNode {
             let scaledOrbitalPeriod = orbitalPeriod / 150.0
             let fullRotation = Double.pi * 2.0
             let elapsedProgress = elapsedTime / scaledOrbitalPeriod
-            rotationNode.transform = SCNMatrix4Rotate(rotationNode.transform, Float(elapsedProgress * fullRotation), 0, 1, 0)
+            rotationNode.transform = SCNMatrix4Rotate(rotationNode.transform, SCNNumberType(elapsedProgress * fullRotation), 0, 1, 0)
         }
         
     }
     
+    func startOrbitingAnimation() {
+        // Add orbiting animation if necessary
+        
+        if !rotationNode.animationKeys.contains(OrbitingAnimationName) {
+            let orbitingAnimation = CABasicAnimation(keyPath: "rotation")
+            
+            let orbitalPeriod = bodyInfo?["orbitalPeriod"] as! Double
+            orbitingAnimation.duration = orbitalPeriod / 150.0
+            orbitingAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, 1, 0, Double.pi * 2.0))
+            orbitingAnimation.repeatCount = .greatestFiniteMagnitude
+            rotationNode.addAnimation(orbitingAnimation, forKey: OrbitingAnimationName)
+        }
+    }
+    
+    func stopOrbitingAnimation() {
+        rotationNode.removeAnimation(forKey: OrbitingAnimationName)
+    }
+    
+    func startSpinningAnimation() {
+        // Add orbiting animation if necessary
+        if !rotationNode.animationKeys.contains(SpinningAnimationName) {
+            let spinningAnimation = CABasicAnimation(keyPath: "rotation")
+            
+            let rotationalPeriod = bodyInfo?["rotationalPeriod"] as! Double
+            spinningAnimation.duration = rotationalPeriod
+            
+            var directionMultiplier: Double = 1.0
+    
+            if let rotationDirectionIsForward = bodyInfo?["rotationDirectionIsForward"] as? Bool {
+                if !rotationDirectionIsForward {
+                    directionMultiplier = -1.0
+                }
+            }
+            
+            spinningAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, directionMultiplier, 0, Double.pi * 2.0))
+            spinningAnimation.repeatCount = .greatestFiniteMagnitude
+            addAnimation(spinningAnimation, forKey: OrbitingAnimationName)
+        }
+    }
+    
+    func stopSpinningAnimation() {
+        rotationNode.removeAnimation(forKey: SpinningAnimationName)
+    }
 }

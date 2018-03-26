@@ -7,18 +7,12 @@
 
 import UIKit
 
-enum ContentType {
-    case solarSystem
-    case planetDetails
-    case planetComparison
-}
-
 class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDelegate {
     
     @IBOutlet weak var contentContainerView: UIView!
     weak var sceneHUDController: SceneHUDViewController?
     
-    weak var solarSystemVC: SolarSystemController?
+    weak var solarSystemVC: SolarSystemSceneViewController?
     weak var planetDetailsVC: PlanetDetailsViewController?
     
     override func viewDidLoad() {
@@ -27,7 +21,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
         title = "The Solar System"
 
         // Initiate solar system controller
-        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC") as! SolarSystemController
+        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC") as! SolarSystemSceneViewController
         solarSystemVC.view.translatesAutoresizingMaskIntoConstraints = false
         addChildViewController(solarSystemVC)
         contentContainerView.addSubview(solarSystemVC.view)
@@ -78,7 +72,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
             showPlanetComparison()
         }
         
-        solarSystemVC?.updateWithContentType(contentType)
+        solarSystemVC?.sceneController?.updateWithContentType(contentType)
         sceneHUDController?.updateWithContentType(contentType)
     }
     
@@ -112,10 +106,10 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
     // Delegate callback
     func planetDetailsNavigationButtonPressed(_ directionForward: Bool) {
         if directionForward {
-            solarSystemVC?.presentNextPlanet()
+            solarSystemVC?.sceneController?.presentNextPlanet()
         }
         else {
-            solarSystemVC?.presentPreviousPlanet()
+            solarSystemVC?.sceneController?.presentPreviousPlanet()
         }
     }
 
