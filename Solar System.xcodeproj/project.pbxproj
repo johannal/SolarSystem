@@ -29,7 +29,6 @@
 		9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */; };
 		9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77B7205AEA1F004C9486 /* AppDelegate.swift */; };
-		9E4F77BA205AEA1F004C9486 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77B9205AEA1F004C9486 /* MainViewController.swift */; };
 		9E4F77BC205AEA1F004C9486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F77BB205AEA1F004C9486 /* Assets.xcassets */; };
 		9E4F77BF205AEA1F004C9486 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F77BD205AEA1F004C9486 /* Main.storyboard */; };
 		9E4F77C6205AEB17004C9486 /* SolarSystemSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77C5205AEB17004C9486 /* SolarSystemSceneViewController.swift */; };
@@ -92,7 +91,6 @@
 		9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneHUDViewController.swift; sourceTree = "<group>"; };
 		9E4F77B5205AEA1E004C9486 /* Solar System Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solar System Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E4F77B7205AEA1F004C9486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9E4F77B9205AEA1F004C9486 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9E4F77BB205AEA1F004C9486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E4F77BE205AEA1F004C9486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E4F77C0205AEA1F004C9486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,7 @@
 		9E53D1591ECF651E002A0001 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9E53D15B1ECF715E002A0001 /* GravitySimulator.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GravitySimulator.sks; sourceTree = "<group>"; };
 		9E53D15C1ECF715E002A0001 /* GravitySimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySimulatorViewController.swift; sourceTree = "<group>"; };
-		9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = SolarSystemScene.scn; path = ../SolarSystemScene.scn; sourceTree = "<group>"; };
+		9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SolarSystemScene.scn; sourceTree = "<group>"; };
 		9EAE88621ED2504200EB5C1E /* GravitySimulatorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravitySimulatorScene.swift; sourceTree = "<group>"; };
 		9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PlanetDetails.plist; sourceTree = "<group>"; };
 		9EC407F81EBFEAEB00F7F8A1 /* Solar System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solar System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,11 +208,21 @@
 			name = "Moon Jumper";
 			sourceTree = "<group>";
 		};
+		9E48A9DF206955B20032EAAB /* Shared Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */,
+				9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */,
+				9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */,
+				9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */,
+			);
+			name = "Shared Components";
+			sourceTree = "<group>";
+		};
 		9E4F77B6205AEA1F004C9486 /* Solar System Mac */ = {
 			isa = PBXGroup;
 			children = (
 				9E4F77B7205AEA1F004C9486 /* AppDelegate.swift */,
-				9E4F77B9205AEA1F004C9486 /* MainViewController.swift */,
 				9E4F77C7205AEB49004C9486 /* SolarSystemSceneViewController.swift */,
 				9E4F77BB205AEA1F004C9486 /* Assets.xcassets */,
 				9E4F77BD205AEA1F004C9486 /* Main.storyboard */,
@@ -247,10 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				9E4F77C5205AEB17004C9486 /* SolarSystemSceneViewController.swift */,
-				9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */,
-				9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */,
-				9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */,
-				9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */,
+				9E48A9DF206955B20032EAAB /* Shared Components */,
 			);
 			path = "3D Solar System";
 			sourceTree = "<group>";
@@ -479,7 +484,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E4F77BA205AEA1F004C9486 /* MainViewController.swift in Sources */,
 				9E4F77C8205AEB49004C9486 /* SolarSystemSceneViewController.swift in Sources */,
 				9E4F77C9205AEB51004C9486 /* SolarSystemSceneController.swift in Sources */,
 				9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */,

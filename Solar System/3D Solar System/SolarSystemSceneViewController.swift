@@ -66,6 +66,4 @@ class SolarSystemSceneViewController: UIViewController, SolarSystemSceneControll
         gravityButton?.isHidden = hidden
     }
 
-
-
 }
