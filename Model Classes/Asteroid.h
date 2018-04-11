@@ -2,7 +2,7 @@
 //  Asteroid.h
 //  Solar System
 //
-//  Copyright © 2017 Apple Inc. All rights reserved.
+//  Copyright © 2018 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
