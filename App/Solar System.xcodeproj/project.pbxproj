@@ -24,9 +24,9 @@
 		9E272B5C1ED50A3B00C2A5B2 /* MoonJumperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E272B5B1ED50A3B00C2A5B2 /* MoonJumperViewController.swift */; };
 		9E272B5E1ED50DB600C2A5B2 /* HeightIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E272B5D1ED50DB600C2A5B2 /* HeightIndicatorView.swift */; };
 		9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */; };
-		9E48A9E02069569F0032EAAB /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77BD205AEA1F004C9486 /* Main.storyboard */; };
-		9E48A9E12069569F0032EAAB /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77BB205AEA1F004C9486 /* Assets.xcassets */; };
-		9E48A9E22069569F0032EAAB /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
+		9E48A9E02069569F0032EAAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F77BD205AEA1F004C9486 /* Main.storyboard */; };
+		9E48A9E12069569F0032EAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F77BB205AEA1F004C9486 /* Assets.xcassets */; };
+		9E48A9E22069569F0032EAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
 		9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
 		9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
@@ -399,6 +399,7 @@
 		9EC407F01EBFEAEB00F7F8A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Latest;
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Apple;
@@ -450,6 +451,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4F77CA205AEB51004C9486 /* SolarSystemScene.scn in Resources */,
+				9E48A9E02069569F0032EAAB /* Main.storyboard in Resources */,
+				9E48A9E22069569F0032EAAB /* Assets.xcassets in Resources */,
+				9E48A9E12069569F0032EAAB /* Assets.xcassets in Resources */,
 				9E96D509205B157E0035AD69 /* PlanetDetails.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,9 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E48A9E22069569F0032EAAB /* Assets.xcassets in Sources */,
-				9E48A9E12069569F0032EAAB /* Assets.xcassets in Sources */,
-				9E48A9E02069569F0032EAAB /* Main.storyboard in Sources */,
 				9E4F77C8205AEB49004C9486 /* SolarSystemSceneViewController.swift in Sources */,
 				9E4F77C9205AEB51004C9486 /* SolarSystemSceneController.swift in Sources */,
 				9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */,
