@@ -37,3 +37,11 @@
 * Have a space configured on my machine that has 4x simulators pre-warmed
 * Run the UI tests from Xcode, and switch to the space
 * Show the tests running in parallel, and finish the demo on a bunch of passing tests in Xcode
+
+
+
+Matt feedback;
+* Coverage changes from Edge
+* Randomization options
+* Finish on waypoint instrument flags, custom instrument (Chad), multiple phases
+* Potentially talk about the performance responsibilities on app developers
