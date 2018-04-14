@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14228" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14249" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14228"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14228"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14249"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14249"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -680,55 +680,224 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="96" y="-2"/>
         </scene>
         <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
+        <scene sceneID="qh7-D3-NSS">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Solar System" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="5rz-OH-xd0" sceneMemberID="viewController">
+                    <window key="window" title="Solar System" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="KWV-Ta-7qB">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="contentRect" x="294" y="362" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
                         <connections>
-                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                            <outlet property="delegate" destination="5rz-OH-xd0" id="MKG-ii-1YT"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="pBx-96-Zec"/>
                     </connections>
                 </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="sIh-Bc-ZpV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="96" y="249"/>
         </scene>
-        <!--Solar System Scene View Controller-->
+        <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="SolarSystemSceneViewController" customModule="Solar_System_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="XfG-lQ-9wD" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="815" height="453"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="dgg-Zb-bpL">
+                                <rect key="frame" x="0.0" y="0.0" width="815" height="453"/>
+                                <connections>
+                                    <segue destination="tLI-UF-KjY" kind="embed" id="Hej-G4-mty"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dgg-Zb-bpL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="By1-gD-rvf"/>
+                            <constraint firstItem="dgg-Zb-bpL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="TK9-3w-VJZ"/>
+                            <constraint firstAttribute="trailing" secondItem="dgg-Zb-bpL" secondAttribute="trailing" id="Z8O-SE-bYR"/>
+                            <constraint firstAttribute="bottom" secondItem="dgg-Zb-bpL" secondAttribute="bottom" id="haz-kR-SiV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="97" y="759"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="st8-zJ-8p8">
+            <objects>
+                <splitViewController id="tLI-UF-KjY" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="2sy-uA-I5F"/>
+                        <splitViewItem id="eQZ-91-IIe"/>
+                        <splitViewItem id="hN1-Z1-BlD"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="MJm-BP-WhD">
+                        <rect key="frame" x="0.0" y="0.0" width="871" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="tLI-UF-KjY" id="HHf-hp-WGa"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="MJm-BP-WhD" id="HRs-70-rXo"/>
+                        <segue destination="3gi-uo-s5L" kind="relationship" relationship="splitItems" id="Kap-9X-nWf"/>
+                        <segue destination="BXA-N6-Nxc" kind="relationship" relationship="splitItems" id="jUb-gw-0Pd"/>
+                        <segue destination="9tR-CE-Gd6" kind="relationship" relationship="splitItems" id="Uq8-MR-4NC"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="XrB-YT-KNf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="1288"/>
+        </scene>
+        <!--Solar System Scene View Controller-->
+        <scene sceneID="csO-0g-JIe">
+            <objects>
+                <customObject id="0Kw-MH-mya" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="BXA-N6-Nxc" customClass="SolarSystemSceneViewController" customModule="Solar_System_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="md0-xl-o4p">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <sceneView sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-2q-KMj">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="453"/>
                             </sceneView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="dDU-2q-KMj" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="52D-BV-dXh"/>
-                            <constraint firstItem="dDU-2q-KMj" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="LBg-He-6Xi"/>
-                            <constraint firstAttribute="bottom" secondItem="dDU-2q-KMj" secondAttribute="bottom" id="fTk-ps-ErO"/>
-                            <constraint firstAttribute="trailing" secondItem="dDU-2q-KMj" secondAttribute="trailing" id="mlW-l4-v7y"/>
+                            <constraint firstItem="dDU-2q-KMj" firstAttribute="leading" secondItem="md0-xl-o4p" secondAttribute="leading" id="6bq-k6-1xf"/>
+                            <constraint firstAttribute="bottom" secondItem="dDU-2q-KMj" secondAttribute="bottom" id="SwW-Jo-R91"/>
+                            <constraint firstAttribute="trailing" secondItem="dDU-2q-KMj" secondAttribute="trailing" id="kxN-qm-IQ4"/>
+                            <constraint firstItem="dDU-2q-KMj" firstAttribute="top" secondItem="md0-xl-o4p" secondAttribute="top" id="yEW-2S-5Be"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="solarSystemSceneView" destination="dDU-2q-KMj" id="EZA-Ac-eah"/>
+                        <outlet property="solarSystemSceneView" destination="dDU-2q-KMj" id="C7v-jI-ZSk"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="96" y="1848.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="W0k-mx-VmH">
+            <objects>
+                <customObject id="mMj-a9-xwj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="3gi-uo-s5L" sceneMemberID="viewController">
+                    <view key="view" id="MVS-db-qAy">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="JBp-2T-iGC" userLabel="Left Visual Effect View">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
+                                <subviews>
+                                    <scrollView hidden="YES" wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCX-qa-erx">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
+                                        <clipView key="contentView" drawsBackground="NO" id="rCo-T0-W0P">
+                                            <rect key="frame" x="1" y="1" width="218" height="451"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <collectionView id="pj8-ob-MQ9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="451"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gXA-l1-7O6">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                    </collectionViewFlowLayout>
+                                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ffS-cx-fvk">
+                                            <rect key="frame" x="-100" y="-100" width="218" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eVW-Fx-Hbd">
+                                            <rect key="frame" x="203" y="1" width="16" height="298"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wCX-qa-erx" secondAttribute="bottom" id="XZA-6r-xsa"/>
+                                    <constraint firstAttribute="trailing" secondItem="wCX-qa-erx" secondAttribute="trailing" id="hiG-xk-5Kh"/>
+                                    <constraint firstItem="wCX-qa-erx" firstAttribute="top" secondItem="JBp-2T-iGC" secondAttribute="top" id="teV-XU-XGc"/>
+                                    <constraint firstItem="wCX-qa-erx" firstAttribute="leading" secondItem="JBp-2T-iGC" secondAttribute="leading" id="x1X-xb-eAs"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JBp-2T-iGC" secondAttribute="trailing" id="3K5-Of-g1T"/>
+                            <constraint firstAttribute="bottom" secondItem="JBp-2T-iGC" secondAttribute="bottom" id="7iY-dC-Nyb"/>
+                            <constraint firstItem="JBp-2T-iGC" firstAttribute="leading" secondItem="MVS-db-qAy" secondAttribute="leading" id="gmH-YE-Atx"/>
+                            <constraint firstItem="JBp-2T-iGC" firstAttribute="top" secondItem="MVS-db-qAy" secondAttribute="top" id="nx8-5L-TVw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-263" y="1848.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vDf-jh-6la">
+            <objects>
+                <viewController id="9tR-CE-Gd6" sceneMemberID="viewController">
+                    <view key="view" id="OpT-iI-FlN">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-wp-Uvl">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
+                                <subviews>
+                                    <sceneView translatesAutoresizingMaskIntoConstraints="NO" id="ISY-kS-XGs">
+                                        <rect key="frame" x="0.0" y="251" width="220" height="132"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="132" id="oAK-9y-ZaP"/>
+                                        </constraints>
+                                    </sceneView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-8A-eSc">
+                                        <rect key="frame" x="18" y="406" width="61" height="27"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="9Wj-nI-jle">
+                                            <font key="font" metaFont="systemBold" size="22"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZKG-PU-H6p">
+                                        <rect key="frame" x="20" y="233" width="24" height="10"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="DistanceIcon" id="PHE-3m-9vH"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="m2w-8A-eSc" firstAttribute="top" secondItem="HQ6-wp-Uvl" secondAttribute="top" constant="20" id="8VW-pL-C5H"/>
+                                    <constraint firstItem="ZKG-PU-H6p" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" constant="20" id="ArC-EB-J7R"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m2w-8A-eSc" secondAttribute="trailing" constant="20" symbolic="YES" id="Qdr-BN-Ca1"/>
+                                    <constraint firstItem="m2w-8A-eSc" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" constant="20" id="dY7-6r-Dyj"/>
+                                    <constraint firstItem="ZKG-PU-H6p" firstAttribute="top" secondItem="ISY-kS-XGs" secondAttribute="bottom" constant="8" id="gTZ-od-WsA"/>
+                                    <constraint firstItem="ISY-kS-XGs" firstAttribute="top" secondItem="m2w-8A-eSc" secondAttribute="bottom" constant="23" id="khp-6a-JE3"/>
+                                    <constraint firstItem="ISY-kS-XGs" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" id="nSL-tE-2PX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ISY-kS-XGs" secondAttribute="trailing" id="waN-Ht-mHE"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HQ6-wp-Uvl" secondAttribute="bottom" id="QvZ-QQ-nKH"/>
+                            <constraint firstAttribute="trailing" secondItem="HQ6-wp-Uvl" secondAttribute="trailing" id="UeC-3n-khf"/>
+                            <constraint firstItem="HQ6-wp-Uvl" firstAttribute="top" secondItem="OpT-iI-FlN" secondAttribute="top" id="gXK-Gh-YlW"/>
+                            <constraint firstItem="HQ6-wp-Uvl" firstAttribute="leading" secondItem="OpT-iI-FlN" secondAttribute="leading" id="lId-1c-lc1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="uqA-H4-WMk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="1849"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DistanceIcon" width="24" height="10"/>
+    </resources>
 </document>
