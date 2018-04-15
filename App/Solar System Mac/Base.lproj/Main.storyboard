@@ -890,10 +890,10 @@
             </objects>
             <point key="canvasLocation" x="-263" y="1848.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Inspector-->
         <scene sceneID="vDf-jh-6la">
             <objects>
-                <viewController id="9tR-CE-Gd6" sceneMemberID="viewController">
+                <viewController id="9tR-CE-Gd6" customClass="Inspector" customModule="Solar_System_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="OpT-iI-FlN">
                         <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -901,10 +901,10 @@
                             <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-wp-Uvl">
                                 <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                 <subviews>
-                                    <sceneView translatesAutoresizingMaskIntoConstraints="NO" id="ISY-kS-XGs">
-                                        <rect key="frame" x="0.0" y="256" width="220" height="132"/>
+                                    <sceneView sceneName="SingleAstronomicalObjectScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISY-kS-XGs">
+                                        <rect key="frame" x="0.0" y="171" width="220" height="176"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="132" id="oAK-9y-ZaP"/>
+                                            <constraint firstAttribute="width" secondItem="ISY-kS-XGs" secondAttribute="height" multiplier="10:8" id="4fl-1t-JBT"/>
                                         </constraints>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </sceneView>
@@ -916,28 +916,35 @@
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHr-bS-f1W">
-                                        <rect key="frame" x="15" y="212" width="191" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="02w-Fe-hgw" id="0gC-pE-EdQ">
-                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="menu"/>
-                                            <menu key="menu" id="68c-dL-1HX">
-                                                <items>
-                                                    <menuItem title="Item 1" state="on" id="02w-Fe-hgw"/>
-                                                    <menuItem title="Item 2" id="YSj-dS-ARR"/>
-                                                    <menuItem title="Item 3" id="zdx-zN-t71"/>
-                                                </items>
-                                            </menu>
-                                        </popUpButtonCell>
-                                    </popUpButton>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lfu-68-Lxj">
+                                        <rect key="frame" x="18" y="390" width="108" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Galaxy: Milkyway" id="ya9-Nv-z0p">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cBC-Ek-7ci">
+                                        <rect key="frame" x="18" y="371" width="146" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Age: 4.543 billion years" id="8pa-L2-Yby">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="m2w-8A-eSc" firstAttribute="top" secondItem="HQ6-wp-Uvl" secondAttribute="top" constant="20" id="8VW-pL-C5H"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lfu-68-Lxj" secondAttribute="trailing" constant="20" symbolic="YES" id="Gec-hG-T5k"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m2w-8A-eSc" secondAttribute="trailing" constant="20" symbolic="YES" id="Qdr-BN-Ca1"/>
+                                    <constraint firstItem="ISY-kS-XGs" firstAttribute="top" secondItem="cBC-Ek-7ci" secondAttribute="bottom" constant="24" id="QxB-bV-y7x"/>
+                                    <constraint firstItem="cBC-Ek-7ci" firstAttribute="top" secondItem="lfu-68-Lxj" secondAttribute="bottom" constant="2" id="V6D-UG-qme"/>
+                                    <constraint firstItem="cBC-Ek-7ci" firstAttribute="leading" secondItem="lfu-68-Lxj" secondAttribute="leading" id="Yvt-pm-yvo"/>
                                     <constraint firstItem="m2w-8A-eSc" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" constant="20" id="dY7-6r-Dyj"/>
-                                    <constraint firstItem="ISY-kS-XGs" firstAttribute="top" secondItem="m2w-8A-eSc" secondAttribute="bottom" constant="23" id="khp-6a-JE3"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cBC-Ek-7ci" secondAttribute="trailing" constant="20" symbolic="YES" id="fVR-uU-nXZ"/>
                                     <constraint firstItem="ISY-kS-XGs" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" id="nSL-tE-2PX"/>
+                                    <constraint firstItem="lfu-68-Lxj" firstAttribute="leading" secondItem="m2w-8A-eSc" secondAttribute="leading" id="puk-6H-TtF"/>
+                                    <constraint firstItem="lfu-68-Lxj" firstAttribute="top" secondItem="m2w-8A-eSc" secondAttribute="bottom" constant="4" id="t9n-LY-fPp"/>
                                     <constraint firstAttribute="trailing" secondItem="ISY-kS-XGs" secondAttribute="trailing" id="waN-Ht-mHE"/>
                                 </constraints>
                             </visualEffectView>
@@ -949,6 +956,9 @@
                             <constraint firstItem="HQ6-wp-Uvl" firstAttribute="leading" secondItem="OpT-iI-FlN" secondAttribute="leading" id="lId-1c-lc1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="ISY-kS-XGs" id="qgy-LQ-TlZ"/>
+                    </connections>
                 </viewController>
                 <customObject id="uqA-H4-WMk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
