@@ -56,6 +56,7 @@
 		9EF53C7020831B8C00B11FC4 /* Earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C6F20831B8C00B11FC4 /* Earth.jpg */; };
 		9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */; };
 		9EF53C762083216E00B11FC4 /* Inspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF53C752083216E00B11FC4 /* Inspector.swift */; };
+		9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
 		EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */; };
@@ -126,6 +127,7 @@
 		9EF53C6F20831B8C00B11FC4 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Earth.jpg; path = "Solar System/Assets.xcassets/Earth.imageset/Earth.jpg"; sourceTree = SOURCE_ROOT; };
 		9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EarthNightLights.jpg; sourceTree = "<group>"; };
 		9EF53C752083216E00B11FC4 /* Inspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
+		9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudsTransparency.png; sourceTree = "<group>"; };
 		B1B0C6E61ED8BC35007937D2 /* FlyByScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyByScenario.swift; sourceTree = "<group>"; };
 		B1ECAEDC1ED7370A0009A958 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B1ECAEDD1ED737500009A958 /* Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				9EF53C6D20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn */,
 				9EF53C6F20831B8C00B11FC4 /* Earth.jpg */,
 				9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */,
+				9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */,
 				9EB5341B2082E7EC0007DB03 /* AstronomicalObjectViewItem.xib */,
 				9E4F77BB205AEA1F004C9486 /* Assets.xcassets */,
 				9E4F77BD205AEA1F004C9486 /* Main.storyboard */,
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4F77CA205AEB51004C9486 /* SolarSystemScene.scn in Resources */,
+				9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */,
 				9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */,
 				9EF53C6E20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn in Resources */,
 				9E48A9E02069569F0032EAAB /* Main.storyboard in Resources */,
