@@ -5,6 +5,7 @@
   
 [Add a new color. In the Inspector, opt it inot "Dark". Also mention that we can provide variants that will be used in high contrast or vibrant contexts. Point out that this all happens automatically -- all I need to do is used the right named color.]
   -- The color we're adding here is one that we'll use when we switch over to IB
+  -- <rdar://problem/39443829> Justice10A156: Inspector content flickers when toggling new slot for Asset Catalog color
 
 [Switch over to a storyboard in IB]
   
@@ -14,7 +15,7 @@
 
 [I can also bring up a second view onto this UI in the Assistant (toggle to the Assistant editor, then switch to Preview). Down in the bottom bar, I can add a preview of the UI in light. Now, as I make changes, I can see what it will look like in both light and dark (switch the fill color to systemBlue, and then back to the original named color). This is a really nice way to quickly develop your UIs for both modes.]
 
-## Part 2 -- Source Editor & SCM
+## Part 2 -- Source Editor
 
 [Let's jump over to my source code, where I want to make a few changes.]
 
@@ -24,101 +25,39 @@
 
   -- <rdar://problem/39443933> Justice10A156: Add Documentation action doesn't add documentation for every cursor
 
-[]
+[Each of these methods is handing back a color, but those colors are all hard coded. Thats not going to work for dark. What I need to do is convert each of these to instead return a named color. Remember that those named colors will automatically switch based on the system appearance for me.]
 
-[The method we jump to is at the bottom of the file. Scroll all the way down to show overscroll.]
+[I'm going to edit all of these at once, using multiple cursors. I'll drop a cursor in front of each variable name -- those names are also the names of the colors in my asset catalog.]
 
-[simpler example here to start -- maybe editing method modifiers?]
+    let someColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
+        ^
 
-[In that method, there are a bunch of hard-coded colors]
+[Now I'll hold down Command and Option and then press the right arrow to select all of the variable names. ]
 
-[Switch over to asset catlog to show that I've already added entries for these colors, including both a light and a dark version]
-  -- Maybe add one color?
-  -- Mabye talk about the different slots (dark, vibrant, high contrast)?
-  -- Should I mention images here?
+    let someColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
+        ^-------^
 
-[Go back over to the source file, where we're going to change hard-coded colors to named colors]
-  -- Maybe fold some code here to bring a few of the colors I want to switch to named colors into view? Also could fold something that wasn't fold-able before.
-  -- Maybe switch the cursor to the block cursor
+[I'll copy those (select Edit > Copy). Now I'll select the code between the parens, thats using the NSColor initializer that takes hard coded values.]
 
-[Use mutltiple cursors to do something like the following transformation]
+    let someColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
+                            ^----------------------------------^
 
-  1) starting state
-    let orbitPathColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-    let orbitPathSelectedColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
+[I'll delete that, and use the named color initializer.]
 
-  2) multi-cursor word-select color names
-      let orbitPathColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-          ^------------^
-      let orbitPathSelectedColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-          ^--------------------^
-      
-  3) multi-cursor select old initializer
-      let orbitPathColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-                                   ^----------------------------------^
-      let orbitPathSelectedColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-                                           ^----------------------------------^
-                                           
-  4) multi-cursor type named color initializer
-      let orbitPathColor = NSColor(NSColor.Name(rawValue: ""))
-                                                           ^
-      let orbitPathSelectedColor = NSColor(NSColor.Name(rawValue: ""))
-                                                                   ^
-                                                                   
-  5) multi-cursor paste color names
-      let orbitPathColor = NSColor(NSColor.Name(rawValue: "orbitPathColor"))
-                                                                         ^
-      let orbitPathSelectedColor = NSColor(NSColor.Name(rawValue: "orbitPathSelectedColor"))
-                                                                                         ^
+    let someColor = NSColor(NSColor.Name(rawValue: ""))
+                                                    ^
 
-[I've got a couple more changes I want to make down here.]
-  -- Describe the change, and start making it.
+[Now, I'll paste in the names of the colors.]
 
-[But you know, before I do, I want to be able to see upstream changes, as well. So just like I can see lines of code I've changed over here in the change bar, if I want, I can also see code that is being changed by other people.]
-  -- Open Preferences > Source Control, toggle "Include upstream changes"
-  
-[Back in the source code, notice that we now have a conflict -- I was changing code that Andrew was also modifiying.]
-  -- Click the change bar and discard my change
-  -- Click Andrew's change to see what he was doing
-  -- Mention/point out that I could view Andrew's full change in the Version editor
+    let someColor = NSColor(NSColor.Name(rawValue: "someColor"))
 
+[There we go! Now we're using colors from our asset catalog, which will automatically update as when the system appearance changes.]
+
+## Part 3 -- SCM
+
+[You may have noticed as I've been making edits, the source editor is showing me which code I've changed, over here in the change bar. This is really helpful when looking through your code for the local edits you've made.]
+
+[Xcode can also show you the changes that have been made up stream, too (scroll down to some changes Andrew made). Right here, I can see that Andrew has been making changes. If I start typing there, Xcode tells me that I'll have a conflict when I go to commit. This is great information to have -- now I know to pull before I start making edits here -- I really prefer to not have to resolve conflicts!]
+
+## Wrap Up
 ** [Lots of small improvements to the editor that help make you even more productive] **
-
-
-
----------------------------
-
-1. Using the new source editor features make changes
-   * multi-cursor editing
-   * code-folding
-   * over-scroll
-   * Jump to definition enhancments
-   * Callers in action popover
-
-2. Using the SCM annotations to view changes
-   * showing local changes
-   * showing upstream changes
-   * related SCM actions (jump to version editor)?
-      * Discard change
-      * Show log info for upstream changes
-      * Show last change for line
-      * Show in versions editor
-         * Version editor re-theme, even awesomer
-      * Jump to next/previous change, local/upstream/locally committed
-
-3. Design tools for Dark Mode
-   * asset catalog support
-      * New color slots (vibrancy/dark/high contrast)
-      * New image slots (vibrancy/dark/high contrast)
-      * Performance improvements for large catalogs
-   * interface builder support
-      * Trait bar (switch between light and dark)
-      * Assistant editor preview of light and dark
-      * Color selection in Inspector (shows active color set based on canvas)
-         * Refactor to named color (not in yet)
-      * Designables (maybe show this and how it adapts to appearnace changes)
-      * Object library in toolbar
-      * 
-
--- OTHER -- 
-      * ARKit 2D/3D assets (asset detection)
