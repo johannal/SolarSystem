@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14249" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14249"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AstronomicalObjectViewItem" customModule="Solar_System_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="122" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JVl-K8-z9F">
+                    <rect key="frame" x="43" y="20" width="38" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="ZBE-yC-ZsU">
+                        <font key="font" metaFont="systemMedium" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="JVl-K8-z9F" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="TWp-4V-ddd"/>
+                <constraint firstAttribute="bottom" secondItem="JVl-K8-z9F" secondAttribute="bottom" constant="20" id="hCb-Zg-6F7"/>
+                <constraint firstItem="JVl-K8-z9F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="yvt-Lc-7b6"/>
+            </constraints>
+            <point key="canvasLocation" x="-40" y="112"/>
+        </customView>
+        <collectionViewItem id="BF9-h1-fue" customClass="AstronomicalObjectViewItem" customModule="Solar_System_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="nameTextField" destination="JVl-K8-z9F" id="TDq-VR-P71"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="Qph-ZD-nXi"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+</document>
