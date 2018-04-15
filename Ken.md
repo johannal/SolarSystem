@@ -1,5 +1,18 @@
+## Part 1 -- Asset Catalog and IB
 
-[Start off in a "arbitrary" file.]
+[Start off an asset catalog file open. Talk about how I'm in the middle of converting my app to adapt to dark.]
+  -- System is in dark
+  
+[Add a new color. In the Inspector, opt it inot "Dark". Also mention that we can provide variants that will be used in high contrast or vibrant contexts. Point out that this all happens automatically -- all I need to do is used the right named color.]
+  -- The color we're adding here is one that we'll use when we switch over to IB
+
+[Switch over to a storyboard in IB]
+  
+[Select an NSBox that is being used as a container (the box has a custom border and background color). In the Attributes Inspector, pop the "Fill Color" popup. Mention that I see many system colors here, which will automatically update based on the light and dark. I can also see my owned named colors up at the top of the popup menu. Select whatever color we just added in the asset catalog.]
+
+[I'd like to see how this looks in light, to make sure I've got it right.]
+
+## Part 2 -- Source Editor & SCM
 
 [Use jump to definition on a symbol to show off the new disambiguating UI. Mention that we want to update our app for Skyglow.]
 -- Probably want the symbol to have ambiguous results?
