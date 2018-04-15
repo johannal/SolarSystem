@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14249" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14247" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14249"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14249"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14247"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14247"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -793,7 +793,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="JBp-2T-iGC" userLabel="Left Visual Effect View">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="JBp-2T-iGC" userLabel="Left Visual Effect View">
                                 <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                 <subviews>
                                     <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCX-qa-erx">
@@ -817,11 +817,11 @@
                                                 </collectionView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ffS-cx-fvk">
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ffS-cx-fvk">
                                             <rect key="frame" x="-100" y="-100" width="218" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eVW-Fx-Hbd">
+                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eVW-Fx-Hbd">
                                             <rect key="frame" x="203" y="1" width="16" height="251"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -898,18 +898,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-wp-Uvl">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-wp-Uvl">
                                 <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                 <subviews>
                                     <sceneView sceneName="SingleAstronomicalObjectScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISY-kS-XGs">
-                                        <rect key="frame" x="0.0" y="171" width="220" height="176"/>
+                                        <rect key="frame" x="0.0" y="166" width="220" height="176"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ISY-kS-XGs" secondAttribute="height" multiplier="10:8" id="4fl-1t-JBT"/>
                                         </constraints>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </sceneView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-8A-eSc">
-                                        <rect key="frame" x="18" y="411" width="51" height="22"/>
+                                        <rect key="frame" x="10" y="411" width="51" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Earth" id="9Wj-nI-jle">
                                             <font key="font" metaFont="systemBold" size="18"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -917,7 +917,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lfu-68-Lxj">
-                                        <rect key="frame" x="18" y="390" width="108" height="17"/>
+                                        <rect key="frame" x="10" y="390" width="108" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Galaxy: Milkyway" id="ya9-Nv-z0p">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -925,22 +925,27 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cBC-Ek-7ci">
-                                        <rect key="frame" x="18" y="371" width="146" height="17"/>
+                                        <rect key="frame" x="10" y="371" width="146" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Age: 4.543 billion years" id="8pa-L2-Yby">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-2M-hVe">
+                                        <rect key="frame" x="12" y="360" width="208" height="5"/>
+                                    </box>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="yRP-2M-hVe" firstAttribute="leading" secondItem="cBC-Ek-7ci" secondAttribute="leading" id="834-ak-kC2"/>
                                     <constraint firstItem="m2w-8A-eSc" firstAttribute="top" secondItem="HQ6-wp-Uvl" secondAttribute="top" constant="20" id="8VW-pL-C5H"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lfu-68-Lxj" secondAttribute="trailing" constant="20" symbolic="YES" id="Gec-hG-T5k"/>
+                                    <constraint firstItem="ISY-kS-XGs" firstAttribute="top" secondItem="yRP-2M-hVe" secondAttribute="bottom" constant="20" id="MAm-dY-H32"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m2w-8A-eSc" secondAttribute="trailing" constant="20" symbolic="YES" id="Qdr-BN-Ca1"/>
-                                    <constraint firstItem="ISY-kS-XGs" firstAttribute="top" secondItem="cBC-Ek-7ci" secondAttribute="bottom" constant="24" id="QxB-bV-y7x"/>
                                     <constraint firstItem="cBC-Ek-7ci" firstAttribute="top" secondItem="lfu-68-Lxj" secondAttribute="bottom" constant="2" id="V6D-UG-qme"/>
                                     <constraint firstItem="cBC-Ek-7ci" firstAttribute="leading" secondItem="lfu-68-Lxj" secondAttribute="leading" id="Yvt-pm-yvo"/>
-                                    <constraint firstItem="m2w-8A-eSc" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" constant="20" id="dY7-6r-Dyj"/>
+                                    <constraint firstItem="yRP-2M-hVe" firstAttribute="top" secondItem="cBC-Ek-7ci" secondAttribute="bottom" constant="8" id="d9S-0Q-Wdc"/>
+                                    <constraint firstItem="m2w-8A-eSc" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" constant="12" id="dY7-6r-Dyj"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cBC-Ek-7ci" secondAttribute="trailing" constant="20" symbolic="YES" id="fVR-uU-nXZ"/>
                                     <constraint firstItem="ISY-kS-XGs" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" id="nSL-tE-2PX"/>
                                     <constraint firstItem="lfu-68-Lxj" firstAttribute="leading" secondItem="m2w-8A-eSc" secondAttribute="leading" id="puk-6H-TtF"/>
@@ -950,6 +955,7 @@
                             </visualEffectView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yRP-2M-hVe" secondAttribute="trailing" id="Aui-XS-Cq2"/>
                             <constraint firstAttribute="bottom" secondItem="HQ6-wp-Uvl" secondAttribute="bottom" id="QvZ-QQ-nKH"/>
                             <constraint firstAttribute="trailing" secondItem="HQ6-wp-Uvl" secondAttribute="trailing" id="UeC-3n-khf"/>
                             <constraint firstItem="HQ6-wp-Uvl" firstAttribute="top" secondItem="OpT-iI-FlN" secondAttribute="top" id="gXK-Gh-YlW"/>
