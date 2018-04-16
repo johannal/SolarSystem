@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Solar_System-Swift.h"
+#import "Solar_System_iOS-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

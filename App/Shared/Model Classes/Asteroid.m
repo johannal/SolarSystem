@@ -6,7 +6,7 @@
 //
 
 #import "Asteroid.h"
-#import "Solar_System-Swift.h"
+#import "Solar_System_iOS-Swift.h"
 
 @implementation Asteroid
 
