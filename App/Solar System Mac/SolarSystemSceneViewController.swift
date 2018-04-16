@@ -2,7 +2,6 @@
 //  SolarSystemSceneViewController.swift
 //  Solar System Mac
 //
-//  Created by Sebastian Fischer on 15.03.18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
@@ -12,12 +11,14 @@ import SceneKit
 class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControllerDelegate {
 
     @IBOutlet weak var solarSystemSceneView: SCNView!
-    var sceneController: SolarSystemSceneController?
-    
     @IBOutlet weak var gravityButton: NSButton?
     @IBOutlet weak var startAnimationButton: NSButton?
     @IBOutlet weak var increaseAnimationSpeedButton: NSButton?
     @IBOutlet weak var decreaseAnimationSpeedButton: NSButton?
+    
+    var sceneController: SolarSystemSceneController?
+    
+    // MARK: - NSViewController Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
