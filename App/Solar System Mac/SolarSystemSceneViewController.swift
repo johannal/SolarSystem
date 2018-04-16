@@ -30,23 +30,20 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         // Setup click gesture recognizer
         let clickGes = NSClickGestureRecognizer(target: self, action: #selector(didClickSceneView(_:)))
         solarSystemSceneView.addGestureRecognizer(clickGes)
-        
-        // Style solar system scene
-        _styleSolarSystem()
     }
     
     // MARK: - Solar System UI
     
-    fileprivate func _styleSolarSystem() {
-        let orbitPathColor = NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
-        let orbitSelectedPathColor = NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
-        let orbitHaloColor = NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
-        
-        _updateOrbit(withPathColor: orbitPathColor, selectedPathColor: orbitSelectedPathColor, haloColor: orbitHaloColor)
+    func orbitPathColor() -> NSColor {
+        return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
     }
     
-    fileprivate func _updateOrbit(withPathColor pathColor: NSColor?, selectedPathColor: NSColor?, haloColor: NSColor?) {
-        // TODO: add code that does something
+    func orbitSelectedPathColor() -> NSColor {
+        return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
+    }
+    
+    func orbitHaloColor() -> NSColor {
+        return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
     
     // MARK: - SolarSystemSceneControllerDelegate
