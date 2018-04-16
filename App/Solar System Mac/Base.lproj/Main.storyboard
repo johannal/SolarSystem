@@ -4,6 +4,7 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14249"/>
         <plugIn identifier="com.apple.SceneKitIBPlugin" version="14249"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1021,7 +1022,7 @@
                                                                 <rect key="frame" x="16" y="25" width="55" height="22"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="06:41" id="Gcw-La-agU">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
-                                                                    <color key="textColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="textColor" name="sunRiseSetLabelColor"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
@@ -1058,7 +1059,7 @@
                                                                 <rect key="frame" x="17" y="25" width="53" height="22"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="19:47" id="oFL-YU-a40">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
-                                                                    <color key="textColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="textColor" name="sunRiseSetLabelColor"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
@@ -1102,6 +1103,7 @@
                                     <constraint firstItem="Nr0-9d-n9e" firstAttribute="top" secondItem="MFH-EH-UQP" secondAttribute="bottom" constant="4" id="LXp-CP-2E4"/>
                                     <constraint firstItem="8hh-4F-VPQ" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" id="Lcy-sv-E8z"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m2w-8A-eSc" secondAttribute="trailing" constant="20" symbolic="YES" id="Qdr-BN-Ca1"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mqM-iF-31i" secondAttribute="trailing" constant="20" symbolic="YES" id="YxK-dF-UDf"/>
                                     <constraint firstItem="m2w-8A-eSc" firstAttribute="leading" secondItem="HQ6-wp-Uvl" secondAttribute="leading" constant="12" id="dY7-6r-Dyj"/>
                                     <constraint firstItem="K0h-Wl-9sR" firstAttribute="top" secondItem="Nr0-9d-n9e" secondAttribute="bottom" constant="16" id="mZF-iL-L13"/>
                                     <constraint firstItem="8hh-4F-VPQ" firstAttribute="top" secondItem="mqM-iF-31i" secondAttribute="bottom" constant="12" id="pIk-rK-wVK"/>
@@ -1124,5 +1126,8 @@
     </scenes>
     <resources>
         <image name="EarthGlobe" width="200" height="200"/>
+        <namedColor name="sunRiseSetLabelColor">
+            <color red="1" green="0.23499999940395355" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
