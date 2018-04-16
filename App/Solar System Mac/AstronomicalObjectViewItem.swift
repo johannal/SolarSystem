@@ -9,8 +9,6 @@
 import Cocoa
 
 class AstronomicalObjectViewItem: NSCollectionViewItem {
-
-    @IBOutlet weak var nameTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

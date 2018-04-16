@@ -39,7 +39,9 @@ class Navigator: NSViewController, NSCollectionViewDataSource, NSCollectionViewD
         
         
         if let name = planetDetails?[indexPath.item]["name"] as? String {
-            collectionViewItem.nameTextField.stringValue = name
+            collectionViewItem.textField?.stringValue = name
+            
+            collectionViewItem.imageView?.image = NSImage(named: NSImage.Name(rawValue: "\(name)Globe"))
         }
             
         //        let diameter = planetInfo["diameter"] as! Double

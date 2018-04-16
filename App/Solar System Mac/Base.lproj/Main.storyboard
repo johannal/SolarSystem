@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14247" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14249" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14247"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14249"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14249"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -806,7 +806,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="293"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gXA-l1-7O6">
-                                                        <size key="itemSize" width="84" height="100"/>
+                                                        <size key="itemSize" width="92" height="100"/>
                                                         <edgeInsets key="sectionInset" left="12" right="12" top="0.0" bottom="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <color key="primaryBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -817,11 +817,11 @@
                                                 </collectionView>
                                             </subviews>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ffS-cx-fvk">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ffS-cx-fvk">
                                             <rect key="frame" x="-100" y="-100" width="218" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eVW-Fx-Hbd">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="eVW-Fx-Hbd">
                                             <rect key="frame" x="203" y="1" width="16" height="251"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
@@ -998,7 +998,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <box boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-Wl-9sR">
-                                        <rect key="frame" x="18" y="106" width="186" height="61"/>
+                                        <rect key="frame" x="17" y="106" width="186" height="61"/>
                                         <view key="contentView" id="UNC-6t-H7Z">
                                             <rect key="frame" x="0.0" y="0.0" width="186" height="61"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
