@@ -3,7 +3,7 @@
 [Start off an asset catalog file open. Talk about how I'm in the middle of converting my app to adapt to dark.]
   -- System is in dark
   
-[Add a new color. In the Inspector, opt it inot "Dark". Also mention that we can provide variants that will be used in high contrast or vibrant contexts. Point out that this all happens automatically -- all I need to do is used the right named color.]
+[Add a new color. In the Inspector, opt it in to "Dark". Also mention that we can provide variants that will be used in high contrast or vibrant contexts. Point out that this all happens automatically -- all I need to do is used the right named color.]
   -- The color we're adding here is one that we'll use when we switch over to IB
   -- <rdar://problem/39443829> Justice10A156: Inspector content flickers when toggling new slot for Asset Catalog color
 
@@ -17,7 +17,7 @@
 
 ## Part 2 -- Source Editor
 
-[Let's jump over to my source code, where I want to make a few changes.]
+[Let's jump over to my source code, where I want to continue my adotion of dark.]
 
 [First off, I want to make these methods public, since I'm going to use them through my project.]
 
@@ -58,6 +58,8 @@
 [You may have noticed as I've been making edits, the source editor is showing me which code I've changed, over here in the change bar. This is really helpful when looking through your code for the local edits you've made.]
 
 [Xcode can also show you the changes that have been made up stream, too (scroll down to some changes Andrew made). Right here, I can see that Andrew has been making changes. If I start typing there, Xcode tells me that I'll have a conflict when I go to commit. This is great information to have -- now I know to pull before I start making edits here -- I really prefer to not have to resolve conflicts!]
+
+[[ DO SOMETHING WITH THE CHANGE, MAYBE LOOK AT IT?]
 
 ## Wrap Up
 ** [Lots of small improvements to the editor that help make you even more productive] **
