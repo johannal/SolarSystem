@@ -45,7 +45,7 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         _updateOrbit(withPathColor: orbitPathColor, selectedPathColor: orbitSelectedPathColor, haloColor: orbitHaloColor)
     }
     
-    fileprivate func _updateOrbit(withPathColor pathColor: NSColor, selectedPathColor: NSColor, haloColor: NSColor) {
+    fileprivate func _updateOrbit(withPathColor pathColor: NSColor?, selectedPathColor: NSColor?, haloColor: NSColor?) {
         // TODO: add code that does something
     }
     
