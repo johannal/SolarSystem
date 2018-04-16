@@ -980,7 +980,7 @@
                                             <constraint firstAttribute="height" constant="24" id="w5C-rh-F1X"/>
                                         </constraints>
                                         <color key="borderColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="fillColor" name="coordinatesBackgroundColor"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nr0-9d-n9e">
                                         <rect key="frame" x="64" y="183" width="94" height="14"/>
@@ -1126,8 +1126,11 @@
     </scenes>
     <resources>
         <image name="EarthGlobe" width="200" height="200"/>
+        <namedColor name="coordinatesBackgroundColor">
+            <color white="0.95999997854232788" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
         <namedColor name="sunRiseSetLabelColor">
-            <color red="1" green="0.23499999940395355" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58399999141693115" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
