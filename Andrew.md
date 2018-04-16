@@ -1,5 +1,20 @@
 # WWDC 2018 SOTU Demo - Andrew
 
+## Part 1: testing improvements / parallel testing
+
+Earlier, Ken showed you our Solar System app for macOS.  We have really been investing in testing for our app, so let's see how some of the great testing enhancements in Xcode 10 can help us.
+ 
+*Demo: Start off with a macOS unit testing project*
+
+As you can see, our project has a healthy number of unit tests which take XXX seconds to run.  I'm going to make use of parallel testing to really put my machine to work.
+
+I'll start by opening the scheme editor for my project.
+
+*Demo: click on the scheme menu, and choose edit scheme*
+
+I'l choose the test action and for my mac tests, configure some options.
+
+
 ### Parallel Testing
 * Parallel testing via multiple test runners for sharding test cases
 * Parallelizes at the test class level
