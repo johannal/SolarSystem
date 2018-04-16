@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Solar System.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8023D29420850501006DFD5F"
+               BuildableName = "Solar System Mac Unit Tests.xctest"
+               BlueprintName = "Solar System Mac Unit Tests"
+               ReferencedContainer = "container:Solar System.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
