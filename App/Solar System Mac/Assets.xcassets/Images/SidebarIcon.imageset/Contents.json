@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "SidebarIcon.png",
+      "filename" : "SidebarIcon-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "SidebarDarkIcon.png",
+      "filename" : "SidebarDarkIcon-2.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -18,12 +18,12 @@
     },
     {
       "idiom" : "mac",
-      "filename" : "SidebarIcon@2x.png",
+      "filename" : "SidebarIcon-2@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "mac",
-      "filename" : "SidebarDarkIcon@2x.png",
+      "filename" : "SidebarDarkIcon-2@2x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",

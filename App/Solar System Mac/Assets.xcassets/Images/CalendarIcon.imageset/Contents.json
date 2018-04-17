@@ -7,7 +7,7 @@
     },
     {
       "idiom" : "mac",
-      "filename" : "CalendarDarkIcon.png",
+      "filename" : "CalendarDarkIcon-2.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -23,7 +23,7 @@
     },
     {
       "idiom" : "mac",
-      "filename" : "CalendarDarkIcon@2x.png",
+      "filename" : "CalendarDarkIcon-2@2x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
