@@ -1,5 +1,5 @@
 //
-//  MoonTests.swift
+//  StarTests.swift
 //
 //  Created by Andrew Nesbitt on 4/16/18.
 //  Copyright © 2018 Apple. All rights reserved.
@@ -7,22 +7,23 @@
 
 import XCTest
 
-class MoonTests: XCTestCase {
+class StarTests: XCTestCase {
     
-    func testMoonName() {
-        testSleep(1000)
-    }
-
-    func testMoonColor() {
+    func testStarPosition() {
         testSleep(1000)
     }
     
-    func testFindParentPlanet() {
+    func testStarMass() {
         testSleep(1000)
     }
-
-    func testPlanetSiblings() {
+    
+    func testStarDensity() {
         testSleep(1000)
     }
+    
+    func testStarAngularVelocity() {
+        testSleep(1000)
 
+    }
+    
 }

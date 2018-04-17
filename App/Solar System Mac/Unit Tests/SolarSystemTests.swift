@@ -1,5 +1,5 @@
 //
-//  MoonTests.swift
+//  SolarSystemTests.swift
 //
 //  Created by Andrew Nesbitt on 4/16/18.
 //  Copyright © 2018 Apple. All rights reserved.
@@ -7,22 +7,18 @@
 
 import XCTest
 
-class MoonTests: XCTestCase {
+class SolarSystemTests: XCTestCase {
     
-    func testMoonName() {
-        testSleep(1000)
-    }
-
-    func testMoonColor() {
+    func testSolarSystemPosition() {
         testSleep(1000)
     }
     
-    func testFindParentPlanet() {
+    func testDistanceBetweenPlanets() {
         testSleep(1000)
     }
-
-    func testPlanetSiblings() {
+    
+    func testCreateDistantObjects() {
         testSleep(1000)
     }
-
+    
 }

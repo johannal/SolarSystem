@@ -1,13 +1,14 @@
 //
-//  Solar SystemUITests.swift
-//  Solar SystemUITests
+//  Solar_System_iOS_UI_Tests.swift
+//  Solar System iOS UI Tests
 //
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Created by Administrator on 4/16/18.
+//  Copyright © 2018 Apple. All rights reserved.
 //
 
 import XCTest
 
-class ScienceUITests: XCTestCase {
+class Solar_System_iOS_UI_Tests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,15 +29,8 @@ class ScienceUITests: XCTestCase {
     }
     
     func testExample() {
-        //let scienceApp = XCUIApplication.init(bundleIdentifier: "com.apple.dt.Science")
-        let preferencesApp = XCUIApplication.init(bundleIdentifier: "com.apple.Preferences")
-        
-        // ...
-        
-        preferencesApp.activate()
-        
-        // ...
-        
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
 }
