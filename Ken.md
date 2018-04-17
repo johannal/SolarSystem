@@ -22,41 +22,27 @@ One really handy way to work is to open up the Preview. Now I can see my UI in l
 
 ## Part 2 -- Source Editor
 
-[Let's jump over to my source code, where I want to continue my adotion of dark.]
+Thats looking good. I'm jump over to source code, and make a few more changes to support the dark appearance.
 
-[First off, I want to make these methods public, since I'm going to use them through my project.]
+As I look at this code, I think these methods here that are returning colors should actually be properties. With Xcode 10, thats a really easy change to make. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking. If I add a cursor I don't want, I can just click again in the same spot.
 
-[That's really easy to do in Xcode 10, I'll just drop a cursor in front of each method by holding Shift and Control and then clicking. I'll type "public". While I'm at it, I should add some documentation -- I'll just press the up arrow, and then select the Editor > Structure > Add Documentation action. I'll fill that in later.]
+Now I'll hold down Command and Option and press the right arrow to select "func" on each line. I'll replace that with "var".
 
-  -- <rdar://problem/39443933> Justice10A156: Add Documentation action doesn't add documentation for every cursor
+Now I'll arrow over and get rid of the parens and the right arrow, and add a colon. Easy.
 
-[Each of these methods is handing back a color, but those colors are all hard coded. Thats not going to work for dark. What I need to do is convert each of these to instead return a named color. Remember that those named colors will automatically switch based on the system appearance for me.]
+  <rdar://problem/39443933> Justice10A156: Add Documentation action doesn't add documentation for every cursor
 
-[I'm going to edit all of these at once, using multiple cursors. I'll drop a cursor in front of each variable name -- those names are also the names of the colors in my asset catalog.]
+I also want to update these colors here. They're hardcoded now, which isn't going to work for dark. 
 
-    let someColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-        ^
+I'll drop a cursor in front of each property name, holding down Control and Shift and clicking.
 
-[Now I'll hold down Command and Option and then press the right arrow to select all of the variable names. ]
+Then I'm going to hold down Command and Option and press right arrow to select the property names. I'll copy that by selecting Edit > Copy.
 
-    let someColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-        ^-------^
+Now I'll move my cursors down onto the next line, over to where the color initializer is. I'm going to delete everything in between the parens -- those are hard-coded values we don't want.
 
-[I'll copy those (select Edit > Copy). Now I'll select the code between the parens, thats using the NSColor initializer that takes hard coded values.]
+I'll type "NSColor.Name(""), and then paste the color names by selecting Edit > Paste.
 
-    let someColor = NSColor(red:1.0 green:1.0 blue:1.0 alpha:1.0)
-                            ^----------------------------------^
-
-[I'll delete that, and use the named color initializer.]
-
-    let someColor = NSColor(NSColor.Name(rawValue: ""))
-                                                    ^
-
-[Now, I'll paste in the names of the colors.]
-
-    let someColor = NSColor(NSColor.Name(rawValue: "someColor"))
-
-[There we go! Now we're using colors from our asset catalog, which will automatically update as when the system appearance changes.]
+We just updated three bits of code all at the same time! And now our colors will update automatically when we change the system appearance.
 
 ## Part 3 -- SCM
 
@@ -71,9 +57,8 @@ One really handy way to work is to open up the Preview. Now I can see my UI in l
 
 ## Appendix
 
-### Code Change 1
+### Pre Code Change
 
-**Start:**
     func orbitPathColor() -> NSColor {
         return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
     }
@@ -86,15 +71,16 @@ One really handy way to work is to open up the Preview. Now I can see my UI in l
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
 
-**End:**
+### Post Code Change
+
     var orbitPathColor: NSColor {
-        return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
+        return NSColor(NSColor.Name("orbitPathColor"))
     }
     
     var orbitSelectedPathColor: NSColor {
-        return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
+        return NSColor(NSColor.Name("orbitSelectedPathColor"))
     }
     
     var orbitHaloColor: NSColor {
-        return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
+        return NSColor(NSColor.Name("orbitHaloColor"))
     }
