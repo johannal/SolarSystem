@@ -1,2 +1,14 @@
 Xcode Justice XIP 10A155
 macOS Liberty InstallAssistant 18A265
+
+Ken
+---
+
+TBD
+
+
+Andrew
+------
+
+To enable parallel testing:
+	defaults write com.apple.dt.Xcode IDETestingParallelizationEnabled -bool YES
