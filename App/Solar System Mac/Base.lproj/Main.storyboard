@@ -788,13 +788,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                 <subviews>
                                     <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-zr-v8b">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="293"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                         <clipView key="contentView" drawsBackground="NO" id="LyA-Hk-VwL">
-                                            <rect key="frame" x="0.0" y="0.0" width="220" height="293"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <collectionView id="iY9-bk-20O">
-                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="293"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="xOI-r2-oJQ">
                                                         <size key="itemSize" width="92" height="100"/>
@@ -813,54 +813,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nfd-TQ-1Iw">
-                                        <rect key="frame" x="18" y="386" width="55" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="9:41 am" id="FG8-4s-MGa">
-                                            <font key="font" metaFont="systemSemibold" size="13"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bgA-T2-ZpZ">
-                                        <rect key="frame" x="18" y="406" width="111" height="22"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="4 June 2018" id="vfc-1p-mqI">
-                                            <font key="font" metaFont="systemBold" size="18"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrS-V8-WvK">
-                                        <rect key="frame" x="16" y="303" width="77" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Pause" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dhv-h7-ZKP">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="peh-bn-BQd">
-                                        <rect key="frame" x="18" y="349" width="184" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="5" tickMarkPosition="above" numberOfTickMarks="21" allowsTickMarkValuesOnly="YES" sliderType="linear" id="vn5-di-Ao8"/>
-                                    </slider>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmQ-RR-VDi">
-                                        <rect key="frame" x="128" y="303" width="75" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jMl-wX-IZE">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ahw-zr-v8b" firstAttribute="top" secondItem="gB4-uQ-Pws" secondAttribute="top" constant="160" id="9c9-dH-maD"/>
-                                    <constraint firstItem="bgA-T2-ZpZ" firstAttribute="top" secondItem="gB4-uQ-Pws" secondAttribute="top" constant="25" id="DSY-62-ORh"/>
+                                    <constraint firstItem="ahw-zr-v8b" firstAttribute="top" secondItem="gB4-uQ-Pws" secondAttribute="top" id="9c9-dH-maD"/>
                                     <constraint firstAttribute="trailing" secondItem="ahw-zr-v8b" secondAttribute="trailing" id="IKX-EI-RCf"/>
                                     <constraint firstAttribute="width" constant="220" id="MP5-je-tvH"/>
-                                    <constraint firstItem="bgA-T2-ZpZ" firstAttribute="leading" secondItem="gB4-uQ-Pws" secondAttribute="leading" constant="20" id="ga8-1t-gly"/>
-                                    <constraint firstItem="nfd-TQ-1Iw" firstAttribute="leading" secondItem="bgA-T2-ZpZ" secondAttribute="leading" id="txJ-mC-teH"/>
                                     <constraint firstItem="ahw-zr-v8b" firstAttribute="leading" secondItem="gB4-uQ-Pws" secondAttribute="leading" id="viO-ei-DJt"/>
                                     <constraint firstAttribute="bottom" secondItem="ahw-zr-v8b" secondAttribute="bottom" id="xUq-In-M5d"/>
-                                    <constraint firstItem="nfd-TQ-1Iw" firstAttribute="top" secondItem="bgA-T2-ZpZ" secondAttribute="bottom" constant="3" id="zOC-hM-TGR"/>
                                 </constraints>
                             </visualEffectView>
                             <sceneView sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70t-ps-lrB">
