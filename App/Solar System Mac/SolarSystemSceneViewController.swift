@@ -64,4 +64,17 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     @objc func didClickSceneView(_ sender: NSClickGestureRecognizer) {
         sceneController?.didHitSceneView(atLocation: sender.location(in: solarSystemSceneView))
     }
+    
+    func numberOfOrbitingNodes() -> UInt {
+        guard let orbitingNodes = sceneController?.planetNodes else { return 0 }
+        
+        var numberOfOrbitingNodes: UInt = 0
+        for node in orbitingNodes {
+            if (node.isOrbitingAnimationEnabled) {
+                numberOfOrbitingNodes += 1
+            }
+        }
+        
+        return numberOfOrbitingNodes
+    }
 }
