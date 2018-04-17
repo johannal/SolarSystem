@@ -9,6 +9,11 @@ import AppKit
 import SceneKit
 
 class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControllerDelegate {
+    
+    let navigator = Navigator()
+    let inspector = Inspector()
+    
+    @IBOutlet weak var navigatorCollectionView: NSCollectionView!
 
     @IBOutlet weak var solarSystemSceneView: SCNView!
     @IBOutlet weak var gravityButton: NSButton?
@@ -31,6 +36,9 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         // Setup click gesture recognizer
         let clickGes = NSClickGestureRecognizer(target: self, action: #selector(didClickSceneView(_:)))
         solarSystemSceneView.addGestureRecognizer(clickGes)
+        
+        // Setup navigator controller
+        navigator.collectionView = navigatorCollectionView
     }
     
     // MARK: - Solar System UI

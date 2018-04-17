@@ -8,19 +8,26 @@
 
 import AppKit
 
-class Navigator: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate {
+class Navigator: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate {
     
-    @IBOutlet weak var collectionView: NSCollectionView!
+    weak var collectionView: NSCollectionView? {
+        didSet {
+            collectionView?.delegate = self
+            collectionView?.dataSource = self
+        }
+    }
     var planetDetails: [Dictionary<String, Any>]?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override init() {
+        super.init()
+        setup()
+    }
+    
+    func setup() {
         // TODO: Pull out into actual model that backs the 3D scene and the collection view
         let planetInfoPath = Bundle.main.path(forResource: "PlanetDetails", ofType: "plist")!
         planetDetails = NSArray.init(contentsOfFile: planetInfoPath) as? [Dictionary<String, Any>]
     }
-    
     
     // MARK: - NSCollectionViewDataSource
     

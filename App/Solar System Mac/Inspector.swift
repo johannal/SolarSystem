@@ -37,7 +37,6 @@ class Inspector: NSViewController {
             astronomicalObjectNode.geometry?.firstMaterial?.diffuse.contents = image
         }
     }
-    
 }
 
 extension NSAppearance {
