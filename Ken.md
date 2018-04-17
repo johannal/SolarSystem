@@ -1,19 +1,24 @@
 ## Part 1 -- Asset Catalog and IB
 
-[Start off an asset catalog file open. Talk about how I'm in the middle of converting my app to adapt to dark.]
-  -- System is in dark
-  
-[Add a new color. In the Inspector, opt it in to "Dark". Also mention that we can provide variants that will be used in high contrast or vibrant contexts. Point out that this all happens automatically -- all I need to do is used the right named color.]
-  -- The color we're adding here is one that we'll use when we switch over to IB
-  -- <rdar://problem/39443829> Justice10A156: Inspector content flickers when toggling new slot for Asset Catalog color
+Xcode 10 makes it easy to adopt the new dark look in your app. I'm in the middle of doing that here in my app called "Solar System".
 
-[Switch over to a storyboard in IB]
-  
-[Select an NSBox that is being used as a container (the box has a custom border and background color). In the Attributes Inspector, pop the "Fill Color" popup. Mention that I see many system colors here, which will automatically update based on the light and dark. I can also see my owned named colors up at the top of the popup menu. Select whatever color we just added in the asset catalog.]
+I use a lot of custom colors, and I want those colors to adapt to the system appearance. To do that I can use the new color slots in asset catlog. I've added a bunch of colors already, and you can see that I've specified light and dark variants for each. I can even add variants for high contrast and vibrant contexts.
 
-[I'd like to see how this looks in light, just to make sure I've got it right. Theres a new button down here in the bottom bar, which gives me the ability to change the appearance of my content (toggle to light, then toggle back to dark).]
+I'm going to add one more color. I'm going to use this color behind my sunrise and sunset indicators -- lets change the light one to be blah[some color], and the dark one to be blah[some color].
 
-[I can also bring up a second view onto this UI in the Assistant (toggle to the Assistant editor, then switch to Preview). Down in the bottom bar, I can add a preview of the UI in light. Now, as I make changes, I can see what it will look like in both light and dark (switch the fill color to systemBlue, and then back to the original named color). This is a really nice way to quickly develop your UIs for both modes.]
+  <rdar://problem/39443829> Justice10A156: Inspector content flickers when toggling new slot for Asset Catalog color
+
+Now I'm going to jump over to my storyboard file, where I'm working on this bit of planet inspector UI. 
+
+It's all looking pretty good, but the text behind the sunrise and sunset indicators is hard to read, so I want this background color to adapt.
+
+I'll select each of these boxes, and then pop open the "Fill Color" popup button in the Attributes Inspector. In this list, I can see a whole bunch of colors, a lot of which are system colors that will automatically adapt based on the appearance.
+
+Up at the top of this list are the colors from my asset catalog. I'm going to choose this readoutBackgroundColor that I just created.
+
+That looks good. Now I want to make sure that things are still looking good in light, so I'm goign to pop open the bar here at the bottom of IB. I can toggle my UI between light and dark. It's looking mostly good, but it looks like I may have broken this other location readout up here.
+
+One really handy way to work is to open up the Preview. Now I can see my UI in light and dark at the same time. Let's make that location readout use the same color.
 
 ## Part 2 -- Source Editor
 
@@ -63,3 +68,33 @@
 
 ## Wrap Up
 ** [Lots of small improvements to the editor that help make you even more productive] **
+
+## Appendix
+
+### Code Change 1
+
+**Start:**
+    func orbitPathColor() -> NSColor {
+        return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
+    }
+
+    func orbitSelectedPathColor() -> NSColor {
+        return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
+    }
+
+    func orbitHaloColor() -> NSColor {
+        return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
+    }
+
+**End:**
+    var orbitPathColor: NSColor {
+        return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
+    }
+    
+    var orbitSelectedPathColor: NSColor {
+        return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
+    }
+    
+    var orbitHaloColor: NSColor {
+        return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
+    }
