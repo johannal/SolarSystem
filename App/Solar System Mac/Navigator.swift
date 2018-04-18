@@ -2,7 +2,6 @@
 //  Navigator.swift
 //  Solar System Mac
 //
-//  Created by Sebastian Fischer on 14.04.18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
@@ -44,18 +43,11 @@ class Navigator: NSObject, NSCollectionViewDataSource, NSCollectionViewDelegate 
         let item = collectionView.makeItem(withIdentifier: identifier, for: indexPath)
         guard let collectionViewItem = item as? AstronomicalObjectViewItem else {return item}
         
-        
         if let name = planetDetails?[indexPath.item]["name"] as? String {
             collectionViewItem.textField?.stringValue = name
-            
             collectionViewItem.imageView?.image = NSImage(named: NSImage.Name(rawValue: "\(name)Globe"))
         }
-            
-        //        let diameter = planetInfo["diameter"] as! Double
-        //        let orbitalRadius = planetInfo["orbitalRadius"] as! Double
         
         return item
     }
-
-    
 }
