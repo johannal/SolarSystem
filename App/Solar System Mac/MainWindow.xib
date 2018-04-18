@@ -18,7 +18,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="935" height="470"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-iN-ybb">
                         <rect key="frame" x="0.0" y="0.0" width="935" height="470"/>
@@ -62,10 +62,10 @@
                                 </constraints>
                             </visualEffectView>
                             <sceneView sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mkj-SL-TvE">
-                                <rect key="frame" x="220" y="0.0" width="515" height="470"/>
+                                <rect key="frame" x="220" y="0.0" width="435" height="470"/>
                             </sceneView>
                             <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-gm-ZfI">
-                                <rect key="frame" x="735" y="0.0" width="200" height="470"/>
+                                <rect key="frame" x="655" y="0.0" width="280" height="470"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-bO-w8G">
                                         <rect key="frame" x="10" y="428" width="51" height="22"/>
@@ -76,11 +76,11 @@
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="lg6-H8-48v">
-                                        <rect key="frame" x="12" y="107" width="208" height="5"/>
+                                        <rect key="frame" x="12" y="107" width="268" height="5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </box>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Dg-3E-bYi">
-                                        <rect key="frame" x="0.0" y="258" width="200" height="140"/>
+                                        <rect key="frame" x="0.0" y="258" width="280" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="1sG-DI-rLv"/>
                                         </constraints>
@@ -96,7 +96,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7GJ-mm-hX6">
-                                        <rect key="frame" x="12" y="77" width="208" height="5"/>
+                                        <rect key="frame" x="12" y="77" width="268" height="5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52x-aW-s6U">
@@ -109,7 +109,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="J0F-VF-2Ii">
-                                        <rect key="frame" x="12" y="47" width="208" height="5"/>
+                                        <rect key="frame" x="12" y="47" width="268" height="5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0al-2y-nKX">
@@ -122,13 +122,13 @@
                                         </textFieldCell>
                                     </textField>
                                     <box boxType="custom" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EFW-PF-g9I">
-                                        <rect key="frame" x="12" y="217" width="176" height="24"/>
+                                        <rect key="frame" x="12" y="217" width="256" height="24"/>
                                         <view key="contentView" id="O7c-in-gKk">
-                                            <rect key="frame" x="1" y="1" width="174" height="22"/>
+                                            <rect key="frame" x="1" y="1" width="254" height="22"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-0n-93V">
-                                                    <rect key="frame" x="7" y="3" width="160" height="16"/>
+                                                    <rect key="frame" x="47" y="3" width="160" height="16"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" id="Ku2-mZ-Thb">
                                                         <font key="font" metaFont="systemMedium" size="12"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -148,7 +148,7 @@
                                         <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E8T-iW-oOA">
-                                        <rect key="frame" x="53" y="200" width="94" height="14"/>
+                                        <rect key="frame" x="93" y="200" width="94" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Location" id="d9u-qd-lm5">
                                             <font key="font" metaFont="systemMedium" size="11"/>
                                             <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
@@ -164,7 +164,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <box boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-Dj-Wzj">
-                                        <rect key="frame" x="7" y="123" width="186" height="61"/>
+                                        <rect key="frame" x="47" y="123" width="186" height="61"/>
                                         <view key="contentView" id="xs0-Im-jdE">
                                             <rect key="frame" x="0.0" y="0.0" width="186" height="61"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                                     <constraint firstItem="6Dg-3E-bYi" firstAttribute="centerX" secondItem="6cn-gm-ZfI" secondAttribute="centerX" id="9aO-GK-II2"/>
                                     <constraint firstItem="6Dg-3E-bYi" firstAttribute="top" secondItem="m5t-bm-H5O" secondAttribute="bottom" constant="12" id="HpT-1w-YtT"/>
                                     <constraint firstItem="m5t-bm-H5O" firstAttribute="top" secondItem="eS0-bO-w8G" secondAttribute="bottom" constant="1" id="JCD-hZ-xjn"/>
-                                    <constraint firstAttribute="width" constant="200" id="L1g-7T-glw"/>
+                                    <constraint firstAttribute="width" constant="280" id="L1g-7T-glw"/>
                                     <constraint firstItem="xJe-Dj-Wzj" firstAttribute="top" secondItem="E8T-iW-oOA" secondAttribute="bottom" constant="16" id="Qt6-iD-YrW"/>
                                     <constraint firstItem="E8T-iW-oOA" firstAttribute="centerX" secondItem="O7c-in-gKk" secondAttribute="centerX" id="ThS-ZH-A8I"/>
                                     <constraint firstItem="E8T-iW-oOA" firstAttribute="top" secondItem="O7c-in-gKk" secondAttribute="bottom" constant="4" id="WCB-uc-N47"/>
@@ -414,7 +414,7 @@
                     <toolbarItem reference="xV3-o3-3XI"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="295" y="176"/>
+            <point key="canvasLocation" x="294.5" y="176"/>
         </window>
     </objects>
     <resources>
