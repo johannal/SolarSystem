@@ -56,6 +56,7 @@
 		9EB5341E2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5341C2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift */; };
 		9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */; };
 		9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */; };
+		9EC862722087AA9500E0ECC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC862712087AA9500E0ECC8 /* MainWindow.xib */; };
 		9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
@@ -143,6 +144,7 @@
 		9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EC408071EBFEAEB00F7F8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EC408091EBFEAEB00F7F8A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EC862712087AA9500E0ECC8 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */,
 				9E4F77BB205AEA1F004C9486 /* Assets.xcassets */,
 				9E4F77BD205AEA1F004C9486 /* Main.storyboard */,
+				9EC862712087AA9500E0ECC8 /* MainWindow.xib */,
 				9E4F77C0205AEA1F004C9486 /* Info.plist */,
 				9E4F77C1205AEA1F004C9486 /* Solar_System_Mac.entitlements */,
 			);
@@ -561,6 +564,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC862722087AA9500E0ECC8 /* MainWindow.xib in Resources */,
 				9E4F77CA205AEB51004C9486 /* SolarSystemScene.scn in Resources */,
 				9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */,
 				9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */,
