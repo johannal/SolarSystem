@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "PauseIcon-2.png",
+      "filename" : "PauseIconLight.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "PauseDarkIcon-2.png",
+      "filename" : "PauseIconDark.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -18,12 +18,12 @@
     },
     {
       "idiom" : "mac",
-      "filename" : "PauseIcon-2@2x.png",
+      "filename" : "PauseIconLight@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "mac",
-      "filename" : "PauseDarkIcon-2@2x.png",
+      "filename" : "PauseIconDark@2x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
