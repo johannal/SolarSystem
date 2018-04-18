@@ -12,3 +12,6 @@ Andrew
 
 To enable parallel testing:
 	defaults write com.apple.dt.Xcode IDETestingParallelizationEnabled -bool YES
+
+To enable the default device set:
+	defaults write com.apple.dt.Xcode DVTTestSimulatorCloneProviderUseDefaultSet -bool YES
