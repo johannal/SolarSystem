@@ -8,13 +8,13 @@
 import AppKit
 import SceneKit
 
+/// An #NSViewController that represents a solar system.
 class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControllerDelegate {
     
     let navigator = Navigator()
     let inspector = Inspector()
     
     @IBOutlet weak var navigatorCollectionView: NSCollectionView!
-
     @IBOutlet weak var solarSystemSceneView: SCNView!
     @IBOutlet weak var gravityButton: NSButton?
     @IBOutlet weak var startAnimationButton: NSButton?
@@ -43,24 +43,29 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     
     // MARK: - Solar System UI
     
+    /// The color used to draw an #OrbitingBodyNode's orbit color.
     func orbitPathColor() -> NSColor {
         return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
     }
     
+    /// The color used to draw an #OrbitingBodyNode's orbit color, when that node is selected in the scene.
     func orbitSelectedPathColor() -> NSColor {
         return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
     }
     
+    /// The color used to draw an #OrbitingBodyNode's orbit halo color, which provides contrast with the background.
     func orbitHaloColor() -> NSColor {
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
     
     // MARK: - SolarSystemSceneControllerDelegate
     
+    /// Hides or shows this button that toggles gravity.
     func hideGravityButton(_ hidden: Bool) {
         gravityButton?.isHidden = hidden
     }
     
+    /// Called when the scene is clicked. Passes along the click to the backing SCNView.
     @objc func didClickSceneView(_ sender: NSClickGestureRecognizer) {
         sceneController?.didHitSceneView(atLocation: sender.location(in: solarSystemSceneView))
     }
