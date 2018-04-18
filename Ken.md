@@ -24,6 +24,8 @@ One really handy way to work is to open up the Preview. Now I can see my UI in l
 
 Thats looking good. I'm jump over to source code, and make a few more changes to support the dark appearance.
 
+Let me collapse some of this code. In Xcode 10, we've re-introduced the code-folding ribbon, for all of you that are into that kind of thing. We've also enhanced code folding across all the languages, so you can pretty much collapse anything between two braces.
+
 As I look at this code, I think these methods here that are returning colors should actually be properties. With Xcode 10, thats a really easy change to make. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking. If I add a cursor I don't want, I can just click again in the same spot.
 
 Now I'll hold down Command and Option and press the right arrow to select "func" on each line. I'll replace that with "var".
