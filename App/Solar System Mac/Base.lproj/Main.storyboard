@@ -993,7 +993,7 @@
                                                                 <rect key="frame" x="16" y="25" width="55" height="22"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="06:41" id="o3C-do-Ki5">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
-                                                                    <color key="textColor" name="badgeLabelColor"/>
+                                                                    <color key="textColor" name="sunRiseSunSetLabelColor"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
@@ -1030,7 +1030,7 @@
                                                                 <rect key="frame" x="17" y="25" width="53" height="22"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="19:47" id="WvQ-Rs-5hG">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
-                                                                    <color key="textColor" name="badgeLabelColor"/>
+                                                                    <color key="textColor" name="sunRiseSunSetLabelColor"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
@@ -1111,7 +1111,7 @@
         <image name="EarthGlobe" width="200" height="200"/>
         <image name="PauseIcon" width="18" height="18"/>
         <image name="SidebarIcon" width="18" height="18"/>
-        <namedColor name="badgeLabelColor">
+        <namedColor name="sunRiseSunSetLabelColor">
             <color red="0.96799999475479126" green="0.81000000238418579" blue="0.28400000929832458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
