@@ -16,7 +16,7 @@ I'll select each of these boxes, and then pop open the "Fill Color" popup button
 
 Up at the top of this list are the colors from my asset catalog. I'm going to choose this readoutBackgroundColor that I just created.
 
-That looks good. Now I want to make sure that things are still looking good in light, so I'm goign to pop open the bar here at the bottom of IB. I can toggle my UI between light and dark. It's looking mostly good, but it looks like I may have broken this other location readout up here.
+That looks good. Now I want to make sure that things are still looking good in light, so I'm going to pop open the bar here at the bottom of IB. I can toggle my UI between light and dark. It's looking mostly good, but it looks like I may have broken this other location readout up here.
 
 One really handy way to work is to open up the Preview. Now I can see my UI in light and dark at the same time. Let's make that location readout use the same color.
 
@@ -28,7 +28,7 @@ Let me collapse some of this code. In Xcode 10, we've re-introduced the code-fol
 
 As I look at this code, I think these methods here that are returning colors should actually be properties. With Xcode 10, thats a really easy change to make. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking. If I add a cursor I don't want, I can just click again in the same spot.
 
-Now I'll hold down Command and Option and press the right arrow to select "func" on each line. I'll replace that with "var".
+Now I'll hold down Shift and Option and press the right arrow to select "func" on each line. I'll replace that with "var".
 
 Now I'll arrow over and get rid of the parens and the right arrow, and add a colon. Easy.
 
@@ -48,14 +48,16 @@ We just updated three bits of code all at the same time! And now our colors will
 
 ## Part 3 -- SCM
 
-[You may have noticed as I've been making edits, the source editor is showing me which code I've changed, over here in the change bar. This is really helpful when looking through your code for the local edits you've made.]
+You may have noticed as I've been making edits, the source editor is showing me which code I've changed, over here in the change bar. This is really helpful when looking through your code for the local edits you've made.
 
-[Xcode can also show you the changes that have been made up stream, too (scroll down to some changes Andrew made). Right here, I can see that Andrew has been making changes. If I start typing there, Xcode tells me that I'll have a conflict when I go to commit. This is great information to have -- now I know to pull before I start making edits here -- I really prefer to not have to resolve conflicts!]
+Xcode can also show you the changes that have been made up stream, too (scroll down to some changes Andrew made). Right here, theres a change that I'll get when I pull. 
 
-[[ DO SOMETHING WITH THE CHANGE, MAYBE LOOK AT IT?]
+I really dislike conflicts, which is what I'd get if I started typing here, like this. Now, I can avoid conflicts  altogether by seeing what code is being changed around me. The best kind of conflict, is the one you don't get!
+
+Theres a TODO here to update the comment, but it looks like Andrew already did that. If I want can jump right into the commit view and see the full change. Really fluid experience. 
 
 ## Wrap Up
-** [Lots of small improvements to the editor that help make you even more productive] **
+Well, I'm all done with my dark mode adoption. And those are some of the new editing experiences in Xcode 10.
 
 ## Appendix
 

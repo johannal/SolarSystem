@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14247" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14251" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14247"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14251"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14251"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -993,7 +993,7 @@
                                                                 <rect key="frame" x="16" y="25" width="55" height="22"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="06:41" id="o3C-do-Ki5">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
-                                                                    <color key="textColor" name="sunRiseSetLabelColor"/>
+                                                                    <color key="textColor" name="badgeLabelColor"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
@@ -1030,7 +1030,7 @@
                                                                 <rect key="frame" x="17" y="25" width="53" height="22"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="19:47" id="WvQ-Rs-5hG">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
-                                                                    <color key="textColor" name="sunRiseSetLabelColor"/>
+                                                                    <color key="textColor" name="badgeLabelColor"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
@@ -1111,8 +1111,8 @@
         <image name="EarthGlobe" width="200" height="200"/>
         <image name="PauseIcon" width="18" height="18"/>
         <image name="SidebarIcon" width="18" height="18"/>
-        <namedColor name="sunRiseSetLabelColor">
-            <color red="1" green="0.80000001190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="badgeLabelColor">
+            <color red="0.96799999475479126" green="0.81000000238418579" blue="0.28400000929832458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
