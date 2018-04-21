@@ -1,28 +1,30 @@
 ## Part 1 -- Asset Catalog and IB
 
-Xcode 10 makes it easy to adopt the new dark look in your app. I'm in the middle of doing that here in my app called "Solar System".
+This is Xcode 10 -- gorgeous in dark. In addition to just looking great, Xcode 10 has some  new features that make it easy for you to adopt the new dark look.
 
-I use a lot of custom colors, and I want those colors to adapt to the system appearance. To do that I can use the new color slots in asset catlog. I've added a bunch of colors already, and you can see that I've specified light and dark variants for each. I can even add variants for high contrast and vibrant contexts.
+One of the first things you'll want to think about is colors. The best thing to do is start by pulling all those colors into an asset catalog. Last year, we introduced named colors, and this year, we've added support for dark, high contrast and vibrant variants.
 
-I'm going to add one more color. I'm going to use this color behind my sunrise and sunset indicators -- lets change the light one to be blah[some color], and the dark one to be blah[some color].
+So all I need to do is specify the colors I want here, and AppKit will pick the right ones to draw with based on the system preferences.
+
+While we're here, I'm going to add one more color, which I'll use as the background for some text. For light, I'll go with a 90% white. In dark, I'll go with a 40% white.
 
   <rdar://problem/39443829> Justice10A156: Inspector content flickers when toggling new slot for Asset Catalog color
 
-Now I'm going to jump over to my storyboard file, where I'm working on this bit of planet inspector UI. 
+Now I'm going to jump over to my UI and use this color.
 
-It's all looking pretty good, but the text behind the sunrise and sunset indicators is hard to read, so I want this background color to adapt.
+My app lets users explore our Solar System. And I've got these two readouts here that show the sunrise and sunset time for the selected planet.
+
+You can see that this rounded rect still looks like it's using the color meant for light UI -- definitley does not look good in dark. So lets change these two views to use that color I just defined.
 
 I'll select each of these boxes, and then pop open the "Fill Color" popup button in the Attributes Inspector. In this list, I can see a whole bunch of colors, a lot of which are system colors that will automatically adapt based on the appearance.
 
-Up at the top of this list are the colors from my asset catalog. I'm going to choose this readoutBackgroundColor that I just created.
+Up at the top of this list are the colors from my asset catalog. I'm going to choose this sunRiseSunSetBackgroundColor that I just created.
 
-That looks good. Now I want to make sure that things are still looking good in light, so I'm going to pop open the bar here at the bottom of IB. I can toggle my UI between light and dark. It's looking mostly good, but it looks like I may have broken this other location readout up here.
-
-One really handy way to work is to open up the Preview. Now I can see my UI in light and dark at the same time. Let's make that location readout use the same color.
+Now I want to make sure that things are still looking good in light, so I'm going to pop open the bar here at the bottom of IB. I can toggle my UI between light and dark. It's looking pretty good.
 
 ## Part 2 -- Source Editor
 
-Thats looking good. I'm jump over to source code, and make a few more changes to support the dark appearance.
+I'm going to jump over to source code, and make a few more changes to support the dark appearance.
 
 Let me collapse some of this code. In Xcode 10, we've re-introduced the code-folding ribbon, for all of you that are into that kind of thing. We've also enhanced code folding across all the languages, so you can pretty much collapse anything between two braces.
 
