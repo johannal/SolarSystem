@@ -57,7 +57,7 @@ I really dislike conflicts, which is what I'd get if I started typing here, like
 Theres a TODO here to update the comment, but it looks like Andrew already did that. If I want can jump right into the commit view and see the full change. Really fluid experience. 
 
 ## Wrap Up
-Well, I'm all done with my dark mode adoption. And those are some of the new editing experiences in Xcode 10.
+And those are some of the new editing experiences in Xcode 10.
 
 ## Appendix
 
