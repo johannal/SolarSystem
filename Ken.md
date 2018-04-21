@@ -46,13 +46,13 @@ I'll delete that and type 'named: NSColor.Name(""))!', and then paste the color 
 
 ## Part 3 -- SCM
 
-You may have noticed as I've been making edits, the source editor is showing me which code I've changed, over here in the change bar. This is really helpful when looking through your code for the local edits you've made.
+You may have noticed as I've been making edits, the source editor is showing me exactly which code I've changed, over here in the change bar. These are my local, uncommited edits.
 
-Xcode can also show you the changes that have been made up stream, too (scroll down to some changes Andrew made). Right here, theres a change that I'll get when I pull. 
+Xcode can also show me the changes that have been made up stream, too. So right here, theres a change that I'll get when I pull. 
 
-I really dislike conflicts, which is what I'd get if I started typing here, like this. Now, I can avoid conflicts  altogether by seeing what code is being changed around me. The best kind of conflict, is the one you don't get!
+Now I really dislike conflicts, which is what I'd get if I started typing here, like this. Xcode 10 helps me avoid conflicts showing me the code that has changed out from underneath me. The best kind of conflict, is the one you don't get!
 
-Theres a TODO here to update the comment, but it looks like Andrew already did that. If I want can jump right into the commit view and see the full change. Really fluid experience. 
+I can get more details on the commit if I want. Looks like Andrew has taken care of this TODO by adding some comments, so I don't have to -- my changes are complete!
 
 ## Wrap Up
 And those are some of the new editing experiences in Xcode 10.
