@@ -24,29 +24,25 @@ Now I want to make sure that things are still looking good in light, so I'm goin
 
 ## Part 2 -- Source Editor
 
-I'm going to jump over to source code, and make a few more changes to support the dark appearance.
+I'm going to jump over to my source code, and get rid of a few more hard coded colors.
 
-Let me collapse some of this code. In Xcode 10, we've re-introduced the code-folding ribbon, for all of you that are into that kind of thing. We've also enhanced code folding across all the languages, so you can pretty much collapse anything between two braces.
+Let me collapse some of this code. I can use the action popover for that. Or, I can use the the code-folding ribbon that we've reintroduced in Xcode 10. Code folding has been enhanced too -- you can fold pretty much anything between two braces across any language.
 
-As I look at this code, I think these methods here that are returning colors should actually be properties. With Xcode 10, thats a really easy change to make. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking. If I add a cursor I don't want, I can just click again in the same spot.
+As I look at this code, I think these methods here that are returning colors should actually be properties. With Xcode 10, thats a really easy change to make. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking. If I add a cursor I don't want, I can just click the same spot again to get rid of it.
 
-Now I'll hold down Shift and Option and press the right arrow to select "func" on each line. I'll replace that with "var".
+Now I'll select "func" on each line, and I'll replace that with "var".
 
-Now I'll arrow over and get rid of the parens and the right arrow, and add a colon. Easy.
+Now I'll jump to the end of the word here, which I can do by holding Option and pressing the right arrow. I'll get rid of these parens along with the arrow, and add a colon. Easy.
 
   <rdar://problem/39443933> Justice10A156: Add Documentation action doesn't add documentation for every cursor
 
-I also want to update these colors here. They're hardcoded now, which isn't going to work for dark. 
+Now I also want to update these colors here. They're hardcoded , which isn't going to work for dark. 
 
-I'll drop a cursor in front of each property name, holding down Control and Shift and clicking.
+So, I'm going to select each of these property names -- they are conviently also the names of the colors in the asset catalog. I'll select backwards to the beginning of the word, then I'll copy it by selecting Edit > Copy.
 
-Then I'm going to hold down Command and Option and press right arrow to select the property names. I'll copy that by selecting Edit > Copy.
+I'll arrow down to the next line here, and arrow forward to the beginning of the RGB initializer, and then I'll select all of it.
 
-Now I'll move my cursors down onto the next line, over to where the color initializer is. I'm going to delete everything in between the parens -- those are hard-coded values we don't want.
-
-I'll type "NSColor.Name(""), and then paste the color names by selecting Edit > Paste.
-
-We just updated three bits of code all at the same time! And now our colors will update automatically when we change the system appearance.
+I'll delete that and type 'named: NSColor.Name(""))!', and then paste the color names here between the quotes. Done! Three changes all at one -- trippled my productivity!
 
 ## Part 3 -- SCM
 
