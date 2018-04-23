@@ -874,11 +874,11 @@
                                 <rect key="frame" x="690" y="0.0" width="200" height="453"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rh3-I4-mod">
-                                        <rect key="frame" x="10" y="411" width="51" height="22"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Earth" id="QRs-2H-D02">
+                                        <rect key="frame" x="12" y="411" width="51" height="22"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Earth" drawsBackground="YES" id="QRs-2H-D02">
                                             <font key="font" metaFont="systemBold" size="18"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-XI-eub">
@@ -935,10 +935,10 @@
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XXV-oW-GnA">
                                                     <rect key="frame" x="7" y="3" width="160" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" id="uXM-Qd-dG8">
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" drawsBackground="YES" id="uXM-Qd-dG8">
                                                         <font key="font" metaFont="systemMedium" size="12"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </textFieldCell>
                                                 </textField>
                                             </subviews>
@@ -955,18 +955,18 @@
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tzR-YO-LYE">
                                         <rect key="frame" x="53" y="183" width="94" height="14"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Location" id="Ke9-Ob-dus">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Location" drawsBackground="YES" id="Ke9-Ob-dus">
                                             <font key="font" metaFont="systemMedium" size="11"/>
                                             <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cI0-gC-eT4">
-                                        <rect key="frame" x="10" y="393" width="60" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Milkyway" id="eJV-6W-fJe">
+                                        <rect key="frame" x="12" y="393" width="60" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Milkyway" drawsBackground="YES" id="eJV-6W-fJe">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </textFieldCell>
                                     </textField>
                                     <box boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-jm-2Jk">
