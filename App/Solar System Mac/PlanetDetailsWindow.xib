@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14251" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14251"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Solar System" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titleVisibility="hidden" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="558" height="470"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-iN-ybb">
+                        <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
+                        <subviews>
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-gm-ZfI" userLabel="Inspector Visual Effect View">
+                                <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-bO-w8G">
+                                        <rect key="frame" x="38" y="424" width="51" height="22"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Earth" id="KVF-Ag-wiI">
+                                            <font key="font" metaFont="systemBold" size="18"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="lg6-H8-48v">
+                                        <rect key="frame" x="40" y="107" width="518" height="5"/>
+                                    </box>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Dg-3E-bYi">
+                                        <rect key="frame" x="0.0" y="254" width="558" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="1sG-DI-rLv"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="EarthGlobe" id="Opu-iD-hX0"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l3O-T2-R7q">
+                                        <rect key="frame" x="38" y="88" width="104" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Radius: 6371 km" id="WEJ-bg-bVB">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7GJ-mm-hX6">
+                                        <rect key="frame" x="40" y="77" width="518" height="5"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="52x-aW-s6U">
+                                        <rect key="frame" x="38" y="58" width="121" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mass: 5.97×10²⁴ kg" id="dG4-tL-Drg">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="J0F-VF-2Ii">
+                                        <rect key="frame" x="40" y="47" width="518" height="5"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0al-2y-nKX">
+                                        <rect key="frame" x="38" y="28" width="111" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Gravity: 9.81 m/s²" id="OS9-vj-zqW">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box boxType="custom" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EFW-PF-g9I">
+                                        <rect key="frame" x="64" y="213" width="430" height="24"/>
+                                        <view key="contentView" id="O7c-in-gKk">
+                                            <rect key="frame" x="1" y="1" width="428" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-0n-93V">
+                                                    <rect key="frame" x="134" y="3" width="160" height="16"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" drawsBackground="YES" id="Ku2-mZ-Thb">
+                                                        <font key="font" metaFont="systemMedium" size="12"/>
+                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oos-0n-93V" firstAttribute="centerX" secondItem="O7c-in-gKk" secondAttribute="centerX" id="H6b-yz-pBU"/>
+                                                <constraint firstItem="Oos-0n-93V" firstAttribute="centerY" secondItem="O7c-in-gKk" secondAttribute="centerY" id="pE1-Cu-kfs"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="u5i-7U-j51"/>
+                                        </constraints>
+                                        <color key="borderColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E8T-iW-oOA">
+                                        <rect key="frame" x="232" y="196" width="94" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Location" id="d9u-qd-lm5">
+                                            <font key="font" metaFont="systemMedium" size="11"/>
+                                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m5t-bm-H5O">
+                                        <rect key="frame" x="38" y="406" width="60" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Milkyway" id="eVg-Ip-IKa">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-Dj-Wzj">
+                                        <rect key="frame" x="186" y="119" width="186" height="61"/>
+                                        <view key="contentView" id="xs0-Im-jdE">
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="61"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <box boxType="custom" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="LIC-0U-nce">
+                                                    <rect key="frame" x="0.0" y="0.0" width="89" height="61"/>
+                                                    <view key="contentView" id="nxj-Am-18d">
+                                                        <rect key="frame" x="1" y="1" width="87" height="59"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XeY-1a-H1i">
+                                                                <rect key="frame" x="21" y="9" width="45" height="14"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sunrise" id="FeD-NV-SUk">
+                                                                    <font key="font" metaFont="systemMedium" size="11"/>
+                                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JxX-Gq-d3d">
+                                                                <rect key="frame" x="16" y="25" width="55" height="22"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="06:41" id="PcO-U8-jBK">
+                                                                    <font key="font" metaFont="systemBold" size="18"/>
+                                                                    <color key="textColor" name="sunRiseSunSetLabelColor"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="JxX-Gq-d3d" firstAttribute="top" secondItem="nxj-Am-18d" secondAttribute="top" constant="12" id="1bf-vW-Tct"/>
+                                                            <constraint firstItem="JxX-Gq-d3d" firstAttribute="centerX" secondItem="nxj-Am-18d" secondAttribute="centerX" id="2GG-MR-hCS"/>
+                                                            <constraint firstItem="XeY-1a-H1i" firstAttribute="top" secondItem="JxX-Gq-d3d" secondAttribute="bottom" constant="2" id="Bh6-ga-G4V"/>
+                                                            <constraint firstItem="JxX-Gq-d3d" firstAttribute="centerX" secondItem="XeY-1a-H1i" secondAttribute="centerX" id="ohx-Dc-UhY"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="61" id="5c7-Pf-9Zx"/>
+                                                        <constraint firstAttribute="width" constant="89" id="AZ6-iT-ved"/>
+                                                    </constraints>
+                                                    <color key="borderColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="fillColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                </box>
+                                                <box boxType="custom" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="BIa-BK-PYf">
+                                                    <rect key="frame" x="97" y="0.0" width="89" height="61"/>
+                                                    <view key="contentView" id="Zmo-5X-yfp">
+                                                        <rect key="frame" x="1" y="1" width="87" height="59"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="820-qv-LTO">
+                                                                <rect key="frame" x="23" y="9" width="42" height="14"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sunset" id="m8e-ia-ZJt">
+                                                                    <font key="font" metaFont="systemMedium" size="11"/>
+                                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="caf-G5-d00">
+                                                                <rect key="frame" x="17" y="25" width="53" height="22"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="19:47" id="HxD-f3-s0Z">
+                                                                    <font key="font" metaFont="systemBold" size="18"/>
+                                                                    <color key="textColor" name="sunRiseSunSetLabelColor"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="caf-G5-d00" firstAttribute="top" secondItem="Zmo-5X-yfp" secondAttribute="top" constant="12" id="7aL-KI-IPi"/>
+                                                            <constraint firstItem="caf-G5-d00" firstAttribute="centerX" secondItem="Zmo-5X-yfp" secondAttribute="centerX" id="MDi-nl-pBb"/>
+                                                            <constraint firstItem="820-qv-LTO" firstAttribute="top" secondItem="caf-G5-d00" secondAttribute="bottom" constant="2" id="l3n-dV-eL5"/>
+                                                            <constraint firstItem="caf-G5-d00" firstAttribute="centerX" secondItem="820-qv-LTO" secondAttribute="centerX" id="ztC-Pt-uSB"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="89" id="8i3-hs-irB"/>
+                                                        <constraint firstAttribute="height" constant="61" id="RL0-o9-JeO"/>
+                                                    </constraints>
+                                                    <color key="borderColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="fillColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                </box>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LIC-0U-nce" firstAttribute="top" secondItem="xs0-Im-jdE" secondAttribute="top" id="8Du-zL-9td"/>
+                                                <constraint firstAttribute="trailing" secondItem="BIa-BK-PYf" secondAttribute="trailing" id="AlK-gp-pN9"/>
+                                                <constraint firstAttribute="bottom" secondItem="LIC-0U-nce" secondAttribute="bottom" id="BOn-JE-9AU"/>
+                                                <constraint firstAttribute="bottom" secondItem="BIa-BK-PYf" secondAttribute="bottom" id="KaH-4Q-opR"/>
+                                                <constraint firstItem="BIa-BK-PYf" firstAttribute="leading" secondItem="nxj-Am-18d" secondAttribute="trailing" constant="9" id="XSL-f1-sr8"/>
+                                                <constraint firstItem="LIC-0U-nce" firstAttribute="leading" secondItem="xs0-Im-jdE" secondAttribute="leading" id="fla-12-tXS"/>
+                                                <constraint firstItem="BIa-BK-PYf" firstAttribute="top" secondItem="xs0-Im-jdE" secondAttribute="top" id="fpY-b1-1PJ"/>
+                                            </constraints>
+                                        </view>
+                                    </box>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="m5t-bm-H5O" firstAttribute="leading" secondItem="eS0-bO-w8G" secondAttribute="leading" id="8SE-Iv-QNr"/>
+                                    <constraint firstItem="6Dg-3E-bYi" firstAttribute="centerX" secondItem="6cn-gm-ZfI" secondAttribute="centerX" id="9aO-GK-II2"/>
+                                    <constraint firstItem="0al-2y-nKX" firstAttribute="top" secondItem="J0F-VF-2Ii" secondAttribute="bottom" constant="4" id="DWY-gv-rBz"/>
+                                    <constraint firstItem="0al-2y-nKX" firstAttribute="leading" secondItem="eS0-bO-w8G" secondAttribute="leading" id="Fd4-LW-Cbl"/>
+                                    <constraint firstItem="6Dg-3E-bYi" firstAttribute="top" secondItem="m5t-bm-H5O" secondAttribute="bottom" constant="12" id="HpT-1w-YtT"/>
+                                    <constraint firstItem="m5t-bm-H5O" firstAttribute="top" secondItem="eS0-bO-w8G" secondAttribute="bottom" constant="1" id="JCD-hZ-xjn"/>
+                                    <constraint firstItem="52x-aW-s6U" firstAttribute="leading" secondItem="7GJ-mm-hX6" secondAttribute="leading" id="O4T-Bf-9HS"/>
+                                    <constraint firstItem="l3O-T2-R7q" firstAttribute="leading" secondItem="7GJ-mm-hX6" secondAttribute="leading" id="PB5-Xu-vJb"/>
+                                    <constraint firstItem="xJe-Dj-Wzj" firstAttribute="top" secondItem="E8T-iW-oOA" secondAttribute="bottom" constant="16" id="Qt6-iD-YrW"/>
+                                    <constraint firstItem="E8T-iW-oOA" firstAttribute="centerX" secondItem="O7c-in-gKk" secondAttribute="centerX" id="ThS-ZH-A8I"/>
+                                    <constraint firstItem="l3O-T2-R7q" firstAttribute="leading" secondItem="lg6-H8-48v" secondAttribute="leading" id="Udy-wg-VGP"/>
+                                    <constraint firstItem="E8T-iW-oOA" firstAttribute="top" secondItem="O7c-in-gKk" secondAttribute="bottom" constant="4" id="WCB-uc-N47"/>
+                                    <constraint firstAttribute="trailing" secondItem="J0F-VF-2Ii" secondAttribute="trailing" id="Y8Q-vn-c6l"/>
+                                    <constraint firstItem="EFW-PF-g9I" firstAttribute="leading" secondItem="eS0-bO-w8G" secondAttribute="leading" constant="24" id="a9W-5k-oFm"/>
+                                    <constraint firstItem="J0F-VF-2Ii" firstAttribute="top" secondItem="52x-aW-s6U" secondAttribute="bottom" constant="8" id="alr-vz-OzN"/>
+                                    <constraint firstItem="7GJ-mm-hX6" firstAttribute="top" secondItem="l3O-T2-R7q" secondAttribute="bottom" constant="8" id="bgo-5K-HFJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="0al-2y-nKX" secondAttribute="bottom" constant="28" id="djA-ST-1sX"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m5t-bm-H5O" secondAttribute="trailing" constant="20" symbolic="YES" id="hPq-5o-yOh"/>
+                                    <constraint firstItem="J0F-VF-2Ii" firstAttribute="leading" secondItem="0al-2y-nKX" secondAttribute="leading" id="hh5-RO-6yc"/>
+                                    <constraint firstAttribute="trailing" secondItem="lg6-H8-48v" secondAttribute="trailing" id="iPA-MH-18m"/>
+                                    <constraint firstItem="EFW-PF-g9I" firstAttribute="top" secondItem="6Dg-3E-bYi" secondAttribute="bottom" constant="17" id="kru-gB-kih"/>
+                                    <constraint firstItem="52x-aW-s6U" firstAttribute="leading" secondItem="J0F-VF-2Ii" secondAttribute="leading" id="npe-9O-xkS"/>
+                                    <constraint firstItem="eS0-bO-w8G" firstAttribute="top" secondItem="6cn-gm-ZfI" secondAttribute="top" constant="24" id="o5q-kA-f7d"/>
+                                    <constraint firstAttribute="trailing" secondItem="7GJ-mm-hX6" secondAttribute="trailing" id="ozc-6r-9oX"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eS0-bO-w8G" secondAttribute="trailing" constant="20" symbolic="YES" id="tQg-N2-vGw"/>
+                                    <constraint firstItem="EFW-PF-g9I" firstAttribute="centerX" secondItem="6cn-gm-ZfI" secondAttribute="centerX" id="vnp-8e-kDO"/>
+                                    <constraint firstItem="52x-aW-s6U" firstAttribute="top" secondItem="7GJ-mm-hX6" secondAttribute="bottom" constant="4" id="vuN-e6-9WK"/>
+                                    <constraint firstItem="xJe-Dj-Wzj" firstAttribute="centerX" secondItem="6cn-gm-ZfI" secondAttribute="centerX" id="vvU-39-uJo"/>
+                                    <constraint firstItem="l3O-T2-R7q" firstAttribute="top" secondItem="lg6-H8-48v" secondAttribute="bottom" constant="4" id="xgg-ve-i4m"/>
+                                    <constraint firstItem="6Dg-3E-bYi" firstAttribute="leading" secondItem="6cn-gm-ZfI" secondAttribute="leading" id="xtn-h8-Wjc"/>
+                                    <constraint firstItem="eS0-bO-w8G" firstAttribute="leading" secondItem="6cn-gm-ZfI" secondAttribute="leading" constant="40" id="zwl-1b-e55"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6cn-gm-ZfI" secondAttribute="bottom" id="Nbo-nz-q5G"/>
+                            <constraint firstAttribute="trailing" secondItem="6cn-gm-ZfI" secondAttribute="trailing" id="OH7-rr-RYI"/>
+                            <constraint firstItem="6cn-gm-ZfI" firstAttribute="leading" secondItem="tnW-iN-ybb" secondAttribute="leading" id="i0I-ts-6vi"/>
+                            <constraint firstItem="6cn-gm-ZfI" firstAttribute="top" secondItem="tnW-iN-ybb" secondAttribute="top" id="nfE-bT-5T9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tnW-iN-ybb" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Peg-jt-Rt2"/>
+                    <constraint firstAttribute="trailing" secondItem="tnW-iN-ybb" secondAttribute="trailing" id="WIw-KG-ncF"/>
+                    <constraint firstAttribute="bottom" secondItem="tnW-iN-ybb" secondAttribute="bottom" id="eWN-uK-zqc"/>
+                    <constraint firstItem="tnW-iN-ybb" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="oTu-JP-Vza"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="4262EB69-E039-4698-BFC8-872A2A06E366" centeredItem="v3m-MN-5bN" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="lfy-DF-1dY">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Pmo-v8-6Oy"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="f8L-nu-ZLC"/>
+                    <toolbarItem implicitItemIdentifier="86E37A68-2059-4189-99FB-7C4A043FA87F" label="5x" paletteLabel="Playback Speed" autovalidates="NO" selectable="YES" id="gzl-uP-17h">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="21"/>
+                        <size key="maxSize" width="128" height="26"/>
+                        <slider key="view" verticalHuggingPriority="750" id="9iD-BT-HOR">
+                            <rect key="frame" x="0.0" y="14" width="128" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="20" tickMarkPosition="above" numberOfTickMarks="8" sliderType="linear" id="i75-pp-Dqa"/>
+                        </slider>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="30D3578C-0E93-4B0C-BE8E-793A04301C5B" label="" paletteLabel="" tag="-1" id="v3m-MN-5bN">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="162" height="22"/>
+                        <size key="maxSize" width="177" height="114"/>
+                        <box key="view" boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" id="Szd-4I-3Ea">
+                            <rect key="frame" x="0.0" y="14" width="162" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <view key="contentView" id="7H0-vb-hv0">
+                                <rect key="frame" x="0.0" y="0.0" width="162" height="38"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <box boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Gbm-rm-yHC">
+                                        <rect key="frame" x="14" y="8" width="134" height="23"/>
+                                        <view key="contentView" id="Dlh-hx-5y1">
+                                            <rect key="frame" x="0.0" y="0.0" width="134" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmt-jl-mHq">
+                                                    <rect key="frame" x="8" y="3" width="117" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="9:41, June 4 2018" id="ZLT-fv-MZh">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mmt-jl-mHq" firstAttribute="leading" secondItem="Dlh-hx-5y1" secondAttribute="leading" constant="10" id="8FI-Ga-RTd"/>
+                                                <constraint firstItem="mmt-jl-mHq" firstAttribute="centerX" secondItem="Dlh-hx-5y1" secondAttribute="centerX" id="qnb-EO-Hhf"/>
+                                                <constraint firstItem="mmt-jl-mHq" firstAttribute="centerY" secondItem="Dlh-hx-5y1" secondAttribute="centerY" id="rWp-Fm-bxW"/>
+                                                <constraint firstItem="mmt-jl-mHq" firstAttribute="top" secondItem="Dlh-hx-5y1" secondAttribute="top" constant="3" id="sY6-Hd-eGg"/>
+                                            </constraints>
+                                        </view>
+                                    </box>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gbm-rm-yHC" firstAttribute="centerY" secondItem="7H0-vb-hv0" secondAttribute="centerY" id="RuJ-HC-q8v"/>
+                                    <constraint firstItem="Gbm-rm-yHC" firstAttribute="centerX" secondItem="7H0-vb-hv0" secondAttribute="centerX" id="Zn5-36-XEq"/>
+                                </constraints>
+                            </view>
+                        </box>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="20548B97-871A-4145-9258-1C922A44F973" label="Date" paletteLabel="Date" tag="-1" image="CalendarIcon" autovalidates="NO" selectable="YES" id="gDR-H6-xSs"/>
+                    <toolbarItem implicitItemIdentifier="9649CF6E-C312-4742-8229-829901483756" label="Play / Pause" paletteLabel="Play / Pause" tag="-1" image="PauseIcon" autovalidates="NO" selectable="YES" id="ok5-rs-4YT"/>
+                    <toolbarItem implicitItemIdentifier="39346C95-B9D6-406B-9161-E8AE7B4E9F70" label="Sidebar" paletteLabel="Sidebar" tag="-1" image="SidebarIcon" autovalidates="NO" selectable="YES" id="GoW-Fr-hOS"/>
+                    <toolbarItem implicitItemIdentifier="8C321186-8BC1-4300-8E3B-19B8C9876677" label="Date" paletteLabel="Date" id="MGw-CL-Go4">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="38" height="24"/>
+                        <size key="maxSize" width="38" height="24"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="wCI-zJ-UTM">
+                            <rect key="frame" x="0.0" y="14" width="38" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="7UM-gv-9Oe">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="CalendarIcon" width="32"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="FD53D10B-5A7F-4B8E-9674-1EB6E8E55846" label="Sidebar" paletteLabel="Sidebar" id="xV3-o3-3XI">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="38" height="24"/>
+                        <size key="maxSize" width="38" height="24"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="xpE-0g-jwB">
+                            <rect key="frame" x="5" y="14" width="38" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="XiB-8w-f0X">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="SidebarIcon" width="32"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E0A6962D-A219-4A58-A996-E32290E558E7" label="Pause" paletteLabel="Pause" id="V6f-qw-U3y">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="38" height="24"/>
+                        <size key="maxSize" width="38" height="24"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="rnh-24-Dfm">
+                            <rect key="frame" x="1" y="14" width="38" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="p1F-wW-F9X">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="PauseIcon" width="32"/>
+                                </segments>
+                            </segmentedCell>
+                        </segmentedControl>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="MGw-CL-Go4"/>
+                    <toolbarItem reference="f8L-nu-ZLC"/>
+                    <toolbarItem reference="v3m-MN-5bN"/>
+                    <toolbarItem reference="f8L-nu-ZLC"/>
+                    <toolbarItem reference="Pmo-v8-6Oy"/>
+                    <toolbarItem reference="V6f-qw-U3y"/>
+                    <toolbarItem reference="xV3-o3-3XI"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="106" y="176"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="CalendarIcon" width="18" height="18"/>
+        <image name="EarthGlobe" width="200" height="200"/>
+        <image name="PauseIcon" width="18" height="18"/>
+        <image name="SidebarIcon" width="18" height="18"/>
+        <namedColor name="sunRiseSunSetLabelColor">
+            <color red="1" green="0.72000002861022949" blue="0.19900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
