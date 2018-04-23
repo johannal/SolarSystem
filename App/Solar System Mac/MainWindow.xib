@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14254" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14251" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14254"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14251"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="935" height="470"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="935" height="470"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +22,7 @@
                     <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-iN-ybb">
                         <rect key="frame" x="0.0" y="0.0" width="935" height="470"/>
                         <subviews>
-                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="75S-0n-Cnc" userLabel="Left Visual Effect View">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="75S-0n-Cnc" userLabel="Navigator Visual Effect View">
                                 <rect key="frame" x="0.0" y="0.0" width="220" height="470"/>
                                 <subviews>
                                     <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP2-nD-rPN">
@@ -61,10 +60,7 @@
                                     <constraint firstItem="hP2-nD-rPN" firstAttribute="top" secondItem="75S-0n-Cnc" secondAttribute="top" id="yyz-Me-8cn"/>
                                 </constraints>
                             </visualEffectView>
-                            <sceneView sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mkj-SL-TvE">
-                                <rect key="frame" x="220" y="0.0" width="435" height="470"/>
-                            </sceneView>
-                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-gm-ZfI">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-gm-ZfI" userLabel="Inspector Visual Effect View">
                                 <rect key="frame" x="655" y="0.0" width="280" height="470"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-bO-w8G">
@@ -129,7 +125,7 @@
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-0n-93V">
                                                     <rect key="frame" x="47" y="3" width="160" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" drawsBackground="YES" id="Ku2-mZ-Thb">
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" id="Ku2-mZ-Thb">
                                                         <font key="font" metaFont="systemMedium" size="12"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -276,16 +272,19 @@
                                     <constraint firstItem="eS0-bO-w8G" firstAttribute="leading" secondItem="6cn-gm-ZfI" secondAttribute="leading" constant="12" id="zwl-1b-e55"/>
                                 </constraints>
                             </visualEffectView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="N8o-pX-u38" userLabel="Scene Container View">
+                                <rect key="frame" x="220" y="0.0" width="435" height="470"/>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="mkj-SL-TvE" secondAttribute="bottom" id="0vK-jr-UTs"/>
+                            <constraint firstItem="N8o-pX-u38" firstAttribute="top" secondItem="tnW-iN-ybb" secondAttribute="top" id="30t-7a-Sm8"/>
+                            <constraint firstItem="N8o-pX-u38" firstAttribute="leading" secondItem="75S-0n-Cnc" secondAttribute="trailing" id="3uo-WO-K2e"/>
                             <constraint firstItem="75S-0n-Cnc" firstAttribute="leading" secondItem="tnW-iN-ybb" secondAttribute="leading" id="5ZA-Wl-CaO"/>
-                            <constraint firstItem="mkj-SL-TvE" firstAttribute="leading" secondItem="75S-0n-Cnc" secondAttribute="trailing" id="7AE-8O-AEe"/>
-                            <constraint firstItem="6cn-gm-ZfI" firstAttribute="leading" secondItem="mkj-SL-TvE" secondAttribute="trailing" id="LMA-Ip-r42"/>
                             <constraint firstAttribute="bottom" secondItem="6cn-gm-ZfI" secondAttribute="bottom" id="Nbo-nz-q5G"/>
                             <constraint firstAttribute="trailing" secondItem="6cn-gm-ZfI" secondAttribute="trailing" id="OH7-rr-RYI"/>
-                            <constraint firstItem="mkj-SL-TvE" firstAttribute="top" secondItem="tnW-iN-ybb" secondAttribute="top" id="OQz-SP-gUa"/>
                             <constraint firstAttribute="bottom" secondItem="75S-0n-Cnc" secondAttribute="bottom" id="Ttq-4K-s1N"/>
+                            <constraint firstItem="6cn-gm-ZfI" firstAttribute="leading" secondItem="N8o-pX-u38" secondAttribute="trailing" id="ate-Kf-w4D"/>
+                            <constraint firstAttribute="bottom" secondItem="N8o-pX-u38" secondAttribute="bottom" id="cjO-17-uKG"/>
                             <constraint firstItem="75S-0n-Cnc" firstAttribute="top" secondItem="tnW-iN-ybb" secondAttribute="top" id="fgh-tP-Ack"/>
                             <constraint firstItem="6cn-gm-ZfI" firstAttribute="top" secondItem="tnW-iN-ybb" secondAttribute="top" id="nfE-bT-5T9"/>
                         </constraints>
@@ -423,7 +422,7 @@
         <image name="PauseIcon" width="18" height="18"/>
         <image name="SidebarIcon" width="18" height="18"/>
         <namedColor name="sunRiseSunSetLabelColor">
-            <color red="0.96799999475479126" green="0.81000000238418579" blue="0.28400000929832458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="0.72000002861022949" blue="0.19900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
