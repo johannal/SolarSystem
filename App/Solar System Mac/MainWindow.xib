@@ -125,10 +125,10 @@
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oos-0n-93V">
                                                     <rect key="frame" x="47" y="3" width="160" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" id="Ku2-mZ-Thb">
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" drawsBackground="YES" id="Ku2-mZ-Thb">
                                                         <font key="font" metaFont="systemMedium" size="12"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
                                             </subviews>
