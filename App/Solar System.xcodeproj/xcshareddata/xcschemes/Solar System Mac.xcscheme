@@ -44,7 +44,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            useTestSelectionWhitelist = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8023D29420850501006DFD5F"
@@ -52,6 +53,71 @@
                BlueprintName = "Solar System Mac Unit Tests"
                ReferencedContainer = "container:Solar System.xcodeproj">
             </BuildableReference>
+            <SelectedTests>
+               <Test
+                  Identifier = "MoonTests/testFindParentPlanet()">
+               </Test>
+               <Test
+                  Identifier = "MoonTests/testMoonColor()">
+               </Test>
+               <Test
+                  Identifier = "MoonTests/testMoonName()">
+               </Test>
+               <Test
+                  Identifier = "MoonTests/testPlanetSiblings()">
+               </Test>
+               <Test
+                  Identifier = "OrbitTests/testOrbitPosition()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testAddMoon()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testAddNearbyNeptunian()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testCalculatePlanetDensity()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testCalculatePlanetMass()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testCalculatePlanetOrbitingVelocity()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testFindNearestObject()">
+               </Test>
+               <Test
+                  Identifier = "PlanetTests/testPositionRelativeToStar()">
+               </Test>
+               <Test
+                  Identifier = "SolarSystemTests/testCreateDistantObjects()">
+               </Test>
+               <Test
+                  Identifier = "SolarSystemTests/testDistanceBetweenPlanets()">
+               </Test>
+               <Test
+                  Identifier = "SolarSystemTests/testSolarSystemPosition()">
+               </Test>
+               <Test
+                  Identifier = "StarTests/testStarAngularVelocity()">
+               </Test>
+               <Test
+                  Identifier = "StarTests/testStarDensity()">
+               </Test>
+               <Test
+                  Identifier = "StarTests/testStarMass()">
+               </Test>
+               <Test
+                  Identifier = "StarTests/testStarPosition()">
+               </Test>
+               <Test
+                  Identifier = "TelescopicSurveyTests/testFindFarthestDistance()">
+               </Test>
+               <Test
+                  Identifier = "TelescopicSurveyTests/testFindNearestDistance()">
+               </Test>
+            </SelectedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
