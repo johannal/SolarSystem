@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14227" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14249" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4368" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14221"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14238"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +13,7 @@
         <!--Main View Controller-->
         <scene sceneID="XBI-2k-WF2">
             <objects>
-                <viewController id="HW0-Hw-yYc" customClass="MainViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HW0-Hw-yYc" customClass="MainViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7u2-h8-uWa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +54,7 @@
         <!--Solar System Scene View Controller-->
         <scene sceneID="S9v-f1-e0p">
             <objects>
-                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemSceneViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemSceneViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="XVx-eM-eju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +98,7 @@
         <!--SceneHUD View Controller-->
         <scene sceneID="nl8-sg-zBp">
             <objects>
-                <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8T-sx-DUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +108,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="ComparisonViewIcon"/>
                                 <connections>
-                                    <action selector="showPlanetComparisonButtonPressed:" destination="Qlf-ef-AUO" eventType="touchUpInside" id="FNn-TD-zvw"/>
+                                    <segue destination="7ne-r9-sle" kind="presentation" id="zYF-To-OtR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO1-kQ-FAY" userLabel="Solar System Button">
@@ -157,7 +154,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="planetComparisonButton" destination="AfF-Dp-6sy" id="EZi-PZ-2Ss"/>
                         <outlet property="planetDetailsButton" destination="cCC-W2-Jnx" id="Lvh-P4-R40"/>
                         <outlet property="solarSystemButton" destination="xO1-kQ-FAY" id="nLc-U6-f8A"/>
                     </connections>
@@ -166,10 +162,98 @@
             </objects>
             <point key="canvasLocation" x="2423" y="1223"/>
         </scene>
+        <!--Planets-->
+        <scene sceneID="pNk-i2-HYm">
+            <objects>
+                <tableViewController id="0hw-Ee-eTy" customClass="PlanetsTableViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bca-V6-5xU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetCell" rowHeight="136" id="bVv-ej-ess" customClass="PlanetTableViewCell" customModule="Solar_System_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="136"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVv-ej-ess" id="Fdx-83-5Xy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135.66666666666666"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-mM-2nn">
+                                            <rect key="frame" x="142" y="10" width="55" height="27"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-gZ-dfR">
+                                            <rect key="frame" x="142" y="45" width="41.666666666666657" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-XL-1Jx">
+                                            <rect key="frame" x="16" y="10" width="114" height="114"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="7Th-XL-1Jx" secondAttribute="height" multiplier="1:1" id="orO-fj-QJd"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZpD-gZ-dfR" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="7Th-XL-1Jx" secondAttribute="bottom" id="7Nj-z3-Gql"/>
+                                        <constraint firstItem="ZpD-gZ-dfR" firstAttribute="top" secondItem="O5p-mM-2nn" secondAttribute="bottom" constant="8" id="BCY-xv-5b0"/>
+                                        <constraint firstItem="7Th-XL-1Jx" firstAttribute="leading" secondItem="Fdx-83-5Xy" secondAttribute="leading" constant="16" id="Nuz-Iu-nye"/>
+                                        <constraint firstItem="7Th-XL-1Jx" firstAttribute="top" secondItem="Fdx-83-5Xy" secondAttribute="top" constant="10" id="WGV-8C-sVd"/>
+                                        <constraint firstItem="O5p-mM-2nn" firstAttribute="leading" secondItem="7Th-XL-1Jx" secondAttribute="trailing" constant="12" id="dsI-na-PIi"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZpD-gZ-dfR" secondAttribute="trailing" constant="20" id="lhx-Fc-UxY"/>
+                                        <constraint firstItem="ZpD-gZ-dfR" firstAttribute="leading" secondItem="O5p-mM-2nn" secondAttribute="leading" id="m6p-aV-PEu"/>
+                                        <constraint firstItem="O5p-mM-2nn" firstAttribute="top" secondItem="7Th-XL-1Jx" secondAttribute="top" id="pD8-8X-5Z1"/>
+                                        <constraint firstItem="7Th-XL-1Jx" firstAttribute="centerY" secondItem="Fdx-83-5Xy" secondAttribute="centerY" id="tHS-2F-ujp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="planetDescriptionLabel" destination="ZpD-gZ-dfR" id="2Je-ba-o1Q"/>
+                                    <outlet property="planetImageView" destination="7Th-XL-1Jx" id="HbQ-qE-dEs"/>
+                                    <outlet property="planetNameLabel" destination="O5p-mM-2nn" id="ci7-FP-cd2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0hw-Ee-eTy" id="abW-zM-m4C"/>
+                            <outlet property="delegate" destination="0hw-Ee-eTy" id="29z-vH-SX0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Planets" id="mOO-PA-dxv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="MwW-n8-Ioy">
+                            <connections>
+                                <segue destination="0hw-Ee-eTy" kind="custom" customClass="DismissSegue" customModule="Solar_System_iOS" customModuleProvider="target" id="Vxr-Lh-Ol7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Mhv-dr-hib"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CoO-d2-XFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3977" y="1223"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MYa-b3-Zgo">
+            <objects>
+                <navigationController id="7ne-r9-sle" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hCX-h6-o7g">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0hw-Ee-eTy" kind="relationship" relationship="rootViewController" id="DhL-uf-xtD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fys-9P-FCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3204" y="1223"/>
+        </scene>
         <!--Planet Details View Controller-->
         <scene sceneID="ZLn-kE-Cwx">
             <objects>
-                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="xxU-xn-gVg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +408,7 @@ Population: 7.347 billion</string>
         <!--Gravity Simulator View Controller-->
         <scene sceneID="8J2-bW-exR">
             <objects>
-                <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vP0-To-fAb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +438,7 @@ Population: 7.347 billion</string>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="BackButtonArrow"/>
                                 <connections>
-                                    <segue destination="7fs-xD-dyR" kind="custom" customClass="DismissSegue" customModule="Solar_System" customModuleProvider="target" id="C2J-8w-OrF"/>
+                                    <segue destination="7fs-xD-dyR" kind="custom" customClass="DismissSegue" customModule="Solar_System_iOS" customModuleProvider="target" id="C2J-8w-OrF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUPITER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-JB-nhg">
@@ -415,7 +499,7 @@ Population: 7.347 billion</string>
         <!--Moon Jumper View Controller-->
         <scene sceneID="VtU-Jy-Qbw">
             <objects>
-                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Solar_System" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfg-E9-Bow">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -453,13 +537,13 @@ Population: 7.347 billion</string>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="BackButtonArrow"/>
                                 <connections>
-                                    <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Solar_System" customModuleProvider="target" id="Hdn-4G-gJK"/>
+                                    <segue destination="EGG-lG-5Ct" kind="custom" customClass="DismissSegue" customModule="Solar_System_iOS" customModuleProvider="target" id="Hdn-4G-gJK"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-bu-SHx">
                                 <rect key="frame" x="24" y="407" width="327" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Solar_System" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Solar_System_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="19" width="327" height="12"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -478,7 +562,7 @@ Population: 7.347 billion</string>
                                     <outletCollection property="gestureRecognizers" destination="cLm-uu-BjI" appends="YES" id="G7d-rw-zUG"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-X4-rPO" customClass="CircleView" customModule="Solar_System" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-X4-rPO" customClass="CircleView" customModule="Solar_System_iOS" customModuleProvider="target">
                                 <rect key="frame" x="128" y="68" width="120" height="120"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="180ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">

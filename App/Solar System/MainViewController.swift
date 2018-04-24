@@ -68,8 +68,6 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
             showSolarSystem()
         case .planetDetails:
             showPlanetDetails()
-        case .planetComparison:
-            showPlanetComparison()
         }
         
         solarSystemVC?.sceneController?.updateWithContentType(contentType)

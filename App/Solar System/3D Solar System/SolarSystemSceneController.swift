@@ -20,7 +20,6 @@ typealias ImageName = String
 enum ContentType {
     case solarSystem
     case planetDetails
-    case planetComparison
 }
 
 protocol SolarSystemSceneControllerDelegate : class {
@@ -247,11 +246,6 @@ class SolarSystemSceneController: NSObject {
             // Present the first planet (or sun?)
             presentPlanet(planetNodes.first!, directionRightToLeft: true)
             
-            delegate?.hideGravityButton(true)
-            
-        case .planetComparison:
-            // TODO
-            presentedPlanet = nil
             delegate?.hideGravityButton(true)
         }
     }

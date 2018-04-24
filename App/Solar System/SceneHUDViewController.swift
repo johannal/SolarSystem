@@ -16,7 +16,7 @@ class SceneHUDViewController: UIViewController {
     weak var delegate: SceneHUDDelegate?
     
     @IBOutlet weak var planetDetailsButton: UIButton?
-    @IBOutlet weak var planetComparisonButton: UIButton?
+    @IBOutlet weak var planetListButton: UIButton?
     @IBOutlet weak var solarSystemButton: UIButton?
 
     override func viewDidLoad() {
@@ -24,10 +24,6 @@ class SceneHUDViewController: UIViewController {
         
         // Setup for solar system content
         updateWithContentType(.solarSystem)
-    }
-    
-    @IBAction func showPlanetComparisonButtonPressed(_ sender: UIButton) {
-        delegate?.sceneHUDDidSelectContentType(.planetComparison)
     }
     
     @IBAction func showSolarSystemButtonPressed(_ sender: UIButton) {
@@ -42,17 +38,12 @@ class SceneHUDViewController: UIViewController {
         switch contentType {
         case .solarSystem:
             solarSystemButton?.isHidden = true
-            planetComparisonButton?.isHidden = false
+            planetListButton?.isHidden = false
             planetDetailsButton?.isHidden = false
         case .planetDetails:
             solarSystemButton?.isHidden = false
-            planetComparisonButton?.isHidden = true
-            planetDetailsButton?.isHidden = true
-        case .planetComparison:
-            solarSystemButton?.isHidden = false
-            planetComparisonButton?.isHidden = true
-            planetDetailsButton?.isHidden = true
-            
+            planetListButton?.isHidden = true
+            planetDetailsButton?.isHidden = true            
         }
     }
     
