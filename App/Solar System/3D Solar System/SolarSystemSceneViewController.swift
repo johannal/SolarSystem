@@ -18,7 +18,7 @@ class SolarSystemSceneViewController: UIViewController, SolarSystemSceneControll
     var sceneController: SolarSystemSceneController?
     
     // Details view controller if presented
-    weak var planetDetailsVC: PlanetDetailsViewController?
+    weak var planetDetailsVC: PlanetSceneDetailsViewController?
 
     var timer: CADisplayLink!
     

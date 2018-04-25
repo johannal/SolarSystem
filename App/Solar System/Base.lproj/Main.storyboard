@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="HW0-Hw-yYc" customClass="MainViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7u2-h8-uWa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3X-oI-EFc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars2" translatesAutoresizingMaskIntoConstraints="NO" id="eD0-5Y-jIt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,15 +56,15 @@
             <objects>
                 <viewController storyboardIdentifier="solarSystemVC" id="EGG-lG-5Ct" customClass="SolarSystemSceneViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="XVx-eM-eju">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zO-oN-32M">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </sceneKitView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-hA-QQz">
-                                <rect key="frame" x="12" y="722" width="44" height="44"/>
+                                <rect key="frame" x="12" y="544" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Wu6-dh-F0N"/>
                                     <constraint firstAttribute="height" constant="44" id="joU-bY-BHP"/>
@@ -100,11 +100,11 @@
             <objects>
                 <viewController storyboardIdentifier="sceneHUD" id="Qlf-ef-AUO" customClass="SceneHUDViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h8T-sx-DUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfF-Dp-6sy" userLabel="Planet Comparison Button">
-                                <rect key="frame" x="20" y="52" width="36" height="22"/>
+                                <rect key="frame" x="20" y="28" width="36" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="ComparisonViewIcon"/>
                                 <connections>
@@ -112,7 +112,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO1-kQ-FAY" userLabel="Solar System Button">
-                                <rect key="frame" x="311" y="52" width="44" height="44"/>
+                                <rect key="frame" x="536" y="28" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="hQK-EW-erL"/>
                                     <constraint firstAttribute="height" constant="44" id="sWv-Yf-MvA"/>
@@ -124,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCC-W2-Jnx" userLabel="Planet Details Button">
-                                <rect key="frame" x="311" y="52" width="44" height="44"/>
+                                <rect key="frame" x="536" y="28" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0iC-pG-Woq"/>
                                     <constraint firstAttribute="width" constant="44" id="IeG-oQ-Rrg"/>
@@ -167,15 +167,15 @@
             <objects>
                 <tableViewController id="0hw-Ee-eTy" customClass="PlanetsTableViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bca-V6-5xU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetCell" rowHeight="136" id="bVv-ej-ess" customClass="PlanetTableViewCell" customModule="Solar_System_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="136"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="136"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVv-ej-ess" id="Fdx-83-5Xy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="135.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-mM-2nn">
@@ -185,7 +185,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-gZ-dfR">
-                                            <rect key="frame" x="142" y="45" width="41.666666666666657" height="20.333333333333329"/>
+                                            <rect key="frame" x="142" y="45" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -239,7 +239,7 @@
             <objects>
                 <navigationController id="7ne-r9-sle" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hCX-h6-o7g">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -250,46 +250,46 @@
             </objects>
             <point key="canvasLocation" x="3204" y="1223"/>
         </scene>
-        <!--Planet Details View Controller-->
+        <!--Planet Scene Details View Controller-->
         <scene sceneID="ZLn-kE-Cwx">
             <objects>
-                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetDetailsViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="planetDetailsVC" id="7fs-xD-dyR" customClass="PlanetSceneDetailsViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="xxU-xn-gVg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKV-NZ-amv">
-                                <rect key="frame" x="0.0" y="401.33333333333326" width="375" height="302"/>
+                                <rect key="frame" x="0.0" y="279" width="600" height="258.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" text="EARTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDK-tq-PXW">
-                                        <rect key="frame" x="120.66666666666669" y="0.0" width="134" height="55"/>
+                                        <rect key="frame" x="233" y="0.0" width="134" height="55"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btQ-3h-1cr" userLabel="Top Separater View">
-                                        <rect key="frame" x="19" y="63" width="337.66666666666669" height="1"/>
+                                        <rect key="frame" x="30.5" y="63" width="540" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="XY5-Jz-5tU"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7w-yI-C1K">
-                                        <rect key="frame" x="36" y="84.000000000000014" width="304" height="130.33333333333337"/>
+                                        <rect key="frame" x="57.5" y="84" width="486" height="86.5"/>
                                         <string key="text">Earth otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System and the largest of the four terrestrial planets.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-st-i57" userLabel="Bottom Separator View">
-                                        <rect key="frame" x="19" y="234.33333333333331" width="337.66666666666669" height="1"/>
+                                        <rect key="frame" x="30.5" y="190.5" width="540" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Rir-zO-6EM"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="753" verticalHuggingPriority="753" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDV-qF-GPV">
-                                        <rect key="frame" x="116.33333333333333" y="250.33333333333329" width="143.66666666666669" height="51.666666666666657"/>
+                                        <rect key="frame" x="228.5" y="206.5" width="144" height="52"/>
                                         <string key="text">Radius: 3,959 mi
 Age: 4.543 billion years
 Population: 7.347 billion</string>
@@ -317,10 +317,10 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jz0-Vq-8CH">
-                                <rect key="frame" x="0.0" y="44" width="375" height="357.33333333333331"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="259"/>
                                 <subviews>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-h3u">
-                                        <rect key="frame" x="12" y="138.33333333333334" width="50" height="80"/>
+                                        <rect key="frame" x="12" y="89" width="50" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="DdF-P3-Bp9"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="GJo-dz-zCn"/>
@@ -331,7 +331,7 @@ Population: 7.347 billion</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsr-Pt-6ba">
-                                        <rect key="frame" x="313" y="138.33333333333334" width="50" height="80"/>
+                                        <rect key="frame" x="538" y="89" width="50" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="3Xy-dG-1Ec"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="4Kv-ZI-geb"/>
@@ -351,7 +351,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meF-jH-UOk">
-                                <rect key="frame" x="115" y="737" width="146" height="33"/>
+                                <rect key="frame" x="227" y="559" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Experience gravity"/>
@@ -410,11 +410,11 @@ Population: 7.347 billion</string>
             <objects>
                 <viewController storyboardIdentifier="gravitySimulatorVC" id="SIm-XS-6Jw" customClass="GravitySimulatorViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vP0-To-fAb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-mF-IXM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -422,7 +422,7 @@ Population: 7.347 billion</string>
                                 </connections>
                             </skView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bh-fr-W7T">
-                                <rect key="frame" x="290" y="693" width="73" height="73"/>
+                                <rect key="frame" x="515" y="515" width="73" height="73"/>
                                 <state key="normal" image="GravityButtonOFF"/>
                                 <state key="selected" image="GravityButtonON"/>
                                 <connections>
@@ -430,7 +430,7 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-ym-AbD">
-                                <rect key="frame" x="12" y="56" width="60" height="44"/>
+                                <rect key="frame" x="12" y="32" width="60" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="yNM-lt-Yhc"/>
                                 </constraints>
@@ -442,19 +442,19 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUPITER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-JB-nhg">
-                                <rect key="frame" x="103.99999999999999" y="108.00000000000001" width="168.66666666666663" height="57.666666666666671"/>
+                                <rect key="frame" x="216.5" y="84" width="168.5" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAVITY TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-bQ-hUW">
-                                <rect key="frame" x="108.66666666666669" y="178.66666666666666" width="160" height="31.333333333333343"/>
+                                <rect key="frame" x="221" y="154.5" width="160" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-KE-ebe">
-                                <rect key="frame" x="68" y="169.66666666666666" width="240" height="1"/>
+                                <rect key="frame" x="180.5" y="145.5" width="240" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="b7d-pA-bv2"/>
@@ -501,14 +501,14 @@ Population: 7.347 billion</string>
             <objects>
                 <viewController storyboardIdentifier="gravityMeterVC" id="vGa-F7-cak" customClass="MoonJumperViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfg-E9-Bow">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhI-W0-6p1">
-                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JumpPlanetBottom" translatesAutoresizingMaskIntoConstraints="NO" id="MpD-4n-gR8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -521,7 +521,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="atO-so-9py">
-                                <rect key="frame" x="156" y="636" width="62" height="96"/>
+                                <rect key="frame" x="269" y="424" width="62" height="96"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="L5A-D9-WVm"/>
@@ -529,7 +529,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-WP-Yxq">
-                                <rect key="frame" x="12" y="56" width="60" height="44"/>
+                                <rect key="frame" x="12" y="32" width="60" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="o8j-bG-146"/>
                                 </constraints>
@@ -541,10 +541,10 @@ Population: 7.347 billion</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5X-bu-SHx">
-                                <rect key="frame" x="24" y="407" width="327" height="50"/>
+                                <rect key="frame" x="24" y="195" width="552" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-cg-PUl" customClass="HeightIndicatorView" customModule="Solar_System_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="19" width="327" height="12"/>
+                                        <rect key="frame" x="0.0" y="19" width="552" height="12"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="oM3-9D-Z6o"/>
@@ -563,10 +563,10 @@ Population: 7.347 billion</string>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-X4-rPO" customClass="CircleView" customModule="Solar_System_iOS" customModuleProvider="target">
-                                <rect key="frame" x="128" y="68" width="120" height="120"/>
+                                <rect key="frame" x="240" y="44" width="120" height="120"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="180ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-yv-Ja8">
-                                        <rect key="frame" x="21.666666666666657" y="21.666666666666671" width="77" height="77"/>
+                                        <rect key="frame" x="21.5" y="21.5" width="77" height="77"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FBQ-yv-Ja8" secondAttribute="height" multiplier="1:1" id="Wi0-kZ-Ts9"/>
@@ -649,7 +649,7 @@ Population: 7.347 billion</string>
         <image name="stars2" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C2J-8w-OrF"/>
+        <segue reference="8lG-IW-EI4"/>
         <segue reference="MoB-gr-65g"/>
     </inferredMetricsTieBreakers>
 </document>
