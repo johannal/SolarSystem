@@ -366,7 +366,11 @@
                         <viewLayoutGuide key="safeArea" id="lnr-oe-IL6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="2rv-G2-MXx">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="75D-Fk-BKu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="75D-Fk-BKu">
+                            <connections>
+                                <action selector="shareButtonPressedWithSender:" destination="jan-kb-11E" id="jKJ-hm-Z5E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="MfR-zl-QdR" id="AhY-kn-Wgr"/>

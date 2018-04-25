@@ -24,27 +24,18 @@ class PlanetDetailsViewController: UIViewController {
             planetDescriptionLabel.text = presentedObject.description
             planetImageView.image = presentedObject.globeImage
             
-            //
+            // Tint background view with object base color
             let baseColorName: Any = presentedObject.name.lowercased().appending("BaseColor")
             let baseColor = UniversalColor(named: baseColorName as! UniversalColorName)
             backgroundView.backgroundColor = baseColor
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Allow sharing the planets description
+    @IBAction func shareButtonPressed(sender: Any) {
+        let items = [presentedObject!.description]
+        let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        controller.modalPresentationStyle = .popover
+        present(controller, animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
