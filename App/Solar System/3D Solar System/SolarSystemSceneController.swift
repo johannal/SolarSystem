@@ -11,10 +11,14 @@ import SceneKit
 typealias SCNNumberType = CGFloat
 typealias Image = NSImage
 typealias ImageName = NSImage.Name
+typealias UniversalColor = NSColor
+typealias UniversalColorName = NSColor.Name
 #else
 typealias SCNNumberType = Float
 typealias Image = UIImage
 typealias ImageName = String
+typealias UniversalColor = UIColor
+typealias UniversalColorName = String
 #endif
 
 enum ContentType {

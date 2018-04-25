@@ -41,6 +41,16 @@ class PlanetsTableViewController: UITableViewController {
         planetCell.configure(withObject: astronomicalObjects[indexPath.row])
         return planetCell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? PlanetDetailsViewController, let cell = sender as? UITableViewCell else {
+            return
+        }
+        
+        if let row = tableView.indexPath(for: cell)?.row {
+            destination.presentedObject = astronomicalObjects[row]
+        }
+    }
  
     /*
     // Override to support conditional editing of the table view.

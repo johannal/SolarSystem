@@ -8,11 +8,27 @@
 import UIKit
 
 class PlanetDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var planetNameLabel: UILabel!
+    @IBOutlet weak var planetDescriptionLabel: UILabel!
+    @IBOutlet weak var planetImageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
+    
+    var presentedObject: AstronomicalObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let presentedObject = presentedObject {
+            planetNameLabel.text = presentedObject.name
+            planetDescriptionLabel.text = presentedObject.description
+            planetImageView.image = presentedObject.globeImage
+            
+            //
+            let baseColorName: Any = presentedObject.name.lowercased().appending("BaseColor")
+            let baseColor = UniversalColor(named: baseColorName as! UniversalColorName)
+            backgroundView.backgroundColor = baseColor
+        }
     }
 
     override func didReceiveMemoryWarning() {

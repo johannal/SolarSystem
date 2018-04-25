@@ -194,6 +194,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EarthGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-XL-1Jx">
                                             <rect key="frame" x="16" y="10" width="114" height="114"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="114" id="8px-lU-yy1"/>
                                                 <constraint firstAttribute="width" secondItem="7Th-XL-1Jx" secondAttribute="height" multiplier="1:1" id="orO-fj-QJd"/>
                                             </constraints>
                                         </imageView>
@@ -232,7 +233,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Mhv-dr-hib">
                             <connections>
-                                <segue destination="2l2-H3-3gs" kind="presentation" id="Qae-EJ-7rD"/>
+                                <segue destination="2l2-H3-3gs" kind="presentation" modalTransitionStyle="flipHorizontal" id="Qae-EJ-7rD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -318,14 +319,19 @@
         <!--Details-->
         <scene sceneID="cM6-0V-NeD">
             <objects>
-                <viewController id="jan-kb-11E" sceneMemberID="viewController">
+                <viewController id="jan-kb-11E" customClass="PlanetDetailsViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E9O-UA-9tP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfR-zl-QdR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EarthGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-qj-rF9">
                                 <rect key="frame" x="87.666666666666686" y="112" width="200" height="200"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Pb6-vR-ZKK"/>
                                     <constraint firstAttribute="width" secondItem="lmp-qj-rF9" secondAttribute="height" multiplier="1:1" id="eyQ-VR-kd3"/>
                                 </constraints>
                             </imageView>
@@ -339,29 +345,39 @@
                                 <rect key="frame" x="23" y="414" width="329" height="101.66666666666663"/>
                                 <string key="text">Earth otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lnr-oe-IL6" secondAttribute="leading" constant="20" id="Fgh-xT-n9Y"/>
+                            <constraint firstAttribute="bottom" secondItem="MfR-zl-QdR" secondAttribute="bottom" id="GpP-xd-w08"/>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="top" secondItem="nwJ-sB-0jr" secondAttribute="bottom" constant="19" id="Pxa-Hc-8CS"/>
                             <constraint firstItem="nwJ-sB-0jr" firstAttribute="centerX" secondItem="lmp-qj-rF9" secondAttribute="centerX" id="Ww1-RL-3KY"/>
                             <constraint firstItem="lmp-qj-rF9" firstAttribute="centerX" secondItem="lnr-oe-IL6" secondAttribute="centerX" id="X3o-o1-W5N"/>
+                            <constraint firstItem="MfR-zl-QdR" firstAttribute="top" secondItem="E9O-UA-9tP" secondAttribute="top" id="Z4G-gV-EqX"/>
+                            <constraint firstItem="MfR-zl-QdR" firstAttribute="leading" secondItem="E9O-UA-9tP" secondAttribute="leading" id="eVP-YX-Lgo"/>
                             <constraint firstItem="lmp-qj-rF9" firstAttribute="top" secondItem="lnr-oe-IL6" secondAttribute="top" constant="24" id="mG7-cp-GDe"/>
                             <constraint firstItem="nwJ-sB-0jr" firstAttribute="top" secondItem="lmp-qj-rF9" secondAttribute="bottom" constant="32" id="na5-jb-bQL"/>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="centerX" secondItem="nwJ-sB-0jr" secondAttribute="centerX" id="tYf-wL-itq"/>
+                            <constraint firstAttribute="trailing" secondItem="MfR-zl-QdR" secondAttribute="trailing" id="v2X-SS-fDt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lnr-oe-IL6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="2rv-G2-MXx">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="75D-Fk-BKu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backgroundView" destination="MfR-zl-QdR" id="AhY-kn-Wgr"/>
+                        <outlet property="planetDescriptionLabel" destination="GNT-qw-CCx" id="GPW-UE-R2a"/>
+                        <outlet property="planetImageView" destination="lmp-qj-rF9" id="Csv-Vn-nhG"/>
+                        <outlet property="planetNameLabel" destination="nwJ-sB-0jr" id="upK-DW-bgN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZp-h9-eh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6448.8000000000002" y="1222.9064039408868"/>
+            <point key="canvasLocation" x="6382" y="1223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vZ-B1-atI">
@@ -383,8 +399,8 @@
         <scene sceneID="MYa-b3-Zgo">
             <objects>
                 <navigationController id="7ne-r9-sle" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hCX-h6-o7g">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hCX-h6-o7g">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -496,7 +512,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meF-jH-UOk">
-                                <rect key="frame" x="114.66666666666669" y="771" width="146" height="33"/>
+                                <rect key="frame" x="114.66666666666669" y="737" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Experience gravity"/>
