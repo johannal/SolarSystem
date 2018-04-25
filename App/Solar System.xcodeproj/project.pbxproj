@@ -29,6 +29,8 @@
 		84B6C0BD208686C900A55AEA /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6C0BC208686C900A55AEA /* TestHelpers.swift */; };
 		9E0B9048208E9BA200280DD4 /* PlanetDetailsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */; };
 		9E0B9049208E9BA200280DD4 /* PlanetDetailsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */; };
+		9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */; };
+		9E1408802090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */; };
 		9E1ACC951ECFBE9C0066532D /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */; };
 		9E2017351ECB7E95002373D7 /* SolarSystemSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */; };
 		9E2017371ECB7F2E002373D7 /* PlanetSceneDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017361ECB7F2E002373D7 /* PlanetSceneDetailsViewController.swift */; };
@@ -137,6 +139,7 @@
 		84B6C0BA2086852200A55AEA /* TelescopicSurveyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelescopicSurveyTests.swift; sourceTree = "<group>"; };
 		84B6C0BC208686C900A55AEA /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetDetailsWindow.xib; sourceTree = "<group>"; };
+		9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		9E2017341ECB7E95002373D7 /* SolarSystemSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemSceneController.swift; sourceTree = "<group>"; };
 		9E2017361ECB7F2E002373D7 /* PlanetSceneDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetSceneDetailsViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +289,7 @@
 				0731FA301EC9FCBF00F46170 /* Model Classes */,
 				D2B2E8E61ECB9BCC00ED0982 /* Model Protocols */,
 				07506D651ECA7A6300EB7C11 /* View Classes */,
+				9E14087D2090EF8B00BCEB8B /* View Model Classes */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -297,6 +301,14 @@
 				80C68FBD208CF32F00778EB0 /* Info.plist */,
 			);
 			path = PlanetPhysics;
+			sourceTree = "<group>";
+		};
+		9E14087D2090EF8B00BCEB8B /* View Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */,
+			);
+			path = "View Model Classes";
 			sourceTree = "<group>";
 		};
 		9E272B5A1ED50A2000C2A5B2 /* Moon Jumper */ = {
@@ -677,6 +689,7 @@
 				9EF53C762083216E00B11FC4 /* Inspector.swift in Sources */,
 				9E4F77CB205AF052004C9486 /* OrbitingBodyNode.swift in Sources */,
 				9EB5341E2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift in Sources */,
+				9E1408802090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
 				9E4F77CC205AF058004C9486 /* PhysicsBodyNode.swift in Sources */,
 				9EB5341A2082DA120007DB03 /* Navigator.swift in Sources */,
 			);
@@ -690,6 +703,7 @@
 				9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */,
 				9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */,
 				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
+				9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
 				9E2017351ECB7E95002373D7 /* SolarSystemSceneController.swift in Sources */,
 				D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */,
 				07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */,
