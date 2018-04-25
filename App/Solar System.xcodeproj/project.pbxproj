@@ -64,6 +64,7 @@
 		9EC862722087AA9500E0ECC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC862712087AA9500E0ECC8 /* MainWindow.xib */; };
 		9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */; };
 		9ED89788208F069C0081C39C /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED89787208F069C0081C39C /* PlanetTableViewCell.swift */; };
+		9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
 		9EF53C6E20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C6D20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn */; };
@@ -169,6 +170,7 @@
 		9EC862712087AA9500E0ECC8 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9ED89787208F069C0081C39C /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
+		9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
 		9EF53C6D20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SingleAstronomicalObjectScene.scn; sourceTree = "<group>"; };
@@ -353,18 +355,19 @@
 			path = "Gravity Simulator";
 			sourceTree = "<group>";
 		};
-		9E53D1601ECF7172002A0001 /* Planet Details */ = {
+		9E53D1601ECF7172002A0001 /* Planet Scene Details */ = {
 			isa = PBXGroup;
 			children = (
 				9E2017361ECB7F2E002373D7 /* PlanetSceneDetailsViewController.swift */,
 			);
-			path = "Planet Details";
+			path = "Planet Scene Details";
 			sourceTree = "<group>";
 		};
 		9E53D1611ECF717E002A0001 /* 3D Solar System */ = {
 			isa = PBXGroup;
 			children = (
 				9E4F77C5205AEB17004C9486 /* SolarSystemSceneViewController.swift */,
+				9E53D1601ECF7172002A0001 /* Planet Scene Details */,
 				9E48A9DF206955B20032EAAB /* Shared Components */,
 			);
 			path = "3D Solar System";
@@ -375,6 +378,7 @@
 			children = (
 				9EB3891F208EFECD00556AF8 /* PlanetsTableViewController.swift */,
 				9ED89787208F069C0081C39C /* PlanetTableViewCell.swift */,
+				9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */,
 			);
 			path = "Planet List";
 			sourceTree = "<group>";
@@ -413,7 +417,6 @@
 				9E43B2771ECC1B1300404A81 /* SceneHUDViewController.swift */,
 				9E53D1611ECF717E002A0001 /* 3D Solar System */,
 				9EB3891E208EFE9500556AF8 /* Planet List */,
-				9E53D1601ECF7172002A0001 /* Planet Details */,
 				9E53D15F1ECF7166002A0001 /* Gravity Simulator */,
 				9E272B5A1ED50A2000C2A5B2 /* Moon Jumper */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
@@ -694,6 +697,7 @@
 				9E53D15E1ECF715E002A0001 /* GravitySimulatorViewController.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
 				EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */,
+				9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */,
 				9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */,
 				9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */,
 				0731FA341EC9FD4400F46170 /* Moon.swift in Sources */,
