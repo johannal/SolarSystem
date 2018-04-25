@@ -169,7 +169,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bca-V6-5xU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetCell" rowHeight="136" id="bVv-ej-ess" customClass="PlanetTableViewCell" customModule="Solar_System_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="136"/>
@@ -181,7 +182,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-mM-2nn">
                                             <rect key="frame" x="142" y="10" width="55" height="27"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-gZ-dfR">
@@ -212,6 +213,7 @@
                                         <constraint firstItem="7Th-XL-1Jx" firstAttribute="centerY" secondItem="Fdx-83-5Xy" secondAttribute="centerY" id="tHS-2F-ujp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1803418464944162" green="0.1803418464944162" blue="0.1803418464944162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="planetDescriptionLabel" destination="ZpD-gZ-dfR" id="2Je-ba-o1Q"/>
                                     <outlet property="planetImageView" destination="7Th-XL-1Jx" id="HbQ-qE-dEs"/>
@@ -227,11 +229,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Planets" id="mOO-PA-dxv">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="MwW-n8-Ioy">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="0hw-Ee-eTy" kind="custom" customClass="DismissSegue" customModule="Solar_System_iOS" customModuleProvider="target" id="Vxr-Lh-Ol7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="Mhv-dr-hib">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="2l2-H3-3gs" kind="presentation" modalTransitionStyle="flipHorizontal" id="Qae-EJ-7rD"/>
                             </connections>
@@ -249,7 +253,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Njw-Gj-ibr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetCell" rowHeight="136" id="CdL-hG-GPZ" customClass="PlanetTableViewCell" customModule="Solar_System_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="136"/>
@@ -261,7 +266,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3O-wy-eOM">
                                             <rect key="frame" x="142" y="10" width="55" height="27"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0y-s8-ppM">
@@ -275,6 +280,7 @@
                                             <rect key="frame" x="16" y="10" width="114" height="114"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Uua-bZ-lS9" secondAttribute="height" multiplier="1:1" id="QgC-Wt-CIs"/>
+                                                <constraint firstAttribute="width" constant="114" id="uHa-ym-w2p"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -291,6 +297,7 @@
                                         <constraint firstItem="F3O-wy-eOM" firstAttribute="top" secondItem="Uua-bZ-lS9" secondAttribute="top" id="xQq-Bb-zeA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.18036800622940063" green="0.18040603399276733" blue="0.18036559224128723" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="planetDescriptionLabel" destination="F0y-s8-ppM" id="S2g-K1-1BV"/>
                                     <outlet property="planetImageView" destination="Uua-bZ-lS9" id="gDr-u5-uw2"/>
@@ -306,6 +313,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Planets" id="eo1-lb-wg4">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="CNO-u4-Mo0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="dmr-NG-hAe" kind="custom" customClass="DismissSegue" customModule="Solar_System_iOS" customModuleProvider="target" id="aDR-q7-fJF"/>
                             </connections>
@@ -324,32 +332,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfR-zl-QdR">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfR-zl-QdR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EarthGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-qj-rF9">
-                                <rect key="frame" x="87.666666666666686" y="112" width="200" height="200"/>
+                                <rect key="frame" x="87.666666666666686" y="164" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Pb6-vR-ZKK"/>
                                     <constraint firstAttribute="width" secondItem="lmp-qj-rF9" secondAttribute="height" multiplier="1:1" id="eyQ-VR-kd3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-sB-0jr">
-                                <rect key="frame" x="135" y="344" width="104" height="51"/>
+                                <rect key="frame" x="135" y="396" width="104" height="51"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-qw-CCx">
-                                <rect key="frame" x="23" y="414" width="329" height="101.66666666666663"/>
+                                <rect key="frame" x="23" y="466.00000000000006" width="329" height="101.66666666666669"/>
                                 <string key="text">Earth otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.21880948604060912" green="0.21880948604060912" blue="0.21880948604060912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lnr-oe-IL6" secondAttribute="leading" constant="20" id="Fgh-xT-n9Y"/>
                             <constraint firstAttribute="bottom" secondItem="MfR-zl-QdR" secondAttribute="bottom" id="GpP-xd-w08"/>
@@ -367,6 +375,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="2rv-G2-MXx">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="75D-Fk-BKu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="shareButtonPressedWithSender:" destination="jan-kb-11E" id="jKJ-hm-Z5E"/>
                             </connections>
@@ -387,9 +396,13 @@
         <scene sceneID="6vZ-B1-atI">
             <objects>
                 <navigationController id="2l2-H3-3gs" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="asL-ZW-0F2">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="asL-ZW-0F2">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="dmr-NG-hAe" kind="relationship" relationship="rootViewController" id="S7R-68-cq2"/>
@@ -403,9 +416,12 @@
         <scene sceneID="MYa-b3-Zgo">
             <objects>
                 <navigationController id="7ne-r9-sle" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hCX-h6-o7g">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="hCX-h6-o7g">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="0hw-Ee-eTy" kind="relationship" relationship="rootViewController" id="DhL-uf-xtD"/>
@@ -817,6 +833,6 @@ Population: 7.347 billion</string>
     <inferredMetricsTieBreakers>
         <segue reference="MoB-gr-65g"/>
         <segue reference="8lG-IW-EI4"/>
-        <segue reference="6nK-xr-o5E"/>
+        <segue reference="fzX-cR-7ym"/>
     </inferredMetricsTieBreakers>
 </document>
