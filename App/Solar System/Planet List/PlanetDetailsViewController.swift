@@ -25,7 +25,7 @@ class PlanetDetailsViewController: UIViewController {
             planetImageView.image = presentedObject.globeImage
             
             // Tint background view with object base color
-            let baseColorName: Any = presentedObject.name.lowercased().appending("BaseColor")
+            let baseColorName: Any = presentedObject.name.lowercased().appending("AverageColor")
             let baseColor = UniversalColor(named: baseColorName as! UniversalColorName)
             backgroundView.backgroundColor = baseColor
         }
