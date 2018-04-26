@@ -14,13 +14,13 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView wantsLayer="YES" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="133" height="158"/>
+            <rect key="frame" x="0.0" y="0.0" width="125" height="158"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box wantsLayer="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xN7-54-o8y">
-                    <rect key="frame" x="1" y="1" width="131" height="156"/>
+                    <rect key="frame" x="1" y="1" width="123" height="156"/>
                     <view key="contentView" id="TyJ-iL-0Fy">
-                        <rect key="frame" x="1" y="1" width="129" height="154"/>
+                        <rect key="frame" x="1" y="1" width="121" height="154"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <color key="borderColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
@@ -32,7 +32,7 @@
                     </userDefinedRuntimeAttributes>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="JVl-K8-z9F">
-                    <rect key="frame" x="49" y="4" width="35" height="17"/>
+                    <rect key="frame" x="45" y="4" width="35" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mars" drawsBackground="YES" id="ZBE-yC-ZsU">
                         <font key="font" metaFont="systemMedium" size="13"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@
                     </textFieldCell>
                 </textField>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cLq-fk-JPC">
-                    <rect key="frame" x="4" y="29" width="125" height="125"/>
+                    <rect key="frame" x="4" y="29" width="117" height="117"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="cLq-fk-JPC" secondAttribute="height" multiplier="1:1" id="JRp-sJ-l0T"/>
                     </constraints>
@@ -50,7 +50,7 @@
             <constraints>
                 <constraint firstItem="cLq-fk-JPC" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" priority="749" constant="4" id="40O-Xg-vVU"/>
                 <constraint firstItem="JVl-K8-z9F" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cLq-fk-JPC" secondAttribute="bottom" constant="8" id="4FF-KE-lGc"/>
-                <constraint firstItem="cLq-fk-JPC" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="4" id="65Q-Un-lQH"/>
+                <constraint firstItem="cLq-fk-JPC" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="12" id="65Q-Un-lQH"/>
                 <constraint firstItem="xN7-54-o8y" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="1" id="C2s-fn-veR"/>
                 <constraint firstItem="cLq-fk-JPC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="4" id="LM1-Aq-6Ik"/>
                 <constraint firstItem="JVl-K8-z9F" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="TWp-4V-ddd"/>
