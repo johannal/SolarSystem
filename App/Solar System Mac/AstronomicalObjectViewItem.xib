@@ -23,7 +23,7 @@
                         <rect key="frame" x="1" y="1" width="129" height="154"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <color key="borderColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                    <color key="borderColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                     <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
