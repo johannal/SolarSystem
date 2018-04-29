@@ -152,6 +152,9 @@ class SolarSystemSceneController: NSObject {
                 centerNode.addChildNode(planetOrbit)
                 planetNode.orbitVisualizationNode = planetOrbit
                 
+                // Set initial orbit location
+                planetNode.positionAtRandomOrbitLocation()
+                
                 // Start orbiting
                 if wantsAnimations() {
                     planetNode.startOrbitingAnimation()

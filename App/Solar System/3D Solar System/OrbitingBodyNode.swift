@@ -57,6 +57,11 @@ class OrbitingBodyNode: PhysicsBodyNode {
         
     }
     
+    func positionAtRandomOrbitLocation() {
+        let randomOffsetInRadians = Double(arc4random_uniform(360)).degToRad()
+        rotationNode.rotation = SCNVector4.init(0, 1, 0, randomOffsetInRadians)
+    }
+    
     func startOrbitingAnimation() {
         // Add orbiting animation if necessary
         
@@ -99,5 +104,11 @@ class OrbitingBodyNode: PhysicsBodyNode {
     
     func stopSpinningAnimation() {
         rotationNode.removeAnimation(forKey: SpinningAnimationName)
+    }
+}
+
+extension Double {
+    func degToRad() -> Double {
+        return self * .pi / 180.0
     }
 }
