@@ -54,9 +54,9 @@ class SolarSystemSceneController: NSObject {
     func prepareScene() {
         
         // Use ambient lighting for simulator
-        // if TARGET_OS_SIMULATOR != 0 {
-        //    enableSceneLighting = false
-        // }
+         if TARGET_OS_SIMULATOR != 0 {
+            enableSceneLighting = false
+         }
         
         setupScene()
                 
@@ -153,8 +153,10 @@ class SolarSystemSceneController: NSObject {
                 planetNode.orbitVisualizationNode = planetOrbit
                 
                 // Start orbiting
-                planetNode.startOrbitingAnimation()
-                planetNode.startSpinningAnimation()
+                if wantsAnimations() {
+                    planetNode.startOrbitingAnimation()
+                    planetNode.startSpinningAnimation()
+                }
                 
                 // Finalize planet
                 finalizePlanet(planetNode)
@@ -164,6 +166,15 @@ class SolarSystemSceneController: NSObject {
         }
         
         solarSystemSceneView.scene!.background.contents = #imageLiteral(resourceName: "stars2")
+    }
+    
+    func wantsAnimations() -> Bool {
+        var wantsAnimations = true
+        if let disableAnimationsEnVar = ProcessInfo.processInfo.environment["DisableAnimations"] {
+            let enVar: NSString = disableAnimationsEnVar as NSString
+            wantsAnimations = !enVar.boolValue
+        }
+        return wantsAnimations
     }
     
     // Do any planet specific things
