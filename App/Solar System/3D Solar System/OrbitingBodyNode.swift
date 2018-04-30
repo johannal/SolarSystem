@@ -64,13 +64,14 @@ class OrbitingBodyNode: PhysicsBodyNode {
     
     func startOrbitingAnimation() {
         // Add orbiting animation if necessary
-        
         if !rotationNode.animationKeys.contains(OrbitingAnimationName) {
             let orbitingAnimation = CABasicAnimation(keyPath: "rotation")
-            
             let orbitalPeriod = bodyInfo?["orbitalPeriod"] as! Double
+            let initialRotation = Double(rotationNode.rotation.w)
+            
             orbitingAnimation.duration = orbitalPeriod / 150.0
-            orbitingAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, 1, 0, Double.pi * 2.0))
+            let rotationEndVector = SCNVector4.init(0, 1, 0, initialRotation + Double.pi * 2.0)
+            orbitingAnimation.toValue = NSValue(scnVector4: rotationEndVector)
             orbitingAnimation.repeatCount = .greatestFiniteMagnitude
             rotationNode.addAnimation(orbitingAnimation, forKey: OrbitingAnimationName)
         }
