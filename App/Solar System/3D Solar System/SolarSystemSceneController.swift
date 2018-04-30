@@ -168,7 +168,7 @@ class SolarSystemSceneController: NSObject {
             }
         }
         
-        solarSystemSceneView.scene!.background.contents = #imageLiteral(resourceName: "stars2")
+        solarSystemSceneView.scene!.background.contents = #imageLiteral(resourceName: "StarsBackground")
     }
     
     func wantsAnimations() -> Bool {
