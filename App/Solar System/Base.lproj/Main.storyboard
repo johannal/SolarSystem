@@ -278,6 +278,16 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-Ly-5XF">
+                                <rect key="frame" x="132" y="581" width="111" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add to Favorites">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToFavoritesButtonPressedWithSender:" destination="jan-kb-11E" eventType="touchUpInside" id="f3n-Yt-rzv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21880948604060912" green="0.21880948604060912" blue="0.21880948604060912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -286,10 +296,12 @@
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="top" secondItem="nwJ-sB-0jr" secondAttribute="bottom" constant="19" id="Pxa-Hc-8CS"/>
                             <constraint firstItem="nwJ-sB-0jr" firstAttribute="centerX" secondItem="lmp-qj-rF9" secondAttribute="centerX" id="Ww1-RL-3KY"/>
                             <constraint firstItem="lmp-qj-rF9" firstAttribute="centerX" secondItem="lnr-oe-IL6" secondAttribute="centerX" id="X3o-o1-W5N"/>
+                            <constraint firstItem="RcJ-Ly-5XF" firstAttribute="top" secondItem="GNT-qw-CCx" secondAttribute="bottom" constant="13.333333333333258" id="Yxf-pf-aD1"/>
                             <constraint firstItem="MfR-zl-QdR" firstAttribute="top" secondItem="E9O-UA-9tP" secondAttribute="top" id="Z4G-gV-EqX"/>
                             <constraint firstItem="MfR-zl-QdR" firstAttribute="leading" secondItem="E9O-UA-9tP" secondAttribute="leading" id="eVP-YX-Lgo"/>
                             <constraint firstItem="lmp-qj-rF9" firstAttribute="top" secondItem="lnr-oe-IL6" secondAttribute="top" constant="24" id="mG7-cp-GDe"/>
                             <constraint firstItem="nwJ-sB-0jr" firstAttribute="top" secondItem="lmp-qj-rF9" secondAttribute="bottom" constant="32" id="na5-jb-bQL"/>
+                            <constraint firstItem="RcJ-Ly-5XF" firstAttribute="centerX" secondItem="GNT-qw-CCx" secondAttribute="centerX" id="sZ1-M9-Rme"/>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="centerX" secondItem="nwJ-sB-0jr" secondAttribute="centerX" id="tYf-wL-itq"/>
                             <constraint firstAttribute="trailing" secondItem="MfR-zl-QdR" secondAttribute="trailing" id="v2X-SS-fDt"/>
                         </constraints>
@@ -435,7 +447,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meF-jH-UOk">
-                                <rect key="frame" x="114.66666666666669" y="737" width="146" height="33"/>
+                                <rect key="frame" x="114.66666666666669" y="771" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Experience gravity"/>

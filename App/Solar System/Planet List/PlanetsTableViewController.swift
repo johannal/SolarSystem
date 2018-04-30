@@ -18,8 +18,10 @@ class PlanetsTableViewController: UITableViewController {
         if presentsFavorites {
             title = "Favorites"
             
-            // Clear favorites button
-            self.navigationItem.rightBarButtonItem = nil
+            // Clear right bar buttom item if presenting favorites
+            if presentsFavorites {
+                navigationItem.rightBarButtonItem = nil
+            }
         }
     }
 
@@ -76,42 +78,28 @@ class PlanetsTableViewController: UITableViewController {
         }
     }
  
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        return presentsFavorites
     }
-    */
-
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            if var favorites = UserDefaults.standard.object(forKey: "FavoritePlanets") as? [Int] {
+                favorites.remove(at: indexPath.row)
+                UserDefaults.standard.setValue(favorites, forKey: "FavoritePlanets")
+            }
+            
+            //indexPath.row
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
+ 
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

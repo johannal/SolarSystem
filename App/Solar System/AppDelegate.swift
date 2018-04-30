@@ -14,8 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        registerDefaults()
         return true
+    }
+    
+    func registerDefaults() {
+        UserDefaults.standard.register(defaults: ["FavoritePlanets" : [3, 4, 5]])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

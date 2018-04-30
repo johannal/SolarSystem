@@ -30,6 +30,15 @@ class PlanetDetailsViewController: UIViewController {
             backgroundView.backgroundColor = baseColor
         }
     }
+    
+    @IBAction func addToFavoritesButtonPressed(sender: Any) {
+        presentedObject?.addToFavorites()
+        let message = "\(presentedObject!.name) was successfully added to your favorites."
+        let alert = UIAlertController(title: "Added to Favorites", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 
     // Allow sharing the planets description
     @IBAction func shareButtonPressed(sender: Any) {

@@ -39,9 +39,17 @@ class AstronomicalObject {
     }
     
     static var favoriteObjects: [AstronomicalObject] {
-        // TODO: Provide actual favorites
-        let favorites = allKnownObjects[3..<6]
-        return Array(favorites)
+        let knownObjects = allKnownObjects
+        var favoriteObjects: [AstronomicalObject] = []
+        let favoriteIndices = UserDefaults.standard.object(forKey: "FavoritePlanets")
+        if let favoriteIndices = favoriteIndices as? [Int] {
+            for idx in favoriteIndices {
+                let object = knownObjects[idx]
+                favoriteObjects.append(object)
+            }
+        }
+        
+        return favoriteObjects
     }
     
     init(dictionary: Dictionary<String, Any>) {
@@ -66,5 +74,14 @@ class AstronomicalObject {
         diffuseTextureName = dictionary["diffuseTexture"] as! ImageName
         normalTextureName = dictionary["normalTextureName"] as? ImageName
         specularTextureName = dictionary["specularTextureName"] as? ImageName
+    }
+    
+    func addToFavorites() {
+        if let index = AstronomicalObject.allKnownObjects.index(where: {$0.name == name}) {
+            if var favorites = UserDefaults.standard.object(forKey: "FavoritePlanets") as? [Int] {
+                favorites.append(index)
+                UserDefaults.standard.setValue(favorites, forKey: "FavoritePlanets")
+            }
+        }
     }
 }
