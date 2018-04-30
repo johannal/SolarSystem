@@ -27,7 +27,6 @@
 		84B6C0B92086850A00A55AEA /* StarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6C0B82086850A00A55AEA /* StarTests.swift */; };
 		84B6C0BB2086852200A55AEA /* TelescopicSurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6C0BA2086852200A55AEA /* TelescopicSurveyTests.swift */; };
 		84B6C0BD208686C900A55AEA /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6C0BC208686C900A55AEA /* TestHelpers.swift */; };
-		9E0B9048208E9BA200280DD4 /* PlanetDetailsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */; };
 		9E0B9049208E9BA200280DD4 /* PlanetDetailsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */; };
 		9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */; };
 		9E1408802090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */; };
@@ -648,7 +647,6 @@
 			files = (
 				9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
-				9E0B9048208E9BA200280DD4 /* PlanetDetailsWindow.xib in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,
