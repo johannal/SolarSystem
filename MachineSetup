@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Configuring demo machine"
+
+defaults write com.apple.dt.Xcode IDEMainThreadChecker_DisableHardAssertions YES
+
+echo "Finished configuring demo machine"
