@@ -10,15 +10,39 @@ import UIKit
 class PlanetsTableViewController: UITableViewController {
     
     let astronomicalObjects = AstronomicalObject.allKnownObjects
+    var presentsFavorites = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        if presentsFavorites {
+            title = "Favorites"
+            
+            // Clear favorites button
+            self.navigationItem.rightBarButtonItem = nil
+        }
+    }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    @IBAction func favoritesButtonPressed() {
+        if !presentsFavorites {
+            if let listNavigationController = storyboard?.instantiateViewController(withIdentifier: "PlanetsNavigationController") as? UINavigationController {
+                if let listController = listNavigationController.viewControllers.first as? PlanetsTableViewController {
+                    listController.presentsFavorites = true
+                }
+                listNavigationController.modalTransitionStyle = .flipHorizontal
+                present(listNavigationController, animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
+    var presentedAstronomicalObjects: [AstronomicalObject] {
+        if presentsFavorites {
+            return AstronomicalObject.favoriteObjects
+        }
+        else {
+            return AstronomicalObject.allKnownObjects
+        }
     }
 
     // MARK: - Table view data source
@@ -29,7 +53,7 @@ class PlanetsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return astronomicalObjects.count
+        return presentedAstronomicalObjects.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,7 +62,7 @@ class PlanetsTableViewController: UITableViewController {
             return cell
         }
         
-        planetCell.configure(withObject: astronomicalObjects[indexPath.row])
+        planetCell.configure(withObject: presentedAstronomicalObjects[indexPath.row])
         return planetCell
     }
     
@@ -48,7 +72,7 @@ class PlanetsTableViewController: UITableViewController {
         }
         
         if let row = tableView.indexPath(for: cell)?.row {
-            destination.presentedObject = astronomicalObjects[row]
+            destination.presentedObject = presentedAstronomicalObjects[row]
         }
     }
  

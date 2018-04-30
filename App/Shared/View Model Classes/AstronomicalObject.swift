@@ -38,6 +38,12 @@ class AstronomicalObject {
         return planetDetails.map { dict in AstronomicalObject.init(dictionary: dict) }
     }
     
+    static var favoriteObjects: [AstronomicalObject] {
+        // TODO: Provide actual favorites
+        let favorites = allKnownObjects[3..<6]
+        return Array(favorites)
+    }
+    
     init(dictionary: Dictionary<String, Any>) {
         diameter = dictionary["diameter"] as! Double
         orbitalRadius = dictionary["orbitalRadius"] as! Double
