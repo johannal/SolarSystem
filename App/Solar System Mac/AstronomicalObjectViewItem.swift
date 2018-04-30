@@ -9,9 +9,11 @@ import Cocoa
 
 class AstronomicalObjectViewItem: NSCollectionViewItem {
     
+    @IBOutlet weak var backgroundBox: NSBox?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        backgroundBox?.alphaValue = 0.2
     }
     
 }
