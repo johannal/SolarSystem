@@ -52,11 +52,10 @@ class SolarSystemSceneController: NSObject {
     }
     
     func prepareScene() {
-        
+        #if TARGET_OS_SIMULATOR
         // Use ambient lighting for simulator
-         if TARGET_OS_SIMULATOR != 0 {
-            enableSceneLighting = false
-         }
+        enableSceneLighting = false
+        #endif
         
         setupScene()
                 
