@@ -100,6 +100,7 @@ class SolarSystemSceneController: NSObject {
                 planetNode.bodyInfo = planetInfo
                 planetNode.name = name
                 let planetGeometry = SCNSphere.init(radius: CGFloat(scaledDiameter / 2))
+                planetGeometry.segmentCount = 60
                 
                 let diffuseImage = Image(named: diffuseTexture)
                 planetGeometry.firstMaterial?.diffuse.contents = diffuseImage
@@ -187,6 +188,7 @@ class SolarSystemSceneController: NSObject {
             let planetGeometry = node.geometry as! SCNSphere
             
             let ringGeometry = SCNTorus(ringRadius: planetGeometry.radius * 1.6, pipeRadius: planetGeometry.radius / 2.2)
+            ringGeometry.ringSegmentCount = 60
             
             let ringMaterial = SCNMaterial()
             ringMaterial.diffuse.contents = #imageLiteral(resourceName: "SaturnRing")
