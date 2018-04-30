@@ -10,12 +10,13 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
+    @IBAction func refreshClicked(_ sender: Any) {
+        let windowController = NSApplication.shared.mainWindow?.windowController
+        let viewController = windowController?.contentViewController
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        if let solarSystemSceneVC = viewController as? SolarSystemSceneViewController {
+            solarSystemSceneVC.refreshPlanetsAndNews()
+        }
     }
 
 }

@@ -2,3 +2,4 @@
 *.xcuserdatad
 UserInterfaceState.xcuserstate
 .clone
+!apple.xcuserdatad

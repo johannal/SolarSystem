@@ -10,33 +10,50 @@ import SceneKit
 
 /// An #NSViewController that represents a solar system.
 class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControllerDelegate {
-    
-    let navigator = Navigator()
-    let inspector = Inspector()
-    
+
+    // MARK: - Instance variables
+
+    private let planetsDataSource = SolarSystemPlanetsDataSource()
+    private var appearanceManager: SolarSceneViewAppearanceManager?
+    private var particleSystemsAnimator: ParticleSystemsAnimator?
+    private var sceneController: SolarSystemSceneController?
+    private let networkService = PlanetsNewsUpdatesService<MockNetworkRequest>()
+
+    // MARK: - Outlets
+
     @IBOutlet weak var navigatorCollectionView: NSCollectionView!
     @IBOutlet weak var solarSystemSceneView: SCNView!
     @IBOutlet weak var gravityButton: NSButton?
     @IBOutlet weak var startAnimationButton: NSButton?
     @IBOutlet weak var increaseAnimationSpeedButton: NSButton?
     @IBOutlet weak var decreaseAnimationSpeedButton: NSButton?
-    
+
     var sceneController: SolarSystemSceneController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Setup 3D scene view controller
         sceneController = SolarSystemSceneController(solarSystemSceneView: solarSystemSceneView)
         sceneController?.delegate = self
         sceneController?.prepareScene()
-        
+
         // Setup click gesture recognizer
-        let clickGes = NSClickGestureRecognizer(target: self, action: #selector(didClickSceneView(_:)))
+        let clickGes = NSClickGestureRecognizer(target: self, action: #selector(didClickScene(_:)))
         solarSystemSceneView.addGestureRecognizer(clickGes)
-        
-        // Setup navigator controller
-        navigator.collectionView = navigatorCollectionView
+
+        // Setup data source
+        navigatorCollectionView.delegate = planetsDataSource
+        navigatorCollectionView.dataSource = planetsDataSource
+
+        // Setup appearance manager
+        let appearanceManager = SolarSceneViewAppearanceManager(sceneView: solarSystemSceneView)
+        self.appearanceManager = appearanceManager
+
+        // Setup particle systems manager for scene
+        guard let scene = solarSystemSceneView.scene else { return }
+        let particleAnimator = ParticleSystemsAnimator(scene: scene)
+        self.particleSystemsAnimator = particleAnimator
     }
 
     // TODO: Add more detailed documentation.
@@ -56,16 +73,16 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     func orbitHaloColor() -> NSColor? {
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
-    
+
     // MARK: - SolarSystemSceneControllerDelegate
-    
+
     /// Hides or shows this button that toggles gravity.
     func hideGravityButton(_ hidden: Bool) {
         gravityButton?.isHidden = hidden
     }
-    
+
     /// Called when the scene is clicked. Passes along the click to the backing SCNView.
-    @objc func didClickSceneView(_ sender: NSClickGestureRecognizer) {
+    @objc func didClickScene(_ sender: NSClickGestureRecognizer) {
         sceneController?.didHitSceneView(atLocation: sender.location(in: solarSystemSceneView))
     }
 
@@ -73,15 +90,29 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
 
     /// TODO: Add API Documentation
     func numberOfOrbitingNodes() -> UInt {
-        guard let orbitingNodes = sceneController?.planetNodes else { return 0 }
-        
-        var numberOfOrbitingNodes: UInt = 0
-        for node in orbitingNodes {
-            if (node.isOrbitingAnimationEnabled) {
-                numberOfOrbitingNodes += 1
-            }
-        }
-        
-        return numberOfOrbitingNodes
+        return sceneController?.planetNodes.reduce(0, { (sum, node) -> UInt in
+            return node.isOrbitingAnimationEnabled ? sum + 1 : sum
+        }) ?? 0
+    }
+}
+
+extension SolarSystemSceneViewController: PlanetsNewsListener {
+
+    // MARK: - User Interaction
+
+    /// Performs network request to Solar System REST service which asks about news and planets.
+
+    func refreshPlanetsAndNews() {
+        networkService.update(listener: self)
+    }
+
+    // MARK: - Network Update Callbacks
+
+    internal func updateWithPlanets(_ news: [Planet]?, _ error: Error?) {
+        // TODO: refresh UI with updated news feed on planets, dwarf planets, and exoplanets
+    }
+
+    internal func updateWithNews(_ news: [News]?, _ error: Error?) {
+        // TODO: update the new "Today in Space" news view
     }
 }

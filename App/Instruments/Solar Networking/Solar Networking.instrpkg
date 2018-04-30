@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+    <id>com.demo.solarsystem.networking</id>
+    <title>Solar System Networking</title>
+    <owner>
+        <name>Kacper</name>
+    </owner>
+    <note>Package that provides instrumentation REST API calls and parsing operations.</note>
+
+    <os-signpost-interval-schema>
+        <id>http-requests</id>
+        <title>Aggregated HTTP requests</title>
+
+        <subsystem>"com.demo.SolarSystem"</subsystem>
+        <category>"Networking"</category>
+        <name>"NetworkRequest"</name>
+
+        <start-pattern>
+            <message>"Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "]"</message>
+        </start-pattern>
+        <end-pattern>
+            <message>"Request finished [ID:" ?request-id "][CODE:" ?http-code"]"</message>
+        </end-pattern>
+        <primary-column>
+            <mnemonic>request-id</mnemonic>
+            <title>Request identifier</title>
+            <type>uint64</type>
+            <expression>?request-id</expression>
+        </primary-column>
+
+        <column>
+            <mnemonic>url</mnemonic>
+            <title>Request URL</title>
+            <type>string</type>
+            <expression>?url</expression>
+        </column>
+
+        <column>
+            <mnemonic>request-type</mnemonic>
+            <title>HTTP Request Type</title>
+            <type>string</type>
+            <expression>?request-type</expression>
+        </column>
+
+        <column>
+            <mnemonic>request-label</mnemonic>
+            <title>HTTP Request Label</title>
+            <type>string</type>
+            <expression>(str-cat "[" ?request-type "] " ?url " — " ?http-code)</expression>
+        </column>
+
+        <column>
+            <mnemonic>http-code</mnemonic>
+            <title>HTTP Response code</title>
+            <type>uint64</type>
+            <expression>?http-code</expression>
+        </column>
+
+        <column>
+            <mnemonic>end-present</mnemonic>
+            <title>End signpost present</title>
+            <type>boolean</type>
+            <expression>(integer 1)</expression>
+        </column>
+
+        <column>
+            <mnemonic>request-color</mnemonic>
+            <title>Request Color</title>
+            <type>event-concept</type>
+            <expression>(switch ?http-code (case 200 then "Green") (default "Red"))</expression>
+        </column>
+
+        <open-interval-template>
+            <mnemonic>request-id</mnemonic>
+            <expression>?request-id</expression>
+            <mnemonic>url</mnemonic>
+            <expression>?url</expression>
+            <mnemonic>request-type</mnemonic>
+            <expression>?request-type</expression>
+            <mnemonic>request-label</mnemonic>
+            <expression>(str-cat "[" ?request-type "]" ?url)</expression>
+        </open-interval-template>
+
+    </os-signpost-interval-schema>
+
+    <os-signpost-interval-schema>
+        <id>json-parsing</id>
+        <title>Aggregated JSON parsing operations</title>
+
+        <subsystem>"com.demo.SolarSystem"</subsystem>
+        <category>"Networking"</category>
+        <name>"ResponseParsing"</name>
+
+        <start-pattern>
+            <message>"[ID:" ?request-id "][SIZE:" ?bytes "]"</message>
+        </start-pattern>
+        <end-pattern>
+            <message>"[ID:" ?request-id "]"</message>
+        </end-pattern>
+        <primary-column>
+            <mnemonic>request-id</mnemonic>
+            <title>Request identifier</title>
+            <type>uint64</type>
+            <expression>?request-id</expression>
+        </primary-column>
+
+        <column>
+            <mnemonic>size-in-bytes</mnemonic>
+            <title>Bytes</title>
+            <type>size-in-bytes</type>
+            <expression>?bytes</expression>
+        </column>
+
+        <column>
+            <mnemonic>std</mnemonic>
+            <title>Std</title>
+            <type>uint64</type>
+            <expression>(integer 1)</expression>
+        </column>
+
+        <open-interval-template>
+            <mnemonic>request-id</mnemonic>
+            <expression>?request-id</expression>
+            <mnemonic>size-in-bytes</mnemonic>
+            <expression>?bytes</expression>
+            <mnemonic>std</mnemonic>
+            <expression>(integer 1)</expression>
+        </open-interval-template>
+
+    </os-signpost-interval-schema>
+
+    <interval-schema>
+        <id>unified-network-json</id>
+        <title>Unified request and json parsing table</title>
+
+        <start-column>
+            <mnemonic>start</mnemonic>
+            <title>Start Time</title>
+            <type>start-time</type>
+        </start-column>
+
+        <duration-column>
+            <mnemonic>duration</mnemonic>
+            <title>Duration</title>
+            <type>duration</type>
+        </duration-column>
+    </interval-schema>
+
+    <modeler>
+        <id>com.demo.solarsystem.request-json-unifying-modeler</id>
+        <title>Request and parsing fusion modeler</title>
+        <purpose>This modeler fusions data from request and json tables and outputs new table that holds data specific to drawing</purpose>
+
+        <production-system>
+            <rule-path>fusion-modeler.clp</rule-path>
+        </production-system>
+
+        <output>
+            <schema-ref>unified-network-json</schema-ref>
+            <required-input>
+                <schema-ref>json-parsing</schema-ref>
+            </required-input>
+            <required-input>
+                <schema-ref>http-requests</schema-ref>
+            </required-input>
+        </output>
+    </modeler>
+
+    <instrument>
+        <id>com.demo.solarsystem.networking.http-activity</id>
+        <title>HTTP Activity</title>
+        <category>Behavior</category>
+        <purpose>Displays HTTP requests and JSON parsing operations.</purpose>
+        <icon>Network</icon>
+
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>http-requests</id>
+            <schema-ref>http-requests</schema-ref>
+        </create-table>
+
+        <create-table>
+            <id>json-parsing</id>
+            <schema-ref>json-parsing</schema-ref>
+        </create-table>
+
+        <create-table>
+            <id>http-json-unified</id>
+            <schema-ref>unified-network-json</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Endpoint requests</title>
+            <lane>
+                <title></title>
+                <table-ref>http-requests</table-ref>
+                <plot-template>
+                    <instance-by>url</instance-by>
+                    <label-format>%s</label-format>
+                    <value-from>url</value-from>
+                    <color-from>request-color</color-from>
+                    <label-from>request-label</label-from>
+                </plot-template>
+            </lane>
+            <lane>
+                <title>JSON Parsing</title>
+                <table-ref>json-parsing</table-ref>
+                <base-color>Red</base-color>
+                <plot>
+                    <value-from>std</value-from>
+                    <label-from>size-in-bytes</label-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <aggregation>
+            <title>Summary</title>
+            <table-ref>http-requests</table-ref>
+            <slice>
+                <column>end-present</column>
+                <equals>
+                    <boolean>1</boolean>
+                </equals>
+            </slice>
+            <hierarchy>
+                <level>
+                    <column>url</column>
+                </level>
+                <level>
+                    <column>http-code</column>
+                </level>
+            </hierarchy>
+            <visit-on-focus>HTTP Requests List</visit-on-focus>
+            <column>
+                <count/>
+            </column>
+            <column>
+                <title>Total Duration</title>
+                <sum>duration</sum>
+            </column>
+            <column>
+                <min>duration</min>
+            </column>
+            <column>
+                <average>duration</average>
+            </column>
+            <column>
+                <max>duration</max>
+            </column>
+            <column>
+                <std-dev>duration</std-dev>
+            </column>
+        </aggregation>
+
+        <list>
+            <title>HTTP Requests List</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </list>
+
+        <list>
+            <title>JSON Parsing operations</title>
+            <table-ref>json-parsing</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>size-in-bytes</column>
+        </list>
+
+        <time-slice>
+            <title>Active requests</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </time-slice>
+
+        <defaults>
+            <graph-height>3</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+
+    <template>
+        <import-from-file>Solar System.tracetemplate</import-from-file>
+    </template>
+
+</package>

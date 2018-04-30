@@ -1,7 +1,55 @@
 #!/bin/bash
 
+# NOTES
+# Demo account short user name: "apple"
+# Demo account full user name: "Derek Parker"
+
+# DEMO STEPS
+# 1. Show Xcode, tab one — source only stopped at a breakpoint
+# 2. Switch to Xcode tab two — IB with image view selected and details showing in Inspector
+# 3. Toggle canvas content mode switcher in IB to make content light
+# 4. Bring Documentation window in using ⌘-Shift-0
+# 5. Bring Instruments in by clicking Dock icon
+# 6. Bring Terminal in by clicking Dock icon — run command to start output flowing
+
 echo "Configuring demo machine"
+echo "This will discard all of the changes you've made!"
+
+if [ "$(whoami)" != "apple" ]; then
+    python CopyUserData.py apple $(whoami)
+fi
+
+defaults write com.apple.dt.Instruments XRIgnoreAllDevices -bool YES
+
+defaults write com.apple.dt.Solar-System-Mac HideDockIcon -bool true
+
+defaults write com.apple.dt.Instruments XRSymbolicationModernizationSkip -bool YES
 
 defaults write com.apple.dt.Xcode IDEMainThreadChecker_DisableHardAssertions YES
+# Discard all of the changes
+git checkout -f
+
+# Checkout to original branch
+git checkout keynote_demo
+
+# Delete branch if exists
+git branch -D helper_branch
+
+# Checkout helper branch
+git checkout -b helper_branch
+
+# Set upstream!
+git branch --set-upstream-to keynote_demo
+
+# Apply and commit
+git cherry-pick 7debad7879fbe77b2b223982775820ee8ab141ed
+
+git cherry-pick -n 7cfe10572ee1abc50dd482f89ef48a729209586c
+
+osascript AppleAutomation.scpt
 
 echo "Finished configuring demo machine"
+
+echo -n -e "\033]0;WindowToDelete\007"
+
+osascript -e 'tell application "Terminal" to close (every window whose name contains "WindowToDelete")' &

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14257" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14273" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14257"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14257"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14273"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14273"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,9 +101,15 @@
                                                 <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="mDf-zr-I0C"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Revert to Saved" keyEquivalent="r" id="KaW-ft-85H">
+                                        <menuItem title="Revert to Saved" id="KaW-ft-85H">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="iJ3-Pv-kwq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Refresh" keyEquivalent="r" id="Jdt-R6-HIc" userLabel="Refresh">
+                                            <connections>
+                                                <action selector="refreshClicked:" target="Voe-Tx-rLC" id="wP8-bl-RDl"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
@@ -686,7 +692,7 @@
         <!--Window Controller-->
         <scene sceneID="qh7-D3-NSS">
             <objects>
-                <windowController id="5rz-OH-xd0" sceneMemberID="viewController">
+                <windowController id="5rz-OH-xd0" customClass="SolarSystemSceneWindowController" customModule="Solar_System_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Solar System" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="KWV-Ta-7qB">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -718,9 +724,9 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="myX-AJ-O4S">
-                                                    <rect key="frame" x="14" y="8" width="134" height="23"/>
+                                                    <rect key="frame" x="15" y="8" width="133" height="23"/>
                                                     <view key="contentView" id="yAk-kY-MyN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="133" height="23"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Di-vL-YPN">
@@ -796,14 +802,32 @@
                                         </segmentedCell>
                                     </segmentedControl>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="C6739327-A30C-4B7C-A804-5CE582BEDADE" label="Custom View" paletteLabel="Custom View" id="VUJ-7j-hlu">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="38" height="24"/>
+                                    <size key="maxSize" width="38" height="24"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="IN4-g4-lFV">
+                                        <rect key="frame" x="19" y="14" width="38" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="QDv-A7-ouv">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="NSRefreshTemplate" width="32"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="refreshClickedWithSender:" target="5rz-OH-xd0" id="apV-Cy-NZO"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="pZS-Xk-k1M"/>
+                                <toolbarItem reference="VUJ-7j-hlu"/>
                                 <toolbarItem reference="wyZ-uN-17l"/>
                                 <toolbarItem reference="3ul-KY-mRd"/>
                                 <toolbarItem reference="xr7-RN-wla"/>
                                 <toolbarItem reference="3ul-KY-mRd"/>
-                                <toolbarItem reference="R94-2o-1ij"/>
                                 <toolbarItem reference="1fh-xg-zLm"/>
                                 <toolbarItem reference="PdN-FD-dve"/>
                             </defaultToolbarItems>
@@ -1121,6 +1145,7 @@
     <resources>
         <image name="CalendarIcon" width="18" height="18"/>
         <image name="EarthGlobe" width="200" height="200"/>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="PauseIcon" width="18" height="18"/>
         <image name="SidebarIcon" width="18" height="18"/>
         <namedColor name="sunRiseSunSetLabelColor">

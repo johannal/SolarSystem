@@ -4,5 +4,7 @@
 <dict>
 	<key>IDEDidComputeMac32BitWarning</key>
 	<true/>
+	<key>BuildSystemType</key>
+	<string>Latest</string>
 </dict>
 </plist>
