@@ -447,7 +447,7 @@ Population: 7.347 billion</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meF-jH-UOk">
-                                <rect key="frame" x="114.66666666666669" y="771" width="146" height="33"/>
+                                <rect key="frame" x="114.66666666666669" y="737" width="146" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Experience gravity"/>
@@ -616,13 +616,17 @@ Population: 7.347 billion</string>
                                     <constraint firstAttribute="trailing" secondItem="MpD-4n-gR8" secondAttribute="trailing" id="xyD-Q9-qWq"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="atO-so-9py">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="atO-so-9py">
                                 <rect key="frame" x="156.66666666666666" y="636" width="62" height="96"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="L5A-D9-WVm"/>
                                     <constraint firstAttribute="height" constant="96" id="fy8-oh-6mW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wRK-Wk-SfB" appends="YES" id="920-bE-oPE"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-WP-Yxq">
                                 <rect key="frame" x="12" y="56" width="60" height="44"/>
@@ -726,6 +730,11 @@ Population: 7.347 billion</string>
                         <action selector="didPan:" destination="vGa-F7-cak" id="gy4-gk-Qkl"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="wRK-Wk-SfB">
+                    <connections>
+                        <action selector="didTapAstronaut:" destination="vGa-F7-cak" id="DrG-iT-ltV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1669.5999999999999" y="1949.7751124437782"/>
         </scene>
@@ -746,7 +755,7 @@ Population: 7.347 billion</string>
         <image name="StarsBackground" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoB-gr-65g"/>
+        <segue reference="Hdn-4G-gJK"/>
         <segue reference="8lG-IW-EI4"/>
     </inferredMetricsTieBreakers>
 </document>

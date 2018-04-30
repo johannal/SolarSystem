@@ -43,13 +43,7 @@ class MoonJumperViewController: UIViewController {
                 let requiredAcceleration = 10 + selectedHeight / requiredAccellerationScaleFactor
                 
                 if gravity > requiredAcceleration {
-                    self?.didReachSelectedHeight = true
-                    self?.heightLabel.textColor = UIColor.green
-                    self?.heightCircleView.strokeColor = UIColor.green
-                    
-                    DispatchQueue.main.async {
-                        self?.reachedSelectedHeight()
-                    }
+                    self?.updateUIForSuccess()
                 }
                 else if self?.didReachSelectedHeight == false && gravity > minAccellerationForJumpAnimation {
                     UIView.animate(withDuration: 0.4, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
@@ -63,6 +57,16 @@ class MoonJumperViewController: UIViewController {
                     })
                 }
             })
+        }
+    }
+    
+    func updateUIForSuccess() {
+        didReachSelectedHeight = true
+        heightLabel.textColor = UIColor.green
+        heightCircleView.strokeColor = UIColor.green
+        
+        DispatchQueue.main.async {
+            self.reachedSelectedHeight()
         }
     }
     
@@ -96,6 +100,10 @@ class MoonJumperViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .beginFromCurrentState, animations: {
             self.astronautView.transform = CGAffineTransform.init(translationX: 0.0, y: 0.0)
         }, completion: nil)
+    }
+    
+    @IBAction func didTapAstronaut(_ sender: UITapGestureRecognizer) {
+        updateUIForSuccess()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
