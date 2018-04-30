@@ -65,9 +65,9 @@
 		9EC862722087AA9500E0ECC8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC862712087AA9500E0ECC8 /* MainWindow.xib */; };
 		9ECFB1A01ED62B4E00E8C53A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */; };
 		9ED89788208F069C0081C39C /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED89787208F069C0081C39C /* PlanetTableViewCell.swift */; };
-		9EDFCD592097279100F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD582097279100F4DD79 /* Sun.jpg */; };
-		9EDFCD5A2097279100F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD582097279100F4DD79 /* Sun.jpg */; };
-		9EDFCD5C2097279E00F4DD79 /* Earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD5B2097279E00F4DD79 /* Earth.jpg */; };
+		9EDFCD5F2097297C00F4DD79 /* Earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD5E2097297C00F4DD79 /* Earth.jpg */; };
+		9EDFCD612097298B00F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD602097298B00F4DD79 /* Sun.jpg */; };
+		9EDFCD622097298B00F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD602097298B00F4DD79 /* Sun.jpg */; };
 		9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
@@ -174,8 +174,8 @@
 		9EC862712087AA9500E0ECC8 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		9ECFB19F1ED62B4E00E8C53A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		9ED89787208F069C0081C39C /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
-		9EDFCD582097279100F4DD79 /* Sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Sun.jpg; path = "Solar System/Assets.xcassets/Planet Textures/Sun.imageset/Sun.jpg"; sourceTree = SOURCE_ROOT; };
-		9EDFCD5B2097279E00F4DD79 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Earth.jpg; path = "Solar System/Assets.xcassets/Planet Textures/Earth.imageset/Earth.jpg"; sourceTree = SOURCE_ROOT; };
+		9EDFCD5E2097297C00F4DD79 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Earth.jpg; path = "Solar System/Assets.xcassets/Planet Textures/Earth.imageset/Earth.jpg"; sourceTree = SOURCE_ROOT; };
+		9EDFCD602097298B00F4DD79 /* Sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Sun.jpg; path = "Solar System/Assets.xcassets/Planet Textures/Sun.imageset/Sun.jpg"; sourceTree = SOURCE_ROOT; };
 		9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
@@ -345,10 +345,7 @@
 				9EB5341C2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift */,
 				9EB5341B2082E7EC0007DB03 /* AstronomicalObjectViewItem.xib */,
 				9EF53C6D20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn */,
-				9EDFCD5B2097279E00F4DD79 /* Earth.jpg */,
-				9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */,
-				9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */,
-				9EDFCD582097279100F4DD79 /* Sun.jpg */,
+				9EDFCD5D209728EB00F4DD79 /* Scene Assets */,
 				9E4F77BB205AEA1F004C9486 /* Assets.xcassets */,
 				9E4F77BD205AEA1F004C9486 /* Main.storyboard */,
 				9EC862712087AA9500E0ECC8 /* MainWindow.xib */,
@@ -442,6 +439,17 @@
 			);
 			name = "Solar System iOS";
 			path = "Solar System";
+			sourceTree = "<group>";
+		};
+		9EDFCD5D209728EB00F4DD79 /* Scene Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9EDFCD5E2097297C00F4DD79 /* Earth.jpg */,
+				9EDFCD602097298B00F4DD79 /* Sun.jpg */,
+				9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */,
+				9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */,
+			);
+			name = "Scene Assets";
 			sourceTree = "<group>";
 		};
 		B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */ = {
@@ -630,9 +638,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDFCD5F2097297C00F4DD79 /* Earth.jpg in Resources */,
+				9EDFCD622097298B00F4DD79 /* Sun.jpg in Resources */,
 				9EC862722087AA9500E0ECC8 /* MainWindow.xib in Resources */,
-				9EDFCD5C2097279E00F4DD79 /* Earth.jpg in Resources */,
-				9EDFCD5A2097279100F4DD79 /* Sun.jpg in Resources */,
 				9E4F77CA205AEB51004C9486 /* SolarSystemScene.scn in Resources */,
 				9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */,
 				9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */,
@@ -650,7 +658,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EDFCD592097279100F4DD79 /* Sun.jpg in Resources */,
+				9EDFCD612097298B00F4DD79 /* Sun.jpg in Resources */,
 				9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
