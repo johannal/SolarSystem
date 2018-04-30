@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14257" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14258" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4368" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14245"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3X-oI-EFc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars2" translatesAutoresizingMaskIntoConstraints="NO" id="eD0-5Y-jIt">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="eD0-5Y-jIt">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </imageView>
                                 </subviews>
@@ -207,6 +207,7 @@
                                         <constraint firstItem="7Th-XL-1Jx" firstAttribute="leading" secondItem="Fdx-83-5Xy" secondAttribute="leading" constant="16" id="Nuz-Iu-nye"/>
                                         <constraint firstItem="7Th-XL-1Jx" firstAttribute="top" secondItem="Fdx-83-5Xy" secondAttribute="top" constant="10" id="WGV-8C-sVd"/>
                                         <constraint firstItem="O5p-mM-2nn" firstAttribute="leading" secondItem="7Th-XL-1Jx" secondAttribute="trailing" constant="12" id="dsI-na-PIi"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O5p-mM-2nn" secondAttribute="trailing" constant="20" symbolic="YES" id="iX3-RK-4UV"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZpD-gZ-dfR" secondAttribute="trailing" constant="8" id="lhx-Fc-UxY"/>
                                         <constraint firstItem="ZpD-gZ-dfR" firstAttribute="leading" secondItem="O5p-mM-2nn" secondAttribute="leading" id="m6p-aV-PEu"/>
                                         <constraint firstItem="O5p-mM-2nn" firstAttribute="top" secondItem="7Th-XL-1Jx" secondAttribute="top" id="pD8-8X-5Z1"/>
@@ -291,6 +292,7 @@
                                         <constraint firstItem="Uua-bZ-lS9" firstAttribute="centerY" secondItem="f5M-su-JEg" secondAttribute="centerY" id="Pd0-xG-RFH"/>
                                         <constraint firstItem="Uua-bZ-lS9" firstAttribute="top" secondItem="f5M-su-JEg" secondAttribute="top" constant="10" id="UiC-QK-P07"/>
                                         <constraint firstItem="Uua-bZ-lS9" firstAttribute="leading" secondItem="f5M-su-JEg" secondAttribute="leading" constant="16" id="YCc-Sv-BCx"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F3O-wy-eOM" secondAttribute="trailing" constant="20" symbolic="YES" id="dqK-dv-ZOs"/>
                                         <constraint firstItem="F0y-s8-ppM" firstAttribute="leading" secondItem="F3O-wy-eOM" secondAttribute="leading" id="gyh-xc-SMa"/>
                                         <constraint firstItem="F3O-wy-eOM" firstAttribute="leading" secondItem="Uua-bZ-lS9" secondAttribute="trailing" constant="12" id="taD-ed-JN0"/>
                                         <constraint firstItem="F0y-s8-ppM" firstAttribute="top" secondItem="F3O-wy-eOM" secondAttribute="bottom" constant="8" id="vrY-YG-I8q"/>
@@ -828,11 +830,11 @@ Population: 7.347 billion</string>
         <image name="OrbitalViewIcon" width="39" height="39"/>
         <image name="PlanetDetailsIcon" width="43" height="29"/>
         <image name="RightArrow" width="23" height="49"/>
-        <image name="stars2" width="375" height="500"/>
+        <image name="StarsBackground" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoB-gr-65g"/>
         <segue reference="8lG-IW-EI4"/>
+        <segue reference="MoB-gr-65g"/>
         <segue reference="fzX-cR-7ym"/>
     </inferredMetricsTieBreakers>
 </document>
