@@ -43,17 +43,14 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     
     // MARK: - Solar System UI
     
-    /// The color used to draw an #OrbitingBodyNode's orbit color.
     func orbitPathColor() -> NSColor {
         return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
     }
     
-    /// The color used to draw an #OrbitingBodyNode's orbit color, when that node is selected in the scene.
     func orbitSelectedPathColor() -> NSColor {
         return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
     }
     
-    /// The color used to draw an #OrbitingBodyNode's orbit halo color, which provides contrast with the background.
     func orbitHaloColor() -> NSColor {
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
