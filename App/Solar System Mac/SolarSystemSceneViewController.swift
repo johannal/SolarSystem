@@ -23,8 +23,6 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     
     var sceneController: SolarSystemSceneController?
     
-    // MARK: - NSViewController Overrides
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,8 +38,6 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         // Setup navigator controller
         navigator.collectionView = navigatorCollectionView
     }
-    
-    // MARK: - Solar System UI
     
     func orbitPathColor() -> NSColor {
         return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
