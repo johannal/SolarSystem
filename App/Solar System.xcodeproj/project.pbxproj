@@ -83,6 +83,8 @@
 		EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */; };
 		EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = EE58186F1ECCFD9900733C90 /* Asteroid.m */; };
 		EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */; };
+		FAC1D46120A4BB5A00908370 /* Icon-60@2x.png in Copy App Icons */ = {isa = PBXBuildFile; fileRef = FAC1D45E20A4BB2400908370 /* Icon-60@2x.png */; };
+		FAC1D46220A4BB5A00908370 /* Icon-60@3x.png in Copy App Icons */ = {isa = PBXBuildFile; fileRef = FAC1D45D20A4BB2400908370 /* Icon-60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,18 @@
 				80C68FC2208CF32F00778EB0 /* PlanetPhysics.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC1D45B20A4BAF500908370 /* Copy App Icons */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../..;
+			dstSubfolderSpec = 1;
+			files = (
+				FAC1D46120A4BB5A00908370 /* Icon-60@2x.png in Copy App Icons */,
+				FAC1D46220A4BB5A00908370 /* Icon-60@3x.png in Copy App Icons */,
+			);
+			name = "Copy App Icons";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -212,6 +226,8 @@
 		EE58186F1ECCFD9900733C90 /* Asteroid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
 		EE8EA78D1ED0F6F500508BE1 /* TelescopicSurvey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelescopicSurvey.swift; sourceTree = "<group>"; };
 		EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThePlanets.storyboard; sourceTree = "<group>"; };
+		FAC1D45D20A4BB2400908370 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		FAC1D45E20A4BB2400908370 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +499,7 @@
 				AAFD409220990A45009CCA74 /* SharePlanetTests.swift */,
 				AACC4344209901FB005DA562 /* AstronautTests.swift */,
 				AA66575A2098E31E007AB190 /* Info.plist */,
+				FAC1D45C20A4BB0F00908370 /* Icon */,
 			);
 			path = "Solar System iOS UI Tests";
 			sourceTree = "<group>";
@@ -515,6 +532,15 @@
 				D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */,
 			);
 			path = "Model Protocols";
+			sourceTree = "<group>";
+		};
+		FAC1D45C20A4BB0F00908370 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				FAC1D45E20A4BB2400908370 /* Icon-60@2x.png */,
+				FAC1D45D20A4BB2400908370 /* Icon-60@3x.png */,
+			);
+			path = Icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,7 +635,7 @@
 			buildPhases = (
 				AA6657522098E31E007AB190 /* Sources */,
 				AA6657532098E31E007AB190 /* Frameworks */,
-				AA6657542098E31E007AB190 /* Resources */,
+				FAC1D45B20A4BAF500908370 /* Copy App Icons */,
 			);
 			buildRules = (
 			);
@@ -723,13 +749,6 @@
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA6657542098E31E007AB190 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
