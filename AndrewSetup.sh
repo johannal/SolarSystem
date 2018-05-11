@@ -1,6 +1,12 @@
 #! /bin/sh
 
+echo "Shutting down old simulators"
+
+username=$(whoami)
+xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" shutdown all
+
 echo "Clearing old defaults"
+
 defaults delete com.apple.dt.Xcode DVTTestSimulatorCloneProviderUseDefaultSet
 defaults delete com.apple.dt.Xcode IDETestingMaxParallelSimulatorClones
 
