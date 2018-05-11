@@ -77,6 +77,8 @@
 		9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */; };
 		AA6657592098E31E007AB190 /* FavoritePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */; };
 		AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC4344209901FB005DA562 /* AstronautTests.swift */; };
+		AAE987A620A4FD7C00566B42 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE987A520A4FD7C00566B42 /* SettingsViewController.swift */; };
+		AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE987A720A5114D00566B42 /* SettingsUITests.swift */; };
 		AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD409220990A45009CCA74 /* SharePlanetTests.swift */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
@@ -211,6 +213,8 @@
 		AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlanetTests.swift; sourceTree = "<group>"; };
 		AA66575A2098E31E007AB190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AACC4344209901FB005DA562 /* AstronautTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautTests.swift; sourceTree = "<group>"; };
+		AAE987A520A4FD7C00566B42 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AAE987A720A5114D00566B42 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
 		AAFD409220990A45009CCA74 /* SharePlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlanetTests.swift; sourceTree = "<group>"; };
 		B1B0C6E61ED8BC35007937D2 /* FlyByScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyByScenario.swift; sourceTree = "<group>"; };
 		B1ECAEDC1ED7370A0009A958 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 		9EC407FA1EBFEAEB00F7F8A1 /* Solar System iOS */ = {
 			isa = PBXGroup;
 			children = (
+				AAE987A420A4FD5500566B42 /* Settings */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
 				EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */,
 				9EC407FB1EBFEAEB00F7F8A1 /* AppDelegate.swift */,
@@ -498,10 +503,19 @@
 				AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */,
 				AAFD409220990A45009CCA74 /* SharePlanetTests.swift */,
 				AACC4344209901FB005DA562 /* AstronautTests.swift */,
+				AAE987A720A5114D00566B42 /* SettingsUITests.swift */,
 				AA66575A2098E31E007AB190 /* Info.plist */,
 				FAC1D45C20A4BB0F00908370 /* Icon */,
 			);
 			path = "Solar System iOS UI Tests";
+			sourceTree = "<group>";
+		};
+		AAE987A420A4FD5500566B42 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AAE987A520A4FD7C00566B42 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		B1ECAEDB1ED7369E0009A958 /* Fly-By Classes */ = {
@@ -831,6 +845,7 @@
 				9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */,
 				078143291ECB3D32009C18DF /* SolarSystem.swift in Sources */,
 				0731FA361EC9FDF700F46170 /* Planet.swift in Sources */,
+				AAE987A620A4FD7C00566B42 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,6 +855,7 @@
 			files = (
 				AA6657592098E31E007AB190 /* FavoritePlanetTests.swift in Sources */,
 				AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */,
+				AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */,
 				AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
