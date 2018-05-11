@@ -1,14 +1,18 @@
 #! /bin/sh
 
-echo "Configuring SOTU defaults for Andrew"
+echo "Clearing old defaults"
+defaults delete com.apple.dt.Xcode DVTTestSimulatorCloneProviderUseDefaultSet
+defaults delete com.apple.dt.Xcode IDETestingMaxParallelSimulatorClones
 
-# To enable the default device set:
-defaults write com.apple.dt.Xcode DVTTestSimulatorCloneProviderUseDefaultSet -bool YES
+echo "Configuring demo defaults"
 
-# To disable the purge policy [Options are aggressive, moderate, relaxed] (39444847)
+# To disable the purge policy [Options are aggressive, moderate, relaxed] (39508904 & 39444847)
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPurgePolicy -string relaxed
 
-# To override the number of simulators we will boot (38960788)
-defaults write com.apple.dt.Xcode IDETestingMaxParallelSimulatorClones -int 3
+# Set the max number of simulators we will boot (39509217 & 38960788)
+defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int 3
 
-echo "Configuring SOTU defaults for Andrew [DONE]"
+# If Xcode crashes, we want to repopulate the pool with any clones that already exist, so we don’t boot again
+defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPopulateWithPreexistingClones -bool YES
+
+echo "Done!"
