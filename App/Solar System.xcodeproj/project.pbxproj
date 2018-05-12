@@ -75,7 +75,18 @@
 		9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */; };
 		9EF53C762083216E00B11FC4 /* Inspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF53C752083216E00B11FC4 /* Inspector.swift */; };
 		9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */; };
+		AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6573BB20A62D6C00595A9A /* WebViewController.swift */; };
+		AA6573C020A6387500595A9A /* mercury.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573BF20A6387500595A9A /* mercury.webarchive */; };
+		AA6573C820A6391D00595A9A /* venus.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C120A6391C00595A9A /* venus.webarchive */; };
+		AA6573C920A6391D00595A9A /* uranus.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C220A6391C00595A9A /* uranus.webarchive */; };
+		AA6573CA20A6391D00595A9A /* earth.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C320A6391C00595A9A /* earth.webarchive */; };
+		AA6573CB20A6391D00595A9A /* pluto.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C420A6391D00595A9A /* pluto.webarchive */; };
+		AA6573CC20A6391D00595A9A /* neptune.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C520A6391D00595A9A /* neptune.webarchive */; };
+		AA6573CD20A6391D00595A9A /* mars.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C620A6391D00595A9A /* mars.webarchive */; };
+		AA6573CE20A6391D00595A9A /* jupiter.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C720A6391D00595A9A /* jupiter.webarchive */; };
+		AA6573D120A6399E00595A9A /* saturn.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573D020A6399D00595A9A /* saturn.webarchive */; };
 		AA6657592098E31E007AB190 /* FavoritePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */; };
+		AAC82ACE20A65CA400DC6DBC /* PlanetLearnMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC82ACD20A65CA400DC6DBC /* PlanetLearnMoreTests.swift */; };
 		AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC4344209901FB005DA562 /* AstronautTests.swift */; };
 		AAE987A620A4FD7C00566B42 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE987A520A4FD7C00566B42 /* SettingsViewController.swift */; };
 		AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE987A720A5114D00566B42 /* SettingsUITests.swift */; };
@@ -209,9 +220,23 @@
 		9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EarthNightLights.jpg; sourceTree = "<group>"; };
 		9EF53C752083216E00B11FC4 /* Inspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
 		9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudsTransparency.png; sourceTree = "<group>"; };
+		AA65739720A627DC00595A9A /* Solar System iOS UI Tests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Solar System iOS UI Tests copy-Info.plist"; path = "/Users/ethan/dt-wwdc-2018-sotu-demos/App/Solar System iOS UI Tests copy-Info.plist"; sourceTree = "<absolute>"; };
+		AA6573A820A627E700595A9A /* Solar System iOS UI Tests - 1 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Solar System iOS UI Tests - 1 copy-Info.plist"; path = "/Users/ethan/dt-wwdc-2018-sotu-demos/App/Solar System iOS UI Tests - 1 copy-Info.plist"; sourceTree = "<absolute>"; };
+		AA6573B920A627EE00595A9A /* Solar System iOS UI Tests - 2 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Solar System iOS UI Tests - 2 copy-Info.plist"; path = "/Users/ethan/dt-wwdc-2018-sotu-demos/App/Solar System iOS UI Tests - 2 copy-Info.plist"; sourceTree = "<absolute>"; };
+		AA6573BB20A62D6C00595A9A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		AA6573BF20A6387500595A9A /* mercury.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mercury.webarchive; sourceTree = "<group>"; };
+		AA6573C120A6391C00595A9A /* venus.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = venus.webarchive; sourceTree = "<group>"; };
+		AA6573C220A6391C00595A9A /* uranus.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = uranus.webarchive; sourceTree = "<group>"; };
+		AA6573C320A6391C00595A9A /* earth.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = earth.webarchive; sourceTree = "<group>"; };
+		AA6573C420A6391D00595A9A /* pluto.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = pluto.webarchive; sourceTree = "<group>"; };
+		AA6573C520A6391D00595A9A /* neptune.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = neptune.webarchive; sourceTree = "<group>"; };
+		AA6573C620A6391D00595A9A /* mars.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mars.webarchive; sourceTree = "<group>"; };
+		AA6573C720A6391D00595A9A /* jupiter.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = jupiter.webarchive; sourceTree = "<group>"; };
+		AA6573D020A6399D00595A9A /* saturn.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = saturn.webarchive; sourceTree = "<group>"; };
 		AA6657562098E31E007AB190 /* Solar System iOS UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solar System iOS UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlanetTests.swift; sourceTree = "<group>"; };
 		AA66575A2098E31E007AB190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC82ACD20A65CA400DC6DBC /* PlanetLearnMoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLearnMoreTests.swift; sourceTree = "<group>"; };
 		AACC4344209901FB005DA562 /* AstronautTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautTests.swift; sourceTree = "<group>"; };
 		AAE987A520A4FD7C00566B42 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AAE987A720A5114D00566B42 /* SettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUITests.swift; sourceTree = "<group>"; };
@@ -448,6 +473,9 @@
 				80C68FBB208CF32F00778EB0 /* PlanetPhysics */,
 				AA6657572098E31E007AB190 /* Solar System iOS UI Tests */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
+				AA65739720A627DC00595A9A /* Solar System iOS UI Tests copy-Info.plist */,
+				AA6573A820A627E700595A9A /* Solar System iOS UI Tests - 1 copy-Info.plist */,
+				AA6573B920A627EE00595A9A /* Solar System iOS UI Tests - 2 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -466,6 +494,7 @@
 		9EC407FA1EBFEAEB00F7F8A1 /* Solar System iOS */ = {
 			isa = PBXGroup;
 			children = (
+				AA6573BA20A62D4200595A9A /* Web view controller */,
 				AAE987A420A4FD5500566B42 /* Settings */,
 				9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */,
 				EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */,
@@ -497,9 +526,35 @@
 			name = "Scene Assets";
 			sourceTree = "<group>";
 		};
+		AA6573BA20A62D4200595A9A /* Web view controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA6573CF20A6392700595A9A /* Page archives */,
+				AA6573BB20A62D6C00595A9A /* WebViewController.swift */,
+			);
+			path = "Web view controller";
+			sourceTree = "<group>";
+		};
+		AA6573CF20A6392700595A9A /* Page archives */ = {
+			isa = PBXGroup;
+			children = (
+				AA6573D020A6399D00595A9A /* saturn.webarchive */,
+				AA6573C320A6391C00595A9A /* earth.webarchive */,
+				AA6573C720A6391D00595A9A /* jupiter.webarchive */,
+				AA6573C620A6391D00595A9A /* mars.webarchive */,
+				AA6573C520A6391D00595A9A /* neptune.webarchive */,
+				AA6573C420A6391D00595A9A /* pluto.webarchive */,
+				AA6573C220A6391C00595A9A /* uranus.webarchive */,
+				AA6573C120A6391C00595A9A /* venus.webarchive */,
+				AA6573BF20A6387500595A9A /* mercury.webarchive */,
+			);
+			path = "Page archives";
+			sourceTree = "<group>";
+		};
 		AA6657572098E31E007AB190 /* Solar System iOS UI Tests */ = {
 			isa = PBXGroup;
 			children = (
+				AAC82ACD20A65CA400DC6DBC /* PlanetLearnMoreTests.swift */,
 				AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */,
 				AAFD409220990A45009CCA74 /* SharePlanetTests.swift */,
 				AACC4344209901FB005DA562 /* AstronautTests.swift */,
@@ -758,11 +813,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EDFCD612097298B00F4DD79 /* Sun.jpg in Resources */,
+				AA6573CE20A6391D00595A9A /* jupiter.webarchive in Resources */,
 				9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */,
+				AA6573CB20A6391D00595A9A /* pluto.webarchive in Resources */,
+				AA6573CC20A6391D00595A9A /* neptune.webarchive in Resources */,
+				AA6573C020A6387500595A9A /* mercury.webarchive in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
+				AA6573D120A6399E00595A9A /* saturn.webarchive in Resources */,
+				AA6573C920A6391D00595A9A /* uranus.webarchive in Resources */,
 				9EBC16DD1ECC0FB30014404F /* PlanetDetails.plist in Resources */,
+				AA6573CD20A6391D00595A9A /* mars.webarchive in Resources */,
+				AA6573CA20A6391D00595A9A /* earth.webarchive in Resources */,
+				AA6573C820A6391D00595A9A /* venus.webarchive in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +874,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */,
 				9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */,
 				9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */,
 				9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */,
@@ -857,6 +922,7 @@
 				AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */,
 				AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */,
 				AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */,
+				AAC82ACE20A65CA400DC6DBC /* PlanetLearnMoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

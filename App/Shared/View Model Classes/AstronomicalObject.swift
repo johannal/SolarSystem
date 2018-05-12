@@ -25,6 +25,10 @@ class AstronomicalObject {
     let normalTextureName: ImageName?
     let specularTextureName: ImageName?
     
+    var browserURL: URL {
+        return Bundle.main.url(forResource: self.name.lowercased(), withExtension: "webarchive")!
+    }
+    
     var globeImage: Image {
         let imageName: Any = name.appending("Globus")
         return Image(named: imageName as! ImageName)!

@@ -47,4 +47,10 @@ class PlanetDetailsViewController: UIViewController {
         controller.modalPresentationStyle = .popover
         present(controller, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let browserViewController = (segue.destination as? UINavigationController)?.viewControllers.first as? WebViewController, segue.identifier == "LearnMore" {
+            browserViewController.url = presentedObject?.browserURL
+        }
+    }
 }
