@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14251" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14269.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14251"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.2"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,17 +13,17 @@
         <window title="Solar System" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="558" height="470"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="contentRect" x="196" y="240" width="429" height="470"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
+                <rect key="frame" x="0.0" y="0.0" width="429" height="470"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-iN-ybb">
-                        <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="429" height="470"/>
                         <subviews>
                             <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-gm-ZfI" userLabel="Inspector Visual Effect View">
-                                <rect key="frame" x="0.0" y="0.0" width="558" height="470"/>
+                                <rect key="frame" x="0.0" y="0.0" width="429" height="470"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-bO-w8G">
                                         <rect key="frame" x="40" y="424" width="51" height="22"/>
@@ -33,17 +34,17 @@
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="lg6-H8-48v">
-                                        <rect key="frame" x="120" y="103" width="318" height="5"/>
+                                        <rect key="frame" x="56" y="103" width="318" height="5"/>
                                     </box>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Dg-3E-bYi">
-                                        <rect key="frame" x="0.0" y="254" width="558" height="140"/>
+                                        <rect key="frame" x="0.0" y="254" width="429" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="1sG-DI-rLv"/>
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="EarthGlobe" id="Opu-iD-hX0"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l3O-T2-R7q">
-                                        <rect key="frame" x="120" y="84" width="104" height="17"/>
+                                        <rect key="frame" x="56" y="84" width="104" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Radius: 6371 km" drawsBackground="YES" id="WEJ-bg-bVB">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -51,10 +52,10 @@
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7GJ-mm-hX6">
-                                        <rect key="frame" x="120" y="73" width="318" height="5"/>
+                                        <rect key="frame" x="56" y="73" width="318" height="5"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="52x-aW-s6U">
-                                        <rect key="frame" x="120" y="54" width="121" height="17"/>
+                                        <rect key="frame" x="56" y="54" width="121" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mass: 5.97×10²⁴ kg" drawsBackground="YES" id="dG4-tL-Drg">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -62,10 +63,10 @@
                                         </textFieldCell>
                                     </textField>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="J0F-VF-2Ii">
-                                        <rect key="frame" x="120" y="43" width="318" height="5"/>
+                                        <rect key="frame" x="56" y="43" width="318" height="5"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0al-2y-nKX">
-                                        <rect key="frame" x="120" y="24" width="111" height="17"/>
+                                        <rect key="frame" x="56" y="24" width="111" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Gravity: 9.81 m/s²" drawsBackground="YES" id="OS9-vj-zqW">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -73,7 +74,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <box boxType="custom" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="EFW-PF-g9I">
-                                        <rect key="frame" x="119" y="213" width="320" height="24"/>
+                                        <rect key="frame" x="55" y="213" width="320" height="24"/>
                                         <view key="contentView" id="O7c-in-gKk">
                                             <rect key="frame" x="1" y="1" width="318" height="22"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +101,7 @@
                                         <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E8T-iW-oOA">
-                                        <rect key="frame" x="232" y="196" width="94" height="14"/>
+                                        <rect key="frame" x="168" y="196" width="94" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Location" drawsBackground="YES" id="d9u-qd-lm5">
                                             <font key="font" metaFont="systemMedium" size="11"/>
                                             <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
@@ -116,7 +117,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <box boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xJe-Dj-Wzj">
-                                        <rect key="frame" x="186" y="119" width="186" height="61"/>
+                                        <rect key="frame" x="122" y="119" width="186" height="61"/>
                                         <view key="contentView" id="xs0-Im-jdE">
                                             <rect key="frame" x="0.0" y="0.0" width="186" height="61"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +166,7 @@
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="820-qv-LTO">
-                                                                <rect key="frame" x="23" y="9" width="42" height="14"/>
+                                                                <rect key="frame" x="22" y="9" width="42" height="14"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sunset" drawsBackground="YES" id="m8e-ia-ZJt">
                                                                     <font key="font" metaFont="systemMedium" size="11"/>
                                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -283,9 +284,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <box boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Gbm-rm-yHC">
-                                        <rect key="frame" x="14" y="8" width="134" height="23"/>
+                                        <rect key="frame" x="15" y="8" width="133" height="23"/>
                                         <view key="contentView" id="Dlh-hx-5y1">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="23"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmt-jl-mHq">
@@ -372,7 +373,7 @@
                     <toolbarItem reference="xV3-o3-3XI"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="106" y="176"/>
+            <point key="canvasLocation" x="41.5" y="176"/>
         </window>
     </objects>
     <resources>
