@@ -220,9 +220,6 @@
 		9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EarthNightLights.jpg; sourceTree = "<group>"; };
 		9EF53C752083216E00B11FC4 /* Inspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
 		9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudsTransparency.png; sourceTree = "<group>"; };
-		AA65739720A627DC00595A9A /* Solar System iOS UI Tests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Solar System iOS UI Tests copy-Info.plist"; path = "/Users/ethan/dt-wwdc-2018-sotu-demos/App/Solar System iOS UI Tests copy-Info.plist"; sourceTree = "<absolute>"; };
-		AA6573A820A627E700595A9A /* Solar System iOS UI Tests - 1 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Solar System iOS UI Tests - 1 copy-Info.plist"; path = "/Users/ethan/dt-wwdc-2018-sotu-demos/App/Solar System iOS UI Tests - 1 copy-Info.plist"; sourceTree = "<absolute>"; };
-		AA6573B920A627EE00595A9A /* Solar System iOS UI Tests - 2 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Solar System iOS UI Tests - 2 copy-Info.plist"; path = "/Users/ethan/dt-wwdc-2018-sotu-demos/App/Solar System iOS UI Tests - 2 copy-Info.plist"; sourceTree = "<absolute>"; };
 		AA6573BB20A62D6C00595A9A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AA6573BF20A6387500595A9A /* mercury.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mercury.webarchive; sourceTree = "<group>"; };
 		AA6573C120A6391C00595A9A /* venus.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = venus.webarchive; sourceTree = "<group>"; };
@@ -473,9 +470,6 @@
 				80C68FBB208CF32F00778EB0 /* PlanetPhysics */,
 				AA6657572098E31E007AB190 /* Solar System iOS UI Tests */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
-				AA65739720A627DC00595A9A /* Solar System iOS UI Tests copy-Info.plist */,
-				AA6573A820A627E700595A9A /* Solar System iOS UI Tests - 1 copy-Info.plist */,
-				AA6573B920A627EE00595A9A /* Solar System iOS UI Tests - 2 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
