@@ -1,8 +1,8 @@
 ## Part 1 -- IB and Asset Catalog
 
-This is Xcode 10 -- gorgeous in dark. In addition to just looking great, Xcode 10 has some  new features that make it easy for you to adopt the new dark look.
+This is Xcode 10 -- gorgeous in dark. And it's got some great features that make it easy for you to adopt the new dark look. Let me show you.
 
-I'm in the middle of converting my Solar System exploration app to support the new dark look. I started by moving all of my hard coded colors into an asset catalog. Xcode 10 adds color variants, so for any color I can have both a light and a dark version, and then AppKit will pick the right one based on the system preference.
+So here, I'm in the middle of converting my Solar System exploration app to support the new dark look. The first thing I did was move all of the colors I had hard coded in my IB file into an asset catalog. Xcode 10 adds color variants, so for any color I can have both a light and a dark version, and then AppKit will pick the right one based on the system preference.
 
 I've got one more thing to change here -- this rounded rect behind the sun rise and sun set read-outs is still hard-coded. I'll select both of these views, pop open the "Fill Color" popup button, and choose one of my new asset catalog colors.
 
