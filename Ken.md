@@ -1,36 +1,36 @@
 ## Part 1 -- IB and Asset Catalog
 
-This is Xcode 10 -- gorgeous in dark. And it's got some great features that make it easy for you to adopt the new dark look. Let me show you.
+This is Xcode 10 -- gorgeous in dark. And it's got some great new features that make it easy for you to adopt the dark look. Let me show you.
 
-So here, I'm in the middle of converting my Solar System exploration app to support the new dark look. The first thing I did was move all of the colors I had hard coded in my IB file into an asset catalog. Xcode 10 adds color variants, so for any color I can have both a light and a dark version, and then AppKit will pick the right one based on the system preference.
+So here, I'm in the middle of converting my Solar System exploration app to support the new dark look. The first thing I did, which you can see right here, was to pull all of the colors I had hard coded in my IB file into an asset catalog. In Xcode 10, I can add color variants, both a light and dark version, and then AppKit will pick the right one to use.
 
-I've got one more thing to change here -- this rounded rect behind the sun rise and sun set read-outs is still hard-coded. I'll select both of these views, pop open the "Fill Color" popup button, and choose one of my new asset catalog colors.
+I still need to update the fill color for these two views here -- lets do that now. I'll select them both, pop open the "Fill Color" popup button, and type "badge". I want to use badgeBackgroundColor, which you can see comes from my asset catlog here. I'll select that, and it looks pretty good.
 
-As I make all these changes to for dark mode, I want to make sure that things are still looking great in light. I can do that right from IB. I'll open up the layout bar, where I can toggle my UI between light and dark -- this makes it really easy to iterate. Looking pretty good.
+Now as I make all these changes to for dark mode, I want to be careful and make sure that things still look great in light. I can do that all right from IB. I'll open up the layout bar, where I can toggle my UI between light and dark. This looks good.
 
 ## Part 2 -- SCM + Source Editor
 
-I've got a couple more changes to make. Over here in my source code, there are still a few hard coded colors.
+I've updated all my user inrterface files, not I've got just a couple more hard coded colors to change over here in my source code.
 
-Before I even start editing here, I can see that Xcode is telling me something. In the gutter I see these change bars. This particular change bar is letting me know that there have been changes to this file upstream -- someone committed and pushed a change that I havne't pulled yet. I can click on the change bar to see more detail about the change -- looks like Andrew has added some comments to these methods.
+Now before I even start editing here, I can see that Xcode is telling me something. Rigth here, there are change bars, which is letting me know that someone committed and pushed a change, which I don't have yet. I'll click the change, and I can see that it looks like Andrew has been going through and adding some comments to our code.
 
-If I started editing here, I'd end up with a conflict later -- I don't like conflicts, so I love being able to see this.
+I reallly like having this information, because it helps me avoid conflicts. If I started editing here, I'd end up with a conflict to deal with later.
 
 So before I start making changes, I'll go to Source Control > Pull… to get the latest updates.
 
-Sure enough, Andrew has added some pretty substantial comments for these color methods! I'm just going to fold those out of the way. I'll use the code folding ribbon, which is back in Xcode 10. And by the way, code folding got a really nice upgrade this year -- you can fold pretty much anything between two braces across any language.
+Looks like Andrew has added some pretty substantial comments here! I'm just going to fold those out of the way. I'll use the code folding ribbon, which is back in Xcode 10. And by the way, code folding got a really nice upgrade this year -- you can fold pretty much anything between two braces across any language.
 
-OK, now I can see what I'm doing. I want these three methods to use named colors instead of the hardcoded colors they are returning now.
+Alright, now I can see what I'm doing. So these are the three methods I was talking about -- I want to use named colors instead of the hardcoded RGB values.
 
-And you know, as I look at these methods, I think they should really be Swift properties instead. Let me start there.
+While I'm at it, I'm going to convert these to be properties instead of methods, just to be a good Swift citizen.
 
-With Xcode 10, thats a really easy change to make. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking. If I add a cursor I don't want, I can just click the same spot again to get rid of it.
+With Xcode 10, I can make all three changes at the same time. I'll just drop a cursor at the beginning of each line, by holding down Shift and Control and then clicking.
 
-Now I'll select "func" on each line -- as I select with my cursors, they all do the same thing. I'll type "var".
+Now I'll select "func" on each line -- as I select with my cursors, they all do the same thing and behave just like a single cursor. I'll type "var".
 
-Now I'll jump to the end of the word here, which I can do by holding Option and pressing the right arrow. I'll get rid of these parens along with the arrow, and add a colon. Easy!
+Now I'll jump to the end of the word here, which I can do by holding Option and pressing the right arrow. I'll get rid of these parens along with the arrow, and add a colon. Done -- three edits all at once.
 
-You may have noticed as I was making edits that Xcode is showing me change bars, this time for my own uncommitted changes. I find this really handy for picking out my edits in a file.
+You may have noticed as I was making edits that Xcode is showing me a different kind of change bar, this time for my own uncommitted changes. I find this really handy for picking out my edits in a file.
 
 I came here to update these colors, so let me finish doing that. I'll convert these to use named colors so that they automatically switch as the appearance changes.
 
