@@ -723,6 +723,7 @@
 				TargetAttributes = {
 					8023D29420850501006DFD5F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9E4F77B4205AEA1E004C9486;
 					};
@@ -732,6 +733,7 @@
 					};
 					9E4F77B4205AEA1E004C9486 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					9EC407F71EBFEAEB00F7F8A1 = {
@@ -984,7 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.dt.Solar-System-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solar System Mac.app/Contents/MacOS/Solar System Mac";
 			};
 			name = Debug;
@@ -1005,7 +1007,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.dt.Solar-System-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solar System Mac.app/Contents/MacOS/Solar System Mac";
 			};
 			name = Release;
@@ -1085,7 +1087,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.dt.Solar-System-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TOOLCHAINS = Default;
 			};
 			name = Debug;
@@ -1107,7 +1109,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.dt.Solar-System-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TOOLCHAINS = Default;
 			};
 			name = Release;
@@ -1238,7 +1240,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Solar System/SolarSystem-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1255,7 +1257,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Solar System/SolarSystem-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14251" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14268" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14251"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14268"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="935" height="470"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="935" height="470"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="EarthGlobe" id="Opu-iD-hX0"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3O-T2-R7q">
-                                        <rect key="frame" x="12" y="88" width="100" height="17"/>
+                                        <rect key="frame" x="12" y="88" width="104" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Radius: 6371 km" drawsBackground="YES" id="WEJ-bg-bVB">
                                             <font key="font" metaFont="system"/>
@@ -96,7 +96,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52x-aW-s6U">
-                                        <rect key="frame" x="12" y="58" width="117" height="17"/>
+                                        <rect key="frame" x="12" y="58" width="123" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mass: 5.97×10²⁴ kg" drawsBackground="YES" id="dG4-tL-Drg">
                                             <font key="font" metaFont="system"/>
@@ -109,7 +109,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </box>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0al-2y-nKX">
-                                        <rect key="frame" x="12" y="28" width="107" height="17"/>
+                                        <rect key="frame" x="12" y="28" width="114" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Gravity: 9.81 m/s²" drawsBackground="YES" id="OS9-vj-zqW">
                                             <font key="font" metaFont="system"/>
@@ -323,9 +323,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <box boxType="custom" borderWidth="0.0" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Gbm-rm-yHC">
-                                        <rect key="frame" x="14" y="8" width="134" height="23"/>
+                                        <rect key="frame" x="15" y="8" width="133" height="23"/>
                                         <view key="contentView" id="Dlh-hx-5y1">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="23"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mmt-jl-mHq">
@@ -413,7 +413,7 @@
                     <toolbarItem reference="xV3-o3-3XI"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="294.5" y="176"/>
+            <point key="canvasLocation" x="295" y="180"/>
         </window>
     </objects>
     <resources>
