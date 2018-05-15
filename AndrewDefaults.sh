@@ -573,7 +573,7 @@ defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPurgePolicy -string rela
 
 # Set the max number of simulators we will boot (39509217 & 38960788)
 echo "Configuring IDEParallelTestingWorkerCountOverride"
-defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int 3
+defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int 4
 
 # If Xcode crashes, we want to repopulate the pool with any clones that already exist, so we don’t boot again
 echo "Configuring DVTTestDeviceClonePoolPopulateWithPreexistingClones"

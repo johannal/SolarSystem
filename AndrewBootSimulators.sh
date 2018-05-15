@@ -3,7 +3,7 @@
 username=$(whoami)
 echo "Username is $username"
 
-simcount=3
+simcount=4
 xcode="/Volumes/Justice/Xcode.app"
 echo "Will boot $simcount simulators using $xcode"
 
