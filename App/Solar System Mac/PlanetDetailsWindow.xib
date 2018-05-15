@@ -375,10 +375,10 @@
                             </segmentedCell>
                         </segmentedControl>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="0E27D20E-43A3-413F-9C07-C0AC94FEE727" label="Planet" paletteLabel="Planet" sizingBehavior="auto" id="qqW-3x-qHc">
+                    <toolbarItem implicitItemIdentifier="0E27D20E-43A3-413F-9C07-C0AC94FEE727" label="Planet" paletteLabel="Planet" id="qqW-3x-qHc">
                         <nil key="toolTip"/>
                         <size key="minSize" width="57" height="24"/>
-                        <size key="maxSize" width="108" height="27"/>
+                        <size key="maxSize" width="57" height="24"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="Jn3-Tt-N9d">
                             <rect key="frame" x="0.0" y="14" width="57" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
