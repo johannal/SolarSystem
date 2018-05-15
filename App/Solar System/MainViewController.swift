@@ -23,7 +23,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
         // Initiate solar system controller
         let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC") as! SolarSystemSceneViewController
         solarSystemVC.view.translatesAutoresizingMaskIntoConstraints = false
-        addChildViewController(solarSystemVC)
+        addChild(solarSystemVC)
         contentContainerView.addSubview(solarSystemVC.view)
         
         // Constraints
@@ -37,7 +37,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
         let sceneHUDController = storyboard!.instantiateViewController(withIdentifier: "sceneHUD") as! SceneHUDViewController
         sceneHUDController.delegate = self
         sceneHUDController.view.backgroundColor = UIColor.clear
-        addChildViewController(sceneHUDController)
+        addChild(sceneHUDController)
         view.addSubview(sceneHUDController.view)
         self.sceneHUDController = sceneHUDController
         
@@ -83,7 +83,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
         let planetDetailsVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC") as! PlanetSceneDetailsViewController
         planetDetailsVC.delegate = self
         planetDetailsVC.view.translatesAutoresizingMaskIntoConstraints = false
-        addChildViewController(planetDetailsVC)
+        addChild(planetDetailsVC)
         contentContainerView.addSubview(planetDetailsVC.view)
         
         // Constraints
@@ -98,7 +98,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
     
     func showSolarSystem() {
         planetDetailsVC?.view.removeFromSuperview()
-        planetDetailsVC?.removeFromParentViewController()
+        planetDetailsVC?.removeFromParent()
     }
     
     // Delegate callback
