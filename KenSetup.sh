@@ -26,12 +26,15 @@ if [[ -z $(git status -s) ]]
 then
     if [ "$1" == "cleanup" ]; then
         echo 'Setting upstream back to master'
+        rm -rf .clone/
+        git remote set-url origin ssh://git@stash.sd.apple.com/~sebastian_fischer/dt-wwdc-2018-sotu-demos.git
         # Reset the pulled commit, if author was Andrew
         git branch --set-upstream-to=origin/master
         EMAIL=$(git log -1 --pretty=format:'%ae')
         if [[ "$EMAIL" == "andrew@solarsystemexplorer.com" ]]; then
             git reset --hard HEAD~1
         fi
+        echo 'Cleanup succeed!'
         exit 0;
     fi
     echo "Running Ken's preparation script"
@@ -40,14 +43,17 @@ then
         echo 'Your current branch has to be master';
         exit 1;
     fi
+    rm -rf .clone/
+    git clone .git .clone/
+    git remote set-url origin ./clone/.git
     git branch --set-upstream-to=origin/master
-    git branch -D release
-    git checkout -b release
+
+    cd .clone/
+    git checkout master
     COMMIT_HASH=$(git rev-parse andrew_color_comments)
     git cherry-pick $COMMIT_HASH
     # Come back to master
-    git checkout master
-    git branch --set-upstream-to=release
+    cd ../
 else
   echo "Please commit or discard your changes before running this script"
   exit
