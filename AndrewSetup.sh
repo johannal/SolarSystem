@@ -614,6 +614,6 @@ defaults write com.apple.dt.Xcode "NSTableView Sort Ordering v2 TestReportv2" -d
 
 defaults write com.apple.dt.Xcode "NSTableView Supports v2 TestReportv2" -bool YES
 
-defaults write com.apple.dock "expose-group-apps" -bool 1
+defaults write com.apple.dock "expose-group-apps" -bool YES
 
 echo "Done!"
