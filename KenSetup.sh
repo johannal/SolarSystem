@@ -22,7 +22,10 @@
 # Remember: after running this, your remote will be set to release.
 # To fix it, just run ./Script cleanup
 
-if [ -z "$1" ] && [$1 == "cleanup"]; then
+echo $1
+if [ "$1" == "cleanup" ]; then
+echo
+    echo 'Setting upstream back to master'
     git branch --set-upstream-to=origin/master
     exit 0;
 fi
