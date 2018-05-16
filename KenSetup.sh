@@ -18,10 +18,31 @@
 # Finished, checkout back to your branch.
 
 
-# Now script:
+# Now script.
+# Remember: after running this, your remote will be set to release.
+# To fix it, just run ./Script cleanup
+
+if [ -z "$1" ] && [$1 == "cleanup"]; then
+    git branch --set-upstream-to=origin/master
+    exit 0;
+fi
+
 if [[ -z $(git status -s) ]]
 then
   echo "Running Ken's preparation script"
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    if [[ "$BRANCH" != "master" ]]; then
+        echo 'Your current branch has to be master';
+        exit 1;
+    fi
+    git branch --set-upstream-to=origin/master
+    git branch -D release
+    git checkout -b release
+    COMMIT_HASH=$(git rev-parse andrew_color_comments)
+    git cherry-pick $COMMIT_HASH
+    # Come back to master
+    git checkout master
+    git branch --set-upstream-to=release
 else
   echo "Please commit or discard your changes before running this script"
   exit
