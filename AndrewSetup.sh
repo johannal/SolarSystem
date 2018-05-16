@@ -1,9 +1,24 @@
 #! /bin/sh
 
+username=$(whoami)
+echo "Username is $username"
+
+simcount=3
+echo "Simulator count for demo is $simcount"
+
+simname="iPhone 8"
+echo "Target simulator for the demo is $simname"
+
+xcode=$(xcode-select -p)
+echo "Selected Xcode path is $xcode"
+
 echo "Clearing old defaults"
 defaults delete com.apple.dt.Xcode
 
-echo "Configuring behaviors"
+echo "Killing old core simulator services"
+sudo killall CoreSimulatorService
+
+echo "Configuring user defaults to disable Xcode behaviors"
 defaults write com.apple.dt.Xcode '{
     "Xcode.AlertEvents" =     {
         "Xcode.AlertEvent.BuildNewIssues" =         {
@@ -573,10 +588,20 @@ defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPurgePolicy -string rela
 
 # Set the max number of simulators we will boot (39509217 & 38960788)
 echo "Configuring IDEParallelTestingWorkerCountOverride"
-defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int 4
+defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int $simcount
 
 # If Xcode crashes, we want to repopulate the pool with any clones that already exist, so we don’t boot again
 echo "Configuring DVTTestDeviceClonePoolPopulateWithPreexistingClones"
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPopulateWithPreexistingClones -bool YES
+
+echo "Shutting down existing simulators"
+xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" shutdown all
+rm -rf "/Users/$username/Library/Developer/XCTestDevices"
+
+echo "Booting simulators"
+XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount
+
+echo "Listing simulators after boot"
+xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" list
 
 echo "Done!"
