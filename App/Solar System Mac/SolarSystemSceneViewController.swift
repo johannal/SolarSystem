@@ -46,7 +46,7 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     func orbitSelectedPathColor() -> NSColor? {
         return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
     }
-    
+
     func orbitHaloColor() -> NSColor? {
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
