@@ -12,6 +12,10 @@ echo "Target simulator for the demo is $simname"
 xcode=$(xcode-select -p)
 echo "Selected Xcode path is $xcode"
 
+echo "Closing all instances of Xcode and Simulator"
+killall Xcode
+killall Simulator
+
 echo "Clearing old defaults"
 defaults delete com.apple.dt.Xcode
 
@@ -593,10 +597,6 @@ defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int $si
 # If Xcode crashes, we want to repopulate the pool with any clones that already exist, so we don’t boot again
 echo "Configuring DVTTestDeviceClonePoolPopulateWithPreexistingClones"
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPopulateWithPreexistingClones -bool YES
-
-echo "Shutting down existing simulators"
-xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" shutdown all
-rm -rf "/Users/$username/Library/Developer/XCTestDevices"
 
 echo "Booting simulators"
 XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount
