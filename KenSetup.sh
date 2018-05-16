@@ -54,6 +54,8 @@ then
     git cherry-pick $COMMIT_HASH
     # Come back to master
     cd ../
+    git branch --set-upstream-to=origin/master
+    git fetch origin
 else
   echo "Please commit or discard your changes before running this script"
   exit
