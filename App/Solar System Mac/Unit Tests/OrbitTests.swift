@@ -10,7 +10,7 @@ import XCTest
 class OrbitTests: XCTestCase {
     
     func testOrbitPosition() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
 }

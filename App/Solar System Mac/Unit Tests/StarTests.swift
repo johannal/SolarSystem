@@ -10,19 +10,19 @@ import XCTest
 class StarTests: XCTestCase {
     
     func testStarPosition() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testStarMass() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testStarDensity() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testStarAngularVelocity() {
-        testSleep(1000)
+        testSleep(#function)
 
     }
     

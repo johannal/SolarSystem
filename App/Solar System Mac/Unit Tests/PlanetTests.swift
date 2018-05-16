@@ -10,34 +10,34 @@ import XCTest
 class PlanetTests: XCTestCase {
     
     func testCalculatePlanetMass() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testCalculatePlanetDensity() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
     func testCalculatePlanetOrbitingVelocity() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
     func testAddMoon() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testAddNearbyNeptunian() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func removeAddNearbyNeptunian() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
     func testFindNearestObject() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testPositionRelativeToStar() {
-        testSleep(1000)
+        testSleep(#function)
     }
 }

@@ -10,15 +10,15 @@ import XCTest
 class SolarSystemTests: XCTestCase {
     
     func testSolarSystemPosition() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testDistanceBetweenPlanets() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testCreateDistantObjects() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
 }

@@ -8,21 +8,59 @@
 
 import Foundation
 
-func testSleep(_ miliseconds: UInt32) {
-    
-    var wakeUp = false
-    
-    DispatchQueue.global(qos: .background).async {
-        let napTime = (miliseconds / 1000) + arc4random_uniform(1)
-        sleep(napTime)
-        DispatchQueue.main.async {
-            wakeUp = true
-        }
+func sleepMap(_ testName: String) -> UInt32 {
+    switch testName {
+    case "testCalculatePlanetMass()":
+        return 1340
+    case "testCalculatePlanetDensity()":
+        return 800
+    case "testCalculatePlanetOrbitingVelocity()":
+        return 340
+    case "testAddMoon()":
+        return 600
+    case "testAddNearbyNeptunian()":
+        return 500
+    case "removeAddNearbyNeptunian()":
+        return 400
+    case "testFindNearestObject()":
+        return 800
+    case "testPositionRelativeToStar()":
+        return 300
+    case "testMoonName()":
+        return 450
+    case "testMoonColor()":
+        return 600
+    case "testFindParentPlanet()":
+        return 860
+    case "testPlanetSiblings()":
+        return 340
+    case "testOrbitPosition()":
+        return 750
+    case "testSolarSystemPosition()":
+        return 640
+    case "testDistanceBetweenPlanets()":
+        return 860
+    case "testCreateDistantObjects()":
+        return 900
+    case "testStarPosition()":
+        return 500
+    case "testStarMass()":
+        return 700
+    case "testStarDensity()":
+        return 600
+    case "testStarAngularVelocity()":
+        return 740
+    case "testFindNearestDistance()":
+        return 600
+    case "testFindFarthestDistance()":
+        return 900
+    default:
+        return 0
     }
-    
-    let runLoop = RunLoop.current
-    while (!wakeUp && runLoop.run(mode: .defaultRunLoopMode, before: .distantFuture)) {
-        
-    }
-    
+}
+
+func testSleep(_ testName: String) {
+    let napTime = sleepMap(testName)
+    let ms: UInt32 = 1000
+    usleep(napTime * ms)
 }

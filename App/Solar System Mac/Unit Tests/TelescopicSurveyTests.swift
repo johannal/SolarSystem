@@ -10,11 +10,11 @@ import XCTest
 class TelescopicSurveyTests: XCTestCase {
     
     func testFindNearestDistance() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
     func testFindFarthestDistance() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
 }

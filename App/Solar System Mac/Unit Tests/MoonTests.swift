@@ -10,19 +10,19 @@ import XCTest
 class MoonTests: XCTestCase {
     
     func testMoonName() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
     func testMoonColor() {
-        testSleep(1000)
+        testSleep(#function)
     }
     
     func testFindParentPlanet() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
     func testPlanetSiblings() {
-        testSleep(1000)
+        testSleep(#function)
     }
 
 }
