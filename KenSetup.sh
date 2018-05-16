@@ -22,17 +22,19 @@
 # Remember: after running this, your remote will be set to release.
 # To fix it, just run ./Script cleanup
 
-echo $1
-if [ "$1" == "cleanup" ]; then
-echo
-    echo 'Setting upstream back to master'
-    git branch --set-upstream-to=origin/master
-    exit 0;
-fi
-
 if [[ -z $(git status -s) ]]
 then
-  echo "Running Ken's preparation script"
+    if [ "$1" == "cleanup" ]; then
+        echo 'Setting upstream back to master'
+        # Reset the pulled commit, if author was Andrew
+        git branch --set-upstream-to=origin/master
+        EMAIL=$(git log -1 --pretty=format:'%ae')
+        if [[ "$EMAIL" == "andrew@solarsystemexplorer.com" ]]; then
+            git reset --hard HEAD~1
+        fi
+        exit 0;
+    fi
+    echo "Running Ken's preparation script"
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
     if [[ "$BRANCH" != "master" ]]; then
         echo 'Your current branch has to be master';
