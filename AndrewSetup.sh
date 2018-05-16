@@ -3,7 +3,7 @@
 username=$(whoami)
 echo "Username is $username"
 
-simcount=3
+simcount=4
 echo "Simulator count for demo is $simcount"
 
 simname="iPhone 8"
