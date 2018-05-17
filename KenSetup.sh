@@ -34,6 +34,7 @@ then
         if [[ "$EMAIL" == "andrew@solarsystemexplorer.com" ]]; then
             git reset --hard HEAD~1
         fi
+        git fetch
         echo 'Cleanup succeed!'
         exit 0;
     fi
