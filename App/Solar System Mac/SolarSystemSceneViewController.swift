@@ -39,14 +39,20 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         navigator.collectionView = navigatorCollectionView
     }
 
+    // TODO: Add more detailed documentation.
+    /// Orbit path color.
     func orbitPathColor() -> NSColor? {
         return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
     }
 
+    // TODO: Add more detailed documentation.
+    /// Orbit selected path color.
     func orbitSelectedPathColor() -> NSColor? {
         return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
     }
 
+    // TODO: Add more detailed documentation.
+    /// Orbit halo color.
     func orbitHaloColor() -> NSColor? {
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
