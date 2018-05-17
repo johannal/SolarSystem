@@ -17,6 +17,11 @@
 		0798944E1ECA0B2E00C93E64 /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */; };
 		07B32AB51ECF4C870098E49F /* SolarSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB41ECF4C870098E49F /* SolarSystemView.swift */; };
 		07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB61ECF59A60098E49F /* Orbit.swift */; };
+		4990BDE720AE2E7900A9155F /* ExtraSettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */; };
+		4990BDE820AE2E7900A9155F /* ExtraSharePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */; };
+		4990BDE920AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */; };
+		4990BDEA20AE2E7900A9155F /* ExtraAstronautTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE520AE2E7900A9155F /* ExtraAstronautTests.swift */; };
+		4990BDEB20AE2E7900A9155F /* ExtraFavoritePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE620AE2E7900A9155F /* ExtraFavoritePlanetTests.swift */; };
 		8023D29820850501006DFD5F /* PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023D29720850501006DFD5F /* PlanetTests.swift */; };
 		805BDF55208513CB0014B604 /* OrbitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDF54208513CB0014B604 /* OrbitTests.swift */; };
 		805BDF572085146D0014B604 /* MoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDF562085146D0014B604 /* MoonTests.swift */; };
@@ -164,6 +169,11 @@
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		07B32AB41ECF4C870098E49F /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		07B32AB61ECF59A60098E49F /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
+		4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSettingsUITests.swift; sourceTree = "<group>"; };
+		4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSharePlanetTests.swift; sourceTree = "<group>"; };
+		4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraPlanetLearnMoreTests.swift; sourceTree = "<group>"; };
+		4990BDE520AE2E7900A9155F /* ExtraAstronautTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraAstronautTests.swift; sourceTree = "<group>"; };
+		4990BDE620AE2E7900A9155F /* ExtraFavoritePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFavoritePlanetTests.swift; sourceTree = "<group>"; };
 		8023D29520850501006DFD5F /* Solar System Mac Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solar System Mac Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8023D29720850501006DFD5F /* PlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTests.swift; sourceTree = "<group>"; };
 		8023D29920850501006DFD5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -553,6 +563,11 @@
 				AAFD409220990A45009CCA74 /* SharePlanetTests.swift */,
 				AACC4344209901FB005DA562 /* AstronautTests.swift */,
 				AAE987A720A5114D00566B42 /* SettingsUITests.swift */,
+				4990BDE520AE2E7900A9155F /* ExtraAstronautTests.swift */,
+				4990BDE620AE2E7900A9155F /* ExtraFavoritePlanetTests.swift */,
+				4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */,
+				4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */,
+				4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */,
 				AA66575A2098E31E007AB190 /* Info.plist */,
 				FAC1D45C20A4BB0F00908370 /* Icon */,
 			);
@@ -915,8 +930,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6657592098E31E007AB190 /* FavoritePlanetTests.swift in Sources */,
+				4990BDEA20AE2E7900A9155F /* ExtraAstronautTests.swift in Sources */,
+				4990BDEB20AE2E7900A9155F /* ExtraFavoritePlanetTests.swift in Sources */,
+				4990BDE820AE2E7900A9155F /* ExtraSharePlanetTests.swift in Sources */,
+				4990BDE920AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift in Sources */,
 				AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */,
 				AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */,
+				4990BDE720AE2E7900A9155F /* ExtraSettingsUITests.swift in Sources */,
 				AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */,
 				AAC82ACE20A65CA400DC6DBC /* PlanetLearnMoreTests.swift in Sources */,
 			);
