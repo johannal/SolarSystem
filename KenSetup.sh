@@ -3,6 +3,7 @@
 # Comments changing instructions:
 
 # git checkout andrew_color_comments — checks out this tag
+# git rebase master — check if there are no conflicts with master, just in case. We want pull to not cause conflicts. If there are any — resolve them.
 # Make changes in comments in SolarSystemSceneViewController
 # git add .
 # git commit --amend
