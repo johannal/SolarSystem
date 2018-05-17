@@ -598,6 +598,12 @@ defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int $si
 echo "Configuring DVTTestDeviceClonePoolPopulateWithPreexistingClones"
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPopulateWithPreexistingClones -bool YES
 
+echo "Copying in simulator appearance override"
+cp -R ./phone.simdevicechrome $xcode/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Chrome/
+
+echo "Disabling simulator names"
+defaults write com.apple.iphonesimulator FloatingNameMode 2
+
 echo "Booting simulators"
 XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount
 
