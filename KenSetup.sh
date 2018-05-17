@@ -25,6 +25,8 @@
 
 if [[ -z $(git status -s) ]]
 then
+    echo 'Fetching tags'
+    git fetch --tags
     echo 'Setting upstream back to master'
     rm -rf .clone/
     git remote set-url origin ssh://git@stash.sd.apple.com/~sebastian_fischer/dt-wwdc-2018-sotu-demos.git
