@@ -45,7 +45,7 @@ then
     fi
     rm -rf .clone/
     git clone .git .clone/
-    git remote set-url origin ./clone/.git
+    git remote set-url origin file:///`pwd`/.clone/.git
     git branch --set-upstream-to=origin/master
 
     cd .clone/
@@ -54,7 +54,6 @@ then
     git cherry-pick $COMMIT_HASH
     # Come back to master
     cd ../
-    git branch --set-upstream-to=origin/master
     git fetch origin
 else
   echo "Please commit or discard your changes before running this script"
