@@ -3,109 +3,109 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "solarsystem-Small-41.png",
+      "filename" : "iOSAppIcon-40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "solarsystem-60 copy.png",
+      "filename" : "iOSAppIcon-60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "solarsystem-Small@2x-1.png",
+      "filename" : "iOSAppIcon-58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "solarsystem-Small@3x.png",
+      "filename" : "iOSAppIcon-87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "solarsystem-Small-40@2x-1.png",
+      "filename" : "iOSAppIcon-80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "solarsystem-Small-40@3x.png",
+      "filename" : "iOSAppIcon-120.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "solarsystem-60@2x.png",
+      "filename" : "iOSAppIcon-121.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "solarsystem-60@3x.png",
+      "filename" : "iOSAppIcon-180.png",
       "scale" : "3x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "solarsystem-Small-20 copy.png",
+      "filename" : "iOSAppIcon-20.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "solarsystem-Small-42.png",
+      "filename" : "iOSAppIcon-41.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "solarsystem-Small.png",
+      "filename" : "iOSAppIcon-29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "solarsystem-Small@2x.png",
+      "filename" : "iOSAppIcon-59.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "solarsystem-Small-40.png",
+      "filename" : "iOSAppIcon-42.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "solarsystem-Small-40@2x.png",
+      "filename" : "iOSAppIcon-81.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "solarsystem-76.png",
+      "filename" : "iOSAppIcon-76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "solarsystem-76@2x.png",
+      "filename" : "iOSAppIcon-152.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "solarsystem-83.5@2x.png",
+      "filename" : "iOSAppIcon-167.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "solarsystem-AppStore@2x.png",
+      "filename" : "iOSAppIcon-1024.png",
       "scale" : "1x"
     }
   ],
