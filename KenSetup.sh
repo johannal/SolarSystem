@@ -24,18 +24,18 @@
 
 if [[ -z $(git status -s) ]]
 then
+    echo 'Setting upstream back to master'
+    rm -rf .clone/
+    git remote set-url origin ssh://git@stash.sd.apple.com/~sebastian_fischer/dt-wwdc-2018-sotu-demos.git
+    # Reset the pulled commit, if author was Andrew
+    git branch --set-upstream-to=origin/master
+    EMAIL=$(git log -1 --pretty=format:'%ae')
+    if [[ "$EMAIL" == "andrew@solarsystemexplorer.com" ]]; then
+        git reset --hard HEAD~1
+    fi
+    git fetch
     if [ "$1" == "cleanup" ]; then
-        echo 'Setting upstream back to master'
-        rm -rf .clone/
-        git remote set-url origin ssh://git@stash.sd.apple.com/~sebastian_fischer/dt-wwdc-2018-sotu-demos.git
-        # Reset the pulled commit, if author was Andrew
-        git branch --set-upstream-to=origin/master
-        EMAIL=$(git log -1 --pretty=format:'%ae')
-        if [[ "$EMAIL" == "andrew@solarsystemexplorer.com" ]]; then
-            git reset --hard HEAD~1
-        fi
-        git fetch
-        echo 'Cleanup succeed!'
+        echo 'Cleanup succes!'
         exit 0;
     fi
     echo "Running Ken's preparation script"
