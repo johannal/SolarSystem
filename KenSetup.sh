@@ -45,7 +45,7 @@ then
     fi
     rm -rf .clone/
     git clone .git .clone/
-    git remote set-url origin file:///`pwd`/.clone/.git
+    git remote set-url origin file://`pwd`/.clone/.git
     git branch --set-upstream-to=origin/master
 
     cd .clone/
