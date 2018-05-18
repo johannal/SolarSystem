@@ -278,7 +278,7 @@
 		B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNoteCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramicCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE51ED738470009A958 /* CameraModelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTransition.swift; sourceTree = "<group>"; };
-		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; explicitFileType = com.apple.instruments.instrdst; includeInIndex = 0; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B88B5209741EC00244A7A /* ParticleSystemsAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystemsAnimator.swift; sourceTree = "<group>"; };
 		BB4F7554209B3B75003C8DF9 /* Solar System Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Solar System Mac-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB4F7555209B3B75003C8DF9 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
@@ -1230,7 +1230,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Solar System Mac/Solar_System_Mac.entitlements";
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Solar System Mac/Info.plist";
@@ -1253,7 +1252,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "Solar System Mac/Solar_System_Mac.entitlements";
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Solar System Mac/Info.plist";
