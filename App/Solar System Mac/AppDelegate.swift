@@ -10,6 +10,21 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        _showDockIconIfNecessary()
+    }
+    
+    fileprivate func _showDockIconIfNecessary() {
+        if wantsDockIcon {
+            NSApp.setActivationPolicy(.regular)
+        }
+    }
+    
+    var wantsDockIcon: Bool {
+        let hideDockIcon = UserDefaults.standard.bool(forKey: "HideDockIcon")
+        return !hideDockIcon
+    }
+    
     @IBAction func refreshClicked(_ sender: Any) {
         let windowController = NSApplication.shared.mainWindow?.windowController
         let viewController = windowController?.contentViewController
@@ -20,4 +35,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 }
-
