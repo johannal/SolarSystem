@@ -10,7 +10,6 @@
 # 3. Toggle canvas content mode switcher in IB to make content light
 # 4. Bring Documentation window in using ⌘-Shift-0
 # 5. Bring Instruments in by clicking Dock icon
-# 6. Bring Terminal in by clicking Dock icon — run command to start output flowing
 
 echo "Configuring demo machine"
 echo "This will discard all of the changes you've made!"
