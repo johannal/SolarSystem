@@ -3,10 +3,10 @@
 username=$(whoami)
 echo "Username is $username"
 
-simcount=6
+simcount=3
 echo "Simulator count for demo is $simcount"
 
-windowscale=0.5
+windowscale=1.0
 echo "Simulator window scale is $windowscale"
 
 columns=3
@@ -609,6 +609,9 @@ cp -R ./phone.simdevicechrome $xcode/Platforms/iPhoneOS.platform/Developer/Libra
 
 echo "Disabling simulator names"
 defaults write com.apple.iphonesimulator FloatingNameMode 2
+
+echo "Shutting down old simulators"
+# xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" shutdown all
 
 echo "Booting simulators"
 XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount --windowScale $windowscale --columns $columns
