@@ -15,14 +15,14 @@
             <rect key="contentRect" x="196" y="240" width="935" height="470"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="747" height="473"/>
+                <rect key="frame" x="0.0" y="0.0" width="935" height="473"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <view wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnW-iN-ybb">
-                        <rect key="frame" x="0.0" y="0.0" width="747" height="473"/>
+                        <rect key="frame" x="0.0" y="0.0" width="935" height="473"/>
                         <subviews>
                             <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-gm-ZfI" userLabel="Inspector Visual Effect View">
-                                <rect key="frame" x="467" y="0.0" width="280" height="473"/>
+                                <rect key="frame" x="655" y="0.0" width="280" height="473"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-bO-w8G">
                                         <rect key="frame" x="12" y="431" width="51" height="22"/>
@@ -234,7 +234,7 @@
                                 </constraints>
                             </visualEffectView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fsN-s8-IZf">
-                                <rect key="frame" x="0.0" y="0.0" width="467" height="473"/>
+                                <rect key="frame" x="0.0" y="0.0" width="655" height="473"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="SolarSystemSnapshot" id="tFC-sN-dPS"/>
                             </imageView>
                         </subviews>

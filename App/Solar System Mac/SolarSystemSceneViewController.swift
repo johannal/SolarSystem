@@ -28,8 +28,6 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     @IBOutlet weak var increaseAnimationSpeedButton: NSButton?
     @IBOutlet weak var decreaseAnimationSpeedButton: NSButton?
 
-    var sceneController: SolarSystemSceneController?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
