@@ -28,9 +28,10 @@ defaults write com.apple.dt.Instruments XRSymbolicationModernizationSkip -bool Y
 defaults write com.apple.dt.Xcode IDEMainThreadChecker_DisableHardAssertions YES
 # Discard all of the changes
 git checkout -f
+git fetch
 
 # Checkout to original branch
-git checkout keynote_demo
+git checkout master
 
 # Delete branch if exists
 git branch -D helper_branch
@@ -39,7 +40,7 @@ git branch -D helper_branch
 git checkout -b helper_branch
 
 # Set upstream!
-git branch --set-upstream-to keynote_demo
+git branch --set-upstream-to master
 
 # Apply and commit
 git cherry-pick 7debad7879fbe77b2b223982775820ee8ab141ed
