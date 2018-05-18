@@ -3,8 +3,14 @@
 username=$(whoami)
 echo "Username is $username"
 
-simcount=4
+simcount=6
 echo "Simulator count for demo is $simcount"
+
+windowscale=0.5
+echo "Simulator window scale is $windowscale"
+
+columns=3
+echo "Number of columns in layout is $columns"
 
 simname="iPhone 8"
 echo "Target simulator for the demo is $simname"
@@ -605,7 +611,7 @@ echo "Disabling simulator names"
 defaults write com.apple.iphonesimulator FloatingNameMode 2
 
 echo "Booting simulators"
-XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount
+XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount --windowScale $windowscale --columns $columns
 
 echo "Listing simulators after boot"
 xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" list
