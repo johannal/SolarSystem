@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "NeptuneGlobe.png",
+      "filename" : "Neptune_200x200.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "NeptuneGlobe@2x.png",
+      "filename" : "Neptune_200x200@2x.png",
       "scale" : "2x"
     }
   ],

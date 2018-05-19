@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "SaturnGlobe.png",
+      "filename" : "Saturn_200x200.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "SaturnGlobe@2x.png",
+      "filename" : "Saturn_200x200@2x.png",
       "scale" : "2x"
     }
   ],

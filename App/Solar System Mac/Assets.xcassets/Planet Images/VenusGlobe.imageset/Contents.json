@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "VenusGlobe.png",
+      "filename" : "Venus_200x200.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "VenusGlobe@2x.png",
+      "filename" : "Venus_200x200@2x.png",
       "scale" : "2x"
     }
   ],

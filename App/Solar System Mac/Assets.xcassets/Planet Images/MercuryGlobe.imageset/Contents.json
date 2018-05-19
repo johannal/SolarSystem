@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "MercuryGlobe.png",
+      "filename" : "Mercury_200x200.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "MercuryGlobe@2x.png",
+      "filename" : "Mercury_200x200@2x.png",
       "scale" : "2x"
     }
   ],

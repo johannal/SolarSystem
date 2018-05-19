@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "mac",
-      "filename" : "UranusGlobe.png",
+      "filename" : "Uranus_200x200.png",
       "scale" : "1x"
     },
     {
       "idiom" : "mac",
-      "filename" : "UranusGlobe@2x.png",
+      "filename" : "Uranus_200x200@2x.png",
       "scale" : "2x"
     }
   ],
