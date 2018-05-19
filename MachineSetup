@@ -22,6 +22,7 @@ defaults write com.apple.dt.Instruments XRIgnoreAllDevices -bool YES
 
 defaults write com.apple.dt.Solar-System-Mac HideDockIcon -bool true
 defaults write com.apple.dt.Xcode IDEOverrideDockIconName XcodeNonBetaIconForDemo
+defaults write com.apple.dt.Instruments MustShowDistributionIcon -bool YES
 
 defaults write com.apple.dt.Instruments XRSymbolicationModernizationSkip -bool YES
 
