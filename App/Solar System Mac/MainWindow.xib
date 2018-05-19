@@ -14,7 +14,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="739" height="462"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ">
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="739" height="462"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
@@ -251,9 +251,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="tnW-iN-ybb" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Peg-jt-Rt2"/>
-                    <constraint firstAttribute="trailing" secondItem="tnW-iN-ybb" secondAttribute="trailing" id="WIw-KG-ncF"/>
+                    <constraint firstAttribute="trailing" secondItem="tnW-iN-ybb" secondAttribute="trailing" constant="-8" id="WIw-KG-ncF"/>
                     <constraint firstAttribute="bottom" secondItem="tnW-iN-ybb" secondAttribute="bottom" id="eWN-uK-zqc"/>
-                    <constraint firstItem="tnW-iN-ybb" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="oTu-JP-Vza"/>
+                    <constraint firstItem="tnW-iN-ybb" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="-11" id="oTu-JP-Vza"/>
                 </constraints>
             </view>
             <toolbar key="toolbar" implicitIdentifier="4262EB69-E039-4698-BFC8-872A2A06E366" centeredItem="v3m-MN-5bN" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="lfy-DF-1dY">
