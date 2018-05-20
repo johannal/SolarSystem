@@ -11,7 +11,7 @@ import AppKit
 final class SolarSystemSceneWindowController: NSWindowController {
 
     @IBAction func refreshClicked(sender: Any) {
-        if let solarSystemSceneVC = contentViewController as? SolarSystemSceneViewController {
+        if let solarSystemSceneVC = contentViewController as? SceneViewController {
             solarSystemSceneVC.refreshPlanetsAndNews()
         }
     }

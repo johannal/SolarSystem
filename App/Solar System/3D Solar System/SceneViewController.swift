@@ -1,8 +1,7 @@
 //
-//  SolarSystemSceneViewController.swift
+//  SceneViewController.swift
 //  Solar System
 //
-//  Created by Sebastian Fischer on 15.03.18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
@@ -10,15 +9,15 @@ import UIKit
 import SceneKit
 import ARKit
 
-class SolarSystemSceneViewController: UIViewController, SolarSystemSceneControllerDelegate {
+class SceneViewController: UIViewController, SceneControllerDelegate {
     
     @IBOutlet weak var solarSystemSceneView: SCNView!
     @IBOutlet weak var gravityButton: UIButton?
 
-    var sceneController: SolarSystemSceneController?
+    var sceneController: SceneController?
     
     // Details view controller if presented
-    weak var planetDetailsVC: PlanetSceneDetailsViewController?
+    weak var planetDetailsVC: SceneDetailsController?
 
     var timer: CADisplayLink!
     
@@ -26,7 +25,7 @@ class SolarSystemSceneViewController: UIViewController, SolarSystemSceneControll
         super.viewDidLoad()
         title = "The Solar System in 3D"
         
-        sceneController = SolarSystemSceneController(solarSystemSceneView: solarSystemSceneView)
+        sceneController = SceneController(solarSystemSceneView: solarSystemSceneView)
         sceneController?.delegate = self
         sceneController?.prepareScene()
         
@@ -60,7 +59,7 @@ class SolarSystemSceneViewController: UIViewController, SolarSystemSceneControll
         sceneController?.didHitSceneView(atLocation: hitLocation)
     }
     
-    // MARK: - SolarSystemSceneControllerDelegate
+    // MARK: - SceneControllerDelegate
 
     func hideGravityButton(_ hidden: Bool) {
         gravityButton?.isHidden = hidden

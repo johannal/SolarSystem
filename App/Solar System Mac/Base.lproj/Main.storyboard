@@ -884,11 +884,11 @@
             </objects>
             <point key="canvasLocation" x="95" y="144.5"/>
         </scene>
-        <!--Solar System Scene View Controller-->
+        <!--Scene View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="XfG-lQ-9wD" customClass="SolarSystemSceneViewController" customModule="Solar_System_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="SceneViewController" customModule="Solar_System_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="890" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -900,7 +900,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                         <clipView key="contentView" drawsBackground="NO" id="LyA-Hk-VwL">
                                             <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView id="iY9-bk-20O">
                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>

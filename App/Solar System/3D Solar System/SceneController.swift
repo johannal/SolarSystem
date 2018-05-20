@@ -26,16 +26,16 @@ enum ContentType {
     case planetDetails
 }
 
-protocol SolarSystemSceneControllerDelegate : class {
+protocol SceneControllerDelegate : class {
     func hideGravityButton(_ hidden: Bool)
 }
 
 // Float
 
-class SolarSystemSceneController: NSObject {
+class SceneController: NSObject {
     
     weak var solarSystemSceneView: SCNView!
-    weak var delegate: SolarSystemSceneControllerDelegate?
+    weak var delegate: SceneControllerDelegate?
     
     // Lighting is on by default
     var enableSceneLighting = true

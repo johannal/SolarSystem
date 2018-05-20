@@ -1,5 +1,5 @@
 //
-//  SolarSystemSceneViewController.swift
+//  SceneViewController.swift
 //  Solar System Mac
 //
 //  Copyright © 2018 Apple. All rights reserved.
@@ -9,14 +9,14 @@ import AppKit
 import SceneKit
 
 /// An #NSViewController that represents a solar system.
-class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControllerDelegate {
+class SceneViewController: NSViewController, SceneControllerDelegate {
 
     // MARK: - Instance variables
 
     private let planetsDataSource = SolarSystemPlanetsDataSource()
-    private var appearanceManager: SolarSceneViewAppearanceManager?
+    private var appearanceManager: SceneViewAppearanceManager?
     private var particleSystemsAnimator: ParticleSystemsAnimator?
-    private var sceneController: SolarSystemSceneController?
+    private var sceneController: SceneController?
     private let networkService = PlanetsNewsUpdatesService<MockNetworkRequest>()
 
     // MARK: - Outlets
@@ -32,7 +32,7 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         super.viewDidLoad()
 
         // Setup 3D scene view controller
-        sceneController = SolarSystemSceneController(solarSystemSceneView: solarSystemSceneView)
+        sceneController = SceneController(solarSystemSceneView: solarSystemSceneView)
         sceneController?.delegate = self
         sceneController?.prepareScene()
 
@@ -45,7 +45,7 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         navigatorCollectionView.dataSource = planetsDataSource
 
         // Setup appearance manager
-//        let appearanceManager = SolarSceneViewAppearanceManager(sceneView: solarSystemSceneView)
+//        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
 //        self.appearanceManager = appearanceManager
 
         // Setup particle systems manager for scene
@@ -72,7 +72,7 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
 
-    // MARK: - SolarSystemSceneControllerDelegate
+    // MARK: - SceneControllerDelegate
 
     /// Hides or shows this button that toggles gravity.
     func hideGravityButton(_ hidden: Bool) {
@@ -94,7 +94,7 @@ class SolarSystemSceneViewController: NSViewController, SolarSystemSceneControll
     }
 }
 
-extension SolarSystemSceneViewController: PlanetsNewsListener {
+extension SceneViewController: PlanetsNewsListener {
 
     // MARK: - User Interaction
 

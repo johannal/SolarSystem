@@ -12,8 +12,8 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
     @IBOutlet weak var contentContainerView: UIView!
     weak var sceneHUDController: SceneHUDViewController?
     
-    weak var solarSystemVC: SolarSystemSceneViewController?
-    weak var planetDetailsVC: PlanetSceneDetailsViewController?
+    weak var solarSystemVC: SceneViewController?
+    weak var planetDetailsVC: SceneDetailsController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
         title = "The Solar System"
 
         // Initiate solar system controller
-        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC") as! SolarSystemSceneViewController
+        let solarSystemVC = storyboard!.instantiateViewController(withIdentifier: "solarSystemVC") as! SceneViewController
         solarSystemVC.view.translatesAutoresizingMaskIntoConstraints = false
         addChild(solarSystemVC)
         contentContainerView.addSubview(solarSystemVC.view)
@@ -80,7 +80,7 @@ class MainViewController: UIViewController, SceneHUDDelegate, PlanetDetailsVCDel
     
     func showPlanetDetails() {
         // Initiate solar system controller
-        let planetDetailsVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC") as! PlanetSceneDetailsViewController
+        let planetDetailsVC = storyboard!.instantiateViewController(withIdentifier: "planetDetailsVC") as! SceneDetailsController
         planetDetailsVC.delegate = self
         planetDetailsVC.view.translatesAutoresizingMaskIntoConstraints = false
         addChild(planetDetailsVC)

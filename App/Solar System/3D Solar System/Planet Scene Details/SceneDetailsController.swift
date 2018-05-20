@@ -1,5 +1,5 @@
 //
-//  PlanetSceneDetailsViewController.swift
+//  SceneDetailsController.swift
 //  Solar System
 //
 //  Copyright © 2018 Apple Inc. All rights reserved.
@@ -11,7 +11,7 @@ protocol PlanetDetailsVCDelegate: class {
     func planetDetailsNavigationButtonPressed(_ directionForward: Bool)
 }
 
-class PlanetSceneDetailsViewController: UIViewController {
+class SceneDetailsController: UIViewController {
     
     weak var delegate: PlanetDetailsVCDelegate?
     

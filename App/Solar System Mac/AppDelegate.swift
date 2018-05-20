@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let windowController = NSApplication.shared.mainWindow?.windowController
         let viewController = windowController?.contentViewController
 
-        if let solarSystemSceneVC = viewController as? SolarSystemSceneViewController {
+        if let solarSystemSceneVC = viewController as? SceneViewController {
             solarSystemSceneVC.refreshPlanetsAndNews()
         }
     }

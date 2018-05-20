@@ -8,7 +8,7 @@
 import Cocoa
 import SceneKit
 
-class SolarSceneViewAppearanceManager: NSObject {
+class SceneViewAppearanceManager: NSObject {
     private let sceneView: SCNView
 
     private var observation: NSKeyValueObservation?
