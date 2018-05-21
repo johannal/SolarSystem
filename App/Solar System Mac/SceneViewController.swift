@@ -17,7 +17,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     private var appearanceManager: SceneViewAppearanceManager?
     private var particleSystemsAnimator: ParticleSystemsAnimator?
     private var sceneController: SceneController?
-    private let networkService = PlanetsNewsUpdatesService<MockNetworkRequest>()
+    private let networkService = PlanetUpdateService<MockNetworkRequest>()
     private var newsRequestDispatchTimer: DispatchSourceTimer?
 
     // MARK: - Outlets
@@ -98,7 +98,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     }
 }
 
-extension SceneViewController: PlanetsNewsListener {
+extension SceneViewController: PlanetsDetailsListener {
     
     // MARK: - News Feed
     
@@ -133,10 +133,6 @@ extension SceneViewController: PlanetsNewsListener {
 
     internal func updateWithPlanets(_ news: [Planet]?, _ error: Error?) {
         // TODO: refresh UI with updated news feed on planets, dwarf planets, and exoplanets
-    }
-
-    internal func updateWithNews(_ news: [News]?, _ error: Error?) {
-        // TODO: update the new "Today in Space" news view
     }
 }
 

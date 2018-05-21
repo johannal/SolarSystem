@@ -5,23 +5,18 @@
 //  Copyright © 2018 Apple Inc. All rights reserved.
 //
 
-import UIKit
-
 public class Star: PhysicsBody {
     
     public let name: String
-    
-    public let color: UIColor
-    
+
     public private(set) var planets: [Planet] = []
     
     public private(set) var distantObjects: [TransNeptunianObject] = []
     
     public private(set) var parentSolarSystem: SolarSystem!
     
-    public init(name: String, color: UIColor) {
+    public init(name: String) {
         self.name = name
-        self.color = color
     }
     
     /// Add a distant object related to this Star.
