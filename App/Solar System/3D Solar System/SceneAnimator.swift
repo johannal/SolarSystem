@@ -5,7 +5,11 @@
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
+#if os(OSX)
 import Cocoa
+#else
+import UIKit
+#endif
 
 class SceneAnimator: NSObject {
     
@@ -51,7 +55,7 @@ class SceneAnimator: NSObject {
     }
     
     // Display Link callback
-    func tick(timestamp: TimeInterval) {
+    @objc func tick(timestamp: TimeInterval) {
         if (lastTimestamp == 0) {
             lastTimestamp = timestamp
             return
