@@ -8,7 +8,10 @@ class PlanetLearnMoreTests: XCTestCase {
 
     func testLearnMore() {
         let app = XCUIApplication()
-        app.launchEnvironment = [ "TESTING_ENVIRONMENT" : "YES" ]
+        app.launchEnvironment = [
+            "DisableAnimations": "YES",
+            "TESTING_ENVIRONMENT" : "YES"
+        ]
         
         app.launch()
         

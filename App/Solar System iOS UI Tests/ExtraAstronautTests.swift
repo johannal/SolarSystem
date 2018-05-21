@@ -12,6 +12,7 @@ class ExtraAstronautTests: XCTestCase {
         continueAfterFailure = false
 
         self.app = XCUIApplication()
+        self.app.launchEnvironment = ["DisableAnimations": "YES"]
 
         self.app.launch()
     }

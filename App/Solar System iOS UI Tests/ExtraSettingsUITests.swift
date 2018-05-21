@@ -8,6 +8,7 @@ class ExtraSettingsUITests: XCTestCase {
 
     func testSettings() {
         let app = XCUIApplication()
+        app.launchEnvironment = ["DisableAnimations": "YES"]
         
         app.launch()
         
