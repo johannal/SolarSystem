@@ -23,6 +23,14 @@ And I'll mark the end of the internal:
 *Add os_signpost(end call*
 
 
+## Setup
+
+Code snippets:
+
+os_signpost_interval_begin(solarSystemLog, request.identifier, "JSONParsing", "Started parsing data of size \(responseData.count)")
+
+os_signpost_interval_end(solarSystemLog, request.identifier, "JSONParsing", "Finished parsing")
+
 
 -- OLD BELOW ----------------------------------------- 
 
