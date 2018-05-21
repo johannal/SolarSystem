@@ -34,6 +34,13 @@ struct MockNetworkRequest: NetworkRequest {
 
     let requestURL: String
     let identifier: UInt
+    var userIdentifierString: String = ""
+
+    init<T>(request: Request<T>) {
+        self.requestURL = request.url
+        self.userIdentifierString = request.userIdentifierString
+        self.identifier = MockNetworkRequest._generateIdentifier()
+    }
 
     init(requestURL: String) {
         self.requestURL = requestURL

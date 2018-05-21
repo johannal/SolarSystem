@@ -115,6 +115,7 @@
 		BB4F755B209B3EF1003C8DF9 /* PlanetUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */; };
 		BBA9B66E20AB104000258FEB /* SceneWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA9B66D20AB104000258FEB /* SceneWindowController.swift */; };
 		BBB6002B20B33E3300D0C304 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6002920B33E1900D0C304 /* NetworkModel.swift */; };
+		BBB6002C20B34FE300D0C304 /* PlanetUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */; };
 		BBC87A3F20AB36E6008DFA64 /* SignpostLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
@@ -1029,6 +1030,7 @@
 				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
 				9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
 				9E2017351ECB7E95002373D7 /* SceneController.swift in Sources */,
+				BBB6002C20B34FE300D0C304 /* PlanetUpdateService.swift in Sources */,
 				D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */,
 				07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */,
 				106E67BB209CFCA90096F217 /* MockNetworkRequest.swift in Sources */,

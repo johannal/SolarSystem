@@ -15,7 +15,7 @@ extern void swift_os_signpost_impl(os_log_t log, os_signpost_id_t sid, os_signpo
 @interface Logger : NSObject
 - (void) parsingStarted:(NSUInteger)identifier dataSize:(NSInteger)dataSize;
 - (void) parsingFinished:(NSUInteger)identifier;
-- (void) requestStarted:(NSUInteger)logID url:(NSString *)url type:(NSString *)type;
+- (void) requestStarted:(NSUInteger)logID url:(NSString *)url type:(NSString *)type userIdentifier:(NSString *)userIdentifier;
 - (void) requestFinished:(NSUInteger)logID code:(NSInteger)code;
 @end
 
