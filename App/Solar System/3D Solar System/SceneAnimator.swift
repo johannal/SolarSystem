@@ -5,7 +5,7 @@
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
-#if os(OSX)
+#if os(macOS)
 import Cocoa
 #else
 import UIKit
@@ -14,7 +14,7 @@ import UIKit
 class SceneAnimator: NSObject {
     
     // Animation properties
-    #if os(OSX)
+    #if os(macOS)
     var timer: DisplayLink!
     #else
     var timer: CADisplayLink!
@@ -42,7 +42,7 @@ class SceneAnimator: NSObject {
     func setupDisplayLinkAnimations() {
         if SceneAnimator.wantsDisplayLinkAnimations {
             // Setup display link
-            #if os(OSX)
+            #if os(macOS)
             timer = DisplayLink(callback: {
                 self.tick(timestamp: CACurrentMediaTime() as TimeInterval)
             })

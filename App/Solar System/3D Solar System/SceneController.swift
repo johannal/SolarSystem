@@ -7,7 +7,7 @@
 
 import SceneKit
 
-#if os(OSX)
+#if os(macOS)
 typealias SCNNumberType = CGFloat
 typealias Image = NSImage
 typealias ImageName = NSImage.Name

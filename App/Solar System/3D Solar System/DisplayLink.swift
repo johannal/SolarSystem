@@ -7,7 +7,7 @@
 //
 
 // DisplayLink class to replace CADisplayLink on macOS
-#if os(OSX)
+#if os(macOS)
 import AppKit
 
 class DisplayLink {
