@@ -18,8 +18,7 @@ enum PlanetUpdateServiceError: Error {
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
-                                       category: "JSON Fetching/Parsing")
-//                                  category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
+                                       category: "JSON Fetching and Parsing")
 
 final class PlanetUpdateService<RequestType: NetworkRequest> {
     
