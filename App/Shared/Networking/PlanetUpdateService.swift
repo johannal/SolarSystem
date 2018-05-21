@@ -131,29 +131,29 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
         }
 
         static func moons(for planet: Planet) -> Request<Moon> {
-            var moons: [Moon]
-            let stub = Moon(name: "", planet: planet)
+            var moons: Int = 0
             switch planet.name {
             case "Mercury":
-                moons = []
+                moons = 0
             case "Venus":
-                moons = []
+                moons = 0
             case "Earth":
-                moons = Array.init(repeatElement(stub, count: 1))
+                moons = 1
             case "Mars":
-                moons = Array.init(repeatElement(stub, count: 2))
+                moons = 2
             case "Jupiter":
-                moons = Array.init(repeatElement(stub, count: 69))
+                moons = 69
             case "Saturn":
-                moons = Array.init(repeatElement(stub, count: 62))
+                moons = 62
             case "Uranus":
-                moons = Array.init(repeatElement(stub, count: 27))
+                moons = 27
             case "Neptune":
-                moons = Array.init(repeatElement(stub, count: 14))
+                moons = 14
             default:
-                moons = []
+                break
             }
-            return Request<Moon>(url: "solars.apple.com/\(planet.name)/moons", belongingPlanet: planet, data: moons)
+            let data: [Moon] = (0..<moons).map { val in return Moon(name: "\(val)", planet: planet) }
+            return Request<Moon>(url: "solars.apple.com/\(planet.name)/moons", belongingPlanet: planet, data: data)
         }
 
         static func photo(of moon: Moon) -> Request<Any> {
