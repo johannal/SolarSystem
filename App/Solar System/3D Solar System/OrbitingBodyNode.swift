@@ -63,48 +63,75 @@ class OrbitingBodyNode: PhysicsBodyNode {
     }
     
     func startOrbitingAnimation() {
-        // Add orbiting animation if necessary
-        if !rotationNode.animationKeys.contains(OrbitingAnimationName) {
-            let orbitingAnimation = CABasicAnimation(keyPath: "rotation")
-            let orbitalPeriod = bodyInfo?["orbitalPeriod"] as! Double
-            let initialRotation = Double(rotationNode.rotation.w)
+        if SceneAnimator.wantsDisplayLinkAnimations {
             
-            orbitingAnimation.duration = orbitalPeriod / 150.0
-            let rotationEndVector = SCNVector4.init(0, 1, 0, initialRotation + Double.pi * 2.0)
-            orbitingAnimation.toValue = NSValue(scnVector4: rotationEndVector)
-            orbitingAnimation.repeatCount = .greatestFiniteMagnitude
-            rotationNode.addAnimation(orbitingAnimation, forKey: OrbitingAnimationName)
         }
+        else {
+            // Add orbiting animation if necessary
+            if !rotationNode.animationKeys.contains(OrbitingAnimationName) {
+                let orbitingAnimation = CABasicAnimation(keyPath: "rotation")
+                let orbitalPeriod = bodyInfo?["orbitalPeriod"] as! Double
+                let initialRotation = Double(rotationNode.rotation.w)
+                
+                orbitingAnimation.duration = orbitalPeriod / 150.0
+                let rotationEndVector = SCNVector4.init(0, 1, 0, initialRotation + Double.pi * 2.0)
+                orbitingAnimation.toValue = NSValue(scnVector4: rotationEndVector)
+                orbitingAnimation.repeatCount = .greatestFiniteMagnitude
+                rotationNode.addAnimation(orbitingAnimation, forKey: OrbitingAnimationName)
+            }
+        }
+        
+        isOrbitingAnimationEnabled = true
     }
     
     func stopOrbitingAnimation() {
-        rotationNode.removeAnimation(forKey: OrbitingAnimationName)
+        if SceneAnimator.wantsDisplayLinkAnimations {
+        }
+        else {
+            rotationNode.removeAnimation(forKey: OrbitingAnimationName)
+        }
+        
+        isOrbitingAnimationEnabled = false
     }
     
     func startSpinningAnimation() {
-        // Add orbiting animation if necessary
-        if !rotationNode.animationKeys.contains(SpinningAnimationName) {
-            let spinningAnimation = CABasicAnimation(keyPath: "rotation")
+        if SceneAnimator.wantsDisplayLinkAnimations {
             
-            let rotationalPeriod = bodyInfo?["rotationalPeriod"] as! Double
-            spinningAnimation.duration = rotationalPeriod
-            
-            var directionMultiplier: Double = 1.0
-    
-            if let rotationDirectionIsForward = bodyInfo?["rotationDirectionIsForward"] as? Bool {
-                if !rotationDirectionIsForward {
-                    directionMultiplier = -1.0
-                }
-            }
-            
-            spinningAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, directionMultiplier, 0, Double.pi * 2.0))
-            spinningAnimation.repeatCount = .greatestFiniteMagnitude
-            addAnimation(spinningAnimation, forKey: OrbitingAnimationName)
         }
+        else {
+            // Add orbiting animation if necessary
+            if !rotationNode.animationKeys.contains(SpinningAnimationName) {
+                let spinningAnimation = CABasicAnimation(keyPath: "rotation")
+                
+                let rotationalPeriod = bodyInfo?["rotationalPeriod"] as! Double
+                spinningAnimation.duration = rotationalPeriod
+                
+                var directionMultiplier: Double = 1.0
+                
+                if let rotationDirectionIsForward = bodyInfo?["rotationDirectionIsForward"] as? Bool {
+                    if !rotationDirectionIsForward {
+                        directionMultiplier = -1.0
+                    }
+                }
+                
+                spinningAnimation.toValue = NSValue(scnVector4: SCNVector4.init(0, directionMultiplier, 0, Double.pi * 2.0))
+                spinningAnimation.repeatCount = .greatestFiniteMagnitude
+                addAnimation(spinningAnimation, forKey: OrbitingAnimationName)
+            }
+        }
+        
+        isSpinningAnimationEnabled = true
     }
     
     func stopSpinningAnimation() {
-        rotationNode.removeAnimation(forKey: SpinningAnimationName)
+        if SceneAnimator.wantsDisplayLinkAnimations {
+            
+        }
+        else {
+            rotationNode.removeAnimation(forKey: SpinningAnimationName)
+        }
+        
+        isSpinningAnimationEnabled = false
     }
 }
 

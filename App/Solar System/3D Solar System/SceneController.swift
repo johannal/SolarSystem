@@ -40,7 +40,8 @@ class SceneController: NSObject {
     // Lighting is on by default
     var enableSceneLighting = true
     
-    var lastTimestamp: TimeInterval = 0
+    // Animation coordinator
+    var sceneAnimator: SceneAnimator?
     
     private(set) var planetNodes: [OrbitingBodyNode] = []
     
@@ -57,7 +58,11 @@ class SceneController: NSObject {
         enableSceneLighting = false
         #endif
         
+        // Setup scene
         setupScene()
+        
+        // Setup scene animator
+        sceneAnimator = SceneAnimator(sceneController: self)
                 
         // Disable light sources
         if !enableSceneLighting {
@@ -348,18 +353,6 @@ class SceneController: NSObject {
         }
     }
     
-    // Display Link callback
-    func tick(timestamp: TimeInterval) {
-        if (lastTimestamp == 0) {
-            lastTimestamp = timestamp
-            return
-        }
-        
-        let elapsedTime = timestamp - lastTimestamp
-        lastTimestamp = timestamp
-        updateAnimatedObjectsWithElapsedTime(elapsedTime)
-    }
-    
     func updateAnimatedObjectsWithElapsedTime(_ elapsedTime: TimeInterval) {
         // Let all planetNodes update according to the elapsed time
         for node in planetNodes {
@@ -382,5 +375,4 @@ class SceneController: NSObject {
             // TODO: Present detailed information about selected planet, moon or star
         }
     }
-    
 }
