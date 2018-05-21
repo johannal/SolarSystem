@@ -65,9 +65,6 @@ class SceneAnimator: NSObject {
         lastTimestamp = timestamp
         
         // Get elapsed time by calculating offset between last time stamp and now
-        /// >> This should block the main thread a bit
-        RunLoop.current.run(until: Date().addingTimeInterval(0.5))
-        //sleep(1)
         sceneController.updateAnimatedObjectsWithElapsedTime(elapsedTime)
     }
     
