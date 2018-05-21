@@ -18,6 +18,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     private var particleSystemsAnimator: ParticleSystemsAnimator?
     private var sceneController: SceneController?
     private let networkService = PlanetsNewsUpdatesService<MockNetworkRequest>()
+    private var newsRequestDispatchTimer: DispatchSourceTimer?
 
     // MARK: - Outlets
 
@@ -43,6 +44,9 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         // Setup data source
         navigatorCollectionView.delegate = planetsDataSource
         navigatorCollectionView.dataSource = planetsDataSource
+        
+        // Initiate news feed updates
+        startReceivingNewsFeedUpdates()
 
         // Setup appearance manager
 //        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
@@ -95,6 +99,27 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
 }
 
 extension SceneViewController: PlanetsNewsListener {
+    
+    // MARK: - News Feed
+    
+    func startReceivingNewsFeedUpdates() {
+        let queue = DispatchQueue(label: "Planet News Timer Queue", attributes: .concurrent)
+        newsRequestDispatchTimer?.cancel()
+        
+        newsRequestDispatchTimer = DispatchSource.makeTimerSource(queue: queue)
+        newsRequestDispatchTimer?.schedule(deadline: .now(), repeating: .seconds(5), leeway: .milliseconds(100))
+        
+        newsRequestDispatchTimer?.setEventHandler { [weak self] in
+            self?.refreshPlanetsAndNews()
+        }
+        
+        newsRequestDispatchTimer?.resume()
+    }
+    
+    func stopReceivingNewsFeedUpdates() {
+        newsRequestDispatchTimer?.cancel()
+        newsRequestDispatchTimer = nil
+    }
 
     // MARK: - User Interaction
 
@@ -114,3 +139,4 @@ extension SceneViewController: PlanetsNewsListener {
         // TODO: update the new "Today in Space" news view
     }
 }
+
