@@ -16,22 +16,27 @@ enum PlanetUpdateServiceError: Error {
     case requestFailed
 }
 
-fileprivate let solarLog = OSLog(subsystem: "com.demo.SolarSystem",
-                                  category: "JSON Timing")
+/// OSLog for logging Solar System Explorer JSON parsing events.
+fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
+                                       category: "JSON Fetching/Parsing")
 //                                  category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
 
 final class PlanetUpdateService<RequestType: NetworkRequest> {
+    
     typealias ArrayCompletionBlock<T> = ([T]?, Error?) -> Void
     typealias ErrorType = PlanetUpdateServiceError
 
     func update(listener: PlanetsDetailsListener) {
-        os_log("Refresh Network Info Triggered", log: solarLog, type: .debug)
+        
+        // log that we're about to queue up a network request for solars system details.
+        os_log("Request Solar System details", log: solarSystemLog, type: .debug)
 
         request(.planets) { [weak self] (planets: [Planet]?, error: Error?) in
             listener.updateWithPlanets(planets, error)
-            guard let planets = planets else {
-                return
-            }
+            
+            guard let planets = planets else { return }
+            
+            // for each plannet, get it's details and moons.
             for planet in planets {
                 self?.fetchPlanetDetails(for: planet)
                 self?.fetchPlanetMoons(for: planet)
@@ -55,7 +60,7 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
                     completion(result, nil)
                 } catch {
                     os_log("Parsing error encountered: %@",
-                           log: solarLog, type: .error, "\(error)")
+                           log: solarSystemLog, type: .error, "\(error)")
                     completion(nil, error)
                 }
 
@@ -97,7 +102,7 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
 
     private func request<Resource>(_ request: Request<Resource>, completion: @escaping ArrayCompletionBlock<Resource>) {
         if let planet = request.belongingPlanet {
-            os_log("PLANET: %{public}@ URL: %{public}@", log: solarLog, type: .debug, planet.name, request.url)
+            os_log("PLANET: %{public}@ URL: %{public}@", log: solarSystemLog, type: .debug, planet.name, request.url)
         }
 
         performRequest(request: request) { (array: [Resource]?, error: Error?) in
