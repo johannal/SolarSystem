@@ -12,9 +12,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         _showDockIconIfNecessary()
-        
-        // Always enable pro features for now
-        UserDefaults.standard.set(true, forKey: "EnableProFeatures")
     }
     
     fileprivate func _showDockIconIfNecessary() {
