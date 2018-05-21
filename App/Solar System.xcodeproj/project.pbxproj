@@ -47,6 +47,7 @@
 		9E1408802090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */; };
 		9E194E3920B33599003A682D /* SceneAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E194E3820B33599003A682D /* SceneAnimator.swift */; };
 		9E194E3A20B33599003A682D /* SceneAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E194E3820B33599003A682D /* SceneAnimator.swift */; };
+		9E194E3C20B34214003A682D /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E194E3B20B34214003A682D /* DisplayLink.swift */; };
 		9E1ACC951ECFBE9C0066532D /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */; };
 		9E2017351ECB7E95002373D7 /* SceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017341ECB7E95002373D7 /* SceneController.swift */; };
 		9E2017371ECB7F2E002373D7 /* SceneDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2017361ECB7F2E002373D7 /* SceneDetailsController.swift */; };
@@ -214,6 +215,7 @@
 		9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetDetailsWindow.xib; sourceTree = "<group>"; };
 		9E14087E2090EFEE00BCEB8B /* AstronomicalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalObject.swift; sourceTree = "<group>"; };
 		9E194E3820B33599003A682D /* SceneAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAnimator.swift; sourceTree = "<group>"; };
+		9E194E3B20B34214003A682D /* DisplayLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		9E1ACC941ECFBE9C0066532D /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		9E2017341ECB7E95002373D7 /* SceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneController.swift; sourceTree = "<group>"; };
 		9E2017361ECB7F2E002373D7 /* SceneDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDetailsController.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 			children = (
 				9E2017341ECB7E95002373D7 /* SceneController.swift */,
 				9E194E3820B33599003A682D /* SceneAnimator.swift */,
+				9E194E3B20B34214003A682D /* DisplayLink.swift */,
 				9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */,
 				9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */,
 				9E6ADE0D1ECCF8F0008B2CA8 /* SolarSystemScene.scn */,
@@ -1010,6 +1013,7 @@
 				9E194E3A20B33599003A682D /* SceneAnimator.swift in Sources */,
 				9E4F77CC205AF058004C9486 /* PhysicsBodyNode.swift in Sources */,
 				106E67C2209D03160096F217 /* MockRequestParser.swift in Sources */,
+				9E194E3C20B34214003A682D /* DisplayLink.swift in Sources */,
 				9EB5341A2082DA120007DB03 /* SolarSystemPlanetsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
