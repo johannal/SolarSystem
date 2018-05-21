@@ -1,5 +1,31 @@
 ## Part 1 — os_log/os_signpost
 
+The Xcode and Instruments have some great new features that make it easier than ever to understand how your app is performing. Let me show you.
+
+I've recently noticed some stutters in my Solar System exploration app.
+
+*Run app and show stutter (or maybe app is already running)*
+
+I've got some basic os_logging in my code already, which has been great for seeing the order of events in the console. But thats not really enough to help me understand whats going on here. 
+
+In Xcode 10, I can update some of my os_log statements to use the new "Points of Interest" category. I'm going to do that here.
+
+*Change os_log category to OS_LOG_CATEGORY_POINTS_OF_INTEREST*
+
+This is a way for me to declare that I want this log to show up as a point in time in Instruments. What would also be really helpful, is to visualize the range of time where I'm parsing JSON. I can do that by using the "os_signpost" API.
+
+At the start of parsing, I'll add this call to mark the beginning of the interval:
+
+*Add os_signpost(begin call*
+
+And I'll mark the end of the internal:
+
+*Add os_signpost(end call*
+
+
+
+-- OLD BELOW ----------------------------------------- 
+
 I've been working with the team on adding networking functionality to the Solar System app — we want to keep users informed on news of newly-discovered exoplanets and make sure our list of planets and dwarf planets stays up-to-date. I'm working on the JSON parsing pipeline, and I'd like to visualize what it looks like with the new os_log and os_signpost integration. 
 
 I'm going to start by adding an os_log statement for when the user refreshes the network content. os_log is as easy to add as print, but its comes with categorization features as well. 
