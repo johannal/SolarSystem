@@ -8,7 +8,7 @@
 
 import AppKit
 
-final class SolarSystemSceneWindowController: NSWindowController {
+final class SceneWindowController: NSWindowController {
 
     @IBAction func refreshClicked(sender: Any) {
         if let solarSystemSceneVC = contentViewController as? SceneViewController {
