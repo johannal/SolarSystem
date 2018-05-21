@@ -45,9 +45,11 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         navigatorCollectionView.delegate = planetsDataSource
         navigatorCollectionView.dataSource = planetsDataSource
         
-        // Initiate news feed updates
-        startReceivingNewsFeedUpdates()
-
+        // Initiate news feed updates if necessary
+        if wantsAutomaticNewsFeedUpdates {
+            startReceivingNewsFeedUpdates()
+        }
+        
         // Setup appearance manager
 //        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
 //        self.appearanceManager = appearanceManager
@@ -133,6 +135,11 @@ extension SceneViewController: PlanetsDetailsListener {
 
     internal func updateWithPlanets(_ news: [Planet]?, _ error: Error?) {
         // TODO: refresh UI with updated news feed on planets, dwarf planets, and exoplanets
+    }
+    
+    var wantsAutomaticNewsFeedUpdates: Bool {
+        let wantsNewsFeedUpdates = UserDefaults.standard.bool(forKey: "AutomaticNewsFeedUpdates")
+        return wantsNewsFeedUpdates
     }
 }
 
