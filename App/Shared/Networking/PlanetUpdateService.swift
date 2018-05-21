@@ -73,6 +73,14 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
 
 
 
+
+
+
+
+
+
+
+    
     private func fetchPlanetDetails(for planet: Planet) {
         request(Request<Any>.photo(of: planet)) { (_, _) in }
         request(Request<Any>.neighbours(of: planet)) { (_, _) in }
