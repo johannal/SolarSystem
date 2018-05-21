@@ -52,7 +52,6 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
             }
 
             NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { (parser) in
-//                os_signpost_interval_begin(solarLog, request.identifier, "JSONParsing", "Started parsing data of size \(responseData.count)");
 
                 do {
                     let result: [T] = try parser.parse()
@@ -63,7 +62,6 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
                     completion(nil, error)
                 }
 
-//                os_signpost_interval_end(solarLog, request.identifier, "JSONParsing", "Finished parsing");
             }
         }
     }
