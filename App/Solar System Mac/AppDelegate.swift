@@ -13,8 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         _showDockIconIfNecessary()
         
-        // Register default defaults
-        UserDefaults.standard.register(defaults: ["AutomaticNewsFeedUpdates" : false, "DisplayLinkAnimations" : false])
+        // Always enable pro features for now
+        UserDefaults.standard.set(true, forKey: "EnableProFeatures")
     }
     
     fileprivate func _showDockIconIfNecessary() {
