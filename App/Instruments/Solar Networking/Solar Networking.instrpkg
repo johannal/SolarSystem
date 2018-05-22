@@ -100,6 +100,7 @@
         <subsystem>"com.demo.SolarSystem"</subsystem>
         <category>"Networking"</category>
         <name>"ResponseParsing"</name>
+        <identifier>?identifier</identifier>
 
         <start-pattern>
             <message>"[ID:" ?request-id "][SIZE:" ?bytes "]"</message>
@@ -122,19 +123,19 @@
         </column>
 
         <column>
-            <mnemonic>std</mnemonic>
-            <title>Std</title>
-            <type>uint64</type>
-            <expression>(integer 1)</expression>
+            <mnemonic>identifier</mnemonic>
+            <title>Identifier</title>
+            <type>os-signpost-identifier</type>
+            <expression>?identifier</expression>
         </column>
 
         <open-interval-template>
             <mnemonic>request-id</mnemonic>
             <expression>?request-id</expression>
+            <mnemonic>identifier</mnemonic>
+            <expression>?identifier</expression>
             <mnemonic>size-in-bytes</mnemonic>
             <expression>?bytes</expression>
-            <mnemonic>std</mnemonic>
-            <expression>(integer 1)</expression>
         </open-interval-template>
 
     </os-signpost-interval-schema>
@@ -324,9 +325,9 @@
             <lane>
                 <title>JSON Parsing</title>
                 <table-ref>json-parsing</table-ref>
-                <base-color>Red</base-color>
+                <base-color>Blue</base-color>
                 <plot>
-                    <value-from>std</value-from>
+                    <value-from>identifier</value-from>
                     <label-from>size-in-bytes</label-from>
                 </plot>
             </lane>
