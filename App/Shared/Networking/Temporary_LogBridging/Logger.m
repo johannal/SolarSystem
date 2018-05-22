@@ -47,7 +47,7 @@ void swift_os_signpost_impl(os_log_t log, os_signpost_id_t sid, os_signpost_type
 }
 
 - (void) requestStarted:(NSUInteger)logID url:(NSString *)url type:(NSString *)type userIdentifier:(NSString *)userIdentifier  {
-    os_signpost_interval_begin(_httpCustomLog, logID, "NetworkRequest", "Request started [ID:%ld][URL:%{public}@][TYPE:%{public}@][USER_ID:%{public}@]", (long)logID, url, type, userIdentifier);
+    os_signpost_interval_begin(_httpCustomLog, logID, "NetworkRequest", "Request started [ID:%ld][URL:%{public}@][TYPE:%{public}@][CATEGORY:%{public}@]", (long)logID, url, type, userIdentifier);
 }
 
 - (void) requestFinished:(NSUInteger)logID code:(NSInteger)code {

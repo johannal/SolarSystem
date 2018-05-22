@@ -34,11 +34,11 @@ struct MockNetworkRequest: NetworkRequest {
 
     let requestURL: String
     let identifier: UInt
-    var userIdentifierString: String = ""
+    var groupingValue: String = ""
 
     init<T>(request: Request<T>) {
         self.requestURL = request.url
-        self.userIdentifierString = request.userIdentifierString
+        self.groupingValue = request.groupingValue
         self.identifier = MockNetworkRequest._generateIdentifier()
     }
 

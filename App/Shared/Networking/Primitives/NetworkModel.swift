@@ -22,11 +22,11 @@ public struct Request<Resource> {
     let belongingPlanet: Planet?
     let data: [Resource]
 
-    var userIdentifierString: String {
+    var groupingValue: String {
         if let planet = belongingPlanet {
             return planet.name
         }
-        return ""
+        return "General"
     }
 
 

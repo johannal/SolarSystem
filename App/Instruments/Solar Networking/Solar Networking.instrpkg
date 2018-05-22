@@ -6,6 +6,7 @@
         <name>Kacper</name>
     </owner>
     <note>Package that provides instrumentation REST API calls and parsing operations.</note>
+    <import-schema>os-signpost</import-schema>
 
     <os-signpost-interval-schema>
         <id>http-requests</id>
@@ -16,7 +17,7 @@
         <name>"NetworkRequest"</name>
 
         <start-pattern>
-            <message>"Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "]"</message>
+            <message>"Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "][CATEGORY:" ?category "]"</message>
         </start-pattern>
         <end-pattern>
             <message>"Request finished [ID:" ?request-id "][CODE:" ?http-code"]"</message>
@@ -33,6 +34,13 @@
             <title>Request URL</title>
             <type>string</type>
             <expression>?url</expression>
+        </column>
+
+        <column>
+            <mnemonic>category</mnemonic>
+            <title>Request category</title>
+            <type>string</type>
+            <expression>?category</expression>
         </column>
 
         <column>
@@ -73,6 +81,8 @@
         <open-interval-template>
             <mnemonic>request-id</mnemonic>
             <expression>?request-id</expression>
+            <mnemonic>category</mnemonic>
+            <expression>?category</expression>
             <mnemonic>url</mnemonic>
             <expression>?url</expression>
             <mnemonic>request-type</mnemonic>
@@ -129,39 +139,61 @@
 
     </os-signpost-interval-schema>
 
-    <interval-schema>
-        <id>unified-network-json</id>
-        <title>Unified request and json parsing table</title>
+    <point-schema>
+        <id>request-start</id>
+        <title>Request Start Events</title>
 
-        <start-column>
-            <mnemonic>start</mnemonic>
-            <title>Start Time</title>
-            <type>start-time</type>
-        </start-column>
+        <timestamp-column>
+            <mnemonic>time</mnemonic>
+            <title>Timestamp</title>
+            <type>sample-time</type>
+        </timestamp-column>
 
-        <duration-column>
-            <mnemonic>duration</mnemonic>
-            <title>Duration</title>
-            <type>duration</type>
-        </duration-column>
-    </interval-schema>
+        <column>
+            <mnemonic>url</mnemonic>
+            <title>Request URL</title>
+            <type>string</type>
+        </column>
+
+        <column>
+            <mnemonic>category</mnemonic>
+            <title>Request category</title>
+            <type>string</type>
+        </column>
+
+        <column>
+            <mnemonic>request-type</mnemonic>
+            <title>HTTP Request Type</title>
+            <type>string</type>
+        </column>
+
+        <column>
+            <mnemonic>request-label</mnemonic>
+            <title>HTTP Request Label</title>
+            <type>string</type>
+        </column>
+
+        <column>
+            <mnemonic>identifier</mnemonic>
+            <title>Identifier</title>
+            <type>os-signpost-identifier</type>
+        </column>
+
+    </point-schema>
 
     <modeler>
-        <id>com.demo.solarsystem.request-json-unifying-modeler</id>
-        <title>Request and parsing fusion modeler</title>
-        <purpose>This modeler fusions data from request and json tables and outputs new table that holds data specific to drawing</purpose>
+        <id>com.demo.solarsystem.signpost-to-points</id>
+        <title>Generates points data out of the signpost table</title>
+        <purpose>Takes raw data from os-signpost table and puts it into resulting schema</purpose>
 
         <production-system>
-            <rule-path>fusion-modeler.clp</rule-path>
+            <rule-path>category-points.clp</rule-path>
         </production-system>
 
         <output>
-            <schema-ref>unified-network-json</schema-ref>
+            <schema-ref>request-start</schema-ref>
             <required-input>
-                <schema-ref>json-parsing</schema-ref>
-            </required-input>
-            <required-input>
-                <schema-ref>http-requests</schema-ref>
+                <schema-ref>os-signpost</schema-ref>
             </required-input>
         </output>
     </modeler>
@@ -185,36 +217,21 @@
         </create-table>
 
         <create-table>
-            <id>json-parsing</id>
-            <schema-ref>json-parsing</schema-ref>
-        </create-table>
-
-        <create-table>
-            <id>http-json-unified</id>
-            <schema-ref>unified-network-json</schema-ref>
+            <id>request-start-table</id>
+            <schema-ref>request-start</schema-ref>
         </create-table>
 
         <graph>
             <title>Endpoint requests</title>
             <lane>
                 <title></title>
-                <table-ref>http-requests</table-ref>
+                <table-ref>request-start-table</table-ref>
                 <plot-template>
-                    <instance-by>url</instance-by>
+                    <instance-by>category</instance-by>
                     <label-format>%s</label-format>
-                    <value-from>url</value-from>
-                    <color-from>request-color</color-from>
+                    <value-from>identifier</value-from>
                     <label-from>request-label</label-from>
                 </plot-template>
-            </lane>
-            <lane>
-                <title>JSON Parsing</title>
-                <table-ref>json-parsing</table-ref>
-                <base-color>Red</base-color>
-                <plot>
-                    <value-from>std</value-from>
-                    <label-from>size-in-bytes</label-from>
-                </plot>
             </lane>
         </graph>
 
@@ -267,15 +284,6 @@
             <column>http-code</column>
         </list>
 
-        <list>
-            <title>JSON Parsing operations</title>
-            <table-ref>json-parsing</table-ref>
-            <column>start</column>
-            <column>duration</column>
-            <column>request-id</column>
-            <column>size-in-bytes</column>
-        </list>
-
         <time-slice>
             <title>Active requests</title>
             <table-ref>http-requests</table-ref>
@@ -287,7 +295,96 @@
         </time-slice>
 
         <defaults>
-            <graph-height>3</graph-height>
+            <graph-height>4</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+
+    <instrument>
+        <id>com.demo.solarsystem.networking.json-parsing</id>
+        <title>JSON Parsing</title>
+        <category>Behavior</category>
+        <purpose>Displays JSON parsing operations.</purpose>
+        <icon>Network</icon>
+
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>json-parsing</id>
+            <schema-ref>json-parsing</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Endpoint requests</title>
+            <lane>
+                <title>JSON Parsing</title>
+                <table-ref>json-parsing</table-ref>
+                <base-color>Red</base-color>
+                <plot>
+                    <value-from>std</value-from>
+                    <label-from>size-in-bytes</label-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <list>
+            <title>JSON Parsing operations</title>
+            <table-ref>json-parsing</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>size-in-bytes</column>
+        </list>
+
+        <defaults>
+            <graph-height>1</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+
+    <instrument>
+        <id>com.demo.solarsystem.networking.average-started-requests</id>
+        <title>Request Load</title>
+        <category>Behavior</category>
+        <purpose>Displays started requests load</purpose>
+        <icon>Network</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>request-start-table</id>
+            <schema-ref>request-start</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Requests started</title>
+            <lane>
+                <title>Requests started</title>
+                <table-ref>request-start-table</table-ref>
+                <histogram>
+                    <nanoseconds-per-bucket>500000000</nanoseconds-per-bucket>
+                    <count></count>
+                </histogram>
+            </lane>
+        </graph>
+
+        <list>
+            <title>Requests started</title>
+            <table-ref>request-start-table</table-ref>
+            <column>url</column>
+        </list>
+
+        <defaults>
+            <graph-height>1</graph-height>
             <target-type>Running Application</target-type>
         </defaults>
 

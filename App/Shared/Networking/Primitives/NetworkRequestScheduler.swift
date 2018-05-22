@@ -28,7 +28,7 @@ final class NetworkRequestScheduler {
     }
 
     class func scheduleRequest<T: NetworkRequest>(_ request: T, handler: @escaping (T, Int, Data?)->Void) {
-        logger.requestStarted(request.identifier, url: request.requestURL, type: "GET", userIdentifier:request.userIdentifierString)
+        logger.requestStarted(request.identifier, url: request.requestURL, type: "GET", userIdentifier:request.groupingValue)
         request.perform(queue: callbackQueue) { (completedRequest, resultCode, data) in
             logger.requestFinished(request.identifier, code: resultCode)
             handler(completedRequest, resultCode, data)
