@@ -6,7 +6,7 @@
 //
 
 import os.log
-import os.signpost
+//import os.signpost
 import Foundation
 
 protocol PlanetsDetailsListener {
@@ -16,7 +16,7 @@ protocol PlanetsDetailsListener {
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
-                                        category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
+                                        category: "JSON fetching and parsing")
 
 final class PlanetUpdateService {
 
