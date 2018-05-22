@@ -142,7 +142,11 @@ extension SceneViewController: PlanetsDetailsListener {
     }
 
     var wantsAutomaticNewsFeedUpdates: Bool {
-        let wantsNewsFeedUpdates = UserDefaults.standard.bool(forKey: "AutomaticNewsFeedUpdates")
+        var wantsNewsFeedUpdates = false
+        if let displayLinkAnimationsEnVar = ProcessInfo.processInfo.environment["AutomaticNewsFeedUpdates"] {
+            let enVar: NSString = displayLinkAnimationsEnVar as NSString
+            wantsNewsFeedUpdates = enVar.boolValue
+        }
         return wantsNewsFeedUpdates
     }
 }
