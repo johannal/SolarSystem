@@ -47,9 +47,10 @@ final class MockRequestParser: RequestParser {
 
     func parse<T>() throws -> [T] {
         if delay > 0 {
-            usleep(useconds_t(delay*1000))
+            performParsing()
+        } else {
+            usleep(useconds_t(data.count/100))
         }
-        performParsing()
         return (result as? [T]) ?? []
     }
 }

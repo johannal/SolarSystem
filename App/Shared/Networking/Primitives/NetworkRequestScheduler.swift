@@ -15,7 +15,7 @@ final class NetworkRequestScheduler {
     private static let callbackQueue = DispatchQueue(label: "com.demo.SolarSystem.networkCallbacks")
     private static let schedulingQueue = DispatchQueue(label: "com.demo.SolarSystem.networkScheduling")
 
-    private static let parsingQueue = DispatchQueue(label: "com.demo.SolarSystem.jsonParsing")
+    private static let parsingQueue = DispatchQueue.main
     private static let simultaneousRequestSem = DispatchSemaphore(value: 150)
 
     // DEMO TODO: substitute in real Swift API from overlay: <rdar://problem/39305137> SOTU DEMO: Add os_signpost overlay
