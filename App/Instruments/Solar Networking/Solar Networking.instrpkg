@@ -9,7 +9,7 @@
     <import-schema>os-signpost</import-schema>
 
     <os-signpost-interval-schema>
-        <id>http-requests</id>
+        <id>http-request</id>
         <title>Aggregated HTTP requests</title>
 
         <subsystem>"com.demo.SolarSystem"</subsystem>
@@ -182,6 +182,23 @@
 
     </point-schema>
 
+    <point-schema>
+        <id>request-narrative</id>
+        <title>Requests Narrative</title>
+
+        <timestamp-column>
+            <mnemonic>time</mnemonic>
+            <title>Timestamp</title>
+            <type>sample-time</type>
+        </timestamp-column>
+
+        <column>
+            <mnemonic>narrative</mnemonic>
+            <title>Narrative</title>
+            <type>narrative-text</type>
+        </column>
+    </point-schema>
+
     <modeler>
         <id>com.demo.solarsystem.signpost-to-points</id>
         <title>Generates points data out of the signpost table</title>
@@ -213,13 +230,18 @@
         </limitations>
 
         <create-table>
-            <id>http-requests</id>
-            <schema-ref>http-requests</schema-ref>
+            <id>http-request-table</id>
+            <schema-ref>http-request</schema-ref>
         </create-table>
 
         <create-table>
             <id>request-start-table</id>
             <schema-ref>request-start</schema-ref>
+        </create-table>
+
+        <create-table>
+            <id>request-narrative-table</id>
+            <schema-ref>request-narrative</schema-ref>
         </create-table>
 
         <graph>
@@ -238,7 +260,7 @@
 
         <aggregation>
             <title>Summary</title>
-            <table-ref>http-requests</table-ref>
+            <table-ref>http-request-table</table-ref>
             <slice>
                 <column>end-present</column>
                 <equals>
@@ -275,9 +297,16 @@
             </column>
         </aggregation>
 
+        <narrative>
+            <title>Narrative</title>
+            <table-ref>request-narrative-table</table-ref>
+            <time-column>time</time-column>
+            <narrative-column>narrative</narrative-column>
+        </narrative>
+
         <list>
             <title>HTTP Requests List</title>
-            <table-ref>http-requests</table-ref>
+            <table-ref>http-request-table</table-ref>
             <column>start</column>
             <column>duration</column>
             <column>request-id</column>
@@ -287,7 +316,7 @@
 
         <time-slice>
             <title>Active requests</title>
-            <table-ref>http-requests</table-ref>
+            <table-ref>http-request-table</table-ref>
             <column>start</column>
             <column>duration</column>
             <column>request-id</column>
