@@ -89,6 +89,8 @@
 		9EDFCD5F2097297C00F4DD79 /* Earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD5E2097297C00F4DD79 /* Earth.jpg */; };
 		9EDFCD612097298B00F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD602097298B00F4DD79 /* Sun.jpg */; };
 		9EDFCD622097298B00F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD602097298B00F4DD79 /* Sun.jpg */; };
+		9EE4A73F20B4B9A100EF8E23 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EE4A73E20B4B9A100EF8E23 /* AppIcon.xcassets */; };
+		9EE4A74120B4B9B700EF8E23 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EE4A74020B4B9B700EF8E23 /* AppIcon.xcassets */; };
 		9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
@@ -260,6 +262,8 @@
 		9ED89787208F069C0081C39C /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
 		9EDFCD5E2097297C00F4DD79 /* Earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Earth.jpg; path = "Solar System/Assets.xcassets/Planet Textures/Earth.imageset/Earth.jpg"; sourceTree = SOURCE_ROOT; };
 		9EDFCD602097298B00F4DD79 /* Sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Sun.jpg; path = "Solar System/Assets.xcassets/Planet Textures/Sun.imageset/Sun.jpg"; sourceTree = SOURCE_ROOT; };
+		9EE4A73E20B4B9A100EF8E23 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
+		9EE4A74020B4B9B700EF8E23 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsViewController.swift; sourceTree = "<group>"; };
 		9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBodyNode.swift; sourceTree = "<group>"; };
 		9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyNode.swift; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 			children = (
 				8023D29620850501006DFD5F /* Unit Tests */,
 				9E4F77BB205AEA1F004C9486 /* Assets.xcassets */,
+				9EE4A74020B4B9B700EF8E23 /* AppIcon.xcassets */,
 				9EB5341C2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift */,
 				9EB5341B2082E7EC0007DB03 /* AstronomicalObjectViewItem.xib */,
 				9E4F77B7205AEA1F004C9486 /* AppDelegate.swift */,
@@ -596,6 +601,7 @@
 				9E53D15F1ECF7166002A0001 /* Gravity Simulator */,
 				9E272B5A1ED50A2000C2A5B2 /* Moon Jumper */,
 				9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */,
+				9EE4A73E20B4B9A100EF8E23 /* AppIcon.xcassets */,
 				9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */,
 				07506D6A1ECA7AE800EB7C11 /* SolarSystem-Bridging-Header.h */,
 				9EBC16DC1ECC0FB30014404F /* PlanetDetails.plist */,
@@ -946,6 +952,7 @@
 				9EC862722087AA9500E0ECC8 /* MainWindow.xib in Resources */,
 				9E4F77CA205AEB51004C9486 /* SolarSystemScene.scn in Resources */,
 				077AC7932097E37800CA1FD2 /* SolarSystemSnapshot.png in Resources */,
+				9EE4A74120B4B9B700EF8E23 /* AppIcon.xcassets in Resources */,
 				9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */,
 				9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */,
 				9EF53C6E20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn in Resources */,
@@ -968,6 +975,7 @@
 				AA6573CB20A6391D00595A9A /* pluto.webarchive in Resources */,
 				AA6573CC20A6391D00595A9A /* neptune.webarchive in Resources */,
 				AA6573C020A6387500595A9A /* mercury.webarchive in Resources */,
+				9EE4A73F20B4B9A100EF8E23 /* AppIcon.xcassets in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,
 				9E6ADE0E1ECCF8F0008B2CA8 /* SolarSystemScene.scn in Resources */,
@@ -1257,7 +1265,7 @@
 		9E4F77C2205AEA1F004C9486 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Mac";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -1280,7 +1288,7 @@
 		9E4F77C3205AEA1F004C9486 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Mac";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
