@@ -18,11 +18,27 @@ At the start of parsing, I'll add this call to mark the beginning of the interva
 
     *Add os_signpost_interval_begin call*
 
-And I'll mark the end of the internal:
+And I'll mark the end of the internal here:
 
     *Add os_signpost_interval_end call*
 
+Great part about using these APIs -- I don't have to capture any timestamps or do any math. They'll automatically calculate the time delta for me.
 
+I've my logging in place, so let's profile the app in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
+
+As the data comes in, I can see all these time ranges here. Thats the interval logging I just added, where I'm parsing JSON. You can see theres a lot of it happening, and its all on the main thread -- a great reciept for a laggie UI! 
+
+So, really quick and easy to visualize your own data right in Instruments.
+
+## Part 2 — Custom Instruments
+
+[figure out how to introduce feature]
+
+My app does a lot more than just JSON parsing. I want to help our team maintain great performance over time, so I created a Custom Instruments package to help us understand how all of the sub-systems interact with each other.
+
+I'll install it by double clicking the icon. [can send share it]
+
+[more stuff]
 
 ## Setup
 
