@@ -102,8 +102,13 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "DisplayLinkAnimations"
-            value = "1"
-            isEnabled = "YES">
+            value = "YES"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "AutomaticNewsFeedUpdates"
+            value = "YES"
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
       <AdditionalOptions>
