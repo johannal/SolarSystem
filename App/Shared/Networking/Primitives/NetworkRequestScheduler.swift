@@ -41,6 +41,11 @@ final class NetworkRequestScheduler {
         }
     }
 
+    private class func shouldGenerateDuplicateRequest() -> Bool {
+        let seed = arc4random()
+        return seed % 80 == 0
+    }
+
     class func scheduleRequest(_ request: NetworkRequest, handler: @escaping (NetworkRequest, Int, Data?)->Void) {
         os_log("PLANET: %{public}@ URL: %{public}@", log: legacyLog, type: .debug, request.groupingValue, request.requestURL)
         if let cannedParser = fakeParserForRequest(request) {
@@ -55,6 +60,10 @@ final class NetworkRequestScheduler {
                 handler(completedRequest, resultCode, data)
             }
         }
+        let time = DispatchTime.now() + .milliseconds(Int(25))
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
+            scheduleRequest(request, handler: handler)
+        })
     }
 
     private class func fakeParserForRequest(_ request: NetworkRequest) -> RequestParser? {

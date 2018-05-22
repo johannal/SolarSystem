@@ -239,12 +239,13 @@
     </modeler>
 
     <modeler>
-        <id>com.demo.solarsystem.unnecessary-retry-detection</id>
-        <title>Unnecessary retry detector</title>
-        <purpose>Generates warnings into narrative table whenever unnecessary retry happens.</purpose>
+        <id>com.demo.solarsystem.antipatterns</id>
+        <title>Requests anti-patterns modeler</title>
+        <purpose>Generates warnings into narrative table whenever anti-patterns are detected</purpose>
 
         <production-system>
             <rule-path>unnecessary-retry-detection.clp</rule-path>
+            <rule-path>duplicate-overlapping-detection.clp</rule-path>
         </production-system>
 
         <output>
@@ -254,23 +255,6 @@
             </required-input>
             <required-input>
                 <schema-ref>http-request</schema-ref>
-            </required-input>
-        </output>
-    </modeler>
-
-    <modeler>
-        <id>com.demo.solarsystem.previous-request-in-progress</id>
-        <title>Detecting duplicate overlapping requests</title>
-        <purpose>Detects duplicate overlapping requests happening at the same time</purpose>
-
-        <production-system>
-            <rule-path>duplicate-overlapping-detection.clp</rule-path>
-        </production-system>
-
-        <output>
-            <schema-ref>request-narrative</schema-ref>
-            <required-input>
-                <schema-ref>os-signpost</schema-ref>
             </required-input>
             <required-input>
                 <schema-ref>request-start</schema-ref>
