@@ -19,6 +19,8 @@
 		07B32AB51ECF4C870098E49F /* SolarSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB41ECF4C870098E49F /* SolarSystemView.swift */; };
 		07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB61ECF59A60098E49F /* Orbit.swift */; };
 		07FE1DAF20B34C1A00C47831 /* AstronomicalObjectViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5341C2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift */; };
+		101D6B7A20B4B7D900A1CAA3 /* UpdateServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */; };
+		101D6B7B20B4B7EB00A1CAA3 /* SignpostLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */; };
 		106E67B7209CFC500096F217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67B6209CFC500096F217 /* NetworkRequest.swift */; };
 		106E67B8209CFC500096F217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67B6209CFC500096F217 /* NetworkRequest.swift */; };
 		106E67BB209CFCA90096F217 /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67BA209CFCA90096F217 /* MockNetworkRequest.swift */; };
@@ -1074,8 +1076,10 @@
 				EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
 				9EAE88631ED2504200EB5C1E /* GravitySimulatorScene.swift in Sources */,
+				101D6B7B20B4B7EB00A1CAA3 /* SignpostLogger.swift in Sources */,
 				EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */,
 				106E67B7209CFC500096F217 /* NetworkRequest.swift in Sources */,
+				101D6B7A20B4B7D900A1CAA3 /* UpdateServiceExtensions.swift in Sources */,
 				9E272B5E1ED50DB600C2A5B2 /* HeightIndicatorView.swift in Sources */,
 				07B32AB51ECF4C870098E49F /* SolarSystemView.swift in Sources */,
 				9E43B2781ECC1B1300404A81 /* SceneHUDViewController.swift in Sources */,
