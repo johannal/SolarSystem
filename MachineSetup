@@ -44,9 +44,9 @@ git checkout -b helper_branch
 git branch --set-upstream-to master
 
 # Apply and commit
-git cherry-pick 7debad7879fbe77b2b223982775820ee8ab141ed
+git cherry-pick ad32012283bf17513852304e5993e0cf225ff9ce
 
-git cherry-pick -n 7cfe10572ee1abc50dd482f89ef48a729209586c
+git cherry-pick -n a473462d5466f6c045f6cd393f05593c360d9d4d
 
 osascript AppleAutomation.scpt
 
