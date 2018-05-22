@@ -5,7 +5,7 @@
     <owner>
         <name>Kacper</name>
     </owner>
-    <note>Package that provides instrumentation REST API calls and parsing operations.</note>
+    <note>Package that provides instrumentation for REST API calls and parsing operations.</note>
     <import-schema>os-signpost</import-schema>
 
     <os-signpost-interval-schema>
@@ -353,7 +353,7 @@
         <id>com.demo.solarsystem.networking.average-started-requests</id>
         <title>Request Load</title>
         <category>Behavior</category>
-        <purpose>Displays started requests load</purpose>
+        <purpose>Displays started requests histogram over time</purpose>
         <icon>Network</icon>
         <limitations>
             <disable>
