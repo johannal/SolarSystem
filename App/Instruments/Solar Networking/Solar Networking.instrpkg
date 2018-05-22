@@ -481,6 +481,11 @@
             <schema-ref>http-request</schema-ref>
         </create-table>
 
+        <create-table>
+            <id>request-narrative-table</id>
+            <schema-ref>request-narrative</schema-ref>
+        </create-table>
+
         <graph>
             <title>Requests</title>
             <lane>
@@ -492,6 +497,13 @@
                 </plot>
             </lane>
         </graph>
+
+        <narrative>
+            <title>Narrative</title>
+            <table-ref>request-narrative-table</table-ref>
+            <time-column>time</time-column>
+            <narrative-column>narrative</narrative-column>
+        </narrative>
 
         <time-slice>
             <title>Active requests</title>
