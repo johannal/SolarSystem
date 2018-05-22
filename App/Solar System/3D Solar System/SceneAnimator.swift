@@ -66,8 +66,10 @@ class SceneAnimator: NSObject {
         let elapsedTime = timestamp - lastTimestamp
         lastTimestamp = timestamp
         
+        let delay = Double(arc4random_uniform(600) + 200) / 1000.0
+        RunLoop.current.run(until: Date().addingTimeInterval(delay))
+        
         // Get elapsed time by calculating offset between last time stamp and now
         sceneController.updateAnimatedObjectsWithElapsedTime(elapsedTime)
     }
-    
 }
