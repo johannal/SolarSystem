@@ -40,7 +40,6 @@ class SceneAnimator: NSObject {
     }
     
     func setupDisplayLinkAnimations() {
-        if SceneAnimator.wantsDisplayLinkAnimations {
             // Setup display link
             #if os(macOS)
             timer = DisplayLink(callback: {
@@ -51,7 +50,6 @@ class SceneAnimator: NSObject {
             timer = CADisplayLink(target: self, selector: #selector(tick))
             timer?.add(to: .main, forMode: .defaultRunLoopMode)
             #endif
-        }
     }
     
     // Display Link callback

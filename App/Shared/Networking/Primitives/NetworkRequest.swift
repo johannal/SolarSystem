@@ -7,13 +7,16 @@
 
 import Foundation
 
-protocol NetworkRequest: Equatable {
+enum UpdateError: Error {
+    case requestFailed
+}
+
+protocol NetworkRequest {
     var requestURL: String { get }
     var identifier: UInt { get }
-    var groupingValue: String { get }
+    var groupingValue: String { get set }
 
     init(requestURL: String)
-    init<T>(request: Request<T>)
 
-    func perform(queue: DispatchQueue, completion: @escaping (Self, Int, Data?)->())
+    func perform(queue: DispatchQueue, completion: @escaping (NetworkRequest, Int, Data?)->())
 }

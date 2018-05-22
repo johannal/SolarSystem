@@ -17,18 +17,26 @@ private struct Owner: Codable {
 
 final class MockRequestParser: RequestParser {
     private let data: Data
+    private let result: [Any]?
+    private let delay: UInt
     required init(data: Data) {
-        self.data = data;
+        self.data = data
+        self.result = nil
+        self.delay = 0
+    }
+    required init(cannedResult: [Any]?, parsingMilliseconds: UInt) {
+        self.data = Data()
+        self.result = cannedResult
+        self.delay = parsingMilliseconds
     }
 
     var bytes: Int {
-        return data.count
+        return max(data.count, Int(delay*100))
     }
 
     private func performParsing() {
-        let length = data.count
         let owner = Owner(firstName: "John", lastName: "Appleseed", email: "jappleseed@apple.com", age: 40, city: "Cupertino")
-        let owners = Array(repeating: owner, count: length)
+        let owners = Array(repeating: owner, count: bytes)
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
         do {
@@ -38,7 +46,10 @@ final class MockRequestParser: RequestParser {
     }
 
     func parse<T>() throws -> [T] {
+        if delay > 0 {
+            usleep(useconds_t(delay*1000))
+        }
         performParsing()
-        return []
+        return (result as? [T]) ?? []
     }
 }

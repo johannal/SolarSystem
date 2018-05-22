@@ -14,7 +14,6 @@
 
 @implementation Logger {
     os_log_t _httpCustomLog;
-    os_log_t _pointsOfInterestLog;
 }
 
 void swift_os_signpost_impl(os_log_t log, os_signpost_id_t sid, os_signpost_type_t type, const char *name, NSString *rendered) {
@@ -31,18 +30,15 @@ void swift_os_signpost_impl(os_log_t log, os_signpost_id_t sid, os_signpost_type
     self = [super init];
     if (self) {
         _httpCustomLog = os_log_create("com.demo.SolarSystem", "Networking");
-//        _pointsOfInterestLog = os_log_create("com.demo.SolarSystem", "PointsOfInterest");
     }
     return self;
 }
 
 - (void) parsingStarted:(NSUInteger)identifier dataSize:(NSInteger)dataSize {
-//    os_signpost_interval_begin(_pointsOfInterestLog, identifier, "JSONParsing", "Started parsing data of size %lu", (unsigned long)dataSize);
     os_signpost_interval_begin(_httpCustomLog, identifier, "ResponseParsing", "[ID:%ld][SIZE:%ld]", (long)identifier, dataSize);
 }
 
 - (void) parsingFinished:(NSUInteger)identifier {
-//    os_signpost_interval_end(_pointsOfInterestLog, identifier, "JSONParsing", "Finished parsing");
     os_signpost_interval_end(_httpCustomLog, identifier, "ResponseParsing", "[ID:%ld]", (long)identifier);
 }
 

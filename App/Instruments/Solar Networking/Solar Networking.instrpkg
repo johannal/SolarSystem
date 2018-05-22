@@ -38,7 +38,7 @@
 
         <column>
             <mnemonic>category</mnemonic>
-            <title>Request category</title>
+            <title>Category</title>
             <type>string</type>
             <expression>?category</expression>
         </column>
@@ -59,7 +59,7 @@
 
         <column>
             <mnemonic>http-code</mnemonic>
-            <title>HTTP Response code</title>
+            <title>Response Code</title>
             <type>uint64</type>
             <expression>?http-code</expression>
         </column>
@@ -158,7 +158,7 @@
 
         <column>
             <mnemonic>category</mnemonic>
-            <title>Request category</title>
+            <title>Category</title>
             <type>string</type>
         </column>
 
@@ -274,7 +274,7 @@
                     <instance-by>category</instance-by>
                     <label-format>%s</label-format>
                     <value-from>identifier</value-from>
-                    <label-from>request-label</label-from>
+                    <label-from>url</label-from>
                 </plot-template>
             </lane>
         </graph>
@@ -289,6 +289,9 @@
                 </equals>
             </slice>
             <hierarchy>
+                <level>
+                    <column>category</column>
+                </level>
                 <level>
                     <column>url</column>
                 </level>
@@ -334,16 +337,6 @@
             <column>url</column>
             <column>http-code</column>
         </list>
-
-        <time-slice>
-            <title>Active requests</title>
-            <table-ref>http-request-table</table-ref>
-            <column>start</column>
-            <column>duration</column>
-            <column>request-id</column>
-            <column>url</column>
-            <column>http-code</column>
-        </time-slice>
 
         <defaults>
             <graph-height>4</graph-height>
@@ -422,14 +415,14 @@
                 <title>Requests started</title>
                 <table-ref>request-start-table</table-ref>
                 <histogram>
-                    <nanoseconds-per-bucket>500000000</nanoseconds-per-bucket>
+                    <nanoseconds-per-bucket>10000000</nanoseconds-per-bucket>
                     <count></count>
                 </histogram>
             </lane>
         </graph>
 
         <list>
-            <title>Requests started</title>
+            <title>Requests Started</title>
             <table-ref>request-start-table</table-ref>
             <column>url</column>
         </list>
@@ -440,6 +433,52 @@
         </defaults>
 
     </instrument>
+
+    <instrument>
+        <id>com.demo.solarsystem.networking.request-intervals</id>
+        <title>Request Intervals</title>
+        <category>Behavior</category>
+        <purpose>Records and displays concurrent request intervals</purpose>
+        <icon>Network</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>http-requests</id>
+            <schema-ref>http-request</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Requests</title>
+            <lane>
+                <title>Request Intervals</title>
+                <table-ref>http-requests</table-ref>
+                <plot>
+                    <value-from>url</value-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <time-slice>
+            <title>Active requests</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </time-slice>
+
+        <defaults>
+            <graph-height>1</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+
 
     <template>
         <import-from-file>Solar System.tracetemplate</import-from-file>

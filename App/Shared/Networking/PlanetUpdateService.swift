@@ -6,48 +6,42 @@
 //
 
 import os.log
+import os.signpost
 import Foundation
 
 protocol PlanetsDetailsListener {
     func updateWithPlanets(_ planets: [SolarSystemPlanet]?, _ error: Error?)
-}
-
-enum PlanetUpdateServiceError: Error {
-    case requestFailed
+    func updateWithMoons(_ moons: [SolarSystemMoon]?, forPlanet: SolarSystemPlanet)
 }
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
-                                       category: "JSON Fetching and Parsing")
+                                        category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
 
-final class PlanetUpdateService<RequestType: NetworkRequest> {
-    
-    typealias ArrayCompletionBlock<T> = ([T]?, Error?) -> Void
-    typealias ErrorType = PlanetUpdateServiceError
+final class PlanetUpdateService {
 
     func update(listener: PlanetsDetailsListener) {
         
-        // log that we're about to queue up a network request for solars system details.
-        os_log("Request Solar System details", log: solarSystemLog, type: .debug)
+        // Log that we're about to queue up a network request for solars system details.
+        os_log("Requesting Solar System details", log: solarSystemLog, type: .debug)
 
-        request(.planets) { [weak self] (planets: [SolarSystemPlanet]?, error: Error?) in
+        refreshPlanets { planets, error in
+            // Update our listener with news and planet statistics
             listener.updateWithPlanets(planets, error)
-            
-            guard let planets = planets else { return }
-            
-            // for each plannet, get it's details and moons.
-            for planet in planets {
-                self?.fetchPlanetDetails(for: planet)
-                self?.fetchPlanetMoons(for: planet)
+
+            // Get details about each planet's satellites
+            for planet in planets! {
+                self.refreshMoons(for: planet) { moons, _ in
+                    listener.updateWithMoons(moons, forPlanet: planet)
+                }
             }
         }
     }
 
-    private func performRequest<T>(request: Request<T>, completion: @escaping ArrayCompletionBlock<T>) {
-        let request = RequestType(request: request)
+    func performRequest<T>(request: NetworkRequest, completion: @escaping ArrayCompletion<T>) {
         NetworkRequestScheduler.scheduleRequest(request) { (request, resultCode, data) in
             guard let responseData = data else {
-                completion(nil, ErrorType.requestFailed)
+                completion(nil, UpdateError.requestFailed)
                 return
             }
 
@@ -66,48 +60,4 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    private func fetchPlanetDetails(for planet: SolarSystemPlanet) {
-        request(Request<Any>.photo(of: planet)) { (_, _) in }
-        request(Request<Any>.neighbours(of: planet)) { (_, _) in }
-        request(Request<Any>.news(about: planet)) { (_, _) in }
-    }
-
-    private func fetchPlanetMoons(for planet: SolarSystemPlanet) {
-        request(Request<SolarSystemMoon>.moons(for: planet)) { [weak self] (moons: [SolarSystemMoon]?, error: Error?) in
-            if let moons = moons {
-                for moon in moons {
-                    self?.request(Request<Any>.photo(of: moon)) { (_, _) in }
-                    self?.request(Request<Any>.news(about: moon)) { (_, _) in }
-                }
-            }
-        }
-    }
-
-    private func request<Resource>(_ request: Request<Resource>, completion: @escaping ArrayCompletionBlock<Resource>) {
-        if let planet = request.belongingPlanet {
-            os_log("PLANET: %{public}@ URL: %{public}@", log: solarSystemLog, type: .debug, planet.name, request.url)
-        }
-
-        performRequest(request: request) { (array: [Resource]?, error: Error?) in
-            if error == nil {
-                completion(request.data, nil)
-            } else {
-                completion(nil, error)
-            }
-        }
-    }
 }

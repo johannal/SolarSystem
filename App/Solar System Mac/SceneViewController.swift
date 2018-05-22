@@ -17,7 +17,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     private var appearanceManager: SceneViewAppearanceManager?
     private var particleSystemsAnimator: ParticleSystemsAnimator?
     private var sceneController: SceneController?
-    private let networkService = PlanetUpdateService<MockNetworkRequest>()
+    private let networkService = PlanetUpdateService()
     private var newsRequestDispatchTimer: DispatchSourceTimer?
 
     // MARK: - Outlets
@@ -49,7 +49,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         if wantsAutomaticNewsFeedUpdates {
             startReceivingNewsFeedUpdates()
         }
-        
+
         // Setup appearance manager
 //        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
 //        self.appearanceManager = appearanceManager
@@ -134,9 +134,13 @@ extension SceneViewController: PlanetsDetailsListener {
     // MARK: - Network Update Callbacks
 
     internal func updateWithPlanets(_ planets: [SolarSystemPlanet]?, _ error: Error?) {
-        // TODO: refresh UI with updated news feed on planets, dwarf planets, and exoplanets
+        // TODO: refresh UI with updated planet data
     }
-    
+
+    internal func updateWithMoons(_ moons: [SolarSystemMoon]?, forPlanet: SolarSystemPlanet) {
+        // TODO: refresh UI with updated moon data
+    }
+
     var wantsAutomaticNewsFeedUpdates: Bool {
         let wantsNewsFeedUpdates = UserDefaults.standard.bool(forKey: "AutomaticNewsFeedUpdates")
         return wantsNewsFeedUpdates

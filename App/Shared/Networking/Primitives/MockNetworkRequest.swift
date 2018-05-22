@@ -13,11 +13,11 @@ struct MockNetworkRequest: NetworkRequest {
         return ((random % 7) == 0) ? 500 : 200
     }
     static private func _randomDeadline() -> DispatchTime {
-        let requestMilisec = arc4random() % 1500 + 400
+        let requestMilisec = arc4random() % 150 + 50
         return DispatchTime.now() + .milliseconds(Int(requestMilisec))
     }
     static private func _randomData() -> Data {
-        let dataSize = arc4random() % 75000 + 20000
+        let dataSize = arc4random() % 75 + 20
         return Data(count: Int(dataSize))
     }
 
@@ -36,21 +36,15 @@ struct MockNetworkRequest: NetworkRequest {
     let identifier: UInt
     var groupingValue: String = ""
 
-    init<T>(request: Request<T>) {
-        self.requestURL = request.url
-        self.groupingValue = request.groupingValue
-        self.identifier = MockNetworkRequest._generateIdentifier()
-    }
-
     init(requestURL: String) {
         self.requestURL = requestURL
         self.identifier = MockNetworkRequest._generateIdentifier()
     }
 
-    func perform(queue: DispatchQueue, completion: @escaping (MockNetworkRequest, Int, Data?) -> ()) {
+    func perform(queue: DispatchQueue, completion: @escaping (NetworkRequest, Int, Data?) -> ()) {
         queue.asyncAfter(deadline: MockNetworkRequest._randomDeadline()) {
             let retCode = MockNetworkRequest._randomReturnCode()
-            let retData = (retCode == 200) ? MockNetworkRequest._randomData() : nil
+            let retData = MockNetworkRequest._randomData()
             completion(self, retCode, retData)
         }
     }

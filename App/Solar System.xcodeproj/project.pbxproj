@@ -27,6 +27,7 @@
 		106E67BF209D02FE0096F217 /* RequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67BD209D02FE0096F217 /* RequestParser.swift */; };
 		106E67C1209D03160096F217 /* MockRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67C0209D03160096F217 /* MockRequestParser.swift */; };
 		106E67C2209D03160096F217 /* MockRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67C0209D03160096F217 /* MockRequestParser.swift */; };
+		1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */; };
 		10B14E3620A51DF800F85F06 /* NetworkRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */; };
 		4990BDE720AE2E7900A9155F /* ExtraSettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */; };
 		4990BDE820AE2E7900A9155F /* ExtraSharePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */; };
@@ -198,6 +199,7 @@
 		106E67BA209CFCA90096F217 /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
 		106E67BD209D02FE0096F217 /* RequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParser.swift; sourceTree = "<group>"; };
 		106E67C0209D03160096F217 /* MockRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestParser.swift; sourceTree = "<group>"; };
+		1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServiceExtensions.swift; sourceTree = "<group>"; };
 		10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestScheduler.swift; sourceTree = "<group>"; };
 		4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSettingsUITests.swift; sourceTree = "<group>"; };
 		4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSharePlanetTests.swift; sourceTree = "<group>"; };
@@ -287,7 +289,7 @@
 		B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNoteCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramicCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE51ED738470009A958 /* CameraModelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTransition.swift; sourceTree = "<group>"; };
-		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = com.apple.instruments.instrdst; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B88B5209741EC00244A7A /* ParticleSystemsAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystemsAnimator.swift; sourceTree = "<group>"; };
 		BB4F7554209B3B75003C8DF9 /* Solar System Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Solar System Mac-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB4F7555209B3B75003C8DF9 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				106E67C0209D03160096F217 /* MockRequestParser.swift */,
 				10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */,
 				BBB6002920B33E1900D0C304 /* NetworkModel.swift */,
+				1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -555,7 +558,7 @@
 				0734F5191ECBCB7500D778C5 /* Resources */,
 				80C68FBB208CF32F00778EB0 /* PlanetPhysics */,
 				AA6657572098E31E007AB190 /* Solar System iOS UI Tests */,
-				BBA9B65020AA4CF100258FEB /* Instruments */,
+				BBA9B65020AA4CF100258FEB /* Instrumentation */,
 				9EC407F91EBFEAEB00F7F8A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -692,12 +695,12 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		BBA9B65020AA4CF100258FEB /* Instruments */ = {
+		BBA9B65020AA4CF100258FEB /* Instrumentation */ = {
 			isa = PBXGroup;
 			children = (
 				BBA9B65420AA4D0F00258FEB /* Solar Networking */,
 			);
-			name = Instruments;
+			name = Instrumentation;
 			sourceTree = "<group>";
 		};
 		BBA9B65420AA4D0F00258FEB /* Solar Networking */ = {
@@ -1008,6 +1011,7 @@
 				9E4F77C9205AEB51004C9486 /* SceneController.swift in Sources */,
 				9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */,
 				07FE1DAF20B34C1A00C47831 /* AstronomicalObjectViewItem.swift in Sources */,
+				1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */,
 				9EF53C762083216E00B11FC4 /* SceneViewAppearanceManager.swift in Sources */,
 				BB4F755B209B3EF1003C8DF9 /* PlanetUpdateService.swift in Sources */,
 				9E4F77CB205AF052004C9486 /* OrbitingBodyNode.swift in Sources */,
@@ -1471,6 +1475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -1481,6 +1486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
