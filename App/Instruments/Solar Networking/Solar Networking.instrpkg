@@ -216,6 +216,27 @@
         </output>
     </modeler>
 
+
+    <modeler>
+        <id>com.demo.solarsystem.unnecessary-retry-detection</id>
+        <title>Unnecessary retry detector</title>
+        <purpose>Generates warnings into narrative table whenever unnecessary retry happens.</purpose>
+
+        <production-system>
+            <rule-path>unnecessary-retry-detection.clp</rule-path>
+        </production-system>
+
+        <output>
+            <schema-ref>request-narrative</schema-ref>
+            <required-input>
+                <schema-ref>os-signpost</schema-ref>
+            </required-input>
+            <required-input>
+                <schema-ref>http-request</schema-ref>
+            </required-input>
+        </output>
+    </modeler>
+
     <instrument>
         <id>com.demo.solarsystem.networking.http-activity</id>
         <title>HTTP Activity</title>
