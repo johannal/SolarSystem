@@ -10,7 +10,7 @@ import Foundation
 struct MockNetworkRequest: NetworkRequest {
     static private func _randomReturnCode() -> Int {
         let random = arc4random()
-        return ((random % 7) == 0) ? 500 : 200
+        return ((random % 14) == 0) ? 500 : 200
     }
     static private func _randomDeadline() -> DispatchTime {
         let requestMilisec = arc4random() % 150 + 50

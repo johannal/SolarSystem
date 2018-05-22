@@ -76,7 +76,7 @@
             <mnemonic>request-color</mnemonic>
             <title>Request Color</title>
             <type>event-concept</type>
-            <expression>(switch ?http-code (case 200 then "Green") (default "Red"))</expression>
+            <expression>(switch ?http-code (case 200 then "Blue") (default "Red"))</expression>
         </column>
 
         <open-interval-template>
@@ -254,6 +254,26 @@
             </required-input>
             <required-input>
                 <schema-ref>http-request</schema-ref>
+            </required-input>
+        </output>
+    </modeler>
+
+    <modeler>
+        <id>com.demo.solarsystem.previous-request-in-progress</id>
+        <title>Detecting duplicate overlapping requests</title>
+        <purpose>Detects duplicate overlapping requests happening at the same time</purpose>
+
+        <production-system>
+            <rule-path>duplicate-overlapping-detection.clp</rule-path>
+        </production-system>
+
+        <output>
+            <schema-ref>request-narrative</schema-ref>
+            <required-input>
+                <schema-ref>os-signpost</schema-ref>
+            </required-input>
+            <required-input>
+                <schema-ref>request-start</schema-ref>
             </required-input>
         </output>
     </modeler>
@@ -484,6 +504,7 @@
                 <table-ref>http-requests</table-ref>
                 <plot>
                     <value-from>url</value-from>
+                    <color-from>request-color</color-from>
                 </plot>
             </lane>
         </graph>

@@ -290,7 +290,7 @@
 		B1ECAEE01ED737F40009A958 /* ObjectOfNoteCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOfNoteCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE21ED738110009A958 /* PanoramicCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramicCameraModel.swift; sourceTree = "<group>"; };
 		B1ECAEE51ED738470009A958 /* CameraModelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTransition.swift; sourceTree = "<group>"; };
-		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = com.apple.instruments.instrdst; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B88B5209741EC00244A7A /* ParticleSystemsAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystemsAnimator.swift; sourceTree = "<group>"; };
 		BB4F7554209B3B75003C8DF9 /* Solar System Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Solar System Mac-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB4F7555209B3B75003C8DF9 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
@@ -304,6 +304,7 @@
 		BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignpostLogger.swift; sourceTree = "<group>"; };
 		BBC87A4320AB4A71008DFA64 /* category-points.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "category-points.clp"; sourceTree = "<group>"; };
 		BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "unnecessary-retry-detection.clp"; sourceTree = "<group>"; };
+		BBE4C9E820B49A180082679D /* duplicate-overlapping-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "duplicate-overlapping-detection.clp"; sourceTree = "<group>"; };
 		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
 		D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDays.swift; sourceTree = "<group>"; };
 		EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransNeptunianObject.swift; sourceTree = "<group>"; };
@@ -712,6 +713,7 @@
 				BBC87A4320AB4A71008DFA64 /* category-points.clp */,
 				101D6B7920B4912100A1CAA3 /* load-modeling.clp */,
 				BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */,
+				BBE4C9E820B49A180082679D /* duplicate-overlapping-detection.clp */,
 			);
 			name = "Solar Networking";
 			path = "Instruments/Solar Networking";
