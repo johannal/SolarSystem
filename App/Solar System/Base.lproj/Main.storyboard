@@ -89,6 +89,7 @@
                             <constraint firstAttribute="bottom" secondItem="2zO-oN-32M" secondAttribute="bottom" id="C04-jH-my4"/>
                             <constraint firstItem="Rut-9I-CuO" firstAttribute="bottom" secondItem="gRG-9S-haf" secondAttribute="bottom" constant="12" id="NEU-sA-ZZq"/>
                             <constraint firstItem="Rut-9I-CuO" firstAttribute="trailing" secondItem="2zO-oN-32M" secondAttribute="trailing" id="arg-N2-QJP"/>
+                            <constraint firstItem="gRG-9S-haf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lUF-hA-QQz" secondAttribute="trailing" id="i0U-ri-IBe"/>
                             <constraint firstItem="2zO-oN-32M" firstAttribute="leading" secondItem="Rut-9I-CuO" secondAttribute="leading" id="vXt-kg-Sts"/>
                             <constraint firstItem="Rut-9I-CuO" firstAttribute="bottom" secondItem="lUF-hA-QQz" secondAttribute="bottom" constant="12" id="wQW-Uc-scP"/>
                             <constraint firstItem="Rut-9I-CuO" firstAttribute="trailing" secondItem="gRG-9S-haf" secondAttribute="trailing" constant="16" id="yvV-0P-Q3o"/>
@@ -590,7 +591,7 @@
                                 <segue destination="IhB-fm-1og" kind="custom" customClass="DismissSegue" customModule="Solar_System_iOS" customModuleProvider="target" id="u8i-A6-MtV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="7OM-N2-UCn">
+                        <barButtonItem key="rightBarButtonItem" id="7OM-N2-UCn">
                             <view key="customView" contentMode="scaleToFill" id="HRa-7E-jKH">
                                 <rect key="frame" x="276" y="5.5" width="83" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
