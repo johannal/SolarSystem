@@ -1,7 +1,6 @@
 ;  unnecessary-retry-detection.clp
 ;  Solar System
 ;
-;  Created by Kacper Harasim on 5/22/18.
 ;  Copyright © 2018 Apple. All rights reserved.
 
 

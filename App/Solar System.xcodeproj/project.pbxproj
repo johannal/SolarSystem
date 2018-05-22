@@ -195,6 +195,7 @@
 		0798944D1ECA0B2E00C93E64 /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
 		07B32AB41ECF4C870098E49F /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		07B32AB61ECF59A60098E49F /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
+		101D6B7920B4912100A1CAA3 /* load-modeling.clp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.clips; path = "load-modeling.clp"; sourceTree = "<group>"; };
 		106E67B6209CFC500096F217 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		106E67BA209CFCA90096F217 /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
 		106E67BD209D02FE0096F217 /* RequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParser.swift; sourceTree = "<group>"; };
@@ -709,6 +710,7 @@
 				BBA9B65B20AA4DBE00258FEB /* Solar System.tracetemplate */,
 				BBA9B65520AA4D0F00258FEB /* Solar Networking.instrpkg */,
 				BBC87A4320AB4A71008DFA64 /* category-points.clp */,
+				101D6B7920B4912100A1CAA3 /* load-modeling.clp */,
 				BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */,
 			);
 			name = "Solar Networking";

@@ -7,6 +7,7 @@
     </owner>
     <note>Package that provides instrumentation for REST API calls and parsing operations.</note>
     <import-schema>os-signpost</import-schema>
+    <import-schema>tick</import-schema>
 
     <os-signpost-interval-schema>
         <id>http-request</id>
@@ -199,6 +200,15 @@
         </column>
     </point-schema>
 
+    <interval-schema>
+        <id>solar-network-request-load</id>
+        <title>Solar Network Request Load</title>
+        <start-column> <mnemonic>start</mnemonic> <title>Timestamp</title> <type>start-time</type> </start-column>
+        <duration-column> <mnemonic>duration</mnemonic> <title>Duration</title> <type>duration</type> </duration-column>
+        <column> <mnemonic>load</mnemonic> <title>Request Load</title> <type>load</type> </column>
+        <column> <mnemonic>load-commitment</mnemonic> <title>Request Load Commitment</title> <type>commitment</type> </column>
+    </interval-schema>
+
     <modeler>
         <id>com.demo.solarsystem.signpost-to-points</id>
         <title>Generates points data out of the signpost table</title>
@@ -216,6 +226,17 @@
         </output>
     </modeler>
 
+    <modeler>
+        <id>com.demo.solarsystem.request-load</id>
+        <title>Solar System Network Request Load Modeler</title>
+        <purpose>Models the network intervals into a load average</purpose>
+
+        <production-system> <rule-path>load-modeling.clp</rule-path> </production-system>
+        <output> <schema-ref>solar-network-request-load</schema-ref>
+            <required-input> <schema-ref>http-request</schema-ref> </required-input>
+            <required-input> <schema-ref>tick</schema-ref> </required-input>
+        </output>
+    </modeler>
 
     <modeler>
         <id>com.demo.solarsystem.unnecessary-retry-detection</id>
@@ -409,15 +430,20 @@
             <schema-ref>request-start</schema-ref>
         </create-table>
 
+        <create-table>
+            <id>request-load</id>
+            <schema-ref>solar-network-request-load</schema-ref>
+        </create-table>
+
         <graph>
-            <title>Requests started</title>
+            <title>Active Requests</title>
             <lane>
-                <title>Requests started</title>
-                <table-ref>request-start-table</table-ref>
-                <histogram>
-                    <nanoseconds-per-bucket>10000000</nanoseconds-per-bucket>
-                    <count></count>
-                </histogram>
+                <title>Request Average (100ms)</title>
+                <table-ref>request-load</table-ref>
+                <plot>
+                    <value-from>load</value-from>
+                    <color-from>load-commitment</color-from>
+                </plot>
             </lane>
         </graph>
 
