@@ -16,7 +16,7 @@ protocol PlanetsDetailsListener {
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
-                                        category: "JSON fetching and parsing")
+                                        category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
 
 final class PlanetUpdateService {
 
@@ -26,6 +26,7 @@ final class PlanetUpdateService {
         os_log("Requesting Solar System details", log: solarSystemLog, type: .debug)
 
         refreshPlanets { planets, error in
+            
             // Update our listener with news and planet statistics
             listener.updateWithPlanets(planets, error)
 
@@ -47,6 +48,8 @@ final class PlanetUpdateService {
 
             NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { (parser) in
 
+                os_signpost_interval_begin(solarSystemLog, request.identifier, "JSONParsing", "Started parsing data of size \(responseData.count)");
+                
                 do {
                     let result: [T] = try parser.parse()
                     completion(result, nil)
@@ -56,6 +59,8 @@ final class PlanetUpdateService {
                     completion(nil, error)
                 }
 
+                os_signpost_interval_end(solarSystemLog, request.identifier, "JSONParsing", "Finished parsing");
+                
             }
         }
     }
