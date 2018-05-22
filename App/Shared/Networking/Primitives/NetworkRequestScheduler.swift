@@ -58,6 +58,12 @@ final class NetworkRequestScheduler {
                 simultaneousRequestSem.signal()
                 logger.requestFinished(request.identifier, code: resultCode)
                 handler(completedRequest, resultCode, data)
+                if resultCode == 500 {
+                    let time = DispatchTime.now() + .seconds(Int(3))
+                    DispatchQueue.main.asyncAfter(deadline: time, execute: {
+                        scheduleRequest(request, handler: handler)
+                    })
+                }
             }
         }
         let time = DispatchTime.now() + .milliseconds(Int(25))
