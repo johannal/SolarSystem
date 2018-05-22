@@ -27,7 +27,7 @@
         (message$ "Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "][CATEGORY:" ?category "]")
         (time ?time) (identifier ?identifier) (event-type "Begin")
     )
-    (finished-server-error-request (url ?url) (time ?t&:(and (> ?time ?t) (< (- ?time ?t) 10000000000))))
+    (finished-server-error-request (url ?url) (finish-time ?t&:(and (> ?time ?t) (< (- ?time ?t) 10000000000))))
     (table (table-id ?output) (side append))
     (table-attribute (table-id ?output) (has schema request-narrative))
     =>
