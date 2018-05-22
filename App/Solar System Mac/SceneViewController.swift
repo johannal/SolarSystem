@@ -133,7 +133,7 @@ extension SceneViewController: PlanetsDetailsListener {
 
     // MARK: - Network Update Callbacks
 
-    internal func updateWithPlanets(_ news: [Planet]?, _ error: Error?) {
+    internal func updateWithPlanets(_ planets: [SolarSystemPlanet]?, _ error: Error?) {
         // TODO: refresh UI with updated news feed on planets, dwarf planets, and exoplanets
     }
     

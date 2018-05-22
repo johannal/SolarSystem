@@ -11,7 +11,7 @@ import Foundation
 public class SolarSystem {
     
     // Create the sun.
-    let sun = Star(name: "Sun", color: #colorLiteral(red: 1, green: 0.5549516082, blue: 0.005077361129, alpha: 1))
+    let sun = Star(name: "Sun")
     
     // Create the planets.
     let mercury = Planet(name: "Mercury", color: #colorLiteral(red: 0.6472379565, green: 0.6025107503, blue: 0.5466887951, alpha: 1))

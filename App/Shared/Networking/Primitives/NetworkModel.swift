@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Planet {
+struct SolarSystemPlanet {
     let name: String
 }
 
-struct Moon {
+struct SolarSystemMoon {
     let name: String
-    let planet: Planet
+    let planet: SolarSystemPlanet
 }
 
 public struct Request<Resource> {
     let url: String
-    let belongingPlanet: Planet?
+    let belongingPlanet: SolarSystemPlanet?
     let data: [Resource]
 
     var groupingValue: String {
@@ -30,33 +30,33 @@ public struct Request<Resource> {
     }
 
 
-    static var planets: Request<Planet> {
+    static var planets: Request<SolarSystemPlanet> {
         let planets = [
-            Planet(name: "Mercury"),
-            Planet(name: "Venus"),
-            Planet(name: "Earth"),
-            Planet(name: "Mars"),
-            Planet(name: "Jupiter"),
-            Planet(name: "Saturn"),
-            Planet(name: "Uranus"),
-            Planet(name: "Neptune")
+            SolarSystemPlanet(name: "Mercury"),
+            SolarSystemPlanet(name: "Venus"),
+            SolarSystemPlanet(name: "Earth"),
+            SolarSystemPlanet(name: "Mars"),
+            SolarSystemPlanet(name: "Jupiter"),
+            SolarSystemPlanet(name: "Saturn"),
+            SolarSystemPlanet(name: "Uranus"),
+            SolarSystemPlanet(name: "Neptune")
         ]
-        return Request<Planet>(url: "solars.apple.com/planets", belongingPlanet: nil, data: planets)
+        return Request<SolarSystemPlanet>(url: "solars.apple.com/planets", belongingPlanet: nil, data: planets)
     }
 
-    static func photo(of planet: Planet) -> Request<Any> {
+    static func photo(of planet: SolarSystemPlanet) -> Request<Any> {
         return Request<Any>(url: "solars.apple.com/\(planet.name)/photo", belongingPlanet: planet, data: [])
     }
 
-    static func news(about planet: Planet) -> Request<Any> {
+    static func news(about planet: SolarSystemPlanet) -> Request<Any> {
         return Request<Any>(url: "solars.apple.com/\(planet.name)/news", belongingPlanet: planet, data: [])
     }
 
-    static func neighbours(of planet: Planet) -> Request<Any> {
+    static func neighbours(of planet: SolarSystemPlanet) -> Request<Any> {
         return Request<Any>(url: "solars.apple.com/\(planet.name)/neighbours", belongingPlanet: planet, data: [])
     }
 
-    static func moons(for planet: Planet) -> Request<Moon> {
+    static func moons(for planet: SolarSystemPlanet) -> Request<SolarSystemMoon> {
         var moons: Int = 0
         switch planet.name {
         case "Mercury":
@@ -78,15 +78,15 @@ public struct Request<Resource> {
         default:
             break
         }
-        let data: [Moon] = (0..<moons).map { val in return Moon(name: "\(val)", planet: planet) }
-        return Request<Moon>(url: "solars.apple.com/\(planet.name)/moons", belongingPlanet: planet, data: data)
+        let data: [SolarSystemMoon] = (0..<moons).map { val in return SolarSystemMoon(name: "\(val)", planet: planet) }
+        return Request<SolarSystemMoon>(url: "solars.apple.com/\(planet.name)/moons", belongingPlanet: planet, data: data)
     }
 
-    static func photo(of moon: Moon) -> Request<Any> {
+    static func photo(of moon: SolarSystemMoon) -> Request<Any> {
         return Request<Any>(url: "solars.apple.com/moons/\(moon.name)/image", belongingPlanet: moon.planet, data: [])
     }
 
-    static func news(about moon: Moon) -> Request<Any> {
+    static func news(about moon: SolarSystemMoon) -> Request<Any> {
         return Request<Any>(url: "solars.apple.com/moons/\(moon.name)/news", belongingPlanet: moon.planet, data: [])
     }
 }

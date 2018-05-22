@@ -117,6 +117,9 @@
 		BBB6002B20B33E3300D0C304 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6002920B33E1900D0C304 /* NetworkModel.swift */; };
 		BBB6002C20B34FE300D0C304 /* PlanetUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */; };
 		BBC87A3F20AB36E6008DFA64 /* SignpostLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */; };
+		BBE4C9E420B470190082679D /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6002920B33E1900D0C304 /* NetworkModel.swift */; };
+		BBE4C9E520B470440082679D /* NetworkRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */; };
+		BBE4C9E620B4704D0082679D /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7556209B3B75003C8DF9 /* Logger.m */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
 		EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */; };
@@ -1025,6 +1028,7 @@
 			files = (
 				AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */,
 				9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */,
+				BBE4C9E520B470440082679D /* NetworkRequestScheduler.swift in Sources */,
 				9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */,
 				9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */,
 				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
@@ -1037,6 +1041,7 @@
 				0781432B1ECB3FAB009C18DF /* Star.swift in Sources */,
 				9E53D15E1ECF715E002A0001 /* GravitySimulatorViewController.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
+				BBE4C9E620B4704D0082679D /* Logger.m in Sources */,
 				EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */,
 				9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */,
 				9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */,
@@ -1047,6 +1052,7 @@
 				9ED89788208F069C0081C39C /* PlanetTableViewCell.swift in Sources */,
 				9E272B5C1ED50A3B00C2A5B2 /* MoonJumperViewController.swift in Sources */,
 				D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */,
+				BBE4C9E420B470190082679D /* NetworkModel.swift in Sources */,
 				106E67C1209D03160096F217 /* MockRequestParser.swift in Sources */,
 				9E53D15A1ECF651E002A0001 /* MainViewController.swift in Sources */,
 				9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */,

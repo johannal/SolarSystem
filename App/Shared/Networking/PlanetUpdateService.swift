@@ -9,7 +9,7 @@ import os.log
 import Foundation
 
 protocol PlanetsDetailsListener {
-    func updateWithPlanets(_ news: [Planet]?, _ error: Error?)
+    func updateWithPlanets(_ planets: [SolarSystemPlanet]?, _ error: Error?)
 }
 
 enum PlanetUpdateServiceError: Error {
@@ -30,7 +30,7 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
         // log that we're about to queue up a network request for solars system details.
         os_log("Request Solar System details", log: solarSystemLog, type: .debug)
 
-        request(.planets) { [weak self] (planets: [Planet]?, error: Error?) in
+        request(.planets) { [weak self] (planets: [SolarSystemPlanet]?, error: Error?) in
             listener.updateWithPlanets(planets, error)
             
             guard let planets = planets else { return }
@@ -80,14 +80,14 @@ final class PlanetUpdateService<RequestType: NetworkRequest> {
 
 
     
-    private func fetchPlanetDetails(for planet: Planet) {
+    private func fetchPlanetDetails(for planet: SolarSystemPlanet) {
         request(Request<Any>.photo(of: planet)) { (_, _) in }
         request(Request<Any>.neighbours(of: planet)) { (_, _) in }
         request(Request<Any>.news(about: planet)) { (_, _) in }
     }
 
-    private func fetchPlanetMoons(for planet: Planet) {
-        request(Request<Moon>.moons(for: planet)) { [weak self] (moons: [Moon]?, error: Error?) in
+    private func fetchPlanetMoons(for planet: SolarSystemPlanet) {
+        request(Request<SolarSystemMoon>.moons(for: planet)) { [weak self] (moons: [SolarSystemMoon]?, error: Error?) in
             if let moons = moons {
                 for moon in moons {
                     self?.request(Request<Any>.photo(of: moon)) { (_, _) in }

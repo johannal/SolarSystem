@@ -4,6 +4,7 @@
 //
 //  Copyright © 2018 Apple Inc. All rights reserved.
 //
+import Foundation
 
 public class Star: PhysicsBody {
     
