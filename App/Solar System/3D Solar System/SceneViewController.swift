@@ -50,7 +50,7 @@ class SceneViewController: UIViewController, SceneControllerDelegate {
     
     // Display Link callback
     @objc func tick() {
-        sceneController?.tick(timestamp: timer.timestamp)
+        sceneController?.sceneAnimator?.tick(timestamp: timer.timestamp)
     }
     
     // Tap handling
