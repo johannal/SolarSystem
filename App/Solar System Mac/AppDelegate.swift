@@ -35,7 +35,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let viewController = windowController?.contentViewController
 
         if let solarSystemSceneVC = viewController as? SceneViewController {
-            solarSystemSceneVC.refreshPlanetsAndNews()
+            //solarSystemSceneVC.refreshPlanetsAndNews()
+            solarSystemSceneVC.toggleNewsFeedUpdates(sender)
         }
     }
     

@@ -126,6 +126,11 @@ extension SceneViewController: PlanetsDetailsListener {
         newsRequestDispatchTimer?.cancel()
         newsRequestDispatchTimer = nil
     }
+    
+    var isUpdatingNewsFeed: Bool {
+        let timerIsActive = newsRequestDispatchTimer != nil
+        return timerIsActive
+    }
 
     // MARK: - User Interaction
 
@@ -133,6 +138,17 @@ extension SceneViewController: PlanetsDetailsListener {
 
     func refreshPlanetsAndNews() {
         networkService.update(listener: self)
+    }
+    
+    func toggleNewsFeedUpdates(_ sender: Any) {
+        if isUpdatingNewsFeed {
+            SceneViewController.wantsAutomaticNewsFeedUpdates = false
+            stopReceivingNewsFeedUpdates()
+        }
+        else {
+            SceneViewController.wantsAutomaticNewsFeedUpdates = true
+            startReceivingNewsFeedUpdates()
+        }
     }
 
     // MARK: - Network Update Callbacks

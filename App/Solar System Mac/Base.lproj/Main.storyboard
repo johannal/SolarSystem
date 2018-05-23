@@ -106,7 +106,7 @@
                                                 <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="iJ3-Pv-kwq"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Refresh" keyEquivalent="r" id="Jdt-R6-HIc" userLabel="Refresh">
+                                        <menuItem title="Toggle News Feed" keyEquivalent="r" id="Jdt-R6-HIc" userLabel="Refresh">
                                             <connections>
                                                 <action selector="refreshClicked:" target="Voe-Tx-rLC" id="wP8-bl-RDl"/>
                                             </connections>
@@ -900,7 +900,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                         <clipView key="contentView" drawsBackground="NO" id="LyA-Hk-VwL">
                                             <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <collectionView id="iY9-bk-20O">
                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>

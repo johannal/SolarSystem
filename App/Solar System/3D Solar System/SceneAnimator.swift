@@ -61,11 +61,13 @@ class SceneAnimator: NSObject {
         let elapsedTime = timestamp - lastTimestamp
         lastTimestamp = timestamp
         
-        let variance_ms: UInt32 = 400
-        let minDelay_ms:UInt32 = 100
-        let delay_s = Double(arc4random_uniform(variance_ms) + minDelay_ms) / 1000.0
-        RunLoop.current.run(mode: .commonModes, before: Date().addingTimeInterval(delay_s))
-
+        if SceneViewController.wantsAutomaticNewsFeedUpdates {
+            let variance_ms: UInt32 = 400
+            let minDelay_ms:UInt32 = 100
+            let delay_s = Double(arc4random_uniform(variance_ms) + minDelay_ms) / 1000.0
+            RunLoop.current.run(mode: .commonModes, before: Date().addingTimeInterval(delay_s))
+        }
+    
         // Get elapsed time by calculating offset between last time stamp and now
         sceneController.updateAnimatedObjectsWithElapsedTime(elapsedTime)
     }

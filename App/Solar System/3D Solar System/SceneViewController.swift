@@ -16,6 +16,8 @@ class SceneViewController: UIViewController, SceneControllerDelegate {
 
     var sceneController: SceneController?
     
+    static var wantsAutomaticNewsFeedUpdates: Bool = false
+    
     // Details view controller if presented
     weak var planetDetailsVC: SceneDetailsController?
 
