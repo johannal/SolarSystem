@@ -10,10 +10,9 @@ import os.log
 //import os.signpost
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
-fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
-                                       category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
+fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
 
-/// Provides methods that fetch planet data from 
+/// Provides methods that fetch and parse planet data, and then hands back  #SolarSystemPlanet model objects from that data.
 class PlanetDataFetcher {
 
     // The URL for our planet data hosted on our sever.
@@ -25,7 +24,7 @@ class PlanetDataFetcher {
         os_log("Requesting planet data", log: solarSystemLog, type: .debug)
         
         // Request the planet data from our server.
-        URLSession.shared.dataTask(with: planetDataURL) { (data, response, error) in
+        SolarSystemURLSessionn.shared.dataTask(with: planetDataURL) { (data, response, error) in
             
             // If there was an error fetching the data, log it and return.
             guard error == nil else {
@@ -41,7 +40,7 @@ class PlanetDataFetcher {
                 return
             }
             
-            do {                
+            do {
                 let planets = try self.deserializeAndParseJSON(data)
                 dataHandler(planets)
             } catch {
@@ -83,3 +82,5 @@ extension SolarSystemPlanet {
         self.init(name: "planet")
     }
 }
+
+typealias SolarSystemURLSessionn = URLSession
