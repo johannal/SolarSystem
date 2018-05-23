@@ -208,11 +208,7 @@ class SceneController: NSObject {
             ringNode.name = "Saturn Ring"
             ringNode.transform = SCNMatrix4MakeScale(1.0, 0.05, 1.0)
             ringNode.geometry = ringGeometry
-            
-            if !enableSceneLighting {
-                ringNode.geometry?.firstMaterial?.lightingModel = .constant // no lighting
-            }
-            
+            ringNode.geometry?.firstMaterial?.lightingModel = .constant // no lighting
             node.addChildNode(ringNode)
             
             // No orbit for Saturn to make bug less obvious
