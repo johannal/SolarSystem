@@ -11,6 +11,8 @@ import SceneKit
 /// An #NSViewController that represents a solar system.
 class SceneViewController: NSViewController, SceneControllerDelegate {
 
+    static var wantsAutomaticNewsFeedUpdates: Bool = false
+    
     // MARK: - Instance variables
 
     private let planetsDataSource = SolarSystemPlanetsDataSource()
@@ -87,7 +89,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
 
     override func viewDidAppear() {
         // Initiate news feed updates if necessary
-        if wantsAutomaticNewsFeedUpdates {
+        if SceneViewController.wantsAutomaticNewsFeedUpdates {
             startReceivingNewsFeedUpdates()
         }
     }
@@ -141,15 +143,6 @@ extension SceneViewController: PlanetsDetailsListener {
 
     internal func updateWithMoons(_ moons: [SolarSystemMoon]?, forPlanet: SolarSystemPlanet) {
         // TODO: refresh UI with updated moon data
-    }
-
-    var wantsAutomaticNewsFeedUpdates: Bool {
-        var wantsNewsFeedUpdates = false
-        if let displayLinkAnimationsEnVar = ProcessInfo.processInfo.environment["AutomaticNewsFeedUpdates"] {
-            let enVar: NSString = displayLinkAnimationsEnVar as NSString
-            wantsNewsFeedUpdates = enVar.boolValue
-        }
-        return wantsNewsFeedUpdates
     }
 }
 

@@ -34,14 +34,7 @@ class SceneAnimator: NSObject {
     
     // MARK: - Display Link Animations
     
-    static var wantsDisplayLinkAnimations: Bool {
-        var wantsDisplayLinkAnimations = false
-        if let displayLinkAnimationsEnVar = ProcessInfo.processInfo.environment["DisplayLinkAnimations"] {
-            let enVar: NSString = displayLinkAnimationsEnVar as NSString
-            wantsDisplayLinkAnimations = enVar.boolValue
-        }
-        return wantsDisplayLinkAnimations
-    }
+    static var wantsDisplayLinkAnimations: Bool = false
     
     func setupDisplayLinkAnimations() {
         if SceneAnimator.wantsDisplayLinkAnimations {
