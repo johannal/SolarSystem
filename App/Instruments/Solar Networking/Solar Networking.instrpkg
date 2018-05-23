@@ -237,7 +237,7 @@
 
         <production-system>
             <rule-path>unnecessary-retry-detection.clp</rule-path>
-            <rule-path>duplicate-overlapping-detection.clp</rule-path>
+            <rule-path>duplicate-request-detection.clp</rule-path>
         </production-system>
 
         <output>

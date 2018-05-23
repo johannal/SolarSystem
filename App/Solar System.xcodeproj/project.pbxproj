@@ -308,7 +308,7 @@
 		BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignpostLogger.swift; sourceTree = "<group>"; };
 		BBC87A4320AB4A71008DFA64 /* category-points.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "category-points.clp"; sourceTree = "<group>"; };
 		BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "unnecessary-retry-detection.clp"; sourceTree = "<group>"; };
-		BBE4C9E820B49A180082679D /* duplicate-overlapping-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "duplicate-overlapping-detection.clp"; sourceTree = "<group>"; };
+		BBE4C9E820B49A180082679D /* duplicate-request-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "duplicate-request-detection.clp"; sourceTree = "<group>"; };
 		D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingBody.swift; sourceTree = "<group>"; };
 		D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDays.swift; sourceTree = "<group>"; };
 		EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransNeptunianObject.swift; sourceTree = "<group>"; };
@@ -718,7 +718,7 @@
 				BBC87A4320AB4A71008DFA64 /* category-points.clp */,
 				101D6B7920B4912100A1CAA3 /* load-modeling.clp */,
 				BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */,
-				BBE4C9E820B49A180082679D /* duplicate-overlapping-detection.clp */,
+				BBE4C9E820B49A180082679D /* duplicate-request-detection.clp */,
 			);
 			name = "Solar Networking";
 			path = "Instruments/Solar Networking";
