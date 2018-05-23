@@ -12,14 +12,17 @@
     (type INTEGER))
 )
 
-(defrule RECORDER::record-any-request-starting
-    (request-start (time ?time) (url ?url) (identifier ?identifier))
+(defrule MODELER::record-any-request-starting
+    (os-signpost (subsystem "com.demo.SolarSystem") (category "Networking") (name "NetworkRequest")
+        (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category)
+        (time ?time) (identifier ?identifier) (event-type "Begin")
+    )
     =>
     (assert (started-request (time ?time) (url ?url) (identifier ?identifier)))
 )
 
-(defrule RECORDER::record-request-starting-for-same-resource
-    (request-start (time ?time) (url ?url) (identifier ?identifier))
+(defrule MODELER::record-request-starting-for-same-resource
+    (started-request (time ?time) (url ?url) (identifier ?identifier))
     (started-request (url ?url) (time ?t&:(and (> ?time ?t) (< (- ?time ?t) 5000000000))))
     (table (table-id ?output) (side append))
     (table-attribute (table-id ?output) (has schema request-narrative))
