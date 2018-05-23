@@ -50,6 +50,11 @@ class PlanetDataFetcher {
         }
     }
     
+    /// Deserializes the given data as JSON, and then creates an array of #SolarSystemPlanets from that data. If the data isn't doesn't have "planets", then nil will be returned.
+    ///
+    /// - Parameter data: The data to deserialize as JSON.
+    /// - Returns: An array of #SolarSystemPlanets or nil if the JSON doesn't have a "planets" key.
+    /// - Throws: If deserialization fails.
     private func deserializeAndParseJSON(_ data: Data) throws -> [SolarSystemPlanet]? {
         
         // Deserialize the JSON.
