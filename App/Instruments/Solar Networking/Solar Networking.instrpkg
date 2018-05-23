@@ -248,9 +248,6 @@
             <required-input>
                 <schema-ref>http-request</schema-ref>
             </required-input>
-            <required-input>
-                <schema-ref>request-start</schema-ref>
-            </required-input>
         </output>
     </modeler>
 
