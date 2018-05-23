@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "SceneViewController.viewDidLoad():SceneViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.planetsDataSource.numberOfPlanets">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
