@@ -5,7 +5,7 @@
     <owner>
         <name>Kacper</name>
     </owner>
-    <note>Package that provides instrumentation for REST API calls and parsing operations.</note>
+    <note>Package that provides instrumentation for Solar System networking operations.</note>
     <import-schema>os-signpost</import-schema>
     <import-schema>tick</import-schema>
 
