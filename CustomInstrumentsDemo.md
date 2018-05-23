@@ -8,9 +8,9 @@ I've recently noticed some pretty serious stutters in my Solar System exploratio
 
 Definitley want to fix this. Now I've been pretty good about adding great logging in my code, which you can actually see flying by here. I see a lot of data requests in there, which doesn't seem right.
 
-But just this logging isn't going to be quite enough. I really want to see intervals of time so I can understand how long things like my data parsing are taking.
+But this logging by itself isn't going to be quite enough to help understand whats going on here. What I really want to see intervals of time to know how long things like parsing my data are taking.
 
-To help me out with that, theres some brand new API in Xcode 10, that lets me surface performance metrics for my own code. 
+To help me out with that, theres some new API in Xcode 10, that lets me surface performance metrics for my own code. 
 
 Here in PlanetDataFetcher, I'm using our own networking framework, but I handle the JSON parsing. I've also got some logging sprinkled throughout to surface important events.
 
@@ -24,7 +24,7 @@ And then I'll add a call to mark the end of parsing down here.
 
 The system is going to automatically insert timestamps and calculate the delta for me, I don't have to worry about that.
 
-So where is this data I'm logging going to show up? Each of these log statements is using a custom OSLog handle, that I created up here, which uses the new PointsOfInterest category. Thats a special category that Instruments will automatically show the log and signpost data for.
+Next question though, where is this information going be shown? Each of these log statements is using a custom OSLog handle, that I created up here, which uses the new PointsOfInterest category. Thats a special category, and any logs or signposts will automatically show up in Instruments.
 
 Lets see what this looks like in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
 
