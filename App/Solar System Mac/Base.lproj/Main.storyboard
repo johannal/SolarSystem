@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.9" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.9"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14269.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.6"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14269.6"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -992,8 +992,8 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XXV-oW-GnA">
-                                                    <rect key="frame" x="7" y="3" width="160" height="16"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 19′ 3″ N, 122° 2′ 31″ W" drawsBackground="YES" id="uXM-Qd-dG8">
+                                                    <rect key="frame" x="5" y="3" width="164" height="16"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="37° 20′ 4″ N, 122° 0′ 32″ W" drawsBackground="YES" id="uXM-Qd-dG8">
                                                         <font key="font" metaFont="systemMedium" size="12"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1048,8 +1048,8 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pCB-sp-mRc">
-                                                                <rect key="frame" x="16" y="25" width="55" height="22"/>
-                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="06:41" drawsBackground="YES" id="o3C-do-Ki5">
+                                                                <rect key="frame" x="15" y="25" width="58" height="22"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="05:48" drawsBackground="YES" id="o3C-do-Ki5">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
                                                                     <color key="textColor" name="sunRiseSunSetLabelColor"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1085,8 +1085,8 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Li-s9-Uf1">
-                                                                <rect key="frame" x="17" y="25" width="53" height="22"/>
-                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="19:47" drawsBackground="YES" id="WvQ-Rs-5hG">
+                                                                <rect key="frame" x="16" y="25" width="56" height="22"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="20:25" drawsBackground="YES" id="WvQ-Rs-5hG">
                                                                     <font key="font" metaFont="systemBold" size="18"/>
                                                                     <color key="textColor" name="sunRiseSunSetLabelColor"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
