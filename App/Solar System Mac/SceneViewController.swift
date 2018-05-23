@@ -48,8 +48,8 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         navigatorCollectionView.dataSource = planetsDataSource
 
         // Setup appearance manager
-        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
-        self.appearanceManager = appearanceManager
+//        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
+//        self.appearanceManager = appearanceManager
 
         // Setup particle systems manager for scene
 //        guard let scene = solarSystemSceneView.scene else { return }
