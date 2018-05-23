@@ -63,7 +63,7 @@
 		9E48A9E22069569F0032EAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408061EBFEAEB00F7F8A1 /* LaunchScreen.storyboard */; };
 		9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408011EBFEAEB00F7F8A1 /* Main.storyboard */; };
-		9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
+		9E4F778D205ACFAA004C9486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC408041EBFEAEB00F7F8A1 /* Assets.xcassets */; };
 		9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = EECE23D01ECCC60100D0CC7A /* ThePlanets.storyboard */; };
 		9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77B7205AEA1F004C9486 /* AppDelegate.swift */; };
 		9E4F77C6205AEB17004C9486 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F77C5205AEB17004C9486 /* SceneViewController.swift */; };
@@ -962,6 +962,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EDFCD612097298B00F4DD79 /* Sun.jpg in Resources */,
+				9E4F778D205ACFAA004C9486 /* Assets.xcassets in Resources */,
 				AA6573CE20A6391D00595A9A /* jupiter.webarchive in Resources */,
 				9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */,
 				AA6573CB20A6391D00595A9A /* pluto.webarchive in Resources */,
@@ -1041,7 +1042,6 @@
 				AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */,
 				9E4F778E205ACFAA004C9486 /* ThePlanets.storyboard in Sources */,
 				BBE4C9E520B470440082679D /* NetworkRequestScheduler.swift in Sources */,
-				9E4F778D205ACFAA004C9486 /* Assets.xcassets in Sources */,
 				9E4F778C205ACFAA004C9486 /* Main.storyboard in Sources */,
 				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
 				9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
