@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>dr_modeler</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    &lt;modeler&gt;
+        &lt;id&gt;com.demo.solarsystem.antipatterns&lt;/id&gt;
+        &lt;title&gt;Requests anti-patterns modeler&lt;/title&gt;
+        &lt;purpose&gt;Generates warnings into narrative table whenever anti-patterns are detected&lt;/purpose&gt;
+
+        &lt;production-system&gt;
+            &lt;rule-path&gt;unnecessary-retry-detection.clp&lt;/rule-path&gt;
+            &lt;rule-path&gt;duplicate-request-detection.clp&lt;/rule-path&gt;
+        &lt;/production-system&gt;
+
+        &lt;output&gt;
+            &lt;schema-ref&gt;request-narrative&lt;/schema-ref&gt;
+            &lt;required-input&gt;
+                &lt;schema-ref&gt;os-signpost&lt;/schema-ref&gt;
+            &lt;/required-input&gt;
+            &lt;required-input&gt;
+                &lt;schema-ref&gt;http-request&lt;/schema-ref&gt;
+            &lt;/required-input&gt;
+        &lt;/output&gt;
+    &lt;/modeler&gt;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A4B6604E-221A-403E-B020-9F8D0FD33EFB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.XML</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Demo 3 Modeler</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
