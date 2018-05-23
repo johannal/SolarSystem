@@ -36,7 +36,7 @@ extension PlanetUpdateService {
                         self.performSilentRequest(request: moon.newsUpdateRequest) { (_ : [News]?, _) in
                         }
                     }
-                    usleep(10000)
+                    usleep(5000)
                 }
             }
             completion(response, error)

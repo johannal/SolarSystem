@@ -78,7 +78,7 @@
     (set-column duration ?duration)
     (set-column load (/ ?total ?duration))
     (bind ?load (/ ?total ?duration))
-    (if (> ?load 16)
+    (if (> ?load 20)
         then (set-column load-commitment "Over")
         else (set-column load-commitment "Partial")
     )

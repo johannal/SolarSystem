@@ -57,19 +57,23 @@ final class NetworkRequestScheduler {
             request.perform(queue: callbackQueue) { (completedRequest, resultCode, data) in
                 simultaneousRequestSem.signal()
                 logger.requestFinished(request.identifier, code: resultCode)
-                handler(completedRequest, resultCode, data)
                 if resultCode == 500 {
-                    let time = DispatchTime.now() + .seconds(Int(3))
-                    DispatchQueue.main.asyncAfter(deadline: time, execute: {
+                    // Failed, so let's retry in a sec
+                    let time = DispatchTime.now() + .seconds(Int(1))
+                    DispatchQueue.main.asyncAfter(deadline: time) {
                         scheduleRequest(request, handler: handler)
-                    })
+                    }
+                } else {
+                    handler(completedRequest, resultCode, data)
                 }
             }
         }
-        let time = DispatchTime.now() + .milliseconds(Int(25))
-        DispatchQueue.main.asyncAfter(deadline: time, execute: {
-            scheduleRequest(request, handler: handler)
-        })
+        if shouldGenerateDuplicateRequest() {
+            let time = DispatchTime.now() + .milliseconds(Int(25))
+            DispatchQueue.main.asyncAfter(deadline: time) {
+                scheduleRequest(request) { (_, _, _) in }
+            }
+        }
     }
 
     private class func fakeParserForRequest(_ request: NetworkRequest) -> RequestParser? {
