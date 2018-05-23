@@ -43,7 +43,7 @@ final class NetworkRequestScheduler {
 
     private class func shouldGenerateDuplicateRequest() -> Bool {
         let seed = arc4random()
-        return seed % 80 == 0
+        return seed % 100 == 0
     }
 
     class func scheduleRequest(_ request: NetworkRequest, handler: @escaping (NetworkRequest, Int, Data?)->Void) {

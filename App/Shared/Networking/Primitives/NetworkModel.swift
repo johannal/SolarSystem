@@ -47,7 +47,7 @@ extension SolarSystemPlanet: UpdatingCelestial {
 
 extension SolarSystemMoon: UpdatingCelestial {
     typealias RequestType = MockNetworkRequest
-    var baseURLComponent: String { return "moons" }
+    var baseURLComponent: String { return "\(planetName)/moons" }
     var planetName: String { return planet }
 }
 
