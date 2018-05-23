@@ -38,13 +38,21 @@ Now if these simple visualizations aren't enough, you can go way further by cust
 
 If you're framework or game engine developer, this is a great way for you to give insight in a curated way to the developers using your APIs.
 
-<< issue in my code >>
+Our app actually has all of the networking logic factored into a framework, which Daniel owns. He's built a Custom Instruments package to help the team visualize how we're using his APIs. Let's take a look at what hes built.
 
-My app does a lot more than just JSON parsing. I want to help our team maintain great performance over time, so I created a Custom Instruments package to help us understand how all of the sub-systems interact with each other.
+I've got the Instruments package he sent me here. By the way, there's a new Xcode template to help you create one of these.
 
-I'll install it by double clicking the icon. [can send share it]
+I'll install it by double clicking the icon.
 
-[more stuff]
+Then I'll choose the template, which shows up right here in the template chooser.
+
+I'll click record, and that will launch the app. I can see data start streaming in. So in addition to the simple data parsing visualization I added with my own logging, now I can see much more detailed information about how I'm requesting that data in the first place.
+
+Daniel's Custom Instrument takes the simple data he gets from trace points, and then models that and defines these expressive graphs showing me very contextual information.
+
+Like this track here, which is showing me every single network request I'm making. The red is places where I've actually requested the same data twice, so I should definitley fix that. Daniel's Custom Instrument is really going to help me make sure I'm using using his framework as intended.
+
+Thats a look at the powerful new extensibility in Instruments.
 
 ## Setup
 
@@ -54,46 +62,7 @@ os_signpost_interval_begin(solarSystemLog, request.identifier, "JSONParsing", "S
 
 os_signpost_interval_end(solarSystemLog, request.identifier, "JSONParsing", "Finished parsing")
 
-
--- OLD BELOW ----------------------------------------- 
-
-I've been working with the team on adding networking functionality to the Solar System app — we want to keep users informed on news of newly-discovered exoplanets and make sure our list of planets and dwarf planets stays up-to-date. I'm working on the JSON parsing pipeline, and I'd like to visualize what it looks like with the new os_log and os_signpost integration. 
-
-I'm going to start by adding an os_log statement for when the user refreshes the network content. os_log is as easy to add as print, but its comes with categorization features as well. 
-
-_scroll to definition of log object_
-
-I've defined a logging handle with my app's bundle ID as subsystem, and I'll use the pre-configured PointsOfInterest category for my quick investigation. Adding this to the refresh is simple:
-
-	`os_log_debug(_networkExperimentLog, "Refresh Network Call Triggered");`
-
-The other part I'm interested in is the JSON parsing, but I'd like to wrap the activity with the new os_signpost APIs to annotate these intervals:
-
-	`os_signpost_interval_begin(_networkExperimentLog, identifier, "JSONParsing", "Started parsing data of size %lu", (unsigned long)dataSize);`
-
-	`os_signpost_interval_end(_networkExperimentLog, identifier, "JSONParsing", "Finished parsing");
-
-With these APIs, I don't need to collect start and end timestamps or write the code to subtract and format them. Let's try these out by Profiling my App in Instruments
-
-_click Profile action_
-
-The Time Profiler template now has a Points of Interest track built-in, so I'll select that and hit record. I'll use cmd-R to trigger a network refresh in the App, and in the background Instruments is already displaying point and interval data. That's all it takes to get my data to show up in Instruments' timeline.
-
-Well that's interesting — none of the JSON parsing intervals are overlapping. Did none of the network requests finish at the same time? We're going to need more data.
-
-## Part 2 — Custom Instruments
-
-The instrumentation I just added in the PointsOfInterest category is great for quick investigations, but network functionality is going to be a central part of the App going forward. It's worth investing in telemetry and defining our own categories that we'll leave in the codebase so that we can quickly trace issues when they arise.
-
-Luckily, _person_ on the team has already instrumented more of our networking code and sent a Custom Instruments Package for just this purpose! Let's try it out.
-
-_double-click custom instrument package_
-
-When I double-click the package, Instruments lets me know what tools and templates are included. Now that I've installed it, bringing up the template chooser shows me the Solar System template that <person> created. 
-
-_select template, record, cmd-R, stop_
-
-I'm going to run my app with this template, refresh, and take a look at the data. The track gives me the intervals I was looking for — the network requests are happening concurrently but the JSON parsing is still being serialized. 
+*******************************
 
 Instruments Packages allow you to customize the modeling and define the presentation of your trace points. This lets you create expressive graphs and rich summaries. _person_ included a summary view to show what the min/max/average durations were, and with just a few lines of XML described this useful in-flight view showing only activity intersecting my inspection point.
 
