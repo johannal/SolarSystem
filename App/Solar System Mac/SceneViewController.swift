@@ -58,20 +58,32 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
 //        self.particleSystemsAnimator = particleAnimator
     }
 
-    // TODO: Add more detailed documentation.
-    /// Orbit path color.
+    /// The color to use for orbit paths.
+    /// The color is be subtle, and blends nicely with the background color used for the solar system. This color should only be used for the orbit path itself, and not as a highlight for other objects. Orbits don't generally intersct, but when they do, this color will show up as brighter. To avoid that, the orbit paths should first be composited together into a single bitmap, and then colored. This will avoid the additive color effect. Note that this color can be used for both the active and inactive window state.
+    ///
+    /// - Note: This color can be used for both the active and inactive window state.
+    /// - SeeAlso: #orbitSelectedPathColor, #orbitHaloColor
+    /// - Returns: The color to use for orbit paths.
     func orbitPathColor() -> NSColor? {
         return NSColor(red: 0.34, green: 0.532, blue: 0.541, alpha: 0.75)
     }
 
-    // TODO: Add more detailed documentation.
-    /// Orbit selected path color.
+    /// The color to use for selected orbit paths.
+    /// The color is brigther than the orbit color, and is intended to stand out against the background color used for the solar system. This color should only be used for the selected orbit path itself, and not as a selection color for other objects. Orbits don't generally intersct, but when they do, this color will show up as brighter. To avoid that, the orbit paths should first be composited together into a single bitmap, and then colored. This will avoid the additive color effect.
+    ///
+    /// - Note: This color can be used for both the active and inactive window state.
+    /// - SeeAlso: #orbitPathColor, #orbitHaloColor
+    /// - Returns: The color to use for selected orbit paths.
     func orbitSelectedPathColor() -> NSColor? {
         return NSColor(red: 0.28, green: 0.49, blue: 0.14, alpha: 0.9)
     }
 
-    // TODO: Add more detailed documentation.
-    /// Orbit halo color.
+    /// The color to use for the orbit halo.
+    /// The color is intended to be subtle, and add slight differentiation with the background color used for the solar system. This color should only be used for the orbit halo itself, and for halos around other objects. Orbits don't generally intersct, but when they do, halos should blend and add together, unlike the technique used for drawing orbits. The additive effect is desired for halos, whereas it's not desired for standard path drawing.
+    ///
+    /// - Note: This color can be used for both the active and inactive window state.
+    /// - SeeAlso: #orbitPathColor, #orbitSelectedPathColor
+    /// - Returns: The color to use for orbit halos.
     func orbitHaloColor() -> NSColor? {
         return NSColor(red: 0.74, green: 0.74, blue: 1.0, alpha: 0.3)
     }
