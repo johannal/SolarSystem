@@ -44,11 +44,6 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         // Setup data source
         navigatorCollectionView.delegate = planetsDataSource
         navigatorCollectionView.dataSource = planetsDataSource
-        
-        // Initiate news feed updates if necessary
-        if wantsAutomaticNewsFeedUpdates {
-            startReceivingNewsFeedUpdates()
-        }
 
         // Setup appearance manager
 //        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
@@ -88,6 +83,13 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     /// Called when the scene is clicked. Passes along the click to the backing SCNView.
     @objc func didClickScene(_ sender: NSClickGestureRecognizer) {
         sceneController?.didHitSceneView(atLocation: sender.location(in: solarSystemSceneView))
+    }
+
+    override func viewDidAppear() {
+        // Initiate news feed updates if necessary
+        if wantsAutomaticNewsFeedUpdates {
+            startReceivingNewsFeedUpdates()
+        }
     }
 
     // MARK: Node Accessors
