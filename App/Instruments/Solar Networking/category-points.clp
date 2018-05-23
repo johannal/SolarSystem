@@ -5,7 +5,7 @@
 
 (defrule RECORDER::record-unified-http
     (os-signpost (subsystem "com.demo.SolarSystem") (category "Networking") (name "NetworkRequest")
-        (message$ "Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "][CATEGORY:" ?category "]")
+        (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category)
         (time ?time) (identifier ?identifier)
     )
 

@@ -35,19 +35,19 @@ void swift_os_signpost_impl(os_log_t log, os_signpost_id_t sid, os_signpost_type
 }
 
 - (void) parsingStarted:(NSUInteger)identifier dataSize:(NSInteger)dataSize {
-    os_signpost_interval_begin(_httpCustomLog, identifier, "ResponseParsing", "[ID:%ld][SIZE:%ld]", (long)identifier, dataSize);
+    os_signpost_interval_begin(_httpCustomLog, identifier, "ResponseParsing", "Parsing started SIZE:%ld", dataSize);
 }
 
 - (void) parsingFinished:(NSUInteger)identifier {
-    os_signpost_interval_end(_httpCustomLog, identifier, "ResponseParsing", "[ID:%ld]", (long)identifier);
+    os_signpost_interval_end(_httpCustomLog, identifier, "ResponseParsing", "Parsing finished");
 }
 
 - (void) requestStarted:(NSUInteger)logID url:(NSString *)url type:(NSString *)type userIdentifier:(NSString *)userIdentifier  {
-    os_signpost_interval_begin(_httpCustomLog, logID, "NetworkRequest", "Request started [ID:%ld][URL:%{public}@][TYPE:%{public}@][CATEGORY:%{public}@]", (long)logID, url, type, userIdentifier);
+    os_signpost_interval_begin(_httpCustomLog, logID, "NetworkRequest", "Request started URL:%{public}@,TYPE:%{public}@,CATEGORY:%{public}@", url, type, userIdentifier);
 }
 
 - (void) requestFinished:(NSUInteger)logID code:(NSInteger)code {
-    os_signpost_interval_end(_httpCustomLog, logID, "NetworkRequest", "Request finished [ID:%ld][CODE:%ld]", (long)logID, (long)code);
+    os_signpost_interval_end(_httpCustomLog, logID, "NetworkRequest", "Request finished CODE:%ld", (long)code);
 }
 
 @end

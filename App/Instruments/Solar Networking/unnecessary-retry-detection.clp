@@ -24,7 +24,7 @@
 
 (defrule RECORDER::detect-unnecessary-retry-generate-warnings
     (os-signpost (subsystem "com.demo.SolarSystem") (category "Networking") (name "NetworkRequest")
-        (message$ "Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "][CATEGORY:" ?category "]")
+        (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category)
         (time ?time) (identifier ?identifier) (event-type "Begin")
     )
     (finished-server-error-request (url ?url) (finish-time ?t&:(and (> ?time ?t) (< (- ?time ?t) 10000000000))))

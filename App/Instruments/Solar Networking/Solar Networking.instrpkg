@@ -16,17 +16,18 @@
         <subsystem>"com.demo.SolarSystem"</subsystem>
         <category>"Networking"</category>
         <name>"NetworkRequest"</name>
+        <identifier>?request-id</identifier>
 
         <start-pattern>
-            <message>"Request started [ID:" ?request-id "][URL:" ?url "][TYPE:" ?request-type "][CATEGORY:" ?category "]"</message>
+            <message>"Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category</message>
         </start-pattern>
         <end-pattern>
-            <message>"Request finished [ID:" ?request-id "][CODE:" ?http-code"]"</message>
+            <message>"Request finished CODE:" ?http-code</message>
         </end-pattern>
         <primary-column>
             <mnemonic>request-id</mnemonic>
             <title>Request identifier</title>
-            <type>uint64</type>
+            <type>os-signpost-identifier</type>
             <expression>?request-id</expression>
         </primary-column>
 
@@ -101,18 +102,18 @@
         <subsystem>"com.demo.SolarSystem"</subsystem>
         <category>"Networking"</category>
         <name>"ResponseParsing"</name>
-        <identifier>?identifier</identifier>
+        <identifier>?request-id</identifier>
 
         <start-pattern>
-            <message>"[ID:" ?request-id "][SIZE:" ?bytes "]"</message>
+            <message>"Parsing started SIZE:" ?bytes</message>
         </start-pattern>
         <end-pattern>
-            <message>"[ID:" ?request-id "]"</message>
+            <message>"Parsing finished"</message>
         </end-pattern>
         <primary-column>
             <mnemonic>request-id</mnemonic>
             <title>Request identifier</title>
-            <type>uint64</type>
+            <type>os-signpost-identifier</type>
             <expression>?request-id</expression>
         </primary-column>
 
@@ -123,18 +124,9 @@
             <expression>?bytes</expression>
         </column>
 
-        <column>
-            <mnemonic>identifier</mnemonic>
-            <title>Identifier</title>
-            <type>os-signpost-identifier</type>
-            <expression>?identifier</expression>
-        </column>
-
         <open-interval-template>
             <mnemonic>request-id</mnemonic>
             <expression>?request-id</expression>
-            <mnemonic>identifier</mnemonic>
-            <expression>?identifier</expression>
             <mnemonic>size-in-bytes</mnemonic>
             <expression>?bytes</expression>
         </open-interval-template>
@@ -395,7 +387,7 @@
                 <table-ref>json-parsing</table-ref>
                 <base-color>Blue</base-color>
                 <plot>
-                    <value-from>identifier</value-from>
+                    <value-from>request-id</value-from>
                     <label-from>size-in-bytes</label-from>
                 </plot>
             </lane>
