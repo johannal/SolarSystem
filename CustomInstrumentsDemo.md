@@ -1,38 +1,44 @@
 ## Part 1 — os_log/os_signpost
 
-The Xcode and Instruments have some great new features that make it easier than ever to understand how your app is performing. Let me show you.
+Xcode and Instruments have some great new features that make it easier than ever to understand how your app is performing. Let me show you.
 
-I've recently noticed some stutters in my Solar System exploration app.
+I've recently noticed some pretty serious stutters in our Solar System exploration app.
 
     *Run app and show stutter (or maybe app is already running)*
 
-I've got some basic os_logging in my code already, which has been great for seeing the order of events in the console. But thats not really enough to help me understand whats going on here. 
+I've got basic logging in my code, which I can see flying by here -- it's pretty obvious to me that there are a ton of data requests, which doesn't seem right.
 
-In Xcode 10, I can update some of my os_log statements to use the new "Points of Interest" category. I'm going to do that here.
+But I really want more insight into why my UI is stuttering. What is taking so long and blocking the main thread?
 
-    *Change os_log category to OS_LOG_CATEGORY_POINTS_OF_INTEREST*
+The first thing I'm going to do is figure out how long my data parsing is taking -- thats been pretty problematic for us.
 
-This is a way for me to declare that I want this log to show up as a point in time in Instruments. What would also be really helpful, is to visualize the range of time where I'm parsing JSON. I can do that by using the "os_signpost" API.
+I'm going to use some new API in Xcode 10, thats going to help me surface performance metrics for my own code. 
 
-At the start of parsing, I'll add this call to mark the beginning of the interval:
+I'll add a call to the new "interval begin" function here.
 
-    *Add os_signpost_interval_begin call*
+  *Add os_signpost_interval_begin call*
 
-And I'll mark the end of the internal here:
+And then a call to "interval end" down here.
 
-    *Add os_signpost_interval_end call*
+  *Add os_signpost_interval_end call*
 
-Great part about using these APIs -- I don't have to capture any timestamps or do any math. They'll automatically calculate the time delta for me.
+This brackets my data parsing work, and the system is going to insert timestamps and calculate the delta for me.
 
-I've my logging in place, so let's profile the app in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
+The real magic is up here, where I've converted my OSLog to use this new .PointsOfInterest category. This is a way for me to declare that I want this logs to show up as a little flag in Instruments, and intervals will show up as filled bars.
 
-As the data comes in, I can see all these time ranges here. Thats the interval logging I just added, where I'm parsing JSON. You can see theres a lot of it happening, and its all on the main thread -- a great reciept for a laggie UI! 
+Lets see what this looks like in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
 
-So, really quick and easy to visualize your own data right in Instruments.
+As the data comes in, I can see all those time ranges where I'm parsing data. First of all, I think I'm  requesting data way too often. But even if I were just asking for it once, you can see that my parsing is taking a good long time, and it looks like it's blocking the main thread -- I'm just visually correlating that parsing bar here, with the activity on the main thread here.
+
+You can start to imagine all the different kinds of activities you could start to surface in Instruments.
 
 ## Part 2 — Custom Instruments
 
-[figure out how to introduce feature]
+Now if these simple visualizations aren't enough, you can go way further by customizing the way Instruments presents your own data to you. You'll be using the same powerful core technology we use to create all the included instruments.
+
+If you're framework or game engine developer, this is a great way for you to give insight in a curated way to the developers using your APIs.
+
+<< issue in my code >>
 
 My app does a lot more than just JSON parsing. I want to help our team maintain great performance over time, so I created a Custom Instruments package to help us understand how all of the sub-systems interact with each other.
 
