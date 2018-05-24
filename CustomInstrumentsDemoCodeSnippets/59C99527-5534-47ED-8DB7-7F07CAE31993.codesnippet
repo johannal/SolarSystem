@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>os_signpost_interval_begin(parsingLogger, requestID, "JSONParsing", "Started parsing")</string>
+	<string>os_signpost(type: .begin, name: "Started parsing")</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>59C99527-5534-47ED-8DB7-7F07CAE31993</string>
 	<key>IDECodeSnippetLanguage</key>
