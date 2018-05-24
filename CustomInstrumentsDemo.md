@@ -8,11 +8,11 @@ I've recently noticed some pretty serious stutters in my Solar System exploratio
 
 Definitley something I want to fix this.
 
-I've got plenty of logging in my app, but for a for a performance issue like this, I really want to see time intervals to know how long things like my network requests and data parsing are taking.
+I've got plenty of logging in my code, but for a for a performance issue like this, I really want to see time intervals to understand how long things like my network requests and data parsing are taking.
 
 Xcode 10 introduces new API that lets me surface my own performance metrics. I'm going to start by using that to see how long my JSON data parsing is taking.
 
-In my code this class handle fetching and parsing data. I'm using our own networking framework, and then I handle the JSON parsing here.
+This class uses our networking framework to fetch data and then I parse it down here.
 
 I'll add a call to the new os_signpost function here, right before I start parsing.
 
@@ -30,7 +30,7 @@ Lets see what kind of data we get in Instruments. I'll go to Product > Profile, 
 
 Up here you can see the Points of Interest track, with all my logs and signposts. So these blue bars, those are the intervals I just added that show long it takes to parse the data.
 
-Seems like I think I'm requesting data way too often. Then when I'm parsing the data, the main thread's CPU usage spikes, which is probably causing the stutter. I should really move that to a background thread.
+Seems like I'm requesting data way too often. Then when I'm parsing the data, the main thread's CPU usage spikes, which is probably causing that stutter. I should really move that to a background thread.
 
 So, some really quick insight in Instruments just by adding logging and signposts.
 
