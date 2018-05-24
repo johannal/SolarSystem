@@ -18,9 +18,6 @@ final class NetworkRequestScheduler {
     private static let parsingQueue = DispatchQueue.main
     private static let simultaneousRequestSem = DispatchSemaphore(value: 150)
 
-    // DEMO TODO: substitute in real Swift API from overlay: <rdar://problem/39305137> SOTU DEMO: Add os_signpost overlay
-    private static let logger = Logger()
-
     private static let solarNetworkingLog = OSLog(subsystem: "com.demo.SolarSystem", category: "Networking")
 
     class func scheduleParsingTask(_ identifier: UInt, _ data: Data, silent: Bool = false, workItem: @escaping (RequestParser)->Void) {
@@ -29,13 +26,14 @@ final class NetworkRequestScheduler {
             if (silent) {
                 workItem(parser)
             } else {
-                logger.parsingStarted(identifier, dataSize: parser.bytes)
+                let signpostID = OSSignpostID(log: solarNetworkingLog)
+                os_signpost(type: .begin, log: solarNetworkingLog, name: "ResponseParsing", signpostID: signpostID, "Parsing started SIZE:%ld", parser.bytes)
                 let t1 = Date.timeIntervalSinceReferenceDate
                 os_log("Started parsing data of size %lu", parser.bytes)
                 workItem(parser)
                 let t2 = Date.timeIntervalSinceReferenceDate
                 os_log("Finished parsing (took %3.2f seconds)", t2-t1)
-                logger.parsingFinished(identifier)
+                os_signpost(type: .end, log: solarNetworkingLog, name: "ResponseParsing", signpostID: signpostID, "Parsing finished")
             }
             usleep(1000 * 5)
         }
@@ -53,10 +51,11 @@ final class NetworkRequestScheduler {
         }
         schedulingQueue.async {
             simultaneousRequestSem.wait()
-            logger.requestStarted(request.identifier, url: request.requestURL, type: "GET", userIdentifier:request.groupingValue)
+            let signpostID = OSSignpostID(log: solarNetworkingLog)
+            os_signpost(type: .begin, log: solarNetworkingLog, name: "NetworkRequest", signpostID: signpostID, "Request started URL:%{public}@,TYPE:%{public}@,CATEGORY:%{public}@", request.requestURL, "GET", request.groupingValue)
             request.perform(queue: callbackQueue) { (completedRequest, resultCode, data) in
                 simultaneousRequestSem.signal()
-                logger.requestFinished(request.identifier, code: resultCode)
+                os_signpost(type: .end, log: solarNetworkingLog, name: "NetworkRequest", signpostID: signpostID, "Request finished CODE:%ld", resultCode)
                 if resultCode == 500 {
                     // Failed, so let's retry in a sec
                     let time = DispatchTime.now() + .seconds(Int(1))

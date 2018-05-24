@@ -6,7 +6,7 @@
 //
 
 import os.log
-//import os.signpost
+import os.signpost
 import Foundation
 
 protocol PlanetsDetailsListener {
@@ -47,9 +47,8 @@ final class PlanetUpdateService {
             }
 
             NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { (parser) in
-
-                os_signpost_interval_begin(solarSystemLog, request.identifier, "JSONParsing", "Started parsing data of size \(responseData.count)");
-                
+                let signpostID = OSSignpostID(log: solarSystemLog)
+                os_signpost(type: .begin, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Started parsing data of size %d", responseData.count)
                 do {
                     let result: [T] = try parser.parse()
                     completion(result, nil)
@@ -58,9 +57,7 @@ final class PlanetUpdateService {
                            log: solarSystemLog, type: .error, "\(error)")
                     completion(nil, error)
                 }
-
-                os_signpost_interval_end(solarSystemLog, request.identifier, "JSONParsing", "Finished parsing");
-                
+                os_signpost(type: .end, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Finished parsing")
             }
         }
     }

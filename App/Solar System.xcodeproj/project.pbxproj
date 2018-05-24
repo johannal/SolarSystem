@@ -20,7 +20,6 @@
 		07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B32AB61ECF59A60098E49F /* Orbit.swift */; };
 		07FE1DAF20B34C1A00C47831 /* AstronomicalObjectViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5341C2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift */; };
 		101D6B7A20B4B7D900A1CAA3 /* UpdateServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */; };
-		101D6B7B20B4B7EB00A1CAA3 /* SignpostLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */; };
 		106E67B7209CFC500096F217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67B6209CFC500096F217 /* NetworkRequest.swift */; };
 		106E67B8209CFC500096F217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67B6209CFC500096F217 /* NetworkRequest.swift */; };
 		106E67BB209CFCA90096F217 /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67BA209CFCA90096F217 /* MockNetworkRequest.swift */; };
@@ -114,15 +113,12 @@
 		AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD409220990A45009CCA74 /* SharePlanetTests.swift */; };
 		BB2E5E7220AE6B77000F8D95 /* Solar Networking.instrpkg in Sources */ = {isa = PBXBuildFile; fileRef = BBA9B65520AA4D0F00258FEB /* Solar Networking.instrpkg */; };
 		BB4B88B6209741EC00244A7A /* ParticleSystemsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4B88B5209741EC00244A7A /* ParticleSystemsAnimator.swift */; };
-		BB4F7558209B3B75003C8DF9 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7556209B3B75003C8DF9 /* Logger.m */; };
 		BB4F755B209B3EF1003C8DF9 /* PlanetUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */; };
 		BBA9B66E20AB104000258FEB /* SceneWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA9B66D20AB104000258FEB /* SceneWindowController.swift */; };
 		BBB6002B20B33E3300D0C304 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6002920B33E1900D0C304 /* NetworkModel.swift */; };
 		BBB6002C20B34FE300D0C304 /* PlanetUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */; };
-		BBC87A3F20AB36E6008DFA64 /* SignpostLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */; };
 		BBE4C9E420B470190082679D /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6002920B33E1900D0C304 /* NetworkModel.swift */; };
 		BBE4C9E520B470440082679D /* NetworkRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */; };
-		BBE4C9E620B4704D0082679D /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4F7556209B3B75003C8DF9 /* Logger.m */; };
 		D2B2E8E81ECB9BE300ED0982 /* OrbitingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E71ECB9BE300ED0982 /* OrbitingBody.swift */; };
 		D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B2E8E91ECB9C6200ED0982 /* SolarDays.swift */; };
 		EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22DC021ECCF966008CBDDE /* TransNeptunianObject.swift */; };
@@ -294,16 +290,12 @@
 		B1ECAEE51ED738470009A958 /* CameraModelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModelTransition.swift; sourceTree = "<group>"; };
 		BB2E5E6B20AE6B5C000F8D95 /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = com.apple.instruments.instrdst; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4B88B5209741EC00244A7A /* ParticleSystemsAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystemsAnimator.swift; sourceTree = "<group>"; };
-		BB4F7554209B3B75003C8DF9 /* Solar System Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Solar System Mac-Bridging-Header.h"; sourceTree = "<group>"; };
-		BB4F7555209B3B75003C8DF9 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
-		BB4F7556209B3B75003C8DF9 /* Logger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
 		BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PlanetUpdateService.swift; sourceTree = "<group>"; tabWidth = 4; wrapsLines = 1; };
 		BBA9B65320AA4D0F00258FEB /* Solar Networking.instrdst */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = com.apple.instruments.instrdst; path = "Solar Networking.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA9B65520AA4D0F00258FEB /* Solar Networking.instrpkg */ = {isa = PBXFileReference; lastKnownFileType = "com.apple.instruments.package-definition"; path = "Solar Networking.instrpkg"; sourceTree = "<group>"; };
 		BBA9B65B20AA4DBE00258FEB /* Solar System.tracetemplate */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Solar System.tracetemplate"; sourceTree = "<group>"; };
 		BBA9B66D20AB104000258FEB /* SceneWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneWindowController.swift; sourceTree = "<group>"; };
 		BBB6002920B33E1900D0C304 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
-		BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignpostLogger.swift; sourceTree = "<group>"; };
 		BBC87A4320AB4A71008DFA64 /* category-points.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "category-points.clp"; sourceTree = "<group>"; };
 		BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "unnecessary-retry-detection.clp"; sourceTree = "<group>"; };
 		BBE4C9E820B49A180082679D /* duplicate-request-detection.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "duplicate-request-detection.clp"; sourceTree = "<group>"; };
@@ -406,17 +398,6 @@
 				1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */,
 			);
 			path = Primitives;
-			sourceTree = "<group>";
-		};
-		10CF83CE209CFB2C00D8367C /* Temporary_LogBridging */ = {
-			isa = PBXGroup;
-			children = (
-				BB4F7555209B3B75003C8DF9 /* Logger.h */,
-				BB4F7556209B3B75003C8DF9 /* Logger.m */,
-				BB4F7554209B3B75003C8DF9 /* Solar System Mac-Bridging-Header.h */,
-				BBC87A3D20AB36E6008DFA64 /* SignpostLogger.swift */,
-			);
-			path = Temporary_LogBridging;
 			sourceTree = "<group>";
 		};
 		8023D29620850501006DFD5F /* Unit Tests */ = {
@@ -692,7 +673,6 @@
 		BB4F7553209B2AAB003C8DF9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				10CF83CE209CFB2C00D8367C /* Temporary_LogBridging */,
 				106E67B9209CFC7A0096F217 /* Primitives */,
 				BB4F7559209B3EF1003C8DF9 /* PlanetUpdateService.swift */,
 			);
@@ -1013,7 +993,6 @@
 				BBA9B66E20AB104000258FEB /* SceneWindowController.swift in Sources */,
 				106E67BF209D02FE0096F217 /* RequestParser.swift in Sources */,
 				9E4F77C8205AEB49004C9486 /* SceneViewController.swift in Sources */,
-				BB4F7558209B3B75003C8DF9 /* Logger.m in Sources */,
 				106E67B8209CFC500096F217 /* NetworkRequest.swift in Sources */,
 				9E4F77C9205AEB51004C9486 /* SceneController.swift in Sources */,
 				9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */,
@@ -1022,7 +1001,6 @@
 				9EF53C762083216E00B11FC4 /* SceneViewAppearanceManager.swift in Sources */,
 				BB4F755B209B3EF1003C8DF9 /* PlanetUpdateService.swift in Sources */,
 				9E4F77CB205AF052004C9486 /* OrbitingBodyNode.swift in Sources */,
-				BBC87A3F20AB36E6008DFA64 /* SignpostLogger.swift in Sources */,
 				BB4B88B6209741EC00244A7A /* ParticleSystemsAnimator.swift in Sources */,
 				9E1408802090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
 				BBB6002B20B33E3300D0C304 /* NetworkModel.swift in Sources */,
@@ -1053,7 +1031,6 @@
 				0781432B1ECB3FAB009C18DF /* Star.swift in Sources */,
 				9E53D15E1ECF715E002A0001 /* GravitySimulatorViewController.swift in Sources */,
 				9EC407FC1EBFEAEB00F7F8A1 /* AppDelegate.swift in Sources */,
-				BBE4C9E620B4704D0082679D /* Logger.m in Sources */,
 				EE8EA78E1ED0F6F500508BE1 /* TelescopicSurvey.swift in Sources */,
 				9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */,
 				9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */,
@@ -1076,7 +1053,6 @@
 				EE5818701ECCFD9900733C90 /* Asteroid.m in Sources */,
 				07506D691ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m in Sources */,
 				9EAE88631ED2504200EB5C1E /* GravitySimulatorScene.swift in Sources */,
-				101D6B7B20B4B7EB00A1CAA3 /* SignpostLogger.swift in Sources */,
 				EE22DC031ECCF966008CBDDE /* TransNeptunianObject.swift in Sources */,
 				106E67B7209CFC500096F217 /* NetworkRequest.swift in Sources */,
 				101D6B7A20B4B7D900A1CAA3 /* UpdateServiceExtensions.swift in Sources */,
@@ -1271,7 +1247,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Networking/Temporary_LogBridging/Solar System Mac-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TOOLCHAINS = Default;
 			};
@@ -1294,7 +1270,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.SolarSystem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Networking/Temporary_LogBridging/Solar System Mac-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TOOLCHAINS = Default;
 			};
