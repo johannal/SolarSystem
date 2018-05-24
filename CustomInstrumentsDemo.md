@@ -8,9 +8,9 @@ I've recently noticed some pretty serious stutters in my Solar System exploratio
 
 Definitley something I want to fix this.
 
-I've got plenty of logging in my app, but for a for a performance issue like this, I really want to see intervals of time to know how long things like my network requests and data parsing are taking.
+I've got plenty of logging in my app, but for a for a performance issue like this, I really want to see time intervals to know how long things like my network requests and data parsing are taking.
 
-Xcode 10 introduces new API that lets me surface my own performance metrics. I'm going to use that and start by timing my JSON data parsing.
+Xcode 10 introduces new API that lets me surface my own performance metrics. I'm going to start by using that to see how long my JSON data parsing is taking.
 
 In my code this class handle fetching and parsing data. I'm using our own networking framework, and then I handle the JSON parsing here.
 
@@ -38,9 +38,9 @@ So, some really quick insight in Instruments just by adding logging and signpost
 
 Now if these simple visualizations aren't enough, you can go much further by customizing the way Instruments presents your data. You'll be using the same powerful core technology we use to create all the included instruments.
 
-And it's not just about your own personal developement. If you ship a framework or an engine, this is a great way for you to provide tools for developers using your APIs.
+And it's not just about your own personal developement. If you ship a framework or an engine, this is a great way for you to provide tools for your developers.
 
-I've got a Custom Instruments package here that Daniel, one of my teammates, sent me. It visualizes the networking framework that he built for our app.
+I've got a Custom Instruments package here that my teammate Daniel sent me. It visualizes the networking framework that he built for our app.
 
 I'll install it by double clicking the icon, and then I'll click Install.
 
