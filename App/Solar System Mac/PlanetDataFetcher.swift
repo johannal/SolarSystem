@@ -10,7 +10,7 @@ import os.log
 //import os.signpost
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
-fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
+fileprivate let parsingLogger = OSLog(subsystem: "com.SolarSystemExplorer", category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
 
 /// Provides methods that fetch and parse planet data, and then hands back  #SolarSystemPlanet model objects from that data.
 class PlanetDataFetcher {
@@ -21,32 +21,33 @@ class PlanetDataFetcher {
     func fetchPlanetData(dataHandler: @escaping ([SolarSystemPlanet]?) -> Void) {
         
         // Log that we're queing up a network request for planet data.
-        os_log("Requesting planet data", log: solarSystemLog, type: .debug)
+        os_log("Requesting planet data", log: parsingLogger, type: .debug)
         
         // Request the planet data from our server.
         SolarSystemURLSessionn.shared.dataTask(with: planetDataURL) { (data, response, error) in
             
             // If there was an error fetching the data, log it and return.
             guard error == nil else {
-                os_log("Error fetching planet data: %@", log: solarSystemLog, type: .error, String(describing: error))        
+                os_log("Error fetching planet data: %@", log: parsingLogger, type: .error, String(describing: error))        
                 dataHandler(nil)
                 return
             }
             
             // If we didn't get any data back, log and return.
             guard let data = data else {
-                os_log("No planet data returned", log: solarSystemLog, type: .error)        
+                os_log("No planet data returned", log: parsingLogger, type: .error)        
                 dataHandler(nil)
                 return
             }
-            
+
             do {
                 let planets = try self.deserializeAndParseJSON(data)
                 dataHandler(planets)
             } catch {
                 dataHandler(nil)
-                os_log("Error desearlizing JSON: %@", log: solarSystemLog, type: .error, String(describing: error))
+                os_log("Error desearlizing JSON: %@", log: parsingLogger, type: .error, String(describing: error))
             }
+            
         }
     }
     
@@ -88,4 +89,5 @@ extension SolarSystemPlanet {
     }
 }
 
-typealias SolarSystemURLSessionn = URLSession
+fileprivate typealias SolarSystemURLSessionn = URLSession
+fileprivate let requestID: UInt = 0
