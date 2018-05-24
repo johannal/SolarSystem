@@ -6,15 +6,15 @@ I've recently noticed some pretty serious stutters in my Solar System exploratio
 
   *Show stuttering app*
 
-Definitley want to fix this. Now I've been pretty good about adding great logging in my code, which you can actually see flying by here. I see a lot of data requests in there, which doesn't seem right.
+Definitley something I want to fix this.
 
-But this logging by itself isn't going to be quite enough to help understand whats going on here. What I really want to see intervals of time to know how long things like parsing my data are taking.
+I've got plenty of logging in my app, but for a for a performance issue like this, I really want to see intervals of time to know how long things like my network requests and data parsing are taking.
 
-To help me out with that, theres some new API in Xcode 10, that lets me surface performance metrics for my own code. 
+Xcode 10 introduces new API that lets me surface my own performance metrics. I'm going to use that and start by timing my JSON data parsing.
 
-Here in PlanetDataFetcher, I'm using our own networking framework, but I handle the JSON parsing. I've also got some logging sprinkled throughout to surface important events.
+In my code this class handle fetching and parsing data. I'm using our own networking framework, and then I handle the JSON parsing here.
 
-I want to know how long the data parsing is taking, so I'll add a call to the new os_signpost function here, right before I start parsing. This is marking the beginning of the interval.
+I'll add a call to the new os_signpost function here, right before I start parsing.
 
   *Add os_signpost_interval_begin call*
 
@@ -24,32 +24,32 @@ And then I'll add a call to mark the end of parsing down here.
 
 The system is going to automatically insert timestamps and calculate the delta for me, I don't have to worry about that.
 
-Next question though, where is this information going be shown? Each of these log statements is using a custom OSLog handle, that I created up here, which uses the new PointsOfInterest category. Thats a special category, and any logs or signposts will automatically show up in Instruments.
+So where is this information going to show up? Each of these log statements is using a custom OSLog handle that I created up here, which uses the new PointsOfInterest category. Thats a special category that will automatically surface the logs and signposts in Instruments.
 
-Lets see what this looks like in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
+Lets see what kind of data we get in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
 
-Up here you can see the Points of Interest track, which surfaces all of my log and signpost calls. So these blue bars, those are the intervals I just added that show long it takes to parse the data.
+Up here you can see the Points of Interest track, with all my logs and signposts. So these blue bars, those are the intervals I just added that show long it takes to parse the data.
 
-First off, I think I'm requesting data way too often. Then when I get the data, it looks like the main threads CPU usage spikes when we're parsing, which is probably whats causing the stutter -- should really move that to a background thread.
+Seems like I think I'm requesting data way too often. Then when I'm parsing the data, the main thread's CPU usage spikes, which is probably causing the stutter. I should really move that to a background thread.
 
-So some quick insight, without needing to do a whole lot.
+So, some really quick insight in Instruments just by adding logging and signposts.
 
 ## Part 2 — Custom Instruments
 
-And if these simple visualizations aren't enough, you can go much further by customizing the way Instruments presents your own data, using the same powerful core technology we use to create all the included instruments.
+Now if these simple visualizations aren't enough, you can go much further by customizing the way Instruments presents your data. You'll be using the same powerful core technology we use to create all the included instruments.
 
-And it's not just about your own developement. If you ship a framework or an engine, this is a great way for you to provide tools for those using your APIs.
+And it's not just about your own personal developement. If you ship a framework or an engine, this is a great way for you to provide tools for developers using your APIs.
 
-Now I've got a Custom Instruments package here that Daniel, one of my teammates, sent me. It visualizes the networking framework that he built for our app.
+I've got a Custom Instruments package here that Daniel, one of my teammates, sent me. It visualizes the networking framework that he built for our app.
 
 I'll install it by double clicking the icon, and then I'll click Install.
 
 I'll choose the template, and I'll click record, which will launch the app.
 
-I can see data start streaming in. In addition to the parsing visualization, now I can see much more detailed information about how I'm requesting that data in the first place.
+I can see data start streaming in. In addition to the JSON parsing visualization, now I can see much more detailed information about how I'm requesting that JSON data in the first place.
 
-Daniel's Custom Instrument takes the simple data he gets from trace points, and then models that and defines these expressive graphs showing me very contextual information.
+Daniel's Custom Instrument models the trace point data, and defines these expressive graphs.
 
-Like this track here, which is showing me every single network request that I'm making. The red indicates where I've requested the same data twice, so I should definitley fix that. This Custom Instruments package is really going to help me get the most out of this framework.
+Like this track here, which is showing me the average number of requests per 100 miliseconds. And then this track here which is showing me the time interval for each and every request, and highlighting duplicate requests in red. So, some really customized deep insight into this framework.
 
 Thats a look at the powerful new extensibility in Instruments.
