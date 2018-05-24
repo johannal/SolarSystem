@@ -7,7 +7,7 @@
 
 import Foundation
 import os.log
-//import os.signpost
+import os.signpost
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let parsingLogger = OSLog(subsystem: "com.SolarSystemExplorer", category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
