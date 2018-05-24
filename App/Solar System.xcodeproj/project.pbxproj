@@ -492,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				8023D29620850501006DFD5F /* Unit Tests */,
+				9EDFCD5D209728EB00F4DD79 /* Scene Assets */,
 				9E4F77BB205AEA1F004C9486 /* Assets.xcassets */,
 				9EB5341C2082E7EC0007DB03 /* AstronomicalObjectViewItem.swift */,
 				9EB5341B2082E7EC0007DB03 /* AstronomicalObjectViewItem.xib */,
@@ -503,7 +504,6 @@
 				9EB534192082DA120007DB03 /* SolarSystemPlanetsDataSource.swift */,
 				9EF53C752083216E00B11FC4 /* SceneViewAppearanceManager.swift */,
 				9EF53C6D20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn */,
-				9EDFCD5D209728EB00F4DD79 /* Scene Assets */,
 				9E4F77BD205AEA1F004C9486 /* Main.storyboard */,
 				9EC862712087AA9500E0ECC8 /* MainWindow.xib */,
 				9E0B9047208E9BA200280DD4 /* PlanetDetailsWindow.xib */,
