@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SolarSystemPlanet {
+struct SolarSystemPlanet: Decodable {
     let name: String
 }
 

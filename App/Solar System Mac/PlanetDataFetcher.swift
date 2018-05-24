@@ -12,8 +12,10 @@ import os.signpost
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let parsingLog = OSLog(subsystem: "com.SolarSystemExplorer", category: .pointsOfInterest)
 
+private let jsonDecoder = JSONDecoder()
+
 /// Provides methods that fetch and parse planet data, and then hands back  #SolarSystemPlanet model objects from that data.
-class PlanetDataFetcher {
+final class PlanetDataFetcher {
 
     // The URL for our planet data hosted on our sever.
     private let planetDataURL = URL(string: "http://www.solarsystemexplorationapp.com/planetData")! 
@@ -24,7 +26,7 @@ class PlanetDataFetcher {
         os_log("Requesting planet data", log: parsingLog, type: .debug)
         
         // Request the planet data from our server.
-        SolarSystemURLSessionn.shared.dataTask(with: planetDataURL) { (data, response, error) in
+        SolarSystemURLSession.shared.dataTask(with: planetDataURL) { (data, response, error) in
             
             // If there was an error fetching the data, log it and return.
             guard error == nil else {
@@ -41,7 +43,7 @@ class PlanetDataFetcher {
             }
             
             do {
-                let planets = try self.deserializeAndParseJSON(data)
+                let planets = try self.deserializeAndParseJSON(from: data)
                 dataHandler(planets)
             } catch {
                 dataHandler(nil)
@@ -56,29 +58,8 @@ class PlanetDataFetcher {
     /// - Parameter data: The data to deserialize as JSON.
     /// - Returns: An array of #SolarSystemPlanets or nil if the JSON doesn't have a "planets" key.
     /// - Throws: If deserialization fails.
-    private func deserializeAndParseJSON(_ data: Data) throws -> [SolarSystemPlanet]? {
-        
-        // Deserialize the JSON.
-        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-            return nil
-        }
-
-        // Extract out the planets.
-        guard let planetsJSON = json["planets"] as? [[String: Any]] else {
-            return nil
-        }
-        
-        // Create the array of planets that we'll build up.
-        var planets: [SolarSystemPlanet] = []
-        
-        // Loop over the JSON and create planets for each bit of data.
-        for case let planetJSON in planetsJSON {
-            if let planet = SolarSystemPlanet(json: planetJSON) {
-                planets.append(planet)
-            }
-        }
-
-        return planets
+    private func deserializeAndParseJSON(from data: Data) throws -> [SolarSystemPlanet]? {
+        return try jsonDecoder.decode([SolarSystemPlanet].self, from: data)
     }
     
 } 
@@ -89,5 +70,5 @@ extension SolarSystemPlanet {
     }
 }
 
-fileprivate typealias SolarSystemURLSessionn = URLSession
+fileprivate typealias SolarSystemURLSession = URLSession
 fileprivate let requestID: UInt = 0
