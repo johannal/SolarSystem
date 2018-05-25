@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.9" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.9"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14269.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.11"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14269.11"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1158,28 +1158,75 @@
                                     <constraint firstItem="h7d-da-HS0" firstAttribute="trailing" secondItem="Cuy-XI-eub" secondAttribute="trailing" id="zVQ-aV-DiT"/>
                                 </constraints>
                             </visualEffectView>
+                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNN-ED-ERE" customClass="NetworkRequestProgressView" customModule="Solar_System_Mac" customModuleProvider="target">
+                                <rect key="frame" x="333" y="360" width="244" height="43"/>
+                                <subviews>
+                                    <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-fy-kaa">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="43"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xQP-do-bzE">
+                                                <rect key="frame" x="22" y="12" width="170" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Updating planetary data" id="ebo-kv-1py">
+                                                    <font key="font" metaFont="system" size="15"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Sex-yA-c0g">
+                                                <rect key="frame" x="204" y="14" width="16" height="16"/>
+                                            </progressIndicator>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xQP-do-bzE" firstAttribute="leading" secondItem="xGc-fy-kaa" secondAttribute="leading" constant="24" id="18l-RI-PKi"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sex-yA-c0g" secondAttribute="trailing" constant="24" id="N4I-2x-fJ8"/>
+                                            <constraint firstItem="xQP-do-bzE" firstAttribute="top" secondItem="xGc-fy-kaa" secondAttribute="top" constant="12" id="aKA-1e-nzB"/>
+                                            <constraint firstItem="xQP-do-bzE" firstAttribute="centerY" secondItem="xGc-fy-kaa" secondAttribute="centerY" id="eYU-eS-pJ2"/>
+                                            <constraint firstItem="Sex-yA-c0g" firstAttribute="centerY" secondItem="xQP-do-bzE" secondAttribute="centerY" id="hWX-sA-QKm"/>
+                                            <constraint firstItem="Sex-yA-c0g" firstAttribute="leading" secondItem="xQP-do-bzE" secondAttribute="trailing" constant="14" id="lKm-jk-QCD"/>
+                                        </constraints>
+                                    </visualEffectView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xGc-fy-kaa" secondAttribute="bottom" id="Bjr-VJ-ODO"/>
+                                    <constraint firstItem="xGc-fy-kaa" firstAttribute="leading" secondItem="MNN-ED-ERE" secondAttribute="leading" id="SL2-nc-QYF"/>
+                                    <constraint firstItem="xGc-fy-kaa" firstAttribute="top" secondItem="MNN-ED-ERE" secondAttribute="top" id="US3-fs-cQM"/>
+                                    <constraint firstAttribute="trailing" secondItem="xGc-fy-kaa" secondAttribute="trailing" id="b9B-kI-tp0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="spinner" destination="Sex-yA-c0g" id="o5H-mT-PPI"/>
+                                </connections>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9SM-Os-UVc" secondAttribute="trailing" id="1Kz-2J-b7y"/>
                             <constraint firstItem="gB4-uQ-Pws" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="2E0-Oh-zZx"/>
                             <constraint firstItem="70t-ps-lrB" firstAttribute="leading" secondItem="gB4-uQ-Pws" secondAttribute="trailing" id="8pA-gf-fLP"/>
+                            <constraint firstItem="MNN-ED-ERE" firstAttribute="centerX" secondItem="70t-ps-lrB" secondAttribute="centerX" id="ADM-kj-wBj"/>
                             <constraint firstAttribute="bottom" secondItem="70t-ps-lrB" secondAttribute="bottom" id="Cg5-Bs-DL8"/>
                             <constraint firstAttribute="bottom" secondItem="gB4-uQ-Pws" secondAttribute="bottom" id="I9v-cn-3bN"/>
                             <constraint firstItem="9SM-Os-UVc" firstAttribute="leading" secondItem="70t-ps-lrB" secondAttribute="trailing" id="NgP-z7-OfY"/>
                             <constraint firstAttribute="bottom" secondItem="9SM-Os-UVc" secondAttribute="bottom" id="ZlU-Mt-Tn9"/>
                             <constraint firstItem="70t-ps-lrB" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="eyT-F1-crY"/>
+                            <constraint firstItem="MNN-ED-ERE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="oAC-km-hvs"/>
                             <constraint firstItem="gB4-uQ-Pws" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="rsa-hL-pEC"/>
                             <constraint firstItem="9SM-Os-UVc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="xjV-0o-QjC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="navigatorCollectionView" destination="iY9-bk-20O" id="Hkd-bL-Op4"/>
+                        <outlet property="requestProgressView" destination="MNN-ED-ERE" id="Gyf-ov-gNT"/>
                         <outlet property="solarSystemSceneView" destination="70t-ps-lrB" id="yuK-Ci-fs8"/>
                         <outlet property="view" destination="m2S-Jp-Qdl" id="0Ua-q4-RPK"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="95" y="557"/>
+            <point key="canvasLocation" x="95" y="556.5"/>
         </scene>
     </scenes>
     <resources>

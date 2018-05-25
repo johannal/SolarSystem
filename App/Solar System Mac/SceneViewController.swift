@@ -30,6 +30,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     @IBOutlet weak var startAnimationButton: NSButton?
     @IBOutlet weak var increaseAnimationSpeedButton: NSButton?
     @IBOutlet weak var decreaseAnimationSpeedButton: NSButton?
+    @IBOutlet weak var requestProgressView: NetworkRequestProgressView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +110,8 @@ extension SceneViewController: PlanetsDetailsListener {
     // MARK: - News Feed
     
     func startReceivingNewsFeedUpdates() {
+        requestProgressView.show(animated: true)
+        
         let queue = DispatchQueue(label: "Planet News Timer Queue", attributes: .concurrent)
         newsRequestDispatchTimer?.cancel()
         
@@ -123,6 +126,8 @@ extension SceneViewController: PlanetsDetailsListener {
     }
     
     func stopReceivingNewsFeedUpdates() {
+        requestProgressView.hide(animated: true)
+        
         newsRequestDispatchTimer?.cancel()
         newsRequestDispatchTimer = nil
     }

@@ -97,6 +97,7 @@
 		9EF53C7420831E7100B11FC4 /* EarthNightLights.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */; };
 		9EF53C762083216E00B11FC4 /* SceneViewAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF53C752083216E00B11FC4 /* SceneViewAppearanceManager.swift */; };
 		9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */; };
+		9EF5838120B88C1000667E43 /* NetworkRequestProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5838020B88C1000667E43 /* NetworkRequestProgressView.swift */; };
 		AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6573BB20A62D6C00595A9A /* WebViewController.swift */; };
 		AA6573C020A6387500595A9A /* mercury.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573BF20A6387500595A9A /* mercury.webarchive */; };
 		AA6573C820A6391D00595A9A /* venus.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C120A6391C00595A9A /* venus.webarchive */; };
@@ -266,6 +267,7 @@
 		9EF53C7320831E7000B11FC4 /* EarthNightLights.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EarthNightLights.jpg; sourceTree = "<group>"; };
 		9EF53C752083216E00B11FC4 /* SceneViewAppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewAppearanceManager.swift; sourceTree = "<group>"; };
 		9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudsTransparency.png; sourceTree = "<group>"; };
+		9EF5838020B88C1000667E43 /* NetworkRequestProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProgressView.swift; sourceTree = "<group>"; };
 		AA6573BB20A62D6C00595A9A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AA6573BF20A6387500595A9A /* mercury.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mercury.webarchive; sourceTree = "<group>"; };
 		AA6573C120A6391C00595A9A /* venus.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = venus.webarchive; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				BBA9B66D20AB104000258FEB /* SceneWindowController.swift */,
 				9EB534192082DA120007DB03 /* SolarSystemPlanetsDataSource.swift */,
 				9EF53C752083216E00B11FC4 /* SceneViewAppearanceManager.swift */,
+				9EF5838020B88C1000667E43 /* NetworkRequestProgressView.swift */,
 				9EF53C6D20831A3100B11FC4 /* SingleAstronomicalObjectScene.scn */,
 				9E4F77BD205AEA1F004C9486 /* Main.storyboard */,
 				9EC862712087AA9500E0ECC8 /* MainWindow.xib */,
@@ -1004,6 +1007,7 @@
 				07FE1DAF20B34C1A00C47831 /* AstronomicalObjectViewItem.swift in Sources */,
 				1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */,
 				9EF53C762083216E00B11FC4 /* SceneViewAppearanceManager.swift in Sources */,
+				9EF5838120B88C1000667E43 /* NetworkRequestProgressView.swift in Sources */,
 				BB4F755B209B3EF1003C8DF9 /* PlanetUpdateService.swift in Sources */,
 				9E4F77CB205AF052004C9486 /* OrbitingBodyNode.swift in Sources */,
 				BB4B88B6209741EC00244A7A /* ParticleSystemsAnimator.swift in Sources */,
