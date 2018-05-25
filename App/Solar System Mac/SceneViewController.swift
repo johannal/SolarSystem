@@ -47,9 +47,6 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         // Setup data source
         navigatorCollectionView.delegate = planetsDataSource
         navigatorCollectionView.dataSource = planetsDataSource
-
-        // Get updated planet information
-        invokeNewsFeedUpdate(delay: 3.0)
         
         // Setup appearance manager
 //        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
@@ -94,7 +91,7 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
     override func viewDidAppear() {
         // Initiate news feed updates if necessary
         if SceneViewController.wantsAutomaticNewsFeedUpdates {
-            startReceivingNewsFeedUpdates()
+            invokeNewsFeedUpdate(delay: 3.0)
         }
     }
 
