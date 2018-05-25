@@ -30,6 +30,8 @@
 		106E67C2209D03160096F217 /* MockRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67C0209D03160096F217 /* MockRequestParser.swift */; };
 		1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */; };
 		10B14E3620A51DF800F85F06 /* NetworkRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */; };
+		10BBA8B720B79A3300C597A8 /* AdditionalSignposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */; };
+		10BBA8B820B79A3300C597A8 /* AdditionalSignposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */; };
 		4990BDE720AE2E7900A9155F /* ExtraSettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */; };
 		4990BDE820AE2E7900A9155F /* ExtraSharePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */; };
 		4990BDE920AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */; };
@@ -200,6 +202,7 @@
 		106E67C0209D03160096F217 /* MockRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestParser.swift; sourceTree = "<group>"; };
 		1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServiceExtensions.swift; sourceTree = "<group>"; };
 		10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestScheduler.swift; sourceTree = "<group>"; };
+		10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalSignposts.swift; sourceTree = "<group>"; };
 		4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSettingsUITests.swift; sourceTree = "<group>"; };
 		4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSharePlanetTests.swift; sourceTree = "<group>"; };
 		4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraPlanetLearnMoreTests.swift; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 				10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */,
 				BBB6002920B33E1900D0C304 /* NetworkModel.swift */,
 				1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */,
+				10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -995,6 +999,7 @@
 				9E4F77C8205AEB49004C9486 /* SceneViewController.swift in Sources */,
 				106E67B8209CFC500096F217 /* NetworkRequest.swift in Sources */,
 				9E4F77C9205AEB51004C9486 /* SceneController.swift in Sources */,
+				10BBA8B820B79A3300C597A8 /* AdditionalSignposts.swift in Sources */,
 				9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */,
 				07FE1DAF20B34C1A00C47831 /* AstronomicalObjectViewItem.swift in Sources */,
 				1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */,
@@ -1024,6 +1029,7 @@
 				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
 				9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
 				9E2017351ECB7E95002373D7 /* SceneController.swift in Sources */,
+				10BBA8B720B79A3300C597A8 /* AdditionalSignposts.swift in Sources */,
 				BBB6002C20B34FE300D0C304 /* PlanetUpdateService.swift in Sources */,
 				D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */,
 				07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */,

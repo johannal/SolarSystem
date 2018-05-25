@@ -2,7 +2,6 @@
 //  DisplayLink.swift
 //  Solar System Mac
 //
-//  Created by Sebastian Fischer on 21.05.18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

@@ -2,7 +2,6 @@
 //  ParticleSystemsManager.swift
 //  Solar System Mac
 //
-//  Created by Kacper Harasim on 4/30/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

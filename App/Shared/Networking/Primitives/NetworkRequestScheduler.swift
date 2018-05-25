@@ -27,13 +27,13 @@ final class NetworkRequestScheduler {
                 workItem(parser)
             } else {
                 let signpostID = OSSignpostID(log: solarNetworkingLog)
-                os_signpost(type: .begin, log: solarNetworkingLog, name: "ResponseParsing", signpostID: signpostID, "Parsing started SIZE:%ld", parser.bytes)
+                os_signpost(.begin, log: solarNetworkingLog, name: "ResponseParsing", signpostID: signpostID, "Parsing started SIZE:%ld", parser.bytes)
                 let t1 = Date.timeIntervalSinceReferenceDate
                 os_log("Started parsing data of size %lu", parser.bytes)
                 workItem(parser)
                 let t2 = Date.timeIntervalSinceReferenceDate
                 os_log("Finished parsing (took %3.2f seconds)", t2-t1)
-                os_signpost(type: .end, log: solarNetworkingLog, name: "ResponseParsing", signpostID: signpostID, "Parsing finished")
+                os_signpost(.end, log: solarNetworkingLog, name: "ResponseParsing", signpostID: signpostID, "Parsing finished")
             }
             usleep(1000 * 5)
         }
@@ -52,10 +52,10 @@ final class NetworkRequestScheduler {
         schedulingQueue.async {
             simultaneousRequestSem.wait()
             let signpostID = OSSignpostID(log: solarNetworkingLog)
-            os_signpost(type: .begin, log: solarNetworkingLog, name: "NetworkRequest", signpostID: signpostID, "Request started URL:%{public}@,TYPE:%{public}@,CATEGORY:%{public}@", request.requestURL, "GET", request.groupingValue)
+            os_signpost(.begin, log: solarNetworkingLog, name: "NetworkRequest", signpostID: signpostID, "Request started URL:%{public}@,TYPE:%{public}@,CATEGORY:%{public}@", request.requestURL, "GET", request.groupingValue)
             request.perform(queue: callbackQueue) { (completedRequest, resultCode, data) in
                 simultaneousRequestSem.signal()
-                os_signpost(type: .end, log: solarNetworkingLog, name: "NetworkRequest", signpostID: signpostID, "Request finished CODE:%ld", resultCode)
+                os_signpost(.end, log: solarNetworkingLog, name: "NetworkRequest", signpostID: signpostID, "Request finished CODE:%ld", resultCode)
                 if resultCode == 500 {
                     // Failed, so let's retry in a sec
                     let time = DispatchTime.now() + .seconds(Int(1))

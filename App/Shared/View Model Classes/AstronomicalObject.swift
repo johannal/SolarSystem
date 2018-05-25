@@ -2,7 +2,6 @@
 //  AstronomicalObject.swift
 //  Solar System
 //
-//  Created by Sebastian Fischer on 25.04.18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

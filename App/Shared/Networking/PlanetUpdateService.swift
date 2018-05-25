@@ -48,7 +48,7 @@ final class PlanetUpdateService {
 
             NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { (parser) in
                 let signpostID = OSSignpostID(log: solarSystemLog)
-                os_signpost(type: .begin, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Started parsing data of size %d", responseData.count)
+                os_signpost(.begin, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Started parsing data of size %d", responseData.count)
                 do {
                     let result: [T] = try parser.parse()
                     completion(result, nil)
@@ -57,7 +57,7 @@ final class PlanetUpdateService {
                            log: solarSystemLog, type: .error, "\(error)")
                     completion(nil, error)
                 }
-                os_signpost(type: .end, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Finished parsing")
+                os_signpost(.end, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Finished parsing")
             }
         }
     }
