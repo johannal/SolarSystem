@@ -48,6 +48,9 @@ class SceneViewController: NSViewController, SceneControllerDelegate {
         navigatorCollectionView.delegate = planetsDataSource
         navigatorCollectionView.dataSource = planetsDataSource
 
+        // Get updated planet information
+        invokeNewsFeedUpdate(delay: 3.0)
+        
         // Setup appearance manager
 //        let appearanceManager = SceneViewAppearanceManager(sceneView: solarSystemSceneView)
 //        self.appearanceManager = appearanceManager
@@ -109,6 +112,18 @@ extension SceneViewController: PlanetsDetailsListener {
     
     // MARK: - News Feed
     
+    func invokeNewsFeedUpdate(delay: Double = 0.0, duartion: Double = 6.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            SceneViewController.wantsAutomaticNewsFeedUpdates = true
+            self.startReceivingNewsFeedUpdates()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + duartion) {
+                SceneViewController.wantsAutomaticNewsFeedUpdates = false
+                self.stopReceivingNewsFeedUpdates()
+            }
+        }
+    }
+    
     func startReceivingNewsFeedUpdates() {
         requestProgressView.show(animated: true)
         
@@ -126,7 +141,8 @@ extension SceneViewController: PlanetsDetailsListener {
     }
     
     func stopReceivingNewsFeedUpdates() {
-        requestProgressView.hide(animated: true)
+        // Post notification that work is done (this should be posted when the work is actually done)
+        NotificationCenter.default.post(name: NetworkRequestCompletedNotification, object: nil)
         
         newsRequestDispatchTimer?.cancel()
         newsRequestDispatchTimer = nil
@@ -143,17 +159,6 @@ extension SceneViewController: PlanetsDetailsListener {
 
     func refreshPlanetsAndNews() {
         networkService.update(listener: self)
-    }
-    
-    func toggleNewsFeedUpdates(_ sender: Any) {
-        if isUpdatingNewsFeed {
-            SceneViewController.wantsAutomaticNewsFeedUpdates = false
-            stopReceivingNewsFeedUpdates()
-        }
-        else {
-            SceneViewController.wantsAutomaticNewsFeedUpdates = true
-            startReceivingNewsFeedUpdates()
-        }
     }
 
     // MARK: - Network Update Callbacks

@@ -7,6 +7,8 @@
 
 import Cocoa
 
+let NetworkRequestCompletedNotification: NSNotification.Name = NSNotification.Name(rawValue: "NetworkRequestCompleted")
+
 class NetworkRequestProgressView: NSView {
     @IBOutlet weak var spinner: NSProgressIndicator!
 
@@ -24,6 +26,13 @@ class NetworkRequestProgressView: NSView {
         
         // Hide progress view by default
         alphaValue = 0.0
+        
+        // Add notification observer
+        NotificationCenter.default.addObserver(self, selector: #selector(hideNotificationTriggered(_:)), name: NetworkRequestCompletedNotification, object: nil)
+    }
+    
+    @objc func hideNotificationTriggered(_ sender: Any?) {
+        hide(animated: true)
     }
     
     func show(animated: Bool) {
