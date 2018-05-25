@@ -1192,12 +1192,6 @@
                                     <constraint firstItem="xGc-fy-kaa" firstAttribute="top" secondItem="MNN-ED-ERE" secondAttribute="top" id="US3-fs-cQM"/>
                                     <constraint firstAttribute="trailing" secondItem="xGc-fy-kaa" secondAttribute="trailing" id="b9B-kI-tp0"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="spinner" destination="Sex-yA-c0g" id="o5H-mT-PPI"/>
                                 </connections>
