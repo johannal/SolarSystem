@@ -6,31 +6,25 @@ I've recently noticed some pretty serious stutters in my Solar System exploratio
 
   *Show stuttering app*
 
-Definitley something I want to fix this.
+Let's figure out whats going on. I want to use the new os_signpost API in Xcode 10 to surface some time intervals in my code. I'll start in my class here that handles networking and JSON parsing.
 
-I've got plenty of logging in my code, but for a for a performance issue like this, I really want to see time intervals to understand how long things like my network requests and data parsing are taking.
-
-Xcode 10 introduces new API that lets me surface my own performance metrics. I'm going to start by using that to see how long my JSON data parsing is taking.
-
-This class uses our networking framework to fetch data and then I parse it down here.
-
-I'll add a call to the new os_signpost function here, right before I start parsing.
+Right here before I parse the JSON data, I'll begin the interval:
 
   *Add os_signpost_interval_begin call*
 
-And then I'll add a call to mark the end of parsing down here.
+And then after I'm done parsing, I'll end the interval down here.
 
   *Add os_signpost_interval_end call*
 
-The system is going to automatically insert timestamps and calculate the delta for me, I don't have to worry about that.
+The system will automatically insert timestamps and calculate the delta for me, I don't have to worry about that.
 
-So where is this information going to show up? My log handle, defined up here is configured to use the new .pointsOfInterest category, which will automatically surface the data in Instruments.
+Now my data, thats going to automatically show up in Instruments. I'm using a log handle, defined up here, that's configured to use the new .pointsOfInterest category, which Instruments watches for.
 
-Lets see what kind of data we get in Instruments. I'll go to Product > Profile, which will launch Instruments and my app.
+Lets run this under Instruments and see what kind of data we get. I'll go to Product > Profile, which will launch Instruments and my app.
 
-Up here you can see the Points of Interest track, with all my logs and signposts. So these blue bars, those are the intervals I just added that show long it takes to parse the data.
+Up here you can see the Points of Interest track. That has all my logs and signposts. These blue bars are showing how long it's taking to parse my data.
 
-Each time I'm parsing the data, I can see the main thread's CPU usage spik, which is probably causing that stutter. I should really move that to a background thread.
+I can immediatley see something I can see that each time I'm parsing data, the main thread's CPU usage spik, which is probably causing that stutter. I should really move that to a background thread.
 
 So, some really quick insight in Instruments just by adding logging and signposts.
 
