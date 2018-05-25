@@ -15,15 +15,15 @@ protocol PlanetsDetailsListener {
 }
 
 /// OSLog for logging Solar System Explorer JSON parsing events.
-fileprivate let solarSystemLog = OSLog(subsystem: "com.SolarSystemExplorer", 
-                                        category: OS_LOG_CATEGORY_POINTS_OF_INTEREST)
+fileprivate let parsingLog = OSLog(subsystem: "com.SolarSystemExplorer",
+                                    category: .pointsOfInterest)
 
 final class PlanetUpdateService {
 
     func update(listener: PlanetsDetailsListener) {
         
         // Log that we're about to queue up a network request for solars system details.
-        os_log("Requesting Solar System details", log: solarSystemLog, type: .debug)
+        os_log("Requesting Solar System details", log: parsingLog, type: .debug)
 
         refreshPlanets { planets, error in
             
@@ -47,17 +47,20 @@ final class PlanetUpdateService {
             }
 
             NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { (parser) in
-                let signpostID = OSSignpostID(log: solarSystemLog)
-                os_signpost(.begin, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Started parsing data of size %d", responseData.count)
+
+                os_signpost(.begin, log: parsingLog, name: "JSONParsing", "Started parsing data of size %d", responseData.count)
+
                 do {
                     let result: [T] = try parser.parse()
                     completion(result, nil)
                 } catch {
                     os_log("Parsing error encountered: %@",
-                           log: solarSystemLog, type: .error, "\(error)")
+                           log: parsingLog, type: .error, "\(error)")
                     completion(nil, error)
                 }
-                os_signpost(.end, log: solarSystemLog, name: "JSONParsing", signpostID: signpostID, "Finished parsing")
+
+                os_signpost(.end, log: parsingLog, name: "JSONParsing", "Finished parsing")
+
             }
         }
     }
