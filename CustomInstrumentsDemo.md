@@ -1,22 +1,26 @@
 ## Part 1 — os_log/os_signpost
 
-Xcode and Instruments have some great new features that make it easier than ever to understand how your app is performing. Let me show you.
+Some great new features this year for understanding your apps performance. Let me show you.
 
-I've recently noticed some pretty serious stutters in my Solar System exploration app when it first launches and is udpating the planet data.
+I've recently noticed some pretty serious stutters in my Solar System exploration app when it first launches. Looks like it's stuttering when fetching data. Let me press Command-R to request data again. Yeah, definitley looks related to updating the planet data.
 
-  *Show stuttering app*
+I'm going to add some logging and signposts to figure out whats going on. 
 
-Let's figure out whats going on. I want to use the new os_signpost API to surface some time intervals in my code. I'll start in my class here that handles networking and JSON parsing.
+This is the file that requests and parses the data. I'm going to create an OSLog handle that uses the new .pointsOfInterest category. Everything I log with this will automatically show up in Instruments.
 
-First off, I want to measure how long the JSON parsing is taking, so I'll drop the first signpost right before I start parsing:
+  *insert snippet 1 -- OSLog handle creation*
 
-  *Add os_signpost_interval_begin call*
+I'll add an os_log here when I'm about to go off and do a network request.
 
-And I'll drop the second signpost after I'm done parsing.
+  *insert snippet 2 -- os_log, about to do network request*
 
-  *Add os_signpost_interval_end call*
+I'll add a signpost down here, after I've gotten data back, and am just about to parse it.
 
-I'm using a log handle, defined up here, that's configured to use the new .pointsOfInterest category. This is a special new cateogry that Instruments is always watching.
+  *insert snippet 3 -- os_signpost, begin*
+
+And I'll drop another signpost after I've finished parsing the data.
+
+  *insert snippet 4 -- os_signpost, end*
 
 Lets run this under Instruments and see what kind of data we get. I'll go to Product > Profile, which will launch Instruments.
 
@@ -24,11 +28,9 @@ Up here you can see the Points of Interest track. Anything I logged with the .po
 
 Right away I can see that each time I'm parsing data, the main thread spikes, which means I'm probably doing my parsing on the main thread which is causing my stutter. I should really move that to a background thread.
 
-So, some really quick insight in Instruments by adding just a couple of signposts in my code.
-
 ## Part 2 — Custom Instruments
 
-Now if these simple visualizations aren't enough, you can go much further by customizing exactly which data Instruments shows you and how it shows it to you. You'll be using the same powerful core technology we use to create all the included instruments.
+So, some really quick insight in Instruments by adding a log and a couple of signposts in my code. But you can go much further by customizing exactly which data Instruments shows you and how it shows it to you. You'll be using the same powerful core technology we use to create all the included instruments.
 
 Let me show you a Custom Instruments package that my teammate Daniel sent me. It visualizes signposts in the networking framework that he built for our app.
 
