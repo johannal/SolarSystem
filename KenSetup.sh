@@ -33,7 +33,7 @@ then
     # Reset the pulled commit, if author was Andrew
     git branch --set-upstream-to=origin/master
     EMAIL=$(git log -1 --pretty=format:'%ae')
-    if [[ "$EMAIL" == "andrew@solarsystemexplorer.com" ]]; then
+    if [[ "$EMAIL" == "appleseed@solarsystemexplorer.com" ]]; then
         git reset --hard HEAD~1
     fi
     git fetch
