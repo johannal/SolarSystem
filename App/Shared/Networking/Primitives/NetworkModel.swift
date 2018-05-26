@@ -32,7 +32,7 @@ extension UpdatingCelestial {
     func _requestWithSuffix(_ suffix: String) -> RequestType {
         var request = RequestType(requestURL: "solars.apple.com/\(self.baseURLComponent)/\(self.name)/\(suffix)")
         request.groupingValue = self.planetName
-        return request;
+        return request
     }
     var newsUpdateRequest: RequestType { return _requestWithSuffix("news") }
     var photoUpdateRequest: RequestType { return _requestWithSuffix("image") }

@@ -45,7 +45,7 @@ final class NetworkRequestScheduler {
     }
 
     class func scheduleRequest(_ request: NetworkRequest, handler: @escaping (NetworkRequest, Int, Data?)->Void) {
-        os_log("PLANET: %{public}@ URL: %{public}@", log: legacyLog, type: .debug, request.groupingValue, request.requestURL)
+        os_log(.debug, log: legacyLog, "PLANET: %{public}@ URL: %{public}@", request.groupingValue, request.requestURL)
         if let cannedParser = fakeParserForRequest(request) {
             plannedResponses[request.identifier] = cannedParser
         }

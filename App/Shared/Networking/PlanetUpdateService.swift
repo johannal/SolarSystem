@@ -23,7 +23,7 @@ final class PlanetUpdateService {
     func update(listener: PlanetsDetailsListener) {
         
         // Log that we're about to queue up a network request for solars system details.
-        os_log("Requesting Solar System details", log: parsingLog, type: .debug)
+        os_log(.debug, log: parsingLog, "Requesting Solar System details")
 
         refreshPlanets { planets, error in
             
@@ -54,8 +54,7 @@ final class PlanetUpdateService {
                     let result: [T] = try parser.parse()
                     completion(result, nil)
                 } catch {
-                    os_log("Parsing error encountered: %@",
-                           log: parsingLog, type: .error, "\(error)")
+                    os_log(.error, log: parsingLog, "Parsing error encountered: %@", String(describing: error))
                     completion(nil, error)
                 }
 

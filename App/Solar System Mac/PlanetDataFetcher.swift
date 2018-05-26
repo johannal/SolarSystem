@@ -23,21 +23,21 @@ final class PlanetDataFetcher {
     func fetchPlanetData(dataHandler: @escaping ([SolarSystemPlanet]?) -> Void) {
         
         // Log that we're queing up a network request for planet data.
-        os_log("Requesting planet data", log: parsingLog, type: .debug)
+        os_log(.debug, log: parsingLog, "Requesting planet data")
         
         // Request the planet data from our server.
         SolarSystemURLSession.shared.dataTask(with: planetDataURL) { (data, response, error) in
             
             // If there was an error fetching the data, log it and return.
             guard error == nil else {
-                os_log("Error fetching planet data: %@", log: parsingLog, type: .error, String(describing: error))        
+                os_log(.error, log: parsingLog, "Error fetching planet data: %@", String(describing: error))
                 dataHandler(nil)
                 return
             }
             
             // If we didn't get any data back, log and return.
             guard let data = data else {
-                os_log("No planet data returned", log: parsingLog, type: .error)        
+                os_log(.error, log: parsingLog, "No planet data returned")
                 dataHandler(nil)
                 return
             }
@@ -47,7 +47,7 @@ final class PlanetDataFetcher {
                 dataHandler(planets)
             } catch {
                 dataHandler(nil)
-                os_log("Error desearlizing JSON: %@", log: parsingLog, type: .error, String(describing: error))
+                os_log(.error, log: parsingLog, "Error deserializing JSON: %@", String(describing: error))
             }
             
         }
