@@ -30,7 +30,7 @@ class SceneViewAppearanceManager: NSObject {
         
         if let astronomicalObjectNode = sceneView.scene?.rootNode.childNode(withName: "astronomicalObject", recursively: true) {
             let textureName = effectiveAppearanceIsDark ? "EarthNightLights" : "Earth"
-            let image = NSImage(named: textureName)
+            let image = NSImage(named: NSImage.Name(rawValue: textureName))
             astronomicalObjectNode.geometry?.firstMaterial?.diffuse.contents = image
         }
     }
