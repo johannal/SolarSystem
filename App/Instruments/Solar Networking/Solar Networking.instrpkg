@@ -3,7 +3,7 @@
     <id>com.demo.solarsystem.networking</id>
     <title>Solar System Networking</title>
     <owner>
-        <name>Kacper</name>
+        <name>Daniel</name>
     </owner>
     <note>Package that provides instrumentation for Solar System networking operations.</note>
     <import-schema>os-signpost</import-schema>
