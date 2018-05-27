@@ -12,8 +12,6 @@ import os.signpost
 /// OSLog for logging Solar System Explorer JSON parsing events.
 fileprivate let parsingLog = OSLog(subsystem: "com.SolarSystemExplorer", category: .pointsOfInterest)
 
-private let jsonDecoder = JSONDecoder()
-
 /// Provides methods that fetch and parse planet data, and then hands back  #SolarSystemPlanet model objects from that data.
 final class PlanetDataFetcher {
 
@@ -41,7 +39,7 @@ final class PlanetDataFetcher {
             }
             
             do {
-                let planets = try self.deserializeAndParseJSON(from: data)
+                let planets = try self.deserializeAndParseJSON(data)
                 dataHandler(planets)
             } catch {
                 dataHandler(nil)
@@ -55,10 +53,30 @@ final class PlanetDataFetcher {
     /// - Parameter data: The data to deserialize as JSON.
     /// - Returns: An array of #SolarSystemPlanets or nil if the JSON doesn't have a "planets" key.
     /// - Throws: If deserialization fails.
-    private func deserializeAndParseJSON(from data: Data) throws -> [SolarSystemPlanet]? {
-        return try jsonDecoder.decode([SolarSystemPlanet].self, from: data)
+    private func deserializeAndParseJSON(_ data: Data) throws -> [SolarSystemPlanet]? {
+        
+        // Deserialize the JSON.
+        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+            return nil
+        }
+        
+        // Extract out the planets.
+        guard let planetsJSON = json["planets"] as? [[String: Any]] else {
+            return nil
+        }
+        
+        // Create the array of planets that we'll build up.
+        var planets: [SolarSystemPlanet] = []
+        
+        // Loop over the JSON and create planets for each bit of data.
+        for case let planetJSON in planetsJSON {
+            if let planet = SolarSystemPlanet(json: planetJSON) {
+                planets.append(planet)
+            }
+        }
+        
+        return planets
     }
-    
 } 
 
 extension SolarSystemPlanet {
@@ -68,4 +86,3 @@ extension SolarSystemPlanet {
 }
 
 fileprivate typealias SolarSystemURLSession = URLSession
-fileprivate let requestID: UInt = 0
