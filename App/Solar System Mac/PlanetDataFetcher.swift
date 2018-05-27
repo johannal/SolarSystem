@@ -30,14 +30,12 @@ final class PlanetDataFetcher {
             
             // If there was an error fetching the data, log it and return.
             guard error == nil else {
-                os_log(.error, log: parsingLog, "Error fetching planet data: %@", String(describing: error))
                 dataHandler(nil)
                 return
             }
             
             // If we didn't get any data back, log and return.
             guard let data = data else {
-                os_log(.error, log: parsingLog, "No planet data returned")
                 dataHandler(nil)
                 return
             }
@@ -47,7 +45,6 @@ final class PlanetDataFetcher {
                 dataHandler(planets)
             } catch {
                 dataHandler(nil)
-                os_log(.error, log: parsingLog, "Error deserializing JSON: %@", String(describing: error))
             }
             
         }
