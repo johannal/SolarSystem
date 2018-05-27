@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        // Log that we're queing up a network request for planet data.
+	<string>        // Log that we're queuing up a network request for planet data.
         os_log(.debug, log: parsingLog, "Requesting planet data")</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5E98BE8F-1499-4C2A-93F1-29CD81260B23</string>
