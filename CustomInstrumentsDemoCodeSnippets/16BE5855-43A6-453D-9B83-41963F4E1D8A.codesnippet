@@ -3,22 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>l4</string>
+	<string>l1</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>os_signpost(type: .end, log: parsingLog, name: "Finished parsing")</string>
+	<string>/// OSLog for logging Solar System Explorer JSON parsing events.
+fileprivate let parsingLog = OSLog(subsystem: "com.SolarSystemExplorer", category: &lt;#category#&gt;)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B04DA282-4F52-40B6-A848-46C0847258BD</string>
+	<string>16BE5855-43A6-453D-9B83-41963F4E1D8A</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Signpost after parsing</string>
+	<string>OSLog handle</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
