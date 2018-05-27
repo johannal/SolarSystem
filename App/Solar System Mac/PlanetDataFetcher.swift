@@ -9,9 +9,6 @@ import Foundation
 import os.log
 import os.signpost
 
-/// OSLog for logging Solar System Explorer JSON parsing events.
-fileprivate let parsingLog = OSLog(subsystem: "com.SolarSystemExplorer", category: .pointsOfInterest)
-
 /// Provides methods that fetch and parse planet data, and then hands back  #SolarSystemPlanet model objects from that data.
 final class PlanetDataFetcher {
 
@@ -19,9 +16,6 @@ final class PlanetDataFetcher {
     private let planetDataURL = URL(string: "http://www.solarsystemexplorationapp.com/planetData")! 
     
     func fetchPlanetData(dataHandler: @escaping ([SolarSystemPlanet]?) -> Void) {
-        
-        // Log that we're queing up a network request for planet data.
-        os_log(.debug, log: parsingLog, "Requesting planet data")
         
         // Request the planet data from our server.
         SolarSystemURLSession.shared.dataTask(with: planetDataURL) { (data, response, error) in
