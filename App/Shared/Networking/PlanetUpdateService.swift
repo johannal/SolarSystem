@@ -23,7 +23,7 @@ final class PlanetUpdateService {
     func update(listener: PlanetsDetailsListener) {
         
         // Log that we're about to queue up a network request for solars system details.
-        os_log(.debug, log: parsingLog, "Requesting Solar System details")
+        os_log(.debug, log: parsingLog, "Requesting planet data")
 
         refreshPlanets { planets, error in
             
