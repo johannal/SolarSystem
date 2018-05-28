@@ -1,5 +1,5 @@
 //
-//  PlanetsNewsUpdatesService.swift
+//  PlanetUpdateService.swift
 //  Solar System
 //
 //  Copyright © 2018 Apple. All rights reserved.
