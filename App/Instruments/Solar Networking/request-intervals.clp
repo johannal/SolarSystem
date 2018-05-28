@@ -70,7 +70,7 @@
     (speculate (event-horizon ?horizon))
     (open-request-interval (time ?start-time&:(< ?start-time ?horizon)))
     =>
-    (bind ?*modeler-horizon* ?start-time)
+    (bind ?*modeler-horizon* (min ?start-time ?*modeler-horizon*))
 )
 
 ;;; MARK: RECORDER
