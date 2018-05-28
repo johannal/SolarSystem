@@ -9,6 +9,7 @@ import os.log
 import os.signpost
 import Foundation
 
+/// Protocol to get callbacks for planet and moon updates.
 protocol PlanetsDetailsListener {
     func updateWithPlanets(_ planets: [SolarSystemPlanet]?, _ error: Error?)
     func updateWithMoons(_ moons: [SolarSystemMoon]?, forPlanet: SolarSystemPlanet)
