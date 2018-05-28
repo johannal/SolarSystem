@@ -43,7 +43,7 @@ class SolarSystemPlanetsDataSource: NSObject, NSCollectionViewDataSource, NSColl
         
         if let name = planetDetails?[indexPath.item]["name"] as? String {
             collectionViewItem.textField?.stringValue = name
-            collectionViewItem.imageView?.image = NSImage(named: NSImage.Name(rawValue: "\(name)Globe"))
+            collectionViewItem.imageView?.image = NSImage(named: "\(name)Globe")
         }
         
         return item
