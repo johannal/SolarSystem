@@ -26,8 +26,9 @@
 )
 
 (defrule MODELER::request-begin
-    (os-signpost (time ?start-time) (event-type "Begin") (name "NetworkRequest") (identifier ?request-id)
-        (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category))
+    (os-signpost (time ?start-time) (event-type "Begin") (identifier ?request-id) (name "NetworkRequest")
+        (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category)
+    )
     (table (table-id ?output) (side append)) (table-attribute (table-id ?table-id) (has schema solar-network-request-interval))
     =>
     (assert (open-request-interval (time ?start-time) (output-table ?table-id) (request-id ?request-id) (url ?url) (category ?category) (request-type ?request-type)))
@@ -37,7 +38,8 @@
 
 (defrule MODELER::url-clear
     (os-signpost (event-type "Emit") (name "NetworkRequest")
-        (message$ "Request queue complete"))
+        (message$ "Request queue complete")
+    )
     ?f <- (requested-url)
     =>
     (retract ?f)
@@ -60,7 +62,8 @@
 (defrule MODELER::failure-removal
     (open-request-interval (request-id ?same-request-id) (url ?same-url))
     (os-signpost (event-type "End") (name "NetworkRequest") (identifier ?same-request-id)
-        (message$ "Request finished CODE:" ?http-code&~200))
+        (message$ "Request finished CODE:" ?http-code&~200)
+    )
     ?f <- (requested-url (url ?same-url) (request-id ?same-request-id))
     =>
     (retract ?f)
@@ -76,9 +79,11 @@
 ;;; MARK: RECORDER
 
 (defrule RECORDER::request-end
-    ?f <- (open-request-interval (time ?start-time) (output-table ?table-id) (request-id ?request-id) (url ?url) (category ?category) (request-type ?request-type) (layout-id ?layout-id) (is-duplicate ?dupe))
+    ?f <- (open-request-interval (time ?start-time) (output-table ?table-id) (request-id ?request-id) (url ?url) (category ?category) (request-type ?request-type) (layout-id ?layout-id) (is-duplicate ?dupe)
+    )
     (os-signpost (time ?end-time) (event-type "End") (name "NetworkRequest") (identifier ?request-id)
-        (message$ "Request finished CODE:" ?http-code))
+        (message$ "Request finished CODE:" ?http-code)
+    )
     =>
     (assert (close-layout-reservation (id ?layout-id) (start ?start-time) (category ?table-id) (end (- ?end-time 1))))
     (retract ?f)
@@ -100,7 +105,8 @@
 
 (defrule RECORDER::speculation-output
     (speculate (event-horizon ?horizon))
-    (open-request-interval (time ?start-time) (output-table ?table-id) (request-id ?request-id) (url ?url) (category ?category) (request-type ?request-type) (layout-id ?layout-id) (is-duplicate ?dupe))
+    (open-request-interval (time ?start-time) (output-table ?table-id) (request-id ?request-id) (url ?url) (category ?category) (request-type ?request-type) (layout-id ?layout-id) (is-duplicate ?dupe)
+    )
     =>
     (create-new-row ?table-id)
     (set-column start ?start-time)

@@ -703,8 +703,8 @@
 				10582C6C20BC6B5400BD4CB9 /* SolarSystemTemplate.png */,
 				BBA9B65520AA4D0F00258FEB /* Solar Networking.instrpkg */,
 				BBC87A4320AB4A71008DFA64 /* category-points.clp */,
-				101D6B7920B4912100A1CAA3 /* load-modeling.clp */,
 				10F1AC6C20BB726B00EFC25C /* request-intervals.clp */,
+				101D6B7920B4912100A1CAA3 /* load-modeling.clp */,
 				BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */,
 				BBE4C9E820B49A180082679D /* duplicate-request-detection.clp */,
 			);

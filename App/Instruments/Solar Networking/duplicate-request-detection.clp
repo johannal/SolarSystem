@@ -1,43 +1,26 @@
-;  duplicate-overlapping-detection.clp
-;  Solar System
-;
-;  Copyright © 2018 Apple. All rights reserved.
+;;;
+;;; duplicate-overlapping-detection.clp
+;;; Copyright © 2018 Apple. All rights reserved.
+;;;
+;;; Input schemas: solar-network-request-interval
+;;; Output schemas: solar-request-narrative
+;;;
 
-(deftemplate started-request
-    (slot time
-    (type INTEGER))
-    (slot url
-    (type STRING))
-    (slot identifier
-    (type INTEGER))
-)
+;;; MARK: MODELER
 
-(defrule MODELER::record-any-request-starting
-    (os-signpost (subsystem "com.demo.SolarSystem") (category "Networking") (name "NetworkRequest")
-        (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category)
-        (time ?time) (identifier ?identifier) (event-type "Begin")
-    )
-    =>
-    (assert (started-request (time ?time) (url ?url) (identifier ?identifier)))
-)
+; No MODELER rules necessary; the overlap detection works because intervals are asserted as facts for
+; their entire duration and only retracted when the modeling clock passes their end, so we can simply
+; check for two intervals in existence at any moment with the same url.
 
-(defrule MODELER::record-request-starting-for-same-resource
-    (started-request (time ?time) (url ?url) (identifier ?identifier))
-    (started-request (url ?url) (time ?t&:(and (> ?time ?t) (< (- ?time ?t) 5000000000))))
-    (table (table-id ?output) (side append))
-    (table-attribute (table-id ?output) (has schema request-narrative))
+;;; MARK: RECORDER
+
+(defrule RECORDER::overlap-detection
+    (solar-network-request-interval (start ?start1) (request-id ?id1) (url ?same-url))
+    (solar-network-request-interval (start ?start2) (request-id ?id2) (url ?same-url))
+    (test (< ?start1 ?start2))
+    (table (table-id ?output) (side append)) (table-attribute (table-id ?output) (has schema solar-request-narrative))
     =>
     (create-new-row ?output)
-    (set-column time ?time)
-    (set-column narrative (str-cat "Requested the same resource: " ?url" before canceling previous request with identifier: " ?identifier))
-)
-
-(defrule RECORDER::record-request-finished
-    (os-signpost (subsystem "com.demo.SolarSystem") (category "Networking") (name "NetworkRequest")
-        (message$ "Request finished [ID:" ?request-id "][CODE:" ?http-code"]")
-        (identifier ?identifier) (event-type "End")
-    )
-    ?which <- (started-request (time ?time) (url ?url) (identifier ?identifier))
-    =>
-    (retract ?which)
+    (set-column time ?start2)
+    (set-column narrative (str-cat "Requested the same resource: " ?same-url" with identifier: " ?id2 " before canceling previous request with identifier: " ?id1))
 )

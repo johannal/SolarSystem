@@ -96,7 +96,7 @@
     </os-signpost-interval-schema>
 
     <point-schema>
-        <id>request-start</id>
+        <id>solar-request-start</id>
         <title>Request Start Events</title>
 
         <timestamp-column> <mnemonic>time</mnemonic> <title>Timestamp</title> <type>sample-time</type> </timestamp-column>
@@ -107,7 +107,7 @@
         <column> <mnemonic>identifier</mnemonic> <title>Identifier</title> <type>os-signpost-identifier</type> </column>
     </point-schema>
     <point-schema>
-        <id>request-narrative</id>
+        <id>solar-request-narrative</id>
         <title>Requests Narrative</title>
 
         <timestamp-column> <mnemonic>time</mnemonic> <title>Timestamp</title> <type>sample-time</type> </timestamp-column>
@@ -149,9 +149,11 @@
         </production-system>
 
         <output>
-            <schema-ref>request-start</schema-ref>
+            <schema-ref>solar-request-start</schema-ref>
             <required-input>
                 <schema-ref>os-signpost</schema-ref>
+                <attribute> <name>category</name> <string>Networking</string> </attribute>
+                <attribute> <name>subsystem</name> <string>com.demo.SolarSystem</string> </attribute>
             </required-input>
         </output>
     </modeler>
@@ -191,17 +193,14 @@
         </production-system>
 
         <output>
-            <schema-ref>request-narrative</schema-ref>
-            <required-input>
-                <schema-ref>os-signpost</schema-ref>
-            </required-input>
+            <schema-ref>solar-request-narrative</schema-ref>
             <required-input>
                 <schema-ref>solar-network-request-interval</schema-ref>
             </required-input>
         </output>
     </modeler>
 
-    <instrument>
+    <!-- Request Load --> <instrument>
         <id>com.demo.solarsystem.networking.average-started-requests</id>
         <title>Request Load</title>
         <category>Behavior</category>
@@ -243,7 +242,7 @@
         </defaults>
 
     </instrument>
-    <instrument>
+    <!-- Request Intervals --> <instrument>
         <id>com.demo.solarsystem.networking.request-intervals</id>
         <title>Request Intervals</title>
         <category>Behavior</category>
@@ -262,7 +261,7 @@
 
         <create-table>
             <id>request-narrative-table</id>
-            <schema-ref>request-narrative</schema-ref>
+            <schema-ref>solar-request-narrative</schema-ref>
         </create-table>
 
         <graph>
@@ -324,7 +323,7 @@
         </defaults>
 
     </instrument>
-    <instrument>
+    <!-- HTTP Activity --> <instrument>
         <id>com.demo.solarsystem.networking.http-activity</id>
         <title>HTTP Activity</title>
         <category>Behavior</category>
@@ -344,7 +343,7 @@
 
         <create-table>
             <id>request-start-table</id>
-            <schema-ref>request-start</schema-ref>
+            <schema-ref>solar-request-start</schema-ref>
         </create-table>
 
         <graph>

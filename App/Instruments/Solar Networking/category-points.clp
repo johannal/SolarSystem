@@ -1,16 +1,16 @@
-;  fusion-modeler.clp
-;  Solar System
-;
-;  Copyright © 2018 Apple. All rights reserved.
+;;;
+;;; category-points.clp
+;;; Copyright © 2018 Apple. All rights reserved.
+;;;
+;;; Input schemas: os-signpost [category="Networking", subsystem="com.demo.SolarSystem"]
+;;; Output schemas: solar-request-start
+;;;
 
 (defrule RECORDER::record-unified-http
-    (os-signpost (subsystem "com.demo.SolarSystem") (category "Networking") (name "NetworkRequest")
+    (os-signpost (time ?time) (event-type "Begin") (name "NetworkRequest") (identifier ?identifier)
         (message$ "Request started URL:" ?url ",TYPE:" ?request-type ",CATEGORY:" ?category)
-        (time ?time) (identifier ?identifier)
     )
-
-    (table (table-id ?output) (side append))
-    (table-attribute (table-id ?output) (has schema request-start))
+    (table (table-id ?output) (side append)) (table-attribute (table-id ?output) (has schema solar-request-start))
     =>
     (create-new-row ?output)
     (set-column time ?time)
