@@ -1,6 +1,6 @@
-Some great new features this year for analyzing your apps performance. Let me show you.
+We've got some great new features for analyzing your apps performance. Let me show you.
 
-I'm working on my Solar System exploration. When it first launches, I've noticed some stutters as it's fetching planet data. Let me press Command-R to fetch the data again so you can see that stutter.
+I'm working on my Solar System exploration app here. When it first launches, I've noticed some stutters as it's fetching planet data. Let me press Command-R to fetch the data again so you can see that stutter.
 
 I'm going to add some logging and signposts to see if I can figure out whats going on. 
 
@@ -23,9 +23,9 @@ Up here you can see the Points of Interest track. Anything I logged with the .po
 
 Right away I can see that when I'm parsing data, the main thread's activity spikes. My guess is that I'm doing the parsing on the main thread which is not a receipe for a smooth UI. I should really move that to a background thread.
 
-So some really quick insight in Instruments by adding a log and a couple of signposts in my code. 
+So some really quick insight in Instruments by just adding a log and a couple of signposts in my code. 
 
-<< more emphasis>> But I can go much further by customizing the data Instruments shows me, and how it shows it to me. I've got access to the same powerful core technology thats used to create all the bundled instruments.
+But, with the new tools, you can also create Custom Intruments. You'll be using the exact same technology all of the bundled instruments are built with.
 
 Let me show you a Custom Instruments package that my teammate Daniel sent me. It visualizes signposts that he put in our networking framework.
 
