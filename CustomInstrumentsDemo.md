@@ -4,7 +4,7 @@ I'm working on my Solar System exploration app here. When it's updating the plan
 
 I want to figure out whats going.
 
-PlanetUpdate.swift here, is the class that handles the data update. I'm going to start by adding some logging and signposts. I'll need an OSLog handle, and I"m going to use the new .pointsOfInterest category. Everything I log using that category  will automatically show up in Instruments.
+PlanetUpdateService.swift here, is the class that does all the work for the update. I'm going to start by adding some logging and signposts. I'll need an OSLog handle, and I"m going to use the new .pointsOfInterest category. Everything I log using that category  will automatically show up in Instruments.
 
   *insert snippet 1 -- OSLog handle creation*
 
@@ -23,11 +23,9 @@ Up here you can see the Points of Interest track. Anything I logged with the .po
 
 Right away I can see that when I'm parsing data, the main thread's activity spikes. My guess is that I'm doing the parsing on the main thread which is not a receipe for a smooth UI. I should really move that to a background thread.
 
-So some really quick insight into my performance issue here, by just adding a log and a couple of signposts. 
+So with just a log and a couple of signposts, I got some quick insight into my performance issue. 
 
-But, with the new tools, you can do way more. You can create fully Custom Intruments by using the same technology that all of our bundled instruments are built with.
-
-Let me show you a Custom Instruments package that my teammate Daniel sent me. It visualizes signposts that he put in our networking framework.
+But, with the new tools, you can do way more. Let me show you a Custom Instruments package that my teammate Daniel sent me. So this visualizes signposts that he put in our networking framework.
 
 I can see details about the package. I'll click install, and it shows up in right here in the template chooser. I'll select it, and click record, which launches my app.
 
