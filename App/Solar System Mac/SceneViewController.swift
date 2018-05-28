@@ -155,7 +155,7 @@ extension SceneViewController: PlanetsDetailsListener {
     /// Performs network request to Solar System REST service which asks about news and planets.
 
     func refreshPlanetsAndNews() {
-        networkService.update(listener: self)
+        networkService.updatePlanetData(listener: self)
     }
 
     // MARK: - Network Update Callbacks

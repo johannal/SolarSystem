@@ -16,7 +16,7 @@ protocol PlanetsDetailsListener {
 
 final class PlanetUpdateService {
 
-    func update(listener: PlanetsDetailsListener) {
+    func updatePlanetData(listener: PlanetsDetailsListener) {
 
         refreshPlanets { planets, error in
             
