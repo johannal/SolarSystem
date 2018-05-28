@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>os_signpost(type: .end, log: parsingLog, name: "Finished parsing")</string>
+	<string>os_signpost(.end, log: parsingLog, name: "JSONParsing", "Finished parsing")</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B04DA282-4F52-40B6-A848-46C0847258BD</string>
 	<key>IDECodeSnippetLanguage</key>
