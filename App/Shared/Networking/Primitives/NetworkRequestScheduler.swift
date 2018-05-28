@@ -40,7 +40,7 @@ final class NetworkRequestScheduler {
     class func scheduleParsingTask(_ identifier: UInt, _ data: Data, silent: Bool = false, workItem: @escaping (RequestParser)->Void) {
         let parser = plannedResponses[identifier] ?? MockRequestParser(data: data)
         parsingQueue.async {
-            if (silent) {
+            if silent {
                 workItem(parser)
             } else {
                 let signpostID = OSSignpostID(log: solarNetworkingLog)

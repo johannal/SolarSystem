@@ -44,16 +44,16 @@ final class PlanetUpdateService {
     ///   - completion: The handler to call back once the network request and parsing task have completed.
     func performRequest<T>(request: NetworkRequest, completion: @escaping ArrayCompletion<T>) {
         
-        NetworkRequestScheduler.scheduleRequest(request) { (request, resultCode, data) in
+        NetworkRequestScheduler.scheduleRequest(request) { request, resultCode, data in
             guard let responseData = data else {
                 completion(nil, UpdateError.requestFailed)
                 return
             }
 
-            NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { (parser) in
+            NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { jsonParser in
 
                 do {
-                    let result: [T] = try parser.parse()
+                    let result: [T] = try jsonParser.parse()
                     completion(result, nil)
                 } catch {
                     completion(nil, error)

@@ -53,7 +53,7 @@ class SceneAnimator: NSObject {
     
     // Display Link callback
     @objc func tick(timestamp: TimeInterval) {
-        if (lastTimestamp == 0) {
+        if lastTimestamp == 0 {
             lastTimestamp = timestamp
             return
         }

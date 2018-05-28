@@ -319,9 +319,9 @@ extension Bounds {
     
     private func minIgnoringInfinity(_ a: Double, _ b: Double) -> Double {
         let minValue: Double
-        if (a == .infinity) {
+        if a == .infinity {
             minValue = b
-        } else if (b == .infinity) {
+        } else if b == .infinity {
             minValue = a
         } else {
             minValue = min(a, b)
@@ -332,9 +332,9 @@ extension Bounds {
     
     private func maxIgnoringInfinity(_ a: Double, _ b: Double) -> Double {
         let maxValue: Double
-        if (a == .infinity) {
+        if a == .infinity {
             maxValue = b
-        } else if (b == .infinity) {
+        } else if b == .infinity {
             maxValue = a
         } else {
             maxValue = max(a, b)
@@ -9985,7 +9985,7 @@ public class Color: _ExpressibleByColorLiteral {
     /// - Returns: the next of the standard colors.
     internal static func next() -> Color {
         let colorToReturn = standard[currentColorIndex]
-        if (currentColorIndex == standard.count - 1) {
+        if currentColorIndex == standard.count - 1 {
             currentColorIndex = 0
         } else {
             currentColorIndex += 1
