@@ -14,8 +14,12 @@ protocol PlanetsDetailsListener {
     func updateWithMoons(_ moons: [SolarSystemMoon]?, forPlanet: SolarSystemPlanet)
 }
 
+/// Helper class to handle requesting data from the network, and parsing that data. 
 final class PlanetUpdateService {
 
+    /// Updates the planet data.
+    ///
+    /// - Parameter listener: The listener to call back with the updated data.
     func updatePlanetData(listener: PlanetsDetailsListener) {
 
         refreshPlanets { planets, error in
