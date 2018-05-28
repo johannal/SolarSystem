@@ -14,11 +14,28 @@ fileprivate let legacyLog = OSLog(subsystem: "com.SolarSystemExplorer",
 final class NetworkRequestScheduler {
     private static let callbackQueue = DispatchQueue(label: "com.demo.SolarSystem.networkCallbacks")
     private static let schedulingQueue = DispatchQueue(label: "com.demo.SolarSystem.networkScheduling")
+    private static let outstandingTrackingQueue = DispatchQueue(label: "com.demo.SolarSystem.atomicRequestTracking")
+    private static var scheduledRequests = 0 // Protected by the outstandingTrackingQueue
 
     private static let parsingQueue = DispatchQueue.main
     private static let simultaneousRequestSem = DispatchSemaphore(value: 150)
 
     private static let solarNetworkingLog = OSLog(subsystem: "com.demo.SolarSystem", category: "Networking")
+
+    private class func _requestDidStart() {
+        outstandingTrackingQueue.sync {
+            scheduledRequests += 1
+        }
+    }
+
+    private class func _requestDidFinish() {
+        outstandingTrackingQueue.sync {
+            scheduledRequests -= 1
+            if scheduledRequests == 0 {
+                os_signpost(.event, log: solarNetworkingLog, name: "NetworkRequest", "Request queue complete")
+            }
+        }
+    }
 
     class func scheduleParsingTask(_ identifier: UInt, _ data: Data, silent: Bool = false, workItem: @escaping (RequestParser)->Void) {
         let parser = plannedResponses[identifier] ?? MockRequestParser(data: data)
@@ -49,6 +66,7 @@ final class NetworkRequestScheduler {
         if let cannedParser = fakeParserForRequest(request) {
             plannedResponses[request.identifier] = cannedParser
         }
+        _requestDidStart()
         schedulingQueue.async {
             simultaneousRequestSem.wait()
             let signpostID = OSSignpostID(log: solarNetworkingLog)
@@ -61,9 +79,11 @@ final class NetworkRequestScheduler {
                     let time = DispatchTime.now() + .seconds(Int(1))
                     DispatchQueue.main.asyncAfter(deadline: time) {
                         scheduleRequest(request, handler: handler)
+                        _requestDidFinish()
                     }
                 } else {
                     handler(completedRequest, resultCode, data)
+                    _requestDidFinish()
                 }
             }
         }

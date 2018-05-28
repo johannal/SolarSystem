@@ -13,7 +13,7 @@
     )
 
 (defrule RECORDER::detect-unnecessary-retry-get-request-results
-    (http-request (http-code ?http-code) (url ?url) (start ?start) (duration ?duration))
+    (solar-network-request-interval (http-code ?http-code) (url ?url) (start ?start) (duration ?duration))
     (table (table-id ?output) (side append))
     (table-attribute (table-id ?output) (has schema request-narrative))
     (>= ?http-code 500)

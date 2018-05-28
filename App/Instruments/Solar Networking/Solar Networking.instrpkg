@@ -6,9 +6,9 @@
         <name>Daniel</name>
     </owner>
     <note>Package that provides instrumentation for Solar System networking operations.</note>
+
     <import-schema>os-signpost</import-schema>
     <import-schema>tick</import-schema>
-
     <os-signpost-interval-schema>
         <id>http-request</id>
         <title>Aggregated HTTP requests</title>
@@ -94,7 +94,6 @@
         </open-interval-template>
 
     </os-signpost-interval-schema>
-
     <os-signpost-interval-schema>
         <id>json-parsing</id>
         <title>Aggregated JSON parsing operations</title>
@@ -137,68 +136,45 @@
         <id>request-start</id>
         <title>Request Start Events</title>
 
-        <timestamp-column>
-            <mnemonic>time</mnemonic>
-            <title>Timestamp</title>
-            <type>sample-time</type>
-        </timestamp-column>
-
-        <column>
-            <mnemonic>url</mnemonic>
-            <title>Request URL</title>
-            <type>string</type>
-        </column>
-
-        <column>
-            <mnemonic>category</mnemonic>
-            <title>Category</title>
-            <type>string</type>
-        </column>
-
-        <column>
-            <mnemonic>request-type</mnemonic>
-            <title>HTTP Request Type</title>
-            <type>string</type>
-        </column>
-
-        <column>
-            <mnemonic>request-label</mnemonic>
-            <title>HTTP Request Label</title>
-            <type>string</type>
-        </column>
-
-        <column>
-            <mnemonic>identifier</mnemonic>
-            <title>Identifier</title>
-            <type>os-signpost-identifier</type>
-        </column>
-
+        <timestamp-column> <mnemonic>time</mnemonic> <title>Timestamp</title> <type>sample-time</type> </timestamp-column>
+        <column> <mnemonic>url</mnemonic> <title>Request URL</title> <type>string</type> </column>
+        <column> <mnemonic>category</mnemonic> <title>Category</title> <type>string</type> </column>
+        <column> <mnemonic>request-type</mnemonic> <title>HTTP Request Type</title> <type>string</type> </column>
+        <column> <mnemonic>request-label</mnemonic> <title>HTTP Request Label</title> <type>string</type> </column>
+        <column> <mnemonic>identifier</mnemonic> <title>Identifier</title> <type>os-signpost-identifier</type> </column>
     </point-schema>
-
     <point-schema>
         <id>request-narrative</id>
         <title>Requests Narrative</title>
 
-        <timestamp-column>
-            <mnemonic>time</mnemonic>
-            <title>Timestamp</title>
-            <type>sample-time</type>
-        </timestamp-column>
-
-        <column>
-            <mnemonic>narrative</mnemonic>
-            <title>Narrative</title>
-            <type>narrative-text</type>
-        </column>
+        <timestamp-column> <mnemonic>time</mnemonic> <title>Timestamp</title> <type>sample-time</type> </timestamp-column>
+        <column> <mnemonic>narrative</mnemonic> <title>Narrative</title> <type>narrative-text</type> </column>
     </point-schema>
-
     <interval-schema>
         <id>solar-network-request-load</id>
         <title>Solar Network Request Load</title>
+
         <start-column> <mnemonic>start</mnemonic> <title>Timestamp</title> <type>start-time</type> </start-column>
         <duration-column> <mnemonic>duration</mnemonic> <title>Duration</title> <type>duration</type> </duration-column>
         <column> <mnemonic>load</mnemonic> <title>Request Load</title> <type>load</type> </column>
         <column> <mnemonic>load-commitment</mnemonic> <title>Request Load Commitment</title> <type>commitment</type> </column>
+    </interval-schema>
+
+    <interval-schema>
+        <id>solar-network-request-interval</id>
+        <title>Solar System network request intervals</title>
+
+        <start-column> <mnemonic>start</mnemonic> <title>Start</title> <type>start-time</type> </start-column>
+        <duration-column> <mnemonic>duration</mnemonic> <title>Duration</title> <type>duration</type> </duration-column>
+        <primary-column> <mnemonic>request-id</mnemonic> <title>Request identifier</title> <type>os-signpost-identifier</type> </primary-column>
+        <column> <mnemonic>url</mnemonic> <title>Request URL</title> <type>string</type> </column>
+        <column> <mnemonic>category</mnemonic> <title>Category</title> <type>string</type> </column>
+        <column> <mnemonic>request-type</mnemonic> <title>HTTP Request Type</title> <type>string</type> </column>
+        <column> <mnemonic>request-label</mnemonic> <title>HTTP Request Label</title> <type>string</type> </column>
+        <column> <mnemonic>http-code</mnemonic> <title>Response Code</title> <type>uint64</type> </column>
+        <column> <mnemonic>end-present</mnemonic> <title>End signpost present</title> <type>boolean</type> </column>
+        <column> <mnemonic>request-color</mnemonic> <title>Request Color</title> <type>event-concept</type> </column>
+        <column> <mnemonic>layout-qualifier</mnemonic> <title>Layout ID</title> <type>layout-id</type> </column>
     </interval-schema>
 
     <modeler>
@@ -217,7 +193,20 @@
             </required-input>
         </output>
     </modeler>
+    <modeler>
+        <id>com.demo.solarsystem.request-interval</id>
+        <title>Solar System Network Request Interval Modeler</title>
+        <purpose>Models the network intervals and identifies duplicate requests</purpose>
 
+        <production-system> <rule-path>request-intervals.clp</rule-path> </production-system>
+        <output> <schema-ref>solar-network-request-interval</schema-ref>
+            <required-input>
+                <schema-ref>os-signpost</schema-ref>
+                <attribute> <name>category</name> <string>Networking</string> </attribute>
+                <attribute> <name>subsystem</name> <string>com.demo.SolarSystem</string> </attribute>
+            </required-input>
+        </output>
+    </modeler>
     <modeler>
         <id>com.demo.solarsystem.request-load</id>
         <title>Solar System Network Request Load Modeler</title>
@@ -225,11 +214,10 @@
 
         <production-system> <rule-path>load-modeling.clp</rule-path> </production-system>
         <output> <schema-ref>solar-network-request-load</schema-ref>
-            <required-input> <schema-ref>http-request</schema-ref> </required-input>
+            <required-input> <schema-ref>solar-network-request-interval</schema-ref> </required-input>
             <required-input> <schema-ref>tick</schema-ref> </required-input>
         </output>
     </modeler>
-
     <modeler>
         <id>com.demo.solarsystem.antipatterns</id>
         <title>Requests anti-patterns modeler</title>
@@ -246,7 +234,7 @@
                 <schema-ref>os-signpost</schema-ref>
             </required-input>
             <required-input>
-                <schema-ref>http-request</schema-ref>
+                <schema-ref>solar-network-request-interval</schema-ref>
             </required-input>
         </output>
     </modeler>
@@ -266,17 +254,12 @@
 
         <create-table>
             <id>http-request-table</id>
-            <schema-ref>http-request</schema-ref>
+            <schema-ref>solar-network-request-interval</schema-ref>
         </create-table>
 
         <create-table>
             <id>request-start-table</id>
             <schema-ref>request-start</schema-ref>
-        </create-table>
-
-        <create-table>
-            <id>request-narrative-table</id>
-            <schema-ref>request-narrative</schema-ref>
         </create-table>
 
         <graph>
@@ -313,7 +296,7 @@
                     <column>http-code</column>
                 </level>
             </hierarchy>
-            <visit-on-focus>HTTP Requests List</visit-on-focus>
+            <visit-on-focus>All Requests</visit-on-focus>
             <column>
                 <count/>
             </column>
@@ -335,15 +318,8 @@
             </column>
         </aggregation>
 
-        <narrative>
-            <title>Narrative</title>
-            <table-ref>request-narrative-table</table-ref>
-            <time-column>time</time-column>
-            <narrative-column>narrative</narrative-column>
-        </narrative>
-
         <list>
-            <title>HTTP Requests List</title>
+            <title>All Requests</title>
             <table-ref>http-request-table</table-ref>
             <column>start</column>
             <column>duration</column>
@@ -354,6 +330,131 @@
 
         <defaults>
             <graph-height>4</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+
+    <instrument>
+        <id>com.demo.solarsystem.networking.average-started-requests</id>
+        <title>Request Load</title>
+        <category>Behavior</category>
+        <purpose>Displays started requests histogram over time</purpose>
+        <icon>Network</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>request-load</id>
+            <schema-ref>solar-network-request-load</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Active Requests</title>
+            <lane>
+                <title>Request Average (100ms)</title>
+                <table-ref>request-load</table-ref>
+                <plot>
+                    <value-from>load</value-from>
+                    <color-from>load-commitment</color-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <list>
+            <title>Request Load</title>
+            <table-ref>request-load</table-ref>
+            <column>start</column>
+            <column>load</column>
+        </list>
+
+        <defaults>
+            <graph-height>1</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+
+    <instrument>
+        <id>com.demo.solarsystem.networking.request-intervals</id>
+        <title>Request Intervals</title>
+        <category>Behavior</category>
+        <purpose>Records and displays concurrent request intervals</purpose>
+        <icon>Network</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>http-requests</id>
+            <schema-ref>solar-network-request-interval</schema-ref>
+        </create-table>
+
+        <create-table>
+            <id>request-narrative-table</id>
+            <schema-ref>request-narrative</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Requests</title>
+            <lane>
+                <title>Request Intervals</title>
+                <table-ref>http-requests</table-ref>
+                <plot>
+                    <value-from>url</value-from>
+                    <color-from>request-color</color-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <time-slice>
+            <title>Active requests</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </time-slice>
+
+        <aggregation>
+            <title>Summary</title>
+            <table-ref>http-requests</table-ref>
+
+            <hierarchy>
+                <level> <column>url</column> </level>
+                <level> <column>http-code</column> </level>
+            </hierarchy>
+            <visit-on-focus>.All Requests</visit-on-focus>
+
+            <column> <count/> </column>
+            <column> <title>Total Duration</title> <sum>duration</sum> </column>
+        </aggregation>
+
+        <list>
+            <title>.All Requests</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </list>
+
+        <narrative>
+            <title>Narrative</title>
+            <table-ref>request-narrative-table</table-ref>
+            <time-column>time</time-column>
+            <narrative-column>narrative</narrative-column>
+        </narrative>
+
+        <defaults>
+            <graph-height>1</graph-height>
             <target-type>Running Application</target-type>
         </defaults>
 
@@ -405,112 +506,6 @@
         </defaults>
 
     </instrument>
-
-    <instrument>
-        <id>com.demo.solarsystem.networking.average-started-requests</id>
-        <title>Request Load</title>
-        <category>Behavior</category>
-        <purpose>Displays started requests histogram over time</purpose>
-        <icon>Network</icon>
-        <limitations>
-            <disable>
-                <when-target-is>All Processes</when-target-is>
-            </disable>
-        </limitations>
-
-        <create-table>
-            <id>request-start-table</id>
-            <schema-ref>request-start</schema-ref>
-        </create-table>
-
-        <create-table>
-            <id>request-load</id>
-            <schema-ref>solar-network-request-load</schema-ref>
-        </create-table>
-
-        <graph>
-            <title>Active Requests</title>
-            <lane>
-                <title>Request Average (100ms)</title>
-                <table-ref>request-load</table-ref>
-                <plot>
-                    <value-from>load</value-from>
-                    <color-from>load-commitment</color-from>
-                </plot>
-            </lane>
-        </graph>
-
-        <list>
-            <title>Requests Started</title>
-            <table-ref>request-start-table</table-ref>
-            <column>url</column>
-        </list>
-
-        <defaults>
-            <graph-height>1</graph-height>
-            <target-type>Running Application</target-type>
-        </defaults>
-
-    </instrument>
-
-    <instrument>
-        <id>com.demo.solarsystem.networking.request-intervals</id>
-        <title>Request Intervals</title>
-        <category>Behavior</category>
-        <purpose>Records and displays concurrent request intervals</purpose>
-        <icon>Network</icon>
-        <limitations>
-            <disable>
-                <when-target-is>All Processes</when-target-is>
-            </disable>
-        </limitations>
-
-        <create-table>
-            <id>http-requests</id>
-            <schema-ref>http-request</schema-ref>
-        </create-table>
-
-        <create-table>
-            <id>request-narrative-table</id>
-            <schema-ref>request-narrative</schema-ref>
-        </create-table>
-
-        <graph>
-            <title>Requests</title>
-            <lane>
-                <title>Request Intervals</title>
-                <table-ref>http-requests</table-ref>
-                <plot>
-                    <value-from>url</value-from>
-                    <color-from>request-color</color-from>
-                </plot>
-            </lane>
-        </graph>
-
-        <narrative>
-            <title>Narrative</title>
-            <table-ref>request-narrative-table</table-ref>
-            <time-column>time</time-column>
-            <narrative-column>narrative</narrative-column>
-        </narrative>
-
-        <time-slice>
-            <title>Active requests</title>
-            <table-ref>http-requests</table-ref>
-            <column>start</column>
-            <column>duration</column>
-            <column>request-id</column>
-            <column>url</column>
-            <column>http-code</column>
-        </time-slice>
-
-        <defaults>
-            <graph-height>1</graph-height>
-            <target-type>Running Application</target-type>
-        </defaults>
-
-    </instrument>
-
 
     <template>
         <import-from-file>Solar System.tracetemplate</import-from-file>

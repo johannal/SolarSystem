@@ -2,7 +2,7 @@
 ;;; load-modeling.clp
 ;;; Copyright © 2018 Apple. All rights reserved.
 ;;;
-;;; Input schemas: http-request, tick
+;;; Input schemas: solar-network-request-interval, tick
 ;;; Output schemas: solar-network-request-load
 ;;;
 
@@ -29,7 +29,7 @@
 )
 
 (defrule MODELER::add-activity-to-load
-    (http-request (start ?start) (duration ?duration))
+    (solar-network-request-interval (start ?start) (duration ?duration))
     =>
     (assert (add-time-to-load-avg (start ?start) (end (+ ?start ?duration))))
 )
@@ -63,6 +63,15 @@
     (assert (load-total (interval-start ?start) (interval-end ?end) (accumulator (+ ?first ?second))))
 )
 
+(defrule RECORDER::update-event-horizon-with-loads
+    (speculate (event-horizon ?horizon))
+    (or (load-total (interval-start ?time))
+        (last-interval-end (timestamp ?time))
+    )
+    (test (< ?time ?horizon))
+    =>
+    (bind ?*modeler-horizon* ?time)
+)
 
 ;;; MARK: RECORDER
 

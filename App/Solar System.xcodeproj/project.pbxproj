@@ -204,6 +204,7 @@
 		1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateServiceExtensions.swift; sourceTree = "<group>"; };
 		10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestScheduler.swift; sourceTree = "<group>"; };
 		10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalSignposts.swift; sourceTree = "<group>"; };
+		10F1AC6C20BB726B00EFC25C /* request-intervals.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "request-intervals.clp"; sourceTree = "<group>"; };
 		4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSettingsUITests.swift; sourceTree = "<group>"; };
 		4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSharePlanetTests.swift; sourceTree = "<group>"; };
 		4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraPlanetLearnMoreTests.swift; sourceTree = "<group>"; };
@@ -701,6 +702,7 @@
 				BBA9B65520AA4D0F00258FEB /* Solar Networking.instrpkg */,
 				BBC87A4320AB4A71008DFA64 /* category-points.clp */,
 				101D6B7920B4912100A1CAA3 /* load-modeling.clp */,
+				10F1AC6C20BB726B00EFC25C /* request-intervals.clp */,
 				BBE4C9E720B47BB80082679D /* unnecessary-retry-detection.clp */,
 				BBE4C9E820B49A180082679D /* duplicate-request-detection.clp */,
 			);
