@@ -1,10 +1,10 @@
 Let me show you the great new features we've got for analyzing your apps performance.
 
-I'm working on my Solar System exploration app here. When it first launches, I've noticed some stutters as it's fetching planet data. Let me press Command-R to fetch the data again so you can see that stutter.
+I'm working on my Solar System exploration app here. When it's updating the planetrary data, I've noticed the UI is pretty choppy -- the planets kind of stutter around their orbits.
 
-I want to figure out whats going, some I'm going to add some logging and signposts to my code. 
+I want to figure out whats going.
 
-When I'm shoming that update badge in the UI, we're coming through this PlanetUpdateService class. It's requesting and parses the planet data. First thing I'm going to do is create an OSLog handle. I'll use the new .pointsOfInterest category. That means everything I log will automatically show up in Instruments.
+PlanetUpdate.swift here, is the class that handles the data update. I'm going to start by adding some logging and signposts. I'll need an OSLog handle, and I"m going to use the new .pointsOfInterest category. Everything I log using that category  will automatically show up in Instruments.
 
   *insert snippet 1 -- OSLog handle creation*
 
@@ -23,9 +23,9 @@ Up here you can see the Points of Interest track. Anything I logged with the .po
 
 Right away I can see that when I'm parsing data, the main thread's activity spikes. My guess is that I'm doing the parsing on the main thread which is not a receipe for a smooth UI. I should really move that to a background thread.
 
-So some really quick insight in Instruments by just adding a log and a couple of signposts. 
+So some really quick insight into my performance issue here, by just adding a log and a couple of signposts. 
 
-But, with the new tools, you can do a whole lot more, and create fully Custom Intruments. You'll be using the exact same technology all of the bundled instruments are built with.
+But, with the new tools, you can do way more. You can create fully Custom Intruments by using the same technology that all of our bundled instruments are built with.
 
 Let me show you a Custom Instruments package that my teammate Daniel sent me. It visualizes signposts that he put in our networking framework.
 
@@ -33,6 +33,6 @@ I can see details about the package. I'll click install, and it shows up in righ
 
 I can still see the JSON parsing intervals that I added in the Points of Interest track, but now I can also see much more detailed information about the network requets I'm making to get that data.
 
-Daniel's surfacing a couple of things to me here, like the average number of requests I'm making per second. And he's showing me every single request I'm making, and exactly how long each one took. He's even providing me insight into times that I've made unnecessary duplicate requests, which are highlighted in red -- I'm leaving a lot of performance on the table. Daniel's crafted a picture of whats going on in this networking framework, and thats really going to help me use this framework.
+Daniel's surfacing a couple of things to me here, like the average number of requests I'm making per second. And he's showing me every single request I'm making, and exactly how long each one took. He's even providing me insight into times that I've made unnecessary duplicate requests, which are highlighted in red -- I'm leaving a lot of performance on the table. This Custom Instruments package crafts a really detailed picture about my usage of the networking framework. Ultimatley, thats going to help me use the framework more effectively.
 
-signposts and Custom Instruments are two great ways to surface your data in Instruments. And thats a look at the new performance tools.
+signposts and Custom Instruments are two great ways to surface your own data in Instruments. And thats a look at the new performance tools.
