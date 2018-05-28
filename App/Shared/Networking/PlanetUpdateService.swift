@@ -36,6 +36,11 @@ final class PlanetUpdateService {
         }
     }
 
+    /// Performs a network request and then schedules a parsing task with the result.
+    ///
+    /// - Parameters:
+    ///   - request: The network request to make.
+    ///   - completion: The handler to call back once the network request and parsing task have completed.
     func performRequest<T>(request: NetworkRequest, completion: @escaping ArrayCompletion<T>) {
         
         NetworkRequestScheduler.scheduleRequest(request) { (request, resultCode, data) in
