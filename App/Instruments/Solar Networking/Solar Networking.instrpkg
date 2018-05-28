@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <package>
     <id>com.demo.solarsystem.networking</id>
+    <version>1.0</version>
     <title>Solar System Networking</title>
-    <owner>
-        <name>Daniel</name>
-    </owner>
-    <note>Package that provides instrumentation for Solar System networking operations.</note>
+    <owner> <name>Daniel Delwood</name> </owner>
+    <note>Instrumentation package for the Solar System Networking framework. Provides network request statistics, visualizes request intervals, and identifies repeated requests for the same resource.</note>
 
     <import-schema>os-signpost</import-schema>
     <import-schema>tick</import-schema>
+
     <os-signpost-interval-schema>
         <id>http-request</id>
         <title>Aggregated HTTP requests</title>
@@ -94,43 +94,6 @@
         </open-interval-template>
 
     </os-signpost-interval-schema>
-    <os-signpost-interval-schema>
-        <id>json-parsing</id>
-        <title>Aggregated JSON parsing operations</title>
-
-        <subsystem>"com.demo.SolarSystem"</subsystem>
-        <category>"Networking"</category>
-        <name>"ResponseParsing"</name>
-        <identifier>?request-id</identifier>
-
-        <start-pattern>
-            <message>"Parsing started SIZE:" ?bytes</message>
-        </start-pattern>
-        <end-pattern>
-            <message>"Parsing finished"</message>
-        </end-pattern>
-        <primary-column>
-            <mnemonic>request-id</mnemonic>
-            <title>Request identifier</title>
-            <type>os-signpost-identifier</type>
-            <expression>?request-id</expression>
-        </primary-column>
-
-        <column>
-            <mnemonic>size-in-bytes</mnemonic>
-            <title>Bytes</title>
-            <type>size-in-bytes</type>
-            <expression>?bytes</expression>
-        </column>
-
-        <open-interval-template>
-            <mnemonic>request-id</mnemonic>
-            <expression>?request-id</expression>
-            <mnemonic>size-in-bytes</mnemonic>
-            <expression>?bytes</expression>
-        </open-interval-template>
-
-    </os-signpost-interval-schema>
 
     <point-schema>
         <id>request-start</id>
@@ -159,7 +122,6 @@
         <column> <mnemonic>load</mnemonic> <title>Request Load</title> <type>load</type> </column>
         <column> <mnemonic>load-commitment</mnemonic> <title>Request Load Commitment</title> <type>commitment</type> </column>
     </interval-schema>
-
     <interval-schema>
         <id>solar-network-request-interval</id>
         <title>Solar System network request intervals</title>
@@ -240,10 +202,133 @@
     </modeler>
 
     <instrument>
+        <id>com.demo.solarsystem.networking.average-started-requests</id>
+        <title>Request Load</title>
+        <category>Behavior</category>
+        <purpose>Displays the average number of outstanding requests in 100ms intervals</purpose>
+        <icon>Network</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>request-load</id>
+            <schema-ref>solar-network-request-load</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Active Requests</title>
+            <lane>
+                <title>Request Average (100ms)</title>
+                <table-ref>request-load</table-ref>
+                <plot>
+                    <value-from>load</value-from>
+                    <color-from>load-commitment</color-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <list>
+            <title>Request Load</title>
+            <table-ref>request-load</table-ref>
+            <column>start</column>
+            <column>load</column>
+        </list>
+
+        <defaults>
+            <graph-height>1</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+    <instrument>
+        <id>com.demo.solarsystem.networking.request-intervals</id>
+        <title>Request Intervals</title>
+        <category>Behavior</category>
+        <purpose>Records and displays concurrent request intervals</purpose>
+        <icon>Network</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+
+        <create-table>
+            <id>http-requests</id>
+            <schema-ref>solar-network-request-interval</schema-ref>
+        </create-table>
+
+        <create-table>
+            <id>request-narrative-table</id>
+            <schema-ref>request-narrative</schema-ref>
+        </create-table>
+
+        <graph>
+            <title>Requests</title>
+            <lane>
+                <title>Request Intervals</title>
+                <table-ref>http-requests</table-ref>
+                <plot>
+                    <value-from>url</value-from>
+                    <color-from>request-color</color-from>
+                </plot>
+            </lane>
+        </graph>
+
+        <time-slice>
+            <title>Active requests</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </time-slice>
+
+        <aggregation>
+            <title>Summary</title>
+            <table-ref>http-requests</table-ref>
+
+            <hierarchy>
+                <level> <column>url</column> </level>
+                <level> <column>http-code</column> </level>
+            </hierarchy>
+            <visit-on-focus>.All Requests</visit-on-focus>
+
+            <column> <count/> </column>
+            <column> <title>Total Duration</title> <sum>duration</sum> </column>
+        </aggregation>
+
+        <list>
+            <title>.All Requests</title>
+            <table-ref>http-requests</table-ref>
+            <column>start</column>
+            <column>duration</column>
+            <column>request-id</column>
+            <column>url</column>
+            <column>http-code</column>
+        </list>
+
+        <narrative>
+            <title>Narrative</title>
+            <table-ref>request-narrative-table</table-ref>
+            <time-column>time</time-column>
+            <narrative-column>narrative</narrative-column>
+        </narrative>
+
+        <defaults>
+            <graph-height>1</graph-height>
+            <target-type>Running Application</target-type>
+        </defaults>
+
+    </instrument>
+    <instrument>
         <id>com.demo.solarsystem.networking.http-activity</id>
         <title>HTTP Activity</title>
         <category>Behavior</category>
-        <purpose>Displays HTTP requests and JSON parsing operations.</purpose>
+        <purpose>Displays HTTP request start points categorized by purpose</purpose>
         <icon>Network</icon>
 
         <limitations>
@@ -330,178 +415,6 @@
 
         <defaults>
             <graph-height>4</graph-height>
-            <target-type>Running Application</target-type>
-        </defaults>
-
-    </instrument>
-
-    <instrument>
-        <id>com.demo.solarsystem.networking.average-started-requests</id>
-        <title>Request Load</title>
-        <category>Behavior</category>
-        <purpose>Displays started requests histogram over time</purpose>
-        <icon>Network</icon>
-        <limitations>
-            <disable>
-                <when-target-is>All Processes</when-target-is>
-            </disable>
-        </limitations>
-
-        <create-table>
-            <id>request-load</id>
-            <schema-ref>solar-network-request-load</schema-ref>
-        </create-table>
-
-        <graph>
-            <title>Active Requests</title>
-            <lane>
-                <title>Request Average (100ms)</title>
-                <table-ref>request-load</table-ref>
-                <plot>
-                    <value-from>load</value-from>
-                    <color-from>load-commitment</color-from>
-                </plot>
-            </lane>
-        </graph>
-
-        <list>
-            <title>Request Load</title>
-            <table-ref>request-load</table-ref>
-            <column>start</column>
-            <column>load</column>
-        </list>
-
-        <defaults>
-            <graph-height>1</graph-height>
-            <target-type>Running Application</target-type>
-        </defaults>
-
-    </instrument>
-
-    <instrument>
-        <id>com.demo.solarsystem.networking.request-intervals</id>
-        <title>Request Intervals</title>
-        <category>Behavior</category>
-        <purpose>Records and displays concurrent request intervals</purpose>
-        <icon>Network</icon>
-        <limitations>
-            <disable>
-                <when-target-is>All Processes</when-target-is>
-            </disable>
-        </limitations>
-
-        <create-table>
-            <id>http-requests</id>
-            <schema-ref>solar-network-request-interval</schema-ref>
-        </create-table>
-
-        <create-table>
-            <id>request-narrative-table</id>
-            <schema-ref>request-narrative</schema-ref>
-        </create-table>
-
-        <graph>
-            <title>Requests</title>
-            <lane>
-                <title>Request Intervals</title>
-                <table-ref>http-requests</table-ref>
-                <plot>
-                    <value-from>url</value-from>
-                    <color-from>request-color</color-from>
-                </plot>
-            </lane>
-        </graph>
-
-        <time-slice>
-            <title>Active requests</title>
-            <table-ref>http-requests</table-ref>
-            <column>start</column>
-            <column>duration</column>
-            <column>request-id</column>
-            <column>url</column>
-            <column>http-code</column>
-        </time-slice>
-
-        <aggregation>
-            <title>Summary</title>
-            <table-ref>http-requests</table-ref>
-
-            <hierarchy>
-                <level> <column>url</column> </level>
-                <level> <column>http-code</column> </level>
-            </hierarchy>
-            <visit-on-focus>.All Requests</visit-on-focus>
-
-            <column> <count/> </column>
-            <column> <title>Total Duration</title> <sum>duration</sum> </column>
-        </aggregation>
-
-        <list>
-            <title>.All Requests</title>
-            <table-ref>http-requests</table-ref>
-            <column>start</column>
-            <column>duration</column>
-            <column>request-id</column>
-            <column>url</column>
-            <column>http-code</column>
-        </list>
-
-        <narrative>
-            <title>Narrative</title>
-            <table-ref>request-narrative-table</table-ref>
-            <time-column>time</time-column>
-            <narrative-column>narrative</narrative-column>
-        </narrative>
-
-        <defaults>
-            <graph-height>1</graph-height>
-            <target-type>Running Application</target-type>
-        </defaults>
-
-    </instrument>
-
-    <instrument>
-        <id>com.demo.solarsystem.networking.json-parsing</id>
-        <title>JSON Parsing</title>
-        <category>Behavior</category>
-        <purpose>Displays JSON parsing operations.</purpose>
-        <icon>Network</icon>
-
-        <limitations>
-            <disable>
-                <when-target-is>All Processes</when-target-is>
-            </disable>
-        </limitations>
-
-        <create-table>
-            <id>json-parsing</id>
-            <schema-ref>json-parsing</schema-ref>
-        </create-table>
-
-        <graph>
-            <title>Endpoint requests</title>
-            <lane>
-                <title>JSON Parsing</title>
-                <table-ref>json-parsing</table-ref>
-                <base-color>Blue</base-color>
-                <plot>
-                    <value-from>request-id</value-from>
-                    <label-from>size-in-bytes</label-from>
-                </plot>
-            </lane>
-        </graph>
-
-        <list>
-            <title>JSON Parsing operations</title>
-            <table-ref>json-parsing</table-ref>
-            <column>start</column>
-            <column>duration</column>
-            <column>request-id</column>
-            <column>size-in-bytes</column>
-        </list>
-
-        <defaults>
-            <graph-height>1</graph-height>
             <target-type>Running Application</target-type>
         </defaults>
 
