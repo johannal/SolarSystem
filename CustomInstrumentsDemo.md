@@ -1,5 +1,3 @@
-Let me show you the great new features we've got for analyzing your apps performance.
-
 I'm working on my Solar System exploration app here. When it's updating the planetrary data, I've noticed the UI is pretty choppy -- the planets kind of stutter around their orbits.
 
 I want to figure out whats going.
@@ -31,6 +29,8 @@ I can see details about the package. I'll click install, and it shows up in righ
 
 I can still see the JSON parsing intervals that I added in the Points of Interest track, but now I can also see much more detailed information about the network requets I'm making to get that data.
 
-Daniel's surfacing a couple of things to me here, like the average number of requests I'm making per second. And he's showing me every single request I'm making, and exactly how long each one took. He's even providing me insight into times that I've made unnecessary duplicate requests, which are highlighted in red -- I'm leaving a lot of performance on the table. This Custom Instruments package crafts a really detailed picture about my usage of the networking framework. Ultimatley, thats going to help me use the framework more effectively.
+Daniel's surfacing a couple of things to me here, like the average number of requests I'm making per second. And he's showing me every single request I'm making, and exactly how long each one took. He's even providing me insight into times that I've made unnecessary duplicate requests, which are highlighted in red -- I'm leaving a lot of performance on the table.
+
+This Custom Instruments package gives me insight into my usage of the networking framework. Ultimatley, thats going to help me use the framework more effectively.
 
 signposts and Custom Instruments are two great ways to surface your own data in Instruments. And thats a look at the new performance tools.
