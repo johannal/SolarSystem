@@ -185,6 +185,7 @@
 		0731FA351EC9FDF700F46170 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		0731FA371ECA06C800F46170 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0734F51A1ECBCB9C00D778C5 /* MoonsOfJupiter.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MoonsOfJupiter.txt; sourceTree = "<group>"; };
+		0745F0C020BF58770095BBEC /* SolarSystemTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = SolarSystemTemplate.pdf; sourceTree = "<group>"; };
 		07506D671ECA7A8A00EB7C11 /* BackgroundSkyBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundSkyBoxView.h; sourceTree = "<group>"; };
 		07506D681ECA7A8A00EB7C11 /* BackgroundSkyBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundSkyBoxView.m; sourceTree = "<group>"; };
 		07506D6A1ECA7AE800EB7C11 /* SolarSystem-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SolarSystem-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -195,7 +196,6 @@
 		07B32AB41ECF4C870098E49F /* SolarSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemView.swift; sourceTree = "<group>"; };
 		07B32AB61ECF59A60098E49F /* Orbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
 		101D6B7920B4912100A1CAA3 /* load-modeling.clp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.clips; path = "load-modeling.clp"; sourceTree = "<group>"; };
-		10582C6C20BC6B5400BD4CB9 /* SolarSystemTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SolarSystemTemplate.png; sourceTree = "<group>"; };
 		106E67B6209CFC500096F217 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		106E67BA209CFCA90096F217 /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
 		106E67BD209D02FE0096F217 /* RequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParser.swift; sourceTree = "<group>"; };
@@ -694,7 +694,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA9B65B20AA4DBE00258FEB /* Solar System.tracetemplate */,
-				10582C6C20BC6B5400BD4CB9 /* SolarSystemTemplate.png */,
+				0745F0C020BF58770095BBEC /* SolarSystemTemplate.pdf */,
 				BBA9B65520AA4D0F00258FEB /* Solar Networking.instrpkg */,
 				BBC87A4320AB4A71008DFA64 /* category-points.clp */,
 				10F1AC6C20BB726B00EFC25C /* request-intervals.clp */,

@@ -74,9 +74,14 @@
                                     <segue destination="vGa-F7-cak" kind="presentation" id="MoB-gr-65g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRG-9S-haf">
-                                <rect key="frame" x="302" y="625" width="57" height="30"/>
-                                <state key="normal" title="Settings"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRG-9S-haf">
+                                <rect key="frame" x="315" y="611" width="44" height="44"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Settings" label="Settings"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="F5S-hj-4wk"/>
+                                    <constraint firstAttribute="width" constant="44" id="o3a-cf-7Y4"/>
+                                </constraints>
+                                <state key="normal" image="SettingsIcon"/>
                                 <connections>
                                     <segue destination="Ugu-ks-PkR" kind="presentation" id="q0r-v9-SnS"/>
                                 </connections>
@@ -1136,10 +1141,11 @@ Population: 7.347 billion</string>
         <image name="OrbitalViewIcon" width="39" height="39"/>
         <image name="PlanetDetailsIcon" width="43" height="29"/>
         <image name="RightArrow" width="23" height="49"/>
+        <image name="SettingsIcon" width="32" height="32"/>
         <image name="StarsBackground" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hdn-4G-gJK"/>
+        <segue reference="MoB-gr-65g"/>
         <segue reference="8lG-IW-EI4"/>
     </inferredMetricsTieBreakers>
 </document>
