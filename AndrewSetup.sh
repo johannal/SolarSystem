@@ -592,6 +592,9 @@ defaults write com.apple.dt.Xcode '{
     };
 }';
 
+echo "Configuring IDETestNavigatorSortAlphabetical"
+defaults write com.apple.dt.Xcode IDETestNavigatorSortAlphabetical -bool YES
+
 # To disable the purge policy [Options are aggressive, moderate, relaxed] (39508904 & 39444847)
 echo "Configuring DVTTestDeviceClonePoolPurgePolicy"
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPurgePolicy -string relaxed
@@ -604,14 +607,12 @@ defaults write com.apple.dt.Xcode IDEParallelTestingWorkerCountOverride -int $si
 echo "Configuring DVTTestDeviceClonePoolPopulateWithPreexistingClones"
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPopulateWithPreexistingClones -bool YES
 
-echo "Copying in simulator appearance override"
-cp -R ./phone.simdevicechrome $xcode/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Chrome/
+echo "Configuring simulator chrome appearance"
+defaults write com.apple.iphonesimulator ForceChromeAlwaysActive -bool YES
+defaults write com.apple.iphonesimulator ForceNoActiveWindows -bool YES
 
 echo "Disabling simulator names"
 defaults write com.apple.iphonesimulator FloatingNameMode 2
-
-echo "Shutting down old simulators"
-# xcrun simctl --set "/Users/$username/Library/Developer/XCTestDevices" shutdown all
 
 echo "Booting simulators"
 XCODE_DEVELOPER_DIR="$xcode" ./sotubootsims --device-name "$simname" --count $simcount --windowScale $windowscale --columns $columns
