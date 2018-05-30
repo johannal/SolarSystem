@@ -50,7 +50,8 @@ final class PlanetUpdateService {
                 return
             }
 
-            NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { jsonParser in
+            NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { 
+                jsonParser in
 
                 do {
                     let result: [T] = try jsonParser.parse()
