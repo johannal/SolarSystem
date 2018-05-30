@@ -7,27 +7,29 @@ import XCTest
 class FavoritePlanetTests: XCTestCase {
     
     var app: XCUIApplication!
-        
+    
     override func setUp() {
         super.setUp()
         
         continueAfterFailure = false
         
         self.app = XCUIApplication()
-        self.app.launchEnvironment = ["DisableAnimations": "YES"]
+        self.app.launchEnvironment = [
+            "DisableAnimations": "YES"
+        ]
         self.app.launch()
     }
     
-    func testAddingAndRemovingPlanetsFromFavoritesList() {
+    func testFavoriteThenDeletePlanets() {
         self.app.buttons["ListIcon"].tap()
         
         for cell in self.app.tables.cells.allElementsBoundByIndex {
             cell.tap()
-
+            
             self.app.buttons["Add to Favorites"].tap()
-
+            
             self.app.alerts.buttons["OK"].tap()
-
+            
             self.app.buttons["Planets"].tap()
         }
         

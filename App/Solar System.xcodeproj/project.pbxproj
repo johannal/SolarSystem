@@ -32,11 +32,6 @@
 		10B14E3620A51DF800F85F06 /* NetworkRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */; };
 		10BBA8B720B79A3300C597A8 /* AdditionalSignposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */; };
 		10BBA8B820B79A3300C597A8 /* AdditionalSignposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */; };
-		4990BDE720AE2E7900A9155F /* ExtraSettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */; };
-		4990BDE820AE2E7900A9155F /* ExtraSharePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */; };
-		4990BDE920AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */; };
-		4990BDEA20AE2E7900A9155F /* ExtraAstronautTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE520AE2E7900A9155F /* ExtraAstronautTests.swift */; };
-		4990BDEB20AE2E7900A9155F /* ExtraFavoritePlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990BDE620AE2E7900A9155F /* ExtraFavoritePlanetTests.swift */; };
 		8023D29820850501006DFD5F /* PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023D29720850501006DFD5F /* PlanetTests.swift */; };
 		805BDF55208513CB0014B604 /* OrbitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDF54208513CB0014B604 /* OrbitTests.swift */; };
 		805BDF572085146D0014B604 /* MoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDF562085146D0014B604 /* MoonTests.swift */; };
@@ -98,6 +93,9 @@
 		9EF53C762083216E00B11FC4 /* SceneViewAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF53C752083216E00B11FC4 /* SceneViewAppearanceManager.swift */; };
 		9EF53C7E2083E9B900B11FC4 /* cloudsTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */; };
 		9EF5838120B88C1000667E43 /* NetworkRequestProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5838020B88C1000667E43 /* NetworkRequestProgressView.swift */; };
+		AA107EDF20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA107EDC20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift */; };
+		AA107EE020BE2B4E00C06DD5 /* PlanetDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA107EDD20BE2B4E00C06DD5 /* PlanetDetailsTests.swift */; };
+		AA107EE120BE2B4E00C06DD5 /* UserFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA107EDE20BE2B4E00C06DD5 /* UserFeedbackTests.swift */; };
 		AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6573BB20A62D6C00595A9A /* WebViewController.swift */; };
 		AA6573C020A6387500595A9A /* mercury.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573BF20A6387500595A9A /* mercury.webarchive */; };
 		AA6573C820A6391D00595A9A /* venus.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C120A6391C00595A9A /* venus.webarchive */; };
@@ -206,11 +204,6 @@
 		10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestScheduler.swift; sourceTree = "<group>"; };
 		10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalSignposts.swift; sourceTree = "<group>"; };
 		10F1AC6C20BB726B00EFC25C /* request-intervals.clp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.clips; path = "request-intervals.clp"; sourceTree = "<group>"; };
-		4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSettingsUITests.swift; sourceTree = "<group>"; };
-		4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraSharePlanetTests.swift; sourceTree = "<group>"; };
-		4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraPlanetLearnMoreTests.swift; sourceTree = "<group>"; };
-		4990BDE520AE2E7900A9155F /* ExtraAstronautTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraAstronautTests.swift; sourceTree = "<group>"; };
-		4990BDE620AE2E7900A9155F /* ExtraFavoritePlanetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraFavoritePlanetTests.swift; sourceTree = "<group>"; };
 		8023D29520850501006DFD5F /* Solar System Mac Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solar System Mac Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8023D29720850501006DFD5F /* PlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTests.swift; sourceTree = "<group>"; };
 		8023D29920850501006DFD5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,6 +263,9 @@
 		9EF53C752083216E00B11FC4 /* SceneViewAppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewAppearanceManager.swift; sourceTree = "<group>"; };
 		9EF53C7C2083E9B800B11FC4 /* cloudsTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudsTransparency.png; sourceTree = "<group>"; };
 		9EF5838020B88C1000667E43 /* NetworkRequestProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProgressView.swift; sourceTree = "<group>"; };
+		AA107EDC20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFavoritePlanetsTests.swift; sourceTree = "<group>"; };
+		AA107EDD20BE2B4E00C06DD5 /* PlanetDetailsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetDetailsTests.swift; sourceTree = "<group>"; };
+		AA107EDE20BE2B4E00C06DD5 /* UserFeedbackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackTests.swift; sourceTree = "<group>"; };
 		AA6573BB20A62D6C00595A9A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AA6573BF20A6387500595A9A /* mercury.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mercury.webarchive; sourceTree = "<group>"; };
 		AA6573C120A6391C00595A9A /* venus.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = venus.webarchive; sourceTree = "<group>"; };
@@ -639,11 +635,9 @@
 				AAFD409220990A45009CCA74 /* SharePlanetTests.swift */,
 				AACC4344209901FB005DA562 /* AstronautTests.swift */,
 				AAE987A720A5114D00566B42 /* SettingsUITests.swift */,
-				4990BDE520AE2E7900A9155F /* ExtraAstronautTests.swift */,
-				4990BDE620AE2E7900A9155F /* ExtraFavoritePlanetTests.swift */,
-				4990BDE420AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift */,
-				4990BDE220AE2E7900A9155F /* ExtraSettingsUITests.swift */,
-				4990BDE320AE2E7900A9155F /* ExtraSharePlanetTests.swift */,
+				AA107EDC20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift */,
+				AA107EDD20BE2B4E00C06DD5 /* PlanetDetailsTests.swift */,
+				AA107EDE20BE2B4E00C06DD5 /* UserFeedbackTests.swift */,
 				AA66575A2098E31E007AB190 /* Info.plist */,
 				FAC1D45C20A4BB0F00908370 /* Icon */,
 			);
@@ -1084,14 +1078,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6657592098E31E007AB190 /* FavoritePlanetTests.swift in Sources */,
-				4990BDEA20AE2E7900A9155F /* ExtraAstronautTests.swift in Sources */,
-				4990BDEB20AE2E7900A9155F /* ExtraFavoritePlanetTests.swift in Sources */,
-				4990BDE820AE2E7900A9155F /* ExtraSharePlanetTests.swift in Sources */,
-				4990BDE920AE2E7900A9155F /* ExtraPlanetLearnMoreTests.swift in Sources */,
+				AA107EE120BE2B4E00C06DD5 /* UserFeedbackTests.swift in Sources */,
 				AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */,
 				AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */,
-				4990BDE720AE2E7900A9155F /* ExtraSettingsUITests.swift in Sources */,
+				AA107EE020BE2B4E00C06DD5 /* PlanetDetailsTests.swift in Sources */,
 				AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */,
+				AA107EDF20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift in Sources */,
 				AAC82ACE20A65CA400DC6DBC /* PlanetLearnMoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

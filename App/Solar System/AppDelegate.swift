@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func registerDefaults() {
-        UserDefaults.standard.register(defaults: ["FavoritePlanets" : [3, 4, 5]])
+        if let testingEnvironment = ProcessInfo.processInfo.environment["TESTING_ENVIRONMENT"], testingEnvironment == "YES" {
+            UserDefaults.standard.set([Int](0..<8), forKey: "FavoritePlanets")
+        } else {
+            UserDefaults.standard.register(defaults: ["FavoritePlanets" : [3, 4, 5]])
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
