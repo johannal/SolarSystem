@@ -12,18 +12,18 @@
         <window title="Solar System" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="739" height="462"/>
+            <rect key="contentRect" x="196" y="240" width="670" height="462"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="739" height="462"/>
+            <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="670" height="462"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <view wantsLayer="YES" id="tnW-iN-ybb">
-                        <rect key="frame" x="0.0" y="0.0" width="747" height="473"/>
+                        <rect key="frame" x="0.0" y="0.0" width="678" height="473"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" id="6cn-gm-ZfI" userLabel="Inspector Visual Effect View">
-                                <rect key="frame" x="507" y="0.0" width="240" height="473"/>
+                                <rect key="frame" x="438" y="0.0" width="240" height="473"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eS0-bO-w8G">
@@ -191,9 +191,9 @@
                                 </subviews>
                             </visualEffectView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fsN-s8-IZf">
-                                <rect key="frame" x="0.0" y="0.0" width="507" height="473"/>
+                                <rect key="frame" x="0.0" y="0.0" width="438" height="473"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="SolarSystemSnapshot" id="tFC-sN-dPS"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="SolarSystemSnapshot" id="tFC-sN-dPS"/>
                             </imageView>
                         </subviews>
                     </view>
@@ -348,7 +348,7 @@
                     <toolbarItem reference="GDl-Tr-RVy"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="392.5" y="176"/>
+            <point key="canvasLocation" x="364" y="179"/>
         </window>
     </objects>
     <resources>
@@ -360,7 +360,7 @@
         <image name="PauseIcon" width="18" height="18"/>
         <image name="SidebarIcon" width="18" height="18"/>
         <image name="SidebarIconLeft" width="18" height="18"/>
-        <image name="SolarSystemSnapshot" width="507" height="473"/>
+        <image name="SolarSystemSnapshot" width="438" height="473"/>
         <namedColor name="sunRiseSunSetLabelColor">
             <color red="0.96799999475479126" green="0.81000000238418579" blue="0.28400000929832458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
