@@ -1,4 +1,4 @@
-I'm working on my Solar System exploration app here. When it's updating the planetrary data, I've noticed the UI is pretty choppy -- the planets kind of stutter around their orbits.
+I'm working on my Solar System exploration app here. I've noticed is pretty choppy when it's updating the planetrary data. The planets kind of stutter around their orbits.
 
 I want to figure out whats going.
 
@@ -15,7 +15,7 @@ I'll add a pair of signposts down here, where I parse the data.
   *insert snippet 3 -- os_signpost, begin*
   *insert snippet 4 -- os_signpost, end*
 
-So I've got one log and two signposts. Lets run this under Instruments and see how the data shows up. I'll go to Product > Profile, which will launch Instruments.
+Lets run this under Instruments and see how the data shows up. I'll go to Product > Profile, which will launch Instruments.
 
 Up here you can see the Points of Interest track. Anything I logged with the .pointsOfInterest category shows up here. This little flag, that was the first log I added. And these blue bars are the two signposts I added -- they show up as a time interval.
 
@@ -23,9 +23,9 @@ Right away I can see that when I'm parsing data, the main thread's activity spik
 
 So with just a log and a couple of signposts, I got some quick insight into my performance issue. 
 
-But, with the new tools, you can do way more. Let me show you a Custom Instruments package that my teammate Daniel sent me. So this visualizes signposts that he put in our networking framework.
+But, with the new tools, you can do way more. Let me show you a Custom Instruments package that my teammate Daniel built. He's made some visualizations for signposts that he added our networking framework.
 
-I can see details about the package. I'll click install, and it shows up in right here in the template chooser. I'll select it, and click record, which launches my app.
+I'll click install, and it shows up in right here in the template chooser. I'll double click it, and click record, which launches my app.
 
 I can still see the JSON parsing intervals that I added in the Points of Interest track, but now I can also see much more detailed information about the network requets I'm making to get that data.
 
