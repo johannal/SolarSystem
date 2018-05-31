@@ -75,6 +75,7 @@ class OrbitingBodyNode: PhysicsBodyNode {
                 
                 orbitingAnimation.duration = orbitalPeriod / 150.0
                 let rotationEndVector = SCNVector4.init(0, 1, 0, initialRotation + Double.pi * 2.0)
+                orbitingAnimation.fromValue = NSValue(scnVector4: rotationNode.rotation)
                 orbitingAnimation.toValue = NSValue(scnVector4: rotationEndVector)
                 orbitingAnimation.repeatCount = .greatestFiniteMagnitude
                 rotationNode.addAnimation(orbitingAnimation, forKey: OrbitingAnimationName)
