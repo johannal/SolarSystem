@@ -25,9 +25,7 @@ class PlanetDetailsViewController: UIViewController {
             planetImageView.image = presentedObject.globeImage
             
             // Tint background view with object base color
-            let baseColorName: Any = presentedObject.name.lowercased().appending("AverageColor")
-            let baseColor = UniversalColor(named: baseColorName as! UniversalColorName)
-            backgroundView.backgroundColor = baseColor
+            backgroundView.backgroundColor = presentedObject.averageColor
         }
     }
     
@@ -52,5 +50,13 @@ class PlanetDetailsViewController: UIViewController {
         if let browserViewController = (segue.destination as? UINavigationController)?.viewControllers.first as? WebViewController, segue.identifier == "LearnMore" {
             browserViewController.url = presentedObject?.browserURL
         }
+    }
+}
+
+extension AstronomicalObject {
+    var averageColor: UniversalColor? {
+        let baseColorName: Any = name.lowercased().appending("AverageColor")
+        let baseColor = UniversalColor(named: baseColorName as! UniversalColorName)
+        return baseColor
     }
 }

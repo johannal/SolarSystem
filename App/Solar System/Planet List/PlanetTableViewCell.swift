@@ -12,6 +12,7 @@ class PlanetTableViewCell: UITableViewCell {
     @IBOutlet weak var planetNameLabel: UILabel!
     @IBOutlet weak var planetDescriptionLabel: UILabel!
     @IBOutlet weak var planetImageView: UIImageView!
+    @IBOutlet weak var tintBackgroundView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,7 @@ class PlanetTableViewCell: UITableViewCell {
         planetNameLabel.text = object.name
         planetDescriptionLabel.text = object.description
         planetImageView.image = object.globeImage
+        tintBackgroundView?.backgroundColor = object.averageColor
     }
 
 }
