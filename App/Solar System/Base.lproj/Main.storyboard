@@ -633,6 +633,9 @@
                                                 <state key="normal" title="Learn More">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Jef-zV-KUW" kind="presentation" identifier="LearnMore" id="zmz-aZ-YHS"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-CR-8er">
                                                 <rect key="frame" x="50" y="24" width="44" height="30"/>
