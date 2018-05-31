@@ -23,14 +23,16 @@ Right away I can see that when I'm parsing data, the main thread's activity spik
 
 So with just a log and a couple of signposts, I got some quick insight into my performance issue. 
 
-But, with the new tools, you can do way more. Let me show you a Custom Instruments package that my teammate Daniel built. He's made some visualizations for signposts that he added our networking framework.
+But, with the new tools, you can do way more. 
 
-I'll click install, and it shows up in right here in the template chooser. I'll double click it, and click record, which launches my app.
+Xcode 10 includes a new template that lets you create a Custom Instruments package. One of my teammates, he's built one for visualizing signpost data he added to our networking framework. Let me show you.
+
+I've got the latest version he sent me here in my Downloads folder. I'll click it to install, and it shows up in right here in the template chooser. I'll double click it, and click record, which launches my app.
 
 I can still see the JSON parsing intervals that I added in the Points of Interest track, but now I can also see much more detailed information about the network requets I'm making to get that data.
 
-Daniel's surfacing a couple of things to me here, like the average number of requests I'm making per second. And he's showing me every single request I'm making, and exactly how long each one took. He's even providing me insight into times that I've made unnecessary duplicate requests, which are highlighted in red -- I'm leaving a lot of performance on the table.
+This Custom Instruments package makes it easy to see how I'm using the framework. I can see the average number of requests I'm making per second. I can see details about every single request, like how long each one took. And I can even see duplicate requests, where I've asked for the same data more than once, highlighted in red. Looks like 50% of my requests are duplicats --  I'm leaving a lot of performance on the table.
 
-This Custom Instruments package gives me insight into my usage of the networking framework. Ultimatley, thats going to help me use the framework more effectively.
+This Custom Instruments package is really going to help me to use this framework effectively.
 
 signposts and Custom Instruments are two great ways to surface your own data in Instruments. And thats a look at the new performance tools.
