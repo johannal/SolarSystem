@@ -85,6 +85,7 @@
 		9EDFCD5F2097297C00F4DD79 /* Earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD5E2097297C00F4DD79 /* Earth.jpg */; };
 		9EDFCD612097298B00F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD602097298B00F4DD79 /* Sun.jpg */; };
 		9EDFCD622097298B00F4DD79 /* Sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFCD602097298B00F4DD79 /* Sun.jpg */; };
+		9EE2F25E20C05F87004B0CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E4F77BB205AEA1F004C9486 /* Assets.xcassets */; };
 		9EEDCB782090E6E8006617CD /* PlanetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEDCB772090E6E8006617CD /* PlanetDetailsViewController.swift */; };
 		9EEEC58C1ECD1F040041C7CE /* OrbitingBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58B1ECD1F040041C7CE /* OrbitingBodyNode.swift */; };
 		9EEEC58E1ECD1F2D0041C7CE /* PhysicsBodyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEEC58D1ECD1F2D0041C7CE /* PhysicsBodyNode.swift */; };
@@ -952,6 +953,7 @@
 				9E53D15D1ECF715E002A0001 /* GravitySimulator.sks in Resources */,
 				AA6573CB20A6391D00595A9A /* pluto.webarchive in Resources */,
 				AA6573CC20A6391D00595A9A /* neptune.webarchive in Resources */,
+				9EE2F25E20C05F87004B0CDF /* Assets.xcassets in Resources */,
 				AA6573C020A6387500595A9A /* mercury.webarchive in Resources */,
 				0734F51B1ECBCB9C00D778C5 /* MoonsOfJupiter.txt in Resources */,
 				07172BB81ED0E7FE0028FC65 /* DistantObjects.txt in Resources */,

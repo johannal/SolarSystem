@@ -29,7 +29,7 @@ class AstronomicalObject {
     }
     
     var globeImage: Image {
-        let imageName: Any = name.appending("Globus")
+        let imageName: Any = name.appending("Globe")
         return Image(named: imageName as! ImageName)!
     }
     
