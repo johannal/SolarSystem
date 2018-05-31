@@ -592,9 +592,6 @@ defaults write com.apple.dt.Xcode '{
     };
 }';
 
-echo "Configuring IDETestNavigatorSortAlphabetical"
-defaults write com.apple.dt.Xcode IDETestNavigatorSortAlphabetical -bool YES
-
 # To disable the purge policy [Options are aggressive, moderate, relaxed] (39508904 & 39444847)
 echo "Configuring DVTTestDeviceClonePoolPurgePolicy"
 defaults write com.apple.dt.Xcode DVTTestDeviceClonePoolPurgePolicy -string relaxed
