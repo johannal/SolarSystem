@@ -509,7 +509,7 @@
         <scene sceneID="pNk-i2-HYm">
             <objects>
                 <tableViewController storyboardIdentifier="PlanetsTableViewController" id="0hw-Ee-eTy" customClass="PlanetsTableViewController" customModule="Solar_System_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bca-V6-5xU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bca-V6-5xU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -523,24 +523,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNk-Mk-bH5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="172.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="136" id="3cH-M9-B62"/>
+                                            </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5p-mM-2nn">
-                                            <rect key="frame" x="142" y="10" width="55" height="27"/>
+                                            <rect key="frame" x="142" y="11" width="55" height="27"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-gZ-dfR">
-                                            <rect key="frame" x="142" y="45" width="225" height="107.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpD-gZ-dfR">
+                                            <rect key="frame" x="142" y="40" width="225" height="88"/>
                                             <string key="text">Earth, otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EarthGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-XL-1Jx">
-                                            <rect key="frame" x="16" y="10" width="114" height="114"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="EarthGlobe" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-XL-1Jx">
+                                            <rect key="frame" x="16" y="11" width="114" height="114"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="114" id="8px-lU-yy1"/>
                                                 <constraint firstAttribute="width" secondItem="7Th-XL-1Jx" secondAttribute="height" multiplier="1:1" id="orO-fj-QJd"/>
@@ -549,19 +552,17 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="sNk-Mk-bH5" secondAttribute="trailing" id="0dI-As-92L"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZpD-gZ-dfR" secondAttribute="bottom" constant="20" id="0mp-dM-EE8"/>
                                         <constraint firstItem="sNk-Mk-bH5" firstAttribute="leading" secondItem="Fdx-83-5Xy" secondAttribute="leading" id="2tj-bK-lJd"/>
-                                        <constraint firstItem="ZpD-gZ-dfR" firstAttribute="top" secondItem="O5p-mM-2nn" secondAttribute="bottom" constant="8" id="BCY-xv-5b0"/>
-                                        <constraint firstAttribute="bottom" secondItem="sNk-Mk-bH5" secondAttribute="bottom" id="LFA-5a-u2D"/>
+                                        <constraint firstItem="ZpD-gZ-dfR" firstAttribute="top" secondItem="O5p-mM-2nn" secondAttribute="bottom" constant="2" id="BCY-xv-5b0"/>
+                                        <constraint firstItem="ZpD-gZ-dfR" firstAttribute="bottom" secondItem="sNk-Mk-bH5" secondAttribute="bottom" constant="-8" id="Fe3-vp-lhd"/>
+                                        <constraint firstItem="7Th-XL-1Jx" firstAttribute="centerY" secondItem="sNk-Mk-bH5" secondAttribute="centerY" id="FwD-44-EbK"/>
                                         <constraint firstItem="7Th-XL-1Jx" firstAttribute="leading" secondItem="Fdx-83-5Xy" secondAttribute="leading" constant="16" id="Nuz-Iu-nye"/>
-                                        <constraint firstItem="7Th-XL-1Jx" firstAttribute="top" secondItem="Fdx-83-5Xy" secondAttribute="top" constant="10" id="WGV-8C-sVd"/>
                                         <constraint firstItem="sNk-Mk-bH5" firstAttribute="top" secondItem="Fdx-83-5Xy" secondAttribute="top" id="dcz-el-ZC5"/>
                                         <constraint firstItem="O5p-mM-2nn" firstAttribute="leading" secondItem="7Th-XL-1Jx" secondAttribute="trailing" constant="12" id="dsI-na-PIi"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O5p-mM-2nn" secondAttribute="trailing" constant="20" symbolic="YES" id="iX3-RK-4UV"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZpD-gZ-dfR" secondAttribute="trailing" constant="8" id="lhx-Fc-UxY"/>
                                         <constraint firstItem="ZpD-gZ-dfR" firstAttribute="leading" secondItem="O5p-mM-2nn" secondAttribute="leading" id="m6p-aV-PEu"/>
                                         <constraint firstItem="O5p-mM-2nn" firstAttribute="top" secondItem="7Th-XL-1Jx" secondAttribute="top" id="pD8-8X-5Z1"/>
-                                        <constraint firstItem="7Th-XL-1Jx" firstAttribute="centerY" secondItem="Fdx-83-5Xy" secondAttribute="centerY" id="tHS-2F-ujp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.1803418464944162" green="0.1803418464944162" blue="0.1803418464944162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -599,7 +600,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoO-d2-XFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3976.8000000000002" y="1222.9064039408868"/>
+            <point key="canvasLocation" x="3976.8000000000002" y="1222.0389805097452"/>
         </scene>
         <!--Details-->
         <scene sceneID="cM6-0V-NeD">
@@ -1240,7 +1241,7 @@ Population: 7.347 billion</string>
         <image name="Astronaut" width="95" height="150"/>
         <image name="BackButtonArrow" width="14" height="22"/>
         <image name="BookIcon" width="44" height="30"/>
-        <image name="EarthGlobe" width="100" height="100"/>
+        <image name="EarthGlobe" width="200" height="200"/>
         <image name="FavoriteIcon" width="32" height="29"/>
         <image name="GravityButtonOFF" width="73" height="73"/>
         <image name="GravityButtonON" width="73" height="73"/>
