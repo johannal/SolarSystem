@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HW0-Hw-yYc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -620,55 +620,101 @@
                                     <constraint firstAttribute="width" secondItem="lmp-qj-rF9" secondAttribute="height" multiplier="1:1" id="eyQ-VR-kd3"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4PJ-9a-fGu">
+                                <rect key="frame" x="37.5" y="552" width="300" height="107"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bz6-Wo-Aaq" customClass="RoundedCornerView" customModule="Solar_System_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="107"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T69-Ua-5eb">
+                                                <rect key="frame" x="30.5" y="69" width="83" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Learn More">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-CR-8er">
+                                                <rect key="frame" x="50" y="24" width="44" height="30"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="T69-Ua-5eb" secondAttribute="bottom" constant="8" id="44e-lu-TDl"/>
+                                            <constraint firstItem="wzs-CR-8er" firstAttribute="top" secondItem="bz6-Wo-Aaq" secondAttribute="top" constant="24" id="QhN-uY-kEo"/>
+                                            <constraint firstItem="wzs-CR-8er" firstAttribute="centerX" secondItem="bz6-Wo-Aaq" secondAttribute="centerX" id="UjS-QP-NU4"/>
+                                            <constraint firstAttribute="width" constant="144" id="bN8-q9-tjW"/>
+                                            <constraint firstItem="T69-Ua-5eb" firstAttribute="centerX" secondItem="bz6-Wo-Aaq" secondAttribute="centerX" id="nBY-Cc-Xj8"/>
+                                            <constraint firstAttribute="height" constant="107" id="oRe-tc-vGK"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCH-tQ-Qpv" customClass="RoundedCornerView" customModule="Solar_System_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="156" y="0.0" width="144" height="107"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-Ly-5XF">
+                                                <rect key="frame" x="12.5" y="69" width="119" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Add to Favorites">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addToFavoritesButtonPressedWithSender:" destination="jan-kb-11E" eventType="touchUpInside" id="f3n-Yt-rzv"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FavoriteIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YQM-EF-eF4">
+                                                <rect key="frame" x="56" y="24" width="32" height="29"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="RcJ-Ly-5XF" secondAttribute="bottom" constant="8" id="3U5-8q-mc1"/>
+                                            <constraint firstItem="RcJ-Ly-5XF" firstAttribute="centerX" secondItem="YCH-tQ-Qpv" secondAttribute="centerX" id="4tm-as-G6t"/>
+                                            <constraint firstAttribute="width" constant="144" id="HFJ-Z9-fL5"/>
+                                            <constraint firstAttribute="height" constant="107" id="NHM-Bj-dKt"/>
+                                            <constraint firstItem="YQM-EF-eF4" firstAttribute="top" secondItem="YCH-tQ-Qpv" secondAttribute="top" constant="24" id="b1p-WJ-dCe"/>
+                                            <constraint firstItem="YQM-EF-eF4" firstAttribute="centerX" secondItem="YCH-tQ-Qpv" secondAttribute="centerX" id="dF0-Wr-xVA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-uS-yBy">
+                                <rect key="frame" x="135.5" y="422.5" width="104" height="4"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="h99-pJ-z75"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwJ-sB-0jr">
-                                <rect key="frame" x="135.5" y="372" width="104" height="51"/>
+                                <rect key="frame" x="135.5" y="372" width="104" height="50.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNT-qw-CCx">
-                                <rect key="frame" x="20" y="442" width="335" height="101.5"/>
+                                <rect key="frame" x="20" y="446.5" width="335" height="101.5"/>
                                 <string key="text">Earth, otherwise known as the World or the Globe, is the third planet from the Sun and the only object in the Universe known to harbor life. It is the densest planet in the Solar System.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-Ly-5XF">
-                                <rect key="frame" x="132" y="557" width="111" height="30"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Add to Favorites">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addToFavoritesButtonPressedWithSender:" destination="jan-kb-11E" eventType="touchUpInside" id="f3n-Yt-rzv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqi-so-rs3">
-                                <rect key="frame" x="148.5" y="587" width="78" height="30"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Learn More">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Jef-zV-KUW" kind="presentation" identifier="LearnMore" id="2m4-0Y-2cx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21880948604060912" green="0.21880948604060912" blue="0.21880948604060912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lnr-oe-IL6" secondAttribute="leading" constant="20" id="Fgh-xT-n9Y"/>
                             <constraint firstAttribute="bottom" secondItem="MfR-zl-QdR" secondAttribute="bottom" id="GpP-xd-w08"/>
-                            <constraint firstItem="Qqi-so-rs3" firstAttribute="top" secondItem="RcJ-Ly-5XF" secondAttribute="bottom" id="L5P-W5-QjB"/>
-                            <constraint firstItem="GNT-qw-CCx" firstAttribute="top" secondItem="nwJ-sB-0jr" secondAttribute="bottom" constant="19" id="Pxa-Hc-8CS"/>
+                            <constraint firstItem="ec6-uS-yBy" firstAttribute="top" secondItem="nwJ-sB-0jr" secondAttribute="bottom" id="JcG-Qz-OmI"/>
+                            <constraint firstItem="ec6-uS-yBy" firstAttribute="trailing" secondItem="nwJ-sB-0jr" secondAttribute="trailing" id="PZq-uB-LLz"/>
+                            <constraint firstItem="GNT-qw-CCx" firstAttribute="top" secondItem="nwJ-sB-0jr" secondAttribute="bottom" constant="24" id="Pxa-Hc-8CS"/>
                             <constraint firstItem="nwJ-sB-0jr" firstAttribute="centerX" secondItem="lmp-qj-rF9" secondAttribute="centerX" id="Ww1-RL-3KY"/>
                             <constraint firstItem="lmp-qj-rF9" firstAttribute="centerX" secondItem="lnr-oe-IL6" secondAttribute="centerX" id="X3o-o1-W5N"/>
-                            <constraint firstItem="RcJ-Ly-5XF" firstAttribute="top" secondItem="GNT-qw-CCx" secondAttribute="bottom" constant="13.333333333333258" id="Yxf-pf-aD1"/>
+                            <constraint firstItem="lnr-oe-IL6" firstAttribute="bottom" secondItem="4PJ-9a-fGu" secondAttribute="bottom" constant="8" id="XhL-SZ-KOQ"/>
                             <constraint firstItem="MfR-zl-QdR" firstAttribute="top" secondItem="E9O-UA-9tP" secondAttribute="top" id="Z4G-gV-EqX"/>
                             <constraint firstItem="MfR-zl-QdR" firstAttribute="leading" secondItem="E9O-UA-9tP" secondAttribute="leading" id="eVP-YX-Lgo"/>
-                            <constraint firstItem="Qqi-so-rs3" firstAttribute="centerX" secondItem="RcJ-Ly-5XF" secondAttribute="centerX" id="kv0-eN-dbW"/>
                             <constraint firstItem="lmp-qj-rF9" firstAttribute="top" secondItem="lnr-oe-IL6" secondAttribute="top" constant="24" id="mG7-cp-GDe"/>
+                            <constraint firstItem="4PJ-9a-fGu" firstAttribute="centerX" secondItem="lnr-oe-IL6" secondAttribute="centerX" id="msW-gQ-J3j"/>
                             <constraint firstItem="nwJ-sB-0jr" firstAttribute="top" secondItem="lmp-qj-rF9" secondAttribute="bottom" constant="32" id="na5-jb-bQL"/>
-                            <constraint firstItem="RcJ-Ly-5XF" firstAttribute="centerX" secondItem="GNT-qw-CCx" secondAttribute="centerX" id="sZ1-M9-Rme"/>
+                            <constraint firstItem="ec6-uS-yBy" firstAttribute="leading" secondItem="nwJ-sB-0jr" secondAttribute="leading" id="sil-VP-DcB"/>
                             <constraint firstItem="GNT-qw-CCx" firstAttribute="centerX" secondItem="nwJ-sB-0jr" secondAttribute="centerX" id="tYf-wL-itq"/>
                             <constraint firstAttribute="trailing" secondItem="MfR-zl-QdR" secondAttribute="trailing" id="v2X-SS-fDt"/>
                         </constraints>
@@ -691,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZp-h9-eh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4733.6000000000004" y="1222.9064039408868"/>
+            <point key="canvasLocation" x="4733.6000000000004" y="1222.0389805097452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IuP-f6-HIP">
@@ -1190,7 +1236,9 @@ Population: 7.347 billion</string>
     <resources>
         <image name="Astronaut" width="95" height="150"/>
         <image name="BackButtonArrow" width="14" height="22"/>
+        <image name="BookIcon" width="44" height="30"/>
         <image name="EarthGlobe" width="100" height="100"/>
+        <image name="FavoriteIcon" width="32" height="29"/>
         <image name="GravityButtonOFF" width="73" height="73"/>
         <image name="GravityButtonON" width="73" height="73"/>
         <image name="GravityGauge" width="28" height="37"/>

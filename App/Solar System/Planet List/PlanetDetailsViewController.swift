@@ -53,6 +53,15 @@ class PlanetDetailsViewController: UIViewController {
     }
 }
 
+class RoundedCornerView : UIView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = 12.0
+    }
+}
+
 extension AstronomicalObject {
     var averageColor: UniversalColor? {
         let baseColorName: Any = name.lowercased().appending("AverageColor")
