@@ -27,7 +27,7 @@ class UserFeedbackTests: XCTestCase {
             "Hello, any chance that you could add additional parts of the Milky Way to explore? I'd love to know more about areas of space outside of our local solar system. Thanks!"
         ]
         
-        for _ in 0 ..< 4 {
+        for _ in 0 ..< 15 {
             for feedback in feedbackArray {
                 self.app.buttons["Feedback"].tap()
                 

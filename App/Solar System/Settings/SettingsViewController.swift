@@ -9,7 +9,7 @@ class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIP
     
     @IBOutlet weak var distanceUnitsTextField: UITextField!
     
-    let distanceUnits = ["Astronomical units (au)", "Kilometers (km)", "Meters (m)"]
+    let distanceUnits = ["Astronomical units (au)", "Light years (ly)", "Terameters (Tm)", "Gigameters (Gm)", "Megameters (Mm)", "Kilometers (km)", "Meters (m)"]
     
     lazy var unitsPickerView: UIPickerView = {
         let pickerView = UIPickerView()

@@ -23,7 +23,7 @@ class AstronautTests: XCTestCase {
         
         let heightElement = self.app.otherElements["Height"]
         
-        for _ in 0 ..< 5 {
+        for _ in 0 ..< 20 {
             let heightLabelCoord = self.app.staticTexts["HeightLabel"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
             let startingCoord = heightLabelCoord.withOffset(CGVector(dx: 0, dy: 400))
             

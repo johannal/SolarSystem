@@ -21,7 +21,7 @@ class PlanetDetailsTests: XCTestCase {
     func testViewingPlanetDetails() {
         self.app.buttons["PlanetDetailsIcon"].tap()
         
-        for _ in 0 ..< 20 {
+        for _ in 0 ..< 120 {
             RunLoop.main.run(until: Date(timeIntervalSinceNow: 2))
             self.app.buttons["RightArrow"].tap()
         }

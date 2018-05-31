@@ -17,14 +17,16 @@ class PlanetLearnMoreTests: XCTestCase {
         
         app.buttons["ListIcon"].tap()
         
-        for cell in app.tables.cells.allElementsBoundByIndex {
-            cell.tap()
-            
-            app.buttons["Learn More"].tap()
-            
-            let planetsButton = app.buttons["Planets"]
-            _ = planetsButton.waitForExistence(timeout: 15)
-            planetsButton.tap()
+        for _ in 0 ..< 4 {
+            for cell in app.tables.cells.allElementsBoundByIndex {
+                cell.tap()
+                
+                app.buttons["Learn More"].tap()
+                
+                let planetsButton = app.buttons["Planets"]
+                _ = planetsButton.waitForExistence(timeout: 15)
+                planetsButton.tap()
+            }
         }
     }
 

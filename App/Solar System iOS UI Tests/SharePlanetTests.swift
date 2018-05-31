@@ -20,14 +20,16 @@ class SharePlanetTests: XCTestCase {
     func testSharingPlanet() {
         self.app.buttons["ListIcon"].tap()
         
-        for cell in self.app.tables.cells.allElementsBoundByIndex {
-            cell.tap()
-            
-            self.app.buttons["Share"].tap()
-            
-            self.app.buttons["Cancel"].tap()
-            
-            self.app.buttons["Planets"].tap()
+        for _ in 0 ..< 8 {
+            for cell in self.app.tables.cells.allElementsBoundByIndex {
+                cell.tap()
+                
+                self.app.buttons["Share"].tap()
+                
+                self.app.buttons["Cancel"].tap()
+                
+                self.app.buttons["Planets"].tap()
+            }
         }
     }
 
