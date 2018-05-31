@@ -4,20 +4,20 @@
 
 import XCTest
 
-class UserFeedbackTests: XCTestCase {
+class UserFeedbackTestsExtra: XCTestCase {
     
     var app: XCUIApplication!
-
+    
     override func setUp() {
         continueAfterFailure = false
-
+        
         self.app = XCUIApplication()
         self.app.launchEnvironment = [
             "DisableAnimations": "YES"
         ]
         self.app.launch()
     }
-
+    
     func testSendingFeedback() {
         self.app.buttons["Settings"].tap()
         
@@ -27,7 +27,7 @@ class UserFeedbackTests: XCTestCase {
             "Hello, any chance that you could add additional parts of the Milky Way 🌌 to explore? I'd love to know more about areas of space outside of our local solar system. Thanks!",
             "Hi Solar System developers! I had an idea for a fun feature you could add that would make the app even better. I was thinking you could add a 🚀 that flies around and visits the different planets! Let me know what you think.",
             "Any chance that you could add some 👽 friends to the Solar System app? It would be a fun easter egg!"
-        ]
+        ].reversed()
         
         for _ in 0 ..< 15 {
             for feedback in feedbackArray {
@@ -35,10 +35,9 @@ class UserFeedbackTests: XCTestCase {
                 
                 self.app.textViews.element.tap()
                 self.app.textViews.element.typeText(feedback)
-                
                 self.app.buttons["Send"].tap()
             }
         }
     }
-
+    
 }
