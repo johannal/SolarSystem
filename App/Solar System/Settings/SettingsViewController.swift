@@ -3,8 +3,9 @@
 //
 
 import UIKit
+import ContactsUI
 
-class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, CNContactPickerDelegate  {
     
     
     @IBOutlet weak var distanceUnitsTextField: UITextField!
@@ -46,6 +47,13 @@ class SettingsViewController: UITableViewController, UIPickerViewDataSource, UIP
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.distanceUnitsTextField.text = self.distanceUnits[row]
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        let contactPickerViewController = CNContactPickerViewController()
+        self.present(contactPickerViewController, animated: true, completion: nil)
     }
 }
 

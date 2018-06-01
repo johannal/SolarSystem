@@ -271,19 +271,41 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgc-T6-K0G">
-                                                    <rect key="frame" x="149.5" y="5.5" width="76" height="33"/>
+                                                    <rect key="frame" x="115.5" y="5.5" width="144" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Feedback">
+                                                    <state key="normal" title="Share with a friend">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="6pG-le-1GE" kind="presentation" id="H29-rp-MOM"/>
+                                                        <action selector="shareButtonPressed:" destination="mzS-SI-5CO" eventType="touchUpInside" id="juo-lD-Xg9"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pgc-T6-K0G" firstAttribute="centerX" secondItem="7kg-16-YJ9" secondAttribute="centerX" id="IOB-Xw-e0c"/>
                                                 <constraint firstItem="pgc-T6-K0G" firstAttribute="centerY" secondItem="7kg-16-YJ9" secondAttribute="centerY" id="sSJ-9Z-Sdc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="7HM-73-I0v">
+                                        <rect key="frame" x="0.0" y="371" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7HM-73-I0v" id="SXg-WC-4If">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Lb-OB-IdV">
+                                                    <rect key="frame" x="149.5" y="5.5" width="76" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Feedback">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Lb-OB-IdV" firstAttribute="centerY" secondItem="SXg-WC-4If" secondAttribute="centerY" id="KDf-FD-mxT"/>
+                                                <constraint firstItem="5Lb-OB-IdV" firstAttribute="centerX" secondItem="SXg-WC-4If" secondAttribute="centerX" id="Nvq-Mc-afs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1256,7 +1278,7 @@ Population: 7.347 billion</string>
         <image name="StarsBackground" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8lG-IW-EI4"/>
         <segue reference="MoB-gr-65g"/>
+        <segue reference="8lG-IW-EI4"/>
     </inferredMetricsTieBreakers>
 </document>

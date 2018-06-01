@@ -98,7 +98,7 @@
 		AA107EE020BE2B4E00C06DD5 /* PlanetDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA107EDD20BE2B4E00C06DD5 /* PlanetDetailsTests.swift */; };
 		AA107EE120BE2B4E00C06DD5 /* UserFeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA107EDE20BE2B4E00C06DD5 /* UserFeedbackTests.swift */; };
 		AA16485120C077C100548980 /* UserFeedbacktests_Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16485020C077C100548980 /* UserFeedbacktests_Extra.swift */; };
-		AA16485320C0780200548980 /* AstronautTests_Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16485220C0780200548980 /* AstronautTests_Extra.swift */; };
+		AA1649B620C0F97400548980 /* ShareAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1649B520C0F97400548980 /* ShareAppTests.swift */; };
 		AA6573BC20A62D6C00595A9A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6573BB20A62D6C00595A9A /* WebViewController.swift */; };
 		AA6573C020A6387500595A9A /* mercury.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573BF20A6387500595A9A /* mercury.webarchive */; };
 		AA6573C820A6391D00595A9A /* venus.webarchive in Resources */ = {isa = PBXBuildFile; fileRef = AA6573C120A6391C00595A9A /* venus.webarchive */; };
@@ -270,7 +270,7 @@
 		AA107EDD20BE2B4E00C06DD5 /* PlanetDetailsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetDetailsTests.swift; sourceTree = "<group>"; };
 		AA107EDE20BE2B4E00C06DD5 /* UserFeedbackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackTests.swift; sourceTree = "<group>"; };
 		AA16485020C077C100548980 /* UserFeedbacktests_Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedbacktests_Extra.swift; sourceTree = "<group>"; };
-		AA16485220C0780200548980 /* AstronautTests_Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautTests_Extra.swift; sourceTree = "<group>"; };
+		AA1649B520C0F97400548980 /* ShareAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareAppTests.swift; sourceTree = "<group>"; };
 		AA6573BB20A62D6C00595A9A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AA6573BF20A6387500595A9A /* mercury.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mercury.webarchive; sourceTree = "<group>"; };
 		AA6573C120A6391C00595A9A /* venus.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = venus.webarchive; sourceTree = "<group>"; };
@@ -639,8 +639,8 @@
 				AA6657582098E31E007AB190 /* FavoritePlanetTests.swift */,
 				AAFD409220990A45009CCA74 /* SharePlanetTests.swift */,
 				AACC4344209901FB005DA562 /* AstronautTests.swift */,
-				AA16485220C0780200548980 /* AstronautTests_Extra.swift */,
 				AAE987A720A5114D00566B42 /* SettingsUITests.swift */,
+				AA1649B520C0F97400548980 /* ShareAppTests.swift */,
 				AA107EDC20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift */,
 				AA107EDD20BE2B4E00C06DD5 /* PlanetDetailsTests.swift */,
 				AA107EDE20BE2B4E00C06DD5 /* UserFeedbackTests.swift */,
@@ -1089,8 +1089,8 @@
 				AA107EE120BE2B4E00C06DD5 /* UserFeedbackTests.swift in Sources */,
 				AACC4345209901FB005DA562 /* AstronautTests.swift in Sources */,
 				AA16485120C077C100548980 /* UserFeedbacktests_Extra.swift in Sources */,
-				AA16485320C0780200548980 /* AstronautTests_Extra.swift in Sources */,
 				AAE987A820A5114D00566B42 /* SettingsUITests.swift in Sources */,
+				AA1649B620C0F97400548980 /* ShareAppTests.swift in Sources */,
 				AA107EE020BE2B4E00C06DD5 /* PlanetDetailsTests.swift in Sources */,
 				AAFD409320990A45009CCA74 /* SharePlanetTests.swift in Sources */,
 				AA107EDF20BE2B4E00C06DD5 /* DeleteFavoritePlanetsTests.swift in Sources */,
