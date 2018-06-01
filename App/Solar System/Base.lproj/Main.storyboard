@@ -301,6 +301,9 @@
                                                     <state key="normal" title="Feedback">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="6pG-le-1GE" kind="show" id="3Ia-us-4YD"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1278,7 +1281,7 @@ Population: 7.347 billion</string>
         <image name="StarsBackground" width="375" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MoB-gr-65g"/>
         <segue reference="8lG-IW-EI4"/>
+        <segue reference="MoB-gr-65g"/>
     </inferredMetricsTieBreakers>
 </document>
