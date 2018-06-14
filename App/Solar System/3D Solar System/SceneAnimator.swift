@@ -46,7 +46,7 @@ class SceneAnimator: NSObject {
             timer.start()
             #else
             timer = CADisplayLink(target: self, selector: #selector(tick))
-            timer?.add(to: .main, forMode: .defaultRunLoopMode)
+            timer?.add(to: .main, forMode: RunLoop.Mode.default)
             #endif
         }
     }
@@ -65,7 +65,7 @@ class SceneAnimator: NSObject {
             let variance_ms: UInt32 = 400
             let minDelay_ms:UInt32 = 100
             let delay_s = Double(arc4random_uniform(variance_ms) + minDelay_ms) / 1000.0
-            RunLoop.current.run(mode: .commonModes, before: Date().addingTimeInterval(delay_s))
+            RunLoop.current.run(mode: RunLoop.Mode.common, before: Date().addingTimeInterval(delay_s))
         }
     
         // Get elapsed time by calculating offset between last time stamp and now

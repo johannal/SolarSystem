@@ -33,7 +33,7 @@ class SceneViewController: UIViewController, SceneControllerDelegate {
         
         // Setup display link
         timer = CADisplayLink(target: self, selector: #selector(tick))
-        timer?.add(to: .main, forMode: .defaultRunLoopMode)
+        timer?.add(to: .main, forMode: RunLoop.Mode.default)
         
         // Setup tap handling
         let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(didTapSceneView))
