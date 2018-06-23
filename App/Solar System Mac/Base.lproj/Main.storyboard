@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14300" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="5rz-OH-xd0">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.11"/>
-        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14269.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14300"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="14300"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -893,7 +893,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="890" height="453"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="gB4-uQ-Pws" userLabel="Left Visual Effect View">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="gB4-uQ-Pws" userLabel="Left Visual Effect View">
                                 <rect key="frame" x="0.0" y="0.0" width="220" height="453"/>
                                 <subviews>
                                     <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-zr-v8b">
@@ -934,7 +934,7 @@
                             <sceneView sceneName="SolarSystemScene.scn" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70t-ps-lrB">
                                 <rect key="frame" x="220" y="0.0" width="470" height="453"/>
                             </sceneView>
-                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="9SM-Os-UVc">
+                            <visualEffectView wantsLayer="YES" blendingMode="behindWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="9SM-Os-UVc">
                                 <rect key="frame" x="690" y="0.0" width="200" height="453"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rh3-I4-mod">
@@ -1161,7 +1161,7 @@
                             <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNN-ED-ERE" customClass="NetworkRequestProgressView" customModule="Solar_System_Mac" customModuleProvider="target">
                                 <rect key="frame" x="333" y="360" width="244" height="43"/>
                                 <subviews>
-                                    <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-fy-kaa">
+                                    <visualEffectView blendingMode="withinWindow" material="popover" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-fy-kaa">
                                         <rect key="frame" x="0.0" y="0.0" width="244" height="43"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xQP-do-bzE">
