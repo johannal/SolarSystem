@@ -9,6 +9,9 @@ import os.log
 import os.signpost
 import Foundation
 
+/// OSLog for logging Solar System Explorer JSON parsing events.
+fileprivate let parsingLog = OSLog(subsystem: "com.SolarSystemExplorer", category: .pointsOfInterest)
+
 /// Protocol to get callbacks for planet and moon updates.
 protocol PlanetsDetailsListener {
     func updateWithPlanets(_ planets: [SolarSystemPlanet]?, _ error: Error?)
@@ -22,6 +25,9 @@ final class PlanetUpdateService {
     ///
     /// - Parameter listener: The listener to call back with the updated data.
     func updatePlanetData(listener: PlanetsDetailsListener) {
+
+        // Log that we're queuing up a network request for planet data.
+        os_log(.debug, log: parsingLog, "Requesting planet data")
 
         refreshPlanets { planets, error in
             
@@ -43,8 +49,9 @@ final class PlanetUpdateService {
     ///   - request: The network request to make.
     ///   - completion: The handler to call back once the network request and parsing task have completed.
     func performRequest<T>(request: NetworkRequest, completion: @escaping ArrayCompletion<T>) {
-        
+
         NetworkRequestScheduler.scheduleRequest(request) { request, resultCode, data in
+
             guard let responseData = data else {
                 completion(nil, UpdateError.requestFailed)
                 return
@@ -53,6 +60,8 @@ final class PlanetUpdateService {
             NetworkRequestScheduler.scheduleParsingTask(request.identifier, responseData) { 
                 jsonParser in
 
+                os_signpost(.begin, log: parsingLog, name: "JSONParsing", "Started parsing")
+
                 do {
                     let result: [T] = try jsonParser.parse()
                     completion(result, nil)
@@ -60,6 +69,7 @@ final class PlanetUpdateService {
                     completion(nil, error)
                 }
 
+                os_signpost(.end, log: parsingLog, name: "JSONParsing", "Finished parsing")
             }
         }
     }
