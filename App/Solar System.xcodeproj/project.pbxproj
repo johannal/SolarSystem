@@ -30,8 +30,6 @@
 		106E67C2209D03160096F217 /* MockRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E67C0209D03160096F217 /* MockRequestParser.swift */; };
 		1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088422720B47C08007C0128 /* UpdateServiceExtensions.swift */; };
 		10B14E3620A51DF800F85F06 /* NetworkRequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B14E3520A51DF700F85F06 /* NetworkRequestScheduler.swift */; };
-		10BBA8B720B79A3300C597A8 /* AdditionalSignposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */; };
-		10BBA8B820B79A3300C597A8 /* AdditionalSignposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BBA8B620B79A3300C597A8 /* AdditionalSignposts.swift */; };
 		8023D29820850501006DFD5F /* PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023D29720850501006DFD5F /* PlanetTests.swift */; };
 		805BDF55208513CB0014B604 /* OrbitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDF54208513CB0014B604 /* OrbitTests.swift */; };
 		805BDF572085146D0014B604 /* MoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805BDF562085146D0014B604 /* MoonTests.swift */; };
@@ -1008,7 +1006,6 @@
 				9E4F77C8205AEB49004C9486 /* SceneViewController.swift in Sources */,
 				106E67B8209CFC500096F217 /* NetworkRequest.swift in Sources */,
 				9E4F77C9205AEB51004C9486 /* SceneController.swift in Sources */,
-				10BBA8B820B79A3300C597A8 /* AdditionalSignposts.swift in Sources */,
 				9E4F77B8205AEA1F004C9486 /* AppDelegate.swift in Sources */,
 				07FE1DAF20B34C1A00C47831 /* AstronomicalObjectViewItem.swift in Sources */,
 				1088422820B47C08007C0128 /* UpdateServiceExtensions.swift in Sources */,
@@ -1039,7 +1036,6 @@
 				9E4F778B205ACFAA004C9486 /* LaunchScreen.storyboard in Sources */,
 				9E14087F2090EFEE00BCEB8B /* AstronomicalObject.swift in Sources */,
 				9E2017351ECB7E95002373D7 /* SceneController.swift in Sources */,
-				10BBA8B720B79A3300C597A8 /* AdditionalSignposts.swift in Sources */,
 				BBB6002C20B34FE300D0C304 /* PlanetUpdateService.swift in Sources */,
 				D2B2E8EA1ECB9C6200ED0982 /* SolarDays.swift in Sources */,
 				07B32AB71ECF59A60098E49F /* Orbit.swift in Sources */,

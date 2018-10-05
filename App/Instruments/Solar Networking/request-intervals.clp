@@ -12,9 +12,9 @@
     (slot time (type INTEGER))
     (slot output-table (type INTEGER))
     (slot request-id (type INTEGER))
-    (slot url (type EXTERNAL-ADDRESS))
+    (slot url (type STRING))
     (slot category (type EXTERNAL-ADDRESS))
-    (slot request-type (type EXTERNAL-ADDRESS))
+    (slot request-type (type STRING))
     (slot layout-id (type INTEGER SYMBOL) (allowed-symbols sentinel) (default sentinel))
     (slot is-duplicate (type INTEGER) (allowed-values 0 1) (default 0))
 )
@@ -22,7 +22,7 @@
 (deftemplate MODELER::requested-url
     (slot time (type INTEGER))
     (slot request-id (type INTEGER))
-    (slot url (type EXTERNAL-ADDRESS))
+    (slot url (type STRING))
 )
 
 (defrule MODELER::request-begin
@@ -37,7 +37,7 @@
 )
 
 (defrule MODELER::url-clear
-    (os-signpost (event-type "Emit") (name "NetworkRequest")
+    (os-signpost (event-type "Event") (name "NetworkRequest")
         (message$ "Request queue complete")
     )
     ?f <- (requested-url)

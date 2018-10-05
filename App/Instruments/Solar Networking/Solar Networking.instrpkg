@@ -313,7 +313,6 @@
         <narrative>
             <title>Narrative</title>
             <table-ref>request-narrative-table</table-ref>
-            <time-column>time</time-column>
             <narrative-column>narrative</narrative-column>
         </narrative>
 
