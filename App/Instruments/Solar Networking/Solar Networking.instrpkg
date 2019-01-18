@@ -238,7 +238,6 @@
 
         <defaults>
             <graph-height>1</graph-height>
-            <target-type>Running Application</target-type>
         </defaults>
 
     </instrument>
@@ -318,7 +317,6 @@
 
         <defaults>
             <graph-height>1</graph-height>
-            <target-type>Running Application</target-type>
         </defaults>
 
     </instrument>
@@ -413,7 +411,6 @@
 
         <defaults>
             <graph-height>4</graph-height>
-            <target-type>Running Application</target-type>
         </defaults>
 
     </instrument>
